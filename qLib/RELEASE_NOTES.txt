@@ -1,3 +1,7 @@
+v0.0.2 - 'Bend qL' added.
+    'Bend qL' added, which replaces the old qBend asset. See Release_Notes
+    section in the help card of the operator.
+
 v0.0.1 - Initial release.
 
     This is the initial release of qLib. This release doesn't include much,
