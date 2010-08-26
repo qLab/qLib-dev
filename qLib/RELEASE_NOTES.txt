@@ -1,3 +1,8 @@
+    Test version of Cinema Rig added.
+
+    Bug in Bend fixed, which resulted in wrong guide geometry when the deformer
+    was rotated.
+
 v0.0.2 - 'Bend qL' added.
     'Bend qL' added, which replaces the old qBend asset. See Release_Notes
     section in the help card of the operator.
