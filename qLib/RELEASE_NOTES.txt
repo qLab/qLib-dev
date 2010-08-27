@@ -1,3 +1,6 @@
+v0.0.3
+    Turbulate Motion added.
+    
     Test version of Cinema Rig added.
 
     Bug in Bend fixed, which resulted in wrong guide geometry when the deformer
