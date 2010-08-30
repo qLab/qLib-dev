@@ -1,3 +1,9 @@
+v0.0.4
+    Distance Add added. This is a H11 file it won't work with H10 due to incomlete
+    hom implementation. The help of this node is present but H11 for some unknown 
+    reason doesn't present asset help cards in the browser. Read the help inside the
+    asset until we resolve the problem.
+
 v0.0.3
     Turbulate Motion added.
     
