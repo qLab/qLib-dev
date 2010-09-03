@@ -1,3 +1,6 @@
+v0.0.5
+    Distribute added. While it's not complete in many senses it's already useful.
+
 v0.0.4
     Distance Add added. This is a H11 file it won't work with H10 due to incomlete
     hom implementation. The help of this node is present but H11 for some unknown 
