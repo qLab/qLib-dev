@@ -1,3 +1,6 @@
+v0.0.6
+    Cloth Refine 3d added. A cheap hack, but sometimes might be useful.
+
 v0.0.5
     Distribute added. While it's not complete in many senses it's already useful.
 
