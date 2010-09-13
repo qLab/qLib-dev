@@ -8,7 +8,7 @@ Dumping the otl files into a folder which contains other otls is considered bad
 behavior, and will seriously and needlessly make updating the lib more
 difficult.
 
-In the qLib/spec folder there will be assets which are intended for per-project
-based inclusion (e.g. high level objects like water drops and such), so you
-probalbly don't want to include that in the HOUDINI_OTLSCAN_PATH. But this
-decision is up to you.
+The assets in the qLib/spec folder are intended for per-project based inclusion
+(e.g. high level objects like water drops and such), so you probalbly don't
+want to include that in the HOUDINI_OTLSCAN_PATH. But this decision is up to
+you.
