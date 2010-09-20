@@ -1,4 +1,6 @@
 v0.0.10
+    Offset Curve added.
+
     Squashed stupid display flag bug in Rounded Recktangle.
 
 v0.0.9
