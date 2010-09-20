@@ -1,3 +1,6 @@
+v0.0.10
+    Squashed stupid display flag bug in Rounded Recktangle.
+
 v0.0.9
     Tetra Brik shader and geometry enhanced.
 
