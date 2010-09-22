@@ -1,3 +1,7 @@
+v0.0.12
+    Squashed a bug in Cinema Rig that prevented the rig working correctly for more
+    than 10 second. :)
+
 v0.0.11
     Triangle Grid added. Just a pre-release.
 
