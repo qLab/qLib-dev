@@ -1,0 +1,58 @@
+v0.0.11
+    Triangle Grid added. Just a pre-release.
+
+    Attrib Shape added.
+
+v0.0.10
+    Offset Curve added.
+
+    Squashed stupid display flag bug in Rounded Recktangle.
+
+v0.0.9
+    Tetra Brik shader and geometry enhanced.
+
+    Rounded Rectangle added.
+
+v0.0.8
+    Tetra Brik added.
+
+v0.0.7
+    Merge pieces added due to popular demand.
+
+v0.0.6
+    Cloth Refine 3d added. A cheap hack, but sometimes might be useful.
+
+v0.0.5
+    Distribute added. While it's not complete in many senses it's already useful.
+
+v0.0.4
+    Distance Add added. This is a H11 file it won't work with H10 due to incomlete
+    hom implementation. The help of this node is present but H11 for some unknown 
+    reason doesn't present asset help cards in the browser. Read the help inside the
+    asset until we resolve the problem.
+
+v0.0.3
+    Turbulate Motion added.
+    
+    Test version of Cinema Rig added.
+
+    Bug in Bend fixed, which resulted in wrong guide geometry when the deformer
+    was rotated.
+
+v0.0.2 - 'Bend qL' added.
+    'Bend qL' added, which replaces the old qBend asset. See Release_Notes
+    section in the help card of the operator.
+
+v0.0.1 - Initial release.
+
+    This is the initial release of qLib. This release doesn't include much,
+    just the single motion_trail_ql asset. This release is mainly to test the
+    release method and the filesystem layout.
+
+    You should place the unpacked folder to a convenient place, where everyone
+    can reach it, and add the qLib/base folder to the HOUDINI_OTLSCAN_PATH
+    environment variable.
+
+    In the qLib/spec folder there will be assets which are intended for
+    per-project based inclusion (e.g. high level objects like water drops and
+    such). 
