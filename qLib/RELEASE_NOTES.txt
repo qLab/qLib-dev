@@ -1,3 +1,13 @@
+v0.0.13
+    Multiply mode added to Attrib Shape.
+
+    Attrib Shape defaults changed to work with qLib proposed deformer
+    set.
+
+    Added Orient Save and Orient Restore.
+
+    Added Turbulate.
+
 v0.0.12
     Squashed a bug in Cinema Rig that prevented the rig working correctly for more
     than 10 second. :)
