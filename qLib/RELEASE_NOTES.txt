@@ -1,3 +1,5 @@
+    Added Orient Save and Orient Restore.
+
 v0.0.12
     Squashed a bug in Cinema Rig that prevented the rig working correctly for more
     than 10 second. :)
