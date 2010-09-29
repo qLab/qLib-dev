@@ -1,3 +1,6 @@
+v0.0.15
+    Attrib Shape can create local variable.
+
 v0.0.14
     Cinema Rig chop import changed to whole animation range.
 
