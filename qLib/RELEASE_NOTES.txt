@@ -1,4 +1,5 @@
-v0.0.15
+    Fixed a typo in the naming of Turbulate Motion.
+
     Attrib Shape can create local variable.
 
 v0.0.14
