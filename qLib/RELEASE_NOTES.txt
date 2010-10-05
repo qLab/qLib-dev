@@ -1,3 +1,6 @@
+v0.0.15
+    Star added.
+
     Spring Motion added.
 
     Fixed a typo in the naming of Turbulate Motion.
