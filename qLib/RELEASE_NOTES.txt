@@ -1,6 +1,13 @@
-    Point Texture added.
+v0.0.16
+    Attribute Shape value parameters are color+alpha.
 
-    Curve Segments added.
+    Attribute Shape has an invert toggle for easy in/out value switch.
+
+    Attribute Shape layout cleaned up a bit.
+
+    Point Texture added. Supports vertex uv's.
+
+    Curve Segments added. Supports closed curves and random vertex orders.
 
     Fixed a bug in Curve Offset that resulted in an unneeded surface in the result.
 
