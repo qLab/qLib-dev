@@ -1,3 +1,5 @@
+    Point Texture added.
+
     Curve Segments added.
 
     Fixed a bug in Curve Offset that resulted in an unneeded surface in the result.
