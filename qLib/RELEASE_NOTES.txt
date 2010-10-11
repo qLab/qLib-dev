@@ -1,3 +1,18 @@
+v0.0.16
+    Attribute Shape value parameters are color+alpha.
+
+    Attribute Shape has an invert toggle for easy in/out value switch.
+
+    Attribute Shape layout cleaned up a bit.
+
+    Point Texture added. Supports vertex uv's.
+
+    Curve Segments added. Supports closed curves and random vertex orders.
+
+    Fixed a bug in Curve Offset that resulted in an unneeded surface in the result.
+
+    Fixed a bug which resulted an unneeded float attrib even when the signature was vector.  
+
 v0.0.15
     Star added.
 
