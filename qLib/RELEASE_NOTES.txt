@@ -1,3 +1,5 @@
+    Sweep Plus added.
+
 v0.0.16
     Attribute Shape value parameters are color+alpha.
 
