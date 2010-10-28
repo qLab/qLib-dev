@@ -1,3 +1,5 @@
+    Edge Hardness added.
+
     Spiral added.
 
     Sweep Plus added.
