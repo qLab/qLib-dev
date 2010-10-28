@@ -1,3 +1,5 @@
+    Point Mix added.
+
     Edge Hardness added.
 
     Spiral added.
