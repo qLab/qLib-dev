@@ -1,3 +1,8 @@
+v0.0.17
+    Cinema Rig complete overhaul. All the secondary motion stuff is dropped
+    from the asset.  Pan, tilt and roll is included. It's not a preview
+    version anymore. Use it!
+
     Point Mix added.
 
     Edge Hardness added.
