@@ -1,3 +1,9 @@
+v0.0.19
+    Attrib Shape complete inner overhaul. Now it supports arbirary shapes and 
+    SDF volumes.
+
+    Arc Blend inputs named.
+
 v0.0.18
     Arc Blend added.
 
