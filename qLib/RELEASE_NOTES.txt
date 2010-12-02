@@ -1,4 +1,11 @@
+v0.0.18
+    Arc Blend added.
+
+    The icon of Edge Hardness, Spiral and Bend has updated or fixed.
+
 v0.0.17
+    Added icon and proper context information to Star.
+
     Cinema Rig complete overhaul. All the secondary motion stuff is dropped
     from the asset.  Pan, tilt and roll is included. It's not a preview
     version anymore. Use it!
