@@ -1,3 +1,6 @@
+v0.0.20
+    Symmetry added.
+
 v0.0.19
     Attrib Shape complete inner overhaul. Now it supports arbirary shapes and 
     SDF volumes.
