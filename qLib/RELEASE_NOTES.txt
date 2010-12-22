@@ -1,3 +1,9 @@
+v0.0.21
+    Pre-release version of teeth added.
+
+    Point Texture now supports arbitrary destination attributes with various signatures.
+    Also added the ability to create a local variable mapping if needed.
+
 v0.0.20
     Symmetry added.
 
