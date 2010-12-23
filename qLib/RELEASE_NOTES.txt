@@ -1,5 +1,7 @@
 v0.0.21
-    Pre-release version of teeth added.
+    Pre-release version of Studio Rig added.
+
+    Pre-release version of Teeth added.
 
     Point Texture now supports arbitrary destination attributes with various signatures.
     Also added the ability to create a local variable mapping if needed.
