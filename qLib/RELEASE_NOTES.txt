@@ -1,4 +1,7 @@
 v0.0.21
+    Arc Blend is updated to support cylindircal blending. Also added some guide
+    geometry.
+
     Pre-release version of Studio Rig added.
 
     Pre-release version of Teeth added.
