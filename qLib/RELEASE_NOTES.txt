@@ -1,3 +1,22 @@
+v0.0.21
+    Path deform added.
+
+    Weighted Transform added.
+
+    Pose Blend added.
+
+    Pre-release version of Skin (spec) added.
+    
+    Arc Blend is updated to support cylindircal blending. Also added some guide
+    geometry.
+
+    Pre-release version of Studio Rig added.
+
+    Pre-release version of Teeth added.
+
+    Point Texture now supports arbitrary destination attributes with various signatures.
+    Also added the ability to create a local variable mapping if needed.
+
 v0.0.20
     Symmetry added.
 
