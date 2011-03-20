@@ -1,4 +1,12 @@
 v0.0.21
+    Path deform added.
+
+    Weighted Transform added.
+
+    Pose Blend added.
+
+    Pre-release version of Skin (spec) added.
+    
     Arc Blend is updated to support cylindircal blending. Also added some guide
     geometry.
 
