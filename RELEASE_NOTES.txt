@@ -1,3 +1,6 @@
+v0.0.22
+    Take Merge added.
+
 v0.0.21
     Path deform added.
 
