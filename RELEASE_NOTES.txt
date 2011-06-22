@@ -1,7 +1,7 @@
-nemtom
-
 v0.0.22
     Take Merge added.
+
+    Fixed NURBS joining bug in Rounded Rectangle.
 
 v0.0.21
     Path deform added.
