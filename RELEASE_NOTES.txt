@@ -3,6 +3,8 @@ v0.0.22
 
     Fixed NURBS joining bug in Rounded Rectangle.
 
+    UV Tile added.
+
 v0.0.21
     Path deform added.
 
