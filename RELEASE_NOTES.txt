@@ -1,12 +1,14 @@
 v0.0.22
-    Take Merge added.
+    Take Merge added. (jq)
 
-    Fixed NURBS joining bug in Rounded Rectangle.
+    Fixed NURBS joining bug in Rounded Rectangle. (jq)
 
-    UV Tile added.
+    UV Tile added. (gfl)
 
     Curve Segments rewritten as a Python SOP. Cleaner output, faster and more
-    robust execution.
+    robust execution. (bk, jq, gfl)
+
+    Varmap rewritten. (jq, gfl)
 
 v0.0.21
     Path deform added.
