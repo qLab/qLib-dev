@@ -1,6 +1,9 @@
 v0.0.23
     Motion SHOP/VOP added. (gfl)
 
+    Vector SOP's interface got a facelift and some preset menus. The group field
+    gets filled with the geometry selection.
+
 v0.0.22
     Take Merge added. (jq)
 
