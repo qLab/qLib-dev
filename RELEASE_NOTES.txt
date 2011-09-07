@@ -1,3 +1,8 @@
+v0.0.24
+    Path Deform lattice placement method changed to take deformed geometry's
+    initial position into account during deformation. Also enabled a guide
+    geometry that could help understand and/or setup the node. (gfl)
+
 v0.0.23
     Motion SHOP/VOP added. (gfl)
 
