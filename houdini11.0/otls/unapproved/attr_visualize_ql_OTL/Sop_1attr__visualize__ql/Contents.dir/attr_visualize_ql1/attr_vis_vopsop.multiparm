@@ -1,0 +1,6 @@
+5
+attr_ramp#pos ../attr_ramp#pos
+attr_ramp#cr ../attr_ramp#cr
+attr_ramp#cg ../attr_ramp#cg
+attr_ramp#cb ../attr_ramp#cb
+attr_ramp#interp ../attr_ramp#interp

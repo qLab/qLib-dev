@@ -1,0 +1,18 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	[ vex_numthreads	1 ] 	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+apply_rest_xform	[ 0	locks=0 ]	(	[ apply_rest_xform	1 ] 	)
+rest_base_pos	[ 0	locks=0 ]	(	[ rest_base_pos1	0 ] 	[ rest_base_pos2	-0.603005767 ] 	[ rest_base_pos3	-0.78934437 ] 	)
+rest_aim_pos	[ 0	locks=0 ]	(	[ rest_aim_pos1	-0.573492527 ] 	[ rest_aim_pos2	-0.186338857 ] 	[ rest_aim_pos3	-0.789344311 ] 	)
+rest_up_pos	[ 0	locks=0 ]	(	[ rest_up_pos1	0.573492527 ] 	[ rest_up_pos2	-0.186338902 ] 	[ rest_up_pos3	-0.78934437 ] 	)
+invert_rest_xform	[ 0	locks=0 ]	(	[ invert_rest_xform	1 ] 	)
+apply_xform	[ 0	locks=0 ]	(	[ apply_xform	1 ] 	)
+base_pos	[ 0	locks=0 ]	(	[ base_pos1	0 ] 	[ base_pos2	0.975683928 ] 	[ base_pos3	0.186338902 ] 	)
+aim_pos	[ 0	locks=0 ]	(	[ aim_pos1	0 ] 	[ aim_pos2	0.603005767 ] 	[ aim_pos3	0.78934437 ] 	)
+up_pos	[ 0	locks=0 ]	(	[ up_pos1	-0.573492527 ] 	[ up_pos2	0.789345026 ] 	[ up_pos3	-0.186338782 ] 	)
+invert_xform	[ 0	locks=0 ]	(	[ invert_xform	0 ] 	)
+switch_aim_up	[ 0	locks=0 ]	(	[ switch_aim_up	0 ] 	)
+}

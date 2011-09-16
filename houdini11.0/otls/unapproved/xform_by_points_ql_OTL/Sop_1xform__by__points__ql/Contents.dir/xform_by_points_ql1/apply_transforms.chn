@@ -1,0 +1,65 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
+    }
+    channel index_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"__origpt\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../index_attr\") }
+    }
+    channel rest_p_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"P\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../rest_p_attr\") }
+    }
+    channel rest_aim_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../rest_aim_attr\") }
+    }
+    channel rest_up_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"up\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../rest_up_attr\") }
+    }
+    channel p_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"P\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../p_attr\") }
+    }
+    channel aim_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../aim_attr\") }
+    }
+    channel up_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"up\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../up_attr\") }
+    }
+  }
