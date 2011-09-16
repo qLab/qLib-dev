@@ -1,0 +1,31 @@
+#icon: NETWORKS_cop2
+#context: sop
+#type: node
+
+= Point Texture qL =
+
+*Version 0.2.0*
+
+"""Assigns the content of a texture file to a point attribute"""
+
+@Parameters
+    Point Group:
+        Affected point group.
+    Map File:
+        File name of the texure map.
+    Attribute Name:
+        Name of the destination attribute.
+    Signature:
+        Data type signature of the destination attribute.
+    Channel:
+        The choosen image channel if signature is Float.
+    Local Variable:
+        Name of the local variable if one is needed.
+
+@Release_Notes
+    Version 0.2.0:
+        Added support of arbitrary destination attributes with various signatures. Also added the ability to
+        create a local variable mapping if needed.
+
+    Version 0.1.0:
+        Initial release

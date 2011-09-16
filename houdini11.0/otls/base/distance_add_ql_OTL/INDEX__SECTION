@@ -1,0 +1,26 @@
+Operator:     distance_add_ql
+Label:        Distance Add qL
+Path:         oplib:/Sop/distance_add_ql?Sop/distance_add_ql
+Icon:         SOP_pointcloudiso
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Mon Aug 30 21:22:42 2010
+
+Operator:     newop
+Label:        New Operator
+Path:         oplib:/Sop/newop?Sop/newop
+Icon:         MISC_python
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Mon Aug 30 11:37:16 2010
+

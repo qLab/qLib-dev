@@ -1,0 +1,13 @@
+Operator:     weighted_transform_ql
+Label:        Weighted Transform qL
+Path:         oplib:/Sop/weighted_transform_ql?Sop/weighted_transform_ql
+Icon:         SOP_softxform
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Feb 28 17:28:12 2011
+

@@ -1,0 +1,7 @@
+{
+version 0.8
+cmp	[ 0	locks=0 ]	(	gt	)
+input2	[ 0	locks=0 ]	(	-0.00999999978	)
+input2_i	[ 0	locks=0 ]	(	0	)
+input2_s	[ 0	locks=0 ]	(	""	)
+}

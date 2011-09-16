@@ -1,0 +1,13 @@
+# Automatically generated script: Tuesday August 24, 14:24
+\set noalias = 1
+#
+#  Creation script for motion_trail_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/motion_trail_ql)
+opexprlanguage -s hscript $arg1

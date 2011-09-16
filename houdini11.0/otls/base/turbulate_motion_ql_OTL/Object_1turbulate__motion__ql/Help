@@ -1,0 +1,28 @@
+#icon: CHOP/noise
+#context: obj
+#type: node
+
+= Turbulate Motion qL =
+
+*Version 0.1.0*
+
+"""Generates turbulent motions."""
+
+@Parameters
+    Turbulate:
+        Turbulate all transformations.
+    Position Based:
+        Base noise generation on position instead of time.
+    Trail:
+        Draw trail of the turbulated motion.
+    Uniform Scale:
+        Scale all directions by the generated value of X.
+
+@Limitations
+    Implementation lacks elegance.
+
+    Drawing of motion trail is slow.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

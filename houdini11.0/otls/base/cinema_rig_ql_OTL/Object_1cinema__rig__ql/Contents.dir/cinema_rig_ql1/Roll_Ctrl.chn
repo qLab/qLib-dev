@@ -1,0 +1,16 @@
+{
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      default = 23
+      flags = 0
+      segment { length = 0 value = 23 23 expr = ch(\"../croll\") }
+    }
+    channel display {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../roll_guide\") }
+    }
+  }

@@ -1,0 +1,11 @@
+{
+version 0.8
+Ks	[ 0	locks=0 ]	(	0.5	)
+spec	[ 0	locks=0 ]	(	[ specr	1 ] 	[ specg	1 ] 	[ specb	1 ] 	)
+urough	[ 0	locks=0 ]	(	[ urough	0.100000001 ] 	)
+vrough	[ 0	locks=0 ]	(	0.0500000007	)
+sharp	[ 0	locks=0 ]	(	0	)
+facefwd	[ 0	locks=0 ]	(	"on"	)
+specType	[ 0	locks=0 ]	(	glossy	)
+tstyle	[ 0	locks=0 ]	(	0	)
+}

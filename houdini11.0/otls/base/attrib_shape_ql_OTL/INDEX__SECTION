@@ -1,0 +1,13 @@
+Operator:     attrib_shape_ql
+Label:        Attrib Shape qL
+Path:         oplib:/Sop/attrib_shape_ql?Sop/attrib_shape_ql
+Icon:         COP2_shape
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE_OUT 
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec  2 21:38:37 2010
+

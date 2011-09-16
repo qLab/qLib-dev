@@ -1,0 +1,30 @@
+{
+    channel divsx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../divs\") }
+    }
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_XMAX)),abs(bbox(\"../BB_Info\",D_XMIN)))*2 }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_YMAX)),abs(bbox(\"../BB_Info\",D_YMIN)))*2 }
+    }
+    channel sizez {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_ZMAX)),abs(bbox(\"../BB_Info\",D_ZMIN)))*2 }
+    }
+  }

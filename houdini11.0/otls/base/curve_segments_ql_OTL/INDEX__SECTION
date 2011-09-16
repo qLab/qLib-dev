@@ -1,0 +1,13 @@
+Operator:     curve_segments_ql
+Label:        Curve Segments qL
+Path:         oplib:/Sop/curve_segments_ql?Sop/curve_segments_ql
+Icon:         SOP_resample
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Tue Jun 28 00:01:28 2011
+

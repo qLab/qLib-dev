@@ -1,0 +1,10 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	`chs(\"../vex_group\")`	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+quatname	[ 0	locks=0 ]	(	`chs(\"../quatname\")`	)
+blend1	[ 8	locks=0 ]	(	[ blend1	7.57479235e-009 ] 	)
+blend2	[ 8	locks=0 ]	(	[ blend2	0 ] 	)
+}

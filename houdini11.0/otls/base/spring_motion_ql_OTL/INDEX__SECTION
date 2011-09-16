@@ -1,0 +1,13 @@
+Operator:     spring_motion_ql
+Label:        Spring Motion qL
+Path:         oplib:/Object/spring_motion_ql?Object/spring_motion_ql
+Icon:         CHOP_spring
+Table:        Object
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Oct  4 07:17:48 2010
+

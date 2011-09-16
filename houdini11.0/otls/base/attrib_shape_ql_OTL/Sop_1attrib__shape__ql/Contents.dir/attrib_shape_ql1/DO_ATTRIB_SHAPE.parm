@@ -1,0 +1,16 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+in_attrib	[ 0	locks=0 ]	(	[ in_attrib	Cd ] 	)
+out_attrib_name	[ 0	locks=0 ]	(	[ out_attrib_name	Cd ] 	)
+inner_value	[ 0	locks=0 ]	(	[ inner_value1	1 ] 	[ inner_value2	1 ] 	[ inner_value3	1 ] 	[ inner_value4	1 ] 	)
+outer_value	[ 0	locks=0 ]	(	[ outer_value1	0 ] 	[ outer_value2	0 ] 	[ outer_value3	0 ] 	[ outer_value4	0 ] 	)
+signature	[ 0	locks=0 ]	(	[ signature	1 ] 	)
+compose	[ 0	locks=0 ]	(	[ compose	0 ] 	)
+inverse	[ 0	locks=0 ]	(	[ inverse	0 ] 	)
+fdist	[ 0	locks=0 ]	(	[ fdist	0.430999994 ] 	)
+exp	[ 8	locks=0 ]	(	[ exp	1 ] 	)
+}

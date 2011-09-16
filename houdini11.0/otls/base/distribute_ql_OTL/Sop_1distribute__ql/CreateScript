@@ -1,0 +1,13 @@
+# Automatically generated script: Friday September 03, 18:59 2010
+\set noalias = 1
+#
+#  Creation script for distribute_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/distribute_ql)
+opexprlanguage -s hscript $arg1

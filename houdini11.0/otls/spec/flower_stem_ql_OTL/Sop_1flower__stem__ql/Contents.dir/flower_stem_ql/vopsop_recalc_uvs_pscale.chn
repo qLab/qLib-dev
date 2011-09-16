@@ -1,0 +1,87 @@
+{
+    channel ramp1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../leavespscaleu1pos\") }
+    }
+    channel ramp1value {
+      lefttype = extend
+      righttype = extend
+      default = 0.3125
+      flags = 0
+      segment { length = 0 value = 0.3125 0.3125 expr = ch(\"../leavespscaleu1value\") }
+    }
+    channel ramp1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../leavespscaleu1interp\") }
+    }
+    channel ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../leavespscaleu2pos\") }
+    }
+    channel ramp2value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../leavespscaleu2value\") }
+    }
+    channel ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../leavespscaleu2interp\") }
+    }
+    channel maxU {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\"../head_pt\", 0, \"uv\", 0)" }
+    }
+    channel ramp {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../leavespscaleu\") }
+    }
+    channel featherSize {
+      lefttype = extend
+      righttype = extend
+      default = 0.15
+      flags = 0
+      segment { length = 0 value = 0.15000000596046448 0.15000000596046448 expr = ch(\"../feathersize\") }
+    }
+    channel featherExp {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../featherexp\") }
+    }
+    channel ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../leavespscaleu3pos\") }
+    }
+    channel ramp3value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../leavespscaleu3value\") }
+    }
+    channel ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../leavespscaleu3interp\") }
+    }
+  }

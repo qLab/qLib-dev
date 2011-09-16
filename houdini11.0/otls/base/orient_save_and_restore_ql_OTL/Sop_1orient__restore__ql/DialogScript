@@ -1,0 +1,51 @@
+# Dialog script for orient_restore_ql automatically generated 09/24/10 17:40:46
+
+{
+    name	orient_restore_ql
+    script	orient_restore_ql
+    label	"Orient Restore qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"up"
+	label	"Restore Up"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"upgroup"
+	label	"Up Group Name"
+	type	string
+	default	{ "up_points" }
+	disablewhen	"{ up 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"norm"
+	label	"Restore Normal"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"normgroup"
+	label	"Normal Group Name"
+	type	string
+	default	{ "normal_points" }
+	disablewhen	"{ norm 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+}

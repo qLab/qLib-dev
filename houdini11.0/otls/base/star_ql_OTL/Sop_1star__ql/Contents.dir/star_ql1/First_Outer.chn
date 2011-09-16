@@ -1,0 +1,9 @@
+{
+    channel pt0z {
+      lefttype = extend
+      righttype = extend
+      default = 1.24
+      flags = 0
+      segment { length = 0 value = 1.2400000095367432 1.2400000095367432 expr = ch(\"../radiusy\") }
+    }
+  }

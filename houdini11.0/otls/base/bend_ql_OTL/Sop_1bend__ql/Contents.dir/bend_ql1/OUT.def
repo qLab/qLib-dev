@@ -1,0 +1,20 @@
+sopflags sopflags = 
+comment ""
+position -0.987022 0.866658
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	Bend_Deformer 0 1
+}
+stat
+{
+  create 1259327542
+  modify 1282663989
+  author mt@andromeda
+  access 0777
+}
+color UT_Color RGB 0.2 0 0.4 
+delscript ""
+exprlanguage hscript
+end

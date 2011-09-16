@@ -1,0 +1,26 @@
+Operator:     distribute_ql
+Label:        Distribute qL
+Path:         oplib:/Sop/distribute_ql?Sop/distribute_ql
+Icon:         VOP_pcopen
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Sep  3 18:59:41 2010
+
+Operator:     distributor_helper_ql
+Label:        Distributor Helper qL
+Path:         oplib:/Sop/distributor_helper_ql?Sop/distributor_helper_ql
+Icon:         SOP_vex
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Fri Sep  3 19:01:37 2010
+

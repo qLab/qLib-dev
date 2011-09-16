@@ -1,0 +1,16 @@
+15
+DO_SYMMETRY
+xform1
+matchtopology1
+reverse1
+attribcreate1
+attribcopy1
+Orient_Geo
+Orient_Geo1
+xform2
+attribcreate2
+attribtransfer1
+switch1
+Orient_Geo2
+delete_utility_attribute
+OUT

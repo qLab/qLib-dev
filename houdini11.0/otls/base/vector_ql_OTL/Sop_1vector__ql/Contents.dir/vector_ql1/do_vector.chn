@@ -1,0 +1,173 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel is_const_a {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vector_type_a\") }
+    }
+    channel name_a {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Cd\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../name_a\") }
+    }
+    channel vec_a1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_a1\") }
+    }
+    channel vec_a2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_a2\") }
+    }
+    channel vec_a3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_a3\") }
+    }
+    channel normalize_a {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../normalize_a\") }
+    }
+    channel is_const_b {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vector_type_b\") }
+    }
+    channel vec_b1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_b1\") }
+    }
+    channel vec_b2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_b2\") }
+    }
+    channel vec_b3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vec_b3\") }
+    }
+    channel normalize_b {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../normalize_b\") }
+    }
+    channel name_b {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../name_b\") }
+    }
+    channel operation {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../operation\") }
+    }
+    channel blend {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../blend\") }
+    }
+    channel length {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../length\") }
+    }
+    channel length_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Cd\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../length_name\") }
+    }
+    channel normalize_out {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../normalize_out\") }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale\") }
+    }
+    channel invert_out {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert_out\") }
+    }
+    channel export_result {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../export_result\") }
+    }
+    channel out_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../out_attr\") }
+    }
+    channel export_dot {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../export_dot\") }
+    }
+    channel dot_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"dot\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../dot_attr\") }
+    }
+    channel angle_export {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../angle_export\") }
+    }
+    channel angle_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"angle\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../angle_attr\") }
+    }
+    channel deg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../deg\") }
+    }
+  }

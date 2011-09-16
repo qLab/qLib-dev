@@ -1,0 +1,9 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	v4	)
+cmap	[ 0	locks=0 ]	(	$HH/pic/Mandril.pic	)
+u	[ 0	locks=0 ]	(	0	)
+v	[ 0	locks=0 ]	(	1	)
+wrap	[ 0	locks=0 ]	(	repeat	)
+border	[ 0	locks=0 ]	(	0	0	0	1	)
+}

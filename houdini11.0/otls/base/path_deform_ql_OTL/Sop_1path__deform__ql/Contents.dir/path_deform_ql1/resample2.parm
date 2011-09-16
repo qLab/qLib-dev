@@ -1,0 +1,13 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+lod	[ 0	locks=0 ]	(	1	)
+edge	[ 0	locks=0 ]	(	"off"	)
+method	[ 0	locks=0 ]	(	"dist"	)
+measure	[ 0	locks=0 ]	(	"arc"	)
+dolength	[ 0	locks=0 ]	(	"off"	)
+length	[ 0	locks=0 ]	(	0.100000001	)
+dosegs	[ 0	locks=0 ]	(	"on"	)
+segs	[ 0	locks=0 ]	(	[ segs	4 ] 	)
+last	[ 0	locks=0 ]	(	"off"	)
+}

@@ -1,0 +1,20 @@
+{
+    channel orient_upx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 0)" }
+    }
+    channel orient_upy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 1)" }
+    }
+    channel orient_upz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 2)" }
+    }
+  }

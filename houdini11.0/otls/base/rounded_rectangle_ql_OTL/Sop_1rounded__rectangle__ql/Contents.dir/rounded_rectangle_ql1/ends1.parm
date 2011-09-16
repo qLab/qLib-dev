@@ -1,0 +1,10 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+pshapeu	[ 0	locks=0 ]	(	"on"	)
+pshapev	[ 0	locks=0 ]	(	"off"	)
+closeu	[ 8	locks=0 ]	(	[ closeu	0 ] 	)
+closev	[ 0	locks=0 ]	(	"sameclosure"	)
+clampu	[ 0	locks=0 ]	(	"sameclamp"	)
+clampv	[ 0	locks=0 ]	(	"sameclamp"	)
+}

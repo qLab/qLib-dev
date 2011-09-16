@@ -1,0 +1,70 @@
+# Dialog script for distribute_ql automatically generated 09/03/10 18:59:41
+
+{
+    name	distribute_ql
+    script	distribute_ql
+    label	"Distribute qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Points to distribute"
+    inputlabel	2	"Ray Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	invisible
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l distributor_helper_ql1 vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"radius"
+	label	"Radius"
+	type	float
+	default	{ "0" }
+	range	{ 0! 1 }
+	export	none
+    }
+    parm {
+	name	"iterations"
+	label	"Iterations"
+	type	integer
+	default	{ "10" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"grow"
+	label	"Grow"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"ray"
+	label	"Ray"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"maxpoints"
+	label	"Max Neighbours"
+	type	integer
+	default	{ "1000" }
+	range	{ 0 10 }
+	export	none
+    }
+}

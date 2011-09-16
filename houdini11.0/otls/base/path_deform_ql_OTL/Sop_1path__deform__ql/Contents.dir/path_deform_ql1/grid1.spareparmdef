@@ -1,0 +1,63 @@
+    parm {
+	name	"type"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"surftype"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"orient"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"size"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"t"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"rows"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"cols"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"orderu"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"orderv"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"interpu"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"interpv"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"aspect"
+	label	"Apect"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

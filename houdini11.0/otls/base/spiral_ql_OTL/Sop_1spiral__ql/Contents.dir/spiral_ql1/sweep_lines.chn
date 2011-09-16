@@ -1,0 +1,21 @@
+{
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = point(\"../attribcreate_rampscale\",$PT,\"rampscale\",0) }
+    }
+    channel roll {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../roll2\") }
+    }
+    channel twist {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = (1/($NPT-1))*ch(\"../turns\")*360 }
+    }
+  }

@@ -1,0 +1,12 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+divs	[ 8	locks=0 ]	(	[ divsx	4 ] 	[ divsy	1 ] 	[ divsz	1 ] 	)
+interptype	[ 0	locks=0 ]	(	"bezier"	)
+restgroup	[ 0	locks=0 ]	(	""	)
+kernel	[ 0	locks=0 ]	(	wyvill	)
+radius	[ 0	locks=0 ]	(	1	)
+normthreshold	[ 0	locks=0 ]	(	0	)
+bspheres	[ 0	locks=0 ]	(	"off"	)
+}

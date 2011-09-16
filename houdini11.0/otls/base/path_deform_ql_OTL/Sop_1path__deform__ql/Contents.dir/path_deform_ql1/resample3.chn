@@ -1,0 +1,9 @@
+{
+    channel segs {
+      lefttype = extend
+      righttype = extend
+      default = 101
+      flags = 0
+      segment { length = 0 value = 101 101 expr = ch(\"../resolution\") }
+    }
+  }

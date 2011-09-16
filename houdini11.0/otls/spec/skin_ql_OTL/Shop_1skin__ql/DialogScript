@@ -1,0 +1,701 @@
+# Dialog script for skin_ql automatically generated 02/24/11 13:40:55
+
+{
+    name	skin_ql
+    script	skin_ql
+    label	"Skin qL"
+
+    rendermask	"VMantra OGL"
+
+    help {
+	""
+    }
+
+    group {
+	name	"folder1"
+	label	"Diffuse"
+
+	parm {
+	    name	"Kd"
+	    label	"Diffuse Intensity"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"rough"
+	    label	"Diffuse Roughness"
+	    type	float
+	    default	{ "0.1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"diff_clr"
+	    label	"Diffuse Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ diff_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"switcher"
+	    label	"Use Texture"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"map"
+	    label	"Diffuse Map"
+	    type	image
+	    default	{ "Mandril.pic" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Color Correct"
+
+	    parm {
+		name	"Shift"
+		label	"Hue Shift"
+		type	float
+		default	{ "0" }
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"Saturation"
+		label	"Saturation"
+		type	float
+		default	{ "1.2" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"Intensity"
+		label	"Intensity"
+		type	float
+		default	{ "1.1" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"Gamma"
+		label	"Gamma"
+		type	float
+		default	{ "1" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Shine"
+
+	parm {
+	    name	"shine_col"
+	    label	"Shine Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"urough"
+	    label	"U Roughness"
+	    type	float
+	    default	{ "0.1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"use_shine_map"
+	    label	"Use Shine Map"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"spec_map"
+	    label	"Shine Map"
+	    type	image
+	    default	{ "Mandril.pic" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"spec_min"
+	    label	"Shine Min"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"spec_max"
+	    label	"Shine Max"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"sharp_max"
+	    label	"Sharpness Max"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"sharp_min"
+	    label	"Sharpness Min"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+    }
+
+    group {
+	name	"folder1_2"
+	label	"Sheen"
+
+	parm {
+	    name	"sheen"
+	    label	"Sheen Intensity"
+	    type	float
+	    default	{ "0.5" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"sheen_rough"
+	    label	"Sheen Roughness"
+	    type	float
+	    default	{ "2" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"ramp"
+	    label	"Sheen Color"
+	    type	ramp_rgb
+	    default	{ "2" }
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	    parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	    parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	    parmtag	{ "rampshowcontrolsdefault" "1" }
+	    parmtag	{ "rampcolortype" "rgb" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "rampbasisdefault" "linear" }
+	}
+    }
+
+    group {
+	name	"folder1_3"
+	label	"Texture"
+
+	parm {
+	    name	"scale"
+	    label	"Bump Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"fval1"
+	    label	"Bump Frequency"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+    }
+
+    group {
+	name	"folder1_4"
+	label	"SSS"
+
+	parm {
+	    name	"ksss"
+	    label	"Subsurface Intensity"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"sssclr"
+	    label	"Subsurface Color"
+	    type	color
+	    size	3
+	    default	{ "0.6" "0.15" "0.06" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"rgb"
+	    label	"Evaluate RGB Separately"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"pcf"
+	    label	"Pointcloud File"
+	    type	file
+	    default	{ "$HIP/Misc/stewardess_head.pc" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"nfp"
+	    label	"Pointcloud Sample"
+	    type	integer
+	    default	{ "50" }
+	    range	{ 1 100 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"depth"
+	    label	"Scattering Distance"
+	    type	float
+	    default	{ "0.15" }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"bounce"
+	    label	"Bounce Attenuation"
+	    type	float
+	    default	{ "0.75" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"use_sss_mask"
+	    label	"Use SSS Mask"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"sssmask"
+	    label	"SSS Map"
+	    type	image
+	    default	{ "Mandril.pic" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+    }
+
+    group {
+	name	"folder1_5"
+	label	"OGL"
+
+	parm {
+	    name	"ogl_alpha"
+	    label	"OGL Alpha"
+	    type	float
+	    default	{ "1" }
+	    help	"Opacity of the surface."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_amb"
+	    label	"OGL Ambient"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    help	"Ambient light color."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_bumpmap"
+	    label	"OGL Bump Map"
+	    type	image
+	    default	{ "" }
+	    help	"Use a bump map to perturb normals to give the illusion of depth to a flat polygon."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "filechooser_mode" "read" }
+	}
+	parm {
+	    name	"ogl_bumptype"
+	    label	"Bump Map Type"
+	    type	string
+	    default	{ "height" }
+	    help	"Specifies the type of bump map that the bumpmap file represents. This can either by a height field, a UV bump map, or a XYZ-deltas for normals. This must be set to match the type of the bump map file."
+	    disablewhen	"{ ogl_bumpmap == \"\" }"
+	    menu	{
+		"height"	"Height Map"
+		"uv"	"UV Bump Map"
+		"xyz"	"XYZ Bump Map"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_bumpscale"
+	    label	"Bump Scale"
+	    type	float
+	    default	{ "1" }
+	    help	"Scales the bumps to increase or decrease the apparent size of the bumps."
+	    disablewhen	"{ ogl_bumpmap == \"\" }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_bumpbias"
+	    label	"Bump Map Range"
+	    type	string
+	    default	{ "zeroone" }
+	    help	"The range of the bump map image is either 0-1 (8b map) or -1 to 1 (floating point map). This bias must match the type of map used. This is ignored for height maps."
+	    disablewhen	"{ ogl_bumpmap == \"\" }"
+	    menu	{
+		"zeroone"	"0 to 1"
+		"centered"	"-1 to 1"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_bumplayer"
+	    label	"Bump Layer"
+	    type	integer
+	    default	{ "0" }
+	    help	"The texture layer that the UV coordinates for the bump map are sourced from."
+	    disablewhen	"{ ogl_bumpmap == \"\" }"
+	    range	{ 0 15 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_bumpinvert"
+	    label	"Invert Bumps"
+	    type	toggle
+	    default	{ "0" }
+	    help	"Inverts the bumps so that they appear to be going into the object instead of out."
+	    disablewhen	"{ ogl_bumpmap == \"\" }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_cutout"
+	    label	"Transparent Texture Alpha"
+	    type	toggle
+	    default	{ "1" }
+	    help	"Whether to use the texture's alpha channel to determine the opacity of the surface."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_diff"
+	    label	"OGL Diffuse"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    help	"Diffuse color."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_emit"
+	    label	"OGL Emission"
+	    type	color
+	    size	3
+	    default	{ "0" "0" "0" }
+	    help	"Emission color."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_envmap"
+	    label	"OGL Environment Map"
+	    type	image
+	    default	{ "" }
+	    help	"The image file that defines an environment map for reflection mapping. If the image file is an RGBA image, it is assumed to be a lat-long map. If a deep raster image with 6 planes is specified, it is assumed to be a cube map if the planes are named Left, Right, Top, Bottom, Front and Back."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "filechooser_mode" "read" }
+	}
+	parm {
+	    name	"ogl_envrotate"
+	    label	"Env Map Rotation"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "0" }
+	    help	"Rotates the environment map using Euler rotation angles."
+	    disablewhen	"{ ogl_envmap == \"\" }"
+	    range	{ -1 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_envrotorder"
+	    label	"Env Rotate Order"
+	    type	string
+	    default	{ "xyz" }
+	    help	"The rotation order for the Euler rotation angles. Can be one of xyz, xzy, yxz, yzx, zxy, zyx."
+	    menu	{
+		"xyz"	"Rx Ry Rz"
+		"xzy"	"Rx Rz Ry"
+		"yxz"	"Ry Rx Rz"
+		"yzx"	"Ry Rz Rx"
+		"zxy"	"Rz Rx Ry"
+		"zyx"	"Rz Ry Rx"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_envscale"
+	    label	"Reflection Intensity"
+	    type	float
+	    default	{ "0.1" }
+	    help	"Scales the reflection color sourced from the environment map to alter the intensity of reflections."
+	    disablewhen	"{ ogl_envmap == \"\" }"
+	    range	{ 0 2 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_light"
+	    label	"Use Lighting"
+	    type	toggle
+	    default	{ "1" }
+	    help	"Whether to use lighting to shade this surface (1), or fill it with a constance color (0)."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_normalmap"
+	    label	"OGL Normal Map"
+	    type	image
+	    default	{ "" }
+	    help	"None"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "filechooser_mode" "read" }
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_normalbias"
+	    label	"Normal Map Range"
+	    type	string
+	    default	{ "zeroone" }
+	    help	"The range of the normal map is either 0-1 (8b map) or -1 to 1 (floating point map). This bias must match the type of normal map used."
+	    disablewhen	"{ ogl_normalmap == \"\" }"
+	    menu	{
+		"zeroone"	"0 to 1"
+		"centered"	"-1 to 1"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_normallayer"
+	    label	"Normal Layer"
+	    type	integer
+	    default	{ "0" }
+	    help	"The texture layer that the UV coordinates for the normal map are sourced from."
+	    disablewhen	"{ ogl_normalmap == \"\" }"
+	    range	{ 0 15 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	multiparm {
+	    name	"ogl_numtex"
+	    label	"Texture Layers"
+	    parmtag	{ "spare_category" "OGL" }
+
+	    parm {
+		name	"ogl_tex#"
+		label	"Texture #"
+		type	image
+		default	{ "" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+	    }
+	    parm {
+		name	"ogl_tex_min_filter#"
+		label	"Minification Filter"
+		type	string
+		default	{ "GL_LINEAR_MIPMAP_LINEAR" }
+		help	"None"
+		menu	{
+		    "GL_NEAREST"	"Poor: Nearest"
+		    "GL_LINEAR"	"Poor: Linear"
+		    "GL_NEAREST_MIPMAP_NEAREST"	"Fastest (Nearest/Nearest)"
+		    "GL_LINEAR_MIPMAP_NEAREST"	"Better (Linear/Nearest)"
+		    "GL_NEAREST_MIPMAP_LINEAR"	"Good (Nearest/Linear)"
+		    "GL_LINEAR_MIPMAP_LINEAR"	"Best (Linear/Linear)"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_tex_mag_filter#"
+		label	"Magnification Filter"
+		type	string
+		default	{ "GL_LINEAR" }
+		help	"None"
+		menu	{
+		    "GL_NEAREST"	"Nearest"
+		    "GL_LINEAR"	"Linear"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_clamping_mode#"
+		label	"Clamp Texture"
+		type	toggle
+		default	{ "0" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	parm {
+	    name	"ogl_opacitymap"
+	    label	"OGL Opacity Map"
+	    type	image
+	    default	{ "" }
+	    help	"The image file to use for the opacity of the material. Only the alpha channel is used in an RGBA image file. The map values are multiplied by both ogl_alpha and point/vertex alpha, if present."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "filechooser_mode" "read" }
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_opacitylayer"
+	    label	"Opacity Layer"
+	    type	integer
+	    default	{ "0" }
+	    help	"The texture layer that the UV coordinates for the opacity map are sourced from."
+	    disablewhen	"{ ogl_opacitymap == \"\" }"
+	    range	{ 0 15 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_rough"
+	    label	"OGL Roughness"
+	    type	float
+	    default	{ "0.05" }
+	    help	"Specular roughness."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_spec"
+	    label	"OGL Specular"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    help	"Specular color."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_specmap"
+	    label	"OGL Specular Map"
+	    type	image
+	    default	{ "" }
+	    help	"None"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "filechooser_mode" "read" }
+	    parmtag	{ "spare_category" "OGL" }
+	}
+	parm {
+	    name	"ogl_speclayer"
+	    label	"Specular Layer"
+	    type	integer
+	    default	{ "0" }
+	    help	"The texture layer that the UV coordinates for the specular map are sourced from."
+	    disablewhen	"{ ogl_specmap == \"\" }"
+	    range	{ 0 15 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_adjustshiny"
+	    label	"Adjust Shininess with Alpha Channel"
+	    type	toggle
+	    default	{ "off" }
+	    help	"When enabled, the alpha channel of the specular map is used to define the shininess of the material instead of the ogl_rough property."
+	    disablewhen	"{ ogl_specmap == \"\" }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"ogl_shinyrange"
+	    label	"Shininess Range"
+	    type	vector2
+	    size	2
+	    default	{ "10" "30" }
+	    help	"When the alpha channel is used to define the shininess of the material, this is used to map the (0,1) alpha values to real shininess values. By default, (0,1) will be mapped to (10,30). Higher shininess values produce sharper and smaller specular reflections."
+	    disablewhen	"{ ogl_specmap == \"\" } { ogl_adjustshiny == 0 }"
+	    range	{ -1 1 }
+	    export	none
+	}
+    }
+
+}

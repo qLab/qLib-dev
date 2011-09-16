@@ -1,0 +1,20 @@
+objflags objflags =  origin off
+pretransform UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+comment ""
+position 2.45251 5.04607
+cachesize 1
+flags =  lock off model off template off footprint off xray on bypass off display on render off highlight off unload off savedata off compress off exposed on selectable on
+inputs
+{
+}
+stat
+{
+  create 1293060312
+  modify 1293068329
+  author Mate@Mate.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0.4 1 0.4 
+delscript ""
+exprlanguage hscript
+end

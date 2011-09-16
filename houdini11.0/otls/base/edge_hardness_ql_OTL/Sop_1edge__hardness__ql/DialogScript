@@ -1,0 +1,45 @@
+# Dialog script for edge_hardness_ql automatically generated 12/02/10 14:40:15
+
+{
+    name	edge_hardness_ql
+    script	edge_hardness_ql
+    label	"Edge Hardness qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"grp"
+	label	"Primitive Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l facet1 group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cusp"
+	label	"Cusp"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"cuspa"
+	label	"Cusp Angle"
+	type	float
+	default	{ "0" }
+	range	{ 0 180 }
+	export	none
+    }
+}

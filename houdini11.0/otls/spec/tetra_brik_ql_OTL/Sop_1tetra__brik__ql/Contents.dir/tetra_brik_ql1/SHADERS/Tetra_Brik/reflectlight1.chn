@@ -1,0 +1,21 @@
+{
+    channel bias {
+      lefttype = extend
+      righttype = extend
+      default = 0.005
+      flags = 0
+      segment { length = 0 value = 0.004999999888241291 0.004999999888241291 expr = ch('../bias/floatdef') }
+    }
+    channel angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../angle/floatdef') }
+    }
+    channel samples {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../samples/intdef') }
+    }
+  }

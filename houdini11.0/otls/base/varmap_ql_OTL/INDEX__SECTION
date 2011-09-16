@@ -1,0 +1,13 @@
+Operator:     varmap_ql
+Label:        Varmap qL
+Path:         oplib:/Sop/varmap_ql?Sop/varmap_ql
+Icon:         SOP_attribute
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Tue Jun 28 11:45:52 2011
+

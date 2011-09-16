@@ -1,0 +1,13 @@
+Operator:     edge_hardness_ql
+Label:        Edge Hardness qL
+Path:         oplib:/Sop/edge_hardness_ql?Sop/edge_hardness_ql
+Icon:         SOP_edgecusp
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec  2 14:40:15 2010
+

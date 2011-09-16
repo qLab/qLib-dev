@@ -1,0 +1,17 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+gv	[ 0	locks=0 ]	(	0	0	)
+val	[ 0	locks=0 ]	(	1	)
+val_v	[ 0	locks=0 ]	(	1	1	1	)
+val_p	[ 0	locks=0 ]	(	1	1	1	)
+val_n	[ 0	locks=0 ]	(	1	1	1	)
+val_c	[ 0	locks=0 ]	(	1	1	1	)
+val_v4	[ 0	locks=0 ]	(	1	1	1	1	)
+val_uf	[ 0	locks=0 ]	(	1	)
+val_uv	[ 0	locks=0 ]	(	1	1	1	)
+val_up	[ 0	locks=0 ]	(	1	1	1	)
+val_un	[ 0	locks=0 ]	(	1	1	1	)
+val_uc	[ 0	locks=0 ]	(	1	1	1	)
+exp	[ 0	locks=0 ]	(	[ exp	0.5 ] 	)
+}

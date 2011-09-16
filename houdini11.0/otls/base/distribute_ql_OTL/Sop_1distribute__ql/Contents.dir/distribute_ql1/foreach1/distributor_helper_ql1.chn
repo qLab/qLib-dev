@@ -1,0 +1,47 @@
+{
+    channel pscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../radius\") }
+    }
+    channel maxpoints {
+      lefttype = extend
+      righttype = extend
+      default = 1000
+      flags = 0
+      segment { length = 0 value = 1000 1000 expr = ch(\"../../maxpoints\") }
+    }
+    channel citer {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = stamp(\"..\",\"FORVALUE\",0) }
+    }
+    channel niter {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../iterations\") }
+    }
+    channel maxpscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../radius\") }
+    }
+    channel minpscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../radius\") }
+    }
+    channel grow {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../grow\") }
+    }
+  }

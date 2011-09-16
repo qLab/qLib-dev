@@ -1,0 +1,13 @@
+Operator:     motion_trail_ql
+Label:        Motion Trail qL
+Path:         oplib:/Sop/motion_trail_ql?Sop/motion_trail_ql
+Icon:         OBJ_path
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Aug 24 14:24:51 2010
+

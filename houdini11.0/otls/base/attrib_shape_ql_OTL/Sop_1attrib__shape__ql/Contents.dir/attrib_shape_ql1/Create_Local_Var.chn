@@ -1,0 +1,9 @@
+{
+    channel size {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "if(ch(\"../signature\")==0, 1, if(ch(\"../signature\")==1,3,4))" }
+    }
+  }

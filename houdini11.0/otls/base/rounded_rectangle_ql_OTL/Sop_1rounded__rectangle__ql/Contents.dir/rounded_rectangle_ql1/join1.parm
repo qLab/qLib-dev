@@ -1,0 +1,15 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+blend	[ 0	locks=0 ]	(	"off"	)
+tolerance	[ 0	locks=0 ]	(	0	)
+bias	[ 0	locks=0 ]	(	0.5	)
+knotmult	[ 0	locks=0 ]	(	"off"	)
+proximity	[ 0	locks=0 ]	(	"off"	)
+dir	[ 0	locks=0 ]	(	"ujoin"	)
+joinop	[ 0	locks=0 ]	(	"all"	)
+inc	[ 0	locks=0 ]	(	2	)
+loop	[ 0	locks=0 ]	(	"on"	)
+prim	[ 0	locks=0 ]	(	"off"	)
+onlyconnected	[ 0	locks=0 ]	(	"off"	)
+}

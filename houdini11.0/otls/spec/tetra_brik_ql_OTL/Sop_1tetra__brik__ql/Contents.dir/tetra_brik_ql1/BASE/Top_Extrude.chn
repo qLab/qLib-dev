@@ -1,0 +1,9 @@
+{
+    channel ltz {
+      lefttype = extend
+      righttype = extend
+      default = 0.6159
+      flags = 0
+      segment { length = 0 value = 0.61590027809143066 0.61590027809143066 expr = ch(\"../../depth\")/2 }
+    }
+  }

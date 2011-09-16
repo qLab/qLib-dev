@@ -1,0 +1,22 @@
+{
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 0.7
+      flags = 0
+      segment { length = 0 value = 0.69999998807907104 0.69999998807907104 expr = "bbox(\"../Lattice_Rest\", D_ZSIZE) * ch(\"aspect\")" }
+    }
+    channel aspect {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "detail(\"../Length\",\"length\",0)*ch(\"../seglen\") / bbox(\"../Lattice_Rest\", D_XSIZE)" }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 0.7
+      flags = 0
+      segment { length = 0 value = 0.69999998807907104 0.69999998807907104 expr = "bbox(\"../Lattice_Rest\", D_YSIZE) * ch(\"aspect\")" }
+    }
+  }

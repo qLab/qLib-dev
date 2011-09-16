@@ -1,0 +1,10 @@
+{
+version 0.8
+splitloc	[ 0	locks=0 ]	(	"861e3 "	)
+pathtype	[ 0	locks=0 ]	(	"quadcut"	)
+override	[ 0	locks=0 ]	(	"on"	)
+newt	[ 0	locks=0 ]	(	0.0346539021	)
+updatenorms	[ 0	locks=0 ]	(	"on"	)
+close	[ 0	locks=0 ]	(	"on"	)
+tolerance	[ 0	locks=0 ]	(	9.99999975e-006	)
+}

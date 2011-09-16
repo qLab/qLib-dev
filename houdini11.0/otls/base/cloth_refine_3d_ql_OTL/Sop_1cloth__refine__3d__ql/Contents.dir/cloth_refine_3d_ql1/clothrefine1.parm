@@ -1,0 +1,6 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+maxarea	[ 0	locks=0 ]	(	[ maxarea	0.00249999994 ] 	)
+minangle	[ 0	locks=0 ]	(	[ minangle	1 ] 	)
+}

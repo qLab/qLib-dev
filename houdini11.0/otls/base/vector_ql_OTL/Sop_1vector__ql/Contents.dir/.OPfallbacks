@@ -1,0 +1,20 @@
+Vop/negate C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/negate otls/OPlibVop.otl
+Vop/importattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/radtodeg C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/radtodeg otls/OPlibVop.otl
+Vop/normalize C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/normalize otls/OPlibVop.otl
+Vop/mix C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/cross C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/cross otls/OPlibVop.otl
+Vop/trig C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/trig otls/OPlibVop.otl
+Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/dot C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/dot otls/OPlibVop.otl
+Vop/length C:/PROGRA~1/Side Effects Software/Houdini 11.0.733/houdini/otls/OPlibVop.otl
+Vop/length otls/OPlibVop.otl

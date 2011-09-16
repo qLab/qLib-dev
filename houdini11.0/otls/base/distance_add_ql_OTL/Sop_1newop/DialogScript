@@ -1,0 +1,69 @@
+# Dialog script for newop automatically generated 08/30/10 11:37:16
+
+{
+    name	newop
+    script	newop
+    label	"New Operator"
+
+    help {
+	""
+    }
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"max_len_attrib"
+	label	"Max Length Attribute"
+	type	string
+	invisible
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"connect_group"
+	label	"Connect Others"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"edges"
+	label	"Create Edges"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"faces"
+	label	"Create Faces"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"max_len"
+	label	"Maximum Length"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"min_len"
+	label	"Minimum Length"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+}

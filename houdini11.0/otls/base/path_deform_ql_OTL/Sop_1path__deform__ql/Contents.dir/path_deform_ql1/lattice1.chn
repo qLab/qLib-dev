@@ -1,0 +1,23 @@
+{
+    channel divsx {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../Lattice_Rest/divsx\") }
+    }
+    channel divsy {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../Lattice_Rest/divsy\") }
+    }
+    channel divsz {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../Lattice_Rest/divsz\") }
+    }
+  }

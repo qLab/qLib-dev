@@ -1,0 +1,54 @@
+sop
+distribute_dev_A(
+    float   maxpscale = 0 ;
+    float   minpscale = 0 ;
+    float   pscale = 0 ;
+    string  file = "" ;
+    int     maxpoints = 1000 ;
+    int     citer = 0 ;
+    int     niter = 0 ;
+    int     grow = 0 ;
+)
+{
+    int i = 0 ;
+    int nn = 0 ;
+    vector off = 0 ;
+    vector oP ;
+    float opscale, sep, d, radius, oradius, maxradius ;
+    int handler ;
+
+    if ( grow ) {
+        radius = fit(pow(((float)citer / (float)niter),.2), 0, 1, minpscale, pscale ) ;
+        maxradius = fit(pow(((float)citer / (float)niter),.2), 0, 1, minpscale, maxpscale ) ;
+    } else {
+        radius = pscale ;
+    }
+
+    float sradius = radius + maxpscale ;
+
+    handler = pcopen( file, "P", P, sradius, maxpoints ) ;
+
+    while ( pciterate( handler ) ) {
+        pcimport( handler, "point.number", i) ;
+        import( "P", oP, 0, i ) ;
+
+        if ( ! import( "pscale", opscale, 0, i) ) {
+            opscale = pscale ;
+        }
+
+        if ( grow ) {
+           oradius = fit(pow(((float)citer / (float)niter),.2), 0, 1, minpscale, opscale ) ;
+        } else {
+            oradius = opscale ;
+        }
+
+        d = distance( P, oP ) ;
+        sep = radius + oradius - d ;
+
+        if ( sep > 0 ) {
+            nn++ ;
+            off += normalize( P - oP ) * sep ;
+        }
+    }
+    P += off / nn ;
+}

@@ -1,0 +1,106 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel signature {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../signature\") }
+    }
+    channel out_attrib_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Cd\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../out_attrib_name\") }
+    }
+    channel inner_value1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../inner_valuer\") }
+    }
+    channel inner_value2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../inner_valueg\") }
+    }
+    channel inner_value3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../inner_valueb\") }
+    }
+    channel inner_value4 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../inner_valuea\") }
+    }
+    channel outer_value1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../outer_valuer\") }
+    }
+    channel outer_value2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../outer_valueg\") }
+    }
+    channel outer_value3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../outer_valueb\") }
+    }
+    channel outer_value4 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../outer_valuea\") }
+    }
+    channel compose {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../compose\") }
+    }
+    channel in_attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Cd\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../in_attrib\") }
+    }
+    channel inverse {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert\") }
+    }
+    channel fdist {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../falloff\") }
+    }
+    channel exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../exp\") }
+    }
+  }

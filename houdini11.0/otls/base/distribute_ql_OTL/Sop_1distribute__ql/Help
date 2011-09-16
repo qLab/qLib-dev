@@ -1,0 +1,34 @@
+#icon: VOP/pcopen
+#context: sop
+#type: node
+
+= Distribute qL =
+
+*Version 0.1.0*
+
+"""Tries to distributes points in space so, that a pscale radius sphere around them doesn't intersect."""
+
+@Parameters
+    Radius:
+        The radius of the points if the 'pscale' attribute is not defined on them.
+    Iterations:
+        Number of iterations.
+        
+        TIP:
+            As good the start condition is as few iterations are needed to achieve a good state.
+    Grow:
+        Gradually increase the radius of points. This may help points to get to places which otherwise would
+        be unreachable for them.
+    Ray:
+        Project points back to the geometry connected to the second input.
+    Max Neighbours:
+        The maximum numbers of points that acount for the new position of a point in an iteration.
+
+@Limitations
+    Grouping doesn't work.
+
+    Ray frequency not implemented.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release. While it's really not ready, it's usable.

@@ -1,0 +1,38 @@
+#icon: VOP/atten
+#context: sop
+#type: node
+
+= Rounded Rectangle qL =
+
+*Version 0.1.2*
+
+"""Simple rectangle primitive with rounded corners."""
+
+@Parameters
+    Type:
+        Geometry type.
+    Orientation:
+        Geometry plane.
+    Size:
+        Size of the generated rectangle.
+    Center:
+        Position of the generated rectangle.
+    Corner Radius:
+        Radius of the rounded corners.
+    Order:
+        Order of the spline types.
+    Corner Divisions:
+        Divisions of the corners.
+    Close:
+        Generate closed curve.
+
+@Release_Notes
+    Version 0.1.2:
+        Now generates regular shaped primitive when type is NURBS and "corner divisions" are low. Also corrected
+        the help card formatting.
+
+    Version 0.1.1:
+        Squashed stupid display flag bug.
+
+    Version 0.1.0:
+        Initial release.

@@ -1,0 +1,33 @@
+#icon: SOP/tribez
+#context: sop
+#type: node
+
+= Cloth Refine 3d qL =
+
+*Version 0.1.0*
+
+"""Triangulates surfaces."""
+
+@Parameters
+    Maximum Area:
+        The maximum desired area of a triangle.
+    Minimum Angle:
+        The smallest acceptable angle in a triangle.
+    Edge Refine Length:
+        The segment length edges are refined to.
+
+        NOTE: 
+        Edges are refined in a separate step before the surface triangulation. While the default value will
+        work for most scenarios, you can adjust it if you experience that some points are not connected on
+        the original edges.
+
+@Limitations
+    It's a hack. Don't expect much. It's good for tesselate large polygons, but gives poor results if applied
+    on already tesselated geometry. Since it uses Cloth Refine inside, all the problems of that op is inherited.
+
+    While it saves normals and uvs, rest positions and material assignments are destroyed. Apply them after this
+    node.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

@@ -1,0 +1,20 @@
+{
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../Calculate_Lookat/ROTATION_AROUND_UP_OUT/up_rotationx\") }
+    }
+    channel ry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../Calculate_Lookat/ROTATION_AROUND_UP_OUT/up_rotationy\") }
+    }
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../Calculate_Lookat/ROTATION_AROUND_UP_OUT/up_rotationz\") }
+    }
+  }

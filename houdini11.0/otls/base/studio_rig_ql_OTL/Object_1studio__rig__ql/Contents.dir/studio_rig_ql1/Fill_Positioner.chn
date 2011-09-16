@@ -1,0 +1,69 @@
+{
+    channel xOrd {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../xOrd3\") }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../t3x\") }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../t3y\") }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = ch(\"../t3z\") }
+    }
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      default = -15
+      flags = 0
+      segment { length = 0 value = -15 -15 expr = ch(\"../r3x\") }
+    }
+    channel ry {
+      lefttype = extend
+      righttype = extend
+      default = 40
+      flags = 0
+      segment { length = 0 value = 40 40 expr = ch(\"../r3y\") }
+    }
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../r3z\") }
+    }
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../s3x\") }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../s3y\") }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../s3z\") }
+    }
+  }

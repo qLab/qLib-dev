@@ -1,0 +1,351 @@
+# Dialog script for cinema_rig_ql automatically generated 11/08/10 13:41:18
+
+{
+    name	cinema_rig_ql
+    script	cinema_cam_ql
+    label	"Cinema Rig qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Position Parent"
+    inputlabel	2	"Look At Parent"
+    inputlabel	3	"Crane Parent"
+    inputlabel	4	"Rig Parent"
+
+    parm {
+	name	"lat"
+	label	"Use Look At"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"crane"
+	label	"Use Crane"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"pos_t"
+	label	"Position"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"lat_t"
+	label	"Look At"
+	type	vector
+	size	3
+	default	{ "0" "0" "-2" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"pan"
+	label	"Pan"
+	type	float
+	default	{ "0" }
+	range	{ -90 90 }
+	export	all
+    }
+    parm {
+	name	"tilt"
+	label	"Tilt"
+	type	float
+	default	{ "0" }
+	range	{ -90 90 }
+	export	all
+    }
+    parm {
+	name	"croll"
+	label	"Roll"
+	type	float
+	default	{ "0" }
+	range	{ -90 90 }
+	export	all
+    }
+    parm {
+	name	"arm_length"
+	label	"Arm Length"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	all
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"arm_turn"
+	label	"Arm Turn"
+	type	float
+	default	{ "180" }
+	range	{ -180 180 }
+	export	all
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"arm_elevation"
+	label	"Arm Elevation"
+	type	float
+	default	{ "0" }
+	range	{ -180 180 }
+	export	all
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"crane_t"
+	label	"Crane Head"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"up_vector"
+	label	"Up Vector"
+	type	vector
+	size	3
+	default	{ "0" "1" "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"pos_guide"
+	label	"Position Guide"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"lat_guide"
+	label	"Look At Guide"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"crane_guide"
+	label	"Crane Guide"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    group {
+	name	"folder0_3"
+	label	"Transform"
+	invisibletab
+
+	parm {
+	    name	"keeppos"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"pre_xform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"xOrd"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rOrd"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"r"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"s"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"p"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"scale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lookatpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lookup"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathobjpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"roll"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pos"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"uparmtype"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathorient"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"up"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"bank"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0_3_1"
+	label	"Subnet"
+	invisibletab
+
+	parm {
+	    name	"label1"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label2"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label3"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label4"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"tdisplay"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"display"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"outputobj"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"visibleobjects"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"picking"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pickscript"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"caching"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"use_dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+    }
+
+    parm {
+	name	"pan_guide"
+	label	"Pan Guide"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"tilt_guide"
+	label	"Tilt Guide"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"roll_guide"
+	label	"Roll Guide"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+}

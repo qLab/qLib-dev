@@ -1,0 +1,9 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	"poly"	)
+origin	[ 8	locks=0 ]	(	[ originx	0 ] 	[ originy	0 ] 	[ originz	0 ] 	)
+dir	[ 8	locks=0 ]	(	[ dirx	0 ] 	[ diry	0 ] 	[ dirz	1 ] 	)
+dist	[ 0	locks=0 ]	(	1	)
+points	[ 0	locks=0 ]	(	2	)
+order	[ 0	locks=0 ]	(	4	)
+}

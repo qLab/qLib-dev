@@ -1,0 +1,13 @@
+Operator:     arc_blend_ql
+Label:        Arc Blend qL
+Path:         oplib:/Sop/arc_blend_ql?Sop/arc_blend_ql
+Icon:         SOP_visibility
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE_OUT 
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Mar 12 15:25:20 2011
+

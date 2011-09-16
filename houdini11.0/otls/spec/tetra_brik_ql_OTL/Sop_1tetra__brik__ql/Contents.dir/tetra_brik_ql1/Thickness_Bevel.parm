@@ -1,0 +1,11 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	"p8-10-15 p8-9"	)
+beveltype	[ 0	locks=0 ]	(	"corner"	)
+entitytype	[ 0	locks=0 ]	(	"points"	)
+setinset	[ 0	locks=0 ]	(	1	1	)
+relinset	[ 0	locks=0 ]	(	0.100000001	)
+absinset	[ 8	locks=0 ]	(	[ absinset	0.00999999978 ] 	)
+repetitions	[ 0	locks=0 ]	(	1	)
+updatenmls	[ 0	locks=0 ]	(	"on"	)
+}

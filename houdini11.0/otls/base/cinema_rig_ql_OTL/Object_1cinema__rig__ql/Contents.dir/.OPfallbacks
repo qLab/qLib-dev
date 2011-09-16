@@ -1,0 +1,12 @@
+Vop/extractxform C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/extractxform otls/OPlibVop.otl
+Vop/align C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/align otls/OPlibVop.otl
+Vop/degtorad C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/degtorad otls/OPlibVop.otl
+Vop/lookat C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl
+Vop/m3tom4 C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/m3tom4 otls/OPlibVop.otl
+Vop/rotate C:/PROGRA~1/SIDEEF~1/HOUDIN~1.547/houdini/otls/OPlibVop.otl
+Vop/rotate otls/OPlibVop.otl

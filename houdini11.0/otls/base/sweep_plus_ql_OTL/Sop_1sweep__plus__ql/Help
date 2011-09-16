@@ -1,0 +1,25 @@
+#icon: SOP/Sweep
+#context: sop
+#type: node
+
+= Sweep Plus qL =
+
+*Version 0.1.0*
+
+"""Creates a surface by sweeping cross-sections along a backbone curve with advanced ramp controls on scale and twist parameters"""
+
+@Parameters
+    Standard sweep SOP parameters plus ramp controls:
+        Profile Scale:
+            Modulates the profile along the backbone, default is 1
+        Profile Twist:
+            Modulates the twist parameter along the backbone, default is 0 (no twist)
+        Total Twist Angle:
+            Number of twists along the backbone, 1 twist = 360 degrees
+            TIP
+            Profile twist must be greater than 0 for total twist angle to have any effect
+
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

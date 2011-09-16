@@ -1,0 +1,21 @@
+comment ""
+position 12.3483 -5.09664
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+inputs
+{
+0 	and1 0 1
+1 	vecsetcompon1 0 1
+2 	deleteX 0 1
+}
+stat
+{
+  create 1259324829
+  modify 1282662934
+  author mt@andromeda
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

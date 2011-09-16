@@ -1,0 +1,57 @@
+#icon: SOP/box
+#context: sop
+#type: node
+
+= Tetra Brik qL =
+
+*Version 0.2.0*
+
+"""Procedural tetra brik model."""
+
+@Parameters
+    Width:
+        Width of the model.
+    Height:
+        Height of the model.
+    Depth:
+        Depth of the model.
+    Cementation Length:
+        Length of the cementation at the top and bottom.
+    Cementation Rotate:
+        Angle of the cementation.
+    Thickness:
+        Thickness of the cementation.
+    Edge Width:
+        Width of the bevel at the corners.
+    Roundness:
+        Roundness of the top fold.
+    Bottom Push:
+        Amount of the bottom bulge.
+    Front Dent:
+        Dent amount on the front and back of the box.
+    Side Dent:
+        Dent amount on the upper side of the box.
+    Side Bump:
+        Bump amount on the lower side of the box.
+    Apply Material at SOP:
+        Apply material at SOP level. Turn this off if you want to apply material at the OBJ level.
+    Texture:
+        Texture map name.
+    UV Side Scale:
+        A horizontal scale applied to the side UVs.
+
+@Limitations
+    Shader is just a simple constant shader.
+
+    UVs are not procedural. Because of this the DA is bigger than needed, and less flexible ecpecially if you want to
+    tweak the inside. Be aware.
+
+@Release_Notes
+    Version 0.2.0:
+        Shader enhanced. Added some deformations and corrections to the geometry. UV fused.
+
+    Version 0.1.1:
+        Fixed a flag bug which prevented UV side scale to take effect.
+
+    Version 0.1.0:
+        Initial release.

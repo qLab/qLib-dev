@@ -1,0 +1,20 @@
+# Varmap qL
+
+# Basic setup
+node = hou.pwd()
+geo = node.geometry()
+
+map = node.parm("map").eval()
+
+# Create varmap if not exists
+vma = geo.findGlobalAttrib("varmap")
+if vma is None:
+    vma = geo.addAttrib(hou.attribType.Global, "varmap", "", False, False)
+
+# Add code to modify the contents of geo.
+for v in map.split():
+    if ':' in v:
+        aname, vname = v.split(':')
+    else:
+        aname, vname = v, v.upper()
+    geo.setGlobalAttribValue(vma, "{0} -> {1}".format(aname, vname))

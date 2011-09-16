@@ -1,0 +1,13 @@
+Operator:     turbulate_motion_ql
+Label:        Turbulate Motion qL
+Path:         oplib:/Object/turbulate_motion_ql?Object/turbulate_motion_ql
+Icon:         VOP_turbnoise
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Oct  1 18:20:11 2010
+

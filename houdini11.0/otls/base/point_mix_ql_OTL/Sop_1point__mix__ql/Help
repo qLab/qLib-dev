@@ -1,0 +1,23 @@
+#icon: VOP/mix
+#context: sop
+#type: node
+
+= Point Mix qL =
+
+*Version 0.1.0*
+
+"""Blends point positions between two inputs by an attribute."""
+
+@Parameters
+    Group:
+        The group of points the operator affects.
+    Envelope:
+        A global multiplier of the effect.
+    Control Attrib:
+        Name of the attribute which controls the mix.
+    Attrib On Second Input:
+        Check this toggle if the control attribute is on the second input.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

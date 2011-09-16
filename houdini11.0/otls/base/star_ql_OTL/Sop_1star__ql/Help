@@ -1,0 +1,30 @@
+#icon: VOP/qmultiply
+#context: sop
+#type: node
+
+= Star qL =
+
+*Version 0.1.1*
+
+"""Generates a star shaped curve."""
+
+@Parameters
+    Orientation
+        Geometry plane.
+    Radius
+        Inner and outer radius.
+    Center
+        Center of the shape.
+    Gaps
+        Inner and outer gaps.
+    Gap segments
+        Segments of the inner and outer gaps.
+    Closed
+        Generate closed curve.
+
+@Release_Notes
+    Version 0.1.1
+        Added an icon and the tool placed in the qLib bin.
+
+    Version 0.1.0
+        Initial release.

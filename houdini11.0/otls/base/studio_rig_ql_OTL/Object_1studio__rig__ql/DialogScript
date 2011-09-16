@@ -1,0 +1,968 @@
+# Dialog script for studio_rig_ql automatically generated 12/23/10 16:56:23
+
+{
+    name	studio_rig_ql
+    script	studio_rig_ql
+    label	"Studio Rig qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder3"
+	label	"Settings"
+
+	parm {
+	    name	"light_enable2"
+	    label	"Key Enabled"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_enable"
+	    label	"Fill Enabled"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_enable3"
+	    label	"Back Enabled"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_enable4"
+	    label	"Bounce Enabled"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sepparm5"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"key_type"
+	    label	"Key Light Type"
+	    type	ordinal
+	    default	{ "point" }
+	    menu	{
+		"point"	"Point"
+		"line"	"Line"
+		"grid"	"Grid"
+		"disk"	"Disk"
+		"sphere"	"Sphere"
+		"geo"	"Geometry"
+		"distant"	"Distant"
+		"sun"	"Sun"
+		"env"	"Environment *"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ogl_enablelight2"
+	    label	"Viewport"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribdiff2"
+	    label	"Diffuse"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable2 == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribspec2"
+	    label	"Specular"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable2 == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribprimary2"
+	    label	"Geometry"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    invisible
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"xOrd2"
+	    label	"Transform Order"
+	    type	ordinal
+	    default	{ "str" }
+	    menu	{
+		"srt"	"Scale Rot Trans"
+		"str"	"Scale Trans Rot"
+		"rst"	"Rot Scale Trans"
+		"rts"	"Rot Trans Scale"
+		"tsr"	"Trans Scale Rot"
+		"trs"	"Trans Rot Scale"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sepparm"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"fill_type"
+	    label	"Fill Light Type"
+	    type	ordinal
+	    default	{ "distant" }
+	    disablewhen	"{ light_enable == 0 }"
+	    menu	{
+		"point"	"Point"
+		"line"	"Line"
+		"grid"	"Grid"
+		"disk"	"Disk"
+		"sphere"	"Sphere"
+		"geo"	"Geometry"
+		"distant"	"Distant"
+		"sun"	"Sun"
+		"env"	"Environment *"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ogl_enablelight"
+	    label	"Viewport"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribdiff"
+	    label	"Diffuse"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribspec"
+	    label	"Specular"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribprimary"
+	    label	"Geometry"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xOrd3"
+	    label	"Transform Order"
+	    type	ordinal
+	    default	{ "str" }
+	    menu	{
+		"srt"	"Scale Rot Trans"
+		"str"	"Scale Trans Rot"
+		"rst"	"Rot Scale Trans"
+		"rts"	"Rot Trans Scale"
+		"tsr"	"Trans Scale Rot"
+		"trs"	"Trans Rot Scale"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sepparm6"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"back_light_type"
+	    label	"Back Light Type"
+	    type	ordinal
+	    default	{ "distant" }
+	    disablewhen	"{ light_enable == 0 }"
+	    menu	{
+		"point"	"Point"
+		"line"	"Line"
+		"grid"	"Grid"
+		"disk"	"Disk"
+		"sphere"	"Sphere"
+		"geo"	"Geometry"
+		"distant"	"Distant"
+		"sun"	"Sun"
+		"env"	"Environment *"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ogl_enablelight3"
+	    label	"Viewport"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribdiff3"
+	    label	"Diffuse"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribspec3"
+	    label	"Specular"
+	    type	toggle
+	    joinnext
+	    default	{ "off" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribprimary3"
+	    label	"Geometry"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ back_light_type == point } { back_light_type == distant }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xOrd4"
+	    label	"Transform Order"
+	    type	ordinal
+	    default	{ "str" }
+	    menu	{
+		"srt"	"Scale Rot Trans"
+		"str"	"Scale Trans Rot"
+		"rst"	"Rot Scale Trans"
+		"rts"	"Rot Trans Scale"
+		"tsr"	"Trans Scale Rot"
+		"trs"	"Trans Rot Scale"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sepparm8"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"bounce_light_type"
+	    label	"Bounce Light Type"
+	    type	ordinal
+	    default	{ "distant" }
+	    disablewhen	"{ light_enable == 0 }"
+	    menu	{
+		"point"	"Point"
+		"line"	"Line"
+		"grid"	"Grid"
+		"disk"	"Disk"
+		"sphere"	"Sphere"
+		"geo"	"Geometry"
+		"distant"	"Distant"
+		"sun"	"Sun"
+		"env"	"Environment *"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ogl_enablelight4"
+	    label	"Viewport"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribdiff4"
+	    label	"Diffuse"
+	    type	toggle
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ light_enable4 == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribspec4"
+	    label	"Specular"
+	    type	toggle
+	    joinnext
+	    default	{ "off" }
+	    disablewhen	"{ light_enable4 == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_contribprimary4"
+	    label	"Geometry"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xOrd5"
+	    label	"Transform Order"
+	    type	ordinal
+	    default	{ "str" }
+	    menu	{
+		"srt"	"Scale Rot Trans"
+		"str"	"Scale Trans Rot"
+		"rst"	"Rot Scale Trans"
+		"rts"	"Rot Trans Scale"
+		"tsr"	"Trans Scale Rot"
+		"trs"	"Trans Rot Scale"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder3_1"
+	label	"Light"
+
+	parm {
+	    name	"global"
+	    label	"Global Intensity"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"intensities"
+	    label	"Intensities"
+	    type	vector4
+	    size	4
+	    default	{ "0.9" "0.25" "0.3" "0.15" }
+	    help	"Key/Fill/Back/Bounce"
+	    range	{ -1 1 }
+	    export	none
+	}
+	parm {
+	    name	"key_color"
+	    label	"Key Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"fill_color"
+	    label	"Fill Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_color"
+	    label	"Back Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"light_color2"
+	    label	"Bounce Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ light_enable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sepparm2"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"t2"
+	    label	"Key Translate"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "20" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"r2"
+	    label	"Key Rotate"
+	    type	vector
+	    size	3
+	    default	{ "-30" "-30" "0" }
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"sepparm4"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"t3"
+	    label	"Fill Translate"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "20" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"r3"
+	    label	"Fill Rotate"
+	    type	vector
+	    size	3
+	    default	{ "-15" "40" "0" }
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"sepparm7"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"t4"
+	    label	"Back Translate"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "20" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"r4"
+	    label	"Back Rotate"
+	    type	vector
+	    size	3
+	    default	{ "7" "145" "0" }
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"sepparm9"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"t5"
+	    label	"Bounce Translate"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "20" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"r5"
+	    label	"Bounce Rotate"
+	    type	vector
+	    size	3
+	    default	{ "90" "0" "0" }
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"sepparm3"
+	    label	"Separator"
+	    type	separator
+	    invisible
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "export_disable" "1" }
+	}
+    }
+
+    group {
+	name	"folder3_2"
+	label	"Shadows"
+
+	parm {
+	    name	"shadow_type"
+	    label	"Key Shadow Type"
+	    type	ordinal
+	    joinnext
+	    default	{ "raytrace" }
+	    menu	{
+		"off"	"No Shadows"
+		"raytrace"	"Ray-Traced Shadows"
+		"depthmap"	"Depth Map Shadows"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"shadow_intensity"
+	    label	"Intensity"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ shadow_type == off }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"s2"
+	    label	"Key Scale"
+	    type	vector
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"shadow_type2"
+	    label	"Fill Shadow Type"
+	    type	ordinal
+	    joinnext
+	    default	{ "off" }
+	    menu	{
+		"off"	"No Shadows"
+		"raytrace"	"Ray-Traced Shadows"
+		"depthmap"	"Depth Map Shadows"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"shadow_intensity2"
+	    label	"Intensity"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ shadow_type2 == off }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"s3"
+	    label	"Fill Scale"
+	    type	vector
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"shadow_type3"
+	    label	"Back Shadow Type"
+	    type	ordinal
+	    joinnext
+	    default	{ "off" }
+	    menu	{
+		"off"	"No Shadows"
+		"raytrace"	"Ray-Traced Shadows"
+		"depthmap"	"Depth Map Shadows"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"shadow_intensity3"
+	    label	"Intensity"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ shadow_type3 == off }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"s4"
+	    label	"Back Scale"
+	    type	vector
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	parm {
+	    name	"shadow_type4"
+	    label	"Bounce Shadow Type"
+	    type	ordinal
+	    joinnext
+	    default	{ "off" }
+	    menu	{
+		"off"	"No Shadows"
+		"raytrace"	"Ray-Traced Shadows"
+		"depthmap"	"Depth Map Shadows"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"shadow_intensity4"
+	    label	"Intensity"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ shadow_type4 == off }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"s5"
+	    label	"Bounce Scale"
+	    type	vector
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "1110000000000000" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Details"
+
+	    group {
+		name	"folder5"
+		label	"Key"
+
+	    }
+
+	    group {
+		name	"folder1"
+		label	"Fill"
+
+	    }
+
+	    group {
+		name	"folder2"
+		label	"Back"
+
+	    }
+
+	    group {
+		name	"folder4"
+		label	"Bounce"
+
+	    }
+
+	}
+
+    }
+
+    group {
+	name	"folder3_3"
+	label	"Subnet"
+	invisibletab
+
+	parm {
+	    name	"label1"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label2"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label3"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label4"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"tdisplay"
+	    baseparm
+	    joinnext
+	    export	all
+	}
+	parm {
+	    name	"display"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"outputobj"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"visibleobjects"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"picking"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pickscript"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"caching"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"use_dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder3_5"
+	label	"Transform"
+
+	parm {
+	    name	"keeppos"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"pre_xform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"xOrd"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rOrd"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"r"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"s"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"p"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"scale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lookatpath"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"lookup"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"pathobjpath"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"roll"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"pos"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"uparmtype"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"pathorient"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"up"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"bank"
+	    baseparm
+	    invisible
+	    export	none
+	}
+    }
+
+}

@@ -1,0 +1,8 @@
+{
+    channel switcher {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../switcher3/intdef') }
+    }
+  }

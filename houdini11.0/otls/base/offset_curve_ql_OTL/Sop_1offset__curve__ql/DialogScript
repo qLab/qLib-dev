@@ -1,0 +1,44 @@
+# Dialog script for offset_curve_ql automatically generated 10/11/10 16:35:59
+
+{
+    name	offset_curve_ql
+    script	offset_curve_ql
+    label	"Offset Curve qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input curve for offset"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"thickxlate"
+	label	"Offset"
+	type	float
+	default	{ "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"input2"
+	label	"Reverse"
+	type	toggle
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"input"
+	label	"Keep Original"
+	type	toggle
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

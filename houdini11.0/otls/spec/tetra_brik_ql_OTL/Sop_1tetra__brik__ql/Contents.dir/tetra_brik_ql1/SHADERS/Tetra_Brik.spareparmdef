@@ -1,0 +1,176 @@
+    group {
+	name	"stdswitcher3"
+	label	"OGL"
+
+	parm {
+	    name	"ogl_amb"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_diff"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_spec"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_emit"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_rough"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_alpha"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_light"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ogl_cutout"
+	    baseparm
+	    export	none
+	}
+	multiparm {
+	    name	"ogl_numtex"
+	    label	"OGL Texture Layers"
+	    baseparm
+	    default	0
+	    parmtag	{ "multistartoffset" "1" }
+
+	    parm {
+		name	"ogl_tex#"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"ogl_tex_min_filter#"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"ogl_tex_mag_filter#"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"ogl_clamping_mode#"
+		baseparm
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"stdswitcher3_1"
+	label	"Compiler"
+
+	parm {
+	    name	"vop_compiler"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vop_forcecompile"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"map"
+	label	"Texture Map"
+	type	image
+	default	{ "Mandril.pic" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Kd"
+	label	"Diffuse Intensity"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rough"
+	label	"Diffuse Roughness"
+	type	float
+	default	{ "0.1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"bias"
+	label	"Bias"
+	type	float
+	default	{ "0.005" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"angle"
+	label	"Cone Angle To Sample"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"samples"
+	label	"Area Samples"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"scope"
+	label	"Object Scope"
+	type	oplist
+	default	{ "*" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "opexpand" "1" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "opfullpath" "1" }
+	parmtag	{ "opfilter" "!!OBJ/GEOMETRY!!" }
+	parmtag	{ "oprelative" "/" }
+    }
+    parm {
+	name	"refl_amount"
+	label	"Reflection Amount"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Ka"
+	label	"Ambient Intensity"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

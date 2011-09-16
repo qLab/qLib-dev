@@ -1,0 +1,27 @@
+#icon: SOP/softxform
+#context: sop
+#type: node
+
+= Weighted Transform qL =
+
+*Version 0.1.0*
+
+"""Transforms points weighted by an attribute on the geometry."""
+
+@Parameters
+    Point Group:
+        Points that get affected.
+    Weight Attribute:
+        Name of the point attribute that masks the transforms.
+    Envelope:
+        Global envelope.
+    Transform Parameters:
+        Usual stuff.        
+
+@Limitations
+    Currently the operator does a simple linear interpolation between the original and the transformed points. This is fast
+    but the results are poor when heavy rotations needed.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

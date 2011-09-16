@@ -1,0 +1,8 @@
+Vop/makexform C:/PROGRA~1/Side Effects Software/Houdini 11.0.616/houdini/otls/OPlibVop.otl
+Vop/makexform otls/OPlibVop.otl
+Vop/mix C:/PROGRA~1/Side Effects Software/Houdini 11.0.616/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/importattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.616/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/invert C:/PROGRA~1/Side Effects Software/Houdini 11.0.616/houdini/otls/OPlibVop.otl
+Vop/invert otls/OPlibVop.otl

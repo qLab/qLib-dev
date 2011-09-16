@@ -1,0 +1,26 @@
+Operator:     orient_save_ql
+Label:        Orient Save qL
+Path:         oplib:/Sop/orient_save_ql?Sop/orient_save_ql
+Icon:         SOP_attribpromote
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Sep 24 17:39:10 2010
+
+Operator:     orient_restore_ql
+Label:        Orient Restore qL
+Path:         oplib:/Sop/orient_restore_ql?Sop/orient_restore_ql
+Icon:         SOP_attribpromote
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Sep 24 17:40:46 2010
+

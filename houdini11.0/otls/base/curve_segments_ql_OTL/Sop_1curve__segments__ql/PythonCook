@@ -1,0 +1,10 @@
+# This code is called when instances of this SOP cook.
+geo = hou.pwd().geometry()
+
+# Delete old prims
+geo.deletePrims(geo.prims(), True)
+points = geo.points()
+for i in xrange(len(points)-1):
+    ply = geo.createPolygon()
+    ply.addVertex(points[i])
+    ply.addVertex(points[i+1])

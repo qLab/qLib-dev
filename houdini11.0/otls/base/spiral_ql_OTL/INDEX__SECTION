@@ -1,0 +1,13 @@
+Operator:     spiral_ql
+Label:        Spiral qL
+Path:         oplib:/Sop/spiral_ql?Sop/spiral_ql
+Icon:         SOP_spring
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec  2 14:42:44 2010
+

@@ -1,0 +1,239 @@
+# Dialog script for turbulate_ql automatically generated 09/24/10 19:53:00
+
+{
+    name	turbulate_ql
+    script	turbulate_ql
+    label	"Turbulate Ql"
+
+    help {
+	""
+    }
+    bindhandle pivot1 xform "Noise Transformer" px ""
+    bindhandle pivot2 xform "Noise Transformer" py ""
+    bindhandle pivot3 xform "Noise Transformer" pz ""
+    bindhandle rot1 xform "Noise Transformer" rx ""
+    bindhandle rot2 xform "Noise Transformer" ry ""
+    bindhandle rot3 xform "Noise Transformer" rz ""
+    bindhandle scale1 xform "Noise Transformer" sx ""
+    bindhandle scale2 xform "Noise Transformer" sy ""
+    bindhandle scale3 xform "Noise Transformer" sz ""
+    bindhandle trs xform "Noise Transformer" trs_order ""
+    bindhandle trans1 xform "Noise Transformer" tx ""
+    bindhandle trans2 xform "Noise Transformer" ty ""
+    bindhandle trans3 xform "Noise Transformer" tz ""
+    bindhandle xyz xform "Noise Transformer" xyz_order ""
+    bindhandle amount ladder "Ladder" parm0 ""
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l Noise_Deformer_VOP_SOP vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"along_normal"
+	label	"Along Normal"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"strickt"
+	label	"Stricktly Along Normal"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ along_normal != 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"absolute"
+	label	"Absolute Y"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ along_normal == 0 } { strickt == 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"noise_type"
+	label	"Noise Type"
+	type	string
+	default	{ "onoise" }
+	menu	{
+	    "pnoise"	"Perlin Noise"
+	    "onoise"	"Original Perlin Noise"
+	    "snoise"	"Sparse Convolution Noise"
+	    "anoise"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"axisamount"
+	label	"Axis Amount"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rough"
+	label	"Roughness"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"atten"
+	label	"Attenuation"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"turb"
+	label	"Turbulence"
+	type	integer
+	default	{ "5" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"trs"
+	label	"Transform Order"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "srt"	"Scale Rotate Translate"
+	    "str"	"Scale Translate Rotate"
+	    "rst"	"Rotate Scale Translate"
+	    "rts"	"Rotate Translate Scale"
+	    "tsr"	"Translate Scale Rotate"
+	    "trs"	"Translate Rotate Scale"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"xyz"
+	label	"Rotation Order"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "xyz"	"Rx Ry Rz"
+	    "xzy"	"Rx Rz Ry"
+	    "yxz"	"Ry Rx Rz"
+	    "yzx"	"Ry Rz Rx"
+	    "zxy"	"Rz Rx Ry"
+	    "zyx"	"Rz Ry Rx"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"trans"
+	label	"Translate"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rot"
+	label	"Rotate"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"pivot"
+	label	"Pivot"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"clamp"
+	label	"Clamp"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"clamp_min"
+	label	"Clamp Min"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ clamp == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"calmp_max"
+	label	"Clamp_Max"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	disablewhen	"{ clamp == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

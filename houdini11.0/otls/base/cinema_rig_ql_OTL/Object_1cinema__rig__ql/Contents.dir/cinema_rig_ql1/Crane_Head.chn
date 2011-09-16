@@ -1,0 +1,29 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      default = 0.374872
+      flags = 0
+      segment { length = 0 value = 0.37487220764160156 0.37487220764160156 expr = ch(\"../crane_tx\") }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../crane_ty\") }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = 0.243151
+      flags = 0
+      segment { length = 0 value = 0.24315071105957031 0.24315071105957031 expr = ch(\"../crane_tz\") }
+    }
+    channel display {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"../crane\") && ch(\"../crane_guide\")" }
+    }
+  }
