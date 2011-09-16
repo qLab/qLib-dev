@@ -1,1 +1,8 @@
 tarballs
+
+# final .otl files
+*.otl
+
+# content backups within extracted otl file structures
+*.bkp*
+
