@@ -1,0 +1,10 @@
+{
+    channel blend {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 52.083332061767578
+      segment { length = 0 value = 1 1 expr = ch(\"../restore_blend\") }
+    }
+  }

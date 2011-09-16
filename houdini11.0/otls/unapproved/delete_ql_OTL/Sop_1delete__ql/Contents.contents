@@ -1,0 +1,17 @@
+node_type
+delete_ql1.init
+delete_ql1.def
+delete_ql1.inp
+delete_ql1/delete_groups.init
+delete_ql1/delete_groups.def
+delete_ql1/delete_groups.chn
+delete_ql1/delete_groups.parm
+delete_ql1/delete_attributes.init
+delete_ql1/delete_attributes.def
+delete_ql1/delete_attributes.chn
+delete_ql1/delete_attributes.parm
+delete_ql1/OUT.init
+delete_ql1/OUT.def
+delete_ql1/OUT.parm
+delete_ql1.order
+delete_ql1.net

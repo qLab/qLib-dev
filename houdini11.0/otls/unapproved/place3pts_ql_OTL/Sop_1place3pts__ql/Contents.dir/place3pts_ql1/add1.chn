@@ -1,0 +1,56 @@
+{
+    channel pt0x {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_up_pos1\") }
+    }
+    channel pt0y {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_up_pos2\") }
+    }
+    channel pt0z {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_up_pos3\") }
+    }
+    channel pt1x {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_base_pos1\") }
+    }
+    channel pt1y {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_base_pos2\") }
+    }
+    channel pt1z {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_base_pos3\") }
+    }
+    channel pt2x {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_aim_pos1\") }
+    }
+    channel pt2y {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_aim_pos2\") }
+    }
+    channel pt2z {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../place_by_3pts/rest_aim_pos3\") }
+    }
+  }

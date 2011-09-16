@@ -1,0 +1,26 @@
+{
+    channel file {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = 52.083332061767578
+      segment { length = 0 expr = chs(\"../file\") }
+    }
+    channel nml {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      start = 52.083332061767578
+      segment { length = 0 value = 2 2 expr = ch(\"../nml\") }
+    }
+    channel quadric {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      start = 52.083332061767578
+      segment { length = 0 value = 2 2 expr = ch(\"../quadric\") }
+    }
+  }

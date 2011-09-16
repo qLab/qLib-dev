@@ -1,0 +1,8 @@
+{
+version 0.8
+primary	[ 0	locks=0 ]	(	1	0.699999988	1	)
+secondary	[ 0	locks=0 ]	(	0.300000012	0.300000012	1	)
+bias	[ 0	locks=0 ]	(	[ bias	1 ] 	)
+adjust	[ 0	locks=0 ]	(	1	)
+space	[ 0	locks=0 ]	(	0	)
+}

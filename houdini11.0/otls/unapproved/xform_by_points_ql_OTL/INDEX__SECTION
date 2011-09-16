@@ -1,0 +1,13 @@
+Operator:     xform_by_points_ql
+Label:        Xform by Points qL
+Path:         oplib:/Sop/xform_by_points_ql?Sop/xform_by_points_ql
+Icon:         SOP_subnet
+Table:        Sop
+License:      
+Extra:        
+Inputs:       3 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Aug  5 03:13:32 2011
+
