@@ -1,5 +1,7 @@
-4
+6
 attr_vis_vopsop
 add_particles_to_points
-points_as_particles
+display_mode
 OUT
+keep_particles_only
+display

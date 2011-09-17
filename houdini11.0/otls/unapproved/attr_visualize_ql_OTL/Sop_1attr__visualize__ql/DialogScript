@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 08/09/11 22:57:43
+# Dialog script for attr_visualize_ql automatically generated 09/17/11 22:32:06
 
 {
     name	attr_visualize_ql
@@ -78,12 +78,16 @@
 	    parmtag	{ "rampbasisdefault" "linear" }
 	}
 	parm {
-	    name	"show_pts"
-	    label	"Show Points"
-	    type	toggle
+	    name	"display_mode"
+	    label	"Display Mode"
+	    type	integer
 	    default	{ "0" }
-	    help	"Visualize points (by adding a particle system)."
-	    range	{ 0! 10 }
+	    menu	{
+		"0"	"Default"
+		"1"	"Geometry and Points"
+		"2"	"Points Only"
+	    }
+	    range	{ 0! 2! }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
