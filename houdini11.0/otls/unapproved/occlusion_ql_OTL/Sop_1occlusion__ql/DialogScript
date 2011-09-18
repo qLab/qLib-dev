@@ -1,4 +1,4 @@
-# Dialog script for occlusion_ql automatically generated 09/18/11 21:20:45
+# Dialog script for occlusion_ql automatically generated 09/18/11 21:32:36
 
 {
     name	occlusion_ql
@@ -46,7 +46,7 @@
 	    name	"max_distance"
 	    label	"Max Distance"
 	    type	float
-	    default	{ "0.25" }
+	    default	{ "1.5" }
 	    range	{ 0.001 8 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -87,7 +87,7 @@
 		name	"num_samples"
 		label	"Num Samples"
 		type	integer
-		default	{ "8" }
+		default	{ "16" }
 		range	{ 1 16 }
 		export	none
 		parmtag	{ "parmvop" "1" }
