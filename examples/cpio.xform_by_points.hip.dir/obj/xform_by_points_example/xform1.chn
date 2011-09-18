@@ -1,0 +1,10 @@
+{
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      default = 360
+      flags = 0
+      segment { length = 3.9583332538604736 value = 0 -360 accel = 1.31944 1.31944 expr = bezier() }
+      segment { length = 0 value = -360 0 accel = 0.333333 0.333333 expr = bezier() }
+    }
+  }

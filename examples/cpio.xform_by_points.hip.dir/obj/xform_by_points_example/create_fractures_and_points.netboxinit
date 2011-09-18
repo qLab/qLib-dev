@@ -1,0 +1,16 @@
+2
+2
+{
+	minimized := 0;
+	x_position := -9.58834267;
+	y_position := -7.9878335;
+	width := 5.50486517;
+	color := "UT_Color RGB 0 0 0 ";
+	height := 3.81106067;
+}
+{
+  create 1316375516
+  modify 1316375578
+  author tusi@demeisen
+  access 0777
+}
