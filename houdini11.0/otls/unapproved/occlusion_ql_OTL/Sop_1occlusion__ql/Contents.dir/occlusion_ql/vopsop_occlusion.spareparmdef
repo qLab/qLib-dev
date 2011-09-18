@@ -1,0 +1,98 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"file"
+	label	"Geometry File"
+	type	geometry
+	default	{ "op:`opinputpath(\".\",0)`" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"max_distance"
+	label	"max_distance"
+	type	float
+	default	{ "1" }
+	range	{ 0.001 8 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"bias"
+	label	"bias"
+	type	float
+	default	{ "0.001" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"focal"
+	label	"focal"
+	type	float
+	default	{ "1" }
+	range	{ 0 8 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"aperture"
+	label	"aperture"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"num_samples"
+	label	"num_samples"
+	type	integer
+	default	{ "8" }
+	range	{ 1 16 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"color_map"
+	label	"color_map"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "color_map_the_key_values" }
+	parmtag	{ "rampkeys_var" "color_map_the_key_positions" }
+	parmtag	{ "rampbasis_var" "color_map_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "rgb" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"distance_attr"
+	label	"distance_attr"
+	type	string
+	default	{ "pscale" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

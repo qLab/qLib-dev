@@ -1,0 +1,13 @@
+Operator:     occlusion_ql
+Label:        Occlusion qL
+Path:         oplib:/Sop/occlusion_ql?Sop/occlusion_ql
+Icon:         VOP_occlusion
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Sep 18 21:17:39 2011
+
