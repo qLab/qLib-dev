@@ -150,47 +150,47 @@ viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.
 viewsnapshotoption -s off -h off -a 1 -v '*' buildB.pane1.world
 cplane -o -8 0 -8 -n 0 1 0 -x 0 0 1 -l n -s 1 1 -c 16 16 -r 8 8 -d on buildB.pane1.world
 glcache -M 1024
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql5/do_vector -23.1964  -8.49694 0.742827 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/xform_by_points_example -12.5482  -22.0927 0.553106 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1 -10.0641  -16.9912 0.704754 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/xform_by_points_ql/apply_transforms -15.1243  -16.1069 0.589424 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1/do_vector 13.8383  -4.03469 0.940849 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vopsop1 -10.6254  -14.464 0.70244 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/xform_by_points_ql -0.137407  -5.68603 0.713939 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/for_each__origpt/vopsop1 -7.40976  -9.86398 0.835304 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/foreach_bboxes -1.9352  -3.72938 1 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/for_each__origpt -0.39402  -5.1882 1 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/apply_transforms -13.4216  -13.4749 0.454112 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/foreach1 -1.49402  -2.79408 1 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1 -5.16908  -3.01547 0.706932 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/foreach2 -1.54108  -2.81761 1 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1 -5.16908  -3.01547 0.706932 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/foreach_bboxes -1.9352  -3.72938 1 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql5/do_vector -23.1964  -8.49694 0.742827 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/subnet1 0.174765  -4.47402 1 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql5 -3.91176  -2.06765 1 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql6 -4.18235  -2.36176 1 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/floor -11.57  -15.8283 0.678115 panetab8
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1/do_vector/Export_Result -1.64226  -6.08865 0.930754 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/xform_by_points_ql -0.137407  -5.68603 0.713939 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -2.41773  -0.964733 1 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/for_each__origpt -0.39402  -5.1882 1 panetab8
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/for_each_pt1 -1.15284  -5.82938 1 panetab8
-panepath -d buildB -f -p panetab8 /obj/xform_by_points_example
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/xform_by_points_example -14.42  -20.9654 0.553106 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/xform_by_points_ql/apply_transforms -15.1243  -16.1069 0.589424 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1/do_vector/Export_Result -1.64226  -6.08865 0.930754 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vopsop1 -10.6254  -14.464 0.70244 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/vector_ql1/do_vector 13.8383  -4.03469 0.940849 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/apply_transforms -13.4216  -13.4749 0.454112 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/floor -11.57  -15.8283 0.678115 panetab8
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/for_each__origpt/vopsop1 -7.40976  -9.86398 0.835304 panetab8
+panepath -d buildB -f -p panetab8 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab16 /obj/
-panepath -d buildB -f -p panetab19 /obj/xform_by_points_example
-panepath -d buildB -f -p pane1 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab19 /obj/xform_by_points_example/sphere2
+panepath -d buildB -f -p pane1 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab12 /obj/
-panepath -d buildB -f -p panetab11 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab11 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab10 /obj/
 panepath -d buildB -f -p panetab5 /out/
-panepath -d buildB -f -p panetab17 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab17 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab20 /ch/
-panepath -d buildB -f -p panetab9 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab9 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab14 /out/
 panepath -d buildB -f -p panetab15 /out/
-panepath -d buildB -f -p panetab18 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab18 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab7 /obj/
 panepath -d buildB -f -p panetab2 /out/
 panepath -d buildB -f -p panetab4 /out/
 panepath -d buildB -f -p panetab13 /out/
 panepath -d buildB -f -p panetab1 /out/
-panepath -d buildB -f -p panetab6 /obj/xform_by_points_example
+panepath -d buildB -f -p panetab6 /obj/xform_by_points_example/sphere2
 panepath -d buildB -f -p panetab3 /out/
 desk set buildB
 performance -l window -c on -g off -o on -v on -f on -m off -r on -i off -h off -p off -s off -e off -F off -U ms -T 500
