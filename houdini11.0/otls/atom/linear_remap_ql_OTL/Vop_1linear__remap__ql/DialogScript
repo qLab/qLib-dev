@@ -1,0 +1,83 @@
+# Dialog script for linear_remap_ql automatically generated 09/19/11 00:44:50
+
+{
+    name	linear_remap_ql
+    script	linear_remap_ql
+    label	"Linear Remap qL"
+
+    outercode {
+	"#include <voptype.h>"
+	"#include <voplib.h>"
+    }
+
+    code {
+	"//$shift = vop_fit($val, $srcmin, $srcmax, $destmin, $destmax);"
+    }
+
+    input	float	val	"Input Value"
+    input	float	srcmin	"Input Min"
+    input	float	srcmax	"Input Max"
+    input	float	destmin	"Output Min"
+    input	float	destmax	"Output Max"
+    output	float	sum	"Combined Value"
+    output	int	and	"Combined Value"
+    inputflags	val	0
+    inputflags	srcmin	0
+    inputflags	srcmax	0
+    inputflags	destmin	0
+    inputflags	destmax	0
+    signature	"Default Inputs"	default	{ float float float float float float int }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"val"
+	label	"Input Value"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"srcmin"
+	label	"srcmin"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"srcmax"
+	label	"srcmax"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"destmin"
+	label	"destmin"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"destmax"
+	label	"destmax"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+}
