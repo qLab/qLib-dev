@@ -1,0 +1,13 @@
+Operator:     remap_ql
+Label:        Remap qL
+Path:         oplib:/Vop/remap_ql?Vop/remap_ql
+Icon:         VOP_fit
+Table:        Vop
+License:      
+Extra:        
+Inputs:       0 to 5
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Sep 19 01:35:41 2011
+
