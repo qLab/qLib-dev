@@ -154,4 +154,9 @@ occlusion_ql/vopsop_occlusion/for1.order
 occlusion_ql/vopsop_occlusion/for1.net
 occlusion_ql/vopsop_occlusion.order
 occlusion_ql/vopsop_occlusion.net
+occlusion_ql/use_collision_if_connected.init
+occlusion_ql/use_collision_if_connected.def
+occlusion_ql/use_collision_if_connected.chn
+occlusion_ql/use_collision_if_connected.parm
+occlusion_ql.order
 occlusion_ql.net

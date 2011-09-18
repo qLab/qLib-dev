@@ -5,9 +5,9 @@ Icon:         VOP_occlusion
 Table:        Sop
 License:      
 Extra:        
-Inputs:       1 to 1
+Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Sep 18 21:17:39 2011
+Modified:     Sun Sep 18 21:27:15 2011
 

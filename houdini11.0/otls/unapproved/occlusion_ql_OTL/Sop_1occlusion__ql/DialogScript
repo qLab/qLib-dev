@@ -1,4 +1,4 @@
-# Dialog script for occlusion_ql automatically generated 09/18/11 21:17:39
+# Dialog script for occlusion_ql automatically generated 09/18/11 21:20:45
 
 {
     name	occlusion_ql
@@ -10,7 +10,7 @@
     }
 
     inputlabel	1	"Input Geometry"
-    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	2	"Collision Geometry"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
