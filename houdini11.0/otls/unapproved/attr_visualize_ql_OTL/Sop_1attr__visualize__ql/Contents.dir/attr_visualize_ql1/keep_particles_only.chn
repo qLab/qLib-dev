@@ -1,8 +1,8 @@
 {
-    channel input {
+    channel rangeend {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../show_pts\") }
+      segment { length = 0 expr = $N }
     }
   }

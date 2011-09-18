@@ -1,0 +1,12 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	i	)
+cmp	[ 0	locks=0 ]	(	lt	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+initial_i	[ 0	locks=0 ]	(	0	)
+end_i	[ 0	locks=0 ]	(	10	)
+step_i	[ 0	locks=0 ]	(	1	)
+initial_f	[ 0	locks=0 ]	(	0	)
+end_f	[ 0	locks=0 ]	(	1	)
+step_f	[ 0	locks=0 ]	(	0.100000001	)
+}

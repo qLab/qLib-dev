@@ -1,0 +1,127 @@
+{
+    channel color_map1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map1pos\") }
+    }
+    channel color_map1cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map1cr\") }
+    }
+    channel color_map1cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map1cg\") }
+    }
+    channel color_map1cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map1cb\") }
+    }
+    channel color_map1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../color_map1interp\") }
+    }
+    channel color_map2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map2pos\") }
+    }
+    channel color_map2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map2cr\") }
+    }
+    channel color_map2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map2cg\") }
+    }
+    channel color_map2cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../color_map2cb\") }
+    }
+    channel color_map2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../color_map2interp\") }
+    }
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
+    }
+    channel max_distance {
+      lefttype = extend
+      righttype = extend
+      default = 0.25
+      flags = 0
+      segment { length = 0 value = 0.25 0.25 expr = ch(\"../max_distance\") }
+    }
+    channel bias {
+      lefttype = extend
+      righttype = extend
+      default = 0.001
+      flags = 0
+      segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../bias\") }
+    }
+    channel focal {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../focal\") }
+    }
+    channel aperture {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../aperture\") }
+    }
+    channel num_samples {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { length = 0 value = 8 8 expr = ch(\"../num_samples\") }
+    }
+    channel color_map {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../color_map\") }
+    }
+    channel distance_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"pscale\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../distance_attr\") }
+    }
+  }

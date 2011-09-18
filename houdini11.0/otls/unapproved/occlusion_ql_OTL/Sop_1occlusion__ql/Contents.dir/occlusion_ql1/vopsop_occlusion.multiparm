@@ -1,0 +1,6 @@
+5
+color_map#pos ../color_map#pos
+color_map#cr ../color_map#cr
+color_map#cg ../color_map#cg
+color_map#cb ../color_map#cb
+color_map#interp ../color_map#interp
