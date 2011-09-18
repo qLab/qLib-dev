@@ -1,0 +1,13 @@
+text "Transforming of custom normals and up vectors are also supported; try enabling these nodes to check it out."
+position -14.2273 -10.1152
+size 4.15015 1.4746
+flags =  minimize off
+stat
+{
+  create 1316375427
+  modify 1316375480
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.36 0.36 0.36 
+end
