@@ -1,0 +1,14 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -$XMAX+3*sin(30) }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -$ZMIN-cos(30) }
+    }
+  }

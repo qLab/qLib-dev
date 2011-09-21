@@ -1,0 +1,8 @@
+{
+    channel originx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = sin(30.0) }
+    }
+  }

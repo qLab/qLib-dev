@@ -1,0 +1,10 @@
+{
+version 0.8
+cacheinput	[ 0	locks=0 ]	(	"off"	)
+columns	[ 0	locks=0 ]	(	[ columns	6 ] 	)
+rows	[ 0	locks=0 ]	(	[ rows	10 ] 	)
+intact	[ 0	locks=0 ]	(	[ intact	1 ] 	)
+setsize	[ 0	locks=0 ]	(	[ setsize	0 ] 	)
+width	[ 0	locks=0 ]	(	[ width	10 ] 	)
+height	[ 0	locks=0 ]	(	[ height	10 ] 	)
+}
