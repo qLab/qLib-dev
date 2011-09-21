@@ -1,0 +1,13 @@
+Operator:     superellipse_ql
+Label:        Superellipse qL
+Path:         oplib:/Sop/superellipse_ql?Sop/superellipse_ql
+Icon:         SOP_superquad
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Sep 22 00:17:46 2011
+

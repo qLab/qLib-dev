@@ -1,0 +1,94 @@
+# Dialog script for hexagrid_ql automatically generated 09/21/11 23:42:40
+
+{
+    name	hexagrid_ql
+    script	hexagrid_ql
+    label	"Hexa Grid qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Divisions"
+
+	parm {
+	    name	"columns"
+	    label	"Columns"
+	    type	integer
+	    default	{ "6" }
+	    range	{ 1! 24 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rows"
+	    label	"Rows"
+	    type	integer
+	    default	{ "10" }
+	    range	{ 1! 40 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Uniform Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Options"
+
+	parm {
+	    name	"intact"
+	    label	"Intact"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"setsize"
+	    label	"Set Size"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"width"
+	    label	"Width"
+	    type	float
+	    default	{ "10" }
+	    disablewhen	"{ setsize == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"height"
+	    label	"Height"
+	    type	float
+	    default	{ "10" }
+	    disablewhen	"{ setsize == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

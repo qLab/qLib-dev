@@ -1,0 +1,16 @@
+{
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = -0.866025
+      flags = 0
+      segment { length = 0 value = -0.86602544784545898 -0.86602544784545898 expr = -1*cos(30.0) }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      default = 1.5
+      flags = 0
+      segment { length = 0 value = 1.5 1.5 expr = "1.5*stamp(\"..\", \"FORVALUE\", 0)" }
+    }
+  }
