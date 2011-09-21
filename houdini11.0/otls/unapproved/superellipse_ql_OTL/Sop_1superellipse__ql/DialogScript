@@ -1,0 +1,97 @@
+# Dialog script for superellipse_ql automatically generated 09/22/11 00:15:05
+
+{
+    name	superellipse_ql
+    script	superellipse_ql
+    label	"Superellipse qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"type"
+	label	"Primitive Type"
+	type	ordinal
+	default	{ "poly" }
+	menu	{
+	    "prim"	"Primitive"
+	    "poly"	"Polygon"
+	    "nurbs"	"NURBS Curve"
+	    "bezier"	"Bezier Curve"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rad"
+	label	"Radius"
+	type	vector2
+	size	2
+	default	{ "1" "1" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"order"
+	label	"Order"
+	type	integer
+	default	{ "4" }
+	disablewhen	"{ type == poly }"
+	range	{ 2! 11! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"divs"
+	label	"Divisions"
+	type	integer
+	default	{ "24" }
+	range	{ 1! 50 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"arc"
+	label	"Arc Type"
+	type	ordinal
+	default	{ "closed" }
+	menu	{
+	    "closed"	"Closed"
+	    "openarc"	"Open Arc"
+	    "closedarc"	"Closed Arc"
+	    "slicedarc"	"Sliced Arc"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"angle"
+	label	"Arc Angles"
+	type	angle
+	size	2
+	default	{ "0" "360" }
+	disablewhen	"{ arc == closed }"
+	range	{ 0! 360! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"exponent"
+	label	"Exponent"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 5 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
