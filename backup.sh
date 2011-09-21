@@ -10,7 +10,7 @@
 ROOT_DIR_NAME=qLib
 
 BASE_DIR=..
-ARCHIVE_NAME=qLib_`hostname`_`date +%Y-%m-%d_%H%M_%S`.tar.bz2
+ARCHIVE_NAME=qLib_`date +%Y-%m-%d_%H%M_%S`_`hostname`.tar.bz2
 
 OLD_DIR=`pwd`
 cd $BASE_DIR
