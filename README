@@ -4,3 +4,9 @@ qLib
 A houdini asset library.
 
 
+TODO
+====
+
+- An own version of pointjitter
+	- original pointjitter deletes custom normals!
+
