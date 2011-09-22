@@ -1,4 +1,4 @@
-42
+46
 Vector_A_Switch
 importattrib1
 attrib
@@ -14,7 +14,7 @@ Add
 Sub_AB
 Sub_BA
 Mix
-bias
+blend
 switcher2
 Cross_AB
 Cross_BA
@@ -41,3 +41,7 @@ condition2
 Export_Angle
 condition3
 multiply2
+blend_attr_type_switch
+import_custom_blend_attr
+blend_attr
+custom_blend_attr

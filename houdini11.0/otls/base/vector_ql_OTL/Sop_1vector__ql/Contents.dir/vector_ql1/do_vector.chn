@@ -170,4 +170,17 @@
       flags = 0
       segment { length = 0 expr = ch(\"../deg\") }
     }
+    channel custom_blend_attr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../custom_blend_attr\") }
+    }
+    channel blend_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"blend\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../blend_attr\") }
+    }
   }

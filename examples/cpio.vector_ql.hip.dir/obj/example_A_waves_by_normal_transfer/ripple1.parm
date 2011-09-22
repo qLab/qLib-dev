@@ -1,0 +1,17 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vex_edit	[ 0	locks=0 ]	(	0	)
+vex_reload	[ 0	locks=0 ]	(	0	)
+usecenter	[ 0	locks=0 ]	(	"on"	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+freq	[ 0	locks=0 ]	(	0.5	)
+height	[ 0	locks=0 ]	(	0.0399999991	)
+decay	[ 0	locks=0 ]	(	0.00999999978	)
+scale	[ 0	locks=0 ]	(	1	)
+speed	[ 0	locks=0 ]	(	1	)
+nripples	[ 0	locks=0 ]	(	3	)
+seed	[ 0	locks=0 ]	(	0	)
+up	[ 0	locks=0 ]	(	0	1	0	)
+}
