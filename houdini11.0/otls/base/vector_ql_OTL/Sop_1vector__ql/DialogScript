@@ -1,4 +1,4 @@
-# Dialog script for vector_ql automatically generated 07/10/11 20:45:47
+# Dialog script for vector_ql automatically generated 09/22/11 23:57:09
 
 {
     name	vector_ql
@@ -42,17 +42,6 @@
 	    "7"	"Pass 2nd Input (B)"
 	}
 	range	{ 0 10 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"blend"
-	label	"Blend"
-	type	float
-	default	{ "0.5" }
-	disablewhen	"{ operation != 3 }"
-	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
@@ -159,6 +148,7 @@
 	group {
 	    name	"folder1"
 	    label	"Input #2: Vector B"
+	    tabbreak
 
 	    parm {
 		name	"compute_n_B"
@@ -250,11 +240,52 @@
 	    }
 	}
 
+	group {
+	    name	"folder2"
+	    label	"Mix Settings"
+
+	    parm {
+		name	"blend"
+		label	"Blend"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ operation != 3 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"custom_blend_attr"
+		label	"Custom Blend Attribute"
+		type	toggle
+		default	{ "off" }
+		help	"A per-point float attribute for per-point weighting."
+		disablewhen	"{ operation != 3 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"blend_attr"
+		label	"Attribute Name"
+		type	string
+		default	{ "blend" }
+		disablewhen	"{ operation != 3 } { custom_blend_attr != 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
     }
 
     group {
 	name	"input_1"
 	label	"Output"
+	tabbreak
 
 	parm {
 	    name	"normalize_out"

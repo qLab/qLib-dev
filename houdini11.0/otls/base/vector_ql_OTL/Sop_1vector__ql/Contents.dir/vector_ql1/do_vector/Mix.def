@@ -1,17 +1,17 @@
 comment ""
-position 1.94957 -2.23782
+position 2.01161 -2.23782
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
 {
 0 	Normalize_A_Switch 0 1
 1 	Normalize_B_Switch 0 1
-2 	bias 0 1
+2 	blend_attr_type_switch 0 1
 }
 stat
 {
   create 1309265051
-  modify 1310323548
+  modify 1316728699
   author Mate@Mate.local.melon.hu
   access 0777
 }
