@@ -26,4 +26,6 @@ dot_attr	[ 0	locks=0 ]	(	[ dot_attr	dot ] 	)
 angle_export	[ 0	locks=0 ]	(	[ angle_export	0 ] 	)
 deg	[ 0	locks=0 ]	(	[ deg	0 ] 	)
 angle_attr	[ 0	locks=0 ]	(	[ angle_attr	angle ] 	)
+blend_attr	[ 0	locks=0 ]	(	[ blend_attr	blend ] 	)
+custom_blend_attr	[ 0	locks=0 ]	(	[ custom_blend_attr	0 ] 	)
 }

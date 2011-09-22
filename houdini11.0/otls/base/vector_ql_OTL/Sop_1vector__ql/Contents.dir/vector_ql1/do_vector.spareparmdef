@@ -218,3 +218,21 @@
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"blend_attr"
+	label	"Blend Attribute Name"
+	type	string
+	default	{ "blend" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"custom_blend_attr"
+	label	"Custom Blend Attribute"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
