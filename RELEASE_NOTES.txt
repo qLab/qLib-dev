@@ -1,3 +1,9 @@
+v0.0.25 NOT RELEASED
+    Path Deform interpolation type parameter exposed to the public.
+
+    Distribute SOP exposed the inner Ray SOP's Point Intersection Normal
+    parameter.
+
 v0.0.24
     Path Deform lattice placement method changed to take deformed geometry's
     initial position into account during deformation. Also enabled a guide
