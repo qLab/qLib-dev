@@ -1,0 +1,21 @@
+text "OUTPUT:
+A grid that is an exact fit of the camera plane if it parented under the specified camera.
+Attributes:
+- P_screen: normalized screen coordinates
+- P_scrop: see above + camera crop applied
+- N: normals can be used with a Ray SOP for perspective projections
+- rest: un-cropped camera plane
+
+"
+position -5.3508 2.56158
+size 5.90651 2.87301
+flags =  minimize off
+stat
+{
+  create 1316965180
+  modify 1316965420
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0 0 
+end

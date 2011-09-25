@@ -1,0 +1,13 @@
+Operator:     camera_plane_ql
+Label:        Camera Plane qL
+Path:         oplib:/Sop/camera_plane_ql?Sop/camera_plane_ql
+Icon:         VOP_planeclip
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Sep 25 18:26:03 2011
+

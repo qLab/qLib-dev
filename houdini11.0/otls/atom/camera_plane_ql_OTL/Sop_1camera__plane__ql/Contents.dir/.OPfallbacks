@@ -1,0 +1,8 @@
+Vop/fit /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
+Vop/floattovec /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl
+Vop/bbox /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/bbox otls/OPlibVop.otl
+Vop/addattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl

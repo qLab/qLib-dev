@@ -1,0 +1,176 @@
+# Dialog script for camera_plane_ql automatically generated 09/25/11 18:25:52
+
+{
+    name	camera_plane_ql
+    script	camera_plane_ql
+    label	"Camera Plane qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"camera"
+	label	"Camera"
+	type	oplist
+	default	{ "/obj/cam1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "/" }
+	parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Plane Geometry"
+	tabbreak
+
+	parm {
+	    name	"plane_distance"
+	    label	"Plane Distance"
+	    type	float
+	    default	{ "1" }
+	    range	{ 1 1000 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"type"
+	    label	"Primitive Type"
+	    type	ordinal
+	    default	{ "poly" }
+	    menu	{
+		"poly"	"Polygon"
+		"mesh"	"Mesh"
+		"nurbs"	"NURBS"
+		"bezier"	"Bezier"
+		"points"	"Points"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"surftype"
+	    label	"Connectivity"
+	    type	ordinal
+	    default	{ "quads" }
+	    menu	{
+		"rows"	"Rows"
+		"cols"	"Columns"
+		"rowcol"	"Rows and Columns"
+		"triangles"	"Triangles"
+		"quads"	"Quadrilaterals"
+		"alttriangles"	"Alternating Triangles"
+		"revtriangles"	"Reverse Triangles"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rows"
+	    label	"Rows"
+	    type	integer
+	    default	{ "5" }
+	    range	{ 1! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"cols"
+	    label	"Columns"
+	    type	integer
+	    default	{ "7" }
+	    range	{ 1! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"orderu"
+	    label	"U Order"
+	    type	integer
+	    default	{ "4" }
+	    disablewhen	"{ type != nurbs type != bezier }"
+	    range	{ 2! 11! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"orderv"
+	    label	"V Order"
+	    type	integer
+	    default	{ "4" }
+	    disablewhen	"{ type != nurbs type != bezier }"
+	    range	{ 2! 11! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Additional Settings"
+	tabbreak
+
+	parm {
+	    name	"winoffsx"
+	    label	"Extra Scale X"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"winoffsy"
+	    label	"Extra Scale Y"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder2"
+	label	"Note"
+
+	parm {
+	    name	"labelparm"
+	    label	"NOTE"
+	    type	label
+	    nolabel
+	    default	{ "The geometry is generated in object space -- it is to be" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"NOTE"
+	    type	label
+	    nolabel
+	    default	{ "transformed to camera space to work as expected." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm3"
+	    label	"NOTE"
+	    type	label
+	    nolabel
+	    default	{ "(E.g. parent this geometry to the specified camera.)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}
