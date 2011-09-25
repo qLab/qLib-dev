@@ -1,0 +1,28 @@
+{
+    channel cropl {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropl\") }
+    }
+    channel cropr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropr\") }
+    }
+    channel cropb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropb\") }
+    }
+    channel cropt {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropt\") }
+    }
+  }

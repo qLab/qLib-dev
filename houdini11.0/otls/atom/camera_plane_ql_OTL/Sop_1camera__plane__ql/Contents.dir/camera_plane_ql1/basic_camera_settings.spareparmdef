@@ -1,0 +1,65 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"winsizex"
+	label	"winsizex"
+	type	float
+	default	{ "1" }
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"winsizey"
+	label	"winsizey"
+	type	float
+	default	{ "1" }
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"focal"
+	label	"focal"
+	type	float
+	default	{ "40" }
+	range	{ 0 100 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"winoffsx"
+	label	"winoffsx"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"winoffsy"
+	label	"winoffsy"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

@@ -1,0 +1,14 @@
+
+The geometry is generated in object space -- it is to be transformed to camera space to work as expected.
+(e.g. parent this geometry to the specified camera.)
+
+
+OUTPUT:
+
+A grid that is an exact fit of the camera plane if it parented under the specified camera.
+Attributes:
+- P_screen: normalized screen coordinates
+- P_scrop: see above + camera crop applied
+- N: normals can be used with a Ray SOP for perspective projections
+- rest: un-cropped camera plane
+
