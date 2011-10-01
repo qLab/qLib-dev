@@ -1,4 +1,4 @@
-39
+43
 global1
 output1
 get_nurbs_P
@@ -38,3 +38,7 @@ scale
 pivot
 subtract1
 multiply1
+floattovec1
+set_surface_attr
+surface_attr_name
+if1

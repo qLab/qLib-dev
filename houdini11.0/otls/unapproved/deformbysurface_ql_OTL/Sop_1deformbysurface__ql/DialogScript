@@ -1,4 +1,4 @@
-# Dialog script for deformbysurface_ql automatically generated 10/01/11 23:53:11
+# Dialog script for deformbysurface_ql automatically generated 10/02/11 00:12:18
 
 {
     name	deformbysurface_ql
@@ -57,7 +57,8 @@
 
     group {
 	name	"folder0"
-	label	"Placement"
+	label	"On-Surface Placement"
+	tabbreak
 
 	parm {
 	    name	"offset"
@@ -122,11 +123,38 @@
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+    }
+
+    group {
+	name	"folder2"
+	label	"Output"
+
 	parm {
 	    name	"blend"
 	    label	"Blend"
 	    type	float
 	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"set_surface_attr"
+	    label	"Set Surface UV Attribute"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"surface_attr_name"
+	    label	"Attr Name"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ set_surface_attr == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }

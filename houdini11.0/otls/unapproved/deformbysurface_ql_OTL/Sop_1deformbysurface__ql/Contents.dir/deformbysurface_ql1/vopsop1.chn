@@ -136,4 +136,17 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../blend\") }
     }
+    channel set_surface_attr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../set_surface_attr\") }
+    }
+    channel surface_attr_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../surface_attr_name\") }
+    }
   }

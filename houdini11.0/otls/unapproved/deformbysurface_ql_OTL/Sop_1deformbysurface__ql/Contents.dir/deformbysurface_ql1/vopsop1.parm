@@ -13,4 +13,6 @@ wrapX	[ 0	locks=0 ]	(	[ wrapX	0 ] 	)
 wrapZ	[ 0	locks=0 ]	(	[ wrapZ	1 ] 	)
 moebiusZ	[ 0	locks=0 ]	(	[ moebiusZ	0 ] 	)
 blend	[ 0	locks=0 ]	(	[ blend	1 ] 	)
+set_surface_attr	[ 0	locks=0 ]	(	[ set_surface_attr	0 ] 	)
+surface_attr_name	[ 0	locks=0 ]	(	[ surface_attr_name	surface_uv ] 	)
 }
