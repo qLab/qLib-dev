@@ -1,0 +1,9 @@
+{
+    channel switcher {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 expr = ch('../wrapZ/intdef') }
+    }
+  }

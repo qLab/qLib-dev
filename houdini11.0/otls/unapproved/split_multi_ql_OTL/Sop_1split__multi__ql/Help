@@ -1,0 +1,6 @@
+Recursively splits a NURBS-type (NURBS, mesh, bezier) geometry (alternating in U and V directions).
+
+The resulting geometry looks similar to floor plans or city block plans.
+
+
+(pattern generation; spec?)

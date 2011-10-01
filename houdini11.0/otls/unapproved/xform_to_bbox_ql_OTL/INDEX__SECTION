@@ -1,0 +1,13 @@
+Operator:     xform_to_bbox_ql
+Label:        Xform to BBox qL
+Path:         oplib:/Sop/xform_to_bbox_ql?Sop/xform_to_bbox_ql
+Icon:         SOP_bound
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Oct  1 23:02:44 2011
+

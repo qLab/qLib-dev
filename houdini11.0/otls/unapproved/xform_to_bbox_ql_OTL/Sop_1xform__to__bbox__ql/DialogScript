@@ -1,0 +1,45 @@
+# Dialog script for xform_to_bbox_ql automatically generated 10/01/11 23:02:42
+
+{
+    name	xform_to_bbox_ql
+    script	xform_to_bbox_ql
+    label	"Xform to BBox qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Bounding Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Padding"
+
+	parm {
+	    name	"padding_lo"
+	    label	"Low"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"padding_hi"
+	    label	"High"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

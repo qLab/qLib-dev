@@ -1,0 +1,14 @@
+Vop/primattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/primattrib otls/OPlibVop.otl
+Vop/abs /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/abs otls/OPlibVop.otl
+Vop/floor /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/floor otls/OPlibVop.otl
+Vop/modulo /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/modulo otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/negate /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/negate otls/OPlibVop.otl
+Vop/complement /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl

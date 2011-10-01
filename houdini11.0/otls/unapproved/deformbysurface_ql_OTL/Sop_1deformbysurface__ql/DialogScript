@@ -1,0 +1,71 @@
+# Dialog script for deformbysurface_ql automatically generated 10/01/11 22:58:36
+
+{
+    name	deformbysurface_ql
+    script	deformbysurface_ql
+    label	"Deform by Surface qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry to deform"
+    inputlabel	2	"Deformer NURBS Surface"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l vopsop1 vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"vex_numthreads"
+	label	"Number of Threads"
+	type	ordinal
+	default	{ "1perproc" }
+	menu	{
+	    [ "opmenu -l vopsop1 vex_numthreads" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"wrapX"
+	label	"Wrap X"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"wrapZ"
+	label	"Wrap Z"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"moebiusZ"
+	label	"Moebius Z"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
