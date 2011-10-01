@@ -1,4 +1,4 @@
-25
+43
 global1
 output1
 get_nurbs_P
@@ -24,3 +24,21 @@ negate1
 wrapped_val1
 wrapped_val2
 moebius_flip_test
+bbox_min
+bbox_max
+mix1
+bias
+srcmax_minus_srcmin
+val_minus_srcmin
+divide1
+REMAPPED_RESULT
+offset
+add1
+scale
+pivot
+subtract1
+multiply1
+floattovec1
+set_surface_attr
+surface_attr_name
+if1

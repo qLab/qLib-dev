@@ -1,4 +1,4 @@
-9
+10
 vopsop1
 box3
 sphere1
@@ -8,3 +8,4 @@ GUIDE
 OUT
 INPUT
 SURFACE
+bbox_fit

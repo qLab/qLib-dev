@@ -1,0 +1,10 @@
+{
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      default = 180
+      flags = 0
+      segment { length = 4.125 value = 0 180 accel = 1.375 1.375 expr = linear() }
+      segment { length = 0 value = 180 0 accel = 0.333333 0.333333 expr = linear() }
+    }
+  }

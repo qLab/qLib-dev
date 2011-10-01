@@ -1,0 +1,14 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	"poly"	)
+surftype	[ 0	locks=0 ]	(	"quads"	)
+orient	[ 0	locks=0 ]	(	"zx"	)
+size	[ 0	locks=0 ]	(	1	1	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+rows	[ 0	locks=0 ]	(	2	)
+cols	[ 0	locks=0 ]	(	2	)
+orderu	[ 0	locks=0 ]	(	4	)
+orderv	[ 0	locks=0 ]	(	4	)
+interpu	[ 0	locks=0 ]	(	"on"	)
+interpv	[ 0	locks=0 ]	(	"on"	)
+}

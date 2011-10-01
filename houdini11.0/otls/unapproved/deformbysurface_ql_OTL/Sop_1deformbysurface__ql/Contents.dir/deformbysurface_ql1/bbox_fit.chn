@@ -1,0 +1,51 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel bbox_min1 {
+      lefttype = extend
+      righttype = extend
+      default = -1.5
+      flags = 0
+      segment { length = 0 value = -1.5 -1.5 expr = ch(\"../vopsop1/bbox_min1\") }
+    }
+    channel bbox_min2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vopsop1/bbox_min2\") }
+    }
+    channel bbox_min3 {
+      lefttype = extend
+      righttype = extend
+      default = -1.5
+      flags = 0
+      segment { length = 0 value = -1.5 -1.5 expr = ch(\"../vopsop1/bbox_min3\") }
+    }
+    channel bbox_max1 {
+      lefttype = extend
+      righttype = extend
+      default = 1.5
+      flags = 0
+      segment { length = 0 value = 1.5 1.5 expr = ch(\"../vopsop1/bbox_max1\") }
+    }
+    channel bbox_max2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vopsop1/bbox_max2\") }
+    }
+    channel bbox_max3 {
+      lefttype = extend
+      righttype = extend
+      default = 1.5
+      flags = 0
+      segment { length = 0 value = 1.5 1.5 expr = ch(\"../vopsop1/bbox_max3\") }
+    }
+  }
