@@ -1,4 +1,4 @@
-33
+39
 global1
 output1
 get_nurbs_P
@@ -32,3 +32,9 @@ srcmax_minus_srcmin
 val_minus_srcmin
 divide1
 REMAPPED_RESULT
+offset
+add1
+scale
+pivot
+subtract1
+multiply1

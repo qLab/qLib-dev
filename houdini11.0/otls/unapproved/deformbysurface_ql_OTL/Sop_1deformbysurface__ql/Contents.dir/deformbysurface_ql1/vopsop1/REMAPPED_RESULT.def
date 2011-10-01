@@ -7,7 +7,7 @@ where
 f(min) = a
 f(max) = b
 "
-position -15.7575 -0.239645
+position -18.1423 -0.314171
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
@@ -17,7 +17,7 @@ inputs
 stat
 {
   create 1316383732
-  modify 1317504757
+  modify 1317505533
   author tusi@demeisen
   access 0777
 }

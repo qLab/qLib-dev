@@ -1,4 +1,4 @@
-# Dialog script for deformbysurface_ql automatically generated 10/01/11 23:36:16
+# Dialog script for deformbysurface_ql automatically generated 10/01/11 23:53:11
 
 {
     name	deformbysurface_ql
@@ -60,6 +60,39 @@
 	label	"Placement"
 
 	parm {
+	    name	"offset"
+	    label	"Offset"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pivot"
+	    label	"Pivot"
+	    type	float
+	    size	3
+	    default	{ "0.5" "0" "0.5" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
 	    name	"wrapX"
 	    label	"Wrap X"
 	    type	toggle
@@ -84,6 +117,16 @@
 	    label	"Moebius Z"
 	    type	toggle
 	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"blend"
+	    label	"Blend"
+	    type	float
+	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }

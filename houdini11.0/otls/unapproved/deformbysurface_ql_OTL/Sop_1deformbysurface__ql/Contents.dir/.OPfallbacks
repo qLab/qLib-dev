@@ -14,3 +14,5 @@ Vop/vectofloat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
 Vop/vectofloat otls/OPlibVop.otl
 Vop/mix /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
 Vop/mix otls/OPlibVop.otl
+Vop/fit /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
