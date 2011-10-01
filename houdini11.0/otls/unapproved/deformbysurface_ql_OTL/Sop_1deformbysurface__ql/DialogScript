@@ -1,4 +1,4 @@
-# Dialog script for deformbysurface_ql automatically generated 10/01/11 22:58:36
+# Dialog script for deformbysurface_ql automatically generated 10/01/11 23:36:16
 
 {
     name	deformbysurface_ql
@@ -26,46 +26,69 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    parm {
-	name	"vex_numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1perproc" }
-	menu	{
-	    [ "opmenu -l vopsop1 vex_numthreads" ]
+    group {
+	name	"folder1"
+	label	"Input Geometry"
+	tabbreak
+
+	parm {
+	    name	"bbox_min"
+	    label	"BBox Min"
+	    type	float
+	    size	3
+	    default	{ "-1.5" "0" "-1.5" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
+	parm {
+	    name	"bbox_max"
+	    label	"BBox Max"
+	    type	float
+	    size	3
+	    default	{ "1.5" "1" "1.5" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
     }
-    parm {
-	name	"wrapX"
-	label	"Wrap X"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
+
+    group {
+	name	"folder0"
+	label	"Placement"
+
+	parm {
+	    name	"wrapX"
+	    label	"Wrap X"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"wrapZ"
+	    label	"Wrap Z"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"moebiusZ"
+	    label	"Moebius Z"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
     }
-    parm {
-	name	"wrapZ"
-	label	"Wrap Z"
-	type	toggle
-	default	{ "on" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"moebiusZ"
-	label	"Moebius Z"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
+
 }
