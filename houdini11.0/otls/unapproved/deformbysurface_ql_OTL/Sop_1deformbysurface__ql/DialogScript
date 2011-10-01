@@ -1,4 +1,4 @@
-# Dialog script for deformbysurface_ql automatically generated 10/02/11 00:12:18
+# Dialog script for deformbysurface_ql automatically generated 10/02/11 00:24:46
 
 {
     name	deformbysurface_ql
@@ -37,6 +37,7 @@
 	    type	float
 	    size	3
 	    default	{ "-1.5" "0" "-1.5" }
+	    help	"Bounding box of the geometry to deform."
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -48,6 +49,7 @@
 	    type	float
 	    size	3
 	    default	{ "1.5" "1" "1.5" }
+	    help	"Bounding box of the geometry to deform."
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -57,7 +59,7 @@
 
     group {
 	name	"folder0"
-	label	"On-Surface Placement"
+	label	"Surface UVW Placement"
 	tabbreak
 
 	parm {
@@ -66,6 +68,7 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    help	"Offset (translation) in surface UVW space."
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -77,6 +80,7 @@
 	    type	float
 	    size	3
 	    default	{ "1" "1" "1" }
+	    help	"Scaling in surface UVW space."
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -88,6 +92,7 @@
 	    type	float
 	    size	3
 	    default	{ "0.5" "0" "0.5" }
+	    help	"Scale pivot in surface UVW space."
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -98,6 +103,7 @@
 	    label	"Wrap X"
 	    type	toggle
 	    default	{ "off" }
+	    help	"Wrap around the X-axis (U direction) in surface UVW space."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -108,6 +114,7 @@
 	    label	"Wrap Z"
 	    type	toggle
 	    default	{ "on" }
+	    help	"Wrap around the Z-axis (V direction) in surface UVW space."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -118,6 +125,7 @@
 	    label	"Moebius Z"
 	    type	toggle
 	    default	{ "off" }
+	    help	"Allow Moebius-strip style wrapping in surface V direction."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -134,27 +142,30 @@
 	    label	"Blend"
 	    type	float
 	    default	{ "1" }
+	    help	"Blend between the original and deformed geometry."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"set_surface_attr"
-	    label	"Set Surface UV Attribute"
+	    name	"douv"
+	    label	"Set Surface UV(W) Attribute"
 	    type	toggle
 	    default	{ "off" }
+	    help	"Store surface UVW coordinates for each point in an attribute."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"surface_attr_name"
+	    name	"uvname"
 	    label	"Attr Name"
 	    type	string
-	    default	{ "" }
-	    disablewhen	"{ set_surface_attr == 0 }"
+	    default	{ "surface_uv" }
+	    help	"Name of the attribute that stores surface UVW coordinates."
+	    disablewhen	"{ douv == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
