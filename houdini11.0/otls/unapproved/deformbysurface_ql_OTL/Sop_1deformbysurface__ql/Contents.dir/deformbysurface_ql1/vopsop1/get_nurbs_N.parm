@@ -1,0 +1,9 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+file	[ 0	locks=0 ]	(	`chs(\"../get_nurbs_P/file\")`	)
+attrib	[ 0	locks=0 ]	(	N	)
+prim	[ 8	locks=0 ]	(	[ prim	0 ] 	)
+u	[ 0	locks=0 ]	(	0	)
+v	[ 0	locks=0 ]	(	0	)
+}

@@ -1,0 +1,13 @@
+Operator:     deformbysurface_ql
+Label:        Deform by Surface qL
+Path:         oplib:/Sop/deformbysurface_ql?Sop/deformbysurface_ql
+Icon:         SOP_deform
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Oct  1 22:58:55 2011
+

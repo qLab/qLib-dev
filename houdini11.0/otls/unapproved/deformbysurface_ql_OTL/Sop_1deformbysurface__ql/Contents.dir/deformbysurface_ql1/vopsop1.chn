@@ -1,0 +1,40 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
+    }
+    channel wrapX {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 expr = ch(\"../wrapX\") }
+    }
+    channel wrapZ {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 value = 1 1 expr = ch(\"../wrapZ\") }
+    }
+    channel moebiusZ {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0 expr = ch(\"../moebiusZ\") }
+    }
+  }
