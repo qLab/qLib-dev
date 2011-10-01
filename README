@@ -7,6 +7,10 @@ A houdini asset library.
 TODO
 ====
 
-- An own version of pointjitter
+- PointJitter qL: An own version of pointjitter
 	- original pointjitter deletes custom normals!
+
+- Color qL:
+	- similar to popnet/color node (map a scalar/float attr to a ramp/whatever)
+
 
