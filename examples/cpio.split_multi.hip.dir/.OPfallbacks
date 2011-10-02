@@ -1,0 +1,16 @@
+Sop/delete_ql /home/tusi/houdini11.0/otls/qLib/unapproved/delete_ql.otl
+Sop/delete_ql otls/qLib/unapproved/delete_ql.otl
+Sop/split_multi_ql /home/tusi/houdini11.0/otls/qLib/unapproved/split_multi_ql.otl
+Sop/split_multi_ql otls/qLib/unapproved/split_multi_ql.otl
+Cop2/skyenvmap /opt/hfs11.0.792/houdini/otls/OPlibCop2.otl
+Cop2/skyenvmap otls/OPlibCop2.otl
+Cop2/skycubedaylight /opt/hfs11.0.792/houdini/otls/OPlibCop2.otl
+Cop2/skycubedaylight otls/OPlibCop2.otl
+Sop/color /opt/hfs11.0.792/houdini/otls/OPlibSop.otl
+Sop/color otls/OPlibSop.otl
+Driver/ifd /opt/hfs11.0.792/houdini/otls/OPlibDriver.otl
+Driver/ifd otls/OPlibDriver.otl
+Cop2/skycube /opt/hfs11.0.792/houdini/otls/OPlibCop2.otl
+Cop2/skycube otls/OPlibCop2.otl
+Object/envlight /opt/hfs11.0.792/houdini/otls/OPlibObject.otl
+Object/envlight otls/OPlibObject.otl
