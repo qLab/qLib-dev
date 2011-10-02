@@ -4,7 +4,7 @@
       righttype = extend
       default = 2
       flags = 0
-      segment { length = 0 value = 2 2 expr = ch(\"../rangey\")-ch(\"../rangex\") }
+      segment { length = 0 value = 2 2 expr = ((ch(\"../rangey\")-ch(\"../rangex\"))/ch(\"../rangez\"))+0.5 }
     }
     channel type {
       lefttype = extend

@@ -17,6 +17,6 @@
       righttype = extend
       default = 12
       flags = 0
-      segment { length = 0 value = 12 12 expr = $FPS/ch(\"../../rangez\") }
+      segment { length = 0 value = 12 12 expr = $FPS }
     }
   }
