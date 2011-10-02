@@ -1,0 +1,14 @@
+{
+version 0.8
+uprims	[ 0	locks=0 ]	(	""	)
+vprims	[ 0	locks=0 ]	(	""	)
+surftype	[ 0	locks=0 ]	(	"quads"	)
+keepshape	[ 0	locks=0 ]	(	"on"	)
+closev	[ 0	locks=0 ]	(	"nonewv"	)
+force	[ 0	locks=0 ]	(	"off"	)
+orderv	[ 0	locks=0 ]	(	4	)
+skinops	[ 0	locks=0 ]	(	"all"	)
+inc	[ 0	locks=0 ]	(	2	)
+prim	[ 0	locks=0 ]	(	"off"	)
+polys	[ 0	locks=0 ]	(	"on"	)
+}

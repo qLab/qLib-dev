@@ -1,0 +1,86 @@
+import random
+import sys
+
+
+# This code is called when instances of this SOP cook.
+geo = hou.pwd().geometry()
+
+
+
+def dbg(m):
+    #sys.__stderr__.write("[labyrinth]: %s\n" % m)
+    pass
+
+
+def draw_line(x1, y1, x2, y2):
+    if x1==x2 and y1==y2: return
+    poly = geo.createPolygon()
+    poly.setIsClosed(False)
+    pt = geo.createPoint(); pt.setPosition((x1, 0, y1)); poly.addVertex(pt)
+    pt = geo.createPoint(); pt.setPosition((x2, 0, y2)); poly.addVertex(pt)
+
+
+def draw_wall(n, N, x1, y1, x2, y2, horiz=True):
+    """."""
+
+    # draw a wall with an opening on it (at a random position), horiz/vert direction
+    # call draw() call on the two resulting sub-rectangles separated by the wall
+
+    if N>0 and n>=N: return
+
+    if x1+1>=x2 or y1+1>=y2:
+        return
+
+    dbg("draw_wall( %s/%s %s,%s, %s,%s, %s)" % (n,N, x1,y1, x2,y2, horiz) )
+
+    v1, v2 = (y1, y2) if horiz else (x1, x2)
+    wd = random.randint(v1+1, v2-1) # wall division
+    dbg(" - div: (%s-%s) %s" % (v1, v2, wd) )
+
+    v1, v2 = (x1, x2) if horiz else (y1, y2)
+    dd = random.randint(v1, v2-1) # 'door' division
+
+    dir = not horiz
+
+    n += 1
+
+    if horiz:
+        dbg(" - horiz")
+        draw_line(  x1, wd, dd, wd)
+        draw_line(dd+1, wd, x2, wd)
+        draw_wall(n, N, x1, y1, x2, wd, dir)
+        draw_wall(n, N, x1, wd, x2, y2, dir)
+    else:
+        dbg(" - vert")
+        draw_line(wd,   y1, wd, dd)
+        draw_line(wd, dd+1, wd, y2)
+        draw_wall(n, N, x1, y1, wd, y2, dir)
+        draw_wall(n, N, wd, y1, x2, y2, dir)
+
+
+
+dbg("EVALPARM: %s" % hou.evalParm("corner_llx") )
+
+p = hou.evalParm
+x1, y1 = p("corner_llx"), p("corner_lly")
+x2, y2 = p("corner_urx"), p("corner_ury")
+#x1, y1 =  -8, -8
+#x2, y2 =   8,  8
+
+x1, y1 = int(x1), int(y1)
+x2, y2 = int(x2), int(y2)
+
+x1, x2 = min(x1,x2), max(x1,x2)
+y1, y2 = min(y1,y2), max(y1,y2)
+
+N = max(1, p("limit")) if p("limitdiv") else 0
+
+if p("outerwalls"):
+    draw_line(x1, y1, x2, y1)
+    draw_line(x2, y1, x2, y2)
+    draw_line(x2, y2, x1, y2)
+    draw_line(x1, y2, x1, y1)
+
+random.seed(p("seed"))
+draw_wall(0, N, x1, y1, x2, y2)
+

@@ -1,0 +1,29 @@
+{
+    channel domainu1 {
+      lefttype = extend
+      righttype = extend
+      default = 0.304
+      flags = 0
+      segment { length = 0 value = 0.30399999022483826 0.30399999022483826 expr = "fit01(rand(npoints(\"../null1\")+ch(\"seed\")), ch(\"u_min\"), ch(\"u_max\"))" }
+    }
+    channel u_min {
+      lefttype = extend
+      righttype = extend
+      default = 0.2
+      flags = 0
+      segment { length = 0 value = 0.20000000298023224 0.20000000298023224 expr = ch(\"../../../u_min\") }
+    }
+    channel u_max {
+      lefttype = extend
+      righttype = extend
+      default = 0.8
+      flags = 0
+      segment { length = 0 value = 0.80000001192092896 0.80000001192092896 expr = ch(\"../../../u_max\") }
+    }
+    channel seed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../seed\") }
+    }
+  }

@@ -1,0 +1,21 @@
+{
+    channel value1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $XMAX }
+    }
+    channel value2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $YMAX }
+    }
+    channel value3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $ZMAX }
+    }
+  }

@@ -33,5 +33,9 @@ NOTE:
         Name of the attribute where acceleration values gets stored.
 
 @Release_Notes
+    Version 0.1.1:
+        Bug fixes:
+            - The correct number of path points are created if frame step is greater than 1.
+            - The appropriate velocity values are returned, regardless of the frame step setting.
     Version 0.1.0:
         Initial release.

@@ -1,0 +1,99 @@
+# Dialog script for split_multi_ql automatically generated 10/01/11 22:57:22
+
+{
+    name	split_multi_ql
+    script	split_multi_ql
+    label	"Split Multi qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Subdivision"
+
+	parm {
+	    name	"depth"
+	    label	"Divisions Depth"
+	    type	integer
+	    default	{ "4" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"seed"
+	    label	"Random Seed"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 999 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder1"
+	    label	"Split Range"
+
+	    parm {
+		name	"u_min"
+		label	"U Min"
+		type	float
+		default	{ "0.2" }
+		range	{ 0.1 0.9 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"u_max"
+		label	"U Max"
+		type	float
+		default	{ "0.8" }
+		range	{ 0.1 0.9 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Output"
+
+	parm {
+	    name	"visualizepieces"
+	    label	"Visualize Pieces"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale_pieces"
+	    label	"Scale Pieces"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "0.85" }
+	    disablewhen	"{ scale_pieces == 0 }"
+	    range	{ 0.1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

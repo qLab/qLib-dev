@@ -1,0 +1,57 @@
+# Dialog script for vertexnormal_ql automatically generated 10/02/11 20:22:24
+
+{
+    name	vertexnormal_ql
+    script	vertexnormal_ql
+    label	"Vertex Normal qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l compute_normals group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cusp"
+	label	"Cusp Polygons"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"angle"
+	label	"Cusp Angle"
+	type	angle
+	default	{ "20" }
+	disablewhen	"{ cusp == 0 }"
+	range	{ 0 40 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"postnml"
+	label	"Post-Compute Normals"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

@@ -1,0 +1,13 @@
+Operator:     vertexnormal_ql
+Label:        Vertex Normal qL
+Path:         oplib:/Sop/vertexnormal_ql?Sop/vertexnormal_ql
+Icon:         SOP_facet
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Oct  2 20:23:56 2011
+
