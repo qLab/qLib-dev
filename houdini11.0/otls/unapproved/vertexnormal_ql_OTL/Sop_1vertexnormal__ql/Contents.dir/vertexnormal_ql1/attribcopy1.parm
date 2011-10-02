@@ -1,0 +1,12 @@
+{
+version 0.8
+srcgroup	[ 0	locks=0 ]	(	""	)
+srcgrouptype	[ 0	locks=0 ]	(	"vertices"	)
+destgroup	[ 0	locks=0 ]	(	""	)
+destgrouptype	[ 0	locks=0 ]	(	"vertices"	)
+attrib	[ 0	locks=0 ]	(	"otherattrib"	)
+attribname	[ 0	locks=0 ]	(	N	)
+copyp	[ 0	locks=0 ]	(	"off"	)
+class	[ 0	locks=0 ]	(	"vertices"	)
+copyvariable	[ 0	locks=0 ]	(	"on"	)
+}
