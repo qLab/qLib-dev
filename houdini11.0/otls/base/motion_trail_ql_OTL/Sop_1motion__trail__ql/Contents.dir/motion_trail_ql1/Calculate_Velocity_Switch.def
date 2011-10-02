@@ -5,8 +5,8 @@ cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 inputs
 {
-0 	channel1
-1 	Read_Velocity_CHOP
+0 	channel1 0 1
+1 	Read_Velocity_CHOP 0 1
 }
 stat
 {

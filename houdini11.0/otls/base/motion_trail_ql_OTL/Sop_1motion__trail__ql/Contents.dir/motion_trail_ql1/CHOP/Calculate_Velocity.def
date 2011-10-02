@@ -4,7 +4,7 @@ cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on audio off export off
 inputs
 {
-0 	object1
+0 	object1 0 1
 }
 stat
 {
