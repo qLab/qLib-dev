@@ -1,0 +1,8 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+applyto	[ 0	locks=0 ]	(	"ptpos"	)
+attribname	[ 0	locks=0 ]	(	""	)
+frequency	[ 0	locks=0 ]	(	[ frequency	0.100000001 ] 	)
+iterations	[ 0	locks=0 ]	(	[ iterations	1 ] 	)
+}

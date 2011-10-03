@@ -1,4 +1,4 @@
-# Dialog script for rest_position_ql automatically generated 09/16/11 23:36:53
+# Dialog script for rest_position_ql automatically generated 10/03/11 23:49:59
 
 {
     name	rest_position_ql
@@ -79,6 +79,18 @@
 	name	"folder0_1"
 	label	"Restore Rest Position"
 
+	parm {
+	    name	"rest_vex_group"
+	    label	"Point Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l rest_P vex_group" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
 	parm {
 	    name	"restore_blend"
 	    label	"Blend"
