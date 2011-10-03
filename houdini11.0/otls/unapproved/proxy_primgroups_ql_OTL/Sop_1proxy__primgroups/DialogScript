@@ -1,4 +1,4 @@
-# Dialog script for proxy_primgroups automatically generated 10/03/11 23:37:06
+# Dialog script for proxy_primgroups automatically generated 10/04/11 00:03:41
 
 {
     name	proxy_primgroups
@@ -10,7 +10,7 @@
     }
 
     inputlabel	1	"Input Fractures"
-    inputlabel	2	"Custom Wrappable-Proxy"
+    inputlabel	2	"Custom Proxy (Wrappable)"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 

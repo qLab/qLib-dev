@@ -1,7 +1,7 @@
 Operator:     proxy_primgroups
 Label:        Proxy PrimGroups qL
 Path:         oplib:/Sop/proxy_primgroups?Sop/proxy_primgroups
-Icon:         SOP_group
+Icon:         DOP_rbdfracturedobject
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Oct  3 23:37:08 2011
+Modified:     Tue Oct  4 00:03:45 2011
 
