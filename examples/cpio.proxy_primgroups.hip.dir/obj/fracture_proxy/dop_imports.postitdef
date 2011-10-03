@@ -1,0 +1,18 @@
+text "The geometry connected to dopimport1 will be used in the simulation.
+
+The results will be applied to the hi-res geometry in dopimport2 using the \"Transform Input Geometry Groups\" option.
+
+Since the group names on the proxy and hi-res geometry correspond, this works as expected.
+"
+position -10.4227 -28.8782
+size 3.71049 3.72942
+flags =  minimize off
+stat
+{
+  create 1317680674
+  modify 1317680859
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.6 1 0.6 
+end
