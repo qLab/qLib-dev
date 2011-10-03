@@ -1,0 +1,14 @@
+Creates a proxy version of each primitive group by wrapping a low resolution poly sphere/box around them.
+
+Useful for (and designed to) replace higher-resolution geometry fractures in RBD simulations,
+if the results doesn't have to be too accurate (e.g. lots of fast-moving debris).
+
+By default all per-primitive and per-point attributes are transferred to the proxies and
+the appropriate geometry groups are recreated.
+
+The resulting groups can be used in DOP networks and their results can be imported back with
+the usual DOP Import SOP node.
+
+(TODO: create an example scene and make sure prim groups are in proper order, etc. --
+in other words, do a test round.)
+

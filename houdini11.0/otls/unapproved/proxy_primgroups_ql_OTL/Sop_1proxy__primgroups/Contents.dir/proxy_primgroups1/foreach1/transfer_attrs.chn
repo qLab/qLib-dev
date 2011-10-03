@@ -1,0 +1,30 @@
+{
+    channel primitiveattribs {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../xfer_primitiveattribs\") }
+    }
+    channel primattriblist {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../xfer_primattriblist\") }
+    }
+    channel pointattribs {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../xfer_pointattribs\") }
+    }
+    channel pointattriblist {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../xfer_pointattriblist\") }
+    }
+  }

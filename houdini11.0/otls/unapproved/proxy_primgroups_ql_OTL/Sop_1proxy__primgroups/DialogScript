@@ -1,0 +1,217 @@
+# Dialog script for proxy_primgroups automatically generated 10/03/11 23:37:06
+
+{
+    name	proxy_primgroups
+    script	proxy_primgroups
+    label	"Proxy PrimGroups qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Fractures"
+    inputlabel	2	"Custom Wrappable-Proxy"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"groupmask"
+	label	"Group Mask"
+	type	string
+	default	{ "piece*" }
+	help	"Pattern specifying the groups to build proxies for."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Proxy Geometry"
+	tabbreak
+
+	parm {
+	    name	"proxytype"
+	    label	"Proxy Type"
+	    type	integer
+	    default	{ "1" }
+	    help	"Type of base proxy geometry for each fragment."
+	    menu	{
+		"0"	"Sphere"
+		"1"	"Box"
+		"2"	"Custom"
+	    }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sphere_freq"
+	    label	"Sphere Frequency"
+	    type	integer
+	    default	{ "2" }
+	    help	"Sphere proxy geometry resolution."
+	    disablewhen	"{ proxytype != 0 }"
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"box_divrate"
+	    label	"Box Axis Divisions"
+	    type	integer
+	    size	3
+	    default	{ "3" "3" "3" }
+	    help	"Box proxy geometry divisions."
+	    disablewhen	"{ proxytype != 1 }"
+	    range	{ 1! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"postfit_scale"
+	    label	"Post-Fit Scale"
+	    type	float
+	    default	{ "1" }
+	    help	"Uniform scale applied after bounding-box fitting but before actual wrapping. Can be useful with 'Sphere' and 'Custom' modes."
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Wrapping"
+
+	parm {
+	    name	"wrap_dotrans"
+	    label	"Do Wrapping"
+	    type	toggle
+	    default	{ "on" }
+	    help	"Perform the actual wrapping of the basic proxy to the fragment."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"wrap_scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"wrap_lift"
+	    label	"Lift"
+	    type	float
+	    default	{ "0" }
+	    range	{ -1 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0_1_1"
+	label	"Attribute Transfer"
+	tabbreak
+
+	parm {
+	    name	"xfer_primitiveattribs"
+	    label	"Enable Primitives"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xfer_primattriblist"
+	    label	"Primitives"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ xfer_primitiveattribs != 1 }"
+	    menutoggle	{
+		[ "opmenu -l foreach1/transfer_attrs primattriblist" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xfer_pointattribs"
+	    label	"Enable Points"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xfer_pointattriblist"
+	    label	"Points"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ xfer_pointattribs != 1 }"
+	    menutoggle	{
+		[ "opmenu -l foreach1/transfer_attrs pointattriblist" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder2"
+	label	"Postprocessing"
+
+	parm {
+	    name	"apply_postproc"
+	    label	"Apply Post-Processing"
+	    type	toggle
+	    default	{ "0" }
+	    help	"Apply additional processing after the wrapping (smoothing and 'thickening')."
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"post_smooth_frequency"
+	    label	"Cutoff Frequency"
+	    type	float
+	    default	{ "0.1" }
+	    disablewhen	"{ apply_postproc != 1 }"
+	    range	{ 0.0001! 0.2 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"post_smooth_iterations"
+	    label	"Smoothing Iterations"
+	    type	integer
+	    default	{ "1" }
+	    disablewhen	"{ apply_postproc != 1 }"
+	    range	{ 0! 100 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"post_peak_dist"
+	    label	"Peak Distance"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ apply_postproc != 1 }"
+	    range	{ 0 1.5 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}
