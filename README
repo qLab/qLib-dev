@@ -25,6 +25,17 @@ TODO
 	- the problem with the default vcomment parameter is that it might not show up in flipbooks
 	- should show up in flipbooks (even in OpenGL ROP render outputs--that would be very nice)
 
+- ROP node(s) that can do the following (mostly done using presets now -- Shell ROP)
+	- backup file sequences before render/output
+	- move rendered sequence(s) to 'somewhere else' after render/output finished
+	- automatically build preview .mov/.mp4 movies from rendered sequence(s)
+	- launch mplay after rendering completed
+	- post-process rendered seq: add all kinds of OSD texts
+		- add OSD only to .mov version (?)
+
+
+- PRESETS: find a way to store them in ascii (as with otl and hip files)
+
 
 - Take Merge qL
 	- rewrite it in python (?)
