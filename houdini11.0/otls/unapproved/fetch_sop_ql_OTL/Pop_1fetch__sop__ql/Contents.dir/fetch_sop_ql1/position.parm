@@ -1,0 +1,21 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	1	)
+source	[ 0	locks=0 ]	(	""	)
+applymotion	[ 0	locks=0 ]	(	"all"	)
+mswitcher	[ 0	locks=0 ]	(	0	0	0	)
+postype	[ 0	locks=0 ]	(	"comp"	)
+posv	[ 0	locks=0 ]	(	"vector3($TX, $TY, $TZ)"	)
+t	[ 8	locks=0 ]	(	[ tx	1.33576739 ] 	[ ty	-0.793891847 ] 	[ tz	-0.434017211 ] 	)
+usecontextgeo	[ 0	locks=0 ]	(	"none"	)
+pathpath	[ 0	locks=0 ]	(	""	)
+ignorexform	[ 0	locks=0 ]	(	"off"	)
+pathpos	[ 0	locks=0 ]	(	0	)
+endopt	[ 0	locks=0 ]	(	"cycle"	)
+refpath	[ 0	locks=0 ]	(	""	)
+reftype	[ 0	locks=0 ]	(	"comp"	)
+refposv	[ 0	locks=0 ]	(	"vector3(0, 0, 0)"	)
+reft	[ 8	locks=0 ]	(	0	0	0	)
+mswitcher4	[ 0	locks=0 ]	(	0	0	0	)
+attr	[ 0	locks=0 ]	(	P	)
+}

@@ -1,0 +1,101 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"applymotion"
+	baseparm
+	export	none
+    }
+    groupradio {
+	name	"mswitcher4"
+	label	"Position"
+
+	parm {
+	    name	"postype"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"posv"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	all
+	}
+    }
+
+    groupradio {
+	name	"mswitcher4_1"
+	label	"Path"
+
+	parm {
+	    name	"usecontextgeo"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ignorexform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathpos"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"endopt"
+	    baseparm
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"mswitcher4_2"
+	label	"Reference"
+
+	parm {
+	    name	"refpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"reftype"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"refposv"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"reft"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"attr"
+	label	"attr"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+    }

@@ -1,0 +1,20 @@
+{
+    channel upx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $PT, chs(\"attr\"), 0)" }
+    }
+    channel upy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $PT, chs(\"attr\"), 1)" }
+    }
+    channel upz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $PT, chs(\"attr\"), 2)" }
+    }
+  }
