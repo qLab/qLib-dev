@@ -1,0 +1,9 @@
+{
+version 0.8
+attrname	[ 0	locks=0 ]	(	pscale	)
+curve	[ 0	locks=0	autoscope=0 ]	(	[ curve	10 ] 	)
+labelparm	[ 0	locks=0 ]	(	"Use the Channel Editor (Shift+LMB) to edit the lookup curve."	)
+folder0	[ 0	locks=0 ]	(	0	)
+newattr	[ 0	locks=0 ]	(	"off"	)
+outattr	[ 0	locks=0 ]	(	pscale_out	)
+}

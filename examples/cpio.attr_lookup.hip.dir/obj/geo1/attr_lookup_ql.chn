@@ -1,0 +1,12 @@
+{
+    channel curve {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666701436042786
+      segment { length = 0.04166669026017189 value = 0 10 slope = 0 2.41605 accel = 0.0138889 0.0377436
+	 expr = bezier() }
+      segment { length = 0 value = 10 0 slope = 2.41605 0 accel = 0.905845 0.333333
+	 expr = bezier() }
+    }
+  }
