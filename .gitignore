@@ -6,3 +6,6 @@ tarballs
 # content backups within extracted otl file structures
 *.bkp*
 
+# ignore presets for now (until there's a way to store them in ascii)
+presets/*
+
