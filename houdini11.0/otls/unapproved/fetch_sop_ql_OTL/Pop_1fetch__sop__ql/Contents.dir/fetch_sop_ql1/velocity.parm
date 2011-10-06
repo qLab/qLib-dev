@@ -1,0 +1,10 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	1	)
+source	[ 0	locks=0 ]	(	""	)
+applymotion	[ 0	locks=0 ]	(	"all"	)
+veltype	[ 0	locks=0 ]	(	"comp"	)
+velv	[ 0	locks=0 ]	(	"vector3($VX, $VY, $VZ)"	)
+v	[ 8	locks=0 ]	(	[ vx	0 ] 	[ vy	0.236596584 ] 	[ vz	-2.99851298 ] 	)
+attr	[ 0	locks=0 ]	(	v	)
+}

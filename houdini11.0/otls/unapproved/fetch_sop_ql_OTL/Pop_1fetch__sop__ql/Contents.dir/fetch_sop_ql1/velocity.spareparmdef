@@ -1,0 +1,38 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"applymotion"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"veltype"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"velv"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"v"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"attr"
+	label	"attr"
+	type	string
+	default	{ "v" }
+	range	{ 0 1 }
+	export	none
+    }

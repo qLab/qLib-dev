@@ -1,0 +1,38 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"applymotion"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"uptype"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"upv"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"up"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"attr"
+	label	"attr"
+	type	string
+	default	{ "up" }
+	range	{ 0 1 }
+	export	none
+    }

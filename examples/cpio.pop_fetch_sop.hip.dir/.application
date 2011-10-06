@@ -1,0 +1,570 @@
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /out 0.00588235  0.00588235 1 panetab2
+chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 1 -g 0 -H 0 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.142634 -u 0 -v 0 -h -41.1442 254.326 -r -1.5 1.5 -R 0 -8.21538 10.7579 buildB.panetab20
+viewerstow -b stow -x open -l open -m open -c open -d open buildB.pane1.world
+vieweroption -a 0 -h 0 -m 1 -r 'View: Mantra' -F 'res 1 960 540 zoom 100 croptoview 1 range 1 480 1 keyframesonly 0 framesappend 0 audio \'\' audioframe 1 audiooffset 0 visible \'*\' blockedit 0 background \'\' usegamma 1 gamma 1 uselut 0 lut \'\' initializeops 0 mblur 0 4 2 1 0.250000 dof 0 0 4 10.000000 41.412399 22.000000 aa -1 beauty 0 session \'\'' buildB.pane1.world
+viewlayout -s 2 buildB.pane1.world
+viewtype -t perspective buildB.pane1.world.`vpname("buildB.pane1.world",2)`
+viewtype -t ortho_top buildB.pane1.world.`vpname("buildB.pane1.world",1)`
+viewtype -t ortho_front buildB.pane1.world.`vpname("buildB.pane1.world",3)`
+viewtype -t ortho_right buildB.pane1.world.`vpname("buildB.pane1.world",4)`
+viewname -l on -n aaaa3 buildB.pane1.world.`vpname("buildB.pane1.world",2)`
+viewname -l on -n aaaa2 buildB.pane1.world.`vpname("buildB.pane1.world",1)`
+viewname -l on -n aaaa1 buildB.pane1.world.`vpname("buildB.pane1.world",3)`
+viewname -l on -n aaaa0 buildB.pane1.world.`vpname("buildB.pane1.world",4)`
+viewname -l off -n persp1 buildB.pane1.world.`vpname("buildB.pane1.world",2)`
+viewname -l off -n top1 buildB.pane1.world.`vpname("buildB.pane1.world",1)`
+viewname -l off -n front1 buildB.pane1.world.`vpname("buildB.pane1.world",3)`
+viewname -l off -n right1 buildB.pane1.world.`vpname("buildB.pane1.world",4)`
+viewdisplay -a on buildB.pane1.world.persp1
+viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.persp1
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.persp1
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.persp1
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.persp1
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world.persp1
+viewdisplay -I unsel b off buildB.pane1.world.persp1
+viewdisplay -I unsel f off buildB.pane1.world.persp1
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world.persp1
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world.persp1
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world.persp1
+viewdisplay -N templ p off -I templ p off buildB.pane1.world.persp1
+viewdisplay -N templ m off -I templ h off buildB.pane1.world.persp1
+viewdisplay -I templ b off buildB.pane1.world.persp1
+viewdisplay -I templ f off buildB.pane1.world.persp1
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world.persp1
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world.persp1
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world.persp1
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world.persp1
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world.persp1
+viewdisplay -I curr_unsel b off buildB.pane1.world.persp1
+viewdisplay -I curr_unsel f off buildB.pane1.world.persp1
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world.persp1
+viewdisplay -A curr_all on -l 1 -L on -n 1 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world.persp1
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world.persp1
+viewdisplay -Q on -m on -v on buildB.pane1.world.persp1
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.persp1
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.persp1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.persp1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.persp1
+viewtransform buildB.pane1.world.persp1 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0.111788 0.325463 11.9624 )  pxyz ( 0.331745 0.751768 -0.18232 )  rotation ( 0.22471 -0.583227 0.780609 -8.35609e-08 0.801097 0.598535 -0.974425 -0.134497 0.180015  )  homedistance ( 7.84476 )  homeadjboxwidth ( 4.70683 )  homeorthowidth ( 4.70683 )  homeradius ( 6.43506 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewcamera -c '' buildB.pane1.world.persp1
+vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.persp1
+viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.persp1
+viewdisplay -a on buildB.pane1.world.top1
+viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.top1
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.top1
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.top1
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.top1
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world.top1
+viewdisplay -I unsel b off buildB.pane1.world.top1
+viewdisplay -I unsel f off buildB.pane1.world.top1
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world.top1
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world.top1
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world.top1
+viewdisplay -N templ p off -I templ p off buildB.pane1.world.top1
+viewdisplay -N templ m off -I templ h off buildB.pane1.world.top1
+viewdisplay -I templ b off buildB.pane1.world.top1
+viewdisplay -I templ f off buildB.pane1.world.top1
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world.top1
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world.top1
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world.top1
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world.top1
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world.top1
+viewdisplay -I curr_unsel b off buildB.pane1.world.top1
+viewdisplay -I curr_unsel f off buildB.pane1.world.top1
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world.top1
+viewdisplay -A curr_all on -l 1 -L on -n 1 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world.top1
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world.top1
+viewdisplay -Q on -m on -v on buildB.pane1.world.top1
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.top1
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.top1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.top1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.top1
+viewtransform buildB.pane1.world.top1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( 1 0 0 0 7.54979e-08 1 0 -1 7.54979e-08  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.top1
+viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.top1
+viewdisplay -a on buildB.pane1.world.front1
+viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.front1
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.front1
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.front1
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.front1
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world.front1
+viewdisplay -I unsel b off buildB.pane1.world.front1
+viewdisplay -I unsel f off buildB.pane1.world.front1
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world.front1
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world.front1
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world.front1
+viewdisplay -N templ p off -I templ p off buildB.pane1.world.front1
+viewdisplay -N templ m off -I templ h off buildB.pane1.world.front1
+viewdisplay -I templ b off buildB.pane1.world.front1
+viewdisplay -I templ f off buildB.pane1.world.front1
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world.front1
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world.front1
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world.front1
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world.front1
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world.front1
+viewdisplay -I curr_unsel b off buildB.pane1.world.front1
+viewdisplay -I curr_unsel f off buildB.pane1.world.front1
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world.front1
+viewdisplay -A curr_all on -l 1 -L on -n 1 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world.front1
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world.front1
+viewdisplay -Q on -m on -v on buildB.pane1.world.front1
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.front1
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.front1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.front1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.front1
+viewtransform buildB.pane1.world.front1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( 1 0 0 0 1 0 0 0 1  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.front1
+viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.front1
+viewdisplay -a on buildB.pane1.world.right1
+viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.right1
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.right1
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.right1
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.right1
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world.right1
+viewdisplay -I unsel b off buildB.pane1.world.right1
+viewdisplay -I unsel f off buildB.pane1.world.right1
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world.right1
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world.right1
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world.right1
+viewdisplay -N templ p off -I templ p off buildB.pane1.world.right1
+viewdisplay -N templ m off -I templ h off buildB.pane1.world.right1
+viewdisplay -I templ b off buildB.pane1.world.right1
+viewdisplay -I templ f off buildB.pane1.world.right1
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world.right1
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world.right1
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world.right1
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world.right1
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world.right1
+viewdisplay -I curr_unsel b off buildB.pane1.world.right1
+viewdisplay -I curr_unsel f off buildB.pane1.world.right1
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world.right1
+viewdisplay -A curr_all on -l 1 -L on -n 1 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world.right1
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world.right1
+viewdisplay -Q on -m on -v on buildB.pane1.world.right1
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.right1
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.right1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.right1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.right1
+viewtransform buildB.pane1.world.right1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( -4.37114e-08 0 1 0 1 0 -1 0 -4.37114e-08  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.right1
+viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.right1
+viewdisplay -a on buildB.pane1.world:7
+viewdisplay -M unsel flat -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:7
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:7
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:7
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:7
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:7
+viewdisplay -I unsel b off buildB.pane1.world:7
+viewdisplay -I unsel f off buildB.pane1.world:7
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:7
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:7
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:7
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:7
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:7
+viewdisplay -I templ b off buildB.pane1.world:7
+viewdisplay -I templ f off buildB.pane1.world:7
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:7
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:7
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:7
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:7
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:7
+viewdisplay -I curr_unsel b off buildB.pane1.world:7
+viewdisplay -I curr_unsel f off buildB.pane1.world:7
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:7
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:7
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:7
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:7
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:7
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:7
+viewtransform buildB.pane1.world:7 version ( 3 )  flag ( Fx )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 0.494423 0 0.494423 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( -22.8469 2.09891 441.737 )  pxyz ( -22.8469 2.09897 -86.2315 )  rotation ( -0.857325 -0.213103 0.468549 -7.71615e-06 0.910256 0.413984 -0.514733 0.354924 -0.780406  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:8
+viewdisplay -M unsel flat -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:8
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:8
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:8
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:8
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:8
+viewdisplay -I unsel b off buildB.pane1.world:8
+viewdisplay -I unsel f off buildB.pane1.world:8
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:8
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:8
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:8
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:8
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:8
+viewdisplay -I templ b off buildB.pane1.world:8
+viewdisplay -I templ f off buildB.pane1.world:8
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:8
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:8
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:8
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:8
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:8
+viewdisplay -I curr_unsel b off buildB.pane1.world:8
+viewdisplay -I curr_unsel f off buildB.pane1.world:8
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:8
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:8
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:8
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:8
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:8
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:8
+viewtransform buildB.pane1.world:8 version ( 3 )  flag ( Fx )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 0.494423 0 0.494423 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( -22.8469 2.09891 441.737 )  pxyz ( -22.8469 2.09897 -86.2315 )  rotation ( -0.857325 -0.213103 0.468549 -7.71615e-06 0.910256 0.413984 -0.514733 0.354924 -0.780406  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:9
+viewdisplay -M unsel flat -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:9
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:9
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:9
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:9
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:9
+viewdisplay -I unsel b off buildB.pane1.world:9
+viewdisplay -I unsel f off buildB.pane1.world:9
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:9
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:9
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:9
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:9
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:9
+viewdisplay -I templ b off buildB.pane1.world:9
+viewdisplay -I templ f off buildB.pane1.world:9
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:9
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:9
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:9
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:9
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:9
+viewdisplay -I curr_unsel b off buildB.pane1.world:9
+viewdisplay -I curr_unsel f off buildB.pane1.world:9
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:9
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:9
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:9
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:9
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:9
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:9
+viewtransform buildB.pane1.world:9 version ( 3 )  flag ( Fx )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 0.494423 0 0.494423 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 1.18354 7.72257 459.147 )  pxyz ( 1.18357 7.72263 -68.8206 )  rotation ( -0.00061128 -0.421983 0.90658 3.82183e-12 0.906576 0.421982 -0.999977 0.000257955 -0.000554185  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:0
+viewdisplay -M unsel shade -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:0
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:0
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:0
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:0
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:0
+viewdisplay -I unsel b off buildB.pane1.world:0
+viewdisplay -I unsel f off buildB.pane1.world:0
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:0
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:0
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:0
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:0
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:0
+viewdisplay -I templ b off buildB.pane1.world:0
+viewdisplay -I templ f off buildB.pane1.world:0
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:0
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:0
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:0
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:0
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:0
+viewdisplay -I curr_unsel b off buildB.pane1.world:0
+viewdisplay -I curr_unsel f off buildB.pane1.world:0
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:0
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:0
+viewdisplay -V 1 -z off -y off -x off -X on -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:0
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:0
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:0
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:0
+viewtransform buildB.pane1.world:0 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 90000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 177.481 86.2226 1631.07 )  pxyz ( 182.924 109.691 999.291 )  rotation ( 0.899573 -0.0429337 0.434655 0.000103377 0.995178 0.0980862 -0.436771 -0.0881908 0.895239  )  homedistance ( 5000.64 )  homeadjboxwidth ( 3131.63 )  homeorthowidth ( 3131.63 )  homeradius ( 3985.92 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:1
+viewdisplay -M unsel shade -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:1
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:1
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:1
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:1
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:1
+viewdisplay -I unsel b off buildB.pane1.world:1
+viewdisplay -I unsel f off buildB.pane1.world:1
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:1
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:1
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:1
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:1
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:1
+viewdisplay -I templ b off buildB.pane1.world:1
+viewdisplay -I templ f off buildB.pane1.world:1
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:1
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:1
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:1
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:1
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:1
+viewdisplay -I curr_unsel b off buildB.pane1.world:1
+viewdisplay -I curr_unsel f off buildB.pane1.world:1
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:1
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:1
+viewdisplay -V 1 -z off -y off -x off -X on -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:1
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:1
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:1
+viewtransform buildB.pane1.world:1 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 90000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 300.152 107.467 1569.19 )  pxyz ( 305.595 130.935 937.405 )  rotation ( 0.881092 -0.0782158 0.466432 0.000101286 0.986261 0.165194 -0.472945 -0.145504 0.868995  )  homedistance ( 5000.64 )  homeadjboxwidth ( 3131.63 )  homeorthowidth ( 3131.63 )  homeradius ( 3985.92 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:2
+viewdisplay -M unsel shade -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:2
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:2
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:2
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:2
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:2
+viewdisplay -I unsel b off buildB.pane1.world:2
+viewdisplay -I unsel f off buildB.pane1.world:2
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:2
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:2
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:2
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:2
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:2
+viewdisplay -I templ b off buildB.pane1.world:2
+viewdisplay -I templ f off buildB.pane1.world:2
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:2
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:2
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:2
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:2
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:2
+viewdisplay -I curr_unsel b off buildB.pane1.world:2
+viewdisplay -I curr_unsel f off buildB.pane1.world:2
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:2
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:2
+viewdisplay -V 1 -z off -y off -x off -X on -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:2
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:2
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:2
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:2
+viewtransform buildB.pane1.world:2 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 90000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 253.698 11.5184 1421.15 )  pxyz ( 259.142 34.9871 981.995 )  rotation ( 0.847076 -0.0575868 0.528342 9.7382e-05 0.994129 0.108199 -0.531471 -0.0916014 0.842109  )  homedistance ( 5000.64 )  homeadjboxwidth ( 3131.63 )  homeorthowidth ( 3131.63 )  homeradius ( 3985.92 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:3
+viewdisplay -M unsel shade -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:3
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:3
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:3
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:3
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:3
+viewdisplay -I unsel b off buildB.pane1.world:3
+viewdisplay -I unsel f off buildB.pane1.world:3
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:3
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:3
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:3
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:3
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:3
+viewdisplay -I templ b off buildB.pane1.world:3
+viewdisplay -I templ f off buildB.pane1.world:3
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:3
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:3
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:3
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:3
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:3
+viewdisplay -I curr_unsel b off buildB.pane1.world:3
+viewdisplay -I curr_unsel f off buildB.pane1.world:3
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:3
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:3
+viewdisplay -V 1 -z off -y off -x off -X on -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:3
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:3
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:3
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:3
+viewtransform buildB.pane1.world:3 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 90000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 177.481 86.2226 1631.07 )  pxyz ( 182.924 109.691 999.291 )  rotation ( 0.899573 -0.0429338 0.434655 0.00010339 0.995178 0.0980863 -0.436771 -0.0881908 0.89524  )  homedistance ( 5000.64 )  homeadjboxwidth ( 3131.63 )  homeorthowidth ( 3131.63 )  homeradius ( 3985.92 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:4
+viewdisplay -M unsel flat -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:4
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:4
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:4
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:4
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:4
+viewdisplay -I unsel b off buildB.pane1.world:4
+viewdisplay -I unsel f off buildB.pane1.world:4
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:4
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:4
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:4
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:4
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:4
+viewdisplay -I templ b off buildB.pane1.world:4
+viewdisplay -I templ f off buildB.pane1.world:4
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:4
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:4
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:4
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:4
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:4
+viewdisplay -I curr_unsel b off buildB.pane1.world:4
+viewdisplay -I curr_unsel f off buildB.pane1.world:4
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:4
+viewdisplay -A curr_all on -l 1 -L off -n 1 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:4
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:4
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:4
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:4
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:4
+viewtransform buildB.pane1.world:4 version ( 3 )  flag ( Fx )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 0.494423 0 0.494423 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( -29.5154 -53.1257 369.522 )  pxyz ( -29.5154 -53.1257 -74.1942 )  rotation ( -0.95954 -0.179379 0.216968 5.95816e-08 0.770697 0.637175 -0.281517 0.611405 -0.739526  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewdisplay -a on buildB.pane1.world:6
+viewdisplay -M unsel flat -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world:6
+viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world:6
+viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world:6
+viewdisplay -N unsel p off -I unsel p off buildB.pane1.world:6
+viewdisplay -N unsel m off -I unsel h off buildB.pane1.world:6
+viewdisplay -I unsel b off buildB.pane1.world:6
+viewdisplay -I unsel f off buildB.pane1.world:6
+viewdisplay -M templ wire -N templ n off -E templ n off -I templ n off buildB.pane1.world:6
+viewdisplay -N templ t off -E templ t off -I templ t off buildB.pane1.world:6
+viewdisplay -N templ l off -E templ g off -I templ l off buildB.pane1.world:6
+viewdisplay -N templ p off -I templ p off buildB.pane1.world:6
+viewdisplay -N templ m off -I templ h off buildB.pane1.world:6
+viewdisplay -I templ b off buildB.pane1.world:6
+viewdisplay -I templ f off buildB.pane1.world:6
+viewdisplay -M curr_unsel wire -N curr_unsel n off -E curr_unsel n off -I curr_unsel n off buildB.pane1.world:6
+viewdisplay -N curr_unsel t off -E curr_unsel t off -I curr_unsel t on buildB.pane1.world:6
+viewdisplay -N curr_unsel l off -E curr_unsel g off -I curr_unsel l off buildB.pane1.world:6
+viewdisplay -N curr_unsel p off -I curr_unsel p off buildB.pane1.world:6
+viewdisplay -N curr_unsel m off -I curr_unsel h off buildB.pane1.world:6
+viewdisplay -I curr_unsel b off buildB.pane1.world:6
+viewdisplay -I curr_unsel f off buildB.pane1.world:6
+viewdisplay -A templ on -B bw -b off -d off -C 2 -e 0.76 -F off -f off -g on -G '*' -h off -H on -j off -J off buildB.pane1.world:6
+viewdisplay -A curr_all on -l 1 -L off -n 10 -o off -O on -q on -r on -s off -S off -t off buildB.pane1.world:6
+viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -k off buildB.pane1.world:6
+viewdisplay -W  off bound_box_wire 0 buildB.pane1.world:6
+viewdisplay -c off -K off -P points -p 3 buildB.pane1.world:6
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world:6
+viewtransform buildB.pane1.world:6 version ( 3 )  flag ( Fx )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 0.494423 0 0.494423 )  winroll ( 0 )  clear ( 1 )  nearfar ( 1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( -8.87978 12.9213 266.246 )  pxyz ( -8.87974 12.9214 -72.1047 )  rotation ( -0.857325 -0.213103 0.468549 -7.71615e-06 0.910256 0.413984 -0.514733 0.354924 -0.780406  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+viewsnapshotoption -s off -h off -a 1 -v '*' buildB.pane1.world
+cplane -o -8 0 -8 -n 7.3908e-13 1 1.45519e-11 -x 0 0 1 -l n -s 1 1 -c 16 16 -r 8 8 -d on buildB.pane1.world
+glcache -M 1024
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -2.15872  -3.57231 1 panetab24
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/chopnet1 -4.89493  -20.8263 0.70002 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1 -0.324606  0.312731 1 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root -3.01755  -1.00512 1 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis -1.36591  -1.38432 0.911901 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/joints_GRP_out 8.90576  -21.9291 1.34055 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1 -3.96629  -12.9777 1 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A -12.1035  -16.0032 0.325827 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_anim_skeleton/sniper_anim_000_anim_skel_root -264.206  -14.9904 1.10607 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP -15.2181  -0.666398 0.796573 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -10.5674  -7.26448 0.656988 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup -3.34696  0.0456176 1 panetab23
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_zubbony -2.64108  -5.42938 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_jobbkez_geo -5.48226  -4.95879 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/voppop1 -3.10579  -3.97045 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_controls/sniper_anim_000_main_to_constrain/sniper_anim_000_mainplacement/sniper_anim_000_placement -5.84041  -6.55578 0.430264 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_massive_setup/sniper_anim_000_massive_rig_vis/sniper_anim_000_massive_geo_GRP -3.44277  2.90421 0.814129 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/grid -3.37638  -7.91762 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_massive_setup/sniper_anim_000_massive_rig_vis -3.71167  3.69268 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/update_attrs -12.5517  -17.0266 0.455832 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/attr_lookup_ql/chopnet -0.505882  -3.36471 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/grid1 -3.00579  -8.6235 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/joints_GRP1 -26.4672  -57.1919 0.140373 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis -3.71167  4.16915 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/pop_fetch_sop -1.78804  -12.2818 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_alkarvedo -2.82932  -4.93526 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/pscale_ql1/pscale_vopsop1 -3.55237  -10.238 0.580397 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/pscaleVis_ql1 0.479502  -7.46031 0.646108 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_anim_preview 3.25788  -3.3718 0.757526 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_rigs/sniper_anim_000_materials 3.91242  -1.00438 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet1/vopsop1 -2.04114  -10.9627 0.744909 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/point_mix_ql1/DO_POINT_MIX -4.61756  -3.67641 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/distribute_ql1 -3.76507  -4.04466 0.893048 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx -1.09365  0.0763619 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/vopsop1 0.158917  -4.20575 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup -0.0704941  0.0456176 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common -2.80579  2.05959 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/update_other_attrs -1.13106  -16.5649 0.569476 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/frame_display -6.6352  -7.14703 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_geom_head/sniper_anim_000_pxy_fej -2.7352  -3.44115 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_controls/sniper_anim_000_main_to_constrain/sniper_anim_000_mainplacement/sniper_anim_000_placement/sniper_anim_000_hasTaska_7_CTRL_GRP/sniper_anim_000_hasTaska_7_CTRL_null -1.41007  -2.60062 0.740639 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_geom_head -0.428941  -0.702912 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/chopnet1 -3.42354  -26.7886 0.647863 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet_remaptest/vopsop1/remap_value1 -1.583  -13.6759 0.64392 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet1/vopsop1/subnet1 -3.56767  -14.1613 0.680575 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1/update_attrs -2.05312  -9.18904 0.6672 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_gatyaszij -2.98226  -5.34703 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/sim_postproc 0.412277  2.4647 1.26185 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/pop_fetch_sop/popnet1 -0.412394  1.70345 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_rigs -4.84127  3.43018 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/tetra_brik_ql1 -7.4397  54.1039 0.80189 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_labszarvedo -3.05285  -5.20585 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/chopnet1/write_cycles -2.21158  -6.08235 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_pakkok -1.94687  -0.476537 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/update_other_attrs_TODO -6.92004  -13.6993 0.781741 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/distribute_ql1/foreach1 -1.84583  -3.6964 0.950447 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/turbulate_ql1/Noise_Deformer_VOP_SOP -18.6966  -10.2247 0.36583 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1 11.807  2.98967 1.17971 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet2 1.21765  0.87647 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/turbulate_ql1 -2.28966  -0.883338 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/chopnet1/ropnet1 0  0 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_ov_gajdBase -5.18226  -5.68821 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/scalar_remap_ql -3.4014  -2.66791 0.84363 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_ovi -5.24988  -2.28862 0.814869 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1 -4.44955  -11.6595 0.612353 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/attr_lookup_ql -2.11093  -4.15907 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_controls/sniper_anim_000_main_to_constrain/sniper_anim_000_mainplacement -0.829318  0.0456176 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2 -2.03478  -9.64093 1.03978 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_konyokvedo -2.66461  -5.5235 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo3 -4.52932  -6.9588 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/chopnet1 -1.25882  0.588235 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1/fetch_sop_ql1 -5.69296  -2.64314 0.889363 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/pscale_ql1 -3.78197  -2.88241 0.777706 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1 0.432566  0.754504 1.05442 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1/update_dist -2.14108  -4.51163 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/update_basic_attrs -9.01738  -13.1977 0.530126 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet2 0.494118  -0.0705878 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_anim_skeleton -1.92932  1.60443 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/joints_GRP_out -7.36323  -28.8282 0.305632 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/pop_fetch_sop/popnet1/fetch_sop_ql1 1.02353  -0.411765 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_pakkok1 -4.28814  -1.49997 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/objnet1 0  0 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_nadragBakancs -2.54696  -3.31173 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A 5.20551  1.91623 0.701946 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -1.49366  11.9739 1.06564 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root -3.71129  1.74415 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/chopnet1 0.611765  0.176471 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_anim_skeleton/sniper_anim_000_anim_skel_root -345.755  -115.038 0.0244199 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/scalar_remap_ql/chopnet 0.705882  -1.69412 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet_remaptest 0.90866  1.1276 1.18983 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/one_guy 1.63773  -10.2145 0.555713 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo2/point_mix_ql1 -2.39999  -2.06177 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet1 1.18244  1.18541 1.56625 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_anim_skeleton/sniper_anim_000_anim_skel_root/sniper_anim_000_spineRibbons_GRP -38.4938  1.31705 0.407299 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/popnet1/fetch_sop_ql1/voppop1 1.69673  -4.09803 1.31471 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/fetch_sop_ql -2.63371  -2.33064 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/sopnet_remaptest/vopsop1 -4.78793  -11.0833 0.710866 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/crowd_test_A/popnet1/subnet1 -2.41009  -3.05415 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/skinned_GRP_out -7.23855  -6.4807 0.78627 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP 2.85363  -5.08778 0.943909 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/subnet2 -2.3352  -2.43862 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_common/sniper_anim_000_anim_skeleton/sniper_anim_000_anim_skel_root/sniper_anim_000_massive_joints_GRP -67.7883  -21.5113 0.0934683 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_massive_setup -5.13419  2.14595 0.671797 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/stand_pt_A -3.69402  -4.40585 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/sniper_v001_fbx/sniper_anim_000_root/sniper_anim_000_anim_setup/sniper_anim_000_anim_rig_vis/sniper_anim_000_geom_proxy_GRP/sniper_anim_000_pxy_melleny -2.27637  -4.54703 1 panetab22
+panepath -d buildB -f -p panetab8 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab22 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab23 /obj/
+panepath -d buildB -f -p panetab24 /obj/
+panepath -d buildB -f -p panetab19 /obj/pop_fetch_sop
+panepath -d buildB -f -p pane1 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab12 /obj/
+panepath -d buildB -f -p panetab11 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab10 /obj/
+panepath -d buildB -f -p panetab5 /out/
+panepath -d buildB -f -p panetab17 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab26 /obj/
+panepath -d buildB -f -p panetab20 /obj/geo1/attr_lookup_ql/chopnet/lookup1
+panepath -d buildB -f -p panetab21 /obj/
+panepath -d buildB -f -p panetab9 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab14 /out/
+panepath -d buildB -f -p panetab15 /out/
+panepath -d buildB -f -p panetab18 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab25 /out/
+panepath -d buildB -f -p panetab7 /obj/
+panepath -d buildB -f -p panetab2 /out/
+panepath -d buildB -f -p panetab4 /out/
+panepath -d buildB -f -p panetab13 /out/
+panepath -d buildB -f -p panetab1 /out/
+panepath -d buildB -f -p panetab6 /obj/pop_fetch_sop
+panepath -d buildB -f -p panetab3 /out/
+desk set buildB
+performance -l window -c on -g off -o on -v on -f on -m off -r on -i off -h off -p off -s on -e off -F hide -U ms -T 1
+viewupdate -u always
+audiopanel -s p ''
+audiopanel -s r on
+audiopanel -s s 1
+audiopanel -s f 45
+audiopanel -t p stop
+audiopanel -t l off
+audiopanel -t r on
+audiopanel -o m off
+audiopanel -o t on
+audiopanel -o u on
+audiopanel -o l 1
+audiopanel -o r 1
+audiopanel -o d 0
+audiopanel -r d 0.2
+audiopanel -m 0
+audiopanel -a ''
+audiopanel -f 1
+audiopanel -O 0
+colorsettings -D -A -g 2.2 -l "" -p -v -i -r -c
+compproject -r 640 480 -a 1 -d i8 -p 0 255 -P full -f 0 -F 0 -l on
+texcache  -a off -r 2048 2048 -m 10000 -M 2000
+shopvisible +OGL +OGL2 +I3D +VMantra +MI +RIB

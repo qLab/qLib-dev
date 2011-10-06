@@ -1,0 +1,20 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	1	)
+source	[ 0	locks=0 ]	(	""	)
+stdswitcher	[ 0	locks=0 ]	(	1	1	)
+dosupppos	[ 0	locks=0 ]	(	"off"	)
+supppos	[ 8	locks=0 ]	(	[ supppos	0 ] 	)
+dosuppvel	[ 0	locks=0 ]	(	"off"	)
+suppvel	[ 8	locks=0 ]	(	[ suppvel	0 ] 	)
+dosupprot	[ 0	locks=0 ]	(	"off"	)
+supprot	[ 8	locks=0 ]	(	[ supprot	0 ] 	)
+dosuppangvel	[ 0	locks=0 ]	(	"off"	)
+suppangvel	[ 8	locks=0 ]	(	[ suppangvel	0 ] 	)
+dosuppup	[ 0	locks=0 ]	(	"off"	)
+suppup	[ 8	locks=0 ]	(	[ suppup	0 ] 	)
+dosuppage	[ 0	locks=0 ]	(	"off"	)
+suppage	[ 8	locks=0 ]	(	[ suppage	0 ] 	)
+dosuppreap	[ 0	locks=0 ]	(	"on"	)
+suppreap	[ 8	locks=0 ]	(	1	)
+}

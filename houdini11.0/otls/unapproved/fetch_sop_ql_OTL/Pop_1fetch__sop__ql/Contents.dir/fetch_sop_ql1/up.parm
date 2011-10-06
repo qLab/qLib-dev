@@ -1,0 +1,10 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	1	)
+source	[ 0	locks=0 ]	(	""	)
+applymotion	[ 0	locks=0 ]	(	"all"	)
+uptype	[ 0	locks=0 ]	(	"comp"	)
+upv	[ 0	locks=0 ]	(	"vector3($UPX, $UPY, $UPZ)"	)
+up	[ 8	locks=0 ]	(	[ upx	0 ] 	[ upy	0 ] 	[ upz	0 ] 	)
+attr	[ 0	locks=0 ]	(	up	)
+}
