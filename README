@@ -14,3 +14,49 @@ TODO
 	- similar to popnet/color node (map a scalar/float attr to a ramp/whatever)
 
 
+
+- a SOP that generates per-point tangents/binormals (bitangents! bitang vektorokat!!!)
+
+- add the pscale visualizer, too
+
+- a scalar attribute remapper (curve lookup)
+
+- a (SOP?) node that displays text in the 3d viewport (especially in the camera view)
+	- the problem with the default vcomment parameter is that it might not show up in flipbooks
+	- should show up in flipbooks (even in OpenGL ROP render outputs--that would be very nice)
+
+
+- Take Merge qL
+	- rewrite it in python (?)
+	- should support the hierarchical nature of takes
+
+- Vector qL
+	- "Add" mode (use the same blend attr for multiplying the 2nd input that's in Mix)
+		- example: P = P + v * (1.0/$FPS)
+	- "Sub" modes should also support the blend attr as a multiplier on the 2nd input (?)
+
+
+
+- Scalar qL (?)
+	- Similar to Vector, but scalar
+	- 1st, 2nd inputs
+	- remap w/ curve (?)
+	- modes: pass 1st input, pass 2nd input, add, sub, mult, min, max, avg, mix/blend
+		- Input #1: Attribute A
+			- Attr A: Scalar from 1st input / Vector (length) from 1st input / Vector x/y/z component (1st input) / Constant
+			- Attr Name A
+			- Constant A
+		- Input #2: Attribute B
+			- ...
+
+
+
+
+TO FIX
+======
+
+- Offset Curve qL (SOP): clean it up
+- Turbulate Ql (sic)
+
+
+
