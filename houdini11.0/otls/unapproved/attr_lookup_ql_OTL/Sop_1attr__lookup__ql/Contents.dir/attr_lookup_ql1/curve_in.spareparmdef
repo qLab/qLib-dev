@@ -1,0 +1,13 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"curve"
+	label	"curve"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
