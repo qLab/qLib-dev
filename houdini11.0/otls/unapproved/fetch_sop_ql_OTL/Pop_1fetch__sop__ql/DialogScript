@@ -1,4 +1,4 @@
-# Dialog script for fetch_sop_ql automatically generated 10/07/11 00:52:24
+# Dialog script for fetch_sop_ql automatically generated 10/07/11 20:31:38
 
 {
     name	fetch_sop_ql
@@ -22,7 +22,7 @@
 	    name	"soppath"
 	    label	"SOP"
 	    type	oppath
-	    default	{ "../../../xform1" }
+	    default	{ "" }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "oprelative" "." }
@@ -243,39 +243,39 @@
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	}
+	    group {
+		name	"folder0_2_1"
+		label	"Suppress POP Updates"
 
-	group {
-	    name	"folder0_2_1"
-	    label	"Suppress POP Updates"
+		parm {
+		    name	"dosupppos"
+		    label	"No Position Update"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dosuppvel"
+		    label	"No Velocity Update"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dosuppreap"
+		    label	"Suppress Death"
+		    type	toggle
+		    default	{ "on" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
 
-	    parm {
-		name	"dosupppos"
-		label	"No Position Update"
-		type	toggle
-		default	{ "off" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"dosuppvel"
-		label	"No Velocity Update"
-		type	toggle
-		default	{ "off" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"dosuppreap"
-		label	"Suppress Death"
-		type	toggle
-		default	{ "on" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
 	}
 
     }

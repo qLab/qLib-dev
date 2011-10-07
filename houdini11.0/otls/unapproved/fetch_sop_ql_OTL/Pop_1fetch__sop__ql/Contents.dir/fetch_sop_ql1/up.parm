@@ -1,6 +1,6 @@
 {
 version 0.8
-activate	[ 8	locks=0 ]	(	1	)
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
 source	[ 0	locks=0 ]	(	""	)
 applymotion	[ 0	locks=0 ]	(	"all"	)
 uptype	[ 0	locks=0 ]	(	"comp"	)

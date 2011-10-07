@@ -15,6 +15,6 @@ dosuppup	[ 0	locks=0 ]	(	"off"	)
 suppup	[ 8	locks=0 ]	(	[ suppup	0 ] 	)
 dosuppage	[ 0	locks=0 ]	(	"off"	)
 suppage	[ 8	locks=0 ]	(	[ suppage	0 ] 	)
-dosuppreap	[ 0	locks=0 ]	(	"on"	)
+dosuppreap	[ 8	locks=0 ]	(	[ dosuppreap	1 ] 	)
 suppreap	[ 8	locks=0 ]	(	1	)
 }
