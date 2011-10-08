@@ -1,7 +1,7 @@
 {
 version 0.8
-stdswitcher	[ 0	locks=0 ]	(	1	1	)
-index	[ 0	locks=0 ]	(	0	1	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+index	[ 8	locks=0 ]	(	[ index1	0 ] 	[ index2	1 ] 	)
 chanmatch	[ 0	locks=0 ]	(	"onetoone"	)
 match	[ 0	locks=0 ]	(	"index"	)
 scope	[ 0	locks=0 ]	(	*	)
