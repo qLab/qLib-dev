@@ -1,0 +1,14 @@
+{
+    channel val1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $HEIGHT }
+    }
+    channel val2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $SIZE }
+    }
+  }
