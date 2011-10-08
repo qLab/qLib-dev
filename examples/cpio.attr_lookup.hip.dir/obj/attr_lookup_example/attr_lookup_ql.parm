@@ -1,7 +1,10 @@
 {
 version 0.8
 attrname	[ 0	locks=0 ]	(	pscale	)
-curve	[ 0	locks=0	autoscope=0 ]	(	[ curve	10 ] 	)
+fromrange	[ 0	locks=0 ]	(	0	16	)
+folder1	[ 0	locks=0 ]	(	0	)
+curve	[ 0	locks=0	autoscope=0 ]	(	[ curve	2.22554278 ] 	)
+torange	[ 0	locks=0 ]	(	0	10	)
 labelparm	[ 0	locks=0 ]	(	"Use the Channel Editor (Shift+LMB) to edit the lookup curve."	)
 folder0	[ 0	locks=0 ]	(	0	)
 newattr	[ 0	locks=0 ]	(	"off"	)

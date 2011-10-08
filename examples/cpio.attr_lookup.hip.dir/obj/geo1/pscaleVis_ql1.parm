@@ -1,7 +1,0 @@
-{
-version 0.8
-displayType	[ 0	locks=0 ]	(	"1"	)
-spikeRadius	[ 0	locks=0 ]	(	0.200000003	)
-sphereRadius	[ 0	locks=0 ]	(	1	)
-outputGuideGeometry	[ 0	locks=0 ]	(	"on"	)
-}
