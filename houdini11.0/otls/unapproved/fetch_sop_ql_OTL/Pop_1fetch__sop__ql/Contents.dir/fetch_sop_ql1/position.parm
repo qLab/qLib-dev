@@ -1,12 +1,12 @@
 {
 version 0.8
-activate	[ 8	locks=0 ]	(	1	)
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
 source	[ 0	locks=0 ]	(	""	)
 applymotion	[ 0	locks=0 ]	(	"all"	)
 mswitcher	[ 0	locks=0 ]	(	0	0	0	)
 postype	[ 0	locks=0 ]	(	"comp"	)
 posv	[ 0	locks=0 ]	(	"vector3($TX, $TY, $TZ)"	)
-t	[ 8	locks=0 ]	(	[ tx	1.33576739 ] 	[ ty	-0.894886196 ] 	[ tz	-0.133468837 ] 	)
+t	[ 8	locks=0 ]	(	[ tx	4 ] 	[ ty	0 ] 	[ tz	4 ] 	)
 usecontextgeo	[ 0	locks=0 ]	(	"none"	)
 pathpath	[ 0	locks=0 ]	(	""	)
 ignorexform	[ 0	locks=0 ]	(	"off"	)

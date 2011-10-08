@@ -1,0 +1,14 @@
+13
+geom_attrs
+lookup1
+fetch_curves
+fetch_fromranges
+from_amp
+from_min
+from_max
+decr_by_min
+div_by_amp
+curve_values_normalized
+map_to_lookup_curve_range
+OUT
+restore_attr_names

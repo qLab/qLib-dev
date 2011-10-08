@@ -1,4 +1,4 @@
-# Dialog script for attr_lookup_ql automatically generated 10/07/11 00:59:18
+# Dialog script for attr_lookup_ql automatically generated 10/08/11 20:51:57
 
 {
     name	attr_lookup_ql
@@ -21,33 +21,71 @@
 	default	{ "pscale" }
 	help	"Name of attribute to perform curve lookup on."
 	menureplace	{
-	    "pscale"	"pscale"
-	    "mass"	"mass"
-	    "drag"	"drag"
-	    "Alpha"	"Alpha"
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
 	}
 	range	{ 0 1 }
 	export	none
     }
     parm {
-	name	"curve"
-	label	"Lookup Curve"
+	name	"fromrange"
+	label	"Input Value Range"
 	type	float
-	default	{ "bezier()" }
-	help	"Shift+LMB: Use the Channel Editor to edit the curve."
+	size	2
+	default	{ "0" "1" }
 	range	{ 0 10 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    parm {
-	name	"labelparm"
-	label	"."
-	type	label
-	nolabel
-	default	{ "Use the Channel Editor (Shift+LMB) to edit the lookup curve." }
-	range	{ 0 1 }
-	export	none
+    group {
+	name	"folder1"
+	label	"Lookup"
+	tabbreak
+
+	parm {
+	    name	"curve"
+	    label	"Lookup Curve"
+	    type	float
+	    default	{ "bezier()" }
+	    help	"Shift+LMB: Use the Channel Editor to edit the curve."
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"torange"
+	    label	"Lookup Curve Range"
+	    type	float
+	    size	2
+	    default	{ "0" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"."
+	    type	label
+	    nolabel
+	    default	{ "Use the Channel Editor (Shift+LMB) to edit the lookup curve." }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "export_disable" "1" }
+	}
     }
+
     group {
 	name	"folder0"
 	label	"Output"
