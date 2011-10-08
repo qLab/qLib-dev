@@ -15,6 +15,7 @@ attr_lookup_ql1/chopnet/fetch_curve.parm
 attr_lookup_ql1/chopnet/fetch_curve.chop
 attr_lookup_ql1/chopnet/lookup1.init
 attr_lookup_ql1/chopnet/lookup1.def
+attr_lookup_ql1/chopnet/lookup1.chn
 attr_lookup_ql1/chopnet/lookup1.parm
 attr_lookup_ql1/chopnet/lookup1.chop
 attr_lookup_ql1/chopnet/geom_attr.init
@@ -25,6 +26,11 @@ attr_lookup_ql1/chopnet/OUT.init
 attr_lookup_ql1/chopnet/OUT.def
 attr_lookup_ql1/chopnet/OUT.parm
 attr_lookup_ql1/chopnet/OUT.chop
+attr_lookup_ql1/chopnet/fit_range.init
+attr_lookup_ql1/chopnet/fit_range.def
+attr_lookup_ql1/chopnet/fit_range.chn
+attr_lookup_ql1/chopnet/fit_range.parm
+attr_lookup_ql1/chopnet/fit_range.chop
 attr_lookup_ql1/chopnet.order
 attr_lookup_ql1/chopnet.net
 attr_lookup_ql1/channel.init
