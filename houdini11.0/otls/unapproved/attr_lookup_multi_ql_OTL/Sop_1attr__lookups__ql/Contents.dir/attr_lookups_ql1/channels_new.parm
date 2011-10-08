@@ -1,0 +1,9 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+choppath	[ 0	locks=0 ]	(	../chopnet1/OUT	)
+method	[ 0	locks=0 ]	(	"static"	)
+chanscope	[ 0	locks=0 ]	(	`chs(\"../attrnames\")`	)
+attscope	[ 0	locks=0 ]	(	`chs(\"../outattrs\")`	)
+organize	[ 0	locks=0 ]	(	""	)
+}

@@ -1,0 +1,121 @@
+# Dialog script for attr_lookups_ql automatically generated 10/08/11 21:27:44
+
+{
+    name	attr_lookups_ql
+    script	attr_lookups_ql
+    label	"Attr Lookup Multi qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"attrnames"
+	label	"Attribute Names"
+	type	string
+	default	{ "pscale" }
+	help	"Name of attributes to be remapped (space-separated list of attributes)."
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    multiparm {
+	name	"curves"
+	label	"Curves #"
+	default	1
+
+	group {
+	    name	"folder0#"
+	    label	"Lookup Curve \\##"
+
+	    parm {
+		name	"curve_#"
+		label	"Lookup Curve"
+		type	float
+		default	{ "bezier()" }
+		help	"The lookup curve for remapping the attribute (press Shift+LMB to edit).\\nThe horizontal min/max values of this curve is specified by the Lookup Curve Range parameters."
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "script_callback_language" "hscript" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"fromrange_#"
+		label	"Input Value Range"
+		type	vector2
+		size	2
+		default	{ "0" "1" }
+		help	"The original value range of the attribute to be remapped."
+		range	{ -1 1 }
+		export	none
+	    }
+	}
+
+    }
+
+    parm {
+	name	"torange"
+	label	"Lookup Curve Range"
+	type	vector2
+	size	2
+	default	{ "0" "1" }
+	help	"Horizontal range for all the lookup curves (the same range is used for all curves)."
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm_"
+	label	"."
+	type	label
+	default	{ "Use the Channel Editor (Shift+LMB) to edit lookup curves." }
+	range	{ 0 1 }
+	export	none
+    }
+    group {
+	name	"folder0"
+	label	"Outputs"
+
+	parm {
+	    name	"newattrs"
+	    label	"New Attribute Names"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    help	"Not yet supported."
+	    disablewhen	"{ newattrs == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"outattrs"
+	    label	"Output Attributes"
+	    type	string
+	    default	{ "(renaming not yet supported)" }
+	    disablewhen	"{ newattrs == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}
