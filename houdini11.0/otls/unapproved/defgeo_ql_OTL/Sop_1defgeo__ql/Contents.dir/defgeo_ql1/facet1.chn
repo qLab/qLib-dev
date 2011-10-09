@@ -1,0 +1,9 @@
+{
+    channel angle {
+      lefttype = extend
+      righttype = extend
+      default = 45
+      flags = 0
+      segment { length = 0 value = 45 45 expr = ch(\"../cusp_angle\") }
+    }
+  }

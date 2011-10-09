@@ -1,0 +1,120 @@
+# Dialog script for defgeo_ql automatically generated 10/09/11 19:14:31
+
+{
+    name	defgeo_ql
+    script	defgeo_ql
+    label	"Default Geo qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"bevel"
+	label	"Bevel on edges"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"inset"
+	label	"Bevel Inset"
+	type	float
+	default	{ "0.05" }
+	disablewhen	"{ bevel == 0 }"
+	range	{ 0.01 0.25 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	default	{ "0.9" }
+	disablewhen	"{ bevel == 0 }"
+	range	{ 0 1.05 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"letter"
+	label	"Letter Thickness"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"thickness"
+	label	"Letter Thickness"
+	type	float
+	default	{ "0.0333" }
+	disablewhen	"{ letter == 0 }"
+	range	{ 0.01 0.1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"normals"
+	label	"Normals"
+	type	integer
+	joinnext
+	default	{ "2" }
+	menu	{
+	    "0"	"None"
+	    "1"	"Per Point"
+	    "2"	"Per Vertex"
+	}
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cusp_angle"
+	label	"Cusp Angle"
+	type	angle
+	default	{ "45" }
+	disablewhen	"{ normals == 0 }"
+	range	{ 0 90 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"color"
+	label	"Color"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"None"
+	    "1"	"Per Point"
+	    "2"	"Per Primitive"
+	    "3"	"Per Vertex"
+	}
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"box_color"
+	label	"Box Color"
+	type	color
+	size	3
+	default	{ "0.875" "0.875" "0.742" }
+	disablewhen	"{ color == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

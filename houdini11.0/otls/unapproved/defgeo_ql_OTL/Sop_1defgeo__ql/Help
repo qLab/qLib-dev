@@ -1,0 +1,9 @@
+The default geometry with some additional options.
+
+It can be useful for more reasons:
+
+- The original 'defgeo.bgeo' file got accidentally overwritten (the asset contains the geometry itself)
+- The asset provides options to quickly generate geometry with attributes on it, such as
+    - Normals (per-point or per-vertex)
+    - Colors (per-point, per-vertex or per-primitive)
+- The X/Y/Z indicators can be made more visible with the various options (coloring or extruding them, etc.)

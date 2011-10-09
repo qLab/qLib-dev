@@ -1,0 +1,9 @@
+{
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 0.9
+      flags = 0
+      segment { length = 0 value = 0.89999997615814209 0.89999997615814209 expr = ch(\"../scale\") }
+    }
+  }

@@ -1,0 +1,13 @@
+# Automatically generated script: Sunday October 09, 19:16 2011
+\set noalias = 1
+#
+#  Creation script for defgeo_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/defgeo_ql)
+opexprlanguage -s hscript $arg1

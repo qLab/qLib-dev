@@ -1,0 +1,23 @@
+{
+    channel colorr {
+      lefttype = extend
+      righttype = extend
+      default = 0.875
+      flags = 0
+      segment { length = 0 value = 0.875 0.875 expr = ch(\"../box_colorr\") }
+    }
+    channel colorg {
+      lefttype = extend
+      righttype = extend
+      default = 0.875
+      flags = 0
+      segment { length = 0 value = 0.875 0.875 expr = ch(\"../box_colorg\") }
+    }
+    channel colorb {
+      lefttype = extend
+      righttype = extend
+      default = 0.742
+      flags = 0
+      segment { length = 0 value = 0.74199998378753662 0.74199998378753662 expr = ch(\"../box_colorb\") }
+    }
+  }
