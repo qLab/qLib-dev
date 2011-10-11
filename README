@@ -37,6 +37,11 @@ TODO
 - PRESETS: find a way to store them in ascii (as with otl and hip files)
 
 
+- Fetch SOP qL (popnet node):
+	- "First...Fourth Context Geometry" input type should be supported
+		- popcontextgeo() script function wasn't working for me (t.)
+
+
 - Take Merge qL
 	- rewrite it in python (?)
 	- should support the hierarchical nature of takes
