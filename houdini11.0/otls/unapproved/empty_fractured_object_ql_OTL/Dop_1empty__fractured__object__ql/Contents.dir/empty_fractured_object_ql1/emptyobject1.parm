@@ -1,0 +1,8 @@
+{
+version 0.8
+activation	[ 8	locks=0 ]	(	[ activation	1 ] 	)
+activationrules	[ 0	locks=0 ]	(	0	)
+objname	[ 0	locks=0 ]	(	object	)
+numobjects	[ 0	locks=0 ]	(	1	)
+solvefirstframe	[ 8	locks=0 ]	(	[ solvefirstframe	0 ] 	)
+}

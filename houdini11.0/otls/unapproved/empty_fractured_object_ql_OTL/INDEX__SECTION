@@ -1,0 +1,13 @@
+Operator:     empty_fractured_object_ql
+Label:        Empty Fractured Object qL
+Path:         oplib:/Dop/empty_fractured_object_ql?Dop/empty_fractured_object_ql
+Icon:         DOP_emptyobject
+Table:        Dop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Nov 17 01:50:41 2011
+

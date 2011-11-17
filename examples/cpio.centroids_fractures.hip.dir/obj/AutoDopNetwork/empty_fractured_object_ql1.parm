@@ -1,0 +1,8 @@
+{
+version 0.8
+usesimframe	[ 0	locks=0 ]	(	"off"	)
+createframe	[ 0	locks=0 ]	(	1	)
+solvefirstframe	[ 0	locks=0 ]	(	"off"	)
+soppath	[ 0	locks=0 ]	(	/obj/fractures/GEOM_PRESIM_BIG	)
+groupmask	[ 0	locks=0 ]	(	bigPiece*	)
+}

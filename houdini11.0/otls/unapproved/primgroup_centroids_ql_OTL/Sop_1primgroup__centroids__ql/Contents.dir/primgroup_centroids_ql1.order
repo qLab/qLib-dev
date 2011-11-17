@@ -1,0 +1,16 @@
+15
+foreach_pts_for_centroids
+IN
+foreach_add_detail_attr
+keep_single_p
+DISPLAY
+switch_lookup_by_name
+OUT
+switch_piece_preview
+keep_pieces
+keep_single_pt
+to_display
+merge1
+control1
+attribute1
+copy1
