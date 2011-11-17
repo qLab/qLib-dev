@@ -1,0 +1,160 @@
+    parm {
+	name	"group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"negate"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"entity"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"geotype"
+	baseparm
+	export	none
+    }
+    group {
+	name	"stdswitcher5"
+	label	"Number"
+
+	parm {
+	    name	"affectnumber"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"groupop"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"filter"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pattern"
+	    baseparm
+	    export	none
+	    bindselector deleter "Delete Geometry"
+	        "Select the points/primitives to delete and press Enter to complete. Hold down Alt to select from other objects."
+	        0 1 0xffffffff 0 entity 0
+	}
+	parm {
+	    name	"range"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"select"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_1"
+	label	"Bounding Volume"
+
+	parm {
+	    name	"affectvolume"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"boundtype"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"size"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_2"
+	label	"Normal"
+
+	parm {
+	    name	"affectnormal"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"dir"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"angle"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"camerapath"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_3"
+	label	"Degenerate"
+
+	parm {
+	    name	"affectdegenerate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"degenerate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"zaf"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doopen"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"tol"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"removegrp"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"keeppoints"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"index"
+	label	"index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

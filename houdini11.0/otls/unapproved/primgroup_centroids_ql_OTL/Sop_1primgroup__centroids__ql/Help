@@ -1,0 +1,14 @@
+PrimGroup Centroids qL
+
+
+Builds a point cloud, where each point represents a centroid of a primitive group.
+
+Useful for generating center points for fractured geometry pieces.
+
+It also supports generation of convenience attributes, which allow easy mapping between
+group names and point indices (in both directions -- index-to-name and name-to-index lookup).
+
+
+
+NOTE: group order and centroid-pt (ie. output) order ALWAYS match -- if you find otherwise,
+please report as a BUG.
