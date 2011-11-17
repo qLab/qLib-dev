@@ -1,0 +1,15 @@
+14
+gravity1
+merge1
+groundplane1
+staticsolver1
+merge2
+rigidbodysolver1
+fractures
+merge3
+empty_fractured_object_ql1
+modifydata1
+rbdobject1
+merge4
+delete1
+OUT

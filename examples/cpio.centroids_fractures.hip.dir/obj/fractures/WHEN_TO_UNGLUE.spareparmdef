@@ -1,0 +1,13 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"frame"
+	label	"frame"
+	type	integer
+	default	{ "0" }
+	range	{ 1 80 }
+	export	none
+    }
