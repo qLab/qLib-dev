@@ -1,0 +1,12 @@
+{
+version 0.8
+file	[ 0	locks=0 ]	(	defgeo.bgeo	)
+pchannel	[ 0	locks=0 ]	(	P	)
+P	[ 0	locks=0 ]	(	0	0	0	)
+nchannel	[ 0	locks=0 ]	(	N	)
+N	[ 0	locks=0 ]	(	0	0	0	)
+radius	[ 0	locks=0 ]	(	0.100000001	)
+maxpoints	[ 0	locks=0 ]	(	1	)
+cone	[ 0	locks=0 ]	(	90	)
+preload	[ 0	locks=0 ]	(	"on"	)
+}

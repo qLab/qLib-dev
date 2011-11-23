@@ -1,7 +1,7 @@
 comment ""
 position 5.83227 5.22435
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass on display on render off highlight off unload off savedata off compress off exposed on
 inputs
 {
 0 	velocity 0 1
@@ -9,11 +9,11 @@ inputs
 stat
 {
   create 1317935895
-  modify 1318015170
+  modify 1322008828
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0.52 0.52 0.52 
 delscript ""
 exprlanguage hscript
 end

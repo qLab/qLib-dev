@@ -1,15 +1,15 @@
 comment ""
-position 5.03432 6.82507
+position 1.8352 5.2235
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off exposed on
 inputs
 {
 }
 stat
 {
-  create 1318001170
-  modify 1318015226
-  author tusi@johnnyquestlin.digicpictures.local
+  create 1322001696
+  modify 1322008832
+  author tusi@demeisen
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

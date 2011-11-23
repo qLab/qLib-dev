@@ -1,4 +1,4 @@
-# Dialog script for fetch_sop_ql automatically generated 10/07/11 20:31:38
+# Dialog script for fetch_sop_ql automatically generated 11/23/11 00:54:08
 
 {
     name	fetch_sop_ql
@@ -185,13 +185,15 @@
 	group {
 	    name	"folder0_2"
 	    label	"Attributes"
+	    tabbreak
 
 	    parm {
 		name	"P_attr"
 		label	"Position"
 		type	string
 		joinnext
-		default	{ "P" }
+		default	{ "P (not editable)" }
+		disablewhen	"{ P_activate != 2 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
@@ -201,6 +203,25 @@
 		label	"Update"
 		type	float
 		default	{ "1" }
+		range	{ 0! 1! }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"N_attr"
+		label	"Normal"
+		type	string
+		joinnext
+		default	{ "N" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"N_activate"
+		label	"Update"
+		type	float
+		default	{ "0" }
 		range	{ 0! 1! }
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
@@ -243,39 +264,107 @@
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	    group {
-		name	"folder0_2_1"
-		label	"Suppress POP Updates"
-
-		parm {
-		    name	"dosupppos"
-		    label	"No Position Update"
-		    type	toggle
-		    default	{ "off" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"dosuppvel"
-		    label	"No Velocity Update"
-		    type	toggle
-		    default	{ "off" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"dosuppreap"
-		    label	"Suppress Death"
-		    type	toggle
-		    default	{ "on" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
+	    parm {
+		name	"Cd_attr"
+		label	"Color"
+		type	string
+		joinnext
+		default	{ "Cd" }
+		range	{ 0 1 }
+		export	none
 	    }
+	    parm {
+		name	"Cd_activate"
+		label	"Update"
+		type	float
+		default	{ "1" }
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"vec_attr"
+		label	"Misc. Vector"
+		type	string
+		joinnext
+		default	{ "uv" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"vec_activate"
+		label	"Update"
+		type	float
+		default	{ "0" }
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"vec4_attr"
+		label	"Misc. Vector4"
+		type	string
+		joinnext
+		default	{ "orient" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"vec4_activate"
+		label	"Update"
+		type	float
+		default	{ "0" }
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"float_attr"
+		label	"Misc. Float"
+		type	string
+		joinnext
+		default	{ "Alpha" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"float_activate"
+		label	"Update"
+		type	float
+		default	{ "0" }
+		range	{ 0! 1! }
+		export	none
+	    }
+	}
 
+	group {
+	    name	"folder0_2_1"
+	    label	"Suppress POP Updates"
+
+	    parm {
+		name	"dosupppos"
+		label	"No Position Update"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dosuppvel"
+		label	"No Velocity Update"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dosuppreap"
+		label	"Suppress Death"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	}
 
     }
