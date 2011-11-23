@@ -1,0 +1,56 @@
+{
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../activate\") }
+    }
+    channel cacheincoming {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../cacheincoming\") }
+    }
+    channel vex_source {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_source\") }
+    }
+    channel use_origin_attr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../use_origin_attr\") }
+    }
+    channel origin_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"origin\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../origin_attr\") }
+    }
+    channel attr_in {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Alpha\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attr_in\") }
+    }
+    channel attr_out {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Alpha\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attr_out\") }
+    }
+    channel originindex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../originindex\") }
+    }
+  }
