@@ -1,0 +1,10 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+attr_N	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_N\")`	)
+attr_up	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_up\")`	)
+attr_orient	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_orient\")`	)
+}

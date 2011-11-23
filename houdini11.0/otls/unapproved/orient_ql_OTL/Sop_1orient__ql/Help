@@ -1,0 +1,28 @@
+#icon: SOP/matchaxis
+#context: sop
+#type: node
+
+= Orient qL =
+
+*Version 0.0.1*
+
+"""Converts between different representations of per-point orientation (or per-point rotation)."""
+
+@Parameters
+    Operation:
+        Conversion from two vectors to quaternion, or vice versa.
+    Aim Vector:
+        Attribute representing the main aim direction for each point.
+    Up Vector:
+        Attribute of the up direction vector for each point.
+    Orient Attribute:
+        Attribute representing per-point orientation as a quaternion.
+
+@Limitations
+    When converting from Orient to Aim/Up, the resulting Aim vector will always be written
+    as a per-point N (normal), too.
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

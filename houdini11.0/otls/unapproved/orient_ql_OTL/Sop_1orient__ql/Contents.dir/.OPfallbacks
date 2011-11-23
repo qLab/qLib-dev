@@ -1,0 +1,10 @@
+Vop/matxtoquat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/matxtoquat otls/OPlibVop.otl
+Vop/importattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/quattomatx /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/quattomatx otls/OPlibVop.otl
+Vop/lookat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl
+Vop/addattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl

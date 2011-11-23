@@ -1,0 +1,13 @@
+Operator:     orient_ql
+Label:        Orient qL
+Path:         oplib:/Sop/orient_ql?Sop/orient_ql
+Icon:         SOP_matchaxis
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Nov 23 01:57:48 2011
+
