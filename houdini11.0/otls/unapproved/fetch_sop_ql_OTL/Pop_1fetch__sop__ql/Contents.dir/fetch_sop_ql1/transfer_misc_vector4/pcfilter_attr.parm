@@ -1,0 +1,6 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	v4	)
+handle	[ 0	locks=0 ]	(	-1	)
+channel	[ 0	locks=0 ]	(	chs('../channel/stringdef')	)
+}

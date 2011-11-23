@@ -1,7 +1,7 @@
 comment ""
 position 5.83236 6.0185
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass on display off render off highlight off unload off savedata off compress off exposed on
 inputs
 {
 0 	position 0 1
@@ -9,11 +9,11 @@ inputs
 stat
 {
   create 1317908912
-  modify 1318015168
+  modify 1322008828
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0.52 0.52 0.52 
 delscript ""
 exprlanguage hscript
 end

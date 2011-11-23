@@ -1,4 +1,4 @@
-8
+17
 TODO_attrs_as_voppop
 source_geom_pts
 position
@@ -7,3 +7,12 @@ OUT
 suppress
 suppress_death
 up
+pt_lookup
+transfer_P
+transfer_N
+transfer_v
+transfer_up
+transfer_Cd
+transfer_misc_vector
+transfer_misc_float
+transfer_misc_vector4

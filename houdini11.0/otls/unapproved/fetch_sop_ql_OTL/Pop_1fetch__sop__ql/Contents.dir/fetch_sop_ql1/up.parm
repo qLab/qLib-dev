@@ -5,6 +5,6 @@ source	[ 0	locks=0 ]	(	""	)
 applymotion	[ 0	locks=0 ]	(	"all"	)
 uptype	[ 0	locks=0 ]	(	"comp"	)
 upv	[ 0	locks=0 ]	(	"vector3($UPX, $UPY, $UPZ)"	)
-up	[ 8	locks=0 ]	(	[ upx	0 ] 	[ upy	0 ] 	[ upz	0 ] 	)
+up	[ 8	locks=0 ]	(	[ upx	0 ] 	[ upy	1 ] 	[ upz	1 ] 	)
 attr	[ 0	locks=0 ]	(	up	)
 }

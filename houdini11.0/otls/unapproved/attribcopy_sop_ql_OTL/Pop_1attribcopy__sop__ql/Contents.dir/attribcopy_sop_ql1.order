@@ -1,0 +1,8 @@
+7
+pt_lookup
+copy_attr_float
+IN
+switch1
+OUT
+copy_attr_vec
+copy_attr_vec4

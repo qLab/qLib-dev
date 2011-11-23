@@ -1,15 +1,15 @@
 comment ""
-position 6.63236 4.42273
+position 5.04112 0.431534
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 inputs
 {
-0 	up 0 1
+0 	transfer_misc_vector4 0 1
 }
 stat
 {
   create 1317934302
-  modify 1318015172
+  modify 1322006120
   author tusi@demeisen
   access 0777
 }
