@@ -1,0 +1,43 @@
+#icon: CHOP/para
+#context: sop
+#type: node
+
+= Vector Store qL =
+
+*Version 0.0.1*
+
+"""Converts vector attributes to points (and vice versa), allowing any deforming SOP to work on vector attributes."""
+
+This SOP converts specified per-point vector attributes to actual geometry points, where each point will be created
+where the original vector 'pointed at'. For each per-point vector turned into such a point cloud, a special point
+group is created to allow converting back to attributes.
+
+Two modes are supported -- Save and Restore --, where Save converts vector attributes to 'point clouds' with point groups,
+and Restore is for the opposite (based on the point groups, it converts the point positions to vector attributes, then
+deletes the extra points).
+
+@Usage
+    This SOP is a general-purpose 'workaround': there are some SOP nodes than apply deformations to geometry, but apart
+    from adjusting the points, they don't update vector attributes (such as normals, up vectors, etc).
+
+    With this SOP, attributes can be converted to points before applying such deformations, and 'restored' afterwards.
+    Use this node in Save mode _before_ the deformations, and a copy of the node in Restore settings _after_ the deform
+    SOPs, and volia--all vector attributes behave accordingly (including custom ones).
+
+NOTE:
+    This SOP replaces for the __Orient Save qL__ and __Orient Restore qL__ SOPs (those are considered obsolete).
+
+
+@Parameters
+    Point Group:
+        The group of points the deformer affects.
+    Operation:
+        The operation to be executed.
+    Blend:
+        The mix bias when the operation is mix.
+
+
+@Release_Notes
+
+    Version 0.0.1:
+        Initial release.
