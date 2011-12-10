@@ -1,0 +1,65 @@
+#icon: SOP/group
+#context: sop
+#type: node
+
+= PrimGroups Extract Tool qL =
+
+*Version 0.0.1*
+
+"""Build separate objects for specified primitive groups of a SOP node."""
+
+
+
+Given an input geometry with
+primitive groups in it, this operator can extract these groups by either creating a new Geometry
+or a new Object Merge SOP for each group.
+
+Creation, update and deletion of these nodes are *not automatic*: they are performed _as the
+user presses the appropriate button_.
+
+In other words, this operator is more of a scene-management tool than a regular SOP.
+
+@Note
+    This operator behaves slightly differently than other SOPs (hence the "Tool" naming).
+
+
+@Parameters
+
+    Group Pattern:
+        The groups the new objects should be built for.
+
+    Display Filter:
+        Various 'display' modes to have visual feedback for the specified group pattern.
+        (The Group Pattern results are also displayed as guide geometry.)
+
+    Output Path:
+        Path where the new nodes should be created.
+        - If this points to an Object network (or subnet), a Geometry obj node will be created for each primitive group. (The geometry will also contain an Object Merge node that fetches only the group primitives.)
+        - If this points in to a Geometry obj node, only Object Merge nodes will be created for each primitive group.
+
+    Nodes Prefix:
+        Name prefix for the nodes to be created.
+
+
+    Transform Type:
+        The 'Transform' parameter settings for Object Merge nodes.
+
+    Source SOP Path:
+        SOP Path to be set on Object Merge nodes. By default it's the input SOP of our PrimGroups Extract Tool SOP.
+
+    Relative Path:
+        This flag indicates if a relative path should be set on the Object Merge nodes.
+
+
+    "Build/Update Objects":
+        Pressing this button will create the new Objects and/or SOPs.
+        (Already existing nodes will also have their parameters updated, according to current node settings.)
+
+    "Cleanup (Delete) Objects":
+        This will delete all nodes created by this operator.
+
+
+@Release_Notes
+
+    Version 0.1.0:
+        Initial release.

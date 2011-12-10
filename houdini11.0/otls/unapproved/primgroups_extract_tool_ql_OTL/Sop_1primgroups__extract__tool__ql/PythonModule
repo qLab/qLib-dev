@@ -1,0 +1,127 @@
+
+def err(msg):
+    #raise hou.Error(msg)
+    hou.ui.displayMessage(msg, severity=hou.severityType.Error)
+
+
+def ynreq(msg):
+    return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
+
+
+
+def doIt(mode):
+    mode = mode.lower()
+
+    pwd = hou.pwd()
+    p = lambda n: pwd.parm(n).eval()
+
+    grp     = p("grp")
+    soppath = p("soppath")
+    outpath = p("outpath")
+    prefix  = p("prefix")
+    relpath = p("relpath")
+    xformtype = p("xformtype")
+
+    root = hou.node(outpath)
+    sop  = hou.node(soppath)
+
+    if root is None:
+        err("Invalid input SOP path '%s'" % outpath)
+        return
+
+    if root is None:
+        err("Invalid output path '%s'" % outpath)
+        return
+
+
+    grps = hou.hscriptExpression('primgroupmask("%s", "%s")' % \
+        (sop.path(), grp) )
+    grps = grps.split()
+
+    if len(grps)==0:
+        err("Group specs ('%s') result in no groups at all." % grp)
+        return
+
+
+    rt = root.type().name()
+    is_obj  =  rt=="obj" or rt=="subnet"
+    is_sop  =  rt=="geo"
+
+    if not is_obj and not is_sop:
+        err("Path should point to an OBJ network or into a Geo object.")
+        return
+
+
+    # build object / sop names
+    #
+    objs = [ prefix+g for g in grps ]
+    objmap = {}
+    for g in grps: objmap[prefix+g] = g
+
+
+    D  = 0 # deleted
+    Dn = 0 # already deleted
+    C  = 0 # newly created
+    U  = 0 # only updated
+    Cs = 0 # newly created sop (obj.merge)
+    Us = 0 # updated sop (object merge)
+
+    # cleanup pass
+    #
+    if mode=="cleanup" and ynreq("%d node(s) will be deleted.\nProceed with cleanup?" % len(grps)):
+        hou.cd(root.path())
+        for obj in objs:
+            n = hou.node(obj)
+            if n:
+                n.destroy()
+                D += 1
+            else:
+                Dn += 1
+
+
+    # build/update pass
+    #
+    if mode=="build" and ynreq("%d object(s) will be created/updated. Proceed?" % len(grps)):
+        for obj in objs:
+            r = root
+            if is_obj:
+                # create/update obj, if needed
+                hou.cd(root.path())
+                n = hou.node(obj)
+                if not n:
+                    # create obj node
+                    n = root.createNode("geo", obj, run_init_scripts=False)
+                    C += 1
+                r = n
+
+            # create/update Object Merge SOP, if needed
+            hou.cd(r.path())
+            n = hou.node(obj)
+
+            if not n:
+                n = r.createNode("object_merge", obj)
+                Cs += 1
+
+            # update Object Merge node
+            path = n.relativePathTo(sop) if relpath else sop.path()
+            n.parm("objpath1").set(path)
+            n.parm("group1").set(objmap[obj])
+            n.parm("xformtype").set(xformtype)
+            Us += 1
+
+
+    # post-op stats
+    #
+    if True:
+        msg = ""
+        if D>0:  msg += " - deleted %s node(s)\n" % D
+        if Dn>0: msg += " - %d node(s) were already deleted\n" % Dn
+        if C>0:  msg += " - created %d new Geometry nodes\n" % C
+        if U>0:  msg += " - updated %d nodes\n" % U
+        if Cs>0: msg += " - created %d new Object Merge SOP nodes\n" % Cs
+        if Us>0: msg += " - updated %d SOP (Object Merge) nodes\n" % Us
+
+        if len(msg)>0:
+            msg = "Details for '%s':\n\n%s\nDone." % (mode, msg)
+            hou.ui.displayMessage(msg)
+
