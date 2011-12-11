@@ -1,0 +1,9 @@
+{
+    channel length {
+      lefttype = extend
+      righttype = extend
+      default = 0.208
+      flags = 0
+      segment { length = 0 value = 0.20800000429153442 0.20800000429153442 expr = ch(\"../../length\") }
+    }
+  }

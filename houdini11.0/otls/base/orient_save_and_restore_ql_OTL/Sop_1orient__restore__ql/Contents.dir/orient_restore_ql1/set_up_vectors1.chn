@@ -120,18 +120,11 @@
       flags = 0
       segment { length = 0 expr = $VZ }
     }
-    channel pscale {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = $PSCALE }
-    }
-    channel upz {
+    channel upx {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = $UPZ }
+      segment { length = 0 expr = $UPX }
     }
     channel upy {
       lefttype = extend
@@ -139,10 +132,17 @@
       flags = 0
       segment { length = 0 expr = $UPY }
     }
-    channel upx {
+    channel upz {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = $UPX }
+      segment { length = 0 expr = $UPZ }
+    }
+    channel pscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $PSCALE }
     }
   }

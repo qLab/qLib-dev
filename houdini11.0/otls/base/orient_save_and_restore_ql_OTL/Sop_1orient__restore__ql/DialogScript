@@ -1,4 +1,4 @@
-# Dialog script for orient_restore_ql automatically generated 09/24/10 17:40:46
+# Dialog script for orient_restore_ql automatically generated 12/10/11 21:26:53
 
 {
     name	orient_restore_ql
@@ -27,7 +27,7 @@
 	label	"Up Group Name"
 	type	string
 	default	{ "up_points" }
-	disablewhen	"{ up 0 }"
+	disablewhen	"{ up == 0 }"
 	range	{ 0 1 }
 	export	none
     }
@@ -44,7 +44,7 @@
 	label	"Normal Group Name"
 	type	string
 	default	{ "normal_points" }
-	disablewhen	"{ norm 0 }"
+	disablewhen	"{ norm == 0 }"
 	range	{ 0 1 }
 	export	none
     }

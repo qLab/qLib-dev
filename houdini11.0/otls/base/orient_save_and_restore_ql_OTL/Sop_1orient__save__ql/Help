@@ -8,6 +8,9 @@
 
 """Saves Up and Norm vectors to point groups to allow geometry deformations to affect them correctly."""
 
+WARNING:
+    This SOP is obsolete -- please use the __Vector Store qL__ operator instead.
+
 This node works in tandem with Orient Restore qL. Between the two nodes there will be additional points in the
 geometry, so you will want to put Orient Restore qL immediately after you finished deformations on your geometry.
 

@@ -1,4 +1,4 @@
-# Dialog script for orient_save_ql automatically generated 09/24/10 17:39:10
+# Dialog script for orient_save_ql automatically generated 12/10/11 21:26:42
 
 {
     name	orient_save_ql
@@ -27,7 +27,7 @@
 	label	"Up Group Name"
 	type	string
 	default	{ "up_points" }
-	disablewhen	"{ up 0 }"
+	disablewhen	"{ up == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
@@ -45,7 +45,7 @@
 	label	"Normal Group Name"
 	type	string
 	default	{ "normal_points" }
-	disablewhen	"{ norm 0 }"
+	disablewhen	"{ norm == 0 }"
 	range	{ 0 1 }
 	export	none
     }
