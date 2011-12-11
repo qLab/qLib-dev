@@ -1,4 +1,4 @@
-# Dialog script for vector_store_ql automatically generated 12/11/11 23:13:13
+# Dialog script for vector_store_ql automatically generated 12/11/11 23:35:25
 
 {
     name	vector_store_ql
@@ -34,10 +34,22 @@
 	    name	"attrs"
 	    label	"Vector Attributes"
 	    type	string
-	    default	{ "N up v" }
+	    default	{ "N" }
 	    menutoggle	{
-		[ "# TODO: write this--show all vector pt attrs" ]
-		[ "echo N N up up v v" ]
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().inputs()[0].geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.name()!='P' and a.size()==3 ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
 	    }
 	    range	{ 0 1 }
 	    export	none
