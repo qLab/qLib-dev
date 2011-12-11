@@ -29,12 +29,41 @@ NOTE:
 
 
 @Parameters
-    Point Group:
-        The group of points the deformer affects.
-    Operation:
-        The operation to be executed.
-    Blend:
-        The mix bias when the operation is mix.
+Common:
+    Mode:
+        Operation mode -- __Save__ converts vector attributes to points, __Restore__ does the opposite.
+    Vector Attributes:
+        The vector attributes to work with.
+    Group Prefix:
+        This OP creates point groups for each point-cloud created from an attribute. The group names are
+        the attribute names prefixed with this parameter.
+    Length Multiplier:
+        This number is used to specify the length of an unit vector when stored (ie. if the value is 0.1, the vector's
+        point will be at a distance of 0.1 from the original point for an unit-length vector). The same value should
+        be specified for both the __Save__ and __Restore__ OPs.
+
+        If you use high-frequency deformations and not getting the vector results as you expect, try to modify this value
+        (usually decrease).
+
+        To visualize, enable 'points' display in the viewport, and adjust this parameter while watching the output
+        of a Vector Store SOP in Save mode.
+Save:
+    Delete Source Attributes:
+        Once the vector attributes are represented as points, the attributes themselved will be deleted.
+        (This is for memory efficiency -- also, the generated points would have the same attributes as well,
+        which is kind of meaningless.)
+Restore:
+    Normalize Vectors:
+        Normalize lengths of the restored vectors (ie. all vector lengths will be unit size).
+    Output Length Mult:
+        An additional (and optional) multiplier which can be used to scale vector lengths after restore.
+        (This is applied after normalization.)
+
+
+NOTE:
+    You needn't restore all attributes you saved -- but a __Restore__ operation will remove all the extra points
+    and groups, not just the ones you restored (this is an intentional behaviour).
+
 
 
 @Release_Notes
