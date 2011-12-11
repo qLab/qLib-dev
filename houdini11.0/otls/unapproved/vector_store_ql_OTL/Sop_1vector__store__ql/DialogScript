@@ -1,4 +1,4 @@
-# Dialog script for vector_store_ql automatically generated 12/10/11 21:32:06
+# Dialog script for vector_store_ql automatically generated 12/11/11 23:13:13
 
 {
     name	vector_store_ql
@@ -83,7 +83,7 @@
 	    name	"norm"
 	    label	"Normalize Vectors"
 	    type	toggle
-	    default	{ "1" }
+	    default	{ "0" }
 	    disablewhen	"{ mode != 1 }"
 	    range	{ 0 1 }
 	    export	none

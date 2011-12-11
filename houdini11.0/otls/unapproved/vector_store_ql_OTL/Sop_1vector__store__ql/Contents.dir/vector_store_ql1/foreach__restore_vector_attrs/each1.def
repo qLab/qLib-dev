@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 1.44118 2.18824
+position 0.355142 2.35115
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 inputs
@@ -10,7 +10,7 @@ inputs
 stat
 {
   create 1323545851
-  modify 1323547356
+  modify 1323641625
   author tusi@demeisen
   access 0777
 }
