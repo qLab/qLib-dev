@@ -4,8 +4,15 @@ qLib
 A houdini asset library.
 
 
+
+
 TODO
 ====
+
+- viewport/camera tools (how to do them?):
+	- 'zoom' tool (that modifies focal length/aperture instead of screen window, like the internal one)
+	- 'perspective' tool
+
 
 - PointJitter qL: An own version of pointjitter
 	- original pointjitter deletes custom normals!
@@ -20,6 +27,8 @@ TODO
 - add the pscale visualizer, too
 
 - a scalar attribute remapper (curve lookup)
+	- DONE: Attr Lookup Multi qL
+
 
 - a (SOP?) node that displays text in the 3d viewport (especially in the camera view)
 	- the problem with the default vcomment parameter is that it might not show up in flipbooks
