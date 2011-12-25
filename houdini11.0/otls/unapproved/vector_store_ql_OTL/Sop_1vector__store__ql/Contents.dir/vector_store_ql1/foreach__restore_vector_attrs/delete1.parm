@@ -1,6 +1,6 @@
 {
 version 0.8
-group	[ 0	locks=0 ]	(	"`chs(\"../../grpprefix\")`_`arg(chs(\"../../attrs\"),, stamp(\"..\", \"FORIDXVALUE\", 0))`"	)
+group	[ 0	locks=0 ]	(	"`chs(\"../../grpprefix\")`_`arg(chs(\"../../attrs\"), stamp(\"..\", \"FORIDXVALUE\", 0))`"	)
 negate	[ 0	locks=0 ]	(	"keep"	)
 entity	[ 0	locks=0 ]	(	"point"	)
 geotype	[ 0	locks=0 ]	(	"all"	)

@@ -1,0 +1,6 @@
+{
+version 0.8
+contexttype	[ 0	locks=0 ]	(	chop	)
+usemenu	[ 0	locks=0 ]	(	"off"	)
+varname	[ 0	locks=0 ]	(	P	)
+}

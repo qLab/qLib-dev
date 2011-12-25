@@ -1,4 +1,4 @@
-chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 1 -g 0 -H 0 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.142634 -u 0 -v 0 -h -41.1442 254.326 -r -1.5 1.5 -R 0 -8.21538 10.7579 buildB.panetab20
+chopview -a 0 -c "" -k 1 -m 1 -b 1 -e 1 -f 1 -g 0 -H 0 -i 0 -j 1 -l 0 -n 1 -V 0 -y 0 -B 0 -s 0 -S 0.361562 -u 0 -v 0 -h -5.45699 12.4016 -r -1.5 1.5 -R 0 -1.84541 1.9133 buildB.panetab20
 viewerstow -b stow -x open -l open -m open -c open -d open buildB.pane1.world
 vieweroption -a 0 -h 0 -m 1 -r 'View: Mantra' buildB.pane1.world
 viewlayout -s 2 buildB.pane1.world
@@ -17,7 +17,7 @@ viewname -l off -n right1 buildB.pane1.world.`vpname("buildB.pane1.world",4)`
 viewdisplay -a on buildB.pane1.world.persp1
 viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.persp1
 viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.persp1
-viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.persp1
+viewdisplay -N unsel l on -E unsel g off -I unsel l off buildB.pane1.world.persp1
 viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.persp1
 viewdisplay -N unsel m on -I unsel h off buildB.pane1.world.persp1
 viewdisplay -I unsel b off buildB.pane1.world.persp1
@@ -42,16 +42,16 @@ viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -
 viewdisplay -Q on -m on -v on buildB.pane1.world.persp1
 viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.persp1
 viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.persp1
-vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.persp1
-viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 0 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.persp1
-viewtransform buildB.pane1.world.persp1 version ( 3 )  flag ( F )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 29.2981 )  pxyz ( 0 0 0 )  rotation ( 0.965925 0.0458069 -0.254733 0 0.984212 0.176984 0.258819 -0.170954 0.950676  )  homedistance ( 24.9722 )  homeadjboxwidth ( 12.5708 )  homeorthowidth ( 25.1416 )  homeradius ( 32 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L on -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.persp1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.persp1
+viewtransform buildB.pane1.world.persp1 version ( 3 )  flag ( Fx )  orthowidth ( 25.1416 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( -0.143062 1.11167 29.5717 )  pxyz ( -0.398209 0.903925 -0.469235 )  rotation ( 0.765622 0.274891 -0.581592 -2.28173e-08 0.904097 0.427324 0.643285 -0.327169 0.692198  )  homedistance ( 24.9722 )  homeadjboxwidth ( 12.5708 )  homeorthowidth ( 25.1416 )  homeradius ( 32 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
 viewcamera -c '' buildB.pane1.world.persp1
 vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.persp1
 viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.persp1
 viewdisplay -a on buildB.pane1.world.top1
 viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.top1
 viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.top1
-viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.top1
+viewdisplay -N unsel l on -E unsel g off -I unsel l off buildB.pane1.world.top1
 viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.top1
 viewdisplay -N unsel m on -I unsel h off buildB.pane1.world.top1
 viewdisplay -I unsel b off buildB.pane1.world.top1
@@ -76,15 +76,15 @@ viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -
 viewdisplay -Q on -m on -v on buildB.pane1.world.top1
 viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.top1
 viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.top1
-vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.top1
-viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 0 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.top1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L on -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.top1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.top1
 viewtransform buildB.pane1.world.top1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( 1 0 0 0 7.54979e-08 1 0 -1 7.54979e-08  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
 vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.top1
 viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.top1
 viewdisplay -a on buildB.pane1.world.front1
 viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.front1
 viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.front1
-viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.front1
+viewdisplay -N unsel l on -E unsel g off -I unsel l off buildB.pane1.world.front1
 viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.front1
 viewdisplay -N unsel m on -I unsel h off buildB.pane1.world.front1
 viewdisplay -I unsel b off buildB.pane1.world.front1
@@ -109,15 +109,15 @@ viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -
 viewdisplay -Q on -m on -v on buildB.pane1.world.front1
 viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.front1
 viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.front1
-vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.front1
-viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 0 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.front1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L on -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.front1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.front1
 viewtransform buildB.pane1.world.front1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( 1 0 0 0 1 0 0 0 1  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
 vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.front1
 viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.front1
 viewdisplay -a on buildB.pane1.world.right1
 viewdisplay -M unsel hidden_ghost -N unsel n off -E unsel n off -I unsel n off buildB.pane1.world.right1
 viewdisplay -N unsel t off -E unsel t off -I unsel t off buildB.pane1.world.right1
-viewdisplay -N unsel l off -E unsel g off -I unsel l off buildB.pane1.world.right1
+viewdisplay -N unsel l on -E unsel g off -I unsel l off buildB.pane1.world.right1
 viewdisplay -N unsel p off -I unsel p off buildB.pane1.world.right1
 viewdisplay -N unsel m on -I unsel h off buildB.pane1.world.right1
 viewdisplay -I unsel b off buildB.pane1.world.right1
@@ -142,46 +142,73 @@ viewdisplay -V 1 -z off -y off -x off -X off -U 4 -Y 4 -T on -R on -i on -D on -
 viewdisplay -Q on -m on -v on buildB.pane1.world.right1
 viewdisplay -W  off bound_box_wire 0 buildB.pane1.world.right1
 viewdisplay -c off -K off -P points -p 3 buildB.pane1.world.right1
-vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L off -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.right1
-viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 0 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.right1
+vieweffect -a 0 -A 4 -b on -B 0 -d on -D on off -g 2.2 -h 1 -H on -L on -l '' -m on -M 512 -o on -n 8 -O 2 -q 1 -Q 2 -r 1024 1024 -s 4 -S on -t 100 -T 100 -u off -U off -v 128 128 128 -w 0.05 -W off buildB.pane1.world.right1
+viewbackground -b off -q 1 -S file -F '' -O off -r 1 1 -C '' -p '(Default Color)' 1 -t on -a on -o 0 0 -s 1 1 -i off -m 0 0 -M 1 1 buildB.pane1.world.right1
 viewtransform buildB.pane1.world.right1 version ( 3 )  flag ( Fo )  orthowidth ( 2.22222 )  focal ( 50 )  aperture ( 41.4214 )  window ( 0 1 0 1 )  winroll ( 0 )  clear ( 1 )  nearfar ( 0.1 10000 )  resxy ( 1 1 )  aspect ( 1.33333 )  pixelaspect ( 1 )  txyz ( 0 0 3.68246 )  pxyz ( 0 0 0 )  rotation ( -4.37114e-08 0 1 0 1 0 -1 0 -4.37114e-08  )  homedistance ( 3.68246 )  homeadjboxwidth ( 2.22222 )  homeorthowidth ( 2.22222 )  homeradius ( 3.4641 )  homeaxis ( 0 )  homecustom ( 0.707107 -0.353553 0.612373 0 0.866025 0.5 -0.707107 -0.353553 0.612372  )  adjustlimits ( 0 )  
 vieworthogrid -d on -o 0 0 0 -s 1 1 -r 10 10 buildB.pane1.world.right1
 viewuvgrid -r off -s 0.1 0.1 -P on -S 1 1 -O 0 0 -C on -t on buildB.pane1.world.right1
 viewsnapshotoption -s off -h off -a 1 -v '*' buildB.pane1.world
 cplane -o -8 0 -8 -n 0 1 0 -x 0 0 1 -l n -s 1 1 -c 16 16 -r 8 8 -d on buildB.pane1.world
 glcache -M 1024
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/foreach1 -2.08814  -3.04702 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/toon_character1/right_arm -16.7986  -22.7246 0.531409 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookup_ramp_ql -3.58697  -2.05062 0.833333 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/foreach1/vopsop_lookup1 -2.09626  -2.42143 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_visualize_ql1 -1.74696  -5.24708 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/split_multi_ql1/foreach_splitter -2.48874  -2.33072 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookups_ql2/chopnet1 -1.56296  -8.49245 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/cop2net1 1.51019  2.61931 1.72674 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookup_ramp_ql/vopsop_lookup1 -0.231548  -0.0331955 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/chopnet1/vopchop1 0.272955  -2.79879 1.72881 panetab22
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1 -4.59082  -7.81638 1.10966 panetab22
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -1.61177  9.98232 1 panetab22
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/attr_lookups_ql1 -1.31109  -4.01007 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_gamma_ql/foreach1/chopnet1/vopchop1 -2.52932  -4.36467 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_gamma_ql/foreach1/chopnet1 -2.77648  -0.129503 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookups_ql1 -1.91697  -4.01007 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookups_ql2 -1.91697  -4.01007 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/split_multi_ql1 -2.49835  -4.81277 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example -4.61203  -6.79445 1.12332 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/foreach1/vopsop1 0.482447  -2.28222 1 panetab22
 neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/attr_lookups_ql1/chopnet1 2.83115  -7.4101 1 panetab22
-neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example -2.91291  -9.24183 1 panetab22
-panepath -d buildB -f -p panetab8 /obj/attr_lookup_multi_example/attr_lookups_ql1
-panepath -d buildB -f -p panetab22 /obj/attr_lookup_multi_example/attr_lookups_ql1
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj -1.61177  9.98232 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookup_ql1 -2.49917  -4.01789 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/vopsop1 -0.598676  -0.444685 1.27734 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/geo1/attr_lookups_ql1 -1.31109  -4.01007 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_gamma_ql/foreach1 -3.27194  -3.8094 0.853616 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/vector_store_ql1 1.13602  -7.48024 0.75534 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/orient_ql1 -1.54643  -4.09124 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/vector_store_ql1/foreach__restore_vector_attrs -1.23109  -2.77106 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/chopnet1 -0.882459  -0.0707067 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/vector_store_ql1/foreach__build_vec_pointgroups -1.98814  -4.54703 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_gamma_ql -3.13457  -1.83086 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/attr_lookup_multi_example/attr_lookups_ql1/chopnet1 -0.574727  0.319319 1 panetab22
+neteditor -d buildB -b 0 -l 0 -f '' -q 1.000000 -v /obj/toon_character1 -17.8794  -7.6139 0.824743 panetab22
+panepath -d buildB -f -p panetab8 /obj/attr_lookup_multi_example/sphere1
+panepath -d buildB -f -p panetab22 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab23 /obj/
 panepath -d buildB -f -p panetab24 /obj/
-panepath -d buildB -f -p panetab19 /obj/attr_lookup_multi_example/attr_lookups_ql1
-panepath -d buildB -f -p pane1 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab19 /obj/attr_lookup_multi_example/sphere1
+panepath -d buildB -f -p pane1 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab12 /obj/
-panepath -d buildB -f -p panetab11 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab11 /obj/attr_lookup_multi_example/sphere1
+panepath -d buildB -f -p panetab27 /obj/
 panepath -d buildB -f -p panetab10 /obj/
 panepath -d buildB -f -p panetab5 /out/
-panepath -d buildB -f -p panetab17 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab17 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab26 /obj/
-panepath -d buildB -f -p panetab20 /obj/geo1/attr_lookups_ql1/chopnet1/fetch_curves
+panepath -d buildB -f -p panetab20 /ch/
 panepath -d buildB -f -p panetab21 /obj/
-panepath -d buildB -f -p panetab9 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab9 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab14 /out/
 panepath -d buildB -f -p panetab15 /out/
-panepath -d buildB -f -p panetab18 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab18 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab25 /out/
 panepath -d buildB -f -p panetab7 /obj/
 panepath -d buildB -f -p panetab2 /out/
 panepath -d buildB -f -p panetab4 /out/
 panepath -d buildB -f -p panetab13 /out/
 panepath -d buildB -f -p panetab1 /out/
-panepath -d buildB -f -p panetab6 /obj/attr_lookup_multi_example/attr_lookups_ql1
+panepath -d buildB -f -p panetab6 /obj/attr_lookup_multi_example/sphere1
 panepath -d buildB -f -p panetab3 /out/
-panepath -d buildB -f -p panetab27 /obj/
 desk set buildB
 performance -l window -c on -g off -o on -v on -f on -m off -r on -i off -h off -p off -s off -e off -F off -U ms -T 500
 viewupdate -u always

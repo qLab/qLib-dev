@@ -1,0 +1,19 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+folder0	[ 0	locks=0 ]	(	1	1	)
+attrib_in	[ 0	locks=0 ]	(	size	)
+srcmin	[ 0	locks=0 ]	(	0	)
+srcmax	[ 0	locks=0 ]	(	7	)
+attrib_out	[ 0	locks=0 ]	(	Cd	)
+exp	[ 0	locks=0 ]	(	2.20000005	)
+folder2	[ 0	locks=0 ]	(	0	)
+lookup_ramp	[ 0	locks=0	autoscope=0 ]	(	2	)
+size	[ 0	locks=0 ]	(	0	)
+lookup_ramp1pos	[ 0	locks=0	autoscope=0 ]	(	0	)
+lookup_ramp1c	[ 0	locks=0	autoscope=0 ]	(	1	0	0	)
+lookup_ramp1interp	[ 0	locks=0	autoscope=0 ]	(	"linear"	)
+lookup_ramp2pos	[ 0	locks=0	autoscope=0 ]	(	1	)
+lookup_ramp2c	[ 0	locks=0	autoscope=0 ]	(	0.116666675	1	0	)
+lookup_ramp2interp	[ 0	locks=0	autoscope=0 ]	(	"linear"	)
+}
