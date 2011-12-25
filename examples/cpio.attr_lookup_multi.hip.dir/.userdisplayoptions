@@ -1,3 +1,11 @@
+viewoptadd -r vector pv
+viewoptset pv attrib ( pv ) class ( point ) color ( 0 0 1 ) fade ( 0 ) icon ( SI_pointNormal ) label ( 'P: velocity,prev.(pv)' ) overridecolor ( 0 ) scale ( 0.25 ) selcolor ( 0 0.45 1 )
+viewoptadd -r text __origgrp
+viewoptset __origgrp attrib ( __origgrp ) class ( point ) color ( 0 0 1 ) icon ( SI_pointPosition ) label ( 'P: __origgrp' ) overridecolor ( 0 ) selcolor ( 0 0.45 1 )
+viewoptadd -r vector vtx_tanu
+viewoptset vtx_tanu attrib ( tangentu ) class ( vertex ) color ( 0 0.663 0 ) fade ( 0 ) icon ( SI_pointNormal ) label ( 'VTX: tangentu *' ) overridecolor ( 1 ) scale ( 1 ) selcolor ( 0 1 0 )
+viewoptadd -r vector vtx_tanv
+viewoptset vtx_tanv attrib ( tangentv ) class ( vertex ) color ( 0.5 0 0 ) fade ( 0 ) icon ( SI_pointNormal ) label ( 'VTX: tangentv *' ) overridecolor ( 1 ) scale ( 1 ) selcolor ( 0.9 0 0 )
 viewoptadd -r text pp_index
 viewoptset pp_index attrib ( index ) class ( point ) color ( 0 0 1 ) icon ( SI_pointPosition ) label ( 'P: index ("index") *' ) overridecolor ( 0 ) selcolor ( 0 0.45 1 )
 viewoptadd -r text __origpt
