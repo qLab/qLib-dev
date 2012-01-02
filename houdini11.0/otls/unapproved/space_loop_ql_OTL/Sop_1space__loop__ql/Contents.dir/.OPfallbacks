@@ -1,0 +1,12 @@
+Vop/invert /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/invert otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/floattovec /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl
+Vop/floor /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/floor otls/OPlibVop.otl
+Vop/makexform /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/makexform otls/OPlibVop.otl
+Vop/modulo /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/modulo otls/OPlibVop.otl
