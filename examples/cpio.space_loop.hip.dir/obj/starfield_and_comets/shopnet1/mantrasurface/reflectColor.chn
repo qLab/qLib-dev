@@ -1,0 +1,43 @@
+{
+    channel baseColorr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../specColor1/colordefr') }
+    }
+    channel baseColorg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../specColor1/colordefg') }
+    }
+    channel baseColorb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../specColor1/colordefb') }
+    }
+    channel useColorMap {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../useSpecMap1/toggledef') }
+    }
+    channel colorMapIntensity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../reflectMapIntensity/floatdef') }
+    }
+    channel colorMapWidth {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../reflectMapWidth1/floatdef') }
+    }
+  }

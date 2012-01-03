@@ -1,0 +1,2856 @@
+    group {
+	name	"shading"
+	label	"Surface"
+
+	group {
+	    name	"diffuseFolder"
+	    label	"Diffuse"
+
+	    parm {
+		name	"diff_enable"
+		label	"Enable Diffuse"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"diff_int"
+		label	"Diffuse Intensity"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"diff_rough"
+		label	"Oren-Nayar Roughness"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"diff_min"
+		label	"Diffuse Minimum"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ diff_enable == 0 } { fres_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useBaseColor"
+		label	"Use Base Color"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"baseColor"
+		label	"Base Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ useBaseColor == 0 } { diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"usePointColor"
+		label	"Use Point Color"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm2"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useColorMap"
+		label	"Use Color Map"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"baseColorMap"
+		label	"Base Color Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ useColorMap == 0 } { diff_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"colorMapIntensity"
+		label	"Tint Intensity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useColorMap == 0 }"
+		range	{ 0 2 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"colorMapWrap"
+		label	"Color Map Wrap"
+		type	string
+		default	{ "repeat" }
+		disablewhen	"{ useColorMap == 0 }"
+		menu	{
+		    "repeat"	"Repeat"
+		    "streak"	"Streak"
+		    "decal"	"Decal"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"colorMapfilter"
+		label	"Color Map Filter"
+		type	string
+		default	{ "chs('../colorMapfilter/stringdef')" }
+		disablewhen	"{ useColorMap == 0 } { diff_enable == 0 }"
+		menu	{
+		    "box"	"Box"
+		    "gauss"	"Gaussian"
+		    "bartlett"	"Bartlett/Triangular"
+		    "sinc"	"Sinc Sharpening"
+		    "hanning"	"Hanning"
+		    "blackman"	"Blackman"
+		    "catrom"	"Catmull-Rom"
+		    "mitchell"	"Mitchell"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"colorMapWidth"
+		label	"Color Map Width"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useColorMap == 0 }"
+		range	{ 0 5 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"diffuseFolder_1"
+	    label	"Subsurface"
+
+	    parm {
+		name	"sss_enable"
+		label	"Enable Subsurface Scattering"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sss_int"
+		label	"Subsurface Intensity"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ sss_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"baseSSSColor"
+		label	"Subsurface Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ sss_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sss_min"
+		label	"Subsurface Minimum"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ sss_enable == 0 } { fres_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sss_phase"
+		label	"Scattering Phase"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ sss_enable == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    group {
+		name	"sssMapFolder"
+		label	"SSS Map"
+
+		parm {
+		    name	"useSSSMap"
+		    label	"Use Subsurface Map"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"baseSSSMap"
+		    label	"Subsurface Map"
+		    type	image
+		    default	{ "" }
+		    disablewhen	"{ useSSSMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"colorMapIntensity1"
+		    label	"Tint Intensity"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ useSSSMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 2 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssMapWrap"
+		    label	"SSS Map Wrap"
+		    type	string
+		    default	{ "repeat" }
+		    disablewhen	"{ useSSSMap == 0 } { sss_enable == 0 }"
+		    menu	{
+			"repeat"	"Repeat"
+			"streak"	"Streak"
+			"decal"	"Decal"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssMapFilter"
+		    label	"SSS Map Filter"
+		    type	string
+		    default	{ "catrom" }
+		    disablewhen	"{ useSSSMap == 0 } { sss_enable == 0 }"
+		    menu	{
+			"box"	"Box"
+			"gauss"	"Gaussian"
+			"bartlett"	"Bartlett/Triangular"
+			"sinc"	"Sinc Sharpening"
+			"hanning"	"Hanning"
+			"blackman"	"Blackman"
+			"catrom"	"Catmull-Rom"
+			"mitchell"	"Mitchell"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssMapWidth"
+		    label	"SSS Map Width"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ useSSSMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 5 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+	    }
+
+	    group {
+		name	"sssMapFolder_1"
+		label	"Scattering"
+
+		parm {
+		    name	"sss_1enable"
+		    label	"Enable Single Scattering"
+		    type	toggle
+		    default	{ "on" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_1intensity"
+		    label	"Single Intensity"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ sss_enable == 0 } { sss_1enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_1quality"
+		    label	"Single Quality"
+		    type	integer
+		    default	{ "1" }
+		    disablewhen	"{ sss_enable == 0 } { sss_1enable == 0 }"
+		    range	{ 1 10 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_2enable"
+		    label	"Enable Multiple Scattering"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_2intensity"
+		    label	"Multi Intensity"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ sss_enable == 0 } { sss_2enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_2quality"
+		    label	"Multi Quality"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ sss_enable == 0 } { sss_2enable == 0 }"
+		    range	{ 0.01 10 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+	    }
+
+	    group {
+		name	"sssMapFolder_2"
+		label	"Attenuation"
+
+		parm {
+		    name	"sss_atten"
+		    label	"Attenuation Density"
+		    type	float
+		    default	{ "10" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"baseSSSAttenColor"
+		    label	"Attenuation Color"
+		    type	color
+		    size	3
+		    default	{ "1" "1" "1" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sepparm4"
+		    label	"Separator"
+		    type	separator
+		    default	{ }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"useSSSAttenMap"
+		    label	"Use Attenuation Map"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssAttenMap"
+		    label	"Attenuation Map"
+		    type	image
+		    default	{ "" }
+		    disablewhen	"{ useSSSAttenMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"attenMapIntensity"
+		    label	"Tint Intensity"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ useSSSAttenMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 2 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssAttenMapWrap"
+		    label	"Attenuation Map Wrap"
+		    type	string
+		    default	{ "repeat" }
+		    disablewhen	"{ useSSSAttenMap == 0 } { sss_enable == 0 }"
+		    menu	{
+			"repeat"	"Repeat"
+			"streak"	"Streak"
+			"decal"	"Decal"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssAttenMapFilter"
+		    label	"Attenuation Map Filter"
+		    type	string
+		    default	{ "catrom" }
+		    disablewhen	"{ useSSSAttenMap == 0 } { sss_enable == 0 }"
+		    menu	{
+			"box"	"Box"
+			"gauss"	"Gaussian"
+			"bartlett"	"Bartlett/Triangular"
+			"sinc"	"Sinc Sharpening"
+			"hanning"	"Hanning"
+			"blackman"	"Blackman"
+			"catrom"	"Catmull-Rom"
+			"mitchell"	"Mitchell"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sssAttenMapWidth"
+		    label	"Attenuation Map Width"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ useSSSAttenMap == 0 } { sss_enable == 0 }"
+		    range	{ 0 5 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+	    }
+
+	    group {
+		name	"sssMapFolder_3"
+		label	"Point Cloud"
+		tabbreak
+
+		parm {
+		    name	"sss_pcmode"
+		    label	"Point Cloud Mode"
+		    type	integer
+		    default	{ "0" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    menu	{
+			"0"	"Generate At Render Time"
+			"1"	"Read From File"
+			"2"	"Write To File"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		parm {
+		    name	"sss_pcname"
+		    label	"Point Cloud"
+		    type	file
+		    default	{ "${OS}_SSS.pc" }
+		    disablewhen	"{ sss_enable == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+	    }
+
+	}
+
+	group {
+	    name	"diffuseFolder_2"
+	    label	"Reflect"
+
+	    group {
+		name	"folder1"
+		label	"Base"
+
+		parm {
+		    name	"baseRefl_enable"
+		    label	"Enable Base Reflection Layer"
+		    type	toggle
+		    default	{ "on" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		group {
+		    name	"reflectLightsFolder"
+		    label	"Reflect Lights"
+
+		    parm {
+			name	"refl_lights"
+			label	"Reflect Lights"
+			type	toggle
+			default	{ "on" }
+			disablewhen	"{ baseRefl_enable == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_model"
+			label	"Specular Model"
+			type	string
+			default	{ "0" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_lights == 0 refl_objs == 0 }"
+			menu	{
+			    "phong"	"Phong"
+			    "blinn"	"Blinn"
+			    "cone"	"Cone"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_int"
+			label	"Specular Intensity"
+			type	float
+			default	{ "0.1" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_lights == 0 refl_objs == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"sepparm5"
+			label	"Separator"
+			type	separator
+			default	{ }
+			range	{ 0 1 }
+			export	none
+		    }
+		    parm {
+			name	"specColor1"
+			label	"Specular Color"
+			type	color
+			size	3
+			default	{ "1" "1" "1" }
+			disablewhen	"{ baseRefl_enable == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"useSpecMap1"
+			label	"Use Specular Map"
+			type	toggle
+			default	{ "off" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMap1"
+			label	"Specular Map"
+			type	image
+			default	{ "" }
+			disablewhen	"{ useSpecMap1 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflectMapIntensity1"
+			label	"Tint Intensity"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useSpecMap1 == 0 }"
+			range	{ 0 2 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMapWrap1"
+			label	"Specular Map Wrap"
+			type	string
+			default	{ "repeat" }
+			disablewhen	"{ useSpecMap1 == 0 }"
+			menu	{
+			    "repeat"	"Repeat"
+			    "streak"	"Streak"
+			    "decal"	"Decal"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMapFilter1"
+			label	"Specular Map Filter"
+			type	string
+			default	{ "catrom" }
+			disablewhen	"{ useSpecMap1 == 0 }"
+			menu	{
+			    "box"	"Box"
+			    "gauss"	"Gaussian"
+			    "bartlett"	"Bartlett/Triangular"
+			    "sinc"	"Sinc Sharpening"
+			    "hanning"	"Hanning"
+			    "blackman"	"Blackman"
+			    "catrom"	"Catmull-Rom"
+			    "mitchell"	"Mitchell"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMapWidth1"
+			label	"Specular Map Width"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useSpecMap1 == 0 }"
+			range	{ 0 5 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"sepparm11"
+			label	"Separator"
+			type	separator
+			default	{ }
+			range	{ 0 1 }
+			export	none
+		    }
+		    parm {
+			name	"spec_angle"
+			label	"Specular Angle"
+			type	float
+			default	{ "10" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_lights == 0 refl_objs == 0 }"
+			range	{ 0 90 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_aniso"
+			label	"Specular Anisotropy"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_lights == 0 refl_objs == 0 } { spec_angle == 0 }"
+			range	{ -1 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_min"
+			label	"Specular Minimum"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_lights == 0 refl_objs == 0 } { fres_enable == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+		group {
+		    name	"reflectLightsFolder_1"
+		    label	"Reflect Objects"
+
+		    parm {
+			name	"refl_objs"
+			label	"Reflect Objects"
+			type	toggle
+			default	{ "off" }
+			disablewhen	"{ baseRefl_enable == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_qual"
+			label	"Reflection Quality"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_objs == 0 }"
+			range	{ 0.1 10 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_sep"
+			label	"Separate Object Reflection Parameters"
+			type	toggle
+			default	{ "on" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_objs == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_int"
+			label	"Reflection Intensity"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_objs == 0 } { refl_sep == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_clr"
+			label	"Reflection Color"
+			type	color
+			size	3
+			default	{ "1" "1" "1" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_objs == 0 } { refl_sep == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_angle"
+			label	"Reflection Angle"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ baseRefl_enable == 0 } { refl_objs == 0 } { refl_sep == 0 }"
+			range	{ 0 90 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+		group {
+		    name	"reflectLightsFolder_2"
+		    label	"Reflection Mask Map"
+
+		    parm {
+			name	"useReflMask1"
+			label	"Use Reflection Mask Map"
+			type	toggle
+			default	{ "off" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"baseReflMask1"
+			label	"Reflection Mask Map"
+			type	image
+			default	{ "" }
+			disablewhen	"{ useReflMask1 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskChannel1"
+			label	"Refl Mask Map Channel"
+			type	integer
+			default	{ "0" }
+			disablewhen	"{ useReflMask1 == 0 }"
+			menu	{
+			    "0"	"lum"
+			    "1"	"red"
+			    "2"	"green"
+			    "3"	"blue"
+			}
+			range	{ 0 10 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskWrap1"
+			label	"Refl Mask Map Wrap"
+			type	string
+			default	{ "repeat" }
+			disablewhen	"{ useReflMask1 == 0 }"
+			menu	{
+			    "repeat"	"Repeat"
+			    "streak"	"Streak"
+			    "decal"	"Decal"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskFilter1"
+			label	"Refl Mask Map Filter"
+			type	string
+			default	{ "catrom" }
+			disablewhen	"{ useReflMask1 == 0 }"
+			menu	{
+			    "box"	"Box"
+			    "gauss"	"Gaussian"
+			    "bartlett"	"Bartlett/Triangular"
+			    "sinc"	"Sinc Sharpening"
+			    "hanning"	"Hanning"
+			    "blackman"	"Blackman"
+			    "catrom"	"Catmull-Rom"
+			    "mitchell"	"Mitchell"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskMapWidth"
+			label	"Reflect Mask Map Width"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useReflMask1 == 0 }"
+			range	{ 0 5 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+	    }
+
+	    group {
+		name	"folder1_1"
+		label	"Coat"
+
+		parm {
+		    name	"coatRefl_enable2"
+		    label	"Enable Coat Reflection Layer"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "parmvop" "1" }
+		}
+		group {
+		    name	"reflect_lights"
+		    label	"Reflect Lights"
+
+		    parm {
+			name	"refl_lights2"
+			label	"Reflect Lights"
+			type	toggle
+			default	{ "on" }
+			disablewhen	"{ coatRefl_enable2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_model2"
+			label	"Specular Model"
+			type	string
+			default	{ "0" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 refl_objs2 == 0 }"
+			menu	{
+			    "phong"	"Phong"
+			    "blinn"	"Blinn"
+			    "cone"	"Cone"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_int2"
+			label	"Specular Intensity"
+			type	float
+			default	{ "0.1" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 refl_objs2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"sepparm23"
+			label	"Separator"
+			type	separator
+			default	{ }
+			range	{ 0 1 }
+			export	none
+		    }
+		    parm {
+			name	"specColor2"
+			label	"Specular Color"
+			type	color
+			size	3
+			default	{ "1" "1" "1" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { useBaseColor == 0 } { refl_lights2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"useSpecMap2"
+			label	"Use Specular Map"
+			type	toggle
+			default	{ "off" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMap2"
+			label	"Specular Map"
+			type	image
+			default	{ "" }
+			disablewhen	"{ useSpecMap2 == 0 } { coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflectMapIntensity2"
+			label	"Tint Intensity"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useSpecMap2 == 0 } { coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMapWrap2"
+			label	"Specular Map Wrap"
+			type	string
+			default	{ "repeat" }
+			disablewhen	"{ useSpecMap2 == 0 } { coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			menu	{
+			    "repeat"	"Repeat"
+			    "streak"	"Streak"
+			    "decal"	"Decal"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_Mapfilter2"
+			label	"Specular Map Filter"
+			type	string
+			default	{ "catrom" }
+			disablewhen	"{ useSpecMap2 == 0 } { coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			menu	{
+			    "box"	"Box"
+			    "gauss"	"Gaussian"
+			    "bartlett"	"Bartlett/Triangular"
+			    "sinc"	"Sinc Sharpening"
+			    "hanning"	"Hanning"
+			    "blackman"	"Blackman"
+			    "catrom"	"Catmull-Rom"
+			    "mitchell"	"Mitchell"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"specMapWidth2"
+			label	"Specular Map Width"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useSpecMap2 == 0 } { coatRefl_enable2 == 0 } { refl_lights2 == 0 }"
+			range	{ 0 5 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"sepparm24"
+			label	"Separator"
+			type	separator
+			default	{ }
+			range	{ 0 1 }
+			export	none
+		    }
+		    parm {
+			name	"spec_angle2"
+			label	"Specular Angle"
+			type	float
+			default	{ "10" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 refl_objs2 == 0 }"
+			range	{ 0 90 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_aniso2"
+			label	"Specular Anisotropy"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 refl_objs2 == 0 } { spec_angle2 == 0 }"
+			range	{ -1 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"spec_min2"
+			label	"Specular Minimum"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_lights2 == 0 } { spec_angle2 == 0 } { fres_enable == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+		group {
+		    name	"reflect_lights_1"
+		    label	"Reflect Objects"
+
+		    parm {
+			name	"refl_objs2"
+			label	"Reflect Objects"
+			type	toggle
+			default	{ "off" }
+			disablewhen	"{ coatRefl_enable2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_qual2"
+			label	"Reflection Quality"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_objs2 == 0 }"
+			range	{ 0.1 10 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_sep2"
+			label	"Separate Object Reflection Parameters"
+			type	toggle
+			default	{ "on" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_objs2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"colorMapIntensity2"
+			label	"Reflection Intensity"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useColorMap == 0 }"
+			range	{ 0 2 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_clr2"
+			label	"Reflection Color"
+			type	color
+			size	3
+			default	{ "1" "1" "1" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_objs2 == 0 } { refl_sep2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"refl_angle2"
+			label	"Reflection Angle"
+			type	float
+			default	{ "0" }
+			disablewhen	"{ coatRefl_enable2 == 0 } { refl_objs2 == 0 } { refl_sep2 == 0 }"
+			range	{ 0 90 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+		group {
+		    name	"reflect_lights_2"
+		    label	"Reflection Mask Map"
+
+		    parm {
+			name	"useReflMap2"
+			label	"Use Reflection Map"
+			type	toggle
+			default	{ "off" }
+			disablewhen	"{ coatRefl_enable2 == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"baseReflMask2"
+			label	"Reflection Mask Map"
+			type	image
+			default	{ "" }
+			disablewhen	"{ useColorMap == 0 }"
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskWrap2"
+			label	"Refl Mask Map Wrap"
+			type	string
+			default	{ "repeat" }
+			disablewhen	"{ useColorMap == 0 }"
+			menu	{
+			    "repeat"	"Repeat"
+			    "streak"	"Streak"
+			    "decal"	"Decal"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"relfMaskfilter2"
+			label	"Refl Mask Map Filter"
+			type	string
+			default	{ "catrom" }
+			disablewhen	"{ useColorMap == 0 }"
+			menu	{
+			    "box"	"Box"
+			    "gauss"	"Gaussian"
+			    "bartlett"	"Bartlett/Triangular"
+			    "sinc"	"Sinc Sharpening"
+			    "hanning"	"Hanning"
+			    "blackman"	"Blackman"
+			    "catrom"	"Catmull-Rom"
+			    "mitchell"	"Mitchell"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		    parm {
+			name	"reflMaskWidth2"
+			label	"Refl Mask Map Width"
+			type	float
+			default	{ "1" }
+			disablewhen	"{ useColorMap == 0 }"
+			range	{ 0 5 }
+			export	none
+			parmtag	{ "parmvop" "1" }
+		    }
+		}
+
+	    }
+
+	}
+
+	group {
+	    name	"diffuseFolder_3"
+	    label	"Refract"
+
+	    parm {
+		name	"ior_in"
+		label	"Inside IOR"
+		type	float
+		default	{ "1.2" }
+		range	{ 1 3 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"ior_out"
+		label	"Outside IOR"
+		type	float
+		default	{ "1" }
+		range	{ 1 3 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm13"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"refr_enable"
+		label	"Enable Refractions"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_model"
+		label	"Refraction Model"
+		type	string
+		default	{ "phong" }
+		disablewhen	"{ refr_enable == 0 }"
+		menu	{
+		    "phong"	"Phong"
+		    "cone"	"Cone"
+		    "diffuse"	"Translucency"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_int"
+		label	"Refraction Intensity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_min"
+		label	"Refraction Minimum"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_clr"
+		label	"Refraction Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_angle"
+		label	"Refraction Angle"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 90 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_aniso"
+		label	"Refraction Anisotropy"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_qual"
+		label	"Refraction Quality"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ refr_enable == 0 } { refr_objs == 0 }"
+		range	{ 0.1 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_lights"
+		label	"Refract Lights"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_objs"
+		label	"Refract Objects"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"refr_thin"
+		label	"Thin Film Refraction"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ refr_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm14"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"atten_enable"
+		label	"Enable Attenuation"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ refr_enable == 0 } { refr_objs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"atten_den"
+		label	"Attenuation Density"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ refr_enable == 0 } { refr_objs == 0 } { atten_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"atten_clr"
+		label	"Attenuation Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ refr_enable == 0 } { refr_objs == 0 } { atten_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"diffuseFolder_4"
+	    label	"Emission"
+
+	    parm {
+		name	"emit_enable"
+		label	"Enable Emission"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"emit_illum"
+		label	"Emission Illuminates Objects"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ emit_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"emit_int"
+		label	"Emission Intensity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ emit_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm26"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useEmmisionColor"
+		label	"Use Emmision Color"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ emit_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"emit_clr"
+		label	"Emission Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ emit_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm25"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useEmmisionMap"
+		label	"Use Emmision Map"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ emit_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"baseEmmisionColorMap"
+		label	"Emmission Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ useEmmisionMap == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"emmisionMapIntensity"
+		label	"Emmision Map Tint"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useEmmisionMap == 0 }"
+		range	{ 0 2 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"diffuseFolder_5"
+	    label	"Opacity"
+
+	    parm {
+		name	"opac_int"
+		label	"Opacity Scale"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm15"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"baseOpacityColor"
+		label	"Opacity Color"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ useBaseColor == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"useOpacityMap"
+		label	"Use Opacity Map"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opacityMap"
+		label	"Opacity Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ useOpacityMap == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opacityMapIntensity"
+		label	"Tint Intensity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useOpacityMap == 0 }"
+		range	{ 0 2 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opacityMapWrap"
+		label	"Opacity Map Wrap"
+		type	string
+		default	{ "repeat" }
+		disablewhen	"{ useOpacityMap == 0 }"
+		menu	{
+		    "repeat"	"Repeat"
+		    "streak"	"Streak"
+		    "decal"	"Decal"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opacityMapFilter"
+		label	"Opacity Map Filter"
+		type	string
+		default	{ "catrom" }
+		disablewhen	"{ useOpacityMap == 0 }"
+		menu	{
+		    "box"	"Box"
+		    "gauss"	"Gaussian"
+		    "bartlett"	"Bartlett/Triangular"
+		    "sinc"	"Sinc Sharpening"
+		    "hanning"	"Hanning"
+		    "blackman"	"Blackman"
+		    "catrom"	"Catmull-Rom"
+		    "mitchell"	"Mitchell"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opacityMapWidth"
+		label	"Opacity Map Width"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useOpacityMap == 0 }"
+		range	{ 0 5 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm16"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"opac_falloff"
+		label	"Enable Opacity Falloff"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opac_para"
+		label	"Parallel Opacity"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ opac_falloff == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opac_perp"
+		label	"Perp Opacity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ opac_falloff == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"opac_rolloff"
+		label	"Opacity Rolloff"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ opac_falloff == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm18"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"enableAlphaFalloff"
+		label	"Enable Alpha Falloff"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"alphaPara"
+		label	"Parallel Alpha"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enableAlphaFalloff == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"aperp"
+		label	"Alpha Perp"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enableAlphaFalloff == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"aroll"
+		label	"Alpha Roll"
+		type	float
+		default	{ "0.15" }
+		disablewhen	"{ enableAlphaFalloff == 0 }"
+		range	{ 0.02 0.2 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm17"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"fake_enable"
+		label	"Enable Faux Caustics"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"fake_min"
+		label	"Min Shadow Intensity"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ fake_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"fake_max"
+		label	"Max Shadow Intensity"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ fake_enable == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"diffuseFolder_6"
+	    label	"Settings"
+
+	    parm {
+		name	"facefwd"
+		label	"Ensure Faces Point Forward"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"conserveenergy"
+		label	"Conserve Energy"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm3"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"fres_enable"
+		label	"Fresnel Blending"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"fres_style"
+		label	"Fresnel Style"
+		type	string
+		default	{ "physical" }
+		disablewhen	"{ fres_enable == 0 }"
+		menu	{
+		    "physical"	"Physically Based"
+		    "input"	"Use Connected 'fresnel'"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"shading_1"
+	label	"Displacement"
+
+	parm {
+	    name	"shop_disable_displace_shader"
+	    label	"Disable Displace Shader Rendering"
+	    type	toggle
+	    invisible
+	    default	{ "0" }
+	    help	"None"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "Shaders" }
+	}
+	group {
+	    name	"displaceFolder"
+	    label	"Displacement Map"
+
+	    parm {
+		name	"offset"
+		label	"Displace Direction"
+		type	integer
+		default	{ "1" }
+		disablewhen	"{ enableDispMap == 0 enableNoise == 0 }"
+		menu	{
+		    "0"	"Up: Black = No Displace"
+		    "1"	"Up & Down: Gray = No Displace"
+		    "2"	"Down: White = No Displace"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dispScale"
+		label	"Displacement Scale"
+		type	float
+		default	{ "0.05" }
+		disablewhen	"{ enableDispMap == 0 enableNoise == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"vm_displacebound"
+		label	"Displacement Bound"
+		type	float
+		default	{ "ch(\"dispScale\")" }
+		disablewhen	"{ enableDispMap == 0 enableNoise == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"vm_truedisplace"
+		label	"True Displacements"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ enableDispMap == 0 enableNoise == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm22"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"enableDispMap"
+		label	"Enable Displacement Map"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"displacementMap"
+		label	"Displacement Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ enableDispMap == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"switchDispChannel"
+		label	"Disp Channel"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ enableDispMap == 0 }"
+		menu	{
+		    "0"	"Luminance"
+		    "1"	"Red"
+		    "2"	"Green"
+		    "3"	"Blue"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dispMapWrap"
+		label	"Disp Map Wrap"
+		type	string
+		default	{ "repeat" }
+		disablewhen	"{ enableDispMap == 0 }"
+		menu	{
+		    "repeat"	"Repeat"
+		    "streak"	"Streak"
+		    "decal"	"Decal"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dispMapFilter"
+		label	"Disp Map Filter"
+		type	string
+		default	{ "box" }
+		disablewhen	"{ enableDispMap == 0 }"
+		menu	{
+		    "box"	"Box"
+		    "gauss"	"VEX: Gaussian"
+		    "bartlett"	"VEX: Bartlett/Triangular"
+		    "sinc"	"VEX: Sinc Sharpening"
+		    "hanning"	"VEX: Hanning"
+		    "blackman"	"VEX: Blackman"
+		    "catrom"	"VEX: Catmull-Rom"
+		    "mitchell"	"VEX: Mitchell"
+		    "point"	"VEX: Point (no filter)"
+		    "gaussian"	"RSL: Gaussian"
+		    "disk"	"RSL: Poisson Disk"
+		    "radial-bspline"	"RSL: Radial B-Spline"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dispMapWidth"
+		label	"Disp Map Width"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enableDispMap == 0 }"
+		range	{ 1 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm21"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"enableNoise"
+		label	"Enable Noise"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseType"
+		label	"Noise Type"
+		type	string
+		default	{ "snoise" }
+		disablewhen	"{ enableNoise == 0 }"
+		menu	{
+		    "pnoise"	"Perlin Noise"
+		    "onoise"	"Original Perlin Noise"
+		    "snoise"	"Sparse Convolution Noise"
+		    "anoise"	"Alligator Noise"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseFreq"
+		label	"Frequency"
+		type	float
+		size	3
+		default	{ "10" "10" "10" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseOffset"
+		label	"Offset"
+		type	float
+		size	3
+		default	{ "0" "0" "0" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseAmp"
+		label	"Amplitude"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseRough"
+		label	"Roughness"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseAtten"
+		label	"Attenuation"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"noiseTurb"
+		label	"Turbulence"
+		type	integer
+		default	{ "5" }
+		disablewhen	"{ enableNoise == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"displaceFolder_1"
+	    label	"Bump | Normal Map"
+	    tabbreak
+
+	    parm {
+		name	"mapType"
+		label	"Map Type"
+		type	integer
+		default	{ "0" }
+		menu	{
+		    "0"	"None"
+		    "1"	"Bump"
+		    "2"	"Normal"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm20"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useBumpMap"
+		label	"Use Bump Map"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ mapType == 0 } { mapType == 2 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"bumpScale"
+		label	"Bump Scale"
+		type	float
+		default	{ "0.1" }
+		disablewhen	"{ useBumpMap == 0 } { mapType == 0 } { mapType == 2 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"bumpMap"
+		label	"Bump Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ useBumpMap == 0 } { mapType == 0 } { mapType == 2 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"bumpMapWrap"
+		label	"Bump Map Wrap"
+		type	string
+		default	{ "repeat" }
+		disablewhen	"{ useBumpMap == 0 } { mapType == 0 } { mapType == 2 }"
+		menu	{
+		    "repeat"	"Repeat"
+		    "streak"	"Streak"
+		    "decal"	"Decal"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"bumpMapFilter"
+		label	"Bump Map Filter"
+		type	string
+		default	{ "catrom" }
+		disablewhen	"{ useBumpMap == 0 } { mapType == 0 } { mapType == 2 }"
+		menu	{
+		    "box"	"Box"
+		    "gauss"	"Gaussian"
+		    "bartlett"	"Bartlett/Triangular"
+		    "sinc"	"Sinc Sharpening"
+		    "hanning"	"Hanning"
+		    "blackman"	"Blackman"
+		    "catrom"	"Catmull-Rom"
+		    "mitchell"	"Mitchell"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"bumpMapWidth"
+		label	"Bump Map Width"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useBumpMap == 0 } { mapType == 0 } { mapType == 2 }"
+		range	{ 0 5 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"sepparm19"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"useNormalMap"
+		label	"Use Normal Map"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ mapType == 0 } { mapType == 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"baseNormalMap"
+		label	"Normal Map"
+		type	image
+		default	{ "" }
+		disablewhen	"{ useNormalMap == 0 } { mapType == 0 } { mapType == 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"normalMapWrap"
+		label	"Normal Map Wrap"
+		type	string
+		default	{ "repeat" }
+		disablewhen	"{ useNormalMap == 0 } { mapType == 0 }"
+		menu	{
+		    "repeat"	"Repeat"
+		    "streak"	"Streak"
+		    "decal"	"Decal"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"normalMapFilter"
+		label	"Normal Map Filter"
+		type	string
+		default	{ "catrom" }
+		disablewhen	"{ useNormalMap == 0 } { mapType == 0 }"
+		menu	{
+		    "box"	"Box"
+		    "gauss"	"Gaussian"
+		    "bartlett"	"Bartlett/Triangular"
+		    "sinc"	"Sinc Sharpening"
+		    "hanning"	"Hanning"
+		    "blackman"	"Blackman"
+		    "catrom"	"Catmull-Rom"
+		    "mitchell"	"Mitchell"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"normalMapWidth"
+		label	"Normal Map Width"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ useNormalMap == 0 } { mapType == 0 } { mapType == 1 }"
+		range	{ 0 5 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"shading_2"
+	label	"OpenGL"
+
+	group {
+	    name	"folder0"
+	    label	"Surface"
+
+	    parm {
+		name	"ogl_light"
+		label	"Use Lighting"
+		type	toggle
+		default	{ "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm6"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_alpha"
+		label	"OGL Alpha"
+		type	float
+		default	{ "ch(\"opac_int\")" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_cutout"
+		label	"Transparent Texture Alpha"
+		type	toggle
+		default	{ "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_amb"
+		label	"OGL Ambient"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_emit"
+		label	"OGL Emission"
+		type	color
+		size	3
+		default	{ "0" "0" "0" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm12"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_diff"
+		label	"OGL Diffuse"
+		type	color
+		size	3
+		default	{ "if(ch(\"diff_enable\")>0, ch(\"baseColorr\")*ch(\"diff_int\"), 0)" "if(ch(\"diff_enable\")>0, ch(\"baseColorg\")*ch(\"diff_int\"), 0)" "if(ch(\"diff_enable\")>0, ch(\"baseColorb\")*ch(\"diff_int\"), 0)" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    multiparm {
+		name	"ogl_numtex"
+		label	"Texture Layers"
+		default	1
+		parmtag	{ "spare_category" "OGL" }
+
+		parm {
+		    name	"ogl_tex#"
+		    label	"Texture #"
+		    type	image
+		    default	{ "`chs(\"baseColorMap\")`" }
+		    help	"None"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "filechooser_mode" "read" }
+		}
+		parm {
+		    name	"ogl_tex_min_filter#"
+		    label	"Minification Filter"
+		    type	string
+		    default	{ "GL_LINEAR_MIPMAP_LINEAR" }
+		    help	"None"
+		    menu	{
+			"GL_NEAREST"	"Poor: Nearest"
+			"GL_LINEAR"	"Poor: Linear"
+			"GL_NEAREST_MIPMAP_NEAREST"	"Fastest (Nearest/Nearest)"
+			"GL_LINEAR_MIPMAP_NEAREST"	"Better (Linear/Nearest)"
+			"GL_NEAREST_MIPMAP_LINEAR"	"Good (Nearest/Linear)"
+			"GL_LINEAR_MIPMAP_LINEAR"	"Best (Linear/Linear)"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"ogl_tex_mag_filter#"
+		    label	"Magnification Filter"
+		    type	string
+		    default	{ "GL_LINEAR" }
+		    help	"None"
+		    menu	{
+			"GL_NEAREST"	"Nearest"
+			"GL_LINEAR"	"Linear"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"ogl_clamping_mode#"
+		    label	"Clamp Texture"
+		    type	toggle
+		    default	{ "0" }
+		    help	"None"
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    parm {
+		name	"sepparm8"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_spec"
+		label	"OGL Specular"
+		type	color
+		size	3
+		default	{ "if(ch(\"refl_lights\")>0, ch(\"specColor1r\")*ch(\"spec_int\")*10, 0)" "if(ch(\"refl_lights\")>0, ch(\"specColor1g\")*ch(\"spec_int\")*10, 0)" "if(ch(\"refl_lights\")>0, ch(\"specColor1b\")*ch(\"spec_int\")*10, 0)" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_specmap"
+		label	"OGL Specular Map"
+		type	image
+		default	{ "`chs(\"specMap1\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_speclayer"
+		label	"Specular Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_rough"
+		label	"OGL Roughness"
+		type	float
+		default	{ "ch(\"diff_rough\")" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_adjustshiny"
+		label	"Adjust Shininess with Alpha Channel"
+		type	toggle
+		default	{ "off" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_shinyrange"
+		label	"Shininess Range"
+		type	vector2
+		size	2
+		default	{ "10" "30" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" } { ogl_adjustshiny == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"sepparm10"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_opacitymap"
+		label	"OGL Opacity Map"
+		type	image
+		default	{ "`chs(\"opacityMap\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_opacitylayer"
+		label	"Opacity Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_opacitymap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder0_1"
+	    label	"Displace"
+
+	    parm {
+		name	"ogl_bumpmap"
+		label	"OGL Bump Map"
+		type	image
+		default	{ "`chs(\"bumpMap\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+	    }
+	    parm {
+		name	"ogl_bumptype"
+		label	"Bump Map Type"
+		type	string
+		default	{ "height" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		menu	{
+		    "height"	"Height Map"
+		    "uv"	"UV Bump Map"
+		    "xyz"	"XYZ Bump Map"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpscale"
+		label	"Bump Scale"
+		type	float
+		default	{ "1" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpbias"
+		label	"Bump Map Range"
+		type	string
+		default	{ "zeroone" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		menu	{
+		    "zeroone"	"0 to 1"
+		    "centered"	"-1 to 1"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumplayer"
+		label	"Bump Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpinvert"
+		label	"Invert Bumps"
+		type	toggle
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"sepparm7"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_normalmap"
+		label	"OGL Normal Map"
+		type	image
+		default	{ "`chs(\"baseNormalMap\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_normalbias"
+		label	"Normal Map Range"
+		type	string
+		default	{ "zeroone" }
+		help	"None"
+		disablewhen	"{ ogl_normalmap == \"\" }"
+		menu	{
+		    "zeroone"	"0 to 1"
+		    "centered"	"-1 to 1"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_normallayer"
+		label	"Normal Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_normalmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm9"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder0_2"
+	    label	"Environment"
+
+	    parm {
+		name	"ogl_envmap"
+		label	"OGL Environment Map"
+		type	image
+		default	{ "`chs(\"envMap\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+	    }
+	    parm {
+		name	"ogl_envrotate"
+		label	"Env Map Rotation"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		help	"None"
+		disablewhen	"{ ogl_envmap == \"\" }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_envrotorder"
+		label	"Env Rotate Order"
+		type	string
+		default	{ "xyz" }
+		help	"None"
+		menu	{
+		    "xyz"	"Rx Ry Rz"
+		    "xzy"	"Rx Rz Ry"
+		    "yxz"	"Ry Rx Rz"
+		    "yzx"	"Ry Rz Rx"
+		    "zxy"	"Rz Rx Ry"
+		    "zyx"	"Rz Ry Rx"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_envscale"
+		label	"Reflection Intensity"
+		type	float
+		default	{ "0.1" }
+		help	"None"
+		disablewhen	"{ ogl_envmap == \"\" }"
+		range	{ 0 2 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"shading_3"
+	label	"Compile"
+	invisibletab
+
+	parm {
+	    name	"vop_compiler"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vop_forcecompile"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"diffuse_global_clr"
+	label	"diffuse_global_clr"
+	type	color
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"Ce"
+	label	"Emission"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_diffuse"
+	label	"Direct Diffuse"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_reflect"
+	label	"Direct Reflect"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_specular"
+	label	"Direct Specular"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_volume"
+	label	"Direct Volume"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_refract"
+	label	"Direct Refract"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct"
+	label	"Direct Lighting"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_noshadow"
+	label	"Direct Unshadowed Lighting"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_shadow"
+	label	"Direct Shadow Matte"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_samples"
+	label	"Direct Samples"
+	type	float
+	invisible
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"multiglobclr"
+	label	"multiglobclr"
+	type	color
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"sss_single"
+	label	"Single Scattering"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"sss_multi"
+	label	"Multi Scattering"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"indirect_refract"
+	label	"Indirect Refract"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"indirect_reflect"
+	label	"Indirect Reflect"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Cd"
+	label	"Attribute Color"
+	type	color
+	invisible
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Alpha"
+	label	"Attribute Alpha"
+	type	float
+	invisible
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"diffuse_color_noshading"
+	label	"Diffuse Color - No Shading"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
