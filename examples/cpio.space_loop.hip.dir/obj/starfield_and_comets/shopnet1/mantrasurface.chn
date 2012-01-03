@@ -1,0 +1,62 @@
+{
+    channel ogl_diffr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"diff_enable\")>0, ch(\"baseColorr\")*ch(\"diff_int\")*2, 0)" }
+    }
+    channel ogl_diffg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"diff_enable\")>0, ch(\"baseColorg\")*ch(\"diff_int\")*2, 0)" }
+    }
+    channel ogl_diffb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"diff_enable\")>0, ch(\"baseColorb\")*ch(\"diff_int\")*2, 0)" }
+    }
+    channel shop_disable_displace_shader {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "!ch(\"enableDispMap\") && !ch(\"enableNoise\")" }
+    }
+    channel vm_displacebound {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"dispScale\") }
+    }
+    channel ogl_alpha {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"opac_int\") }
+    }
+    channel ogl_specr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"refl_lights\")>0, ch(\"specColor1r\")*ch(\"spec_int\")*10, 0)" }
+    }
+    channel ogl_specg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"refl_lights\")>0, ch(\"specColor1g\")*ch(\"spec_int\")*10, 0)" }
+    }
+    channel ogl_specb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"refl_lights\")>0, ch(\"specColor1b\")*ch(\"spec_int\")*10, 0)" }
+    }
+    channel ogl_rough {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"diff_rough\") }
+    }
+  }

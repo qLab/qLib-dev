@@ -1,0 +1,10 @@
+9
+s_global
+t_global
+shadingAttriUV
+choose_S
+vec2float
+choose_T
+float2vec
+suboutput1
+subinput1

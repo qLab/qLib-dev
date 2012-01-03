@@ -1,0 +1,21 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+rampparm1	[ 0	locks=0 ]	(	2	)
+rampparm1_1pos	[ 0	locks=0 ]	(	0	)
+rampparm1_1c	[ 0	locks=0 ]	(	1	0.949599981	0.920000017	)
+rampparm1_1interp	[ 0	locks=0 ]	(	"linear"	)
+rampparm1_2pos	[ 0	locks=0 ]	(	1	)
+rampparm1_2c	[ 0	locks=0 ]	(	0.0129199959	0.0705159083	0.170000002	)
+rampparm1_2interp	[ 0	locks=0 ]	(	"linear"	)
+rampparm2	[ 0	locks=0 ]	(	2	)
+rampparm2_1pos	[ 0	locks=0 ]	(	0	)
+rampparm2_1c	[ 0	locks=0 ]	(	0.151999995	0.056754265	0.0126160001	)
+rampparm2_1interp	[ 0	locks=0 ]	(	"catmull-rom"	)
+rampparm2_2pos	[ 0	locks=0 ]	(	1	)
+rampparm2_2c	[ 0	locks=0 ]	(	0.946799994	1	0.924000025	)
+rampparm2_2interp	[ 0	locks=0 ]	(	"linear"	)
+}

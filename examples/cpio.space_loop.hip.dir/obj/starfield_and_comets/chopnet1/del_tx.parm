@@ -1,0 +1,19 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+discard	[ 0	locks=0 ]	(	"scoped"	)
+select	[ 0	locks=0 ]	(	"byname"	)
+delscope	[ 0	locks=0 ]	(	tx	)
+selnumbers	[ 0	locks=0 ]	(	0-100:2	)
+chanvalue	[ 0	locks=0 ]	(	"off"	)
+selrange	[ 0	locks=0 ]	(	-1	1	)
+selconst	[ 0	locks=0 ]	(	"off"	)
+scope	[ 0	locks=0 ]	(	*	)
+srselect	[ 0	locks=0 ]	(	"max"	)
+units	[ 0	locks=0 ]	(	"seconds"	)
+timeslice	[ 0	locks=0 ]	(	"off"	)
+unload	[ 0	locks=0 ]	(	"off"	)
+export	[ 0	locks=0 ]	(	/obj	)
+gcolor	[ 0	locks=0 ]	(	0.449999988	0.899999976	0	)
+gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+}

@@ -1,0 +1,18 @@
+comment ""
+position 5.65578 -13.5009
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+inputs
+{
+}
+stat
+{
+  create 1278358890
+  modify 1278536693
+  author jroberts@alabama.sidefx.com
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

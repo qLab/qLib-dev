@@ -1,0 +1,23 @@
+{
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { length = 0 value = 8 8 expr = ch(\"../volume1/sizex\") }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { length = 0 value = 8 8 expr = ch(\"../volume1/sizey\") }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { length = 0 value = 8 8 expr = ch(\"../volume1/sizez\") }
+    }
+  }

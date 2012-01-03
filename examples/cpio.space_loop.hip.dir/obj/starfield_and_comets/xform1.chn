@@ -1,0 +1,9 @@
+{
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = 0.670649
+      flags = 0
+      segment { length = 0 value = 0.67064869403839111 0.67064869403839111 expr = $T*4 }
+    }
+  }
