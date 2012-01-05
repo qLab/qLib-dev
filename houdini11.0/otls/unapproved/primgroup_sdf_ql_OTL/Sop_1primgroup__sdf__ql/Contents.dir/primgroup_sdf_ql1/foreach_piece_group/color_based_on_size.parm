@@ -1,0 +1,23 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+srcmin	[ 0	locks=0 ]	(	[ srcmin	0.189999998 ] 	)
+srcmax	[ 0	locks=0 ]	(	[ srcmax	0.920000017 ] 	)
+rampparm1	[ 0	locks=0 ]	(	4	)
+rampparm1_1pos	[ 0	locks=0 ]	(	0	)
+rampparm1_1c	[ 0	locks=0 ]	(	0	0	0	)
+rampparm1_1interp	[ 0	locks=0 ]	(	"linear"	)
+rampparm1_2pos	[ 0	locks=0 ]	(	0.0199999996	)
+rampparm1_2c	[ 0	locks=0 ]	(	0.5	0	0	)
+rampparm1_2interp	[ 0	locks=0 ]	(	"linear"	)
+exp	[ 8	locks=0 ]	(	[ exp	2 ] 	)
+rampparm1_3pos	[ 0	locks=0 ]	(	0.980000019	)
+rampparm1_3c	[ 0	locks=0 ]	(	0.899999976	0.899999976	0	)
+rampparm1_3interp	[ 0	locks=0 ]	(	"linear"	)
+rampparm1_4pos	[ 0	locks=0 ]	(	1	)
+rampparm1_4c	[ 0	locks=0 ]	(	1	1	1	)
+rampparm1_4interp	[ 0	locks=0 ]	(	"linear"	)
+}
