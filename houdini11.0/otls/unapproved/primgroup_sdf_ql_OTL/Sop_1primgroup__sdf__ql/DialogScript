@@ -1,0 +1,156 @@
+# Dialog script for primgroup_sdf_ql automatically generated 01/05/12 02:12:17
+
+{
+    name	primgroup_sdf_ql
+    script	primgroup_sdf_ql
+    label	"PrimGroup SDF qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Parameters"
+
+	parm {
+	    name	"groupmask"
+	    label	"Group Mask"
+	    type	string
+	    default	{ "piece*" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"prefix"
+	    label	"Prefix"
+	    type	string
+	    default	{ "sdf" }
+	    menureplace	{
+		"sdf"	"sdf"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"mode"
+	    label	"Mode"
+	    type	integer
+	    default	{ "2" }
+	    menu	{
+		"0"	"Same Num of Divisions"
+		"1"	"Same-Sized Divisions"
+		"2"	"Divisions Based on Object Sizes"
+		"3"	"BBox Preview (Colored Object Sizes)"
+	    }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	import {
+	    label	"Same Divisions"
+	    enable	0
+
+	    parm {
+		name	"samplediv"
+		label	"Num Divisions"
+		type	integer
+		default	{ "10" }
+		disablewhen	"{ mode != 0 }"
+		range	{ 1! 50 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	import {
+	    label	"Same Size"
+	    enable	0
+
+	    parm {
+		name	"divsize"
+		label	"Div. Size"
+		type	float
+		default	{ "0.1" }
+		disablewhen	"{ mode != 1 }"
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	import {
+	    label	"Based on Object Sizes"
+	    enable	0
+
+	    parm {
+		name	"sizes"
+		label	"Geo Size Min/Max"
+		type	vector2
+		size	2
+		default	{ "1.5" "8.5" }
+		disablewhen	"{ mode != 2 mode != 3 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"divs"
+		label	"Divisions Min/Max"
+		type	intvector2
+		size	2
+		default	{ "5" "10" }
+		disablewhen	"{ mode != 2 mode != 3 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"sizeexp"
+		label	"Size-to-Div Exponent"
+		type	float
+		default	{ "1.5" }
+		disablewhen	"{ mode != 2 mode != 3 }"
+		range	{ 0.1 10 }
+		export	none
+	    }
+	}
+
+	parm {
+	    name	"output"
+	    label	"Output Type"
+	    type	ordinal
+	    default	{ "sdfvolume" }
+	    menu	{
+		"isosurface"	"Iso Surface"
+		"fogvolume"	"Fog Volume"
+		"sdfvolume"	"SDF Volume"
+		"tetramesh"	"Tetra Mesh"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"creategroups"
+	    label	"Create Output Groups"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"isosurf_display"
+	    label	"Isosurface Display Mode"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}
