@@ -51,3 +51,12 @@
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "rampbasisdefault" "linear" }
     }
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

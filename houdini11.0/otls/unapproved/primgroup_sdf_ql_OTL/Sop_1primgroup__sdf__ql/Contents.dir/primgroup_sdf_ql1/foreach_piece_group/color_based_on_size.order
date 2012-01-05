@@ -1,4 +1,4 @@
-9
+11
 global1
 output1
 bbox1
@@ -8,3 +8,5 @@ fit1
 srcmin
 srcmax
 rampparm1
+pow1
+exp
