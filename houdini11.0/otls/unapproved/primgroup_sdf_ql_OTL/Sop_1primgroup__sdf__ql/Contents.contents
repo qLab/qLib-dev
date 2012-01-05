@@ -61,10 +61,10 @@ primgroup_sdf_ql1/foreach_piece_group/geo.init
 primgroup_sdf_ql1/foreach_piece_group/geo.def
 primgroup_sdf_ql1/foreach_piece_group/geo.spareparmdef
 primgroup_sdf_ql1/foreach_piece_group/geo.parm
-primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges__TODO.init
-primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges__TODO.def
-primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges__TODO.chn
-primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges__TODO.parm
+primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges.init
+primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges.def
+primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges.chn
+primgroup_sdf_ql1/foreach_piece_group/sdf_by_size_ranges.parm
 primgroup_sdf_ql1/foreach_piece_group/switch_sdf_type.init
 primgroup_sdf_ql1/foreach_piece_group/switch_sdf_type.def
 primgroup_sdf_ql1/foreach_piece_group/switch_sdf_type.chn
@@ -101,5 +101,9 @@ primgroup_sdf_ql1/OUT.init
 primgroup_sdf_ql1/OUT.def
 primgroup_sdf_ql1/OUT.spareparmdef
 primgroup_sdf_ql1/OUT.parm
+primgroup_sdf_ql1/IN.init
+primgroup_sdf_ql1/IN.def
+primgroup_sdf_ql1/IN.spareparmdef
+primgroup_sdf_ql1/IN.parm
 primgroup_sdf_ql1.order
 primgroup_sdf_ql1.net

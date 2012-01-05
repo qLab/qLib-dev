@@ -2,3 +2,6 @@ PrimGroup SDF qL
 
 Generate a separate SDF volume representation for each primitive group.
 
+TODO: Add implicit box, sphere modes.
+
+

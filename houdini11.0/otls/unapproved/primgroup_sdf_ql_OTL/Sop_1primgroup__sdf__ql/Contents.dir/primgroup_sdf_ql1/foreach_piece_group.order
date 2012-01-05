@@ -3,7 +3,7 @@ each1
 sdf_max_axis
 sdf_by_size
 geo
-sdf_by_size_ranges__TODO
+sdf_by_size_ranges
 switch_sdf_type
 OUT
 bbox

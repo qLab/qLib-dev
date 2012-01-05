@@ -4,10 +4,10 @@ Path:         oplib:/Sop/primgroup_sdf_ql?Sop/primgroup_sdf_ql
 Icon:         VOP_texture3dbox
 Table:        Sop
 License:      
-Extra:        
+Extra:        guide=./IN 
 Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Jan  5 02:12:20 2012
+Modified:     Thu Jan  5 02:28:16 2012
 

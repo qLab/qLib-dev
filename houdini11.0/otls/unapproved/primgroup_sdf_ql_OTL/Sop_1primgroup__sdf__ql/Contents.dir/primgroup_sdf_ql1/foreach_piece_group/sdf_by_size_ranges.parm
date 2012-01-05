@@ -1,11 +1,11 @@
 {
 version 0.8
-output	[ 8	locks=0 ]	(	[ output	2 ] 	)
+output	[ 8	locks=0 ]	(	[ output	0 ] 	)
 tetratype	[ 0	locks=0 ]	(	"skeleton"	)
 mode	[ 0	locks=0 ]	(	"rayintersect"	)
 name	[ 0	locks=0 ]	(	"`chs(\"../../prefix\")`_`stamps(\"..\", \"FORVALUE\", \"nope\")`"	)
 uniformsamples	[ 0	locks=0 ]	(	"max"	)
-samplediv	[ 8	locks=0 ]	(	[ samplediv	5.0954504 ] 	)
+samplediv	[ 8	locks=0 ]	(	[ samplediv	6 ] 	)
 divs	[ 0	locks=0 ]	(	10	10	10	)
 divsize	[ 0	locks=0 ]	(	0.100000001	)
 overrideoutput	[ 0	locks=0 ]	(	"off"	)
