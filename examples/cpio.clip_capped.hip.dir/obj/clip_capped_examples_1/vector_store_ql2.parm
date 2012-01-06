@@ -1,0 +1,11 @@
+{
+version 0.8
+mode	[ 0	locks=0 ]	(	1	)
+folder0	[ 0	locks=0 ]	(	0	0	0	)
+attrs	[ 0	locks=0 ]	(	"N up"	)
+grpprefix	[ 0	locks=0 ]	(	_vec_	)
+length	[ 0	locks=0 ]	(	0.5	)
+delattr	[ 0	locks=0 ]	(	"on"	)
+norm	[ 0	locks=0 ]	(	"off"	)
+outlen	[ 0	locks=0 ]	(	1	)
+}
