@@ -1,4 +1,4 @@
-# Dialog script for primgroup_sdf_ql automatically generated 01/05/12 02:28:13
+# Dialog script for primgroup_sdf_ql automatically generated 01/07/12 00:13:24
 
 {
     name	primgroup_sdf_ql
@@ -31,9 +31,10 @@
 	    name	"prefix"
 	    label	"Prefix"
 	    type	string
-	    default	{ "sdf" }
+	    default	{ "sdf_" }
 	    menureplace	{
-		"sdf"	"sdf"
+		""	"(no prefix)"
+		"sdf_"	"sdf"
 	    }
 	    range	{ 0 1 }
 	    export	none
