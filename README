@@ -75,13 +75,17 @@ TODO
 			- ...
 
 
+- Poly Fuse Edges qL (SOP)
+	- fuse edges instead of points (it's safer)
+
+
 
 
 TO FIX
 ======
 
 - Offset Curve qL (SOP): clean it up
-- Turbulate Ql (sic)
+- Turbulate Ql (sic): fix name typo
 
 
 
