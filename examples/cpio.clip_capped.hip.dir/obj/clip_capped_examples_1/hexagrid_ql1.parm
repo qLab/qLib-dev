@@ -1,0 +1,11 @@
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	0	)
+columns	[ 0	locks=0 ]	(	6	)
+rows	[ 0	locks=0 ]	(	10	)
+scale	[ 0	locks=0 ]	(	2.46000004	)
+intact	[ 0	locks=0 ]	(	"on"	)
+setsize	[ 0	locks=0 ]	(	"off"	)
+width	[ 0	locks=0 ]	(	10	)
+height	[ 0	locks=0 ]	(	10	)
+}
