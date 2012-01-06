@@ -1,0 +1,13 @@
+Operator:     clip_capped_ql
+Label:        Clip Capped qL
+Path:         oplib:/Sop/clip_capped_ql?Sop/clip_capped_ql
+Icon:         SOP_clip
+Table:        Sop
+License:      
+Extra:        guide=./IN 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Jan  6 01:43:13 2012
+
