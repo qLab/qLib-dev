@@ -1,0 +1,9 @@
+{
+version 0.8
+activation	[ 0	locks=0 ]	(	[ activation	1 ] 	)
+activationrules	[ 0	locks=0 ]	(	0	)
+numdeletes	[ 0	locks=0 ]	(	1	)
+objgroup0	[ 0	locks=0 ]	(	`chs(\"../groupmask\")`	)
+deleteobjects0	[ 0	locks=0 ]	(	"off"	)
+deletedata0	[ 0	locks=0 ]	(	Geometry/Volume	)
+}
