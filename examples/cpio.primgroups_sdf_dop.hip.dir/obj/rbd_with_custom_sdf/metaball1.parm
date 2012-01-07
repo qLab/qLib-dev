@@ -1,0 +1,10 @@
+{
+version 0.8
+mode	[ 0	locks=0 ]	(	"field"	)
+rad	[ 0	locks=0 ]	(	0.800000012	0.800000012	0.800000012	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+metaweight	[ 0	locks=0 ]	(	2	)
+kernel	[ 0	locks=0 ]	(	wyvill	)
+expxy	[ 0	locks=0 ]	(	1	)
+expz	[ 0	locks=0 ]	(	1	)
+}
