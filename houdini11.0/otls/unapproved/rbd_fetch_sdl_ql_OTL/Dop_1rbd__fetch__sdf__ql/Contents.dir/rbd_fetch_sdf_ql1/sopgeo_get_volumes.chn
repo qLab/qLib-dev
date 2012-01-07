@@ -1,0 +1,29 @@
+{
+    channel time {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $T }
+    }
+    channel activation {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = constant() }
+    }
+    channel usetransform {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../usetransform\") }
+    }
+    channel soppath {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"../../../GEO_PRESIM_vol_only\"
+      flags = 0
+      segment { length = 0 expr = chsop(\"../soppath\") }
+    }
+  }

@@ -3,7 +3,7 @@ version 0.8
 output	[ 8	locks=0 ]	(	[ output	2 ] 	)
 tetratype	[ 0	locks=0 ]	(	"skeleton"	)
 mode	[ 0	locks=0 ]	(	"rayintersect"	)
-name	[ 0	locks=0 ]	(	"`chs(\"../../prefix\")`_`stamps(\"..\", \"FORVALUE\", \"nope\")`"	)
+name	[ 0	locks=0 ]	(	"`chs(\"../../prefix\")+stamps(\"..\", \"FORVALUE\", \"nope\")`"	)
 uniformsamples	[ 0	locks=0 ]	(	"size"	)
 samplediv	[ 0	locks=0 ]	(	10	)
 divs	[ 0	locks=0 ]	(	10	10	10	)

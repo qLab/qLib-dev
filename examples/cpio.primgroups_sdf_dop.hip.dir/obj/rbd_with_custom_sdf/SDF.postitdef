@@ -1,0 +1,16 @@
+text "The SDFs for each piece are generated here (based on piece size).
+
+This data will be used in the DOP network by the 'RBD Fetch SDF qL' node.
+"
+position -8.91878 -7.67886
+size 2.50169 2.23172
+flags =  minimize off
+stat
+{
+  create 1325900585
+  modify 1325901277
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.267 0 
+end

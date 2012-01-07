@@ -3,7 +3,7 @@ version 0.8
 group	[ 0	locks=0 ]	(	""	)
 stdswitcher	[ 0	locks=0 ]	(	0	0	0	)
 docreategrp	[ 0	locks=0 ]	(	"on"	)
-crname	[ 0	locks=0 ]	(	"`chs(\"../../prefix\")`_`stamps(\"..\", \"FORVALUE\", \"nope\")`"	)
+crname	[ 0	locks=0 ]	(	"`chs(\"../../prefix\")+stamps(\"..\", \"FORVALUE\", \"nope\")`"	)
 entity	[ 0	locks=0 ]	(	"primitive"	)
 geotype	[ 0	locks=0 ]	(	"all"	)
 switcher2	[ 0	locks=0 ]	(	0	0	0	0	)
