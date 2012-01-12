@@ -1,4 +1,4 @@
-# Dialog script for peak_ql automatically generated 01/12/12 23:59:07
+# Dialog script for peak_ql automatically generated 01/13/12 00:33:09
 
 {
     name	peak_ql
@@ -26,30 +26,42 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
+    parm {
+	name	"prenml"
+	label	"Pre-Compute Normals"
+	type	toggle
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
     group {
 	name	"folder0"
 	label	"Peak"
 
-	parm {
-	    name	"prenml"
-	    label	"Precompute Normals"
-	    type	toggle
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
 	import {
 	    label	params
 	    source	"op:vopsop_peak"
-	    mask	"vectorname distance"
+	    mask	"usevector vectorname distance"
 	    enable	1
 
+	    parm {
+		name	"usevector"
+		label	"Use Custom Vector Attribute"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usevector" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	    parm {
 		name	"vectorname"
 		label	"Vector Attribute"
 		type	string
 		default	{ "N" }
+		disablewhen	"{ usevector == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "vectorname" }
@@ -60,7 +72,7 @@
 		name	"distance"
 		label	"Distance"
 		type	float
-		default	{ "1" }
+		default	{ "0" }
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "distance" }

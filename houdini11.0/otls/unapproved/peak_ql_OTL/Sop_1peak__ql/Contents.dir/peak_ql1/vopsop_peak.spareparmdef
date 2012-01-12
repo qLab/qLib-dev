@@ -19,10 +19,20 @@
 	export	none
     }
     parm {
+	name	"usevector"
+	label	"Use Custom Vector Attribute"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"vectorname"
 	label	"Vector Attribute"
 	type	string
 	default	{ "N" }
+	disablewhen	"{ usevector == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
@@ -31,7 +41,7 @@
 	name	"distance"
 	label	"Distance"
 	type	float
-	default	{ "1" }
+	default	{ "0" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }

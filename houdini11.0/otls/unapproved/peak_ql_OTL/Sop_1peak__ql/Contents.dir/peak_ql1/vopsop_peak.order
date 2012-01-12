@@ -1,4 +1,4 @@
-17
+19
 global1
 output1
 distance
@@ -16,3 +16,5 @@ pow1
 pscaleexp
 vectorname
 import_vector
+switch1
+usevector

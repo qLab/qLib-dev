@@ -68,6 +68,14 @@ peak_ql1/vopsop_peak/vectorname.parm
 peak_ql1/vopsop_peak/import_vector.init
 peak_ql1/vopsop_peak/import_vector.def
 peak_ql1/vopsop_peak/import_vector.parm
+peak_ql1/vopsop_peak/switch1.init
+peak_ql1/vopsop_peak/switch1.def
+peak_ql1/vopsop_peak/switch1.chn
+peak_ql1/vopsop_peak/switch1.parm
+peak_ql1/vopsop_peak/usevector.init
+peak_ql1/vopsop_peak/usevector.def
+peak_ql1/vopsop_peak/usevector.spareparmdef
+peak_ql1/vopsop_peak/usevector.parm
 peak_ql1/vopsop_peak.order
 peak_ql1/vopsop_peak.net
 peak_ql1/IN.init

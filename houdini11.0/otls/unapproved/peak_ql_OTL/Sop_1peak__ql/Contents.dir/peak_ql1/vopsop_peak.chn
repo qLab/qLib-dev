@@ -46,4 +46,10 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../pscaleexp\") }
     }
+    channel usevector {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../usevector\") }
+    }
   }
