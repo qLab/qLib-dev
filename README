@@ -13,22 +13,16 @@ TODO
 	- 'zoom' tool (that modifies focal length/aperture instead of screen window, like the internal one)
 	- 'perspective' tool
 
-
-- PointJitter qL: An own version of pointjitter
-	- original pointjitter deletes custom normals!
-
 - Color qL:
 	- similar to popnet/color node (map a scalar/float attr to a ramp/whatever)
 
+
+- Vector Store qL should work for vertex vector attributes!
 
 
 - a SOP that generates per-point tangents/binormals (bitangents! bitang vektorokat!!!)
 
 - add the pscale visualizer, too
-
-- a scalar attribute remapper (curve lookup)
-	- DONE: Attr Lookup Multi qL
-
 
 - a (SOP?) node that displays text in the 3d viewport (especially in the camera view)
 	- the problem with the default vcomment parameter is that it might not show up in flipbooks

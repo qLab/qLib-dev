@@ -1,0 +1,156 @@
+# Dialog script for peak_ql automatically generated 01/13/12 00:33:09
+
+{
+    name	peak_ql
+    script	peak_ql
+    label	"Peak qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l vopsop_peak vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"prenml"
+	label	"Pre-Compute Normals"
+	type	toggle
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Peak"
+
+	import {
+	    label	params
+	    source	"op:vopsop_peak"
+	    mask	"usevector vectorname distance"
+	    enable	1
+
+	    parm {
+		name	"usevector"
+		label	"Use Custom Vector Attribute"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usevector" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vectorname"
+		label	"Vector Attribute"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ usevector == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "vectorname" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"distance"
+		label	"Distance"
+		type	float
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "distance" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	parm {
+	    name	"updatenmls"
+	    label	"Post-Compute Normals"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"PScale"
+
+	import {
+	    label	params_pscale
+	    source	"op:vopsop_peak"
+	    mask	"*pscale*"
+	    enable	1
+
+	    parm {
+		name	"usepscale"
+		label	"Use PScale"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usepscale" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"pscalename"
+		label	"PScale Attribute"
+		type	string
+		default	{ "pscale" }
+		disablewhen	"{ usepscale == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "pscalename" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"pscaleinvert"
+		label	"Invert"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ usepscale == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "pscaleinvert" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"pscaleexp"
+		label	"Exponent"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ usepscale == 0 }"
+		range	{ 0.1 4 }
+		export	none
+		parmtag	{ "import_token" "pscaleexp" }
+		parmtag	{ "import_source" "op:vopsop_peak" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}
