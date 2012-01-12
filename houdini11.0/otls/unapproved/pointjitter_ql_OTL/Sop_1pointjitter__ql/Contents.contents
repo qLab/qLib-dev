@@ -78,6 +78,10 @@ pointjitter_ql1/vopsop_jitter/pscaleexp.init
 pointjitter_ql1/vopsop_jitter/pscaleexp.def
 pointjitter_ql1/vopsop_jitter/pscaleexp.spareparmdef
 pointjitter_ql1/vopsop_jitter/pscaleexp.parm
+pointjitter_ql1/vopsop_jitter/refit_range.init
+pointjitter_ql1/vopsop_jitter/refit_range.def
+pointjitter_ql1/vopsop_jitter/refit_range.parm
+pointjitter_ql1/vopsop_jitter/refit_range.outputinfos
 pointjitter_ql1/vopsop_jitter.order
 pointjitter_ql1/vopsop_jitter.net
 pointjitter_ql1/post_compute_normals.init

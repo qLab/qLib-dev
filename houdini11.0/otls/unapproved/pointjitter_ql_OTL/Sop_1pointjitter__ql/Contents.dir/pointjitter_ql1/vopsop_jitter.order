@@ -1,4 +1,4 @@
-20
+21
 global1
 output1
 axisscale
@@ -19,3 +19,4 @@ switch2
 pscaleinvert
 pow1
 pscaleexp
+refit_range
