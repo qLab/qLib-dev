@@ -1,0 +1,23 @@
+{
+version 0.8
+folder2	[ 0	locks=0 ]	(	0	0	0	)
+origin	[ 0	locks=0 ]	(	0	0	0	)
+distance	[ 0	locks=0 ]	(	0	)
+direction	[ 0	locks=0 ]	(	0	1	0	)
+output_above	[ 0	locks=0 ]	(	"off"	)
+output_below	[ 0	locks=0 ]	(	"on"	)
+offs_above	[ 0	locks=0 ]	(	0	)
+offs_below	[ 0	locks=0 ]	(	0	)
+caps_only	[ 0	locks=0 ]	(	"off"	)
+newg	[ 0	locks=0 ]	(	"off"	)
+folder4	[ 0	locks=0 ]	(	0	0	)
+above	[ 0	locks=0 ]	(	above_plane	)
+above_clipped	[ 0	locks=0 ]	(	above_clipped	)
+above_caps	[ 0	locks=0 ]	(	above_caps	)
+below	[ 0	locks=0 ]	(	below_plane	)
+below_clipped	[ 0	locks=0 ]	(	below_clipped	)
+below_caps	[ 0	locks=0 ]	(	below_caps	)
+tol3d	[ 0	locks=0 ]	(	9.99999975e-05	)
+consolidate	[ 0	locks=0 ]	(	"on"	)
+consolidatetol	[ 0	locks=0 ]	(	0.00100000005	)
+}

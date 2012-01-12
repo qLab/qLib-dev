@@ -1,0 +1,16 @@
+{
+version 0.8
+useBaseColor	[ 0	locks=0 ]	(	"on"	)
+baseColor	[ 0	locks=0 ]	(	[ baseColorr	1 ] 	[ baseColorg	1 ] 	[ baseColorb	1 ] 	)
+usePointColor	[ 0	locks=0 ]	(	"off"	)
+useColorMap	[ 0	locks=0 ]	(	[ useColorMap	0 ] 	)
+baseColorMap	[ 0	locks=0 ]	(	""	)
+colorMapWrap	[ 0	locks=0 ]	(	chs('../colorMapWrap1/stringdef')	)
+colorMapfilter	[ 0	locks=0 ]	(	chs('../colorMapfilter1/stringdef')	)
+colorMapWidth	[ 0	locks=0 ]	(	[ colorMapWidth	1 ] 	)
+colorMapBorder	[ 0	locks=0 ]	(	0	0	0	1	)
+Scoord	[ 0	locks=0 ]	(	0	)
+Tcoord	[ 0	locks=0 ]	(	0	)
+usePointAlpha	[ 0	locks=0 ]	(	"off"	)
+colorMapIntensity	[ 0	locks=0 ]	(	[ colorMapIntensity	1 ] 	)
+}

@@ -1,0 +1,8 @@
+{
+version 0.8
+attrib	[ 0	locks=0 ]	(	"uv"	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+layer	[ 0	locks=0 ]	(	1	)
+exportparm	[ 0	locks=0 ]	(	"off"	)
+exportcontext	[ 0	locks=0 ]	(	""	)
+}

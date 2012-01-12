@@ -1,0 +1,525 @@
+    group {
+	name	"stdswitcher6"
+	label	"Geometry"
+
+	parm {
+	    name	"type"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"randscale"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"randseed"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"contAngl"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"contLength"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"contWidth"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doColor"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"colorMap"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"inc"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pointwidth"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_1"
+	label	"Tube"
+
+	parm {
+	    name	"rows"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"cols"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"tension"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"smooth"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"thickinit"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"thickscale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doTexture"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vertinc"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_2"
+	label	"Funcs"
+
+	parm {
+	    name	"picfile"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"grpprefix"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"chanprefix"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"stampA"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"stampB"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"stampC"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_3"
+	label	"Values"
+	tabbreak
+
+	parm {
+	    name	"stepinit"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"stepscale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"angleinit"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"anglescale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"varb"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"varc"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vard"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"gravity"
+	    baseparm
+	    export	none
+	}
+	multiparm {
+	    name	"numvars"
+	    label	"Number Of Variables"
+	    baseparm
+	    default	0
+	    parmtag	{ "multistartoffset" "0" }
+
+	    parm {
+		name	"varname#"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"varvalue#"
+		baseparm
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"stdswitcher6_4"
+	label	"Rules"
+
+	parm {
+	    name	"generations"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"usefile"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"writerules"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"rulefile"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"context"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"contextincludessiblings"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"premise"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule1"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule1"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule2"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule2"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule3"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule3"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule4"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule4"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule5"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule5"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule6"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule6"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule7"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule7"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule8"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule8"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule9"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule9"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule10"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule10"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule11"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule11"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule12"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule12"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule13"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule13"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule14"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule14"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule15"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule15"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule16"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule16"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule17"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule17"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule18"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule18"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule19"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule19"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule20"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule20"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule21"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule21"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule22"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule22"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule23"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule23"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule24"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule24"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"userule25"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rule25"
+	    baseparm
+	    export	none
+	}
+    }
+

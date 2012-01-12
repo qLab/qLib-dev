@@ -1,0 +1,23 @@
+{
+    channel output {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../sdf_max_axis/output\") }
+    }
+    channel samplediv {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = "fit01(
+pow(fit(
+max(max(bbox(\"../geo\", D_XSIZE), bbox(\"../geo\", D_YSIZE)), bbox(\"../geo\", D_YSIZE)),
+ch(\"../../sizesx\"), ch(\"../../sizesy\"),
+0, 1), ch(\"../../sizeexp\"))
+,
+ch(\"../../divsx\"), ch(\"../../divsy\")
+)" }
+    }
+  }

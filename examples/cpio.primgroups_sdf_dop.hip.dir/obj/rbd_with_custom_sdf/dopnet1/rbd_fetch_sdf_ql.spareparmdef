@@ -1,0 +1,90 @@
+    parm {
+	name	"soppath"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"groupmask"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"usetransform"
+	baseparm
+	export	none
+    }
+    group {
+	name	"folder2"
+	label	"Collisions"
+
+	group {
+	    name	"folder3"
+	    label	"Volume"
+
+	    import {
+		label	volume_opts
+		source	"op:sdf_generate_collision_volume"
+		mask	"fixsigns forcebounds invert offset sweepalpha sweepcount"
+		enable	1
+
+		parm {
+		    name	"fixsigns"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"forcebounds"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"invert"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"offset"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"sweepalpha"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"sweepcount"
+		    baseparm
+		    export	none
+		}
+	    }
+
+	}
+
+	group {
+	    name	"folder3_1"
+	    label	"Guide Options"
+
+	    import {
+		label	guide_opts
+		source	"op:sdf_generate_collision_volume"
+		token	""
+		mask	"showguide color"
+		enable	1
+
+		parm {
+		    name	"showguide"
+		    baseparm
+		    export	none
+		}
+		parm {
+		    name	"color"
+		    baseparm
+		    export	none
+		}
+	    }
+
+	}
+
+    }
+

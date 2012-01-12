@@ -1,0 +1,9 @@
+{
+version 0.8
+corner_ll	[ 0	locks=0 ]	(	-8	-8	)
+corner_ur	[ 0	locks=0 ]	(	8	8	)
+seed	[ 0	locks=0 ]	(	1984	)
+limitdiv	[ 0	locks=0 ]	(	"off"	)
+limit	[ 0	locks=0 ]	(	0	)
+outerwalls	[ 0	locks=0 ]	(	"on"	)
+}

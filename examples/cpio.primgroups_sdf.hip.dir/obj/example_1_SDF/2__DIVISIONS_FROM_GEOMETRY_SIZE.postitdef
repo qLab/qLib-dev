@@ -1,0 +1,13 @@
+text "A more effective way: min/max SDF divisions are determined by min/max geometry sizes (larger geometry will have a more divided SDF)."
+position -5.3581 -7.50567
+size 3.20882 1.63587
+flags =  minimize off
+stat
+{
+  create 1325727440
+  modify 1325727595
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.52 0.52 0.52 
+end

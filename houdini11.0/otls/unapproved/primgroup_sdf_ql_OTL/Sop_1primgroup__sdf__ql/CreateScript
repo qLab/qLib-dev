@@ -1,0 +1,13 @@
+# Automatically generated script: Saturday January 07, 00:42 2012
+\set noalias = 1
+#
+#  Creation script for primgroup_sdf_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/primgroup_sdf_ql)
+opexprlanguage -s hscript $arg1

@@ -1,0 +1,35 @@
+{
+    channel ix {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0.041666656732559204 value = 0.05000000074505806 2 slope = 4.95851 -1.14687 accel = 0.013889 0.0138888
+	 expr = easein() }
+      segment { length = 0 value = 2 0.05000000074505806 slope = -1.14687 4.95851 accel = 0.564933 1.67998
+	 expr = bezier() }
+    }
+    channel iy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0.02410227432847023 value = 0.017822057008743286 0.096637018024921417 slope = 430.701 0 accel = 0.0217908 0.0217907
+	 expr = spline() }
+      segment { length = 0.017564389854669571 value = 0.096637018024921417 0.027264401316642761 accel = 0.0166119 0.0058548 expr = spline() }
+      segment { length = 0 value = 0.027264401316642761 0.017822057008743286 slope = 0 430.701 accel = 0.333333 38.3391
+	 expr = spline() }
+    }
+    channel iz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = -0.041666667908430099
+      segment { length = 0.023430738598108292 value = 0.00052630901336669922 0.15684130787849426 slope = 21.6561 18.9194 accel = 0.177403 0.232442
+	 expr = easein() }
+      segment { length = 0.018235929310321808 value = 0.15684130787849426 1 slope = 18.9194 67.2301 accel = 0.146552 0.361259
+	 expr = bezier() }
+      segment { length = 0 value = 1 0.00052630901336669922 slope = 67.2301 21.6561 accel = 0.315445 7.57139
+	 expr = cubic() }
+    }
+  }

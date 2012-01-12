@@ -1,0 +1,102 @@
+    group {
+	name	"stdswitcher4"
+	label	"Compiler"
+
+	parm {
+	    name	"vop_compiler"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vop_forcecompile"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher4_1"
+	label	"Channel"
+
+	parm {
+	    name	"vex_align"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vex_name"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vex_start"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vex_end"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vex_rate"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher4_2"
+	label	"Common"
+
+	parm {
+	    name	"scope"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"srselect"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"units"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"timeslice"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"unload"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"export"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"gcolor"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"gcolorstep"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "2.2" }
+	range	{ 0.45 2.2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

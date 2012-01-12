@@ -1,0 +1,13 @@
+Operator:     space_loop_ql
+Label:        Space Loop qL
+Path:         oplib:/Sop/space_loop_ql?Sop/space_loop_ql
+Icon:         CHOP_cycle
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Jan  2 23:36:47 2012
+

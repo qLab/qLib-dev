@@ -1,0 +1,13 @@
+Operator:     attr_gamma_ql
+Label:        Attr Gamma qL
+Path:         oplib:/Sop/attr_gamma_ql?Sop/attr_gamma_ql
+Icon:         COP2_gamma
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Dec 25 23:51:55 2011
+

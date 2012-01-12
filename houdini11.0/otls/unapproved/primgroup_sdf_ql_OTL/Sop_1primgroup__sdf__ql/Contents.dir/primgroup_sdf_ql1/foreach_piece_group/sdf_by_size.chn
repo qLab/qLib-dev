@@ -1,0 +1,16 @@
+{
+    channel output {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../sdf_max_axis/output\") }
+    }
+    channel divsize {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../../divsize\") }
+    }
+  }
