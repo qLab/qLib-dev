@@ -1,4 +1,4 @@
-# Dialog script for distribute_ql automatically generated 09/03/10 18:59:41
+# Dialog script for distribute_ql automatically generated 09/24/11 18:47:23
 
 {
     name	distribute_ql
@@ -44,6 +44,14 @@
 	export	none
     }
     parm {
+	name	"maxpoints"
+	label	"Max Neighbours"
+	type	integer
+	default	{ "1000" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
 	name	"grow"
 	label	"Grow"
 	type	toggle
@@ -60,11 +68,13 @@
 	export	none
     }
     parm {
-	name	"maxpoints"
-	label	"Max Neighbours"
-	type	integer
-	default	{ "1000" }
-	range	{ 0 10 }
+	name	"putnml"
+	label	"Ray Intersection Normal"
+	type	toggle
+	default	{ "on" }
+	disablewhen	"{ ray == 0 }"
+	range	{ 0 1 }
 	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
     }
 }
