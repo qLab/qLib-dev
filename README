@@ -14,12 +14,16 @@ TODO
 	- 'perspective' tool
 
 
-- PointJitter qL: An own version of pointjitter
+- PointJitter qL: An own version of pointjitter sop
 	- original pointjitter deletes custom normals!
+
+- Peak qL: own version of Peak SOP
 
 - Color qL:
 	- similar to popnet/color node (map a scalar/float attr to a ramp/whatever)
 
+
+- Vector Store qL should work for vertex vector attributes!
 
 
 - a SOP that generates per-point tangents/binormals (bitangents! bitang vektorokat!!!)
