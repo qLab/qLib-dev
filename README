@@ -15,10 +15,28 @@ Dumping the otl files into a folder which contains other otls is considered bad
 behavior, and will seriously and needlessly make updating the library more
 difficult.
 
-The assets in the qLib/spec folder are intended for per-project based inclusion
-(e.g. high level objects like water drops and such), so you probalbly don't
-want to include that in the HOUDINI_OTLSCAN_PATH. But this decision is up to
-you.
+
+Sections
+========
+
+There are four sections of the asset library: core, base, spec, and unapproved.
+The assets belonging the different sections are stored in directories with the
+same name.
+
+The 'base' assets are intended to be used as building blocks of more
+complex networks.
+
+The 'core' assets are intended to be used as building blocks of 'base' level
+assets.
+
+The 'spec' assets are intended for per-project based inclusion (e.g. high level
+objects like water drops and such), so you probalbly don't want to include that
+in the HOUDINI_OTLSCAN_PATH. But this decision is up to you.
+
+The 'unapproved' assets are, well, not yet approved. They may lack
+documentation, or other mandatory requirement to be included into the 'main'
+distribution, but we include them because they can be still usefull before they
+fulfill those requirements.
 
 
 Building and extracting OTLs
@@ -27,6 +45,7 @@ Building and extracting OTLs
 For better version management the assets are distributed in ascii form. This
 means that the OTLs must be built before importing into houdini. qLib provides
 the 'qdo.py' helper script to aid the process of library management.
+
 Building binary OTLs from the ascii directories
 -----------------------------------------------
 
