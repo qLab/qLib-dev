@@ -33,10 +33,10 @@ The 'spec' assets are intended for per-project based inclusion (e.g. high level
 objects like water drops and such), so you probalbly don't want to include that
 in the HOUDINI_OTLSCAN_PATH. But this decision is up to you.
 
-The 'unapproved' assets are, well, not yet approved. They may lack
-documentation, or other mandatory requirement to be included into the 'main'
-distribution, but we include them because they can be still usefull before they
-fulfill those requirements.
+The 'future' assets are not yet integrated into the main distribution. They
+may lack documentation or other mandatory requirement to be included into the
+'main' distribution or they simply need more testing. We still include them
+because they can be usefull even before they fulfill those requirements.
 
 
 Building and extracting OTLs
