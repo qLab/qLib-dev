@@ -1,1 +1,4 @@
 Value-remapping of a per-point geometry attribute using a lookup curve.
+
+NOTE:
+    This node is obsolete, use the __Attr Lookup Multi qL__ SOP instead.
