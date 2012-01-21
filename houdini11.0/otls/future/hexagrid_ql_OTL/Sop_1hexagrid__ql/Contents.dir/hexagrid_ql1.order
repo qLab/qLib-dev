@@ -1,9 +1,8 @@
-19
+23
 one_column
 all_rows
 fuse4
 to_center
-symtest_flipflop
 clip1
 clip2
 xform8
@@ -18,3 +17,8 @@ xform9
 set_size
 switch2
 uniform_size
+YZ_Plane
+Orientation_Switch
+XY_Plane
+Center_Placement
+ZX_Plane
