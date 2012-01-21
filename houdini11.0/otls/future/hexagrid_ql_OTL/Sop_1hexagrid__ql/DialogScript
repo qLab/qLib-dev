@@ -1,4 +1,4 @@
-# Dialog script for hexagrid_ql automatically generated 09/21/11 23:42:40
+# Dialog script for hexagrid_ql automatically generated 01/21/12 17:30:44
 
 {
     name	hexagrid_ql
@@ -8,87 +8,109 @@
     help {
 	""
     }
+    bindhandle radius ladder "Ladder" parm0 ""
+    bindhandle orientation sphere "Sphere_Transformer" orient ""
+    bindhandle width sphere "Sphere_Transformer" sx ""
+    bindhandle height sphere "Sphere_Transformer" sy ""
+    bindhandle centerx sphere "Sphere_Transformer" tx ""
+    bindhandle centery sphere "Sphere_Transformer" ty ""
+    bindhandle centerz sphere "Sphere_Transformer" tz ""
 
     inputlabel	1	"Sub-Network Input #1"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
-    group {
-	name	"folder0"
-	label	"Divisions"
-
-	parm {
-	    name	"columns"
-	    label	"Columns"
-	    type	integer
-	    default	{ "6" }
-	    range	{ 1! 24 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
+    parm {
+	name	"orientation"
+	label	"Orientation"
+	type	integer
+	default	{ "1" }
+	menu	{
+	    "0"	"YZ Plane"
+	    "1"	"ZX Plane"
+	    "2"	"XY Plane"
 	}
-	parm {
-	    name	"rows"
-	    label	"Rows"
-	    type	integer
-	    default	{ "10" }
-	    range	{ 1! 40 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"scale"
-	    label	"Uniform Scale"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 10 }
+	export	all
     }
-
-    group {
-	name	"folder0_1"
-	label	"Options"
-
-	parm {
-	    name	"intact"
-	    label	"Intact"
-	    type	toggle
-	    default	{ "on" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"setsize"
-	    label	"Set Size"
-	    type	toggle
-	    default	{ "off" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"width"
-	    label	"Width"
-	    type	float
-	    default	{ "10" }
-	    disablewhen	"{ setsize == 0 }"
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"height"
-	    label	"Height"
-	    type	float
-	    default	{ "10" }
-	    disablewhen	"{ setsize == 0 }"
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+    parm {
+	name	"center"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
     }
-
+    parm {
+	name	"columns"
+	label	"Columns"
+	type	integer
+	default	{ "6" }
+	range	{ 1! 24 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rows"
+	label	"Rows"
+	type	integer
+	default	{ "10" }
+	range	{ 1! 40 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"setsize"
+	label	"Size Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Radius"
+	    "1"	"Width and Height"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"radius"
+	label	"Radius"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ setsize == 1 }"
+	range	{ 0 10 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"width"
+	label	"Width"
+	type	float
+	default	{ "10" }
+	disablewhen	"{ setsize == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "10" }
+	disablewhen	"{ setsize == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"intact"
+	label	"Intact"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
 }
