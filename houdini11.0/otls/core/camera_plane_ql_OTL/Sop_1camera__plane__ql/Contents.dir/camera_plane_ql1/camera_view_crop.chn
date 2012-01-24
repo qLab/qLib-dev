@@ -3,26 +3,32 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropl\") }
+      segment { length = 0 expr = if(ch(\"../cam_crop\"),ch(chs(\"../camera_plane_grid/camera\")+\"/cropl\"),ch(\"../cropl\")) }
     }
     channel cropr {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropr\") }
+      segment { length = 0 value = 1 1 expr = if(ch(\"../cam_crop\"),ch(chs(\"../camera_plane_grid/camera\")+\"/cropr\"),ch(\"../cropr\")) }
     }
     channel cropb {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropb\") }
+      segment { length = 0 expr = if(ch(\"../cam_crop\"),ch(chs(\"../camera_plane_grid/camera\")+\"/cropb\"),ch(\"../cropb\")) }
     }
     channel cropt {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/cropt\") }
+      segment { length = 0 value = 1 1 expr = if(ch(\"../cam_crop\"),ch(chs(\"../camera_plane_grid/camera\")+\"/cropt\"),ch(\"../cropt\")) }
+    }
+    channel export_uv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../export_uv\") }
     }
   }

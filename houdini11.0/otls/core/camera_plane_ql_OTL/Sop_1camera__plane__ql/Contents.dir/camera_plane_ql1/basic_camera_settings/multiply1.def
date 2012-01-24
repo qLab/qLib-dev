@@ -5,12 +5,12 @@ flags =  lock off model off template off footprint off xray off bypass off displ
 inputs
 {
 0 	global1 0 1
-1 	add1 0 1
+1 	multiply3 0 1
 }
 stat
 {
   create 1316962704
-  modify 1316966695
+  modify 1327186464
   author tusi@demeisen
   access 0777
 }

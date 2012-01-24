@@ -1,4 +1,4 @@
-# Dialog script for camera_plane_ql automatically generated 09/25/11 18:25:52
+# Dialog script for camera_plane_ql automatically generated 01/24/12 23:32:35
 
 {
     name	camera_plane_ql
@@ -14,31 +14,112 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
-    parm {
-	name	"camera"
-	label	"Camera"
-	type	oplist
-	default	{ "/obj/cam1" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "oprelative" "/" }
-	parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
     group {
-	name	"folder0"
-	label	"Plane Geometry"
-	tabbreak
+	name	"folder1"
+	label	"Camera Plane"
 
+	parm {
+	    name	"camera"
+	    label	"Camera"
+	    type	oplist
+	    default	{ "/obj/cam1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "oprelative" "/" }
+	    parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"space"
+	    label	"Space"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Object"
+		"1"	"Camera"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
 	parm {
 	    name	"plane_distance"
 	    label	"Plane Distance"
 	    type	float
-	    default	{ "1" }
-	    range	{ 1 1000 }
+	    default	{ "10" }
+	    range	{ 1 100 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+	parm {
+	    name	"overscanx"
+	    label	"Overscan X"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"overscany"
+	    label	"Overscan Y"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"cam_crop"
+	    label	"Use Camera Crop"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"cropl"
+	    label	"Left Crop"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropr"
+	    label	"Right Crop"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropb"
+	    label	"Bottom Crop"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropt"
+	    label	"Top Crop"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Geometry"
+
 	parm {
 	    name	"type"
 	    label	"Primitive Type"
@@ -114,60 +195,31 @@
     }
 
     group {
-	name	"folder1"
-	label	"Additional Settings"
-	tabbreak
+	name	"folder1_2"
+	label	"Shading"
 
 	parm {
-	    name	"winoffsx"
-	    label	"Extra Scale X"
-	    type	float
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"winoffsy"
-	    label	"Extra Scale Y"
-	    type	float
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-    }
-
-    group {
-	name	"folder2"
-	label	"Note"
-
-	parm {
-	    name	"labelparm"
-	    label	"NOTE"
-	    type	label
-	    nolabel
-	    default	{ "The geometry is generated in object space -- it is to be" }
+	    name	"export_uv"
+	    label	"Export UV"
+	    type	toggle
+	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
 	}
 	parm {
-	    name	"labelparm2"
-	    label	"NOTE"
-	    type	label
-	    nolabel
-	    default	{ "transformed to camera space to work as expected." }
+	    name	"material"
+	    label	"Apply Material"
+	    type	toggle
+	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
 	}
 	parm {
-	    name	"labelparm3"
-	    label	"NOTE"
-	    type	label
-	    nolabel
-	    default	{ "(E.g. parent this geometry to the specified camera.)" }
+	    name	"texture"
+	    label	"Texture"
+	    type	image
+	    default	{ "mandril.pic" }
+	    disablewhen	"{ material == 1 }"
 	    range	{ 0 1 }
 	    export	none
 	}

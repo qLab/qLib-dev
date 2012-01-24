@@ -1,4 +1,4 @@
-18
+13
 global1
 output1
 winsizex
@@ -10,10 +10,5 @@ divide1
 winoffsx
 winoffsy
 floattovec2
-add1
-bbox1
-fit1
-out_P_screen
-multiply2
-constant1
 out_rest
+multiply3

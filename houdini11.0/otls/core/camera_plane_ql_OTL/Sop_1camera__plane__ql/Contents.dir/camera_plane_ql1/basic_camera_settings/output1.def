@@ -12,13 +12,13 @@ inputs
 5 	"" 0 1
 6 	"" 0 1
 7 	"" 0 1
-8 	fit1 0 1
+8 	"" 0 1
 9 	divide1 0 1
 }
 stat
 {
   create 1316962552
-  modify 1316966696
+  modify 1327186924
   author tusi@demeisen
   access 0777
 }

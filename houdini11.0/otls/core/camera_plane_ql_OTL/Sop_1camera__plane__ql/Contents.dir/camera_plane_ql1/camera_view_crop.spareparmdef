@@ -54,3 +54,12 @@
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"export_uv"
+	label	"Export UV"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

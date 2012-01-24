@@ -24,12 +24,12 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../winoffsx\") }
+      segment { length = 0 expr = ch(\"../overscanx\") }
     }
     channel winoffsy {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../winoffsy\") }
+      segment { length = 0 expr = ch(\"../overscany\") }
     }
   }
