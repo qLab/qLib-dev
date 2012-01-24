@@ -19,7 +19,7 @@ difficult.
 Sections
 ========
 
-There are four sections of the asset library: core, base, spec, and unapproved.
+There are four sections of the asset library: core, base, spec, and future.
 The assets belonging the different sections are stored in directories with the
 same name.
 
