@@ -1,4 +1,10 @@
-3
+9
 vopsop1
 circle1
 OUT
+YZ_Plane
+Orientation_Switch
+ZX_Plane
+Center_Placement
+XY_Plane1
+Radius

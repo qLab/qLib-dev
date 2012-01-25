@@ -1,4 +1,4 @@
-# Dialog script for superellipse_ql automatically generated 09/22/11 00:15:05
+# Dialog script for superellipse_ql automatically generated 01/26/12 00:02:07
 
 {
     name	superellipse_ql
@@ -8,12 +8,32 @@
     help {
 	""
     }
+    bindhandle exponent ladder "Ladder" parm0 ""
+    bindhandle orientation sphere "Sphere_Transformer" orient ""
+    bindhandle radx sphere "Sphere_Transformer" sx ""
+    bindhandle rady sphere "Sphere_Transformer" sy ""
+    bindhandle centerx sphere "Sphere_Transformer" tx ""
+    bindhandle centery sphere "Sphere_Transformer" ty ""
+    bindhandle centerz sphere "Sphere_Transformer" tz ""
 
     inputlabel	1	"Sub-Network Input #1"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
+    parm {
+	name	"orientation"
+	label	"Orientation"
+	type	integer
+	default	{ "2" }
+	menu	{
+	    "0"	"YZ Plane"
+	    "1"	"ZX Plane"
+	    "2"	"XY Plane"
+	}
+	range	{ 0 10 }
+	export	none
+    }
     parm {
 	name	"type"
 	label	"Primitive Type"
@@ -26,7 +46,7 @@
 	    "bezier"	"Bezier Curve"
 	}
 	range	{ 0 1 }
-	export	none
+	export	all
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
@@ -38,6 +58,15 @@
 	range	{ -1 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"center"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
     }
     parm {
 	name	"order"
@@ -55,7 +84,7 @@
 	type	integer
 	default	{ "24" }
 	range	{ 1! 50 }
-	export	none
+	export	all
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
@@ -89,8 +118,8 @@
 	label	"Exponent"
 	type	float
 	default	{ "0.5" }
-	range	{ 0 5 }
-	export	none
+	range	{ 0! 5 }
+	export	all
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
