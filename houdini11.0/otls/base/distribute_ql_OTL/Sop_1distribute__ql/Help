@@ -4,7 +4,7 @@
 
 = Distribute qL =
 
-*Version 0.1.0*
+*Version 0.1.1*
 
 """Tries to distributes points in space so, that a pscale radius sphere around them doesn't intersect."""
 
@@ -16,13 +16,15 @@
         
         TIP:
             As good the start condition is as few iterations are needed to achieve a good state.
+    Max Neighbours:
+        The maximum numbers of points that acount for the new position of a point in an iteration.
     Grow:
         Gradually increase the radius of points. This may help points to get to places which otherwise would
         be unreachable for them.
     Ray:
         Project points back to the geometry connected to the second input.
-    Max Neighbours:
-        The maximum numbers of points that acount for the new position of a point in an iteration.
+    Ray Intersection Normal:
+        When both Ray and this flag is active, points inherit the geometry normals of the underlying surface.
 
 @Limitations
     Grouping doesn't work.
@@ -30,5 +32,8 @@
     Ray frequency not implemented.
 
 @Release_Notes
+    Version 0.1.1:
+        Exposed the Point Intersection Normal parameter of the Ray SOP. It's label is Ray Intersection Normal for
+        clarity.
     Version 0.1.0:
         Initial release. While it's really not ready, it's usable.

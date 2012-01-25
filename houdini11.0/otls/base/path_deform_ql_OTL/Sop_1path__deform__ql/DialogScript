@@ -1,4 +1,4 @@
-# Dialog script for path_deform_ql automatically generated 09/07/11 18:16:53
+# Dialog script for path_deform_ql automatically generated 09/23/11 13:21:54
 
 {
     name	path_deform_ql
@@ -54,5 +54,18 @@
 	default	{ "0" "1" "0" }
 	range	{ -1 1 }
 	export	none
+    }
+    parm {
+	name	"interptype"
+	label	"Interpolation"
+	type	ordinal
+	default	{ "bezier" }
+	menu	{
+	    "linear"	"Linear"
+	    "bezier"	"Bezier"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
     }
 }

@@ -1,85 +1,95 @@
 qLib
 ====
 
-A houdini asset library.
+A more or less cohherent and maintained houdini asset library.
 
 
+Installation instructions
+=========================
+
+You should place the unpacked folder to a convenient place, where everyone can
+reach it, and add the qLib/houdini11.0/otls/base folder to the
+HOUDINI_OTLSCAN_PATH environment variable.
+
+Dumping the otl files into a folder which contains other otls is considered bad
+behavior, and will seriously and needlessly make updating the library more
+difficult.
 
 
-TODO
-====
+Sections
+========
 
-- viewport/camera tools (how to do them?):
-	- 'zoom' tool (that modifies focal length/aperture instead of screen window, like the internal one)
-	- 'perspective' tool
+There are four sections of the asset library: core, base, spec, and unapproved.
+The assets belonging the different sections are stored in directories with the
+same name.
 
-- Color qL:
-	- similar to popnet/color node (map a scalar/float attr to a ramp/whatever)
+The 'base' assets are intended to be used as building blocks of more
+complex networks.
 
+The 'core' assets are intended to be used as building blocks of 'base' level
+assets.
 
-- Vector Store qL should work for vertex vector attributes!
+The 'spec' assets are intended for per-project based inclusion (e.g. high level
+objects like water drops and such), so you probalbly don't want to include that
+in the HOUDINI_OTLSCAN_PATH. But this decision is up to you.
 
-
-- a SOP that generates per-point tangents/binormals (bitangents! bitang vektorokat!!!)
-
-- add the pscale visualizer, too
-
-- a (SOP?) node that displays text in the 3d viewport (especially in the camera view)
-	- the problem with the default vcomment parameter is that it might not show up in flipbooks
-	- should show up in flipbooks (even in OpenGL ROP render outputs--that would be very nice)
-
-- ROP node(s) that can do the following (mostly done using presets now -- Shell ROP)
-	- backup file sequences before render/output
-	- move rendered sequence(s) to 'somewhere else' after render/output finished
-	- automatically build preview .mov/.mp4 movies from rendered sequence(s)
-	- launch mplay after rendering completed
-	- post-process rendered seq: add all kinds of OSD texts
-		- add OSD only to .mov version (?)
+The 'future' assets are not yet integrated into the main distribution. They
+may lack documentation or other mandatory requirement to be included into the
+'main' distribution or they simply need more testing. We still include them
+because they can be usefull even before they fulfill those requirements.
 
 
-- PRESETS: find a way to store them in ascii (as with otl and hip files)
+Building and extracting OTLs
+============================
 
+For better version management the assets are distributed in ascii form. This
+means that the OTLs must be built before importing into houdini. qLib provides
+the 'qdo.py' helper script to aid the process of library management.
 
-- Fetch SOP qL (popnet node):
-	- "First...Fourth Context Geometry" input type should be supported
-		- popcontextgeo() script function wasn't working for me (t.)
+Building binary OTLs from the ascii directories
+-----------------------------------------------
 
+The following command will build the whole library:
 
-- Take Merge qL
-	- rewrite it in python (?)
-	- should support the hierarchical nature of takes
+./qdo.py build -R
 
-- Vector qL
-	- "Add" mode (use the same blend attr for multiplying the 2nd input that's in Mix)
-		- example: P = P + v * (1.0/$FPS)
-	- "Sub" modes should also support the blend attr as a multiplier on the 2nd input (?)
+The following command will build just the 'base' otls:
 
+./qdo.py build -R houdini11.0/otls/base/
 
+Of course the exact commands may be different if you are not in the top level
+of the qLib distribution.
 
-- Scalar qL (?)
-	- Similar to Vector, but scalar
-	- 1st, 2nd inputs
-	- remap w/ curve (?)
-	- modes: pass 1st input, pass 2nd input, add, sub, mult, min, max, avg, mix/blend
-		- Input #1: Attribute A
-			- Attr A: Scalar from 1st input / Vector (length) from 1st input / Vector x/y/z component (1st input) / Constant
-			- Attr Name A
-			- Constant A
-		- Input #2: Attribute B
-			- ...
+You can also build just one single asset:
 
+./qdo.py build -R houdini11.0/otls/base/bend_ql_OTL
 
-- Poly Fuse Edges qL (SOP)
-	- fuse edges instead of points (it's safer)
+Extracting ascii directorie structures from binary OTLs
+-------------------------------------------------------
 
+The logic is the same here, just the subcommand differs:
 
+./qdo.py extract -R
+./qdo.py extract -R houdini11.0/otls/base
+./qdo.py extract houdini11.0/otls/base/bend_ql.otl
 
+Cleaning up after yourself
+--------------------------
 
-TO FIX
-======
+Sometimes it's handy to clean up the mess after your work. The logic is the
+same here, you can use the '-R' flag to initiate recursive behavior. The next
+command will clear all binary OTLs recursively under the current directory:
 
-- Offset Curve qL (SOP): clean it up
-- Turbulate Ql (sic): fix name typo
+./qdo.py clean -R
 
+If you want to remove the extracted directories use the '-s' or '--source'
+flag. For example:
 
+./qdo.py clean -sR houdini11.0/otls/base
 
+Use the '--help' flag
+---------------------
+
+If you are uncertain you can always use the '-h' or '--help' flag to see all
+the available subcommands and flags, or if you put it after a subcommand the
+help of that particular command.
