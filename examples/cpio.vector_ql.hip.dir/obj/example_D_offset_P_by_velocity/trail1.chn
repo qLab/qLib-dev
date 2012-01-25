@@ -1,0 +1,9 @@
+{
+    channel velscale {
+      lefttype = extend
+      righttype = extend
+      default = 0.23
+      flags = 0
+      segment { length = 0 value = 0.23000000417232513 0.23000000417232513 expr = 1.0/$FPS }
+    }
+  }
