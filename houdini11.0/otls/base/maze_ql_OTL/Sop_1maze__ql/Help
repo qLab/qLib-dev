@@ -1,0 +1,31 @@
+#icon: POP/curlnoise
+#context: SOP
+#type: node
+
+= Maze qL =
+
+"""Builds a maze from polylines on the horizontal plane."""
+
+This is a very simple and fun 'primitive'. It generates the maze with 'recursive division method'.
+The created maze has no closed areas: a way can always be found between two places within
+the maze.
+
+NOTE:
+    The node doesn't provide entry/exit openings (on the outer walls), cutting them is left for
+    the user to do. (As of the property mentioned above, the entry/exit can be placed anywhere
+    on the outer walls, with no restrictions.)
+
+@Parameters
+
+Lower Left Corner:
+    Lower left corner of the maze.
+Upper Right Corner:
+    Yeah, just that.
+Seed:
+    Seed of the random function that divides the space.
+Limit Divisions:
+    Limit the number of the division steps.
+Limit:
+    Number of divisions when _Limit Divisions_ toggled.
+Outer Walls:
+    Draw outer walls.

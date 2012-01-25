@@ -1,21 +1,21 @@
-# Dialog script for labyrinth_ql automatically generated 10/01/11 22:55:15
+# Dialog script for maze_ql automatically generated 01/25/12 22:42:36
 
 {
-    name	labyrinth_ql
-    script	labyrinth_ql
-    label	"Labyrinth qL"
+    name	maze_ql
+    script	maze_ql
+    label	"Maze qL"
 
     help {
 	""
     }
-    bindhandle corner_llx pivot "Pivot" tx ""
-    bindhandle corner_lly pivot "Pivot" tz ""
     bindhandle corner_urx translate "Translate" tx ""
     bindhandle corner_ury translate "Translate" tz ""
+    bindhandle corner_llx translate "Translate2" tx ""
+    bindhandle corner_lly translate "Translate2" tz ""
 
     parm {
 	name	"corner_ll"
-	label	"Corner, Lower Left"
+	label	"Lower Left Corner"
 	type	vector2
 	size	2
 	default	{ "-8" "-8" }
@@ -24,7 +24,7 @@
     }
     parm {
 	name	"corner_ur"
-	label	"Corner, Upper Right"
+	label	"Upper Right Corner"
 	type	vector2
 	size	2
 	default	{ "8" "8" }
