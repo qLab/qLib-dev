@@ -1,4 +1,4 @@
-# Dialog script for primgroup_centroids_ql automatically generated 11/17/11 01:23:04
+# Dialog script for primgroup_centroids_ql automatically generated 01/29/12 03:13:48
 
 {
     name	primgroup_centroids_ql
@@ -32,26 +32,88 @@
 	    name	"folder2"
 	    label	"Add Attributes"
 
-	    parm {
-		name	"add_grpname_attr"
-		label	"Group Name Attribute (Point; index->name)"
-		type	toggle
-		default	{ "1" }
-		help	"Creates a per-point string attribute,containing\\nthe name of the group the point belongs to.\\n\\nThis attribute allows looking up the name of a group\\nfrom its centroid point."
-		range	{ 0! 10 }
-		export	none
-		parmtag	{ "autoscope" "0000000000000000" }
+	    group {
+		name	"folder3"
+		label	"Group Indexing"
+		tabbreak
+
+		parm {
+		    name	"add_grpname_attr"
+		    label	"Group Name Attribute (Point; index->name)"
+		    type	toggle
+		    default	{ "1" }
+		    help	"Creates a per-point string attribute,containing\\nthe name of the group the point belongs to.\\n\\nThis attribute allows looking up the name of a group\\nfrom its centroid point."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"add_grpindex_attr"
+		    label	"Group Index Attribute (Detail; name->index)"
+		    type	toggle
+		    default	{ "0" }
+		    help	"Creates detail attributes with the names of all groups,\\ncontaining the point index of each centroid.\\n\\nThis attribute allows looking up the index of a centroid-point,\\nbased on the name of its group."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
-	    parm {
-		name	"add_grpindex_attr"
-		label	"Group Index Attribute (Detail; name->index)"
-		type	toggle
-		default	{ "0" }
-		help	"Creates detail attributes with the names of all groups,\\ncontaining the point index of each centroid.\\n\\nThis attribute allows looking up the index of a centroid-point,\\nbased on the name of its group."
-		range	{ 0! 10 }
-		export	none
-		parmtag	{ "autoscope" "0000000000000000" }
+
+	    group {
+		name	"folder3_1"
+		label	"Transformation Related"
+
+		parm {
+		    name	"add_rest"
+		    label	"Rest Position"
+		    type	toggle
+		    default	{ "0" }
+		    help	"Store current point positions as rest position attribute."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"add_orient"
+		    label	"Orientation Vectors"
+		    type	integer
+		    default	{ "0" }
+		    help	"Store default aim/up vectors for the points."
+		    menu	{
+			"0"	"None"
+			"1"	"N, up (normal/up)"
+			"2"	"v, up (velocity/up)"
+		    }
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"aim"
+		    label	"Aim"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "1" }
+		    help	"Aim vector direction."
+		    disablewhen	"{ add_orient == 0 }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"up"
+		    label	"Up"
+		    type	vector
+		    size	3
+		    default	{ "0" "1" "0" }
+		    help	"Up vector direction."
+		    disablewhen	"{ add_orient == 0 }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
+
 	}
 
 	parm {
