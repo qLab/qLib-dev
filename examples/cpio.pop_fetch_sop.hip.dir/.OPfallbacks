@@ -1,6 +1,0 @@
-Driver/ifd /opt/hfs11.0.792/houdini/otls/OPlibDriver.otl
-Driver/ifd otls/OPlibDriver.otl
-Sop/color /opt/hfs11.0.792/houdini/otls/OPlibSop.otl
-Sop/color otls/OPlibSop.otl
-Vop/importattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl

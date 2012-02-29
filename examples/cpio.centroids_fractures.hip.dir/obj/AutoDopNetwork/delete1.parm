@@ -1,9 +1,0 @@
-{
-version 0.8
-activation	[ 8	locks=0 ]	(	[ activation	0 ] 	)
-activationrules	[ 0	locks=0 ]	(	0	)
-numdeletes	[ 0	locks=0 ]	(	1	)
-objgroup0	[ 0	locks=0 ]	(	*	)
-deleteobjects0	[ 0	locks=0 ]	(	"on"	)
-deletedata0	[ 0	locks=0 ]	(	""	)
-}

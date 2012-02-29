@@ -1,9 +1,0 @@
-{
-version 0.8
-group	[ 0	locks=0 ]	(	""	)
-grouptype	[ 0	locks=0 ]	(	0	)
-class	[ 0	locks=0 ]	(	1	)
-colortype	[ 0	locks=0 ]	(	0	)
-color	[ 0	locks=0 ]	(	0.153219998	0.188657999	0.234999999	)
-seed	[ 0	locks=0 ]	(	0	)
-}

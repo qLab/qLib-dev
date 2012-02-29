@@ -1,8 +1,0 @@
-{
-version 0.8
-addaffectors	[ 0	locks=0 ]	(	"on"	)
-group	[ 0	locks=0 ]	(	*	)
-dataname	[ 0	locks=0 ]	(	Solver	)
-uniquedataname	[ 0	locks=0 ]	(	"off"	)
-solverperobject	[ 0	locks=0 ]	(	"off"	)
-}

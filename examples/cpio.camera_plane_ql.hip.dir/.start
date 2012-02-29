@@ -1,8 +1,0 @@
-fplayback -i on -r on -f 1 -e on -h on -t on -a on -k on -s 1
-tcur 0.1666666716337204
-fps 24
-tset 0 10
-frange 1 240
-unitlength 1
-unitmass 1
-prompt '`strcat(oppwf(), "> ")`'

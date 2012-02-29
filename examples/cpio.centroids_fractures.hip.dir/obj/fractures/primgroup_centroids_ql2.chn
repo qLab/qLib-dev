@@ -1,8 +1,0 @@
-{
-    channel num_pieces {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = "argc(primgroupmask(\"IN\", chs(\"groupmask\")))" }
-    }
-  }

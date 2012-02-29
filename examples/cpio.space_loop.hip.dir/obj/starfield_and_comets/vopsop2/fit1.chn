@@ -1,9 +1,0 @@
-{
-    channel destmax {
-      lefttype = extend
-      righttype = extend
-      default = 3.14
-      flags = 0
-      segment { length = 0 value = 3.1400001049041748 3.1400001049041748 expr = 2.0*3.1415 }
-    }
-  }
