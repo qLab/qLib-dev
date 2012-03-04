@@ -1,0 +1,33 @@
+#type: node
+#context: sop
+#icon: SOP/sort
+
+= Match Points Order qL =
+
+*Version 0.0.1*
+
+"""Tries to match point order of a geometry by using the order from a 2nd (reference) geometry."""
+
+
+NOTE:
+    It's not always possible to maintain the exact same point order (for instance
+    if the original geometry had un-fused but coincident points).
+    
+    In case point orders don't match up, try applying a Fuse SOP to the original geometry,
+    and/or the reference geometry as well.
+
+
+
+@related
+    - [Sort|Node:sop/sort]
+
+@Parameters
+
+    No parameters.
+
+            
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
