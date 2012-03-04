@@ -1,0 +1,19 @@
+text "The first important step:
+
+We create a centroid (center point) for each piece, using a 'PrimGroup Centroids qL' SOP.
+
+It creates various point indexing-related attributes that allows easier and better look-up of points based on group names (in the 'PrimGroup Add IDs qL' SOP).
+
+We also add default orientation vectors here (Aim and Up vectors for each point)."
+position 6.65923 -3.57628
+size 3.13487 2.54273
+flags =  minimize off
+stat
+{
+  create 1330890382
+  modify 1330891498
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+end
