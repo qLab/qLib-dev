@@ -1,0 +1,17 @@
+text "We build the base curves from a voronoi-fractured polymesh.
+
+We use a separate node for matching point order of the curves with the original mesh.
+
+(This is not necessary, but we could then use the mesh to animate the points later)."
+position -8.18647 -1.53827
+size 2.7962 1.86711
+flags =  minimize off
+stat
+{
+  create 1330896437
+  modify 1330896535
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+end

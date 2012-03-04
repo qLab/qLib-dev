@@ -1,0 +1,49 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"color_by_uv"
+	label	"color_by_uv"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "color_by_uv_the_key_values" }
+	parmtag	{ "rampkeys_var" "color_by_uv_the_key_positions" }
+	parmtag	{ "rampbasis_var" "color_by_uv_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "rgb" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"width_by_uv"
+	label	"width_by_uv"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "width_by_uv_the_key_values" }
+	parmtag	{ "rampkeys_var" "width_by_uv_the_key_positions" }
+	parmtag	{ "rampbasis_var" "width_by_uv_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+    }
