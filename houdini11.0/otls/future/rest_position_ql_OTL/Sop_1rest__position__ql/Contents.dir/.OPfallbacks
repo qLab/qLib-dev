@@ -1,6 +1,6 @@
-Vop/colormix /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
-Vop/colormix otls/OPlibVop.otl
-Vop/restpos /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/restpos /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
 Vop/restpos otls/OPlibVop.otl
-Vop/importattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/colormix /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/colormix otls/OPlibVop.otl
+Vop/importattrib /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl

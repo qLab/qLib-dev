@@ -1,7 +1,74 @@
-PrimGroup SDF qL
-
-Generate a separate SDF volume representation for each primitive group.
-
-TODO: Add implicit box, sphere modes.
+#type: node
+#context: sop
+#icon: VOP/texture3dbox
 
 
+= PrimGroup SDF qL =
+
+"""Generate a separate SDF volume representation for each primitive group (PrimGroup family SOP)."""
+
+@related
+    - [Proxy PrimGroups qL|Node:sop/proxy_primgroups_ql]
+    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
+    - [RBD Fetch SDF qL]|Node:dop/rbd_fetch_sdl_ql]
+
+This SOP can be used to generate SDFs of different resolutions for multiple primitive groups (pieces)
+of a geometry -- based on the size of each piece. These SDFs can then be used in DOP networks
+(e.g. for RBD fractured object).
+
+This allows varying the SDF resolution on pieces of an RBD fractured object. Using less resolution
+for smaller pieces means using less memory.
+
+
+@parameters
+    Group Mask:
+        Primitive groups matching this mask will be used.
+
+    Prefix:
+        Prefix for the created volume primitives (one for each primitive group).
+
+    Mode:
+        How to determine the resolution for each volume.
+
+        Same Num of Divisions:
+            Use the same number of divisions for all volumes. (All volumes will have the same resolution.)
+        Same-Sized Divisions:
+            Use the same division size for all volumes. (Larger volumes will have more divisions.)
+        Divisions Based on Object Sizes:
+            Minimum/maximum object sizes and their corresponding number of divisions can be set explicitly.
+            (See parameters below.)
+        BBox Preview (Colored Object Sizes):
+            This mode provides visual aid for setting up the appropriate min/max values for the previous
+            mode. 
+
+            ...
+
+    Geo Size Min/Max:
+            Minimum and maximum object sizes.
+
+    Divisions Min/Max:
+            The corresponding volume divisions for the minimum/maximum geometry sizes.
+
+            ...
+
+
+    Output Type:
+        Type of the generated volumes. (Use SDF for RBD collision volumes).
+
+    Create Output Groups:
+        Create a primitive group for each volume, with the same name (this makes matching
+        of RBDs and the volumes easier at the dopnet end).
+
+    Isosurface Display Mode:
+        Set display mode of the volumes to `Isosurface` (to see volume resolutions in
+        wireframe modes).
+
+
+
+
+TODO:
+    Add implicit box, sphere modes.
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

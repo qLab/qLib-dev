@@ -2,6 +2,6 @@
 version 0.8
 group	[ 0	locks=0 ]	(	""	)
 grouptype	[ 0	locks=0 ]	(	"guess"	)
-dist	[ 0	locks=0 ]	(	[ dist	0.0299999993 ] 	)
+dist	[ 0	locks=0 ]	(	[ dist	0 ] 	)
 updatenmls	[ 0	locks=0 ]	(	"off"	)
 }

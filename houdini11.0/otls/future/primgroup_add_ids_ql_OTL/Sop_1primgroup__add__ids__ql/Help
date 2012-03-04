@@ -1,0 +1,76 @@
+#type: node
+#context: sop
+#icon: DOP/group
+
+= PrimGroup Add IDs qL =
+
+*Version 0.0.1*
+
+"""Creates the per-primitive piece ID attribute for geometry pieces (PrimGroup family SOP)."""
+
+@related
+    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
+    - [Xform by Points qL|Node:sop/xform_by_points_ql]
+    - [Node:sop/voronoifracture]
+    - [Node:sop/assemble]
+    - [Node:sop/explodedview]
+
+Takes an input geometry with primitive ('piece') groups, assigns an unique ID for each group, then
+creates a per-primitive attribute that stores this ID for all primitives.
+
+This SOP creates the same `__origpt` attribute that is created by the [Node:sop/voronoifracture] node,
+for other SOPs (such as the 'Xform by Points qL') might require this attribute.
+
+In general, it is useful in any case where geometry is fractured/partitioned in some other way than with
+the [Node:sop/voronoifracture] SOP, but a compatible geometry setup is expected (e.g. the
+[Node:sop/assemble] SOP doesn't generate this attribute).
+
+This node is usually used together with other _PrimGroup family_ SOPs -- for example, it can read the
+group ID attributes from the `PrimGroup Centroids qL` SOP, and the results can be passed to the
+`Xform by Points qL` SOP.
+
+@Parameters
+    Group Mask:
+        Primitive groups matching this mask will be used for geometry pieces.
+
+    Group ID Attribute:
+        Name of the attribute to create. The default name is `__origpt` (to emulate the output of the
+        [Node:sop/voronoifracture] SOP).
+
+    Group IDs from:
+        The way of determining the index number of each piece group.
+
+        Group List Order:
+            Index numbers are assigned incrementally for each piece group in the order they are
+            considered.
+
+        Stored Detail Attributes:
+            Use a previously stored detail attribute list for determining indices for the piece groups.
+            The geometry with these attributes is to be connected to the second input (if not,
+            they will be looked for in the first input).
+
+            The attributes are expected in a way where the attribute _name_ is the same as the _group name_,
+            and the attribute _value_ specifies the index number (integer).
+            (For more details of these attributes, see the 'PrimGroup Centroids qL' SOP help.)
+
+        Detail Attribs (Unchecked):
+            Same as the previous mode but with disabled error checking for missing groups and/or
+            attributes. It _might_ be slightly faster for a very large number of pieces.
+
+        NOTE:
+            An `__origpt` index (or ID) of *`-1`* means that the source group could not be determined
+            for a particular primitive. (It usually means some improper parameter settings).
+
+    Delete Groups:
+        No not retain the piece groups once the ID attributes are created.
+
+    Delete Detail Attributes:
+        If the group ID information came as detail attributes from the first input, delete those
+        attributes.
+
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

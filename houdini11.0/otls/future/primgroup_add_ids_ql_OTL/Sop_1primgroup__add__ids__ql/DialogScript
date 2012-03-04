@@ -1,0 +1,97 @@
+# Dialog script for primgroup_add_ids_ql automatically generated 01/29/12 01:58:31
+
+{
+    name	primgroup_add_ids_ql
+    script	primgroup_add_ids_ql
+    label	"PrimGroup Add IDs qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Geo with Detail Attribs"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"groupmask"
+	label	"Group Mask"
+	type	string
+	default	{ "piece*" }
+	menureplace	{
+	    "piece*"	"piece*"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrname"
+	label	"Group ID Attribute"
+	type	string
+	default	{ "__origpt" }
+	menureplace	{
+	    "__origpt"	"__origpt"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"mode"
+	label	"Group IDs from"
+	type	integer
+	default	{ "1" }
+	menu	{
+	    "0"	"Group List Order"
+	    "1"	"Stored Detail Attributes"
+	    "2"	"Detail Attribs (Unchecked)"
+	}
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"del_groups"
+	label	"Delete Groups"
+	type	toggle
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"del_attrs"
+	label	"Delete Detail Attributes"
+	type	toggle
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Note"
+
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "Detail Attributes can be created using" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "(e.g.) a PrimGroups Centroids qL node." }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}

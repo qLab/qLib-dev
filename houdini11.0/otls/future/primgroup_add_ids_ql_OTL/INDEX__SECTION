@@ -1,0 +1,13 @@
+Operator:     primgroup_add_ids_ql
+Label:        PrimGroup Add IDs qL
+Path:         oplib:/Sop/primgroup_add_ids_ql?Sop/primgroup_add_ids_ql
+Icon:         DOP_group
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jan 29 01:58:31 2012
+
