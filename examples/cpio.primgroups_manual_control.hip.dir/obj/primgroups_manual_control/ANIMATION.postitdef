@@ -1,0 +1,15 @@
+text "Here we put some simple animation on the centroid points.
+
+We animate position and up vector as well, so they will both move and rotate."
+position 7.87671 -7.68053
+size 3.68937 1.6609
+flags =  minimize off
+stat
+{
+  create 1330891206
+  modify 1330891311
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 1 
+end

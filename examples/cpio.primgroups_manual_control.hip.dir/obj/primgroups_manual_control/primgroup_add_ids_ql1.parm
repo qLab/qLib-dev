@@ -1,0 +1,11 @@
+{
+version 0.8
+groupmask	[ 0	locks=0 ]	(	piece*	)
+attrname	[ 0	locks=0 ]	(	__origpt	)
+mode	[ 0	locks=0 ]	(	1	)
+del_groups	[ 0	locks=0 ]	(	"on"	)
+del_attrs	[ 0	locks=0 ]	(	"on"	)
+folder0	[ 0	locks=0 ]	(	0	)
+labelparm	[ 0	locks=0 ]	(	"Detail Attributes can be created using"	)
+labelparm2	[ 0	locks=0 ]	(	"(e.g.) a PrimGroups Centroids qL node."	)
+}

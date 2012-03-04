@@ -1,0 +1,18 @@
+text "Here we apply a trick using 'Match Points Order'.
+
+Even if we're doing a match between completely different number of points, the results will still match 'spatially': points with similar indices will occupy roughly the same point in space.
+
+This is exactly what we want: as we're generating a line between every two points, we want the endpoints to 'stay local'.
+"
+position -10.2362 -9.3418
+size 2.51687 3.09561
+flags =  minimize off
+stat
+{
+  create 1330897137
+  modify 1330897665
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+end

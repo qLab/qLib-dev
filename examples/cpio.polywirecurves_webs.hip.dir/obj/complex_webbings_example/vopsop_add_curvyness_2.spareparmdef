@@ -1,0 +1,61 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"looseness"
+	label	"looseness"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "looseness_the_key_values" }
+	parmtag	{ "rampkeys_var" "looseness_the_key_positions" }
+	parmtag	{ "rampbasis_var" "looseness_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "catmull-rom" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Maximum Curve Length"
+	type	float
+	default	{ "1" }
+	range	{ 0 9 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amount"
+	label	"amount"
+	type	float
+	default	{ "0" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "1.8" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

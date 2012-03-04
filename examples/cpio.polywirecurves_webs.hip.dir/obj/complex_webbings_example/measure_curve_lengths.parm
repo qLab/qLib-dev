@@ -1,0 +1,9 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+type	[ 0	locks=0 ]	(	"perimeter"	)
+override	[ 0	locks=0 ]	(	"on"	)
+attribname	[ 0	locks=0 ]	(	length	)
+curve	[ 0	locks=0 ]	(	0	1000	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+}

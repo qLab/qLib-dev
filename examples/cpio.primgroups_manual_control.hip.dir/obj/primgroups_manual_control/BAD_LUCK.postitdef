@@ -1,0 +1,15 @@
+text "'Vector qL' seems to forgot to pass on the N (normal) attribute, so we restore it here.
+
+This will NOT happen in Houdini 12+ with the new geometry engine."
+position 7.13752 -11.6751
+size 3.18172 1.75196
+flags =  minimize off
+stat
+{
+  create 1330891369
+  modify 1330891466
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.36 0.36 0.36 
+end

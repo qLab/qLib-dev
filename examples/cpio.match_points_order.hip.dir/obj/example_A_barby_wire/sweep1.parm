@@ -1,0 +1,22 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	1	1	)
+xgrp	[ 0	locks=0 ]	(	""	)
+pathgrp	[ 0	locks=0 ]	(	""	)
+refgrp	[ 0	locks=0 ]	(	""	)
+cycle	[ 0	locks=0 ]	(	"all"	)
+angle	[ 0	locks=0 ]	(	"off"	)
+noflip	[ 0	locks=0 ]	(	"off"	)
+skipcoin	[ 0	locks=0 ]	(	"on"	)
+aimatref	[ 0	locks=0 ]	(	"off"	)
+usevtx	[ 0	locks=0 ]	(	"off"	)
+vertex	[ 0	locks=0 ]	(	0	)
+scale	[ 0	locks=0 ]	(	1	)
+twist	[ 0	locks=0 ]	(	0	)
+roll	[ 0	locks=0 ]	(	0	)
+newg	[ 0	locks=0 ]	(	"off"	)
+sweepgrp	[ 0	locks=0 ]	(	sweepGroup	)
+skin	[ 0	locks=0 ]	(	"autopreserve"	)
+fast	[ 0	locks=0 ]	(	"off"	)
+polyout	[ 0	locks=0 ]	(	"off"	)
+}

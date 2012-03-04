@@ -1,0 +1,20 @@
+{
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 1.4
+      flags = 0
+      start = 0.2916666567325592
+      segment { length = 0.66666662693023682 value = 1 1.125 accel = 0.222222 0.222222 expr = bezier() }
+      segment { length = 1 value = 1.125 1.125 accel = 0.333333 0.333333 expr = bezier() }
+      segment { length = 0.99999964237213135 value = 1.125 1.3999999761581421 slope = 0 0.187318 accel = 0.333333 0.281564
+	 expr = bezier() }
+      segment { length = 0.83333373069763184 value = 1.3999999761581421 1.3999999761581421 slope = 0.187318 -0.181554 accel = 0.234637 0.242485
+	 expr = bezier() }
+      segment { length = 0.83333349227905273 value = 1.3999999761581421 0.93008452653884888 slope = -0.181554 -0.0370517 accel = 0.242485 0.217041
+	 expr = bezier() }
+      segment { length = 0.33333349227905273 value = 0.93008452653884888 1 slope = -0.0370517 0 accel = 0.0868164 0.111111
+	 expr = bezier() }
+      segment { length = 0 value = 1 1 accel = 0.333333 0.333333 expr = bezier() }
+    }
+  }
