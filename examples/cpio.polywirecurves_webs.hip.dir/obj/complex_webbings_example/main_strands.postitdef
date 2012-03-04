@@ -1,0 +1,19 @@
+text "This section converts the linear curves to loosely hanging curvy-curves. :)
+
+The Vop SOP adds downwards curvyness to each curve by mapping a 'looseness' curve based on UVs.
+
+The amount of curvyness is also determined by the length of each curve, and some random factor.
+
+"
+position -2.62005 -7.64831
+size 3.39829 4.36505
+flags =  minimize off
+stat
+{
+  create 1330896762
+  modify 1330897860
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.267 0 
+end

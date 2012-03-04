@@ -1,0 +1,13 @@
+Operator:     polywirecurves_ql
+Label:        PolyWireCurves qL
+Path:         oplib:/Sop/polywirecurves_ql?Sop/polywirecurves_ql
+Icon:         SOP_wire
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar  4 19:24:14 2012
+

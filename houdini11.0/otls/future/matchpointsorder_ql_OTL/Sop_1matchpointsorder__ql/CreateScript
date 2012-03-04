@@ -1,0 +1,13 @@
+# Automatically generated script: Sunday March 04, 20:11 2012
+\set noalias = 1
+#
+#  Creation script for matchpointsorder_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/matchpointsorder_ql)
+opexprlanguage -s hscript $arg1

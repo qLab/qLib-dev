@@ -1,0 +1,13 @@
+Operator:     matchpointsorder_ql
+Label:        Match Points Order qL
+Path:         oplib:/Sop/matchpointsorder_ql?Sop/matchpointsorder_ql
+Icon:         SOP_sort
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar  4 20:11:10 2012
+

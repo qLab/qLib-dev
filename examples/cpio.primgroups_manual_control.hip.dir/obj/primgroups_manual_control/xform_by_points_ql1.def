@@ -1,0 +1,22 @@
+sopflags sopflags = 
+comment ""
+position 1.2826 -11.3853
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	GEO_grouped_geom 0 1
+1 	GEO_centroids 0 1
+2 	attribcopy_normal_bug_workaround 0 1
+}
+stat
+{
+  create 1330888988
+  modify 1330891736
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.6 0 
+delscript ""
+exprlanguage hscript
+end

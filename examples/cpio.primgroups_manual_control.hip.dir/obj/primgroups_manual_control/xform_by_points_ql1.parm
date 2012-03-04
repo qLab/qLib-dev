@@ -1,0 +1,17 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	1	)
+point_index_attr	[ 0	locks=0 ]	(	0	)
+index_attr	[ 0	locks=0 ]	(	__origpt	)
+convert_to_point	[ 0	locks=0 ]	(	"on"	)
+inclass	[ 0	locks=0 ]	(	"primitive"	)
+method	[ 0	locks=0 ]	(	"first"	)
+rest_attrs	[ 0	locks=0 ]	(	0	0	)
+rest_p_attr	[ 0	locks=0 ]	(	P	)
+rest_aim_attr	[ 0	locks=0 ]	(	N	)
+rest_up_attr	[ 0	locks=0 ]	(	up	)
+p_attr	[ 0	locks=0 ]	(	P	)
+aim_attr	[ 0	locks=0 ]	(	N	)
+up_attr	[ 0	locks=0 ]	(	up	)
+}

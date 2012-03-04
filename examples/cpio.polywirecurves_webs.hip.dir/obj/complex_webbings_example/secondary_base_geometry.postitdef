@@ -1,0 +1,14 @@
+text "This will be our base geometry for the small secondary strands.
+"
+position -14.5083 -4.48313
+size 3.2481 1.38138
+flags =  minimize off
+stat
+{
+  create 1330897521
+  modify 1330897562
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.52 0.52 0.52 
+end

@@ -1,0 +1,12 @@
+{
+version 0.8
+folder2	[ 0	locks=0 ]	(	0	)
+apply_match	[ 0	locks=0 ]	(	"on"	)
+folder0	[ 0	locks=0 ]	(	0	)
+folder1	[ 0	locks=0 ]	(	0	)
+num_pts_geom	[ 0	locks=0 ]	(	[ num_pts_geom	2512 ] 	)
+num_pts_ref	[ 0	locks=0 ]	(	[ num_pts_ref	628 ] 	)
+blend	[ 0	locks=0 ]	(	0.5	)
+labelparm	[ 0	locks=0 ]	(	"Make sure point counts match up and"	)
+labelparm2	[ 0	locks=0 ]	(	"test blend shape (shown as guide) is OK."	)
+}
