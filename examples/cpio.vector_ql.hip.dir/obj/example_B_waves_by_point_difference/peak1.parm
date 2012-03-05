@@ -1,7 +1,0 @@
-{
-version 0.8
-group	[ 0	locks=0 ]	(	""	)
-grouptype	[ 0	locks=0 ]	(	"guess"	)
-dist	[ 0	locks=0 ]	(	0.5	)
-updatenmls	[ 0	locks=0 ]	(	"on"	)
-}

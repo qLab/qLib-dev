@@ -1,7 +1,0 @@
-{
-version 0.8
-from	[ 0	locks=0 ]	(	0	0	0	)
-function	[ 0	locks=0 ]	(	ntransform	)
-fromspace	[ 0	locks=0 ]	(	space:object	)
-tospace	[ 0	locks=0 ]	(	space:camera	)
-}

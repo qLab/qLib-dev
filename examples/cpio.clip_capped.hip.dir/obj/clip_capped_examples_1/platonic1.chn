@@ -1,9 +1,0 @@
-{
-    channel type {
-      lefttype = extend
-      righttype = extend
-      default = 4
-      flags = 0
-      segment { length = 0 value = 4 4 expr = "stamp(\"../copy2\", \"type\", 0)" }
-    }
-  }

@@ -1,8 +1,0 @@
-{
-    channel val1 {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = "$PT % 5" }
-    }
-  }

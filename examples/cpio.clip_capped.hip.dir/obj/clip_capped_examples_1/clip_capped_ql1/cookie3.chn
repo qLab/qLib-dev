@@ -1,9 +1,0 @@
-{
-    channel tol3d {
-      lefttype = extend
-      righttype = extend
-      default = 0.0001
-      flags = 0
-      segment { length = 0 value = 9.9999997473787516e-05 9.9999997473787516e-05 expr = ch(\"../tol3d\") }
-    }
-  }
