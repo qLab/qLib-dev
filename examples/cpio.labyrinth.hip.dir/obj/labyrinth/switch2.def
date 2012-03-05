@@ -1,0 +1,21 @@
+sopflags sopflags = 
+comment "Referenced from switch1"
+position -4.74444 -6.55006
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	refine1 0 1
+1 	divide1 0 1
+}
+stat
+{
+  create 1325812154
+  modify 1325812288
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.533 0 
+delscript ""
+exprlanguage hscript
+end

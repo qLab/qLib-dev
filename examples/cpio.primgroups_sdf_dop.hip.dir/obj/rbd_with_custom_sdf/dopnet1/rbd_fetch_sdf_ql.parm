@@ -1,0 +1,18 @@
+{
+version 0.8
+soppath	[ 0	locks=0	autoscope=0 ]	(	../../GEO_PRESIM_vol_only	)
+groupmask	[ 0	locks=0 ]	(	piece*	)
+usetransform	[ 0	locks=0 ]	(	"off"	)
+folder0	[ 0	locks=0 ]	(	0	)
+folder1	[ 0	locks=0 ]	(	0	0	)
+fixsigns	[ 0	locks=0 ]	(	"on"	)
+forcebounds	[ 0	locks=0 ]	(	"on"	)
+invert	[ 0	locks=0 ]	(	"off"	)
+offset	[ 0	locks=0 ]	(	0	)
+sweepalpha	[ 0	locks=0 ]	(	2	)
+sweepcount	[ 0	locks=0 ]	(	3	)
+showguide	[ 0	locks=0	autoscope=0 ]	(	"on"	)
+color	[ 0	locks=0 ]	(	0.800000012	0.100000001	0	)
+folder2	[ 0	locks=0 ]	(	0	)
+folder3	[ 0	locks=0 ]	(	1	1	)
+}

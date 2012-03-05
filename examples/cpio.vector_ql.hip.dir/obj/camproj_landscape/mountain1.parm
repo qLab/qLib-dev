@@ -1,0 +1,16 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vex_edit	[ 0	locks=0 ]	(	0	)
+vex_reload	[ 0	locks=0 ]	(	0	)
+frac_depth	[ 0	locks=0 ]	(	3	)
+rough	[ 0	locks=0 ]	(	0.600000024	)
+height	[ 0	locks=0 ]	(	0.967000008	)
+freq	[ 0	locks=0 ]	(	0.200000003	0.200000003	0.200000003	)
+offset	[ 0	locks=0 ]	(	0	0	0	)
+ntype	[ 0	locks=0 ]	(	perlin	)
+do_color	[ 0	locks=0 ]	(	"off"	)
+clr_off	[ 0	locks=0 ]	(	0.400000006	)
+clr_scale	[ 0	locks=0 ]	(	1	)
+}

@@ -1,0 +1,12 @@
+{
+version 0.8
+activation	[ 8	locks=0 ]	(	[ activation	0 ] 	)
+activationrules	[ 0	locks=0 ]	(	0	)
+group	[ 0	locks=0 ]	(	*	)
+dataname	[ 0	locks=0 ]	(	Position	)
+nummods	[ 0	locks=0 ]	(	1	)
+valname0	[ 0	locks=0 ]	(	gluethreshold	)
+valtype0	[ 0	locks=0 ]	(	"float"	)
+valvaluef0	[ 0	locks=0 ]	(	0	)
+valvalues0	[ 0	locks=0 ]	(	""	)
+}

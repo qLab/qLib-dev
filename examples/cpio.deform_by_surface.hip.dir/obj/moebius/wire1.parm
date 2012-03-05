@@ -1,0 +1,8 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+radius	[ 0	locks=0 ]	(	0.0333000012	)
+corners	[ 0	locks=0 ]	(	"off"	)
+caps	[ 0	locks=0 ]	(	"off"	)
+remove	[ 0	locks=0 ]	(	"on"	)
+}

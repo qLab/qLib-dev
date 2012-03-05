@@ -1,0 +1,15 @@
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	)
+groupmask	[ 0	locks=0 ]	(	[ groupmask	piece* ] 	)
+prefix	[ 0	locks=0 ]	(	[ prefix	sdf ] 	)
+mode	[ 0	locks=0 ]	(	3	)
+samplediv	[ 0	locks=0 ]	(	[ samplediv	10 ] 	)
+divsize	[ 0	locks=0 ]	(	[ divsize	0.100000001 ] 	)
+sizes	[ 0	locks=0 ]	(	[ sizesx	0.189999998 ] 	[ sizesy	0.920000017 ] 	)
+divs	[ 0	locks=0 ]	(	[ divsx	4 ] 	[ divsy	12 ] 	)
+sizeexp	[ 0	locks=0 ]	(	[ sizeexp	1.5 ] 	)
+output	[ 0	locks=0 ]	(	[ output	1 ] 	)
+creategroups	[ 0	locks=0 ]	(	[ creategroups	1 ] 	)
+isosurf_display	[ 0	locks=0 ]	(	[ isosurf_display	0 ] 	)
+}

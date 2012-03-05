@@ -1,0 +1,13 @@
+text "Geometry is fractured here."
+position -7.2064 -1.97104
+size 2.88642 1
+flags =  minimize off
+stat
+{
+  create 1325900510
+  modify 1325900580
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.52 0.52 0.52 
+end

@@ -1,0 +1,8 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+inside_group	[ 0	locks=0 ]	(	inside	)
+outside_group	[ 0	locks=0 ]	(	piece	)
+connect	[ 0	locks=0 ]	(	"off"	)
+doCusp	[ 0	locks=0 ]	(	"off"	)
+}

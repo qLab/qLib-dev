@@ -1,0 +1,19 @@
+{
+version 0.8
+camera	[ 0	locks=0 ]	(	/obj/cam1	)
+folder0	[ 0	locks=0 ]	(	0	)
+plane_distance	[ 0	locks=0 ]	(	30	)
+type	[ 0	locks=0 ]	(	"poly"	)
+surftype	[ 0	locks=0 ]	(	"quads"	)
+rows	[ 0	locks=0 ]	(	5	)
+cols	[ 0	locks=0 ]	(	7	)
+orderu	[ 0	locks=0 ]	(	4	)
+orderv	[ 0	locks=0 ]	(	4	)
+folder1	[ 0	locks=0 ]	(	0	)
+winoffsx	[ 0	locks=0 ]	(	0	)
+winoffsy	[ 0	locks=0 ]	(	0	)
+folder2	[ 0	locks=0 ]	(	0	)
+labelparm	[ 0	locks=0 ]	(	"The geometry is generated in object space -- it is to be"	)
+labelparm2	[ 0	locks=0 ]	(	"transformed to camera space to work as expected."	)
+labelparm3	[ 0	locks=0 ]	(	"(E.g. parent this geometry to the specified camera.)"	)
+}

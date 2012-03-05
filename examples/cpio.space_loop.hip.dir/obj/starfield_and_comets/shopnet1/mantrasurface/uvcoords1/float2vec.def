@@ -1,0 +1,20 @@
+comment ""
+position 8.01391 1.37778
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+inputs
+{
+0 	choose_S 0 1
+1 	choose_T 0 1
+}
+stat
+{
+  create 1191368841
+  modify 1191437776
+  author liza@chaos
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

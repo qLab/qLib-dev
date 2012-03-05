@@ -1,0 +1,18 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+folder1	[ 0	locks=0 ]	(	0	)
+bbox_min	[ 0	locks=0 ]	(	-0.5	0	-0.5	)
+bbox_max	[ 0	locks=0 ]	(	0.5	1	0.5	)
+folder0	[ 0	locks=0 ]	(	0	)
+offset	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 0	locks=0 ]	(	1	1	1	)
+pivot	[ 0	locks=0 ]	(	0.5	0	0.5	)
+wrapX	[ 0	locks=0 ]	(	"off"	)
+wrapZ	[ 0	locks=0 ]	(	"off"	)
+moebiusZ	[ 0	locks=0 ]	(	"off"	)
+folder2	[ 0	locks=0 ]	(	0	)
+blend	[ 0	locks=0 ]	(	1	)
+douv	[ 0	locks=0 ]	(	"off"	)
+uvname	[ 0	locks=0 ]	(	surface_uv	)
+}

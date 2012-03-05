@@ -81,6 +81,10 @@ def clean_cmd():
                         print '{0} ({1})'.format(e.strerror, e.errno)
                         break
 
+def pack_cmd():
+    qlib_dir = os.path.realpath(__file__)
+    print qlib_dir
+
 def files():
     for a in args.file:
         yield a
@@ -129,9 +133,14 @@ def parse_args():
     clean_parser = subparsers.add_parser('clean', parents=[common_args, otl_args],
             help='Removes OTLs or OTL sources',
             description='Removes OTLs or OTL sources.')
+    pack_parser = subparsers.add_parser('pack', parents=[common_args],
+            help='Creates tarballs for ditribution and backup purposes.')
 
     clean_parser.add_argument('-s', '--source', action='store_true',
             help='Deletes sources instead of built OTLs')
+
+    pack_parser.add_argument('-b', '--backup', action='store_true',
+            help='Creates a backup archive instead of distribution archive.')
 
     global args
     args = main_parser.parse_args()
@@ -144,4 +153,5 @@ parse_args()
 {'build': build_cmd,
 'extract': extract_cmd,
 'clean': clean_cmd,
+'pack': pack_cmd,
 }[args.command]()

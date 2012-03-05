@@ -1,0 +1,26 @@
+sopflags sopflags = 
+comment ""
+position 1.59669 -6.20238
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	xform4 0 1
+}
+override
+{
+../chop_center_worldspace/OUT_for_comets t 0
+../chop_center_worldspace/OUT_for_comets t 1
+../chop_center_worldspace/OUT_for_comets t 2
+}
+stat
+{
+  create 1325549804
+  modify 1325553823
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

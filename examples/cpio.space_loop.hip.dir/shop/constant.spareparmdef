@@ -1,0 +1,540 @@
+    group {
+	name	"shading"
+	label	"Surface"
+
+	parm {
+	    name	"difclr"
+	    label	"Color"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"usePointColor"
+	    label	"Tint with Point Color"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"dif_map"
+	    label	"Color Map"
+	    type	image
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"opacity"
+	    label	"Opacity"
+	    type	color
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"usePointAlpha"
+	    label	"Use Point Alpha"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"opacmap"
+	    label	"Opacity Map"
+	    type	image
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	}
+    }
+
+    group {
+	name	"shading_1"
+	label	"OpenGL"
+
+	group {
+	    name	"folder0"
+	    label	"Surface"
+
+	    parm {
+		name	"ogl_light"
+		label	"Use Lighting"
+		type	toggle
+		default	{ "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm6"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_alpha"
+		label	"OGL Alpha"
+		type	float
+		default	{ "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_cutout"
+		label	"Transparent Texture Alpha"
+		type	toggle
+		default	{ "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_amb"
+		label	"OGL Ambient"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_emit"
+		label	"OGL Emission"
+		type	color
+		size	3
+		default	{ "ch(\"difclrr\")" "ch(\"difclrg\")" "0" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm12"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_diff"
+		label	"OGL Diffuse"
+		type	color
+		size	3
+		default	{ "ch(\"difclrr\")" "ch(\"difclrr\")" "ch(\"difclrr\")" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    multiparm {
+		name	"ogl_numtex"
+		label	"Texture Layers"
+		default	1
+		parmtag	{ "spare_category" "OGL" }
+
+		parm {
+		    name	"ogl_tex#"
+		    label	"Texture #"
+		    type	image
+		    default	{ "`chs(\"dif_map\")`" }
+		    help	"None"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "filechooser_mode" "read" }
+		}
+		parm {
+		    name	"ogl_tex_min_filter#"
+		    label	"Minification Filter"
+		    type	string
+		    default	{ "GL_LINEAR_MIPMAP_LINEAR" }
+		    help	"None"
+		    menu	{
+			"GL_NEAREST"	"Poor: Nearest"
+			"GL_LINEAR"	"Poor: Linear"
+			"GL_NEAREST_MIPMAP_NEAREST"	"Fastest (Nearest/Nearest)"
+			"GL_LINEAR_MIPMAP_NEAREST"	"Better (Linear/Nearest)"
+			"GL_NEAREST_MIPMAP_LINEAR"	"Good (Nearest/Linear)"
+			"GL_LINEAR_MIPMAP_LINEAR"	"Best (Linear/Linear)"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"ogl_tex_mag_filter#"
+		    label	"Magnification Filter"
+		    type	string
+		    default	{ "GL_LINEAR" }
+		    help	"None"
+		    menu	{
+			"GL_NEAREST"	"Nearest"
+			"GL_LINEAR"	"Linear"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"ogl_clamping_mode#"
+		    label	"Clamp Texture"
+		    type	toggle
+		    default	{ "0" }
+		    help	"None"
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    parm {
+		name	"sepparm8"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_spec"
+		label	"OGL Specular"
+		type	color
+		size	3
+		default	{ "1" "1" "1" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_specmap"
+		label	"OGL Specular Map"
+		type	image
+		default	{ "" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_speclayer"
+		label	"Specular Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_rough"
+		label	"OGL Roughness"
+		type	float
+		default	{ "0.05" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_adjustshiny"
+		label	"Adjust Shininess with Alpha Channel"
+		type	toggle
+		default	{ "off" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_shinyrange"
+		label	"Shininess Range"
+		type	vector2
+		size	2
+		default	{ "10" "30" }
+		help	"None"
+		disablewhen	"{ ogl_specmap == \"\" } { ogl_adjustshiny == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"sepparm10"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_opacitymap"
+		label	"OGL Opacity Map"
+		type	image
+		default	{ "`chs(\"opacmap\")`" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_opacitylayer"
+		label	"Opacity Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_opacitymap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder0_1"
+	    label	"Displace"
+
+	    parm {
+		name	"ogl_bumpmap"
+		label	"OGL Bump Map"
+		type	image
+		default	{ "" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+	    }
+	    parm {
+		name	"ogl_bumptype"
+		label	"Bump Map Type"
+		type	string
+		default	{ "height" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		menu	{
+		    "height"	"Height Map"
+		    "uv"	"UV Bump Map"
+		    "xyz"	"XYZ Bump Map"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpscale"
+		label	"Bump Scale"
+		type	float
+		default	{ "1" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpbias"
+		label	"Bump Map Range"
+		type	string
+		default	{ "zeroone" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		menu	{
+		    "zeroone"	"0 to 1"
+		    "centered"	"-1 to 1"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumplayer"
+		label	"Bump Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_bumpinvert"
+		label	"Invert Bumps"
+		type	toggle
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_bumpmap == \"\" }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"sepparm7"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_normalmap"
+		label	"OGL Normal Map"
+		type	image
+		default	{ "" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"ogl_normalbias"
+		label	"Normal Map Range"
+		type	string
+		default	{ "zeroone" }
+		help	"None"
+		disablewhen	"{ ogl_normalmap == \"\" }"
+		menu	{
+		    "zeroone"	"0 to 1"
+		    "centered"	"-1 to 1"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_normallayer"
+		label	"Normal Layer"
+		type	integer
+		default	{ "0" }
+		help	"None"
+		disablewhen	"{ ogl_normalmap == \"\" }"
+		range	{ 0 15 }
+		export	none
+		parmtag	{ "spare_category" "OGL" }
+	    }
+	    parm {
+		name	"sepparm9"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder0_2"
+	    label	"Environment"
+
+	    parm {
+		name	"ogl_envmap"
+		label	"OGL Environment Map"
+		type	image
+		default	{ "" }
+		help	"None"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "filechooser_mode" "read" }
+	    }
+	    parm {
+		name	"ogl_envrotate"
+		label	"Env Map Rotation"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		help	"None"
+		disablewhen	"{ ogl_envmap == \"\" }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_envrotorder"
+		label	"Env Rotate Order"
+		type	string
+		default	{ "xyz" }
+		help	"None"
+		menu	{
+		    "xyz"	"Rx Ry Rz"
+		    "xzy"	"Rx Rz Ry"
+		    "yxz"	"Ry Rx Rz"
+		    "yzx"	"Ry Rz Rx"
+		    "zxy"	"Rz Rx Ry"
+		    "zyx"	"Rz Ry Rx"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_envscale"
+		label	"Reflection Intensity"
+		type	float
+		default	{ "0.1" }
+		help	"None"
+		disablewhen	"{ ogl_envmap == \"\" }"
+		range	{ 0 2 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"shading_2"
+	label	"Compile"
+	invisibletab
+
+	parm {
+	    name	"vop_compiler"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vop_forcecompile"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"Cd"
+	label	"Attribute Color"
+	type	color
+	invisible
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Alpha"
+	label	"Attribute Alpha"
+	type	float
+	invisible
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Ce"
+	label	"Emission"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

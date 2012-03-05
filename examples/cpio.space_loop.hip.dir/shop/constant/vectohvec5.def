@@ -1,0 +1,20 @@
+comment ""
+position 22.9135 -18.8261
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+inputs
+{
+0 	opacity1 0 1
+1 	"" 0 1
+}
+stat
+{
+  create 1179852111
+  modify 1276093287
+  author rmagee@taxco
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

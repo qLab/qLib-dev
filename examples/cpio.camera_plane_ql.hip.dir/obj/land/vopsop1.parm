@@ -1,0 +1,14 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+color_ramp	[ 0	locks=0 ]	(	2	)
+color_ramp1pos	[ 0	locks=0 ]	(	0	)
+color_ramp1c	[ 0	locks=0 ]	(	0.0276884995	0.0419999994	0.0123900007	)
+color_ramp1interp	[ 0	locks=0 ]	(	"linear"	)
+color_ramp2pos	[ 0	locks=0 ]	(	1	)
+color_ramp2c	[ 0	locks=0 ]	(	0.317094535	0.337000012	0.187709019	)
+color_ramp2interp	[ 0	locks=0 ]	(	"linear"	)
+}

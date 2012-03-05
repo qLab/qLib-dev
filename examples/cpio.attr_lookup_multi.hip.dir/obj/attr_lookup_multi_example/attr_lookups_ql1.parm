@@ -1,0 +1,16 @@
+{
+version 0.8
+attrnames	[ 0	locks=0 ]	(	"height size"	)
+curves	[ 0	locks=0 ]	(	2	)
+torange	[ 0	locks=0 ]	(	0	10	)
+labelparm_	[ 0	locks=0 ]	(	"Use the Channel Editor (Shift+LMB) to edit lookup curves."	)
+folder0	[ 0	locks=0 ]	(	0	)
+newattrs	[ 0	locks=0 ]	(	"off"	)
+outattrs	[ 0	locks=0 ]	(	"(renaming not yet supported)"	)
+folder01	[ 0	locks=0 ]	(	0	)
+curve_1	[ 0	locks=0 ]	(	[ curve_1	0.0727211237 ] 	)
+fromrange_1	[ 0	locks=0 ]	(	0	1	)
+folder02	[ 0	locks=0 ]	(	0	)
+curve_2	[ 0	locks=0 ]	(	[ curve_2	0.650676966 ] 	)
+fromrange_2	[ 0	locks=0 ]	(	0	7	)
+}

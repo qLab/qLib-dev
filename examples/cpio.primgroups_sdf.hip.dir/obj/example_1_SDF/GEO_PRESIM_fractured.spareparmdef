@@ -1,0 +1,94 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    group {
+	name	"folder2"
+	label	"Name Presets"
+
+	parm {
+	    name	"set_name_0"
+	    label	"Default ('null')"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"null1\", True)" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Outputs"
+	    tabbreak
+
+	    parm {
+		name	"set_name_1"
+		label	"DISPLAY"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setName(\"DISPLAY\"); hou.pwd().setColor(hou.Color((0,.4,1))); hou.pwd().setDisplayFlag(True)" }
+	    }
+	    parm {
+		name	"set_name_2"
+		label	"RENDER"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setName(\"RENDER\"); hou.pwd().setColor(hou.Color((.4,.2,.6))); hou.pwd().setRenderFlag(True)" }
+	    }
+	    parm {
+		name	"set_name_3"
+		label	"OUT"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"OUT\")" }
+	    }
+	}
+
+	group {
+	    name	"folder1"
+	    label	"Waypoints"
+
+	    parm {
+		name	"set_name_4"
+		label	":: GEO_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"GEO_\"+hou.pwd().name(), True)" }
+	    }
+	    parm {
+		name	"set_name_5"
+		label	":: GEO_PRESIM_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"GEO_PRESIM_\"+hou.pwd().name(), True)" }
+	    }
+	    parm {
+		name	"set_name_6"
+		label	":: GEO_POSTSIM_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"GEO_POSTSIM_\"+hou.pwd().name(), True)" }
+	    }
+	}
+
+    }
+

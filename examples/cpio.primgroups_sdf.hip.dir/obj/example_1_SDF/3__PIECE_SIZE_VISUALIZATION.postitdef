@@ -1,0 +1,20 @@
+text "Using the Colored BBox Preview mode, the Geo Size Min/Max values can be tuned interactively, with a visual feedback.
+
+Pieces that are minimum-sized are RED, maximum-sized are YELLOW, with a gradient in-between.
+
+Pieces falling below minimum are displayed in BLACK.
+
+Pieces larger than maximum sizes are WHITE.
+"
+position 1.31577 -9.63017
+size 3.85406 2.83033
+flags =  minimize off
+stat
+{
+  create 1325727440
+  modify 1325727875
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.267 0 
+end

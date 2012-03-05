@@ -1,0 +1,15 @@
+{
+version 0.8
+folder0	[ 0	locks=0 ]	(	0	)
+groupmask	[ 0	locks=0 ]	(	piece*	)
+prefix	[ 0	locks=0 ]	(	sdf	)
+mode	[ 0	locks=0 ]	(	2	)
+samplediv	[ 0	locks=0 ]	(	10	)
+divsize	[ 0	locks=0 ]	(	0.100000001	)
+sizes	[ 0	locks=0 ]	(	1.08000004	3.8900001	)
+divs	[ 0	locks=0 ]	(	5	10	)
+sizeexp	[ 0	locks=0 ]	(	1.25	)
+output	[ 0	locks=0 ]	(	"sdfvolume"	)
+creategroups	[ 0	locks=0 ]	(	"off"	)
+isosurf_display	[ 0	locks=0 ]	(	"on"	)
+}

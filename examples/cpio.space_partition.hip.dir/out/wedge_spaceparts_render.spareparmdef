@@ -1,0 +1,113 @@
+    parm {
+	name	"execute"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"renderdialog"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"prefix"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"wrange"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"wedgenum"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"driver"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"blockbackground"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"wedgemethod"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"roottake"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"random"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"numrandom"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"seed"
+	baseparm
+	export	none
+    }
+    multiparm {
+	name	"wedgeparams"
+	label	"Wedge Parameters"
+	baseparm
+
+	parm {
+	    name	"name#"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"chan#"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"range#"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"steps#"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0"
+	label	"NOTE"
+
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "The 'Number of Steps' specifies the number of layers to render." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "(It is directly linked to the Space Partition SOP.)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
