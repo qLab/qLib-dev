@@ -3,6 +3,8 @@
 import argparse
 import os
 import subprocess
+import sys
+import glob
 
 # Declare global variable name
 args = None
@@ -82,8 +84,40 @@ def clean_cmd():
                         break
 
 def pack_cmd():
-    qlib_dir = os.path.realpath(__file__)
-    print qlib_dir
+    qlib_dir = os.path.dirname(os.path.realpath(__file__))
+    qlib_parent = os.path.dirname(qlib_dir)
+    if qlib_dir.split('/')[-1] != "qLib":
+        print "WARNING: Archived directory is not called 'qLib'."
+    try:
+        git_tag = subprocess.check_output(["git", "tag"],
+                stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as e:
+        print "ERROR: Retrieving git tag failed."
+        print e.output
+        sys.exit(1)
+    except OSError as e:
+        print 'ERROR: Retrieving git tag failed.'
+        print '{0} ({1})'.format(e.strerror, e.errno)
+        sys.exit(1)
+    git_tag = git_tag[:-1]
+    if not git_tag:
+        print "WARNING: Empty git tag."
+    print qlib_dir, qlib_parent, git_tag
+    command = ["tar", "cvjf", "qlib-" + git_tag + ".tbz2"]
+    command.extend(glob.glob(os.path.join(qlib_dir, "examples", "*.hip")))
+    command.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*.otl")))
+    command.append(os.path.join(qlib_dir, "README"))
+    try:
+        subprocess.check_call(command)
+    except subprocess.CalledProcessError as e:
+        print "ERROR: Failed to create tar archive."
+        print e.output
+        sys.exit(1)
+    except OSError as e:
+        print 'ERROR: Failed to create tar archive.'
+        print '{0} ({1})'.format(e.strerror, e.errno)
+        sys.exit(1)
+    
 
 def files():
     for a in args.file:
