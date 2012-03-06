@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 import glob
+import tarfile
 
 # Declare global variable name
 args = None
@@ -86,7 +87,7 @@ def clean_cmd():
 def pack_cmd():
     qlib_dir = os.path.dirname(os.path.realpath(__file__))
     qlib_parent = os.path.dirname(qlib_dir)
-    if qlib_dir.split('/')[-1] != "qLib":
+    if qlib_dir.split(os.sep)[-1] != "qLib":
         print "WARNING: Archived directory is not called 'qLib'."
     try:
         git_tag = subprocess.check_output(["git", "tag"],
@@ -96,27 +97,24 @@ def pack_cmd():
         print e.output
         sys.exit(1)
     except OSError as e:
-        print 'ERROR: Retrieving git tag failed.'
+        print 'ERROR: Git not accessible.'
         print '{0} ({1})'.format(e.strerror, e.errno)
         sys.exit(1)
     git_tag = git_tag[:-1]
     if not git_tag:
         print "WARNING: Empty git tag."
-    print qlib_dir, qlib_parent, git_tag
-    command = ["tar", "cvjf", "qlib-" + git_tag + ".tbz2"]
-    command.extend(glob.glob(os.path.join(qlib_dir, "examples", "*.hip")))
-    command.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*.otl")))
-    command.append(os.path.join(qlib_dir, "README"))
-    try:
-        subprocess.check_call(command)
-    except subprocess.CalledProcessError as e:
-        print "ERROR: Failed to create tar archive."
-        print e.output
-        sys.exit(1)
-    except OSError as e:
-        print 'ERROR: Failed to create tar archive.'
-        print '{0} ({1})'.format(e.strerror, e.errno)
-        sys.exit(1)
+    debug("qLib dir: {0}  qLib parent dir: {1}, git tag: {2}".format(qlib_dir, qlib_parent, git_tag))
+    command = ["tar", "cvjf", "qLib-" + git_tag + ".tbz2"]
+    file_list = []
+    file_list.extend(glob.glob(os.path.join(qlib_dir, "examples", "*.hip")))
+    file_list.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*.otl")))
+    file_list.append(os.path.join(qlib_dir, "README"))
+    file_list = [(f, os.path.relpath(f, qlib_parent)) for f in file_list]
+    tar_file = tarfile.open("qLib-" + git_tag + ".tbz2", "w:bz2")
+    for f in file_list:
+        print "Adding: {0}".format(f[1])
+        tar_file.add(f[0],f[1])
+    tar_file.close()
     
 
 def files():
