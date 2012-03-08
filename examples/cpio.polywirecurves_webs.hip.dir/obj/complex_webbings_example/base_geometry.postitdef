@@ -1,0 +1,14 @@
+text "This is our base geometry for the corner web.
+"
+position -8.86945 7.78798
+size 2.81513 1.40286
+flags =  minimize off
+stat
+{
+  create 1330896354
+  modify 1330897597
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.52 0.52 0.52 
+end

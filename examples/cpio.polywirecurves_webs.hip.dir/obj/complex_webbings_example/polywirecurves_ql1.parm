@@ -1,0 +1,6 @@
+{
+version 0.8
+fuse_results	[ 0	locks=0 ]	(	"on"	)
+dist	[ 0	locks=0 ]	(	0.00100000005	)
+maintain_point_order	[ 0	locks=0 ]	(	"off"	)
+}

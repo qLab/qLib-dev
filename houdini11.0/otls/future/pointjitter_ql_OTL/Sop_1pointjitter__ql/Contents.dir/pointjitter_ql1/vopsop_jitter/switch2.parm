@@ -1,0 +1,6 @@
+{
+version 0.8
+switcher	[ 0	locks=0 ]	(	[ switcher	0 ] 	)
+outofbounds	[ 0	locks=0 ]	(	"last"	)
+switcher2	[ 0	locks=0 ]	(	0	)
+}

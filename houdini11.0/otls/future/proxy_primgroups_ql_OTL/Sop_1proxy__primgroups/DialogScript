@@ -1,4 +1,4 @@
-# Dialog script for proxy_primgroups automatically generated 10/04/11 00:03:41
+# Dialog script for proxy_primgroups automatically generated 01/29/12 03:57:53
 
 {
     name	proxy_primgroups
@@ -88,7 +88,7 @@
 	    label	"Do Wrapping"
 	    type	toggle
 	    default	{ "on" }
-	    help	"Perform the actual wrapping of the basic proxy to the fragment."
+	    help	"Perform the actual wrapping of the proxies to their corresponding geometry."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -98,6 +98,7 @@
 	    label	"Scale"
 	    type	float
 	    default	{ "1" }
+	    help	"When transforming points scale the intersection path."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -107,6 +108,7 @@
 	    label	"Lift"
 	    type	float
 	    default	{ "0" }
+	    help	"Offset surface in normal direction after the points have been transformed to their new locations."
 	    range	{ -1 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }

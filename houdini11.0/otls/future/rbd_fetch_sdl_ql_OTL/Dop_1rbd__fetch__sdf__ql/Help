@@ -1,6 +1,21 @@
-RBD Fetch SDF qL
+#type: node
+#context: sop
+#icon: VOP/texture3dbox
+
+= RBD Fetch SDF qL =
 
 
-Fetch pre-generated SDF representations from a 'PrimGroup SDF qL' SOP node.
+"""Fetch pre-generated SDF representations from a 'PrimGroup SDF qL' SOP node."""
+
+@related
+    - [PrimGroup SDF qL|Node:sop/primgroup_sdf_ql]
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
+
+
 
 

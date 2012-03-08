@@ -1,0 +1,8 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+scale	[ 0	locks=0 ]	(	1	)
+axisscale	[ 0	locks=0 ]	(	0.25	1.5	0.25	)
+seed	[ 0	locks=0 ]	(	0	)
+usepscale	[ 0	locks=0 ]	(	"on"	)
+}

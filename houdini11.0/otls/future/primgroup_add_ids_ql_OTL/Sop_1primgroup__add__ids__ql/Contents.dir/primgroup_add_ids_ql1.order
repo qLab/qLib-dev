@@ -1,0 +1,14 @@
+13
+xfer_pieces_detail_attrs
+IN
+switch_mode
+foreach__by_attr
+add_origpt_attr
+foreach__by_order
+OUT
+foreach__by_attr__no_check
+use_1st_if_2nd_is_empty
+del_groups
+switch_delete_groups
+switch_delete_detail_attrs
+attribute1

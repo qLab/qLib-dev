@@ -1,0 +1,48 @@
+# Dialog script for polywirecurves_ql automatically generated 03/04/12 19:24:10
+
+{
+    name	polywirecurves_ql
+    script	polywirecurves_ql
+    label	"PolyWireCurves qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Polymesh"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"fuse_results"
+	label	"Fuse Results"
+	type	toggle
+	default	{ "0" }
+	help	"Fuse all points of the resulting curves."
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"dist"
+	label	"Distance"
+	type	float
+	default	{ "0.001" }
+	help	"Fuse tolerance."
+	disablewhen	"{ fuse_results == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"maintain_point_order"
+	label	"Maintain Point Order"
+	type	toggle
+	default	{ "0" }
+	help	"TRY to maintain the same point order as on the input polymesh."
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

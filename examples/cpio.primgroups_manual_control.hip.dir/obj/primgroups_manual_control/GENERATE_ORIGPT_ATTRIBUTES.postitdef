@@ -1,0 +1,23 @@
+text "The second important step:
+
+We create a per-primitive attribute called '__origpt', using a 'PrimGroup Add IDs qL' node.
+
+This attribute determines which primitive should be transformed by which centroid point.
+
+(It uses the generated detail attributes from the 'PrimGroup Centroids' node, which is the most precise method available.)
+
+The actual transformation happens below.
+
+"
+position -4.29714 -4.97029
+size 3.13487 2.54273
+flags =  minimize off
+stat
+{
+  create 1330890382
+  modify 1330891495
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+end

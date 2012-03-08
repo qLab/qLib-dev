@@ -1,0 +1,86 @@
+#type: node
+#context: sop
+#icon: POP/position
+
+= Xform by Points qL =
+
+*Version 0.0.1*
+
+"""Transforms geometry groups, using point cloud points for individual placement (PrimGroup family SOP)."""
+
+@related
+    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
+    - [PrimGroup Add IDs qL|Node:sop/primgroup_add_ids_ql]
+    - [Node:sop/voronoifracture]
+    - [Node:sop/assemble]
+    - [Node:sop/explodedview]
+
+This SOP takes a geometry consisting of multiple geometry groups (pieces), and transforms each piece
+using point cloud(s), wherein each point represents a centroid for a corresponding piece.
+
+The input geometry should have an (usually per-primitive, called `__origpt`) attribute that specifies
+an index number for each geometry element. This index is used to refer to a point with the same index
+in the point cloud -- that point will be used for the transformation of the element.
+
+TIP:
+    A point cloud can be built using a [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql] SOP.
+    Piece group indices can be generated using a [PrimGroup Add IDs qL|Node:sop/primgroup_add_ids_ql]
+    node.
+
+Two point clouds are expected: _rest_ and _transformation_. Transformation to each piece is applied
+using the difference between the two. Rotations are implemented using an aim/up vector pair (can be
+added to rest and transform both).
+
+A single point cloud can also be used by using the same cloud for both inputs and storing `rest`
+positions for its points.
+
+
+@parameters
+    Point Index Attribute:
+
+        Index Attribute:
+            Name of the (usually per-primitive) attribute that specifies which group the primitive
+            belongs to.
+            The default name is `__origpt` (to be in accord with the [Node:sop/voronoifracture] SOP).
+
+        Convert to Per-Point Type:
+            The index attribute needs to be of per-point type. If it is not, it has to be promoted
+            temporarily.
+
+        Original Class, Promotion Method:
+            Settings on how to promote the attribute.
+            
+
+    Rest Point Attributes:
+
+        Rest Position:
+            Attribute that specifies the rest position (pivot) of each point cloud point
+            (hence each geometry piece).
+
+            Specify `rest` here when using a single point cloud.
+
+        Rest Aim Vector, Rest Up Vector:
+            Attributes that specify rest orientation for each point.
+            Empty string means the appropriate default world axis direction.
+
+    Transform Point Attributes:
+
+        Position:
+            Attribute that specifies the current position of each point cloud point
+            (hence each geometry piece). Translation is calculated by the difference of
+            this position and the rest position.
+
+        Aim Vector, Up Vector:
+            Attributes that specify the current orientation of each point.
+            Empty string means the appropriate default world axis direction.
+
+            Rotation is calculated from the difference of the rest and the transform
+            aim and up vectors.
+
+    NOTE:
+            Scaling of individual pieces is not supported.
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
