@@ -125,6 +125,8 @@ def pack_cmd():
 
 def files():
     for a in args.file:
+        if a[-1:] == "/":
+            a = a[0:-1]
         debug("Yielding file: {0}".format(a))
         yield a
         if os.path.isdir(a):
@@ -133,6 +135,8 @@ def files():
                     break
                 for f in d[1] + d[2]:
                     jf = os.path.join(d[0],f)
+                    if jf[-1:] == "/":
+                        jf = a[0:-1]
                     debug("Yielding file: {0}".format(jf))
                     yield jf
 
