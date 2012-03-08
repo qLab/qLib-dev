@@ -1,9 +1,0 @@
-{
-version 0.8
-group	[ 0	locks=0 ]	(	""	)
-usevoxelradius	[ 0	locks=0 ]	(	"off"	)
-radius	[ 0	locks=0 ]	(	2.25	)
-voxelradius	[ 0	locks=0 ]	(	1	1	1	)
-reduction	[ 0	locks=0 ]	(	"average"	)
-passes	[ 0	locks=0 ]	(	1	)
-}
