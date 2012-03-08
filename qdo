@@ -6,6 +6,7 @@ import subprocess
 import sys
 import glob
 import tarfile
+import datetime
 
 # Declare global variable name
 args = None
@@ -102,15 +103,20 @@ def pack_cmd():
         sys.exit(1)
     git_tag = git_tag[:-1]
     if not git_tag:
-        print "WARNING: Empty git tag."
+        print "WARNING: Empty git tag, using 'NOTAG' instead."
+        git_tag = "NOTAG"
     debug("qLib dir: {0}  qLib parent dir: {1}, git tag: {2}".format(qlib_dir, qlib_parent, git_tag))
-    command = ["tar", "cvjf", "qLib-" + git_tag + ".tbz2"]
     file_list = []
-    file_list.extend(glob.glob(os.path.join(qlib_dir, "examples", "*.hip")))
-    file_list.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*.otl")))
     file_list.append(os.path.join(qlib_dir, "README"))
+    file_list.extend(glob.glob(os.path.join(qlib_dir, "examples", "*.hip")))
+    if args.backup:
+        tar_name = "qLib-backup-" + datetime.date.today().isoformat() + ".tbz2"
+        file_list.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*_OTL")))
+    else:
+        tar_name = "qLib-" + git_tag + ".tbz2"
+        file_list.extend(glob.glob(os.path.join(qlib_dir, "houdini11.0", "otls", "*", "*.otl")))
     file_list = [(f, os.path.relpath(f, qlib_parent)) for f in file_list]
-    tar_file = tarfile.open("qLib-" + git_tag + ".tbz2", "w:bz2")
+    tar_file = tarfile.open(tar_name, "w:bz2")
     for f in file_list:
         print "Adding: {0}".format(f[1])
         tar_file.add(f[0],f[1])
