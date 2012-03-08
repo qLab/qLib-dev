@@ -4,14 +4,18 @@
 
 = Curve Segments qL =
 
-*Version 0.2.0*
+*Version 0.2.1*
 
 """Creates separate primitive for each poly curve segment."""
 
 @Limitations
-    Works with polygonal curves only.
+    Works correctly with single polygonal curves only.
 
 @Release_Notes
+    Version 0.2.1:
+        Creates open curve segments, instead of closed ones. Creates curve segment for closing segment if original
+        is closed.
+
     Version 0.2.0:
         A faster and cleaner rewrite of the original functionality.
 
