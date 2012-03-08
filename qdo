@@ -125,13 +125,16 @@ def pack_cmd():
 
 def files():
     for a in args.file:
+        debug("Yielding file: {0}".format(a))
         yield a
         if os.path.isdir(a):
             for d in os.walk(a):
                 if not args.recursive and d[0] != a:
                     break
                 for f in d[1] + d[2]:
-                    yield os.path.join(d[0],f)
+                    jf = os.path.join(d[0],f)
+                    debug("Yielding file: {0}".format(jf))
+                    yield jf
 
 def debug(msg):
     """
