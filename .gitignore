@@ -1,6 +1,6 @@
 tarballs
 
-# final .otl and .hip files
+# final .otl
 *.otl
 
 # content backups within extracted otl file structures
@@ -9,3 +9,5 @@ tarballs
 # ignore presets for now (until there's a way to store them in ascii)
 presets/*
 
+# vim swap files
+*.swp
