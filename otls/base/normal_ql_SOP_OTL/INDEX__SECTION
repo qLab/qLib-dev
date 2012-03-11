@@ -1,0 +1,13 @@
+Operator:     normal_ql
+Label:        Normal qL
+Path:         oplib:/Sop/normal_ql?Sop/normal_ql
+Icon:         SOP_facet
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar 11 21:26:19 2012
+
