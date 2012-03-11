@@ -17,23 +17,19 @@ and Restore is for the opposite (based on the point groups, it converts the poin
 deletes the extra points).
 
 @Usage
-    This SOP is a general-purpose 'workaround': there are some SOP nodes than apply deformations to geometry, but apart
-    from adjusting the points, they don't update vector attributes (such as normals, up vectors, etc).
+    This SOP is a 'workaround' for the problem when a deforming operator only deforms the points of the geometry and not
+    the vector attributes defined on them.
 
-    With this SOP, attributes can be converted to points before applying such deformations, and 'restored' afterwards.
-    Use this node in Save mode _before_ the deformations, and a copy of the node in Restore settings _after_ the deform
-    SOPs, and volia--all vector attributes behave accordingly (including custom ones).
-
-NOTE:
-    This SOP replaces for the __Orient Save qL__ and __Orient Restore qL__ SOPs (those are considered obsolete).
-
+    With this SOP, vector attributes can be converted to points before applying such deformations, and 'restored' the
+    deformed vectors afterwards. Use this node in Save mode _before_ the deformations, and a copy of the node in Restore
+    settings _after_ the deform SOPs.
 
 @Parameters
 Common:
     Mode:
         Operation mode -- __Save__ converts vector attributes to points, __Restore__ does the opposite.
     Vector Attributes:
-        The vector attributes to work with.
+        Space separated list of the vector attributes to work with.
     Group Prefix:
         This OP creates point groups for each point-cloud created from an attribute. The group names are
         the attribute names prefixed with this parameter.
@@ -45,8 +41,9 @@ Common:
         If you use high-frequency deformations and not getting the vector results as you expect, try to modify this value
         (usually decrease).
 
-        To visualize, enable 'points' display in the viewport, and adjust this parameter while watching the output
-        of a Vector Store SOP in Save mode.
+        TIP:
+            To visualize this, enable 'points' display in the viewport, and adjust this parameter while watching the output
+            of a Vector Store SOP in Save mode.
 Save:
     Delete Source Attributes:
         Once the vector attributes are represented as points, the attributes themselved will be deleted.
@@ -62,7 +59,7 @@ Restore:
 
 NOTE:
     You needn't restore all attributes you saved -- but a __Restore__ operation will remove all the extra points
-    and groups, not just the ones you restored (this is an intentional behaviour).
+    and groups, not just the ones you restored (this is the intended behaviour).
 
 
 
