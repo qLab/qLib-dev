@@ -1,0 +1,51 @@
+# Dialog script for snap_ql automatically generated 03/12/12 22:30:38
+
+{
+    name	snap_ql
+    script	snap_ql
+    label	"Snap qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Points To Snap"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_SNAP vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"targets"
+	label	"Target Points"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l blast1 group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"dist"
+	label	"Distance"
+	type	float
+	default	{ "0.1" }
+	range	{ 0! 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

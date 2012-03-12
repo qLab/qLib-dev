@@ -1,0 +1,16 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../group\") }
+    }
+    channel radius {
+      lefttype = extend
+      righttype = extend
+      default = 0.047
+      flags = 0
+      segment { length = 0 value = 0.046999998390674591 0.046999998390674591 expr = ch(\"../dist\") }
+    }
+  }
