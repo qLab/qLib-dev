@@ -4,7 +4,7 @@
 
 = Turbulate qL =
 
-*Version 0.1.0*
+*Version 0.1.1*
 
 """Deforms geometry by turbulent noise."""
 
@@ -35,5 +35,7 @@
         Clamps the generated values.
 
 @Release_Notes
+    Version 0.1.1:
+        Label fixed.
     Version 0.1.0:
         Initial release.

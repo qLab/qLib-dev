@@ -1,16 +1,16 @@
-Vop/turbnoise C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
-Vop/turbnoise otls/OPlibVop.otl
-Vop/makexform C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
-Vop/makexform otls/OPlibVop.otl
-Vop/floattovec C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
-Vop/floattovec otls/OPlibVop.otl
-Vop/vectofloat C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
-Vop/vectofloat otls/OPlibVop.otl
-Vop/abs C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
+Vop/abs C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
 Vop/abs otls/OPlibVop.otl
-Vop/invert C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
+Vop/invert C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
 Vop/invert otls/OPlibVop.otl
-Vop/align C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
-Vop/align otls/OPlibVop.otl
-Vop/clamp C:/PROGRA~1/SIDEEF~1/HOUDIN~1.495/houdini/otls/OPlibVop.otl
+Vop/clamp C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
 Vop/clamp otls/OPlibVop.otl
+Vop/makexform C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/makexform otls/OPlibVop.otl
+Vop/turbnoise C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/turbnoise otls/OPlibVop.otl
+Vop/vectofloat C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/floattovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl
+Vop/align C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/align otls/OPlibVop.otl

@@ -1,5 +1,5 @@
 Operator:     turbulate_ql
-Label:        Turbulate Ql
+Label:        Turbulate qL
 Path:         oplib:/Sop/turbulate_ql?Sop/turbulate_ql
 Icon:         SOP_mountain
 Table:        Sop
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Sep 24 19:53:00 2010
+Modified:     Tue Mar 13 17:26:50 2012
 
