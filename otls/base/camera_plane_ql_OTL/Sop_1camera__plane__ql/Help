@@ -4,7 +4,7 @@
 
 = Camera Plane qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Creates a plane that fills the screen of a given camera."""
 
@@ -47,3 +47,9 @@ N:
         Applies a basic constant material.
     Texture:
         Name of the texture file.
+
+@ReleaseNotes
+    Version 0.0.2:
+        Fixed minor interface bug, and removed OpenGL lighting from the mareial.
+    Version 0.0.1:
+        Initial release.

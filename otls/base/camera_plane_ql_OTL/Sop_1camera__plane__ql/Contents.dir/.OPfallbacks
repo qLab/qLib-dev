@@ -1,12 +1,12 @@
-Vop/texture /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
-Vop/texture otls/OPlibVop.otl
-Vop/floattovec /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
-Vop/floattovec otls/OPlibVop.otl
-Vop/fit /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
-Vop/fit otls/OPlibVop.otl
-Vop/hvectovec /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
-Vop/hvectovec otls/OPlibVop.otl
-Vop/addattrib /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
+Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
 Vop/addattrib otls/OPlibVop.otl
-Vop/bbox /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
+Vop/bbox C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
 Vop/bbox otls/OPlibVop.otl
+Vop/hvectovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/hvectovec otls/OPlibVop.otl
+Vop/texture C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/texture otls/OPlibVop.otl
+Vop/fit C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
+Vop/floattovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl

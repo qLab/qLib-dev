@@ -1,4 +1,4 @@
-# Dialog script for camera_plane_ql automatically generated 01/24/12 23:32:35
+# Dialog script for camera_plane_ql automatically generated 03/13/12 17:14:57
 
 {
     name	camera_plane_ql
@@ -219,7 +219,7 @@
 	    label	"Texture"
 	    type	image
 	    default	{ "mandril.pic" }
-	    disablewhen	"{ material == 1 }"
+	    disablewhen	"{ material == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	}
