@@ -1,0 +1,28 @@
+{
+    channel reload {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../reload\") }
+    }
+    channel objpattern {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../objpattern\") }
+    }
+    channel geodatapath {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../geodatapath\") }
+    }
+    channel missingframe {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../missingframe\") }
+    }
+  }
