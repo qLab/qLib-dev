@@ -1,6 +1,6 @@
 {
 version 0.8
-stdswitcher	[ 0	locks=0 ]	(	3	3	3	3	3	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
 _label1_	[ 0	locks=0 ]	(	From	To	)
 frompt0	[ 0	locks=0 ]	(	""	)
 topt0	[ 0	locks=0 ]	(	""	)

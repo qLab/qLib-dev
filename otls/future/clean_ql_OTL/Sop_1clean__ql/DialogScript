@@ -1,9 +1,9 @@
-# Dialog script for delete_ql automatically generated 09/04/11 18:05:16
+# Dialog script for clean_ql automatically generated 03/13/12 03:15:52
 
 {
-    name	delete_ql
+    name	clean_ql
     script	delete_ql
-    label	"Delete qL"
+    label	"Clean qL"
 
     help {
 	""
