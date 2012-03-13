@@ -1,24 +1,23 @@
 qLib
 ====
 
-A more or less cohherent and maintained houdini asset library.
+A general purpose Digital Asset library for Houdini.
 
 
 Installation instructions
 =========================
 
-You should place the unpacked folder to a convenient place, where everyone can
-reach it, and add the qLib/houdini11.0/otls/SECTIONNAME (see below) folder to
-the HOUDINI_OTLSCAN_PATH environment variable. Creating a variable called $QLIB
-can make adding the different sections a bit easier. For example the next two
+Place the unpacked folder to a convenient place, where everyone can
+access it, and add the qLib/houdini11.0/otls/SECTIONNAME (see below) folder to
+the HOUDINI_OTLSCAN_PATH environment variable. Creating a variable called QLIB
+can make adding the various sections a bit easier. For example the next two
 lines adds all sections to the path:
 
     QLIB = /Users/mate/qLab/qLib/houdini11.0/otls
     HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/future:$QLIB/core:$QLIB/spec
 
-Dumping the otl files into a folder which contains other otls is considered bad
-behavior, and will seriously and needlessly make updating the library more
-difficult.
+Dumping the OTL files into a folder which contains other OTLs is considered bad
+practice -- it seriously and needlessly makes updating the library more difficult.
 
 
 Sections
@@ -36,11 +35,15 @@ assets. The assets in this section are usually not very useful alone, but are
 needed by assets in other sections.
 
 The 'spec' assets are intended for per-project based inclusion (e.g. high level
-objects like water drops and such), so you probalbly don't want to include that
+objects like water drops, etc.), so you probably don't want to include that
 in the HOUDINI_OTLSCAN_PATH. But this decision is up to you.
 
 The 'future' assets are not yet integrated into the main distribution. They
 may lack documentation or other mandatory requirement to be included into the
-'main' distribution or they simply need more testing. We still include them
-because they can be usefull even before they fulfill those requirements.
+'main' distribution (or they simply need more testing). We still include them
+because they can be useful even before they fulfill those requirements.
+
+(In other words, 'future' is the alpha testing ground in the "release early,
+release often" spirit.)
+
 
