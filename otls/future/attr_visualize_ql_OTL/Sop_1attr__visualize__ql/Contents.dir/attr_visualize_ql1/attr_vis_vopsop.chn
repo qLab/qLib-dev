@@ -111,4 +111,17 @@
       start = 60.416667938232422
       segment { length = 0 value = 2 2 expr = ch(\"../attr_ramp\") }
     }
+    channel attr_type {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../attr_type\") }
+    }
+    channel attr_comp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../attr_comp\") }
+    }
   }

@@ -1,0 +1,9 @@
+{
+version 0.8
+filemode	[ 0	locks=0 ]	(	"none"	)
+file	[ 0	locks=0 ]	(	`chs(\"../geom_writer/sopoutput\")`	)
+reload	[ 0	locks=0 ]	(	[ reload	0 ] 	)
+objpattern	[ 0	locks=0 ]	(	[ objpattern	* ] 	)
+geodatapath	[ 0	locks=0 ]	(	[ geodatapath	"" ] 	)
+missingframe	[ 0	locks=0 ]	(	[ missingframe	0 ] 	)
+}

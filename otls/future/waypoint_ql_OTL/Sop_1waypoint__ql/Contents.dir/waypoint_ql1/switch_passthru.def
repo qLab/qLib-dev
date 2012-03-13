@@ -1,0 +1,21 @@
+sopflags sopflags = 
+comment ""
+position 3.53124 3.00634
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	geom_reader 0 1
+1 	input_select 0 1
+}
+stat
+{
+  create 1331504096
+  modify 1331510543
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

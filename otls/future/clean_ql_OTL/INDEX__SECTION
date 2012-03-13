@@ -1,0 +1,13 @@
+Operator:     clean_ql
+Label:        Clean qL
+Path:         oplib:/Sop/clean_ql?Sop/clean_ql
+Icon:         SOP_clean
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 03:17:05 2012
+
