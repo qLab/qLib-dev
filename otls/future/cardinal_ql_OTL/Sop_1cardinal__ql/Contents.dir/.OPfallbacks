@@ -1,0 +1,6 @@
+Vop/hvectofloat /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/hvectofloat otls/OPlibVop.otl
+Vop/floattohvec /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/floattohvec otls/OPlibVop.otl
+Vop/floor /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/floor otls/OPlibVop.otl
