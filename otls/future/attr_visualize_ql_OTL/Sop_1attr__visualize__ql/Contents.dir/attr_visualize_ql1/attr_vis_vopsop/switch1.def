@@ -1,17 +1,18 @@
 comment ""
-position -3.7174 0.0621276
+position -0.252095 -5.09096
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
 {
-0 	attr_name 0 1
-1 	"" 0 1
-2 	global1 8 1
+0 	attr_comp 0 1
+1 	vectofloat1 0 1
+2 	vectofloat1 1 1
+3 	vectofloat1 2 1
 }
 stat
 {
-  create 1312676208
-  modify 1331598865
+  create 1331598871
+  modify 1331599080
   author tusi@demeisen
   access 0777
 }

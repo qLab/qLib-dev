@@ -28,6 +28,33 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
+	name	"attr_type"
+	label	"Attribute Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_comp"
+	label	"Attribute Component"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"X"
+	    "1"	"Y"
+	    "2"	"Z"
+	}
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"srcmin"
 	label	"Minimum Input Value"
 	type	float

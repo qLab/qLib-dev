@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 09/17/11 22:32:06
+# Dialog script for attr_visualize_ql automatically generated 03/13/12 01:40:13
 
 {
     name	attr_visualize_ql
@@ -35,7 +35,40 @@
 	    label	"Attribute Name"
 	    type	string
 	    default	{ "pscale" }
+	    menureplace	{
+		[ "echo pscale pscale uv uv" ]
+	    }
 	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_type"
+	    label	"Attribute Type"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Float"
+		"1"	"Vector"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_comp"
+	    label	"Attribute Component"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ attr_type != 1 }"
+	    menu	{
+		"0"	"X"
+		"1"	"Y"
+		"2"	"Z"
+	    }
+	    range	{ 0 2 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
