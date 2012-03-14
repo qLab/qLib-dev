@@ -4,13 +4,22 @@
 
 = Point Mix qL =
 
-*Version 0.1.0*
+*Version 0.2.0*
 
-"""Blends point positions between two inputs by an attribute."""
+"""Blends point attributes between two inputs by an attribute."""
+
+@Usage
+    Connect the two geometries that you want to blend to the operator. Define a float attribute on one of the
+    input geometries that will controll the mix, and set the _Control Attribute_ parameter to this.
+
+@Limitations
+    Currently it's only tested with point attributes of vector or float types. Further testing needed.
 
 @Parameters
     Group:
         The group of points the operator affects.
+    Attributes:
+        List of attributes to mix.
     Envelope:
         A global multiplier of the effect.
     Control Attrib:
@@ -19,5 +28,7 @@
         Check this toggle if the control attribute is on the second input.
 
 @Release_Notes
+    Version 0.2.0:
+        Supports arbitrary numbers of attributes.
     Version 0.1.0:
         Initial release.

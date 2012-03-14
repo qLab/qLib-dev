@@ -1,4 +1,4 @@
-# Dialog script for point_mix_ql automatically generated 10/28/10 16:05:58
+# Dialog script for point_mix_ql automatically generated 03/14/12 18:00:55
 
 {
     name	point_mix_ql
@@ -27,6 +27,15 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
+	name	"attribs"
+	label	"Attributes"
+	type	string
+	default	{ "P" }
+	help	"Attributes to mix."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"envelope"
 	label	"Envelope"
 	type	float
@@ -46,7 +55,7 @@
     }
     parm {
 	name	"first"
-	label	"Attrib On Second Input"
+	label	"Control Attrib On Second Input"
 	type	toggle
 	default	{ "0" }
 	range	{ 0 1 }

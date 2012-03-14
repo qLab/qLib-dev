@@ -1,0 +1,56 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"Control Attrib"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"input_index"
+	label	"Control Attrib Input"
+	type	integer
+	default	{ "1" }
+	range	{ 0 3 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attrib1"
+	label	"Attribute Name"
+	type	string
+	default	{ "chs('../attrib1/stringdef')" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
