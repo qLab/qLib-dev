@@ -1,0 +1,10 @@
+Vop/pcopen C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/pcopen otls/OPlibVop.otl
+Vop/distance C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/distance otls/OPlibVop.otl
+Vop/pciterate C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/pciterate otls/OPlibVop.otl
+Vop/pcimport C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/pcimport otls/OPlibVop.otl
+Vop/pow C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl

@@ -1,0 +1,33 @@
+#icon: TOOLS/snap_point
+#context: sop
+#type: node
+
+= Snap qL =
+
+*Version 0.0.1*
+
+"""Snaps points to other points in a given radius."""
+
+@Usage
+    Set the _Point Group_ parameter to select points that you would like to move. Set _Target Points_
+    parameter to select the points that you would like to snap to. Use the second input to define target points
+    from another geometry.
+
+@Parameters
+    Point Group:
+        Group of points to snap.
+    Target Points:
+        Group of target points.
+        
+        NOTE:
+            Use the second input if you want to snap to points of another geometry.
+    Radius:
+        Points closer to target points than this value will be snapped. 
+    Falloff:
+        Soft snap toggle. Points will be pulled to target points proportionally to their distance.
+    Exponent:
+        Exponent of the falloff.
+
+@Release_Notes
+    Version 0.0.1
+        Initial Release

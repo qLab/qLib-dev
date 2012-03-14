@@ -1,9 +1,0 @@
-{
-version 0.8
-group	[ 8	locks=0 ]	(	[ group	"0 333" ] 	)
-grouptype	[ 0	locks=0 ]	(	"points"	)
-computenorms	[ 0	locks=0 ]	(	"off"	)
-negate	[ 0	locks=0 ]	(	"on"	)
-fillhole	[ 0	locks=0 ]	(	"off"	)
-removegrp	[ 0	locks=0 ]	(	"off"	)
-}
