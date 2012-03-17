@@ -1,0 +1,53 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"Attribute Name"
+	type	string
+	default	{ "Cd" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"value"
+	label	"value"
+	type	float
+	default	{ "1" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"operation"
+	label	"operation"
+	type	integer
+	default	{ "1" }
+	menu	{
+	    "0"	"Add"
+	    "1"	"Multiply"
+	    "2"	"Power (Gamma)"
+	    "3"	"Complement"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

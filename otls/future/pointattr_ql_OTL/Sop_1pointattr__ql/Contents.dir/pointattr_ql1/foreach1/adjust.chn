@@ -1,0 +1,16 @@
+{
+    channel value {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../adjust_value\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel operation {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../adjust_op\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+  }

@@ -1,0 +1,166 @@
+# Dialog script for pointattr_ql automatically generated 03/17/12 02:43:09
+
+{
+    name	pointattr_ql
+    script	pointattr_ql
+    label	"PointAttr qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    import {
+	label	Random
+	enable	0
+
+	parm {
+	    name	"name"
+	    label	"Attr Name"
+	    type	string
+	    default	{ "pscale" }
+	    menureplace	{
+		[ "echo Alpha Alpha pscale pscale width width" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"varname"
+	    label	"Local Variable"
+	    type	string
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0"
+	label	"Value"
+
+	multiparm {
+	    name	"oplist"
+	    label	"Operations"
+
+	    groupradio {
+		name	"op_#_"
+		label	"Off"
+
+	    }
+
+	    groupradio {
+		name	"op_#__1"
+		label	"Set"
+
+		parm {
+		    name	"init_type#"
+		    label	"Type"
+		    type	integer
+		    default	{ "0" }
+		    menu	{
+			"0"	"Constant Value"
+			"1"	"Random Range [0..1]"
+		    }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"init_const#"
+		    label	"Constant"
+		    type	float
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ init_type# != 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"seed#"
+		    label	"Seed"
+		    type	integer
+		    default	{ "0" }
+		    disablewhen	"{ init_type# != 1 }"
+		    range	{ 0 999 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__2"
+		label	"Fit Range"
+
+		parm {
+		    name	"srcmin#"
+		    label	"Src Min"
+		    type	float
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"srcmax#"
+		    label	"Max"
+		    type	float
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"destmin#"
+		    label	"Dest Min"
+		    type	float
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"destmax#"
+		    label	"Max"
+		    type	float
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__3"
+		label	"Adjust"
+
+		parm {
+		    name	"adjust_op#"
+		    label	"Operation"
+		    type	integer
+		    default	{ "1" }
+		    menu	{
+			"0"	"Add"
+			"1"	"Multiply"
+			"2"	"Power (Gamma)"
+			"3"	"Complement"
+		    }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"adjust_value#"
+		    label	"Value"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ adjust_op# == 3 }"
+		    range	{ -4 4 }
+		    export	none
+		}
+	    }
+
+	}
+
+    }
+
+}

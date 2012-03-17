@@ -1,0 +1,20 @@
+{
+    channel value_const {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../init_const\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel switcher {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../init_type\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel seed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../seed\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+  }
