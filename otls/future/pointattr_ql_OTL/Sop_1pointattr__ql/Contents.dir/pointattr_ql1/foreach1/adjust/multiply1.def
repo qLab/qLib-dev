@@ -10,11 +10,11 @@ inputs
 stat
 {
   create 1331946242
-  modify 1331947234
+  modify 1332010002
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 1 1 0.4 
 delscript ""
 exprlanguage hscript
 end

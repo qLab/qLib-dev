@@ -1,8 +1,9 @@
-7
+8
 each1
 switch1
-value
+set
 OUT
 fit_range
 nope
 adjust
+import_attr

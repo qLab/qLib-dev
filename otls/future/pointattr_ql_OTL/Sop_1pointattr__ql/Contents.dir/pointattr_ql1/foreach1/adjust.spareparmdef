@@ -45,7 +45,10 @@
 	    "0"	"Add"
 	    "1"	"Multiply"
 	    "2"	"Power (Gamma)"
-	    "3"	"Complement"
+	    "3"	"Complement ('Invert')"
+	    "4"	"Modulo"
+	    "5"	"Randomize"
+	    "6"	"Floor (+Value)"
 	}
 	range	{ 0 10 }
 	export	none

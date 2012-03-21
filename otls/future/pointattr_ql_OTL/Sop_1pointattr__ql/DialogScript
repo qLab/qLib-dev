@@ -1,4 +1,4 @@
-# Dialog script for pointattr_ql automatically generated 03/17/12 02:43:09
+# Dialog script for pointattr_ql automatically generated 03/18/12 02:16:03
 
 {
     name	pointattr_ql
@@ -9,8 +9,8 @@
 	""
     }
 
-    inputlabel	1	"Sub-Network Input #1"
-    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Second Geometry"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
@@ -20,7 +20,7 @@
 
 	parm {
 	    name	"name"
-	    label	"Attr Name"
+	    label	"Attribute"
 	    type	string
 	    default	{ "pscale" }
 	    menureplace	{
@@ -40,21 +40,111 @@
     }
 
     group {
-	name	"folder0"
-	label	"Value"
+	name	"folder2_1"
+	label	"Operations"
 
+	parm {
+	    name	"geom"
+	    label	"Geometry"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"No Change"
+		"1"	"Keep Points Only"
+		"2"	"Points Only (Particles)"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
 	multiparm {
 	    name	"oplist"
-	    label	"Operations"
+	    label	"no.# Operations"
 
 	    groupradio {
 		name	"op_#_"
-		label	"Off"
+		label	"---"
 
+		parm {
+		    name	"note#"
+		    label	"'Off' Meaning"
+		    type	string
+		    default	{ "" }
+		    menureplace	{
+			""	"(Clear Field)"
+			"not yet set up"	"not yet set up"
+			"work in progress"	"work in progress"
+			"temporary 'off'"	"temporary 'off'"
+			"OFF (do not enable)"	"permanent OFF"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
 	    }
 
 	    groupradio {
 		name	"op_#__1"
+		label	"Get"
+
+		parm {
+		    name	"import_attrib#"
+		    label	"Attribute Name"
+		    type	string
+		    default	{ "" }
+		    menureplace	{
+			[ "# TODO: get attr list from the appropriate input" ]
+			[ "" ]
+			[ "r = []" ]
+			[ "" ]
+			[ "try:" ]
+			[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+			[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+			[ "    " ]
+			[ "    for a in attrs:" ]
+			[ "        r.append(a)" ]
+			[ "        r.append(a)" ]
+			[ "except:" ]
+			[ "    pass" ]
+			[ "" ]
+			[ "return r" ]
+			language	python
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"import_attrib_type#"
+		    label	"Type / Input"
+		    type	integer
+		    joinnext
+		    default	{ "0" }
+		    menu	{
+			"0"	"Float"
+			"1"	"Integer"
+			"2"	"Vector: X"
+			"3"	"Vector: Y"
+			"4"	"Vector: Z"
+			"5"	"Vec.Length"
+		    }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"import_input_idx#"
+		    label	"Input Index"
+		    type	integer
+		    nolabel
+		    default	{ "0" }
+		    menu	{
+			"0"	"1st"
+			"1"	"2nd"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__2"
 		label	"Set"
 
 		parm {
@@ -65,6 +155,12 @@
 		    menu	{
 			"0"	"Constant Value"
 			"1"	"Random Range [0..1]"
+			"2"	"Point Index [0 .. #pts)"
+			"3"	"Point Index [0..1]"
+			"4"	"Point ID [0..max id]"
+			"5"	"Age (current age)"
+			"6"	"Life (full lifespan)"
+			"7"	"Relative Lifespan [0..1)"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -91,8 +187,8 @@
 	    }
 
 	    groupradio {
-		name	"op_#__2"
-		label	"Fit Range"
+		name	"op_#__3"
+		label	"Fit"
 
 		parm {
 		    name	"srcmin#"
@@ -131,8 +227,8 @@
 	    }
 
 	    groupradio {
-		name	"op_#__3"
-		label	"Adjust"
+		name	"op_#__4"
+		label	"Tune"
 
 		parm {
 		    name	"adjust_op#"
@@ -143,7 +239,10 @@
 			"0"	"Add"
 			"1"	"Multiply"
 			"2"	"Power (Gamma)"
-			"3"	"Complement"
+			"3"	"Complement (Invert)"
+			"4"	"Modulo"
+			"5"	"Randomize ('Value' Seed)"
+			"6"	"Add, then Floor"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -154,7 +253,22 @@
 		    type	float
 		    default	{ "1" }
 		    disablewhen	"{ adjust_op# == 3 }"
-		    range	{ -4 4 }
+		    range	{ -1 4 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__5"
+		label	"Map"
+
+		parm {
+		    name	"lookup_todo#"
+		    label	"todo"
+		    type	label
+		    nolabel
+		    default	{ "TODO: remap by curve" }
+		    range	{ 0 1 }
 		    export	none
 		}
 	    }

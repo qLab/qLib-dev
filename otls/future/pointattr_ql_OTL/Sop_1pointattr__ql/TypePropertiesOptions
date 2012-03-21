@@ -8,5 +8,5 @@ CheckExternal := 1;
 GzipContents := 1;
 MakeDefault := 1;
 SaveCachedCode := 0;
-PrefixDroppedParmLabel := 1;
+PrefixDroppedParmLabel := 0;
 UnlockOnCreate := 0;

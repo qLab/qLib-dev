@@ -1,4 +1,8 @@
-3
+7
 foreach1
 OUT
 attr_create
+keep_points_only
+add_particles
+geom
+switch_geom
