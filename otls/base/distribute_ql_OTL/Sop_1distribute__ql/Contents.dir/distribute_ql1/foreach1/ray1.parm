@@ -1,12 +1,12 @@
 {
 version 0.8
-group	[ 0	locks=0 ]	(	""	)
+group	[ 0	locks=0 ]	(	[ group	"" ] 	)
 entity	[ 0	locks=0 ]	(	"primitive"	)
 collision	[ 0	locks=0 ]	(	""	)
 method	[ 0	locks=0 ]	(	"minimum"	)
 dotrans	[ 0	locks=0 ]	(	"on"	)
 lookfar	[ 0	locks=0 ]	(	"off"	)
-putnml	[ 0	locks=0 ]	(	"off"	)
+putnml	[ 8	locks=0 ]	(	[ putnml	1 ] 	)
 putdist	[ 0	locks=0 ]	(	"off"	)
 reverserays	[ 0	locks=0 ]	(	"off"	)
 rtolerance	[ 0	locks=0 ]	(	0.00999999978	)

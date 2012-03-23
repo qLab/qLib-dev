@@ -4,7 +4,7 @@
 
 = Distribute qL =
 
-*Version 0.1.1*
+*Version 0.1.2*
 
 """Tries to distributes points in space so, that a pscale radius sphere around them doesn't intersect."""
 
@@ -25,6 +25,8 @@
         Project points back to the geometry connected to the second input.
     Ray Intersection Normal:
         When both Ray and this flag is active, points inherit the geometry normals of the underlying surface.
+    Ray Group:
+        Group of points to project.
 
 @Limitations
     Grouping doesn't work.
@@ -32,6 +34,8 @@
     Ray frequency not implemented.
 
 @Release_Notes
+    Version 0.1.2:
+        Ray Goup parameter added. Linked back Ray Intersection Normal.
     Version 0.1.1:
         Exposed the Point Intersection Normal parameter of the Ray SOP. It's label is Ray Intersection Normal for
         clarity.

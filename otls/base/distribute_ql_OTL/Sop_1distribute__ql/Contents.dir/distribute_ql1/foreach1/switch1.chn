@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "if( ch(\"../../ray\") && (opninputs(\"../..\") == 2), 1, 0)" }
+      segment { length = 0 expr = "if( ch(\"../../ray\") && strcmp(opinput(\"../..\",1), \"\"), 1, 0)" }
     }
   }

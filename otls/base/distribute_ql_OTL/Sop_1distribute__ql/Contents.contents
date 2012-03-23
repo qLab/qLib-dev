@@ -28,12 +28,8 @@ distribute_ql1/foreach1/switch1.chn
 distribute_ql1/foreach1/switch1.parm
 distribute_ql1/foreach1/ray1.init
 distribute_ql1/foreach1/ray1.def
+distribute_ql1/foreach1/ray1.chn
 distribute_ql1/foreach1/ray1.parm
-distribute_ql1/foreach1/null1.init
-distribute_ql1/foreach1/null1.def
-distribute_ql1/foreach1/null1.spareparmdef
-distribute_ql1/foreach1/null1.chn
-distribute_ql1/foreach1/null1.parm
 distribute_ql1/foreach1.order
 distribute_ql1/foreach1.net
 distribute_ql1/null1.init

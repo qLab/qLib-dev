@@ -1,6 +1,0 @@
-{
-version 0.8
-cacheinput	[ 0	locks=0 ]	(	"off"	)
-parm	[ 0	locks=0 ]	(	""	)
-parm2	[ 8	locks=0 ]	(	[ parm2	2 ] 	)
-}
