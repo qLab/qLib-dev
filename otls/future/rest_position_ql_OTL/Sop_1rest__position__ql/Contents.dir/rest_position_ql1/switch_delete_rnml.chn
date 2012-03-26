@@ -3,7 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      start = 52.083332061767578
-      segment { length = 0 expr = ch(\"../select_mode_1\") }
+      segment { length = 0 expr = ch(\"../del_rnml\") }
     }
   }
