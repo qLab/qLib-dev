@@ -34,7 +34,8 @@
 	default	{ "0" }
 	menu	{
 	    "0"	"Float"
-	    "1"	"Vector"
+	    "1"	"Integer"
+	    "2"	"Vector"
 	}
 	range	{ 0 1 }
 	export	none

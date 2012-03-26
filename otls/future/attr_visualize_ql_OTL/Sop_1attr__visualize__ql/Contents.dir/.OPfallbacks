@@ -1,0 +1,6 @@
+Vop/importattrib /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/fit /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
