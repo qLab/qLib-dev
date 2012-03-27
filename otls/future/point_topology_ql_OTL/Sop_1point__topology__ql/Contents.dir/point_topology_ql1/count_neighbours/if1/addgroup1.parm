@@ -1,0 +1,5 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	chs('../group/stringdef')	)
+ptnum	[ 0	locks=0 ]	(	0	)
+}
