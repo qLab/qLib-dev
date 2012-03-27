@@ -1,0 +1,18 @@
+{
+    channel name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"vtindex\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../vtxi_name\") }
+    }
+    channel varname {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../vtxi_varname\") }
+    }
+  }

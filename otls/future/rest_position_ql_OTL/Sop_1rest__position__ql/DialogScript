@@ -1,4 +1,4 @@
-# Dialog script for rest_position_ql automatically generated 01/29/12 04:37:07
+# Dialog script for rest_position_ql automatically generated 03/27/12 00:01:35
 
 {
     name	rest_position_ql
@@ -14,30 +14,15 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
-    parm {
-	name	"select_mode"
-	label	"Mode"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"Save Rest Position"
-	    "1"	"Restore Rest Position"
-	}
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    group {
-	name	"folder0"
+    groupradio {
+	name	"select_mode_"
 	label	"Save Rest Position"
-	tabbreak
 
 	parm {
 	    name	"file"
 	    label	"Assign from File"
 	    type	geometry
 	    default	{ "" }
-	    disablewhen	"{ select_mode != 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "filechooser_mode" "read" }
@@ -48,7 +33,6 @@
 	    label	"Rest Normals"
 	    type	ordinal
 	    default	{ "off" }
-	    disablewhen	"{ select_mode != 0 }"
 	    menu	{
 		"off"	"No  Normals"
 		"poly"	"Add If Polygon/Mesh Exist"
@@ -63,7 +47,6 @@
 	    label	"Quadric Transforms"
 	    type	ordinal
 	    default	{ "off" }
-	    disablewhen	"{ select_mode != 0 }"
 	    menu	{
 		"off"	"No  Quadric Matrices"
 		"poly"	"Add If Quadrics/Metaballs Exist"
@@ -75,8 +58,8 @@
 	}
     }
 
-    group {
-	name	"folder0_1"
+    groupradio {
+	name	"select_mode__1"
 	label	"Restore Rest Position"
 
 	parm {
@@ -96,7 +79,6 @@
 	    label	"Blend"
 	    type	float
 	    default	{ "1" }
-	    disablewhen	"{ select_mode != 1 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -107,7 +89,6 @@
 	    label	"Restore Mode"
 	    type	integer
 	    default	{ "0" }
-	    disablewhen	"{ select_mode != 1 }"
 	    menu	{
 		"0"	"Position (rest)"
 		"1"	"Normal (nrml)"
@@ -117,6 +98,34 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+	parm {
+	    name	"del_rest"
+	    label	"Delete Rest Position Attribute"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"del_rnml"
+	    label	"Delete Rest Normal Attribute"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
     }
 
+    parm {
+	name	"select_mode"
+	label	"select_mode"
+	type	integer
+	invisible
+	default	{ "ch(\"select_mode_1\")" }
+	help	"backward compatibility"
+	range	{ 0 10 }
+	export	none
+    }
 }

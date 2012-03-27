@@ -1,0 +1,9 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = ch(\"../do_primi\") }
+    }
+  }

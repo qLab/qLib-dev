@@ -1,0 +1,25 @@
+{
+    channel mode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = ch(\"../ptindex_mode\") }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"ptindex\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../ptindex_attrib\") }
+    }
+    channel localvar {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../ptindex_localvar\") }
+    }
+  }
