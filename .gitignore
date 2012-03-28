@@ -11,3 +11,6 @@ presets/*
 
 # vim swap files
 *.swp
+
+# backup dirs
+examples/backup
