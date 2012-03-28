@@ -1,0 +1,9 @@
+{
+    channel ltz {
+      lefttype = extend
+      righttype = extend
+      default = 0.165209
+      flags = 0
+      segment { length = 0 value = 0.16520905494689941 0.16520905494689941 expr = ch(\"../../stick\") }
+    }
+  }

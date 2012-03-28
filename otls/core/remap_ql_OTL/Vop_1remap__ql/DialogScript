@@ -1,0 +1,71 @@
+# Dialog script for remap_ql automatically generated 10/01/11 23:10:10
+
+{
+    name	remap_ql
+    script	remap_ql
+    label	"Remap qL"
+
+    input	float	val	"Input Value"
+    input	float	srcmin	"Input Min"
+    input	float	srcmax	"Input Max"
+    input	float	destmin	"Output Min"
+    input	float	destmax	"Output Max"
+    output	float	sum	"Shifted Value"
+    inputflags	val	0
+    inputflags	srcmin	0
+    inputflags	srcmax	0
+    inputflags	destmin	0
+    inputflags	destmax	0
+    signature	"Default Inputs"	default	{ float float float float float float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"val"
+	label	"Input Value"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"srcmin"
+	label	"Input Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"srcmax"
+	label	"Input Max"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"destmin"
+	label	"Output Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"destmax"
+	label	"Output Max"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+}

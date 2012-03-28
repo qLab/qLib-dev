@@ -1,0 +1,9 @@
+{
+    channel input2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = ch('../num_or_more/floatdef') }
+    }
+  }

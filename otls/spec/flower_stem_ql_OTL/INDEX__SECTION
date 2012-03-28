@@ -1,0 +1,13 @@
+Operator:     flower_stem_ql
+Label:        Flower Stem qL
+Path:         oplib:/Sop/flower_stem_ql?Sop/flower_stem_ql
+Icon:         SOP_curve
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jun 22 02:36:05 2011
+

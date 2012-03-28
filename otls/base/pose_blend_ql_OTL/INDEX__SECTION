@@ -1,0 +1,26 @@
+Operator:     prepare_pose_blend_ql
+Label:        Prepare Pose Blend ql
+Path:         oplib:/Sop/prepare_pose_blend_ql?Sop/prepare_pose_blend_ql
+Icon:         OBJ_extractgeo
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Mar 17 17:02:40 2011
+
+Operator:     pose_blend_ql
+Label:        Pose Blend qL
+Path:         oplib:/Sop/pose_blend_ql?Sop/pose_blend_ql
+Icon:         OBJ_blend
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Feb 22 17:37:57 2011
+

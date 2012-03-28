@@ -1,0 +1,27 @@
+{
+    channel vx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $ORIGIN, chs(\"attr\"), 0)" }
+    }
+    channel vy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $ORIGIN, chs(\"attr\"), 1)" }
+    }
+    channel vz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(chs(\"../source_geom_pts/soppath\"), $ORIGIN, chs(\"attr\"), 2)" }
+    }
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../v_activate\") }
+    }
+  }

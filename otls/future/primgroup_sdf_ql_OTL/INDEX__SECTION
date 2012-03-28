@@ -1,0 +1,13 @@
+Operator:     primgroup_sdf_ql
+Label:        PrimGroup SDF qL
+Path:         oplib:/Sop/primgroup_sdf_ql?Sop/primgroup_sdf_ql
+Icon:         VOP_texture3dbox
+Table:        Sop
+License:      
+Extra:        guide=./IN 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jan 29 04:29:42 2012
+

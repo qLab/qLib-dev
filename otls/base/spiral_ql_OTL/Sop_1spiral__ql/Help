@@ -1,0 +1,43 @@
+#icon: SOP/Spring
+#context: sop
+#type: node
+
+= Spiral qL =
+
+*Version 0.1.0*
+
+"""Generates a simple spiral or a spiral around curve"""
+
+@Parameters
+    Spiral Type:
+        simple/around curve
+
+    Simple spiral:
+        Primitive Type:
+            Geometry type of the curve that gets created
+        Height:
+            Height of the spiral
+        Number of Turns:
+            Number of spiral turns
+        Points:
+            Number of points in spiral curve
+        Width:
+            Base width
+        Width Mod:
+            Width modulation ramp, default is 1
+
+    Spiral around curve:
+        Number of points:
+            Number of points in spiral curve
+        Base radius:
+            Radius of the spiral flow
+        Offset:
+            Offsets the whole spiral along the curve
+        Turns:
+            Number of turns
+        Spiral on curve shape mod:
+            Modulates the shape of the whole spiral along the curve with a ramp, default is 1
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

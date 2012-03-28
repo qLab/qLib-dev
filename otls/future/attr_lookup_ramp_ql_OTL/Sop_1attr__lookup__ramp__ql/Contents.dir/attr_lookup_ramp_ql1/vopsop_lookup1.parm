@@ -1,0 +1,20 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+attrib_in	[ 0	locks=0 ]	(	[ attrib_in	weight ] 	)
+srcmin	[ 0	locks=0 ]	(	[ srcmin	0 ] 	)
+srcmax	[ 0	locks=0 ]	(	[ srcmax	1 ] 	)
+size	[ 0	locks=0 ]	(	0	)
+lookup_ramp	[ 0	locks=0 ]	(	[ lookup_ramp	2 ] 	)
+lookup_ramp1pos	[ 0	locks=0 ]	(	[ lookup_ramp1pos	0 ] 	)
+lookup_ramp1c	[ 0	locks=0 ]	(	[ lookup_ramp1cr	1 ] 	[ lookup_ramp1cg	0 ] 	[ lookup_ramp1cb	0 ] 	)
+lookup_ramp1interp	[ 0	locks=0 ]	(	[ lookup_ramp1interp	1 ] 	)
+attrib_out	[ 0	locks=0 ]	(	[ attrib_out	Cd ] 	)
+exp	[ 0	locks=0 ]	(	[ exp	1 ] 	)
+lookup_ramp2pos	[ 0	locks=0 ]	(	[ lookup_ramp2pos	1 ] 	)
+lookup_ramp2c	[ 0	locks=0 ]	(	[ lookup_ramp2cr	0.116666675 ] 	[ lookup_ramp2cg	1 ] 	[ lookup_ramp2cb	0 ] 	)
+lookup_ramp2interp	[ 0	locks=0 ]	(	[ lookup_ramp2interp	1 ] 	)
+}

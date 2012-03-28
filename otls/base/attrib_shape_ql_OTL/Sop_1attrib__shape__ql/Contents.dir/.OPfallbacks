@@ -1,0 +1,24 @@
+Vop/importattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/volumesample C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/volumesample otls/OPlibVop.otl
+Vop/floattohvec C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/floattohvec otls/OPlibVop.otl
+Vop/mix C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/inttofloat C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/inttofloat otls/OPlibVop.otl
+Vop/pow C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl
+Vop/fit C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
+Vop/vectohvec C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/vectohvec otls/OPlibVop.otl
+Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/hvectofloat C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/hvectofloat otls/OPlibVop.otl
+Vop/negate C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/negate otls/OPlibVop.otl
+Vop/hvectovec C:/PROGRA~1/Side Effects Software/Houdini 11.0.562/houdini/otls/OPlibVop.otl
+Vop/hvectovec otls/OPlibVop.otl

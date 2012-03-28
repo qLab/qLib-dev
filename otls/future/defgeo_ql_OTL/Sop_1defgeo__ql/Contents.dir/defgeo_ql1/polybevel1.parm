@@ -1,0 +1,11 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	"p3-0-1-2-3 p1-4-7-2 p4-5-6-7 p5-0 p3-6"	)
+beveltype	[ 0	locks=0 ]	(	"flat"	)
+entitytype	[ 0	locks=0 ]	(	"points"	)
+setinset	[ 0	locks=0 ]	(	0	0	)
+relinset	[ 0	locks=0 ]	(	[ relinset	0.0500000007 ] 	)
+absinset	[ 0	locks=0 ]	(	0.100000001	)
+repetitions	[ 0	locks=0 ]	(	0	)
+updatenmls	[ 0	locks=0 ]	(	"off"	)
+}

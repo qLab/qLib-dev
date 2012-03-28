@@ -1,0 +1,64 @@
+# Dialog script for point_mix_ql automatically generated 03/14/12 18:00:55
+
+{
+    name	point_mix_ql
+    script	point_mix_ql
+    label	"Point Mix qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_POINT_MIX vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attribs"
+	label	"Attributes"
+	type	string
+	default	{ "P" }
+	help	"Attributes to mix."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"Control Attrib"
+	type	string
+	default	{ "amount" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"first"
+	label	"Control Attrib On Second Input"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+}

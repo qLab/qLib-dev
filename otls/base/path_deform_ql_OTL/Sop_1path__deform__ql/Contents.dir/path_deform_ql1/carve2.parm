@@ -1,0 +1,22 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+firstu	[ 0	locks=0 ]	(	"on"	)
+domainu1	[ 0	locks=0 ]	(	[ domainu1	0 ] 	)
+secondu	[ 0	locks=0 ]	(	"on"	)
+domainu2	[ 0	locks=0 ]	(	[ domainu2	0.204999998 ] 	)
+firstv	[ 0	locks=0 ]	(	"off"	)
+domainv1	[ 0	locks=0 ]	(	0.25	)
+secondv	[ 0	locks=0 ]	(	"off"	)
+domainv2	[ 0	locks=0 ]	(	0.75	)
+onlybreakpoints	[ 0	locks=0 ]	(	"off"	"off"	)
+divsu	[ 0	locks=0 ]	(	2	)
+divsv	[ 0	locks=0 ]	(	2	)
+allubreakpoints	[ 0	locks=0 ]	(	"off"	)
+allvbreakpoints	[ 0	locks=0 ]	(	"off"	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+keepin	[ 0	locks=0 ]	(	"on"	)
+keepout	[ 0	locks=0 ]	(	"off"	)
+extractop	[ 0	locks=0 ]	(	"xisoparm"	)
+keepOriginal	[ 0	locks=0 ]	(	"off"	)
+}

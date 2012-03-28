@@ -1,0 +1,290 @@
+    parm {
+	name	"position_based"
+	label	"Position Based"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"freq_r"
+	label	"Rotation Frequency"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"offset_r"
+	label	"Rotation Offset"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rough_r"
+	label	"Rotation Roughness"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turb_r"
+	label	"Rotation Turbulence"
+	type	integer
+	default	{ "5" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"type_r"
+	label	"Rotation Noise Type"
+	type	string
+	default	{ "anoise" }
+	menu	{
+	    "pnoise"	"Perlin Noise"
+	    "onoise"	"Original Perlin Noise"
+	    "snoise"	"Sparse Convolution Noise"
+	    "anoise"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turbulate_r"
+	label	"Turbulate Rotate"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amp_r"
+	label	"Rotate Amplitude"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"axis_amp_r"
+	label	"Rotate Axis Amplitude"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"freq_t"
+	label	"Translate Frequency"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"offset_t"
+	label	"Translate Offset"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rough_t"
+	label	"Translate Roughness"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turb_t"
+	label	"Translate Turbulence"
+	type	integer
+	default	{ "5" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"type_t"
+	label	"Translate Noise Type"
+	type	string
+	default	{ "anoise" }
+	menu	{
+	    "pnoise"	"Perlin Noise"
+	    "onoise"	"Original Perlin Noise"
+	    "snoise"	"Sparse Convolution Noise"
+	    "anoise"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amp_t"
+	label	"Translate Amplitude"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"axis_amp_t"
+	label	"Translate Axis Amplitude"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turbulate_t"
+	label	"Turbulate Translate"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turbulate"
+	label	"Turbulate"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"freq_s"
+	label	"Scale Frequency"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"offset_s"
+	label	"Scale Offset"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rough_s"
+	label	"Scale Roughness"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turb_s"
+	label	"Scale Turbulence"
+	type	integer
+	default	{ "5" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"type_s"
+	label	"Scale Noise Type"
+	type	string
+	default	{ "anoise" }
+	menu	{
+	    "pnoise"	"Perlin Noise"
+	    "onoise"	"Original Perlin Noise"
+	    "snoise"	"Sparse Convolution Noise"
+	    "anoise"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amp_s"
+	label	"Scale Amplitude"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"axis_amp_s"
+	label	"Scale Amplitude"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turbulate_s"
+	label	"Turbulate Scale"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"uniform"
+	label	"Uniform Scale"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }

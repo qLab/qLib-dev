@@ -1,0 +1,31 @@
+#type: node
+#context: sop
+#icon: SOP/rest
+
+= Rest Position qL =
+
+*Version 0.0.1*
+
+"""Convenience SOP node for saving and restoring rest position attributes."""
+
+@related
+    - [Node:sop/rest]
+
+
+This node has the same function as the original [Node:sop/rest] SOP, as well as
+restoring rest positions and normals (`rest`, `nrml`).
+
+
+@parameters
+    Mode:
+        Save Rest Position
+
+        Restore Rest Position
+
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
+

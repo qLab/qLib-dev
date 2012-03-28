@@ -1,0 +1,69 @@
+#type: node
+#context: sop
+#icon: DOP/rbdfracturedobject
+
+= Proxy PrimGroups qL =
+
+"""Creates a proxy version of each primitive group by wrapping a low resolution proxy around them (PrimGroup family SOP)."""
+
+@related
+    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
+    - [Xform by Points qL|Node:sop/xform_by_points_ql]
+    - [PrimGroup SDF qL|Node:sop/primgroup_sdf_ql]
+
+Useful for (and designed to) replace higher-resolution geometry fractures in RBD simulations,
+if the results doesn't have to be too accurate (e.g. lots of fast-moving debris).
+
+By default all per-primitive and per-point attributes are transferred to the proxies and
+the appropriate geometry groups are recreated.
+
+The resulting groups can be used in DOP networks and their results can be imported back with
+the usual DOP Import SOP node.
+
+(TODO: create an example scene and make sure prim groups are in proper order, etc. --
+in other words, do a test round.)
+
+@parameters
+    Proxy Geometry:
+        Settings for generation of an initial proxy shape.
+
+        Group Mask:
+            Geometry groups matching this mask will be replaced with proxies.
+
+        Proxy Type:
+            Base geometry type for the low-res proxy.
+
+            Sphere:
+                Sphere-based (use the `frequency` parameter to set resolution).
+            Box:
+                Box-based (use the `divisions` parameters to set resolution).
+            Custom:
+                Custom geometry (2nd input)
+    
+        Post-Fit Scale:
+            The proxy geometry is first fitted around the bounding box of the
+            current primitive group. Then an uniform scale is performed, using
+            this value.
+
+    Wrapping:
+        Wrapping the initial shape around the original geometry.
+
+        Do Wrapping:
+            Wrap the proxy around the original shape.
+        Scale:
+            Blend between plain bounding box (`0.0`) and full wrapping (`1.0`).
+        Lift:
+            Additional offset in surface normal direction.
+
+    Attribute Transfer:
+        Transfering of geometry attributes to the proxy geometry (enabled by default).
+        See [Node:sop/attribtransfer] for the parameter details.
+
+    Postprocessing:
+        An optional smoothing of the proxy results.
+        See [Node:sop/smooth] for the parameter details.
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

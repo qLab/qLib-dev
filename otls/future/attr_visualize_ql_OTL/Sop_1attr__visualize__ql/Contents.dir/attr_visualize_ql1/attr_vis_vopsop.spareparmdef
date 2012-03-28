@@ -1,0 +1,90 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attr_name"
+	label	"Attribute Name"
+	type	string
+	default	{ "pscale" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_type"
+	label	"Attribute Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Integer"
+	    "2"	"Vector"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_comp"
+	label	"Attribute Component"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"X"
+	    "1"	"Y"
+	    "2"	"Z"
+	}
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"srcmin"
+	label	"Minimum Input Value"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Maximum Input Value"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_ramp"
+	label	"Attribute Ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "attr_ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "attr_ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "attr_ramp_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "hsv" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }

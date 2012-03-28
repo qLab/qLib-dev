@@ -1,0 +1,9 @@
+{
+    channel segs {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = ch(\"../segs\") }
+    }
+  }

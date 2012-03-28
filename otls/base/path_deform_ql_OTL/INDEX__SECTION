@@ -1,0 +1,13 @@
+Operator:     path_deform_ql
+Label:        Path Deform qL
+Path:         oplib:/Sop/path_deform_ql?Sop/path_deform_ql
+Icon:         SOP_each
+Table:        Sop
+License:      
+Extra:        guide=./sweep1 
+Inputs:       2 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Sep 23 13:21:54 2011
+

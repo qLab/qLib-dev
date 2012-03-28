@@ -1,0 +1,9 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	`chs(\"../group\")`	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+scale	[ 0	locks=0 ]	(	[ scale	1 ] 	)
+switcher	[ 0	locks=0 ]	(	[ switcher	0 ] 	)
+}

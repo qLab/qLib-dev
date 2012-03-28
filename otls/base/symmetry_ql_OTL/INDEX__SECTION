@@ -1,0 +1,13 @@
+Operator:     symmetry_ql
+Label:        Symmetry qL
+Path:         oplib:/Sop/symmetry_ql?Sop/symmetry_ql
+Icon:         COP2_flip
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Dec  4 17:21:34 2010
+

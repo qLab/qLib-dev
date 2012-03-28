@@ -1,0 +1,14 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	"poly"	)
+surftype	[ 0	locks=0 ]	(	"alttriangles"	)
+orient	[ 0	locks=0 ]	(	"xy"	)
+size	[ 8	locks=0 ]	(	[ sizex	0.666666687 ] 	[ sizey	10 ] 	)
+t	[ 8	locks=0 ]	(	[ tx	-4.66666651 ] 	0	0	)
+rows	[ 8	locks=0 ]	(	[ rows	20 ] 	)
+cols	[ 8	locks=0 ]	(	2	)
+orderu	[ 0	locks=0 ]	(	4	)
+orderv	[ 0	locks=0 ]	(	4	)
+interpu	[ 0	locks=0 ]	(	"on"	)
+interpv	[ 0	locks=0 ]	(	"on"	)
+}

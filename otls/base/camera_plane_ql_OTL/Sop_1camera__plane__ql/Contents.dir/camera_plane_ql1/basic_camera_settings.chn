@@ -1,0 +1,35 @@
+{
+    channel winsizex {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/winsizex\") }
+    }
+    channel winsizey {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/winsizey\") }
+    }
+    channel focal {
+      lefttype = extend
+      righttype = extend
+      default = 40
+      flags = 0
+      segment { length = 0 value = 40 40 expr = ch(chs(\"../camera_plane_grid/camera\")+\"/focal\") }
+    }
+    channel winoffsx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../overscanx\") }
+    }
+    channel winoffsy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../overscany\") }
+    }
+  }

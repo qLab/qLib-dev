@@ -1,0 +1,45 @@
+#type: node
+#context: sop
+#icon: SOP/wire
+
+= PolyWireCurves qL =
+
+*Version 0.0.1*
+
+"""Turns all edges of a polymesh to linear curves."""
+
+This SOP is a convenient addition to the Wire (Wireframe) and PolyWire types of nodes.
+It converts all polymesh edges to degree-1 (linear) curves.
+
+
+@related
+    - [Wire (Wireframe)|Node:sop/wire]
+    - [PolyWire|Node:sop/polywire]
+
+@Parameters
+
+    Fuse Results:
+        Enable this to have shared points for all the resulting curves.
+        (By default, all resulting curves have unique points.)
+
+    Distance:
+        Tolerance for the fuse operation.
+
+    Maintain Point Order:
+        _Try_ to maintain the same point order as the input polymesh. Can be useful
+        for copying point positions from the original mesh (for animation purposes, etc.)
+
+        It's a good idea to enable Fuse Results (see above).
+
+        NOTE:
+            It's not always possible to maintain the exact same point order (especially
+            if the original mesh had un-fused but coincident points).
+            
+            In case point orders don't match up, try applying a Fuse SOP to the original polymesh.
+
+            
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

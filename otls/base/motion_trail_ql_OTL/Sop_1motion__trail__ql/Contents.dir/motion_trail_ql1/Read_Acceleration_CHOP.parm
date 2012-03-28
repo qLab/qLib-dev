@@ -1,0 +1,9 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+choppath	[ 0	locks=0 ]	(	../CHOP/Calculate_Acceleration	)
+method	[ 0	locks=0 ]	(	"static"	)
+chanscope	[ 0	locks=0 ]	(	t[xyz]	)
+attscope	[ 0	locks=0 ]	(	`chs(\"../accel_attr\")`	)
+organize	[ 0	locks=0 ]	(	""	)
+}

@@ -1,0 +1,27 @@
+#icon: SOP/circle
+#context: sop
+#type: node
+
+= Superellipse qL =
+
+*Version 0.0.1*
+
+"""Generates a superellipse."""
+
+@Parameters
+    Orientation:
+        Plane of creation.
+    Primirive Type:
+        Type of the generated curve.
+    Radius:
+        X and Y radii of the superellipse.
+    Center:
+        Location of the center of the superellipse.
+    Order:
+        Spline order of the bezier or NURBS curves.
+    Divisions:
+        Number of points +1 to describe the superellipse.
+    Arc Type:
+        Type of the arc. See the documentation of the [Node:sop/circle] for details.
+    Exponent:
+        Exponent of the curve.

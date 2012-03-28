@@ -1,0 +1,15 @@
+# Automatically generated script: Thursday September 22, 23:58 2011
+\set noalias = 1
+#
+#  Creation script for vector_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/vector_ql)
+opexprlanguage -s hscript $arg1
+opuserdata -n '___toolcount___' -v '6' $arg1
+opuserdata -n '___toolid___' -v 'sop_vector_ql' $arg1

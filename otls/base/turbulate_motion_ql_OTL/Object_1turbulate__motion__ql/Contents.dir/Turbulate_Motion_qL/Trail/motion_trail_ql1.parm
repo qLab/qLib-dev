@@ -1,0 +1,11 @@
+{
+version 0.8
+target	[ 0	locks=0 ]	(	../../OUT	)
+range	[ 8	locks=0 ]	(	[ rangex	1 ] 	[ rangey	97 ] 	1	)
+type	[ 0	locks=0 ]	(	"poly"	)
+order	[ 0	locks=0 ]	(	4	)
+calculate_velocity	[ 0	locks=0 ]	(	"off"	)
+velocity_attr	[ 0	locks=0 ]	(	v	)
+calc_accel	[ 0	locks=0 ]	(	"off"	)
+accel_attr	[ 0	locks=0 ]	(	accel	)
+}

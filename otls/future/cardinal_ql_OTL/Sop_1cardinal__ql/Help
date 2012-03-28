@@ -1,0 +1,44 @@
+#type: node
+#context: sop
+#icon: SOP/fit
+
+= Cardinal qL =
+
+*Version 0.0.1*
+
+"""Builds cardinal curve(s) from polyline(s)."""
+
+@related
+    - [Fit|Node:sop/fit]
+    - [Resample|Node:sop/resample]
+
+Given a bunch of linear curves (or polylines), this SOP fits a cardinal-interpolated
+version on each curve. The result type can be polylines or NURBS.
+
+The distinguishing property of cardinal curves is that the resulting curve is drawn so
+it touches all the control points (all control points lie on the curve -- in contrast
+to NURBS, where CVs never touch the curve itself).
+
+This makes cardinal curves less attractive for precision modeling than NURBS,
+but they are very useful for more irregular but still curved shapes
+(such as loose cables, strands of spiderwebs, etc).
+
+
+NOTE:
+    This is an alternative to the [Fit SOP|Node:sop/fit] -- although it gives somewhat different results,
+    this SOP is many orders of magnitudes faster, especially on a large number of curves.
+
+    The resulting curve(s) might have a completely different (ie. sorted) point topology
+    than the source geometry.
+
+
+@Parameters
+    ...
+
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
+

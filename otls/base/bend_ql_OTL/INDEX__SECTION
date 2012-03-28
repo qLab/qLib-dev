@@ -1,0 +1,13 @@
+Operator:     bend_ql
+Label:        Bend qL
+Path:         oplib:/Sop/bend_ql?Sop/bend_ql
+Icon:         SOP_deform
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE_OUT 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Mar 10 21:35:50 2012
+

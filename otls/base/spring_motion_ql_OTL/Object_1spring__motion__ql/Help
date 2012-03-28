@@ -1,0 +1,27 @@
+#icon: CHOP/spring
+#context: obj
+#type: node
+
+= Spring Motion qL =
+
+*Version 0.1.0*
+
+"""Applies spring like lag and overshoot to the position of a transform."""
+
+@Parameters
+    Blend:
+        Contribution of the spring motion to the original.
+    Spring Constant:
+        Spring constant of the spring.
+    Mass:
+        Mass of the imaginary object attached to the spring.
+    Damping Constant:
+        Damping of the spring.
+
+@Limitations
+    Animating the "Spring Constant", "Mass" and "Damping Constant" parameters slows the node considerably. Animating
+    the blend parameter doesn't causes such a slowdown.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

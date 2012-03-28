@@ -1,0 +1,13 @@
+# Automatically generated script: Sunday December 25, 23:51 2011
+\set noalias = 1
+#
+#  Creation script for attr_gamma_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/attr_gamma_ql)
+opexprlanguage -s hscript $arg1

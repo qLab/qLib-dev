@@ -1,0 +1,13 @@
+Operator:     space_partition_ql
+Label:        Space Partition qL
+Path:         oplib:/Sop/space_partition_ql?Sop/space_partition_ql
+Icon:         VOP_relbbox
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Oct 10 01:39:31 2011
+

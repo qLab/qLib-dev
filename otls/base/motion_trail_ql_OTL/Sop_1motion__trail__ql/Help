@@ -1,0 +1,41 @@
+#icon: OBJ/path
+#context: sop
+#type: node
+
+= Motion Trail qL =
+
+*Version 0.1.0*
+
+"""Generates a curve along the motion path of an object."""
+
+NOTE:
+    This operator is inspired by the Motion Trail OBJ node created by Edward Lam, Jason Iversen and
+    Graham Thompson. The qLib version is recreated as a SOP node and added more options regarding the
+    output geometry. You can find the original version at its 
+    <a href="http://www.sidefx.com/exchange/info.php?fileid=671&versionid=671">Houdini Exchange Link</a>.
+
+@Parameters
+    Target:
+        The object which creates the trail.
+    Frame Range:
+        Start/End/Step of the frame range that limits the trail creation in time.
+    Geometry Type:
+        Geometry type of the curve that gets created.
+    Order:
+        The order of the curve for NURBS and Bezier types.
+    Add Velocity:
+        Calculate and create velocity attribute.
+    Velocity Attribute:
+        Name of the attribute where velocity values gets stored.
+    Add Acceleration:
+        Calculate and create acceleration attribute.
+    Acceleration Attribute:
+        Name of the attribute where acceleration values gets stored.
+
+@Release_Notes
+    Version 0.1.1:
+        Bug fixes:
+            - The correct number of path points are created if frame step is greater than 1.
+            - The appropriate velocity values are returned, regardless of the frame step setting.
+    Version 0.1.0:
+        Initial release.

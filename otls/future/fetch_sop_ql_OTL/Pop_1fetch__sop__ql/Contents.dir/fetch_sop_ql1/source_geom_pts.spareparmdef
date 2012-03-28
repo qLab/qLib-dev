@@ -1,0 +1,198 @@
+    group {
+	name	"stdswitcher5"
+	label	"Source"
+
+	parm {
+	    name	"emittype"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"usecontextgeo"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"soppath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"source"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ignorexform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"samplethreshold"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"distributionattrib"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"threshold"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"densitymin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"usedensity"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	invisible
+	default	{ }
+	range	{ 0 1 }
+	export	none
+    }
+    group {
+	name	"stdswitcher5_1"
+	label	"Birth"
+
+	parm {
+	    name	"impulseactivate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"impulserate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"constantactivate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"constantrate"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"prob"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"group"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"preservegroup"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"life"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lifevar"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"accuratebirths"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_1_1"
+	label	"Attributes"
+
+	parm {
+	    name	"attrib"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"createlocalvar"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"initvel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"inheritvel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"var"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doellipse"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_1_2"
+	label	"Add Attributes"
+
+	parm {
+	    name	"doid"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"dogen"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doorigin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"originuse"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"originindex"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"dospeed"
+	    baseparm
+	    export	none
+	}
+    }
+

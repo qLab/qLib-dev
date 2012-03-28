@@ -1,0 +1,9 @@
+{
+    channel groupmask {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"piece*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../groupmask\") }
+    }
+  }

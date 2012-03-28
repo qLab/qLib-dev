@@ -1,0 +1,29 @@
+{
+    channel rows {
+      lefttype = extend
+      righttype = extend
+      default = 18
+      flags = 0
+      segment { length = 0 value = 18 18 expr = ch(\"../rows\") }
+    }
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 6.551
+      flags = 0
+      segment { length = 0 value = 6.5510001182556152 6.5510001182556152 expr = ch(\"../sizex\")/(ch(\"../cols\")-1) }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 4.019
+      flags = 0
+      segment { length = 0 value = 4.0190000534057617 4.0190000534057617 expr = ch(\"../sizey\") }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../sizex\")/2+ch(\"sizex\")/2 }
+    }
+  }

@@ -1,0 +1,12 @@
+11
+global1
+add_neighbour_count_attr
+attrib
+localvar
+if1
+do_group
+groupname
+compare1
+num_or_less
+and1
+neighbourcount1

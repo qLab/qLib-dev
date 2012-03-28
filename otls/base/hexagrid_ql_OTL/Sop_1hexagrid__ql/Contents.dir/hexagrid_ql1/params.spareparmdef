@@ -1,0 +1,53 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"columns"
+	label	"Columns"
+	type	integer
+	default	{ "0" }
+	range	{ 1! 24 }
+	export	none
+    }
+    parm {
+	name	"rows"
+	label	"Rows"
+	type	integer
+	default	{ "0" }
+	range	{ 1! 40 }
+	export	none
+    }
+    parm {
+	name	"intact"
+	label	"Intact"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"setsize"
+	label	"Set Size"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"width"
+	label	"Width"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }

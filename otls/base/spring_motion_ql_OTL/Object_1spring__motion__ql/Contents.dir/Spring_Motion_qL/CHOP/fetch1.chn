@@ -1,0 +1,22 @@
+{
+    channel rate {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      segment { length = 0 value = 24 24 expr = $FPS }
+    }
+    channel start {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $FSTART }
+    }
+    channel end {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = $FEND }
+    }
+  }

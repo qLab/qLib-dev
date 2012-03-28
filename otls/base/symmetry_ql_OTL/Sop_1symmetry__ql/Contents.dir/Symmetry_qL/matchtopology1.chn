@@ -1,0 +1,16 @@
+{
+    channel trackpts {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../trackpts\") }
+    }
+    channel refpts {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../refpts\") }
+    }
+  }

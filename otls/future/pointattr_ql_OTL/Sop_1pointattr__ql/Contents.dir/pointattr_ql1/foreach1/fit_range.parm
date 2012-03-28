@@ -1,0 +1,12 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+attrib	[ 0	locks=0 ]	(	`chs(\"../../name\")`	)
+srcmin	[ 0	locks=0 ]	(	[ srcmin	0 ] 	)
+srcmax	[ 0	locks=0 ]	(	[ srcmax	1 ] 	)
+destmin	[ 0	locks=0 ]	(	[ destmin	0 ] 	)
+destmax	[ 8	locks=0 ]	(	[ destmax	1 ] 	)
+}

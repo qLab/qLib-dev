@@ -1,0 +1,34 @@
+#icon: SOP/visibility
+#context: sop
+#type: node
+
+= Arc Blend qL =
+
+*Version 0.1.0*
+
+"""Interpolates points of two shapes along a circular arc."""
+
+The main purpose of this node is to allow proper blending of the eyelid around the eyeball.
+
+NOTE:
+    If the distance of the two states of a point is not equal from the center the operator will lineary interpolate
+    the distance which causes the track of the point to be an imperfect circular arc.
+
+@Parameters
+    Group:
+        The group of points the operator affects.
+    Bias:
+        The bias of the blend.
+    Center:
+        The point around the blend occures.
+    Cylindrical:
+        The blends occurs around a line instead of a single point.
+    Axis:
+        The direction of the blend axis.
+
+@Release_Notes
+    Version 0.2.0:
+        Cylindrical blend implemented. Also added some guide geometry and transform handles.
+
+    Version 0.1.0:
+        Initial release.

@@ -1,0 +1,7 @@
+{
+version 0.8
+from	[ 0	locks=0 ]	(	0	0	0	)
+function	[ 0	locks=0 ]	(	ptransform	)
+fromspace	[ 0	locks=0 ]	(	space:camera	)
+tospace	[ 0	locks=0 ]	(	space:ndc	)
+}

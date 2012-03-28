@@ -1,0 +1,152 @@
+# Dialog script for take_merge_ql automatically generated 06/19/11 16:38:03
+
+{
+    name	take_merge_ql
+    script	take_merge_ql
+    label	"Take Merge qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input 1"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+	name	"execute"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"renderdialog"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"mergedTake"
+	label	"Merged Take Name"
+	type	string
+	default	{ "$OS" }
+	help	"Name of the merged take. By default it inherits the name of the render node. IMPORTANT: make sure a take with such name doesn't exist."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"renderROP"
+	label	"Output Driver"
+	type	oppath
+	default	{ "/out/mantra1" }
+	help	"The ROP node that is to render the merged take. IMPORTANT: Make sure the Output Driver take settings is set to '(Current)'!"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!ROP!!" }
+    }
+    parm {
+	name	"labelparm3"
+	label	"."
+	type	label
+	size	2
+	default	{ "Multiple takes per line are valid." "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"takes1"
+	label	"Takes"
+	type	string
+	default	{ "" }
+	help	"List of takes to merge. Multiple names are allowed for each line."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"takes2"
+	label	"..."
+	type	string
+	default	{ "" }
+	help	"List of takes to merge. Multiple names are allowed for each line."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"takes3"
+	label	"..."
+	type	string
+	default	{ "" }
+	help	"List of takes to merge. Multiple names are allowed for each line."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"takes4"
+	label	"..."
+	type	string
+	default	{ "" }
+	help	"List of takes to merge. Multiple names are allowed for each line."
+	range	{ 0 1 }
+	export	none
+    }
+    group {
+	name	"folder0"
+	label	"Note"
+
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "Use \\$ACTIVETAKE.\\$F4.exr (or similar) for output sequences" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "to share the same Output Driver between multiple takeMerges." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm4"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "(IMPORTANT: No take should be set in the Output Driver itself!)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sepparm"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"createMergedTake"
+	    label	"Test: Create (Update) Merged Take"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "takerm -R `chs(\"mergedTake\")`; takeadd -c -p Main `chs(\"mergedTake\")`; takemerge -f `chs(\"mergedTake\")` `chs(\"takes1\")` `chs(\"takes2\")` `chs(\"takes3\")` `chs(\"takes4\")`;" }
+	}
+	parm {
+	    name	"createMergedTake2"
+	    label	"Test: Delete Merged Take"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "takerm -R `chs(\"mergedTake\")`;" }
+	}
+    }
+
+}

@@ -1,0 +1,13 @@
+# Automatically generated script: Thursday November 17, 01:50 2011
+\set noalias = 1
+#
+#  Creation script for empty_fractured_object_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Dop/empty_fractured_object_ql)
+opexprlanguage -s hscript $arg1

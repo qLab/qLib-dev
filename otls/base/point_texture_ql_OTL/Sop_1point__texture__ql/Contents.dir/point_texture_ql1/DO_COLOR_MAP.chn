@@ -1,0 +1,35 @@
+{
+    channel cmap {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Mandril.pic\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../cmap\") }
+    }
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"Cd\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attrib\") }
+    }
+    channel signature {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../signature\") }
+    }
+    channel channel {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../channel\") }
+    }
+  }

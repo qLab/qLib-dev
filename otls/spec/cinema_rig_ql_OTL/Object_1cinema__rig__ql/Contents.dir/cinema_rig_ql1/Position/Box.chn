@@ -1,0 +1,20 @@
+{
+    channel colorr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if (ch(\"../use_dcolor\"), ch(\"../dcolorr\"), 0.7)" }
+    }
+    channel colorg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if (ch(\"../use_dcolor\"), ch(\"../dcolorg\"), 0.7)" }
+    }
+    channel colorb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if (ch(\"../use_dcolor\"), ch(\"../dcolorb\"), 0.7)" }
+    }
+  }

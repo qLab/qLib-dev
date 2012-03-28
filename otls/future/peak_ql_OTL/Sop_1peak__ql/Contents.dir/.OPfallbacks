@@ -1,0 +1,6 @@
+Vop/complement /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/importattrib /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/pow /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl

@@ -1,0 +1,6 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+updatenorms	[ 0	locks=0 ]	(	"off"	)
+cutboundaries	[ 0	locks=0 ]	(	"off"	)
+}

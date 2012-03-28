@@ -1,0 +1,5 @@
+{
+version 0.8
+spline	[ 0	locks=0 ]	(	catmull-rom	)
+u	[ 0	locks=0 ]	(	[ u	0 ] 	)
+}

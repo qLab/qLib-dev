@@ -1,0 +1,23 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	2	2	2	2	)
+preop	[ 0	locks=0 ]	(	"off"	)
+chanop	[ 0	locks=0 ]	(	"off"	)
+chopop	[ 0	locks=0 ]	(	"off"	)
+postop	[ 0	locks=0 ]	(	"off"	)
+match	[ 0	locks=0 ]	(	"index"	)
+align	[ 0	locks=0 ]	(	"none"	)
+preoff	[ 0	locks=0 ]	(	0	)
+gain	[ 0	locks=0 ]	(	1	)
+postoff	[ 0	locks=0 ]	(	0	)
+fromrange	[ 0	locks=0 ]	(	0	1	)
+torange	[ 8	locks=0 ]	(	[ torange1	0 ] 	[ torange2	10 ] 	)
+scope	[ 0	locks=0 ]	(	*	)
+srselect	[ 0	locks=0 ]	(	"max"	)
+units	[ 0	locks=0 ]	(	"seconds"	)
+timeslice	[ 0	locks=0 ]	(	"off"	)
+unload	[ 0	locks=0 ]	(	"off"	)
+export	[ 0	locks=0 ]	(	""	)
+gcolor	[ 0	locks=0 ]	(	0	0.899999976	0.449999988	)
+gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+}

@@ -1,0 +1,15 @@
+text "this is intentional --
+a workaround for some vex/normal behaviour
+"
+position 7.62139 -1.63208
+size 4.6409 1.76098
+flags =  minimize off
+stat
+{
+  create 1315145179
+  modify 1315145222
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0 0 
+end

@@ -1,0 +1,69 @@
+#icon: CHOP/para
+#context: sop
+#type: node
+
+= Vector Store qL =
+
+*Version 0.0.1*
+
+"""Converts vector attributes to points (and vice versa), allowing any deforming SOP to work on vector attributes."""
+
+This SOP converts specified per-point vector attributes to actual geometry points, where each point will be created
+where the original vector 'pointed at'. For each per-point vector turned into such a point cloud, a special point
+group is created to allow converting back to attributes.
+
+Two modes are supported -- Save and Restore --, where Save converts vector attributes to 'point clouds' with point groups,
+and Restore is for the opposite (based on the point groups, it converts the point positions to vector attributes, then
+deletes the extra points).
+
+@Usage
+    This SOP is a 'workaround' for the problem when a deforming operator only deforms the points of the geometry and not
+    the vector attributes defined on them.
+
+    With this SOP, vector attributes can be converted to points before applying such deformations, and 'restored' the
+    deformed vectors afterwards. Use this node in Save mode _before_ the deformations, and a copy of the node in Restore
+    settings _after_ the deform SOPs.
+
+@Parameters
+Common:
+    Mode:
+        Operation mode -- __Save__ converts vector attributes to points, __Restore__ does the opposite.
+    Vector Attributes:
+        Space separated list of the vector attributes to work with.
+    Group Prefix:
+        This OP creates point groups for each point-cloud created from an attribute. The group names are
+        the attribute names prefixed with this parameter.
+    Length Multiplier:
+        This number is used to specify the length of an unit vector when stored (ie. if the value is 0.1, the vector's
+        point will be at a distance of 0.1 from the original point for an unit-length vector). The same value should
+        be specified for both the __Save__ and __Restore__ OPs.
+
+        If you use high-frequency deformations and not getting the vector results as you expect, try to modify this value
+        (usually decrease).
+
+        TIP:
+            To visualize this, enable 'points' display in the viewport, and adjust this parameter while watching the output
+            of a Vector Store SOP in Save mode.
+Save:
+    Delete Source Attributes:
+        Once the vector attributes are represented as points, the attributes themselved will be deleted.
+        (This is for memory efficiency -- also, the generated points would have the same attributes as well,
+        which is kind of meaningless.)
+Restore:
+    Normalize Vectors:
+        Normalize lengths of the restored vectors (ie. all vector lengths will be unit size).
+    Output Length Mult:
+        An additional (and optional) multiplier which can be used to scale vector lengths after restore.
+        (This is applied after normalization.)
+
+
+NOTE:
+    You needn't restore all attributes you saved -- but a __Restore__ operation will remove all the extra points
+    and groups, not just the ones you restored (this is the intended behaviour).
+
+
+
+@Release_Notes
+
+    Version 0.0.1:
+        Initial release.

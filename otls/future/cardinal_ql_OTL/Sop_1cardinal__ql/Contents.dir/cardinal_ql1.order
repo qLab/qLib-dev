@@ -1,0 +1,13 @@
+12
+vopsop1
+resample1
+IN
+attr___ptidx
+attr___vr
+point2
+del_attrs
+sort3
+point3
+OUT
+to_nurbs_curve
+switch_output

@@ -1,0 +1,14 @@
+{
+version 0.8
+pgroup	[ 0	locks=0 ]	(	bottom_lug	)
+amount	[ 0	locks=0 ]	(	-175	)
+lBound	[ 0	locks=0 ]	(	0	)
+hBound	[ 0	locks=0 ]	(	1	)
+folder0	[ 0	locks=0 ]	(	0	)
+trs	[ 0	locks=0 ]	(	0	)
+xyz	[ 0	locks=0 ]	(	0	)
+trans	[ 8	locks=0 ]	(	[ trans1	0.602500021 ] 	[ trans2	-1.5 ] 	0	)
+rot	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 8	locks=0 ]	(	[ scale1	0.0450000018 ] 	[ scale2	0.0450000018 ] 	[ scale3	0.0450000018 ] 	)
+pivot	[ 0	locks=0 ]	(	0	0	0	)
+}

@@ -1,0 +1,16 @@
+15
+each1
+box
+wrap
+recreate_group
+transfer_attrs
+post_fit_scale
+sphere
+post_smooth
+post_peak
+apply_postproc
+OUT
+custom
+switch_proxy_type
+TODO_fit_bbox
+geom_orig

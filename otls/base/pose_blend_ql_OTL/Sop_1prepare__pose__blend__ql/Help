@@ -1,0 +1,24 @@
+#icon: OBJ/extractgeo
+#context: sop
+#type: node
+
+= Prepare Pose Blend qL =
+
+*Version 0.1.0*
+
+"""Prepare a goal shape for the Pose Blend qL operation."""
+
+This node calculates the difference between two geometries along quaternions defined for each point. The quaternion
+attribute must be present on the second input. The result is stored in P, so the output will be ugly, and it's probably
+useless without a [Node:sop/pose_blend_ql] node.
+
+This node works in tandem with the [Node:sop/pose_blend_ql] operator. Please read the documentation for that node to
+understand the usage context of this node.
+
+@Parameters
+    Quaternion Attribute:
+        The name of the quaternion attribute.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

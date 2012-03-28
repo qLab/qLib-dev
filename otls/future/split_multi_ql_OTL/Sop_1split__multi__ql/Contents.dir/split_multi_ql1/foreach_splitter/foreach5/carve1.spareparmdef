@@ -1,0 +1,141 @@
+    parm {
+	name	"group"
+	baseparm
+	export	none
+	bindselector prims "Carve Primitives"
+	    "Select the faces and/or hulls to carve and press Enter to complete. Hold down Alt to select from other objects."
+	    0 1 0x000000ff 0 "" 0
+    }
+    parm {
+	name	"firstu"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"domainu1"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"secondu"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"domainu2"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"firstv"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"domainv1"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"secondv"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"domainv2"
+	baseparm
+	export	none
+    }
+    groupradio {
+	name	"onlybreakpoints3"
+	label	"Divisions"
+
+	parm {
+	    name	"divsu"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"divsv"
+	    baseparm
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"onlybreakpoints3_1"
+	label	"Breakpoints"
+	tabbreak
+
+	parm {
+	    name	"allubreakpoints"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"allvbreakpoints"
+	    baseparm
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"stdswitcher3"
+	label	"Cut"
+
+	parm {
+	    name	"keepin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"keepout"
+	    baseparm
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"stdswitcher3_1"
+	label	"Extract"
+
+	parm {
+	    name	"extractop"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"keepOriginal"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"u_min"
+	label	"u_min"
+	type	float
+	default	{ "0.2" }
+	range	{ 0.1 0.9 }
+	export	none
+    }
+    parm {
+	name	"u_max"
+	label	"u_max"
+	type	float
+	default	{ "0.8" }
+	range	{ 0.1 0.9 }
+	export	none
+    }
+    parm {
+	name	"seed"
+	label	"seed"
+	type	float
+	default	{ "0" }
+	range	{ 0 999 }
+	export	none
+    }

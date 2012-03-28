@@ -1,0 +1,49 @@
+{
+    channel radx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../radiusz\") }
+    }
+    channel rady {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../radiusz\") }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../sizex\")/2+ch(\"radx\") }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../sizey\")/2-ch(\"radx\") }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = chs(\"../type\") }
+    }
+    channel order {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../order\") }
+    }
+    channel divs {
+      lefttype = extend
+      righttype = extend
+      default = 6
+      flags = 0
+      segment { length = 0 value = 6 6 expr = ch(\"../divs\") }
+    }
+  }

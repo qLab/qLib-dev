@@ -1,0 +1,20 @@
+{
+    channel pt0x {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CEX }
+    }
+    channel pt0y {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CEY }
+    }
+    channel pt0z {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CEZ }
+    }
+  }

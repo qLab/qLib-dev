@@ -1,0 +1,13 @@
+Operator:     hexagrid_ql
+Label:        Hexa Grid qL
+Path:         oplib:/Sop/hexagrid_ql?Sop/hexagrid_ql
+Icon:         VOP_hextile
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Jan 21 17:54:24 2012
+

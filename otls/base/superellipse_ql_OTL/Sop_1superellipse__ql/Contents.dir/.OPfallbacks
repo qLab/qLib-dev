@@ -1,0 +1,10 @@
+Vop/vectofloat /opt/hfs_current/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/pow /opt/hfs_current/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl
+Vop/floattovec /opt/hfs_current/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl
+Vop/abs /opt/hfs_current/houdini/otls/OPlibVop.otl
+Vop/abs otls/OPlibVop.otl
+Vop/sign /opt/hfs_current/houdini/otls/OPlibVop.otl
+Vop/sign otls/OPlibVop.otl

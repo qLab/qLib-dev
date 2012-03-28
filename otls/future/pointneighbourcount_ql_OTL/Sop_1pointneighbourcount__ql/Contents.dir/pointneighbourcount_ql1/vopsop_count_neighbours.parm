@@ -1,0 +1,12 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+file	[ 0	locks=0 ]	(	"op:`opinputpath(\".\", 0)`"	)
+radius	[ 0	locks=0 ]	(	[ radius	0.00999999978 ] 	)
+maxpoints	[ 0	locks=0 ]	(	[ maxpoints	9 ] 	)
+attrib	[ 0	locks=0 ]	(	[ attrib	pscale ] 	)
+localvar	[ 0	locks=0 ]	(	[ localvar	PSCALE ] 	)
+}

@@ -1,0 +1,26 @@
+Operator:     motion_ql
+Label:        Motion ql
+Path:         oplib:/Vop/motion_ql?Vop/motion_ql
+Icon:         COP2_velblur
+Table:        Vop
+License:      
+Extra:        displace fog light photon shadow surface
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jul 10 17:10:43 2011
+
+Operator:     motion_ql
+Label:        Motion ql
+Path:         oplib:/Shop/motion_ql?Shop/motion_ql
+Icon:         COP2_velblur
+Table:        Shop
+License:      
+Extra:        subtype=vopnet shadertype=vopmaterial rendermask='VMantra OGL'
+Inputs:       0 to 0
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Sun Jul 10 17:11:06 2011
+

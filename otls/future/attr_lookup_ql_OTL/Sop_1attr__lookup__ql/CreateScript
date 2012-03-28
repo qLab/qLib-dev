@@ -1,0 +1,13 @@
+# Automatically generated script: Saturday October 08, 20:52 2011
+\set noalias = 1
+#
+#  Creation script for attr_lookup_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/attr_lookup_ql)
+opexprlanguage -s hscript $arg1

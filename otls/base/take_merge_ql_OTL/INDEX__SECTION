@@ -1,0 +1,13 @@
+Operator:     take_merge_ql
+Label:        Take Merge qL
+Path:         oplib:/Driver/take_merge_ql?Driver/take_merge_ql
+Icon:         ROP_merge
+Table:        Driver
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jun 19 16:38:06 2011
+

@@ -1,0 +1,67 @@
+# Dialog script for maze_ql automatically generated 01/25/12 22:42:36
+
+{
+    name	maze_ql
+    script	maze_ql
+    label	"Maze qL"
+
+    help {
+	""
+    }
+    bindhandle corner_urx translate "Translate" tx ""
+    bindhandle corner_ury translate "Translate" tz ""
+    bindhandle corner_llx translate "Translate2" tx ""
+    bindhandle corner_lly translate "Translate2" tz ""
+
+    parm {
+	name	"corner_ll"
+	label	"Lower Left Corner"
+	type	vector2
+	size	2
+	default	{ "-8" "-8" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"corner_ur"
+	label	"Upper Right Corner"
+	type	vector2
+	size	2
+	default	{ "8" "8" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"seed"
+	label	"Seed"
+	type	integer
+	default	{ "1984" }
+	range	{ 0 9999 }
+	export	none
+    }
+    parm {
+	name	"limitdiv"
+	label	"Limit Divisions"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"limit"
+	label	"Limit"
+	type	integer
+	default	{ "0" }
+	disablewhen	"{ limitdiv == 0 }"
+	range	{ 1 9 }
+	export	none
+    }
+    parm {
+	name	"outerwalls"
+	label	"Outer Walls"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+}

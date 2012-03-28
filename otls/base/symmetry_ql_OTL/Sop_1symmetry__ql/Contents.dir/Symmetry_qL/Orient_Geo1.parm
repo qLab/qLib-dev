@@ -1,0 +1,16 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	[ group	"" ] 	)
+grouptype	[ 0	locks=0 ]	(	[ grouptype	0 ] 	)
+xOrd	[ 0	locks=0 ]	(	[ xOrd	5 ] 	)
+rOrd	[ 0	locks=0 ]	(	[ rOrd	0 ] 	)
+t	[ 8	locks=0 ]	(	[ tx	-0 ] 	[ ty	-0 ] 	[ tz	-0 ] 	)
+r	[ 0	locks=0 ]	(	0	[ ry	90 ] 	[ rz	0 ] 	)
+s	[ 8	locks=0 ]	(	[ sx	1 ] 	1	1	)
+shear	[ 0	locks=0 ]	(	0	0	0	)
+p	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 0	locks=0 ]	(	1	)
+updatenmls	[ 0	locks=0 ]	(	"on"	)
+vlength	[ 0	locks=0 ]	(	[ vlength	1 ] 	)
+invertxform	[ 0	locks=0 ]	(	"on"	)
+}

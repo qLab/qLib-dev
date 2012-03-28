@@ -1,0 +1,88 @@
+#icon: OUT/merge
+#context: out
+#type: node
+
+= Take Merge qL =
+
+"""Merges specified takes together into a (temporary) new take, then renders the result."""
+
+The takeMerge ROP merges all the specified takes together, then calls the specified
+output driver.
+
+It allows you to work around the hierarchical nature of takes: they will behave
+more like 'tags' or 'labels' (or 'overrides' in other applications).
+
+Examples of...
+
+...what can be stored in takes:
+    * render layer settings (object flags) (say _character_, _background_)
+    * settings for single-frame mplay or output image sequence (say _singleframe_, _sequence_)
+    * render quality settings (say _draft_, _production_)
+
+...how do you combine (merge) them:
+    * '_draft_ _singleframe_' to get a quick render of the scene
+    * '_production_ _character_ _singleframe_' to get a production-quality single frame render of the character
+    * '_draft_ _background_ _sequence_' to get a rough-quality image sequence of the background layer
+
+With regular hierarchical takes all of the above is much harder to achieve.
+
+
+
+@parameters
+
+Merged Take Name:
+    The name of the new take (the merge result) that will be rendered.
+
+    The default settings is to inherit the name of the node,
+    as it is recommended to _give each takeMerge node the name of the render layer it represents_.
+
+    This take is temporary: it exists only during render and gets deleted on completion.
+
+    WARNING: The name of this take must be unique: no take should exist with the same name.
+
+
+Output Driver:
+    The name of the ROP node that is called after the merged take is activated.
+
+    WARNING: The Output Driver ROP node must be set to render the '(Current)' take.
+    Also, the Output Driver *must be specified with an absolute path*.
+
+
+Takes:
+    The list of take names to be merged.
+    Each text field can contain multiple take names (this allows for
+    more flexible editing.)
+
+    Non-existing take names are silently ignored.
+
+
+Test--Create/Update Merged Take (button):
+    This convenience button allows you to manually check the results of
+    the take merge: it creates the merged take but will not render it.
+
+    The other button deletes the temporary take (you have to switch back
+    to the Main take manually first).
+
+TIP:
+    If you want to use a single Output Driver:
+    * specify `$ACTIVETAKE.$F4.exr` (or similar) as output file name in your ROP node
+    * for each takeMerge node that represents a render layer, name it after the layer it represents
+
+    This way you can run all your layers through a single ROP node, and all resulting
+    image sequences will be named appropriately.
+
+TIP:
+    One reason why there are multiple 'Takes' text fields is to allow editing of single
+    lines _when multiple nodes are selected_ without changing the other fields.
+
+    This fact you can work with to your advantage (using specific fields for specific
+    types of overrides ... I mean takes).
+
+@Limitations
+    When merging takes, the usual hierarchical behaviour of takes doesn't apply:
+    merging a child take will _not_ merge its parents' contents.
+    
+
+@Release_Notes
+    Version 0.0.1:
+        Early preview release, for testing and evaluation purposes only.

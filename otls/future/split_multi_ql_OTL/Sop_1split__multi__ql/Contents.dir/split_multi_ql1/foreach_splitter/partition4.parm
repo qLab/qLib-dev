@@ -1,0 +1,7 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+entity	[ 0	locks=0 ]	(	"primitive"	)
+geotype	[ 0	locks=0 ]	(	"all"	)
+rule	[ 0	locks=0 ]	(	surf_$PR	)
+}

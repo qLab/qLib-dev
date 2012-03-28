@@ -1,0 +1,26 @@
+A (hopefully temporary) replacement for the regular Pre/Post ROP (with more restricted functionality).
+
+NOTE:
+
+This asset addresses a bug in the regular Pre/Post ROP: if the main job has upstream job(s), they will
+be executed _before_ the pre-render job, which kinda defeats the purpose. :(
+
+
+
+- Supports only sequence rendering
+
+- Setting frame ranges:
+    - The frame range has to be set on the asset
+    - All inputs (pre/main/post) are best to be set to 'Render Any Frame'
+
+- Rendering
+    - The pre-render will be called at the first frame of the range
+    - The main job will be run as expected
+    - The post-render job will be called at the last frame of the range
+
+The main job can have upstream jobs -- everything will always be processed in a 'Node by Node' fashion
+(ie. non-interleaved, one upstream node finishes its range completely, only after that will be the next
+node processed).
+
+
+

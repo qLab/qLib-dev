@@ -1,0 +1,10 @@
+Vop/invert /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/invert otls/OPlibVop.otl
+Vop/normalize /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/normalize otls/OPlibVop.otl
+Vop/rotate /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/rotate otls/OPlibVop.otl
+Vop/translate /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/translate otls/OPlibVop.otl
+Vop/lookat /opt/hfs11.0.792/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl

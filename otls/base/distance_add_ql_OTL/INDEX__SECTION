@@ -1,0 +1,13 @@
+Operator:     distance_add_ql
+Label:        Distance Add qL
+Path:         oplib:/Sop/distance_add_ql?Sop/distance_add_ql
+Icon:         SOP_pointcloudiso
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Sat Mar 10 23:11:24 2012
+

@@ -1,0 +1,13 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrsize"
+	label	"Attribute Size"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

@@ -1,0 +1,22 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	1	1	1	)
+nodepath	[ 0	locks=0 ]	(	../..	)
+path	[ 0	locks=0 ]	(	blend	)
+data	[ 0	locks=0 ]	(	"control"	)
+select	[ 0	locks=0 ]	(	"all"	)
+nameformat	[ 0	locks=0 ]	(	"channel"	)
+range	[ 0	locks=0 ]	(	"user"	)
+start	[ 8	locks=0 ]	(	[ start	1 ] 	)
+end	[ 8	locks=0 ]	(	[ end	240 ] 	)
+sample	[ 0	locks=0 ]	(	"min"	)
+rate	[ 8	locks=0 ]	(	[ rate	24 ] 	)
+scope	[ 0	locks=0 ]	(	*	)
+srselect	[ 0	locks=0 ]	(	"max"	)
+units	[ 0	locks=0 ]	(	"frames"	)
+timeslice	[ 0	locks=0 ]	(	"off"	)
+unload	[ 0	locks=0 ]	(	"off"	)
+export	[ 0	locks=0 ]	(	""	)
+gcolor	[ 0	locks=0 ]	(	0.899999976	0	0.899999976	)
+gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+}

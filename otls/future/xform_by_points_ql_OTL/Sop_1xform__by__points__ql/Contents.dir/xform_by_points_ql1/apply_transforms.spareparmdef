@@ -1,0 +1,90 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"index_attr"
+	label	"Index Attribute"
+	type	string
+	default	{ "point_index" }
+	help	"This (per-point) attribute specifies which transform point should be used for the current point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rest_p_attr"
+	label	"Rest P Attribute"
+	type	string
+	default	{ "P" }
+	help	"Rest position for a transform point (basically a pivot)."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rest_aim_attr"
+	label	"Rest Aim Attribute"
+	type	string
+	default	{ "N" }
+	help	"Rest aim vector for a transform point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rest_up_attr"
+	label	"Rest Up Attribute"
+	type	string
+	default	{ "up" }
+	help	"Rest up vector for a transform point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"p_attr"
+	label	"P Attribute"
+	type	string
+	default	{ "P" }
+	help	"New position for a transform point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"aim_attr"
+	label	"Aim Attribute"
+	type	string
+	default	{ "N" }
+	help	"New aim vector for a transform point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"up_attr"
+	label	"Up Attribute"
+	type	string
+	default	{ "up" }
+	help	"New up vector for a transform point."
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

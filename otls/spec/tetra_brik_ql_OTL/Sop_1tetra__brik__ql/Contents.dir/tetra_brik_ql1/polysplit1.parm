@@ -1,0 +1,10 @@
+{
+version 0.8
+splitloc	[ 0	locks=0 ]	(	"0v3 4v3 7v2 7v0 "	)
+pathtype	[ 0	locks=0 ]	(	"shortest"	)
+override	[ 0	locks=0 ]	(	"off"	)
+newt	[ 0	locks=0 ]	(	0.5	)
+updatenorms	[ 0	locks=0 ]	(	"on"	)
+close	[ 0	locks=0 ]	(	"off"	)
+tolerance	[ 0	locks=0 ]	(	9.99999975e-006	)
+}

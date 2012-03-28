@@ -1,0 +1,8 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "1.5*stamp(\"..\", \"FORVALUE\", 0)" }
+    }
+  }

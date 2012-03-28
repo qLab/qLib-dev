@@ -1,0 +1,6 @@
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+fullrange	[ 0	locks=0 ]	(	"on"	)
+}

@@ -1,0 +1,13 @@
+Operator:     pointattr_ql
+Label:        PointAttr qL
+Path:         oplib:/Sop/pointattr_ql?Sop/pointattr_ql
+Icon:         COP2_mosaic
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Mar 18 02:16:45 2012
+

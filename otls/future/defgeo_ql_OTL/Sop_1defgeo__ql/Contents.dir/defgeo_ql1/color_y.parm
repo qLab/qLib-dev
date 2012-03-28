@@ -1,0 +1,9 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	"8-9 "	)
+grouptype	[ 0	locks=0 ]	(	4	)
+class	[ 0	locks=0 ]	(	2	)
+colortype	[ 0	locks=0 ]	(	0	)
+color	[ 0	locks=0 ]	(	0.0561450198	0.591000021	0.0561450198	)
+seed	[ 0	locks=0 ]	(	0	)
+}

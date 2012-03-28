@@ -1,0 +1,12 @@
+{
+version 0.8
+type	[ 8	locks=0 ]	(	[ type	2 ] 	)
+orient	[ 0	locks=0 ]	(	"zx"	)
+rad	[ 8	locks=0 ]	(	[ radx	2.70000005 ] 	[ rady	2.70000005 ] 	)
+t	[ 8	locks=0 ]	(	[ tx	3.79999995 ] 	0	[ tz	3.79999995 ] 	)
+order	[ 8	locks=0 ]	(	[ order	4 ] 	)
+divs	[ 8	locks=0 ]	(	[ divs	3 ] 	)
+arc	[ 0	locks=0 ]	(	"openarc"	)
+angle	[ 0	locks=0 ]	(	270	360	)
+imperfect	[ 0	locks=0 ]	(	"on"	)
+}

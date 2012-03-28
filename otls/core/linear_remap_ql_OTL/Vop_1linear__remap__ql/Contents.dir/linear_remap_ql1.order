@@ -1,0 +1,12 @@
+11
+srcmax_minus_srcmin
+destmax_minus_destmin
+val_minus_srcmin
+multiply1
+divide1
+REMAPPED_RESULT
+suboutput1
+subinput1
+gte_than_min
+lte_than_max
+IS_WITHIN_RANGE

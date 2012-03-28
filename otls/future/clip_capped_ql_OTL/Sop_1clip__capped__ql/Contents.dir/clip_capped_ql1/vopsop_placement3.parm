@@ -1,0 +1,11 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+origin	[ 0	locks=0 ]	(	[ origin1	0.502851009 ] 	[ origin2	0.0350278839 ] 	[ origin3	0.177546024 ] 	)
+distance	[ 0	locks=0 ]	(	[ distance	0 ] 	)
+direction	[ 0	locks=0 ]	(	[ direction1	0 ] 	[ direction2	1 ] 	[ direction3	0 ] 	)
+invert	[ 0	locks=0 ]	(	"off"	)
+}

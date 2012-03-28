@@ -1,0 +1,13 @@
+Operator:     offset_curve_ql
+Label:        Offset Curve qL
+Path:         oplib:/Sop/offset_curve_ql?Sop/offset_curve_ql
+Icon:         SOP_join
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Oct 11 16:35:59 2010
+

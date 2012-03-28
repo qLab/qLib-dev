@@ -1,0 +1,12 @@
+{
+version 0.8
+activation	[ 8	locks=0 ]	(	[ activation	1 ] 	)
+activationrules	[ 0	locks=0 ]	(	0	)
+objtocopy	[ 0	locks=0 ]	(	*	)
+objindex	[ 0	locks=0 ]	(	0	)
+numcopies	[ 8	locks=0 ]	(	[ numcopies	9 ] 	)
+objname	[ 8	locks=0 ]	(	[ objname	piece8 ] 	)
+copyourobjects	[ 0	locks=0 ]	(	"off"	)
+preserveobjects	[ 0	locks=0 ]	(	"off"	)
+solvefirstframe	[ 8	locks=0 ]	(	[ solvefirstframe	0 ] 	)
+}

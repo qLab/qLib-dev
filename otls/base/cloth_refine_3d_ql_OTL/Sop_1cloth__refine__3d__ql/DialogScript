@@ -1,0 +1,44 @@
+# Dialog script for cloth_refine_3d_ql automatically generated 09/07/10 18:32:43
+
+{
+    name	cloth_refine_3d_ql
+    script	cloth_refine_3d_ql
+    label	"Cloth Refine 3d qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"maxarea"
+	label	"Maximum Area"
+	type	float
+	default	{ "0.02" }
+	range	{ 0.0001! 0.1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"minangle"
+	label	"Minimum Angle"
+	type	float
+	default	{ "10" }
+	range	{ 0! 30 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"length"
+	label	"Edge Refine Length"
+	type	float
+	default	{ "sqrt(ch(\"maxarea\"))" }
+	range	{ 0! 5 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

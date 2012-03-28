@@ -1,0 +1,29 @@
+#icon: VOP/hextile
+#context: sop
+#type: node
+
+= Hexa Grid qL =
+
+*Version 0.0.1*
+
+"""Generates a grid of regular hexagons."""
+
+@Parameters
+    Orientation:
+        Plane of creation.
+    Center:
+        Center point of the grid.
+    Columns:
+        Number of columns.
+    Rows:
+        Number of rows.
+    Size Type:
+        Type of size definition.
+    Radius:
+        Radius of one hexagon if 'Size Type' is 'Radius'.
+    Width:
+        Width of the grid if 'Size Type' is 'Widht and Height'.
+    Height:
+        Height of the grid if 'Size Type' is 'Widht and Height'.
+    Intact:
+        Don't clip the outer edges.

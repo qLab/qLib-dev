@@ -1,0 +1,56 @@
+#icon: COP2/flip
+#context: sop
+#type: node
+
+= Symmetry qL =
+
+*Version 0.1.0*
+
+"""Mirrors the shape of a geometry based on topological symmetry, leaving original topology and existing attributes intact."""
+
+This operator can be used when simple deleting and mirroring is not an option because of existing assymetric attributes
+or original point ordering would be lost during the process.
+
+TIP:
+    Use [Node:sop/attribmirror] instead of this operator if you want to mirror attributes by positional proximity
+    instead of topologic matching.
+
+TIP:
+    You can mirror attributes on assymetrically shaped but topologically symmetrical geometry with the combination of
+    this operator, [Node:sop/attribmirror], and [Node:sop/attribcopy].
+
+@Inputs
+    Input Geo:
+        The geometry you want to make symmetric.
+    Reference Geo:
+        The symmetric reference geometry used by the "Reference" mode.
+
+@Parameters
+    Group:
+        Group of points that the operator affects.
+    Axis:
+        The axis of mirroring.
+    Opposite:
+        Flips the direction of mirroring to negative side to positive side.
+    Center:
+        The center of the symmetry.
+    Mode:
+        The mode of operation.
+
+        Match Topology:
+            If the topology of the two sides of the symmetry plane exactly matches, this mode can automatically pair
+            matching points of the two sides.
+        Reference:
+            If only the shape of the sides and not the topology matches (for example a revolved surface) you have
+            to provide a symmetric version of the geometry to the "Reference Geo" input. This mode will use this
+            reference geometry to pair the points of the sides.
+    Tracking Points:
+        In "Match Topology" mode, if the sides don't have enough topologic detail, you may have to provide some hints
+        in the form of paired points to the matching algorithm. This parameter holds the points of one side.
+    Reference Points:
+        This parameter holds the matching points listed in "Tracking Points" from the other side. The order of the points
+        in the list is important to match.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

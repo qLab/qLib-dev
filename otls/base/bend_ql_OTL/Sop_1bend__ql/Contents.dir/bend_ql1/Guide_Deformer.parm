@@ -1,0 +1,16 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+amount	[ 0	locks=0 ]	(	[ amount	97 ] 	)
+lBound	[ 0	locks=0 ]	(	[ lBound	-1 ] 	)
+hBound	[ 0	locks=0 ]	(	[ hBound	1 ] 	)
+trans	[ 0	locks=0 ]	(	0	0	0	)
+rot	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 0	locks=0 ]	(	1	1	1	)
+pivot	[ 0	locks=0 ]	(	0	0	0	)
+trs	[ 0	locks=0 ]	(	[ trs	0 ] 	)
+xyz	[ 0	locks=0 ]	(	[ xyz	0 ] 	)
+}

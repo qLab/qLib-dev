@@ -1,0 +1,8 @@
+{
+version 0.8
+bias	[ 0	locks=0 ]	(	[ bias	0.00499999989 ] 	)
+maxcontrib	[ 0	locks=0 ]	(	1	)
+scope	[ 0	locks=0 ]	(	chs('../scope/stringdef')	)
+angle	[ 0	locks=0 ]	(	[ angle	0 ] 	)
+samples	[ 0	locks=0 ]	(	[ samples	0 ] 	)
+}

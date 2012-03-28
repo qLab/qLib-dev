@@ -1,0 +1,49 @@
+#icon: SOP/pointcloudiso
+#context: sop
+#type: node
+
+= Distance Add qL =
+
+*Version 0.1.0*
+
+"""Adds edges and faces between points based on their distance from each other."""
+
+TIP:
+    You can use this asset to build the inner scaffolding of soft bodies and Cloth objects.
+
+@Parameters
+    Group:
+        The group of points that gets connected.
+    Connect Others:
+        Connect points outside of Group to points inside of Group.
+
+        TIP:
+            Use this option to connect the inner "scaffolding" to the actual visible surface.
+    Create Edges:
+        Create zero area polygons between the points.
+    Create Faces:
+        Create faces for point triplets that all has generated edges.
+
+        NOTE:
+            The asset doesn't checks overlapping, so your initial point data should be prepared well
+            to avoid overlaping faces. For example it's easy to get overlapping faces with more than three
+            close enough points in the same plane.
+    Maximum Length:
+        The maximum distance between points that gets connected.
+    Mminimum Length:
+        The minimum distance between points that gets connected.
+
+@Limitations
+    This thing is slow.
+    
+    TIP:
+        Increase Maximum Length slowly and check the result. A slight bum in Maximum Length can result in
+        sever slowdown and lots of edges. Also use Create Edges first and only switch Create Faces when you
+        see the desired edge structure.
+
+    Max and Min length should be also defined by point attributes, which would make this asset much more
+    flexible. This is not implemented yet.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

@@ -1,0 +1,12 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+cropl	[ 8	locks=0 ]	(	[ cropl	0 ] 	)
+cropr	[ 8	locks=0 ]	(	[ cropr	1 ] 	)
+cropb	[ 8	locks=0 ]	(	[ cropb	0 ] 	)
+cropt	[ 8	locks=0 ]	(	[ cropt	1 ] 	)
+export_uv	[ 8	locks=0 ]	(	[ export_uv	1 ] 	)
+}

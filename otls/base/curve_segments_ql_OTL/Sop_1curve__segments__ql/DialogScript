@@ -1,0 +1,12 @@
+# Dialog script for curve_segments_ql automatically generated 03/08/12 18:11:11
+
+{
+    name	curve_segments_ql
+    script	curve_segments_ql
+    label	"Curve Segments qL"
+
+    help {
+	""
+    }
+
+}

@@ -1,0 +1,15 @@
+{
+    channel putnml {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../putnml\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../ray_group\") }
+    }
+  }

@@ -1,0 +1,13 @@
+# Automatically generated script: Sunday January 29, 04:29 2012
+\set noalias = 1
+#
+#  Creation script for proxy_primgroups operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/proxy_primgroups)
+opexprlanguage -s hscript $arg1

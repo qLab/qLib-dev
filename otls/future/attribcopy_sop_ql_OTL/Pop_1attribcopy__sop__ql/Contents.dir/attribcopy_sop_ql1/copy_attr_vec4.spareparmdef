@@ -1,0 +1,85 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"cacheincoming"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"file"
+	label	"Point Cloud Texture"
+	type	file
+	default	{ "defgeo.bgeo" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"use_origin_attr"
+	label	"Use Origin Attr"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"origin_attr"
+	label	"Origin Attr Name"
+	type	string
+	default	{ "origin" }
+	disablewhen	"{ use_origin_attr == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"originindex"
+	label	"Origin Index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_in"
+	label	"Input Attribute"
+	type	string
+	default	{ "Alpha" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attr_out"
+	label	"Output/POP Attribute"
+	type	string
+	default	{ "Alpha" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

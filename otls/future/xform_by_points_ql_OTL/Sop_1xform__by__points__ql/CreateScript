@@ -1,0 +1,13 @@
+# Automatically generated script: Friday August 05, 02:13 2011
+\set noalias = 1
+#
+#  Creation script for xform_by_points_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/xform_by_points_ql)
+opexprlanguage -s hscript $arg1

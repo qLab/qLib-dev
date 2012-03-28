@@ -1,0 +1,24 @@
+#icon: SOP/join
+#context: sop
+#type: node
+
+= Offset Curve qL =
+
+*Version 0.1.1*
+
+"""Offsets a curve."""
+
+@Parameters
+    Offset:
+        Offset amount
+    Reverse:
+        Reverses the direction
+    Keep Original:
+        Keeps the original curve
+
+@Release_Notes
+    Version 0.1.1:
+        The result was a a curve and a surface, fixed that it returns 2 curves
+
+    Version 0.1.0:
+        Initial release.

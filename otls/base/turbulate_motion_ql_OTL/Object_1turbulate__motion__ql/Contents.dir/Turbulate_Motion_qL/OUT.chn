@@ -1,0 +1,59 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,P,0) }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,P,1) }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,P,2) }
+    }
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,N,0) }
+    }
+    channel ry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,N,1) }
+    }
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = point(\"../Calculate_Noise/OUT\",0,N,2) }
+    }
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = point(\"../Calculate_Noise/OUT\",0,Cd,0)+1 }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = point(\"../Calculate_Noise/OUT\",0,Cd,1)+1 }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = point(\"../Calculate_Noise/OUT\",0,Cd,2)+1 }
+    }
+  }

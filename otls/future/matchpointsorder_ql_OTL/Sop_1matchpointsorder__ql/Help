@@ -1,0 +1,54 @@
+#type: node
+#context: sop
+#icon: SOP/sort
+
+= Match Points Order qL =
+
+*Version 0.0.1*
+
+"""Tries to match point order of a geometry by using the order from a 2nd (reference) geometry."""
+
+The function of this SOP is to try to copy the point order from a reference geometry to its primary input
+geometry.
+
+The two inputs should have the same exact topology (at least the same number of points).
+
+The operation will _not_ work if either geometry has overlapping/conicident points that are
+not [Fused|Node:sop/fuse] first.
+
+
+NOTE:
+    It's not always possible to maintain the exact same point order (for instance
+    if the original geometry had un-fused but coincident points).
+    
+    In case point orders don't match up, try applying a Fuse SOP to the original geometry,
+    and/or the reference geometry as well.
+
+
+
+@related
+    - [Sort|Node:sop/sort]
+
+@Parameters
+
+    Apply Match:
+        Enable the matching of the two geometry.
+
+        Disabling this can be useful if the two geometry are matched some other way, and
+        this SOP has to do the only the testing of the results.
+
+    Geometry Point Counts:
+        Read-only indicators of the number of points in the input and reference geometry.
+        *These counts should match up exactly.*
+
+    Test Shape Blend:
+        Amount of blending between the input geometry and the SOP result. (It is shown as
+        a guide geometry when the SOP is displayed). The results are okay if *the guide
+        wireframe* (blue by default) *matches the reference geometry exactly, regardless of
+        the blend value.*
+            
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

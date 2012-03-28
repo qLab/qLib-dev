@@ -1,0 +1,228 @@
+# Dialog script for camera_plane_ql automatically generated 03/13/12 17:14:57
+
+{
+    name	camera_plane_ql
+    script	camera_plane_ql
+    label	"Camera Plane qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder1"
+	label	"Camera Plane"
+
+	parm {
+	    name	"camera"
+	    label	"Camera"
+	    type	oplist
+	    default	{ "/obj/cam1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "oprelative" "/" }
+	    parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"space"
+	    label	"Space"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Object"
+		"1"	"Camera"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"plane_distance"
+	    label	"Plane Distance"
+	    type	float
+	    default	{ "10" }
+	    range	{ 1 100 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"overscanx"
+	    label	"Overscan X"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"overscany"
+	    label	"Overscan Y"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"cam_crop"
+	    label	"Use Camera Crop"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"cropl"
+	    label	"Left Crop"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropr"
+	    label	"Right Crop"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropb"
+	    label	"Bottom Crop"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+	parm {
+	    name	"cropt"
+	    label	"Top Crop"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ cam_crop == 1 }"
+	    range	{ 0! 1! }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Geometry"
+
+	parm {
+	    name	"type"
+	    label	"Primitive Type"
+	    type	ordinal
+	    default	{ "poly" }
+	    menu	{
+		"poly"	"Polygon"
+		"mesh"	"Mesh"
+		"nurbs"	"NURBS"
+		"bezier"	"Bezier"
+		"points"	"Points"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"surftype"
+	    label	"Connectivity"
+	    type	ordinal
+	    default	{ "quads" }
+	    menu	{
+		"rows"	"Rows"
+		"cols"	"Columns"
+		"rowcol"	"Rows and Columns"
+		"triangles"	"Triangles"
+		"quads"	"Quadrilaterals"
+		"alttriangles"	"Alternating Triangles"
+		"revtriangles"	"Reverse Triangles"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rows"
+	    label	"Rows"
+	    type	integer
+	    default	{ "5" }
+	    range	{ 1! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"cols"
+	    label	"Columns"
+	    type	integer
+	    default	{ "7" }
+	    range	{ 1! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"orderu"
+	    label	"U Order"
+	    type	integer
+	    default	{ "4" }
+	    disablewhen	"{ type != nurbs type != bezier }"
+	    range	{ 2! 11! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"orderv"
+	    label	"V Order"
+	    type	integer
+	    default	{ "4" }
+	    disablewhen	"{ type != nurbs type != bezier }"
+	    range	{ 2! 11! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder1_2"
+	label	"Shading"
+
+	parm {
+	    name	"export_uv"
+	    label	"Export UV"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"material"
+	    label	"Apply Material"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"texture"
+	    label	"Texture"
+	    type	image
+	    default	{ "mandril.pic" }
+	    disablewhen	"{ material == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}

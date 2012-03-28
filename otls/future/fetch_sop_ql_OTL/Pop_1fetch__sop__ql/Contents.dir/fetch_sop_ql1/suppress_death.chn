@@ -1,0 +1,51 @@
+{
+    channel supppos {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPPOS }
+    }
+    channel suppvel {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPVEL }
+    }
+    channel supprot {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPROT }
+    }
+    channel suppangvel {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPANGVEL }
+    }
+    channel suppup {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPUP }
+    }
+    channel suppage {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $SUPPAGE }
+    }
+    channel dosuppreap {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dosuppreap\") }
+    }
+  }

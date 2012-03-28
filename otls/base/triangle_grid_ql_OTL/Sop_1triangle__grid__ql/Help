@@ -1,0 +1,28 @@
+#icon: SOP/triangulate2d
+#context: sop
+#type: node
+
+= Triangle Grid qL =
+
+*Version 0.0.1*
+
+"""Generates a grid of well placed triangles."""
+
+@Parameters
+    Orientation:
+        Orientation of the generated grid.
+    Size:
+        Size of the generated grid.
+    Center:
+        Center of the generated grid.
+    Rows:
+        Number of rows.
+    Columns:
+        Number of columns.
+
+@Limitations
+    Nor symetric, nor straight edges are implemented.
+
+@Release_Notes
+    Version 0.0.1:
+        Pre-release. Both simetric and straight edges should be implemented for a normal release.

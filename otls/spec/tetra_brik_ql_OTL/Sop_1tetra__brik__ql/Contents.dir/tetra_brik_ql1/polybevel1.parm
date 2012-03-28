@@ -1,0 +1,11 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	"p2-24 p2-11 p2-3 p2-0 p2-21-8-20-7-14 p7-5 p7-6 p7-25 p11-16 p14-19 p24-10-25 p11-12 p11-24 p14-25 p14-13"	)
+beveltype	[ 0	locks=0 ]	(	"highround"	)
+entitytype	[ 0	locks=0 ]	(	"points"	)
+setinset	[ 0	locks=0 ]	(	1	1	)
+relinset	[ 0	locks=0 ]	(	0.100000001	)
+absinset	[ 8	locks=0 ]	(	[ absinset	0.0450000018 ] 	)
+repetitions	[ 0	locks=0 ]	(	1	)
+updatenmls	[ 0	locks=0 ]	(	"on"	)
+}

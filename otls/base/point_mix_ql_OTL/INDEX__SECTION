@@ -1,0 +1,13 @@
+Operator:     point_mix_ql
+Label:        Point Mix qL
+Path:         oplib:/Sop/point_mix_ql?Sop/point_mix_ql
+Icon:         VOP_mix
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Mar 14 18:00:55 2012
+

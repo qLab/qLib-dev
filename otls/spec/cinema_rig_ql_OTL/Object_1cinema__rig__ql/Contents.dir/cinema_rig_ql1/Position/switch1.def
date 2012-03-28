@@ -1,0 +1,21 @@
+sopflags sopflags = 
+comment ""
+position 1.56471 -3.31177
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	Invers_Rot 0 1
+1 	merge1 0 1
+}
+stat
+{
+  create 1288952761
+  modify 1288953767
+  author Mate@Mate.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

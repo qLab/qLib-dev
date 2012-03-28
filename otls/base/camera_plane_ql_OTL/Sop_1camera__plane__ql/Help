@@ -1,0 +1,55 @@
+#icon: SOP/planeclip
+#context: sop
+#type: node
+
+= Camera Plane qL =
+
+*Version 0.0.2*
+
+"""Creates a plane that fills the screen of a given camera."""
+
+== Attributes ==
+
+The resulting plane has several attributes that can be helpful later:
+
+rest:
+    contains the positions of the base grid, the full uncropped grid one unit distance from the camera.
+    This is always in camera space.
+
+uv:
+    the UV coordinates of the plane, cropped properly if a crop is applied.
+
+N:
+    points away from the camera, so it can be used to project the geometry to some other geometry while maintaining
+    the screen filling properties of the grid.
+
+@Parameters
+    Camera:
+        The camera that the plane belongs to.
+    Space:
+        The space that the plane is generated into.
+        
+        NOTE:
+            If you choose camera space you will probably want to parent the container object to your camera object.
+    Plane Distance:
+        The distance of the plane from the camera.
+    Overscan X/Y:
+        Scale factor in screen space.
+    Use Camera Crop:
+        Use the corresponding camera's crop settings to crop the plane.
+    Crop Left/Right/Bottom/Top:
+        Crop settings if 'Use Camera Crop' not active.
+    Geometry Tab:
+        Everything corresponds to the matching parameters of the Grid SOP.
+    Export UV:
+        Generate UV coordinates.
+    Apply Material:
+        Applies a basic constant material.
+    Texture:
+        Name of the texture file.
+
+@ReleaseNotes
+    Version 0.0.2:
+        Fixed minor interface bug, and removed OpenGL lighting from the mareial.
+    Version 0.0.1:
+        Initial release.

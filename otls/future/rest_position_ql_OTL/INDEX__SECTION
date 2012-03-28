@@ -1,0 +1,13 @@
+Operator:     rest_position_ql
+Label:        Rest Position qL
+Path:         oplib:/Sop/rest_position_ql?Sop/rest_position_ql
+Icon:         SOP_rest
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 27 00:01:37 2012
+

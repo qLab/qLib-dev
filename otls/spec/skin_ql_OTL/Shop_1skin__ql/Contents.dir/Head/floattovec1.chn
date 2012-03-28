@@ -1,0 +1,8 @@
+{
+    channel fval1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../fval1/floatdef') }
+    }
+  }

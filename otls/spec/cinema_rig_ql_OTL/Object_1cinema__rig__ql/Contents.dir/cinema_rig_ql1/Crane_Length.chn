@@ -1,0 +1,15 @@
+{
+    channel display {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"../crane\") && ch(\"../crane_guide\")" }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = -2.8574690818786621 -2.8574690818786621 expr = ch(\"../arm_length\") }
+    }
+  }

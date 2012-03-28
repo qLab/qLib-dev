@@ -1,0 +1,21 @@
+    parm {
+	name	"switcher"
+	label	"Switcher Index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"outofbounds"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"switcher2"
+	label	"Switcher Index"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

@@ -1,0 +1,12 @@
+Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/vectofloat C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/hvectovec C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/hvectovec otls/OPlibVop.otl
+Vop/hvectofloat C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/hvectofloat otls/OPlibVop.otl
+Vop/swizzlehvec C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/swizzlehvec otls/OPlibVop.otl
+Vop/colormap C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/otls/OPlibVop.otl
+Vop/colormap otls/OPlibVop.otl

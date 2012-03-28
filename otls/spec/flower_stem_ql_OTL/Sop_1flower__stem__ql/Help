@@ -1,0 +1,51 @@
+#icon: SOP/curve
+#context: SOP
+#type: node
+
+= Flower Stem qL =
+
+"""High-level asset for creating growing flowers (stem, with leaves and head)."""
+
+(Alpha version)
+
+This node takes a flower head geometry (optional) and a stem curve to build a flower. The node result is
+not a complete flower however, but a 'skeleton' geometry, which can be used to construct a final flower.
+
+The skeleton geometry contains
+- The flower head, placed at the end of the stem curve
+- The stem curve
+ - Clipped using the Growth parameter
+ - Containing a per-point pscale attribute to be used as stem geometry profile
+- Leaf points along the stem curve (with per-point pscale attribute for growth-adjusted leaf sizes)
+
+
+
+@Inputs
+Flower Head Geometry:
+    The geometry representing the flower's head. It will be placed appropriately at the end of the stem curve.
+
+Stem Curve:
+    The curve representing the flower's stem.
+
+
+@Parameters
+Head Group, Stem Group, Leaves Group:
+    Names of the groups in the output geometry that will contain the various parts.
+
+Growth U:
+    This parameter adjusts the 'growth' along the stem curve (0 results in no geometry output and 1 in a full-grown flower).
+
+
+
+
+
+@Todo
+    ...
+
+@Limitations
+    ...
+    
+
+@Release_Notes
+   Version 0.0.1:
+        First release (for alpha testing).

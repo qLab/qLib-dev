@@ -1,0 +1,15 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	"guess"	)
+name	[ 0	locks=0 ]	(	`chs(\"../name\")`	)
+varname	[ 0	locks=0 ]	(	PART	)
+class	[ 8	locks=0 ]	(	[ class	1 ] 	)
+type	[ 0	locks=0 ]	(	"index"	)
+size	[ 0	locks=0 ]	(	1	)
+default	[ 0	locks=0 ]	(	0	0	0	0	)
+writevalues	[ 0	locks=0 ]	(	"on"	)
+value	[ 0	locks=0 ]	(	1	0	0	0	)
+string	[ 0	locks=0 ]	(	"`chs(\"../name\")+\"_\"+( int($BBX*0.9999*ch(\"dx\")) + ch(\"dx\")*int($BBY*0.9999*ch(\"dy\")) + ch(\"dx\")*ch(\"dy\")*int($BBZ*0.9999*ch(\"dz\")) )`"	)
+d	[ 0	locks=0 ]	(	[ dx	3 ] 	[ dy	1 ] 	[ dz	3 ] 	)
+}

@@ -1,0 +1,16 @@
+{
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../params/width\") }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../params/height\") }
+    }
+  }

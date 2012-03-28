@@ -1,0 +1,188 @@
+{
+    channel updatenml {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../fuse1/updatenml\") }
+    }
+    channel gridtol {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../fuse1/gridtol\") }
+    }
+    channel gridround {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/gridround\") }
+    }
+    channel gridoffsetz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/gridoffsetz\") }
+    }
+    channel gridoffsety {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/gridoffsety\") }
+    }
+    channel gridoffsetx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/gridoffsetx\") }
+    }
+    channel gridpow23 {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../fuse1/gridpow23\") }
+    }
+    channel gridpow22 {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../fuse1/gridpow22\") }
+    }
+    channel gridpow21 {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../fuse1/gridpow21\") }
+    }
+    channel gridlinesz {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../fuse1/gridlinesz\") }
+    }
+    channel gridlinesy {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../fuse1/gridlinesy\") }
+    }
+    channel gridlinesx {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../fuse1/gridlinesx\") }
+    }
+    channel gridspacingz {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../fuse1/gridspacingz\") }
+    }
+    channel gridspacingy {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../fuse1/gridspacingy\") }
+    }
+    channel gridspacingx {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../fuse1/gridspacingx\") }
+    }
+    channel gridtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/gridtype\") }
+    }
+    channel pointattribnames {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../fuse1/pointattribnames\") }
+    }
+    channel snappointattribs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/snappointattribs\") }
+    }
+    channel snappointpos {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../fuse1/snappointpos\") }
+    }
+    channel tol3d {
+      lefttype = extend
+      righttype = extend
+      default = 0.001
+      flags = 0
+      segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../fuse1/tol3d\") }
+    }
+    channel snaptype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/snaptype\") }
+    }
+    channel grouppropagation {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/grouppropagation\") }
+    }
+    channel keepconsolidatedpoints {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/keepconsolidatedpoints\") }
+    }
+    channel keepunusedpoints {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fuse1/keepunusedpoints\") }
+    }
+    channel deldegen {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../fuse1/deldegen\") }
+    }
+    channel dist {
+      lefttype = extend
+      righttype = extend
+      default = 0.001
+      flags = 0
+      segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../fuse1/dist\") }
+    }
+    channel usedist {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../fuse1/usedist\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../fuse1/group\") }
+    }
+  }

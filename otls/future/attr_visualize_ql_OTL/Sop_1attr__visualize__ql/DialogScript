@@ -1,0 +1,130 @@
+# Dialog script for attr_visualize_ql automatically generated 03/14/12 14:25:48
+
+{
+    name	attr_visualize_ql
+    script	attr_visualize_ql
+    label	"Attr Visualize qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_numthreads"
+	label	"Number of Threads"
+	type	ordinal
+	default	{ "1perproc" }
+	menu	{
+	    [ "opmenu -l attr_vis_vopsop vex_numthreads" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Attribute Visualization"
+
+	parm {
+	    name	"attr_name"
+	    label	"Attribute Name"
+	    type	string
+	    default	{ "pscale" }
+	    menureplace	{
+		[ "echo pscale pscale uv uv" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_type"
+	    label	"Attribute Type"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Float"
+		"1"	"Integer"
+		"2"	"Vector"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_comp"
+	    label	"Attribute Component"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ attr_type != 2 }"
+	    menu	{
+		"0"	"X"
+		"1"	"Y"
+		"2"	"Z"
+	    }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcmin"
+	    label	"Minimum Input Value"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcmax"
+	    label	"Maximum Input Value"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_ramp"
+	    label	"Attribute Color Ramp"
+	    type	ramp_rgb
+	    default	{ "2" }
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampvalues_var" "attr_ramp_the_key_values" }
+	    parmtag	{ "rampkeys_var" "attr_ramp_the_key_positions" }
+	    parmtag	{ "rampbasis_var" "attr_ramp_the_basis_strings" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 1 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 0.0666666701 0 ) 2interp ( linear )" }
+	    parmtag	{ "rampshowcontrolsdefault" "1" }
+	    parmtag	{ "rampcolortype" "hsv" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "rampbasisdefault" "linear" }
+	}
+	parm {
+	    name	"display_mode"
+	    label	"Display Mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Default"
+		"1"	"Geometry and Points"
+		"2"	"Points Only"
+	    }
+	    range	{ 0! 2! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

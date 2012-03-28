@@ -1,0 +1,13 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+part	[ 0	locks=0 ]	(	2	)
+vec	[ 0	locks=0 ]	(	0	0	0	)
+vec_p	[ 0	locks=0 ]	(	0	0	0	)
+vec_n	[ 0	locks=0 ]	(	0	0	0	)
+vec_c	[ 0	locks=0 ]	(	0	0	0	)
+vec_uv	[ 0	locks=0 ]	(	0	0	0	)
+vec_up	[ 0	locks=0 ]	(	0	0	0	)
+vec_un	[ 0	locks=0 ]	(	0	0	0	)
+vec_uc	[ 0	locks=0 ]	(	0	0	0	)
+}

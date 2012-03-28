@@ -1,0 +1,42 @@
+#icon: SOP/each
+#context: sop
+#type: node
+
+= Path Deform qL =
+
+*Version 0.2.1*
+
+"""Slides and deforms geometry along a curve."""
+
+@Inputs
+    Geometry To Deform:
+        The geometry that gets deformed along the path.
+    Path Curve:
+        The deformation path.
+    Up Path:
+        Optional curve that defines the up vector for the path curve.
+
+@Parameters
+    Position:
+        The position of the deformed geometry along the path.
+    Segment Length:
+        The relative length of the deformed geometry over the path.
+    Divisions:
+        Lattice divisions. Higher values results in more precise curve following.
+    Resolution:
+        Whatever type of curve is connected to the inputs it gets converted to an evenly spaced polygonal curve.
+        This parameter defines the resolution of the resulting curve. Increase it proportionally with the length of your
+        path curve.
+    Up Vector:
+        If no Up Path is connected this vector defines the Up direction.
+
+@Release_Notes
+    Version 0.2.1:
+        Lattice intepolation type parameter exposed to the user.
+    Version 0.2.0:
+        New lattice placement method takes the initial position of the geometry into account. This means that
+        geometries not centered around the origin will give different results. Also added some guide geometry.
+    Version 0.1.1:
+        Deleted some garbage.
+    Version 0.1.0:
+        Initial release.

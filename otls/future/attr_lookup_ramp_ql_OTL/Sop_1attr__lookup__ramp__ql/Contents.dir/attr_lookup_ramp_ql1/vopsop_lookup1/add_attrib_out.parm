@@ -1,0 +1,13 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+attrib	[ 0	locks=0 ]	(	`chs(\"../attrib_out\")`	)
+localvar	[ 0	locks=0 ]	(	""	)
+adata_f	[ 0	locks=0 ]	(	0	)
+adata_i	[ 0	locks=0 ]	(	0	)
+adata	[ 0	locks=0 ]	(	0	0	0	)
+adata_v4	[ 0	locks=0 ]	(	0	0	0	0	)
+adata_m3	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+adata_m	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+typemodifier	[ 0	locks=0 ]	(	""	)
+}

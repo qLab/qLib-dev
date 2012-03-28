@@ -1,0 +1,13 @@
+Operator:     fetch_sop_ql
+Label:        Fetch SOP qL
+Path:         oplib:/Pop/fetch_sop_ql?Pop/fetch_sop_ql
+Icon:         SOP_object_merge
+Table:        Pop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Nov 23 01:40:34 2011
+

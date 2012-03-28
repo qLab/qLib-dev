@@ -1,0 +1,9 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      default = 0.152905
+      flags = 0
+      segment { length = 0 value = 0.15290513634681702 0.15290513634681702 expr = ch(\"../../depth\")/2 }
+    }
+  }

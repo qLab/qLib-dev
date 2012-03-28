@@ -1,0 +1,6 @@
+{
+version 0.8
+activation	[ 0	locks=0 ]	(	1	)
+activationrules	[ 0	locks=0 ]	(	0	)
+group	[ 0	locks=0 ]	(	`chs(\"../groupmask\")`	)
+}

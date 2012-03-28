@@ -1,0 +1,21 @@
+#icon: SOP/attribcopy
+#context: pop
+#type: node
+
+= AttribCopy SOP qL =
+
+*Version 0.0.1*
+
+"""Copy the specified attribute from a SOP geometry to the corresponding particles."""
+
+@Parameters
+    SOP:
+        Path/name of the SOP node to copy attribute values from.
+
+@todo
+    Finish this help.
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

@@ -1,0 +1,8 @@
+Vop/addgroup C:/PROGRA~1/SIDEEF~1/HOUDIN~1.514/houdini/otls/OPlibVop.otl
+Vop/addgroup otls/OPlibVop.otl
+Vop/twoway C:/PROGRA~1/SIDEEF~1/HOUDIN~1.514/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Sop/clean C:/PROGRA~1/SIDEEF~1/HOUDIN~1.514/houdini/otls/OPlibSop.otl
+Sop/clean otls/OPlibSop.otl
+Vop/vectofloat C:/PROGRA~1/SIDEEF~1/HOUDIN~1.514/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl

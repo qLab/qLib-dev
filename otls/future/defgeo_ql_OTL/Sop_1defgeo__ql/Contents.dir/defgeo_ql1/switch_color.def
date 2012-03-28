@@ -1,0 +1,23 @@
+sopflags sopflags = 
+comment ""
+position 1.03428 8.42328
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	defgeo 0 1
+1 	color_z 0 1
+2 	color_per_prim 0 1
+3 	color_per_vertex 0 1
+}
+stat
+{
+  create 1318179157
+  modify 1318180179
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

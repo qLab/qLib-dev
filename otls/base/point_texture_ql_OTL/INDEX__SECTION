@@ -1,0 +1,13 @@
+Operator:     point_texture_ql
+Label:        Point Texture qL
+Path:         oplib:/Sop/point_texture_ql?Sop/point_texture_ql
+Icon:         NETWORKS_cop2
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Dec 22 02:32:38 2010
+

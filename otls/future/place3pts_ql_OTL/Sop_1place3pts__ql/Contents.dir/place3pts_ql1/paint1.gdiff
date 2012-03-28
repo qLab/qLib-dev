@@ -1,0 +1,12 @@
+HGDT
+Version 1
+NPoints 3
+NPrims 0
+NVertices 0
+PointAttrib
+Size 1
+Name Cd Size 12 Type 0 Changed 3
+Default  1 1 1
+0 -1 -1.01327896e-06 -1
+1 -1 -1 -1
+2 -1 -1 0

@@ -1,0 +1,19 @@
+#icon: SOP/attribute
+#context: sop
+#type: node
+
+= Varmap qL =
+
+*Version 0.1.0*
+
+"""Creates local variable mappings for attributes."""
+
+@Parameters
+    Attributes:
+        Space separated list of attribute names. By default local variable names will be the uppercase version
+        of the attribute name. Differing variable names can be given by a "attrName:varName" pair. For example
+        the value "myAttr myOtherAttr:OTHER" will result in the mapping "myAttr -> MYATTR  myOtherAttr -> OTHER".
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

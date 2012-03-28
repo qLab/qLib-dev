@@ -1,0 +1,28 @@
+# Dialog script for motion_ql automatically generated 07/10/11 17:11:06
+
+{
+    name	motion_ql
+    script	motion_ql
+    label	"Motion ql"
+
+    rendermask	"VMantra OGL"
+
+    help {
+	""
+    }
+
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"2D (in pixels)"
+	    "1"	"2D (NDC)"
+	    "2"	"3D"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

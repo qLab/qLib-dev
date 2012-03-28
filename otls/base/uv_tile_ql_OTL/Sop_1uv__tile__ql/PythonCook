@@ -1,0 +1,52 @@
+import math
+
+##DEBUG = True
+
+##def debug(msg):
+##    if DEBUG:
+##        print "DEBUG:", msg
+
+# Initialize basic parameters
+node = hou.pwd()
+geo = node.geometry()
+iter = geo.iterPrims()
+prims = geo.prims()
+side = math.ceil(math.sqrt(len(iter)))
+res = node.parm("resolution").eval()
+if node.parm("respect").eval():
+    step = int(res/side) / float(res)
+    gap = 0.0
+else:
+    step = 1 / side
+gap = node.parm("spacing").eval() / res
+
+##debug("Prims: {0}, Sides: {1}, Step: {2:f}, Gap: {3:f}".format(len(iter), side, step, gap))
+
+# Set the uv attrib by the current layer
+try:
+    attrib_name = "uv" + str(geo.attribValue("currentlayer"))
+except hou.OperationFailed as e:
+    attrib_name = "uv"
+
+##debug("Attrib name: {0}".format(attrib_name))
+
+# Create attribute
+uv = geo.findVertexAttrib(attrib_name)
+if uv is None:
+    uv = geo.addAttrib(hou.attribType.Vertex, attrib_name, (0.,0.,0.))
+
+# Create UV tiles
+for p in prims:
+    n = p.number()
+    vertices = p.vertices()
+    # Check geometry
+    if (p.type() != hou.primType.Polygon) or not (2 < len(vertices) < 5):
+        raise hou.NodeError("Wrong input, see help for possibble causes")
+    row = int(n / side)
+    col = int(n % side)
+    #debug("Row: {0}, Column: {1}".format(row, col))
+    vertices[0].setAttribValue(uv, (row * step + gap, col * step + gap, 0))
+    vertices[1].setAttribValue(uv, ((row + 1) * step - gap, col * step + gap, 0))
+    vertices[2].setAttribValue(uv, ((row + 1) * step - gap, (col + 1) * step - gap, 0))
+    if len(vertices) == 4:
+        vertices[3].setAttribValue(uv, (row * step + gap, (col + 1) * step - gap, 0))

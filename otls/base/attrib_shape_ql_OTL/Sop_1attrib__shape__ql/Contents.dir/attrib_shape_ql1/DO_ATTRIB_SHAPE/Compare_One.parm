@@ -1,0 +1,7 @@
+{
+version 0.8
+cmp	[ 0	locks=0 ]	(	eq	)
+input2	[ 0	locks=0 ]	(	0	)
+input2_i	[ 0	locks=0 ]	(	1	)
+input2_s	[ 0	locks=0 ]	(	""	)
+}

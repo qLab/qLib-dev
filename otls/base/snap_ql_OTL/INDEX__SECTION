@@ -1,0 +1,13 @@
+Operator:     snap_ql
+Label:        Snap qL
+Path:         oplib:/Sop/snap_ql?Sop/snap_ql
+Icon:         TOOLS_snap_point
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Mar 14 15:43:30 2012
+

@@ -1,0 +1,9 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	[ type	1 ] 	)
+origin	[ 0	locks=0 ]	(	0	0	0	)
+dir	[ 0	locks=0 ]	(	0	1	0	)
+dist	[ 0	locks=0 ]	(	[ dist	3 ] 	)
+points	[ 0	locks=0 ]	(	[ points	100 ] 	)
+order	[ 0	locks=0 ]	(	4	)
+}

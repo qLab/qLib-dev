@@ -1,0 +1,18 @@
+{
+version 0.8
+sourceGrp	[ 0	locks=0 ]	(	""	)
+ncy	[ 8	locks=0 ]	(	[ ncy	4 ] 	)
+cum	[ 0	locks=0 ]	(	"on"	)
+xOrd	[ 0	locks=0 ]	(	"srt"	)
+rOrd	[ 0	locks=0 ]	(	"xyz"	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+r	[ 8	locks=0 ]	(	0	[ ry	72 ] 	0	)
+s	[ 0	locks=0 ]	(	1	1	1	)
+shear	[ 0	locks=0 ]	(	0	0	0	)
+p	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 0	locks=0 ]	(	1	)
+vlength	[ 0	locks=0 ]	(	"on"	)
+newg	[ 0	locks=0 ]	(	"off"	)
+preservegroups	[ 0	locks=0 ]	(	"off"	)
+copyg	[ 0	locks=0 ]	(	copyGroup$CY	)
+}

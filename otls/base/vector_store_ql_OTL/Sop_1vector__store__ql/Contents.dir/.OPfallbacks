@@ -1,0 +1,6 @@
+Vop/addattrib /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/normalize /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
+Vop/normalize otls/OPlibVop.otl
+Vop/importattrib /Library/Frameworks/Houdini.framework/Versions/11.1.118/Resources/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl

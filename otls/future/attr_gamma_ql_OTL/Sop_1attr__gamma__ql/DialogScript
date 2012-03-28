@@ -1,0 +1,33 @@
+# Dialog script for attr_gamma_ql automatically generated 12/25/11 23:51:55
+
+{
+    name	attr_gamma_ql
+    script	attr_gamma_ql
+    label	"Attr Gamma qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"attrs"
+	label	"Color Attributes"
+	type	string
+	default	{ "Cd" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"gamma"
+	label	"Gamma"
+	type	float
+	default	{ "2.2" }
+	range	{ 0.45 2.2 }
+	export	none
+    }
+}

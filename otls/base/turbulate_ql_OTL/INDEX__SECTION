@@ -1,0 +1,13 @@
+Operator:     turbulate_ql
+Label:        Turbulate qL
+Path:         oplib:/Sop/turbulate_ql?Sop/turbulate_ql
+Icon:         SOP_mountain
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Mar 13 17:26:50 2012
+

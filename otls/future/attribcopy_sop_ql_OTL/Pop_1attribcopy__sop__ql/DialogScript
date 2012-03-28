@@ -1,0 +1,151 @@
+# Dialog script for attribcopy_sop_ql automatically generated 11/23/11 02:51:45
+
+{
+    name	attribcopy_sop_ql
+    script	attribcopy_sop_ql
+    label	"AttribCopy SOP qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"activate"
+	label	"Activation"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cacheincoming"
+	label	"Cache Incoming Geometry"
+	type	toggle
+	invisible
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"vex_source"
+	label	"Source Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l copy_attr_float vex_source" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"soppath"
+	label	"SOP"
+	type	oppath
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "/" }
+	parmtag	{ "opfilter" "!!SOP!!" }
+    }
+    group {
+	name	"folder1"
+	label	"Point Indexing"
+	tabbreak
+
+	parm {
+	    name	"use_origin_attr"
+	    label	"Use Origin Attribute for Point Indices"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"origin_attr"
+	    label	"Origin Attr Name"
+	    type	string
+	    default	{ "origin" }
+	    disablewhen	"{ use_origin_attr == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"originindex"
+	    label	"Origin Index"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ use_origin_attr == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0"
+	label	"Attribute"
+
+	parm {
+	    name	"attr_type"
+	    label	"Attribute Type"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Float"
+		"1"	"Vector (Color)"
+		"2"	"Vector4 (Quaternion)"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"attr_in"
+	    label	"Input Attribute"
+	    type	string
+	    default	{ "Alpha" }
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    sop = hou.pwd().parmTuple('soppath').eval()[0]" ]
+		[ "    attrs = hou.node(sop).geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_out"
+	    label	"Output/POP Attribute"
+	    type	string
+	    default	{ "Alpha" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

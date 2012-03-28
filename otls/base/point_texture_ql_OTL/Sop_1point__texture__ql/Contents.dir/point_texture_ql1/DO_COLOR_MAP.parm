@@ -1,0 +1,12 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+cmap	[ 0	locks=0 ]	(	[ cmap	"C:/PROGRA~1/Side Effects Software/Houdini 11.0.587/houdini/pic/butterfly1.pic" ] 	)
+uv	[ 0	locks=0 ]	(	0	0	0	)
+signature	[ 0	locks=0 ]	(	[ signature	2 ] 	)
+attrib	[ 0	locks=0 ]	(	[ attrib	alpha ] 	)
+channel	[ 0	locks=0 ]	(	[ channel	0 ] 	)
+}

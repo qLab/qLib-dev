@@ -1,0 +1,9 @@
+{
+    channel name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"__origpt\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attrname\") }
+    }
+  }

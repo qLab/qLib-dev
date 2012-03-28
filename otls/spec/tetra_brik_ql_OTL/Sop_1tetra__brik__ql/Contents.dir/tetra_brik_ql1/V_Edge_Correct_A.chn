@@ -1,0 +1,9 @@
+{
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      default = -0.022634
+      flags = 0
+      segment { length = 0 value = -0.022634029388427734 -0.022634029388427734 expr = -ch(\"../edge_width\") }
+    }
+  }

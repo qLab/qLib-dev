@@ -1,0 +1,9 @@
+{
+    channel numrange2 {
+      lefttype = extend
+      righttype = extend
+      default = 19
+      flags = 0
+      segment { length = 0 value = 19 19 expr = ch(\"../params/rows\")-ch(\"../params/intact\") }
+    }
+  }

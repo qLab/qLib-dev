@@ -1,0 +1,16 @@
+{
+    channel f1 {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../__MAIN__/f2\") }
+    }
+    channel f2 {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../__MAIN__/f2\") }
+    }
+  }

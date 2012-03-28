@@ -1,0 +1,34 @@
+#icon: SOP/twist
+#context: sop
+#type: node
+
+= Bend qL =
+
+*Version 0.1.1*
+
+"""Bends geometry along a circular arc."""
+
+@Parameters
+    Point Group:
+        The group of points the deformer affects.
+    Amount:
+        Amount of deformation in degrees.
+        
+        NOTE:
+            Due to floating point precision problems amounts less than 0.01 degrees results in no deformation.
+    Low Bound:
+        Limits the deformation in the lower end of the deformer. This allows one to create assimetric deformations.
+    High Bound:
+        Limits the deformation in the higher end of the deformer.
+    Transform:
+        Standard xform parameters that defines the position of the deformer.
+
+@Release_Notes
+    Version 0.1.1:
+        Fixed a bug which caused wrong quide geometry, when the deformer was rotated.
+    Version 0.1.0:
+        Initial release. This replaces end *enhances* the old qBend deformer.
+
+        Eliminated a bug which resulted in erroneous behavior when extremely low amounts of deformation was made.
+
+        Guide geometry is now properly handled and it's never included in the output of the operator.

@@ -1,0 +1,10 @@
+9
+apply_transforms
+idx_attr_to_point
+do_promote
+GEOM
+delete_promoted_idx_attr
+do_delete_promoted
+REST_PTS
+XFORM_PTS
+OUT

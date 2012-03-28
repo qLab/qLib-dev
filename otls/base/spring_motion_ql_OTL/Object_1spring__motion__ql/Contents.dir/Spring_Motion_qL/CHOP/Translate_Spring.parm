@@ -1,0 +1,19 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+springk	[ 8	locks=0 ]	(	[ springk	100 ] 	)
+mass	[ 8	locks=0 ]	(	[ mass	1 ] 	)
+dampingk	[ 8	locks=0 ]	(	[ dampingk	1 ] 	)
+method	[ 0	locks=0 ]	(	"disp"	)
+condfromchan	[ 0	locks=0 ]	(	"on"	)
+initpos	[ 0	locks=0 ]	(	0	)
+initspeed	[ 0	locks=0 ]	(	0	)
+scope	[ 0	locks=0 ]	(	t*	)
+srselect	[ 0	locks=0 ]	(	"max"	)
+units	[ 0	locks=0 ]	(	"seconds"	)
+timeslice	[ 0	locks=0 ]	(	"off"	)
+unload	[ 0	locks=0 ]	(	"off"	)
+export	[ 0	locks=0 ]	(	""	)
+gcolor	[ 0	locks=0 ]	(	0	0	0.899999976	)
+gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+}

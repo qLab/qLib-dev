@@ -1,0 +1,63 @@
+# Dialog script for merge_pieces_ql automatically generated 09/10/10 17:05:14
+
+{
+    name	merge_pieces_ql
+    script	merge_pieces_ql
+    label	"Merge Pieces qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Main"
+
+	parm {
+	    name	"name"
+	    label	"Group Name Prefix"
+	    type	string
+	    default	{ "piece" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Details"
+
+	parm {
+	    name	"old_start"
+	    label	"Original Start"
+	    type	integer
+	    default	{ "0" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"new_start"
+	    label	"New Start"
+	    type	integer
+	    default	{ "argc(primgroupmask(opinputpath(\".\",0),\"`chs('name')`*\"))" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"range"
+	    label	"Original Range"
+	    type	intvector
+	    size	3
+	    default	{ "0" "argc(primgroupmask(opinputpath(\".\",1),\"`chs('name')`*\"))-1" "1" }
+	    range	{ -1 1 }
+	    export	none
+	}
+    }
+
+}

@@ -1,0 +1,13 @@
+Operator:     vector_ql
+Label:        Vector qL
+Path:         oplib:/Sop/vector_ql?Sop/vector_ql
+Icon:         SOP_matchaxis
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Sep 22 23:58:26 2011
+

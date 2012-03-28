@@ -1,0 +1,14 @@
+{
+    channel radius {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"../calc_rad\"), sqrt(detail(\"../attribpromote1\",\"area\", 0)/npoints(\"../IN\")/$PI)*ch(\"../calc_rad_factor\"), ch(\"../radius\"))" }
+    }
+    channel test {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "detail(\"../attribpromote1\",\"area\", 0)" }
+    }
+  }

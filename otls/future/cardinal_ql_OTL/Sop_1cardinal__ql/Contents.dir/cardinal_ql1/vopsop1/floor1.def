@@ -1,0 +1,19 @@
+comment ""
+position -15.3845 -1.68843
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+inputs
+{
+0 	import_ptidx 1 1
+}
+stat
+{
+  create 1331476502
+  modify 1331515837
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,11 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	[ activate	0 ] 	)
+cacheincoming	[ 0	locks=0 ]	(	"off"	)
+vex_source	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+file	[ 0	locks=0 ]	(	op:`opfullpath(\"../pt_lookup\")`/OUT	)
+attr_in	[ 0	locks=0 ]	(	`chs(\"../float_attr\")`	)
+}

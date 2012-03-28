@@ -1,0 +1,57 @@
+# Dialog script for pointneighbourcount_ql automatically generated 03/05/12 00:26:39
+
+{
+    name	pointneighbourcount_ql
+    script	pointneighbourcount_ql
+    label	"Point Neighbour Count qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"radius"
+	label	"Search radius"
+	type	float
+	default	{ "0.00999999978" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"maxpoints"
+	label	"Number of points"
+	type	integer
+	default	{ "9" }
+	range	{ 0 9 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib"
+	label	"Attribute Name"
+	type	string
+	default	{ "pscale" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"localvar"
+	label	"Local Variable Name"
+	type	string
+	default	{ "`toupper(chs(\"attrib\"))`" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

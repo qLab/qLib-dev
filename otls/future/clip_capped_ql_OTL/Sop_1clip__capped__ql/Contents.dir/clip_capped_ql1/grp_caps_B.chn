@@ -1,0 +1,22 @@
+{
+    channel rangeend {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $N }
+    }
+    channel docreategrp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../grp_clipped_A/docreategrp\") }
+    }
+    channel crname {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"caps_B\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../below_caps\") }
+    }
+  }

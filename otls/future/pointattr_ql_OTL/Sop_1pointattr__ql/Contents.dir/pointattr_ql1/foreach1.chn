@@ -1,0 +1,9 @@
+{
+    channel numrange2 {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../oplist\") }
+    }
+  }
