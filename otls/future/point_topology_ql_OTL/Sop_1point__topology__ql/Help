@@ -1,0 +1,51 @@
+#icon: DOP/sopscalarfield
+#context: sop
+#type: node
+
+= Point Topology qL =
+
+*Version 0.0.1*
+
+"""Performs various topology-related queries and stores the results in point attributes."""
+
+@related
+    - [PointAttr qL|Node:sop/pointattr_ql]
+    - [Attr Lookups qL|Node:sop/attr_lookups_ql]
+    - [Attr Lookup Ramp qL|Node:sop/attr_lookup_ramp_ql]
+    - [Node:sop/point]
+    - [Node:sop/primitive]
+    - ...
+
+...
+
+The following queries are available:
+
+Coincident Point Count:
+    Finds out how many points occupy the same spatial coordinate.
+    (Can be useful to detect un-[Fused|Node:sop/fuse] points.)
+    Optionally, multiple coincident points can be grouped.
+
+Neighbour Count:
+    Determines the number of topological neighbours for each point
+    (ie. connected with an edge).
+    Optionally, points with small neighbour count (e.g. curve endpoints
+    or "lonely" points) can be grouped.
+
+Point Index, Vertex Index:
+    Stores point or vertex indices in an attribute. The vertex index
+    is relative to the primitive the point belongs to.
+
+...
+
+NOTE:
+    Most vertex-related indices make more sense on curves or surfaces
+    (they can be ambiguous on polygonal meshes).
+    
+
+@Parameters
+    ...:
+        ...
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

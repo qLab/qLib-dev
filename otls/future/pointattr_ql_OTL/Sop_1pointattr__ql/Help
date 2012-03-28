@@ -1,0 +1,122 @@
+#icon: COP2/mosaic
+#context: sop
+#type: node
+
+= PointAttr qL =
+
+*Version 0.0.1*
+
+"""Creation/manipulation of per-point float attributes using a series of basic operations."""
+
+@related
+    - [Node:sop/point]
+    - [Node:sop/attribcreate]
+    - [Vector qL|Node:sop/vector_ql]
+    - [Attr Lookups qL|Node:sop/attr_lookups_ql]
+    - [Attr Lookup Ramp qL|Node:sop/attr_lookup_ramp_ql]
+
+
+@Parameters
+    Attribute:
+        Name of the attribute to create or modify.
+
+    Local Variable:
+        Name of the local variable that will be associated with the attribute.
+
+    Geometry:
+        Pre-processing of input geometry.
+
+        No Change:
+            Use the input geometry as-is.
+
+        Keep Points Only:
+            Delete all except point data from the geometry.
+            This can be useful if the geometry is heavy and the results are only intended to be used
+            in another PointAttr qL SOP as secondary geometry.
+
+    Operations:
+        A series of operations where the attribute can be created or imported, then adjusted in various ways
+        to achieve the desired result.
+
+        The following operations are available:
+
+        '---' (Off):
+            No operation.
+
+        _'Get'_:
+            Import another attribute -- copy the incoming values to the attribute being edited.
+            (The imported values will be converted to `float` type.)
+
+            Attribute Name:
+                Name of the attribute to import.
+
+                Type:
+                    Original type of the imported attribute (and how to convert to `float`, if applicable).
+
+                Input:
+                    The geometry to import the attribute from (ie. connected to the first or second input).
+
+        _'Set'_:
+            Generate attribute values. The following modes are available:
+
+            Constant Value:
+                All values will be initialized to the same value.
+
+            Random Range \[0..1\]:
+                A random value in the `\[0..1\]` range will be set for each point.
+                (Use a *Fit* operation to stretch this to an arbitrary range.)
+
+            Point Index \[0..pts#):
+                The corresponding geometry point index will be copied to each value.
+
+            Point Index \[0..1\]:
+                Same as above, but the indices are normalized into the unit range.
+
+            Point ID, Age, Life, Lifespan:
+                The POP/particle-related attribute will be used.
+
+        _'Fit'_:
+            Apply a [Fit Range|Node:vop/fit] operation on the attribute values
+            (values in the 'source' range will be mapped to the 'destination' range).
+
+            Values out of the range min/max settings are clamped (this can be used
+            as a side effect).
+
+        _'Tune'_:
+            Adjust all attribute values.
+            The `Value` parameter is used wherever it makes sense.
+
+            Add:
+                Increment attribute values by `Value`.
+
+            Multiply:
+                Multiply all values by `Value`.
+
+            Power (Gamma):
+                Apply a gamma-correction with `Value`.
+
+            Complement (Invert):
+                Calculates `1.0-attr`.
+
+            Modulo:
+                Divides with `Value` and stores the remainder of the divide.
+
+            Randomize:
+                Generates (pseudo)random values using current attribute values as input.
+                The `Value` parameter is used as random seed.
+
+            Add then Floor:
+                Rounds down the attribute values to the nearest integer but adds `Value`
+                first (regular rounding can be applied using `0.5` for `Value`).
+                
+
+
+        _'Map'_:
+            Remap attribute values using a lookup curve
+            (similar to [Attr Lookups qL|Node:sop/attr_lookups_ql] or the [Lookup CHOP|Node:chop/lookup]).
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

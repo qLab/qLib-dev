@@ -13,7 +13,8 @@
       <contextNetType>SOP</contextNetType>
     </toolMenuContext>
     <toolMenuContext name="network">
-      <contextOpType>$HDA_TABLE/$HDA_NAME</contextOpType>
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
     </toolMenuContext>
     <toolSubmenu>qLib</toolSubmenu>
     <toolSubmenu>Primitive</toolSubmenu>

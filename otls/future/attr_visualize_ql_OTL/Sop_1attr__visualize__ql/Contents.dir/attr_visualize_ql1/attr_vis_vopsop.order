@@ -1,4 +1,4 @@
-14
+15
 global1
 output1
 rampparm1
@@ -13,3 +13,4 @@ switch1
 switch2
 attr_comp
 attr_type
+attr_int

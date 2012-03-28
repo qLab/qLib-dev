@@ -1,0 +1,42 @@
+{
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"count_nbr\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../nbr_attrib\") }
+    }
+    channel localvar {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../nbr_localvar\") }
+    }
+    channel do_group {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 value = 1 1 expr = ch(\"../nbr_do_group\") }
+    }
+    channel num_or_less {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 value = 1 1 expr = ch(\"../nbr_num_or_less\") }
+    }
+    channel groupname {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"endpoints\"
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = chs(\"../nbr_groupname\") }
+    }
+  }

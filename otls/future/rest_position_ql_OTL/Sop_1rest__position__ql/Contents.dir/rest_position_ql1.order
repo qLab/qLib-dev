@@ -1,4 +1,4 @@
-9
+13
 rest_P
 rest_N
 rest_P_N
@@ -8,3 +8,7 @@ select_mode
 restore
 select_restore_mode
 OUT
+del_rnml
+del_rest
+switch_delete_rest
+switch_delete_rnml

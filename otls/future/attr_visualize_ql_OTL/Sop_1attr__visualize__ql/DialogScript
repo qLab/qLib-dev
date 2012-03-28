@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 03/13/12 01:40:13
+# Dialog script for attr_visualize_ql automatically generated 03/14/12 14:25:48
 
 {
     name	attr_visualize_ql
@@ -50,7 +50,8 @@
 	    default	{ "0" }
 	    menu	{
 		"0"	"Float"
-		"1"	"Vector"
+		"1"	"Integer"
+		"2"	"Vector"
 	    }
 	    range	{ 0 1 }
 	    export	none
@@ -62,7 +63,7 @@
 	    label	"Attribute Component"
 	    type	integer
 	    default	{ "0" }
-	    disablewhen	"{ attr_type != 1 }"
+	    disablewhen	"{ attr_type != 2 }"
 	    menu	{
 		"0"	"X"
 		"1"	"Y"

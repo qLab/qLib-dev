@@ -1,0 +1,52 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"Attribute Name"
+	type	string
+	default	{ "ptindex" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"localvar"
+	label	"Local Variable Name"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mode"
+	label	"mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "ptindex"	"Point Index"
+	    "ptid"	"Point Id"
+	    "pstate"	"Point State"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

@@ -1,0 +1,4 @@
+Vop/pcopen /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/pcopen otls/OPlibVop.otl
+Vop/pcfilter /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/pcfilter otls/OPlibVop.otl

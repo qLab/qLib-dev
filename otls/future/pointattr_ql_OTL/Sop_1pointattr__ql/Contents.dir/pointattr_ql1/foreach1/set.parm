@@ -1,0 +1,11 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+attrib	[ 0	locks=0 ]	(	`chs(\"../../name\")`	)
+switcher	[ 0	locks=0 ]	(	[ switcher	0 ] 	)
+value_const	[ 8	locks=0 ]	(	[ value_const	1 ] 	)
+seed	[ 0	locks=0 ]	(	[ seed	0 ] 	)
+}
