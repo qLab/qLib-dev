@@ -1,0 +1,13 @@
+    parm {
+	name	"input"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"parm"
+	label	"Label"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

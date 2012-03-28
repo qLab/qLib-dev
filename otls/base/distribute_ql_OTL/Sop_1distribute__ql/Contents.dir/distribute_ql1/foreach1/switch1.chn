@@ -3,6 +3,12 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "if( ch(\"../../ray\") && strcmp(opinput(\"../..\",1), \"\"), 1, 0)" }
+      segment { length = 0 expr = "if( ch(\"../../ray\") && strcmp(opinput(\"../..\",1), \"\"), (!(stamp(\"..\", \"FORVALUE\",0)%ch(\"../../ray_n\")))||(stamp(\"..\",\"FORVALUE\",0)==ch(\"../numrange2\")), 0)" }
+    }
+    channel parm {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../numrange2\") }
     }
   }

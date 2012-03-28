@@ -1,6 +1,6 @@
 {
 version 0.8
-group	[ 0	locks=0 ]	(	[ group	"" ] 	)
+group	[ 8	locks=0 ]	(	[ group	group1 ] 	)
 entity	[ 0	locks=0 ]	(	"primitive"	)
 collision	[ 0	locks=0 ]	(	""	)
 method	[ 0	locks=0 ]	(	"minimum"	)

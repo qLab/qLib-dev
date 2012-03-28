@@ -1,4 +1,4 @@
-# Dialog script for distribute_ql automatically generated 03/23/12 13:16:20
+# Dialog script for distribute_ql automatically generated 03/28/12 15:16:27
 
 {
     name	distribute_ql
@@ -28,10 +28,40 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
+	name	"vex_group2"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l foreach1/distributor_helper_ql1 vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"calc_rad"
+	label	"Calculate Radius"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"calc_rad_factor"
+	label	"Radius Factor"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ calc_rad == 0 }"
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
 	name	"radius"
 	label	"Radius"
 	type	float
 	default	{ "0" }
+	disablewhen	"{ calc_rad == 1 }"
 	range	{ 0! 1 }
 	export	none
     }
@@ -68,6 +98,14 @@
 	export	none
     }
     parm {
+	name	"ray_n"
+	label	"Ray Every Nth"
+	type	integer
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
 	name	"putnml"
 	label	"Ray Intersection Normal"
 	type	toggle
@@ -81,7 +119,7 @@
 	name	"ray_group"
 	label	"Ray Group"
 	type	string
-	default	{ "" }
+	default	{ "`chs(\"vex_group2\")`" }
 	menutoggle	{
 	    [ "opmenu -l foreach1/ray1 group" ]
 	}

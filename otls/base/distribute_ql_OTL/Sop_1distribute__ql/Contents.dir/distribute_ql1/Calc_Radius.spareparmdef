@@ -1,0 +1,21 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"radius"
+	label	"Radius"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"test"
+	label	"Test"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
