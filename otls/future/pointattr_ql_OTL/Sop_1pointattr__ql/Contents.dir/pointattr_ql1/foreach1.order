@@ -1,4 +1,4 @@
-8
+17
 each1
 switch1
 set
@@ -7,3 +7,12 @@ fit_range
 nope
 adjust
 import_attr
+attrib_del
+switch_attrib_del
+map
+merge_attr
+out_attrib
+attrib_del_2
+switch_attrib_del1
+switch2
+point_vtxi_vtxs

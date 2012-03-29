@@ -49,6 +49,7 @@
 	    "4"	"Modulo"
 	    "5"	"Randomize"
 	    "6"	"Floor (+Value)"
+	    "7"	"Absolute"
 	}
 	range	{ 0 10 }
 	export	none

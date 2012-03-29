@@ -1,0 +1,77 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"attrib"
+	type	string
+	default	{ "pscale" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"merge_attrib"
+	label	"merge_attrib"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attrib_type"
+	label	"attrib_type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"float"
+	    "1"	"int"
+	    "2"	"vx"
+	    "3"	"vy"
+	    "4"	"vz"
+	    "5"	"vlen"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"input_idx"
+	label	"input_idx"
+	type	integer
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"merge_mode"
+	label	"merge_mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "add"	"Add"
+	    "mult"	"Multiply"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
