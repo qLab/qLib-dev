@@ -1,4 +1,4 @@
-# Dialog script for snap_ql automatically generated 03/14/12 15:43:30
+# Dialog script for snap_ql automatically generated 03/29/12 19:04:55
 
 {
     name	snap_ql
@@ -63,7 +63,7 @@
 	label	"Exponent"
 	type	float
 	default	{ "1" }
-	disablewhen	"{ falloff 0 }"
+	disablewhen	"{ falloff == 0 }"
 	range	{ 0 4 }
 	export	none
 	parmtag	{ "parmvop" "1" }

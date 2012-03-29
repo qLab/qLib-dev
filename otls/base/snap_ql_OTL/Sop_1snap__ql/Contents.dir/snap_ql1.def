@@ -1,18 +1,16 @@
 sopflags sopflags = 
 comment ""
-position -3.35923 -1.88312
+position -4.96471 -0.57059
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 inputs
 {
-0 	polybevel1 0 1
-1 	blast1 0 1
 }
 stat
 {
-  create 1331657885
-  modify 1331737038
-  author Mate@Mate.local.melon.hu
+  create 1333040598
+  modify 1333040695
+  author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
