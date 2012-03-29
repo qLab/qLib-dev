@@ -1,18 +1,16 @@
 sopflags sopflags = 
 comment ""
-position 24.508 -3.74953
+position -4.18824 1.01765
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 inputs
 {
-0 	xform2 0 1
-1 	vecrestore_ql1 0 1
 }
 stat
 {
-  create 1308701745
-  modify 1308704683
-  author tusi@csoma
+  create 1333040591
+  modify 1333040623
+  author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
