@@ -1,0 +1,12 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+g0	[ 0	locks=0 ]	(	0	0	)
+vec	[ 0	locks=0 ]	(	1	1	1	)
+vec_p	[ 0	locks=0 ]	(	1	1	1	)
+vec_n	[ 0	locks=0 ]	(	1	1	1	)
+vec_v4	[ 0	locks=0 ]	(	1	1	1	1	)
+vec_uv	[ 0	locks=0 ]	(	1	1	1	)
+vec_up	[ 0	locks=0 ]	(	1	1	1	)
+vec_un	[ 0	locks=0 ]	(	1	1	1	)
+}

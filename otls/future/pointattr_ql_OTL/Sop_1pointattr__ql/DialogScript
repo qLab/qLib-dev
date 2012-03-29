@@ -1,4 +1,4 @@
-# Dialog script for pointattr_ql automatically generated 03/18/12 02:16:03
+# Dialog script for pointattr_ql automatically generated 03/29/12 18:51:22
 
 {
     name	pointattr_ql
@@ -62,7 +62,7 @@
 
 	    groupradio {
 		name	"op_#_"
-		label	"---"
+		label	"-"
 
 		parm {
 		    name	"note#"
@@ -83,11 +83,11 @@
 
 	    groupradio {
 		name	"op_#__1"
-		label	"Get"
+		label	"get"
 
 		parm {
 		    name	"import_attrib#"
-		    label	"Attribute Name"
+		    label	"Attribute"
 		    type	string
 		    default	{ "" }
 		    menureplace	{
@@ -133,6 +133,7 @@
 		    label	"Input Index"
 		    type	integer
 		    nolabel
+		    joinnext
 		    default	{ "0" }
 		    menu	{
 			"0"	"1st"
@@ -141,11 +142,19 @@
 		    range	{ 0 1 }
 		    export	none
 		}
+		parm {
+		    name	"import_attrib_del#"
+		    label	"Delete"
+		    type	toggle
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
 	    }
 
 	    groupradio {
 		name	"op_#__2"
-		label	"Set"
+		label	"set"
 
 		parm {
 		    name	"init_type#"
@@ -161,6 +170,10 @@
 			"5"	"Age (current age)"
 			"6"	"Life (full lifespan)"
 			"7"	"Relative Lifespan [0..1)"
+			"8"	"Vertex Index"
+			"9"	"No. of Vertices on Prim"
+			"10"	"Vertex Index [0..1]"
+			"11"	"Primitive Index"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -188,7 +201,7 @@
 
 	    groupradio {
 		name	"op_#__3"
-		label	"Fit"
+		label	"fit"
 
 		parm {
 		    name	"srcmin#"
@@ -228,7 +241,7 @@
 
 	    groupradio {
 		name	"op_#__4"
-		label	"Tune"
+		label	"tune"
 
 		parm {
 		    name	"adjust_op#"
@@ -243,6 +256,7 @@
 			"4"	"Modulo"
 			"5"	"Randomize ('Value' Seed)"
 			"6"	"Add, then Floor"
+			"7"	"Absolute"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -260,14 +274,140 @@
 
 	    groupradio {
 		name	"op_#__5"
-		label	"Map"
+		label	"mrg"
 
 		parm {
-		    name	"lookup_todo#"
+		    name	"merge_mode#"
+		    label	"Mode"
+		    type	integer
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    menu	{
+			"0"	"Add"
+			"1"	"Multiply"
+		    }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"merge_attrib#"
+		    label	"Attribute"
+		    type	string
+		    default	{ "" }
+		    menureplace	{
+			[ "# TODO: get attr list from the appropriate input" ]
+			[ "" ]
+			[ "r = []" ]
+			[ "" ]
+			[ "try:" ]
+			[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+			[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+			[ "    " ]
+			[ "    for a in attrs:" ]
+			[ "        r.append(a)" ]
+			[ "        r.append(a)" ]
+			[ "except:" ]
+			[ "    pass" ]
+			[ "" ]
+			[ "return r" ]
+			language	python
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"merge_attrib_type#"
+		    label	"Type / Input"
+		    type	integer
+		    joinnext
+		    default	{ "0" }
+		    menu	{
+			"0"	"Float"
+			"1"	"Integer"
+			"2"	"Vector: X"
+			"3"	"Vector: Y"
+			"4"	"Vector: Z"
+			"5"	"Vec.Length"
+		    }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"merge_input_idx#"
+		    label	"Input Index"
+		    type	integer
+		    nolabel
+		    joinnext
+		    default	{ "0" }
+		    menu	{
+			"0"	"1st"
+			"1"	"2nd"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "export_disable" "1" }
+		}
+		parm {
+		    name	"merge_attrib_del#"
+		    label	"Delete"
+		    type	toggle
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__6"
+		label	"map"
+
+		parm {
+		    name	"lookup_todo#_2"
 		    label	"todo"
 		    type	label
 		    nolabel
 		    default	{ "TODO: remap by curve" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    groupradio {
+		name	"op_#__7"
+		label	"out"
+
+		parm {
+		    name	"out_attrib#"
+		    label	"Rename Attribute to"
+		    type	string
+		    default	{ "" }
+		    menureplace	{
+			[ "# TODO: get attr list from the appropriate input" ]
+			[ "" ]
+			[ "r = []" ]
+			[ "" ]
+			[ "try:" ]
+			[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+			[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+			[ "    " ]
+			[ "    for a in attrs:" ]
+			[ "        r.append(a)" ]
+			[ "        r.append(a)" ]
+			[ "except:" ]
+			[ "    pass" ]
+			[ "" ]
+			[ "return r" ]
+			language	python
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"sepparm#_2"
+		    label	"Separator"
+		    type	separator
+		    default	{ }
 		    range	{ 0 1 }
 		    export	none
 		}

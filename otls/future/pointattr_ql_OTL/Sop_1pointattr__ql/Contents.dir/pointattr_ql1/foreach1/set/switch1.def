@@ -13,11 +13,15 @@ inputs
 6 	age_1 0 1
 7 	life_1 0 1
 8 	divide1 0 1
+9 	constant1 0 1
+10 	constant1 0 1
+11 	constant1 0 1
+12 	constant1 0 1
 }
 stat
 {
   create 1331940380
-  modify 1332014245
+  modify 1333037080
   author tusi@demeisen
   access 0777
 }

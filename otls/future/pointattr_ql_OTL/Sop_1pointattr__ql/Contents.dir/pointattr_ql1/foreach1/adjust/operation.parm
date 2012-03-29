@@ -17,7 +17,8 @@ menuchoices	[ 0	locks=0 ]	(	"0 \"Add\"
 3 \"Complement ('Invert')\"
 4 \"Modulo\"
 5 \"Randomize\"
-6 \"Floor (+Value)\""	)
+6 \"Floor (+Value)\"
+7 \"Absolute\""	)
 separator2	[ 0	locks=0 ]	(	)
 invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)
