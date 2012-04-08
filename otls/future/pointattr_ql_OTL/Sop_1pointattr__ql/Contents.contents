@@ -161,6 +161,15 @@ pointattr_ql1/foreach1/adjust/floor1.parm
 pointattr_ql1/foreach1/adjust/abs1.init
 pointattr_ql1/foreach1/adjust/abs1.def
 pointattr_ql1/foreach1/adjust/abs1.parm
+pointattr_ql1/foreach1/adjust/spline1.init
+pointattr_ql1/foreach1/adjust/spline1.def
+pointattr_ql1/foreach1/adjust/spline1.parm
+pointattr_ql1/foreach1/adjust/zero.init
+pointattr_ql1/foreach1/adjust/zero.def
+pointattr_ql1/foreach1/adjust/zero.parm
+pointattr_ql1/foreach1/adjust/trig1.init
+pointattr_ql1/foreach1/adjust/trig1.def
+pointattr_ql1/foreach1/adjust/trig1.parm
 pointattr_ql1/foreach1/import_attr.init
 pointattr_ql1/foreach1/import_attr.def
 pointattr_ql1/foreach1/import_attr.spareparmdef

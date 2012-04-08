@@ -19,6 +19,15 @@
 	export	none
     }
     parm {
+	name	"do_attrib"
+	label	"do_attrib"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"attrib"
 	label	"Attribute Name"
 	type	string
@@ -46,8 +55,22 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"num_or_less"
-	label	"num_or_less"
+	name	"compare_mode"
+	label	"compare_mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "eq_or_less"	"Equal or Less"
+	    "eq"	"Equal"
+	    "eq_or_grtr"	"Equal or Greater"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"grp_num"
+	label	"grp_num"
 	type	integer
 	default	{ "1" }
 	range	{ 0 10 }

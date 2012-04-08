@@ -23,7 +23,23 @@
       start = 1.2083333730697632
       segment { length = 0 value = 1 1 expr = ch(\"../coi_do_group\") }
     }
-    channel num_or_more {
+    channel do_attrib {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 value = 1 1 expr = ch(\"../coi_do_attrib\") }
+    }
+    channel compare_mode {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 value = 2 2 expr = ch(\"../coi_compare_mode\") }
+    }
+    channel grp_num {
       lefttype = extend
       righttype = extend
       default = 2

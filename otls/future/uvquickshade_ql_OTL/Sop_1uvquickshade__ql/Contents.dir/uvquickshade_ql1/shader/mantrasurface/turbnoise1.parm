@@ -1,0 +1,12 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+type	[ 0	locks=0 ]	(	chs('../type/stringdef')	)
+pos	[ 0	locks=0 ]	(	0	0	0	)
+freq	[ 0	locks=0 ]	(	[ freq1	10 ] 	[ freq2	10 ] 	[ freq3	10 ] 	)
+offset	[ 0	locks=0 ]	(	[ offset1	0 ] 	[ offset2	0 ] 	[ offset3	0 ] 	)
+amp	[ 0	locks=0 ]	(	[ amp	1 ] 	)
+rough	[ 0	locks=0 ]	(	[ rough	0.5 ] 	)
+atten	[ 0	locks=0 ]	(	[ atten	1 ] 	)
+turb	[ 0	locks=0 ]	(	[ turb	5 ] 	)
+}

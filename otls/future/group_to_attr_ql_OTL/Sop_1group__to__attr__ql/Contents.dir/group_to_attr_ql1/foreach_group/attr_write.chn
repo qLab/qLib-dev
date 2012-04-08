@@ -1,0 +1,8 @@
+{
+    channel class {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../attr_create/class\") }
+    }
+  }

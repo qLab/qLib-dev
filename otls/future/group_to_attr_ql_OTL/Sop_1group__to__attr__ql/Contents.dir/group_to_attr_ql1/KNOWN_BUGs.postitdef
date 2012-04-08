@@ -1,0 +1,14 @@
+text "'del_groups' always deletes the default group (even if it's not created here)
+"
+position -3.25277 -0.698954
+size 2.49982 1.50173
+flags =  minimize off
+stat
+{
+  create 1333496264
+  modify 1333496360
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+end

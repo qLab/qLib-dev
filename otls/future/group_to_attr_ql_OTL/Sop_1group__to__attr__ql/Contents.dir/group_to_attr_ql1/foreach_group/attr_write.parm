@@ -1,0 +1,14 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	"guess"	)
+name	[ 0	locks=0 ]	(	`chs(\"../../attr_create/name\")`	)
+varname	[ 0	locks=0 ]	(	`chs(\"../../attr_create/varname\")`	)
+class	[ 8	locks=0 ]	(	[ class	1 ] 	)
+type	[ 0	locks=0 ]	(	"index"	)
+size	[ 0	locks=0 ]	(	1	)
+default	[ 0	locks=0 ]	(	0	0	0	0	)
+writevalues	[ 0	locks=0 ]	(	"on"	)
+value	[ 0	locks=0 ]	(	1	0	0	0	)
+string	[ 0	locks=0 ]	(	"`stamps(\"..\", \"FORVALUE\", \"none\")`"	)
+}

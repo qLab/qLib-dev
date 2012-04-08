@@ -1,10 +1,9 @@
-18
+23
 global1
 pcopen1
 file
 while1
 numpts
-add_coincident_count_attr
 constant1
 attrib
 localvar
@@ -13,7 +12,13 @@ maxpoints
 if1
 do_group
 groupname
-compare1
-num_or_more
+compare_eq_or_less
+grp_num
 and1
 floattoint1
+do_attrib
+if2
+switch1
+compare_eq
+compare_eq_or_grtr3
+compare_mode

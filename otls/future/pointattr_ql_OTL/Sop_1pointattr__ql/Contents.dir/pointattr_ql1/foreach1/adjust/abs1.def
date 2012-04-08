@@ -1,5 +1,5 @@
 comment ""
-position 7.68183 -14.9794
+position 7.57595 -12.9932
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
@@ -9,7 +9,7 @@ inputs
 stat
 {
   create 1333033846
-  modify 1333033884
+  modify 1333053521
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

@@ -1,0 +1,16 @@
+2
+2
+{
+	minimized := 0;
+	x_position := -0.385813415;
+	y_position := 6.11470556;
+	width := 15.18612;
+	color := "UT_Color RGB 0.52 0.52 0.52 ";
+	height := 8.51908302;
+}
+{
+  create 1300891341
+  modify 1333924636
+  author rmagee@taxco.local
+  access 0777
+}
