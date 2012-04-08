@@ -6,5 +6,5 @@ vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 attrib	[ 0	locks=0 ]	(	`chs(\"../../name\")`	)
 value	[ 0	locks=0 ]	(	[ value	1 ] 	)
-operation	[ 0	locks=0 ]	(	[ operation	1 ] 	)
+operation	[ 0	locks=0 ]	(	[ operation	8 ] 	)
 }

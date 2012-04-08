@@ -1,4 +1,4 @@
-# Dialog script for pointattr_ql automatically generated 03/29/12 18:51:22
+# Dialog script for pointattr_ql automatically generated 03/29/12 22:43:27
 
 {
     name	pointattr_ql
@@ -254,9 +254,11 @@
 			"2"	"Power (Gamma)"
 			"3"	"Complement (Invert)"
 			"4"	"Modulo"
-			"5"	"Randomize ('Value' Seed)"
+			"5"	"Randomize ('Value' seed)"
 			"6"	"Add, then Floor"
 			"7"	"Absolute"
+			"8"	"Triangle [0..v..0]"
+			"9"	"Sine ('Value' as freq)"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -266,7 +268,7 @@
 		    label	"Value"
 		    type	float
 		    default	{ "1" }
-		    disablewhen	"{ adjust_op# == 3 }"
+		    disablewhen	"{ adjust_op# == 3 } { adjust_op# == 7 }"
 		    range	{ -1 4 }
 		    export	none
 		}

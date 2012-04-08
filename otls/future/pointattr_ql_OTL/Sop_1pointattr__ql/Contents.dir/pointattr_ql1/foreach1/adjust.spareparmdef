@@ -50,6 +50,8 @@
 	    "5"	"Randomize"
 	    "6"	"Floor (+Value)"
 	    "7"	"Absolute"
+	    "8"	"Triangle [0@0.. v@0.5 ..0@1]"
+	    "9"	"Sinus ('Value' Freq)"
 	}
 	range	{ 0 10 }
 	export	none

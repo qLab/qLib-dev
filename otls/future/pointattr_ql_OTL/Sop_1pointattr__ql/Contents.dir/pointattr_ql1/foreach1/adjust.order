@@ -1,4 +1,4 @@
-14
+17
 addattrib1
 attrib
 importattrib1
@@ -13,3 +13,6 @@ modulo1
 random1
 floor1
 abs1
+spline1
+zero
+trig1
