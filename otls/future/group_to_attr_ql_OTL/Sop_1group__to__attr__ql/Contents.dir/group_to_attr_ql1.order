@@ -1,0 +1,12 @@
+11
+foreach_group
+attr_create
+grp_prim_default
+grp_pt_default
+switch_prim_or_pt
+switch_create_default
+OUT
+IN
+attribtransfer1
+del_groups
+switch_delete_groups

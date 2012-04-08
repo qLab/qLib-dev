@@ -1,0 +1,21 @@
+#context: sop
+#type: node
+#icon: VOP/addattrib
+
+= Group to Attr qL =
+
+*Version 0.0.1*
+
+"""Converts (primitive/point) groups to a string attribute where the values contain the corresponding group names."""
+
+@related
+    - [Node:sop/partition]
+
+This operator can be considered as a counterpart for the [Node:sop/partition] SOP.
+
+NOTE:
+    TODO: Finish this help.
+
+
+...
+
