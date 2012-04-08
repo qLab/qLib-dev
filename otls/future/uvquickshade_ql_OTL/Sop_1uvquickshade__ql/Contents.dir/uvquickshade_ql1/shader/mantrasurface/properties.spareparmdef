@@ -1,0 +1,26 @@
+    group {
+	name	"Shading"
+	label	"Shading"
+
+	parm {
+	    name	"vm_displacebound"
+	    label	"Displacement Bound"
+	    type	float
+	    default	{ "0" }
+	    help	"The maximum bounds that the displacement shader will move geometry. This is defined in \"camera\" space. Note, that the absolute value is used to determine the bounds."
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "spare_category" "Shading" }
+	}
+	parm {
+	    name	"vm_truedisplace"
+	    label	"True Displacements"
+	    type	toggle
+	    default	{ "1" }
+	    help	"When running displacement shaders, whether the VEX variable P is actually moved (true displacement) or whether bump mapping will be performed."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "spare_category" "Shading" }
+	}
+    }
+

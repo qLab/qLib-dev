@@ -1,0 +1,35 @@
+#context: sop
+#type: node
+#icon: SOP/uvquickshade
+
+= UV QuickShade qL =
+
+*Version 0.0.1*
+
+"""Applies an image file as a textured shader to a surface (an enhanced version of [Node:sop/uvquickshade])."""
+
+@related
+    - [Node:sop/uvquickshade]
+    - [Node:sop/texture]
+    - [Node:sop/uvunwrap]
+    - [Node:sop/uvproject]
+
+This is a convenience operator that lets you very quickly put an image file on a surface.
+
+@Features
+    Use Lighting:
+        Lighting can be disabled on the model, allowing easier inspecting of the UV texture projection.
+
+    Bump mapping (viewport-only):
+        The texture image can also be applied as a bump map.
+
+    Environment mapping (viewport-only):
+        An environment map can also be applied. This is useful to determine if curved surfaces have
+        the appropriate shape for aesthetic reflections, for example.
+
+Please note that this SOP _does not generate_ UV mapping coordinates.
+
+
+NOTE:
+    TODO: Finish this help.
+

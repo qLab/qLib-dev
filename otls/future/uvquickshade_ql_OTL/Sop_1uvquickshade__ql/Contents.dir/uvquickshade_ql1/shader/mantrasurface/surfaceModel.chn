@@ -1,0 +1,536 @@
+{
+    channel diff_enable {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../diff_enable/toggledef') }
+    }
+    channel diff_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch('../diff_int/floatdef') }
+    }
+    channel diff_rough {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../diff_rough/floatdef') }
+    }
+    channel facefwd {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../facefwd/toggledef') }
+    }
+    channel conserveenergy {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../conserveenergy/toggledef') }
+    }
+    channel fres_enable {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../fres_enable/toggledef') }
+    }
+    channel ior_in {
+      lefttype = extend
+      righttype = extend
+      default = 1.2
+      flags = 0
+      segment { length = 0 value = 1.2000000476837158 1.2000000476837158 expr = ch('../ior_in/floatdef') }
+    }
+    channel ior_out {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../ior_out/floatdef') }
+    }
+    channel refl_lights {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_lights/toggledef') }
+    }
+    channel spec_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../spec_int/floatdef') }
+    }
+    channel spec_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../spec_min/floatdef') }
+    }
+    channel spec_angle {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch('../spec_angle/floatdef') }
+    }
+    channel spec_aniso {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../spec_aniso/floatdef') }
+    }
+    channel refl_objs {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_objs/toggledef') }
+    }
+    channel refl_qual {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_qual/floatdef') }
+    }
+    channel refl_sep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refl_sep/toggledef') }
+    }
+    channel refl_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../refl_int/floatdef') }
+    }
+    channel refl_clrr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr/colordefr') }
+    }
+    channel refl_clrg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr/colordefg') }
+    }
+    channel refl_clrb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr/colordefb') }
+    }
+    channel refl_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refl_angle/floatdef') }
+    }
+    channel refr_enable {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refr_enable/toggledef') }
+    }
+    channel refr_lights {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_lights/toggledef') }
+    }
+    channel refr_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_int/floatdef') }
+    }
+    channel refr_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refr_min/floatdef') }
+    }
+    channel refr_clrr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_clr/colordefr') }
+    }
+    channel refr_clrg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_clr/colordefg') }
+    }
+    channel refr_clrb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_clr/colordefb') }
+    }
+    channel refr_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refr_angle/floatdef') }
+    }
+    channel refr_aniso {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refr_aniso/floatdef') }
+    }
+    channel refr_objs {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_objs/toggledef') }
+    }
+    channel refr_qual {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refr_qual/floatdef') }
+    }
+    channel atten_enable {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../atten_enable/toggledef') }
+    }
+    channel atten_den {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch('../atten_den/floatdef') }
+    }
+    channel atten_clrr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../atten_clr/colordefr') }
+    }
+    channel atten_clrg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../atten_clr/colordefg') }
+    }
+    channel atten_clrb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../atten_clr/colordefb') }
+    }
+    channel refr_thin {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refr_thin/toggledef') }
+    }
+    channel emit_enable {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../emit_enable/toggledef') }
+    }
+    channel emit_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../emit_int/floatdef') }
+    }
+    channel emit_illum {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../emit_illum/toggledef') }
+    }
+    channel emit_clrr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../emit_clr/colordefr') }
+    }
+    channel emit_clrg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../emit_clr/colordefg') }
+    }
+    channel emit_clrb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../emit_clr/colordefb') }
+    }
+    channel opac_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../opac_int/floatdef') }
+    }
+    channel fake_enable {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../fake_enable/toggledef') }
+    }
+    channel fake_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../fake_min/floatdef') }
+    }
+    channel fake_max {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../fake_max/floatdef') }
+    }
+    channel opac_falloff {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../opac_falloff/toggledef') }
+    }
+    channel opac_para {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../opac_para/floatdef') }
+    }
+    channel opac_perp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../opac_perp/floatdef') }
+    }
+    channel opac_rolloff {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../opac_rolloff/floatdef') }
+    }
+    channel sss_enable {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../sss_enable/toggledef') }
+    }
+    channel sss_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch('../sss_int/floatdef') }
+    }
+    channel sss_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../sss_min/floatdef') }
+    }
+    channel sss_2quality {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_2quality/floatdef') }
+    }
+    channel sss_2intensity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_2intensity/floatdef') }
+    }
+    channel sss_pcmode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../sss_pcmode/intdef') }
+    }
+    channel sss_1enable {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_1enable/toggledef') }
+    }
+    channel sss_1intensity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_1intensity/floatdef') }
+    }
+    channel sss_1quality {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_1quality/intdef') }
+    }
+    channel sss_2enable {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../sss_2enable/toggledef') }
+    }
+    channel sss_phase {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../sss_phase/floatdef') }
+    }
+    channel sss_atten {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch('../sss_atten/floatdef') }
+    }
+    channel diff_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../diff_min/floatdef') }
+    }
+    channel refl_enable2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refl_enable2/toggledef') }
+    }
+    channel refl_lights2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_lights2/toggledef') }
+    }
+    channel spec_int2 {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../spec_int2/floatdef') }
+    }
+    channel spec_min2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../spec_min2/floatdef') }
+    }
+    channel spec_angle2 {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch('../spec_angle2/floatdef') }
+    }
+    channel spec_aniso2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../spec_aniso2/floatdef') }
+    }
+    channel refl_objs2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_objs2/toggledef') }
+    }
+    channel refl_qual2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_qual2/floatdef') }
+    }
+    channel refl_sep2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refl_sep2/toggledef') }
+    }
+    channel refl_int2 {
+      lefttype = extend
+      righttype = extend
+      default = 0.1
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../refl_int2/floatdef') }
+    }
+    channel refl_clr2r {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr2/colordefr') }
+    }
+    channel refl_clr2g {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr2/colordefg') }
+    }
+    channel refl_clr2b {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_clr2/colordefb') }
+    }
+    channel refl_angle2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../refl_angle2/floatdef') }
+    }
+    channel refl_enable {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../refl_enable/toggledef') }
+    }
+  }

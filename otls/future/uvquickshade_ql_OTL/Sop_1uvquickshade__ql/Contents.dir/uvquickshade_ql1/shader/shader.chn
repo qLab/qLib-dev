@@ -1,0 +1,113 @@
+{
+    channel ogl_light {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../lighting\") }
+    }
+    channel use_lighting {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../lighting\") }
+    }
+    channel ogl_bumpscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../bumpscale\") }
+    }
+    channel ogl_clamping_mode1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../diff_clamp\") }
+    }
+    channel ogl_diffr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../diff_clrr\") }
+    }
+    channel ogl_diffg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../diff_clrg\") }
+    }
+    channel ogl_diffb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../diff_clrb\") }
+    }
+    channel ogl_emitr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../ogl_emitr\") }
+    }
+    channel ogl_emitg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../ogl_emitg\") }
+    }
+    channel ogl_emitb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../ogl_emitb\") }
+    }
+    channel ogl_envrotatex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../envrotatex\") }
+    }
+    channel ogl_envrotatey {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../envrotatey\") }
+    }
+    channel ogl_envrotatez {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../envrotatez\") }
+    }
+    channel diff_clrr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"ogl_diffr\") }
+    }
+    channel diff_clrg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"ogl_diffg\") }
+    }
+    channel diff_clrb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"ogl_diffb\") }
+    }
+    channel ogl_envscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../envscale\") }
+    }
+  }

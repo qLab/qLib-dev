@@ -1,0 +1,6 @@
+{
+version 0.8
+Shading	[ 0	locks=0 ]	(	0	)
+vm_displacebound	[ 0	locks=0 ]	(	[ vm_displacebound	0 ] 	)
+vm_truedisplace	[ 0	locks=0 ]	(	[ vm_truedisplace	1 ] 	)
+}

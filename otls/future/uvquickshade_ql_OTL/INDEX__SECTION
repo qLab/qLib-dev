@@ -1,0 +1,13 @@
+Operator:     uvquickshade_ql
+Label:        UVQuickShade qL
+Path:         oplib:/Sop/uvquickshade_ql?Sop/uvquickshade_ql
+Icon:         SOP_uvquickshade
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Apr  9 00:46:40 2012
+

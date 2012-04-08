@@ -1,0 +1,10 @@
+{
+version 0.8
+amount	[ 0	locks=0 ]	(	0	)
+scale	[ 0	locks=0 ]	(	[ scale	0.0500000007 ] 	)
+sshear	[ 0	locks=0 ]	(	0	)
+tshear	[ 0	locks=0 ]	(	0	)
+polys	[ 0	locks=0 ]	(	"on"	)
+objspace	[ 0	locks=0 ]	(	"on"	)
+bump	[ 0	locks=0 ]	(	"off"	)
+}
