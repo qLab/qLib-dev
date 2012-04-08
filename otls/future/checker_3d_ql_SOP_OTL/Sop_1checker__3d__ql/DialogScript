@@ -1,4 +1,4 @@
-# Dialog script for checker_3d_ql automatically generated 03/21/12 18:54:19
+# Dialog script for checker_3d_ql automatically generated 04/09/12 01:10:52
 
 {
     name	checker_3d_ql
@@ -8,6 +8,18 @@
     help {
 	""
     }
+    bindhandle pivot1 xform "Transformer" px ""
+    bindhandle pivot2 xform "Transformer" py ""
+    bindhandle pivot3 xform "Transformer" pz ""
+    bindhandle rot1 xform "Transformer" rx ""
+    bindhandle rot2 xform "Transformer" ry ""
+    bindhandle rot3 xform "Transformer" rz ""
+    bindhandle scale1 xform "Transformer" sx ""
+    bindhandle scale2 xform "Transformer" sy ""
+    bindhandle scale3 xform "Transformer" sz ""
+    bindhandle trans1 xform "Transformer" tx ""
+    bindhandle trans2 xform "Transformer" ty ""
+    bindhandle trans3 xform "Transformer" tz ""
 
     inputlabel	1	"Sub-Network Input #1"
     inputlabel	2	"Sub-Network Input #2"
