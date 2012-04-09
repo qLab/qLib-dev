@@ -1,0 +1,16 @@
+{
+    channel pt1z {
+      lefttype = extend
+      righttype = extend
+      default = 0.25
+      flags = 0
+      segment { length = 0 value = 0.25 0.25 expr = ch(\"../arrow_left/pt0z\") }
+    }
+    channel pt3z {
+      lefttype = extend
+      righttype = extend
+      default = -0.25
+      flags = 0
+      segment { length = 0 value = -0.25 -0.25 expr = -ch(\"../arrow_left/pt0z\") }
+    }
+  }

@@ -1,0 +1,13 @@
+Operator:     distance_ql
+Label:        Distance qL
+Path:         oplib:/Sop/distance_ql?Sop/distance_ql
+Icon:         VOP_length
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Apr 10 01:08:38 2012
+

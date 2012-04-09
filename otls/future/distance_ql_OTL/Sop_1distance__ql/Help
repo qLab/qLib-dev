@@ -1,0 +1,38 @@
+#context: sop
+#type: node
+#icon: VOP/length
+
+= Distance qL (Length qL?) =
+
+*Version 0.0.1*
+
+"""Measures and displays the distance between two geometry points."""
+
+
+@Parameters
+    Points:
+        Indices of the points to measure the distance between. (Should be exactly two indices.)
+
+    Arrow Size:
+        Size of the endpoint arrows.
+
+    Arrow Width:
+        Width of the endpoint arrows.
+
+    Label Size:
+        The size of the label displaying the length/distance value (if enabled).
+
+    Prefix:
+        A text prepended to the length display label.
+
+    Postfix:
+        A text appended to the length display label.
+
+    Color:
+        An optional display color (per-point).
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial prototype (should be called 'Length qL'?).
+
