@@ -1,0 +1,7 @@
+{
+version 0.8
+file	[ 0	locks=0 ]	(	op:`opinputpath(\"..\",0)`	)
+rayorig	[ 0	locks=0 ]	(	0	0	0	)
+raydir	[ 0	locks=0 ]	(	0	0	1	)
+farthest	[ 0	locks=0 ]	(	"off"	)
+}

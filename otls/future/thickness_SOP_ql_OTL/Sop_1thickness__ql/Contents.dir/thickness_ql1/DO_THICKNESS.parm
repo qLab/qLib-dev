@@ -1,0 +1,10 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+attrib	[ 0	locks=0 ]	(	[ attrib	thickness ] 	)
+ray_bias	[ 0	locks=0 ]	(	[ ray_bias	0.00100000005 ] 	)
+invert_norm	[ 0	locks=0 ]	(	[ invert_norm	-1 ] 	)
+}

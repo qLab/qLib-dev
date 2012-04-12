@@ -1,0 +1,6 @@
+Vop/addattrib //MLNFS/sidefx/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/intersect //MLNFS/sidefx/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/intersect otls/OPlibVop.otl
+Vop/distance //MLNFS/sidefx/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/distance otls/OPlibVop.otl

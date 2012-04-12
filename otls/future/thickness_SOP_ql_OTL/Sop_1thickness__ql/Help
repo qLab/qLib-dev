@@ -1,0 +1,26 @@
+#icon: VOP/planeclip
+#context: sop
+#type: node
+
+= Thickness qL =
+
+*Version 0.1.0*
+
+"""Stores the "thickness" of the geometry in an attribute."""
+
+@Description
+    Thickness SOP casts a ray in the opposing direction of the normal and stores the distance of the first surface hit.
+
+@Parameters
+    Point Group:
+        The group of points the operator affects.
+    Attribute Name:
+        Name of the created attribute.
+    Ray Bias:
+        Raise this to eliminate self intersection.
+    Invert Normal:
+        Invert the normal.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

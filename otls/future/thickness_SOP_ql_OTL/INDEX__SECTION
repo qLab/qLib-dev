@@ -1,0 +1,13 @@
+Operator:     thickness_ql
+Label:        Thickness qL
+Path:         oplib:/Sop/thickness_ql?Sop/thickness_ql
+Icon:         VOP_planeclip
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Apr 12 15:51:01 2012
+
