@@ -94,7 +94,7 @@ def pack_cmd():
     if qlib_dir.split(os.sep)[-1] != "qLib":
         print "WARNING: Archived directory is not called 'qLib'."
     try:
-        git_tag = subprocess.check_output(["git", "tag"],
+        git_tag = subprocess.check_output(["git", "describe", "--exact-match", "HEAD"],
                 stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
         print "ERROR: Retrieving git tag failed."
