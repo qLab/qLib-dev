@@ -1,0 +1,52 @@
+#icon: SOP/matchaxis
+#context: sop
+#type: node
+
+= Vector qL =
+
+*Version 0.1.1*
+
+"""Performs common operations between two vector attributes and/or constants."""
+
+@Parameters
+    Point Group:
+        The group of points the deformer affects.
+    Operation:
+        The operation to be executed.
+    Blend:
+        The mix bias when the operation is mix.
+    Vector:
+        Type of vector A/B.
+    Normalize:
+        Normalize vector A/B.
+    Compute Normal A/B:
+        Generate normal vectors for the first input.
+    Attrib Name A/B:
+        The name of the vector attribute of A/B. If the second input is not connected the attribute is read from the
+        first input.
+    Constant A/B:
+        The constant value of A/B.
+    Normalize Out:
+        Normalize the output vector.
+    Scale:
+        Scale factor for the output vector.
+    Invert Out:
+        Negate the output vector.
+    Out Attribute:
+        The name and toggle of the target attribute of the vector operation result.
+    Length Attrib:
+        Name and toggle for the length of the result vector. The normalization of the output is skpipped for the length
+        calculation, while scaling is not.
+    Dot Product Attrib:
+        Name and toggle for the dot product of the two input vectors.
+    Angle Attrib:
+        Name and toggle for the angle between the result vectors.
+    Angle In Degrees:
+        Output angle in degrees instead of radians.
+
+@Release_Notes
+    Version 0.1.1:
+        Interface updated. One thread per processor is now the default.
+
+    Version 0.1.0:
+        Initial release.

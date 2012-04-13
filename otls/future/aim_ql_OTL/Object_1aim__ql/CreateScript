@@ -1,0 +1,13 @@
+# Automatically generated script: Saturday April 14, 00:41 2012
+\set noalias = 1
+#
+#  Creation script for aim_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Object/aim_ql)
+opexprlanguage -s hscript $arg1

@@ -1,0 +1,13 @@
+Operator:     aim_ql
+Label:        Aim qL
+Path:         oplib:/Object/aim_ql?Object/aim_ql
+Icon:         SOP_matchaxis
+Table:        Object
+License:      
+Extra:        
+Inputs:       2 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Apr 14 00:41:00 2012
+

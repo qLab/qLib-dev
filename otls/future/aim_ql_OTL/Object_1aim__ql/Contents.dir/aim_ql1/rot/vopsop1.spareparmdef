@@ -1,0 +1,37 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"xyz"
+	label	"Rotation Order"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "xyz"	"Rx Ry Rz"
+	    "xzy"	"Rx Rz Ry"
+	    "yxz"	"Ry Rx Rz"
+	    "yzx"	"Ry Rz Rx"
+	    "zxy"	"Rz Rx Ry"
+	    "zyx"	"Rz Ry Rx"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
