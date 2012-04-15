@@ -1,0 +1,3 @@
+# setting 'Output Transform' to 'No Object'
+#
+opparm $arg1 outputobj ( "" )
