@@ -90,7 +90,8 @@ def doIt(mode):
                 n = hou.node(obj)
                 if not n:
                     # create obj node
-                    n = root.createNode("geo", obj, run_init_scripts=False)
+                    n = root.createNode("geo", obj, run_init_scripts=True)
+                    hou.hscript("oprm -f %s/*" % n.path())
                     C += 1
                 r = n
 

@@ -1,0 +1,3 @@
+# mark this node as black as a sign of procedurality-breaking evil
+#
+opcolor -c 0 0 0 $arg1
