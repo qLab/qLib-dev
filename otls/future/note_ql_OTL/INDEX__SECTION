@@ -1,0 +1,13 @@
+Operator:     note_ql
+Label:        Note qL
+Path:         oplib:/Object/note_ql?Object/note_ql
+Icon:         COP2_convolve
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 8
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Apr 15 05:40:25 2012
+

@@ -1,0 +1,25 @@
+#icon: COP2/convolve
+#context: obj
+#type: node
+
+= Note qL =
+
+*Version 0.0.1*
+
+"""A simple object-level node for storing notes and images to be quickly accessed/displayed."""
+
+Can be useful for storing and quickly displaying related moodboard/storyboard artwork, etc.
+Notes are also copied to the node 'Comments' section so they can be read by MMB-clicking on a note.
+
+
+
+TODO:
+
+    Notes import/export from/to a text file.
+
+    Same for images (?)
+
+
+@Release_Notes
+    Version 0.0.1:
+        Prototype.
