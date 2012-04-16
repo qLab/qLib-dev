@@ -1,8 +1,8 @@
 node_type
-grassblow.init
-grassblow.def
-grassblow.inp
-grassblow/shell1.init
-grassblow/shell1.def
-grassblow/shell1.parm
-grassblow.net
+take_merge_ql1.init
+take_merge_ql1.def
+take_merge_ql1.inp
+take_merge_ql1/shell1.init
+take_merge_ql1/shell1.def
+take_merge_ql1/shell1.parm
+take_merge_ql1.net

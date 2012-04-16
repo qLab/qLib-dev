@@ -1,0 +1,71 @@
+
+def get_all_takes():
+    """Return a {child:parent} dict of all takes."""
+    ts = hou.hscript("takels")[0].split('\n')
+    ts = [ (len(t)-len(t.lstrip()), t.strip()) for t in ts ]
+
+    d, p = ts[0] # depth, parent name
+    pd = { d: p } # {depth: parent} pairs
+    r = {} # {child: parent} pairs
+
+    t0 = p
+    for t in ts:
+        if t[0]<d: p = pd[t[0]] # level up
+        if t[0]>d: pd[d], p = p, t0 # level down
+        if t[1]: r[ t[1] ] = p
+        d, t0 = t
+
+    return r
+
+def expand_take(t, ps):
+    """Expand a single take string to include parent takes."""
+    r = t
+    while True:
+        if t not in ps or ps[t]=="Main": break
+        r, t = "%s %s" % (ps[t], r), ps[t]
+    return r
+
+def expand_takes(takes, ps):
+    ts = takes.split()
+    r = [ expand_take(t, ps) for t in ts ]
+    return " ".join(r)
+
+
+def takemerge(path, mode="build"):
+
+    #n = hou.pwd()
+    n = hou.node(path)
+    ps = n.parms()
+
+    print takemerge
+
+    print "path:", n.path()
+
+    take_out = hou.ch("%s/mergedTake" % n.path())
+
+    print "takemerge mode:", mode
+    print "output take:", take_out
+
+    # delete merged take
+    hou.hscript("takerm %s" % take_out)
+    print "Cleanup done."
+
+    if mode=="build":
+
+        ts = [ hou.ch(p.path()) for p in ps if "takes" in p.name() ]
+        ts = " ".join(ts)
+        print "takes/given:", ts
+    
+        ps = get_all_takes()
+        ts = expand_takes(ts, ps)
+        print "takes/expanded:", ts
+
+        print("takeadd -c -p Main %s" % take_out)
+        print("takemerge -f %s %s" % (take_out, ts))
+
+        hou.hscript("takeadd -c -p Main %s" % take_out)
+        hou.hscript("takemerge -f %s %s" % (take_out, ts))
+        hou.hscript("takeset %s" % take_out)
+
+        print "Take build done."
+

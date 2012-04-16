@@ -1,4 +1,4 @@
-#icon: OUT/merge
+#icon: COP2/max
 #context: out
 #type: node
 
@@ -78,11 +78,16 @@ TIP:
     This fact you can work with to your advantage (using specific fields for specific
     types of overrides ... I mean takes).
 
-@Limitations
-    When merging takes, the usual hierarchical behaviour of takes doesn't apply:
-    merging a child take will _not_ merge its parents' contents.
-    
+
 
 @Release_Notes
+    Version 0.0.2:
+        * Merge code rewritten in Python.
+        * Lifted known limitation of ignoring contents in take hierarchy parents.
+        * Changed UI to support variable number of Take lines.
+        * A Prettier icon. :)
+
     Version 0.0.1:
-        Early preview release, for testing and evaluation purposes only.
+        First prototype.
+        Known limitation: hierarchical parent contents for takes not included when merging.
+

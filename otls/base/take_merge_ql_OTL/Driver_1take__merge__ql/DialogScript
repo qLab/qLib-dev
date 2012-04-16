@@ -1,4 +1,4 @@
-# Dialog script for take_merge_ql automatically generated 06/19/11 16:38:03
+# Dialog script for take_merge_ql automatically generated 04/16/12 03:07:49
 
 {
     name	take_merge_ql
@@ -45,61 +45,102 @@
 	parmtag	{ "oprelative" "." }
 	parmtag	{ "opfilter" "!!ROP!!" }
     }
-    parm {
-	name	"labelparm3"
-	label	"."
-	type	label
-	size	2
-	default	{ "Multiple takes per line are valid." "" }
-	range	{ 0 1 }
-	export	none
-    }
-    parm {
-	name	"takes1"
-	label	"Takes"
-	type	string
-	default	{ "" }
-	help	"List of takes to merge. Multiple names are allowed for each line."
-	range	{ 0 1 }
-	export	none
-    }
-    parm {
-	name	"takes2"
-	label	"..."
-	type	string
-	default	{ "" }
-	help	"List of takes to merge. Multiple names are allowed for each line."
-	range	{ 0 1 }
-	export	none
-    }
-    parm {
-	name	"takes3"
-	label	"..."
-	type	string
-	default	{ "" }
-	help	"List of takes to merge. Multiple names are allowed for each line."
-	range	{ 0 1 }
-	export	none
-    }
-    parm {
-	name	"takes4"
-	label	"..."
-	type	string
-	default	{ "" }
-	help	"List of takes to merge. Multiple names are allowed for each line."
-	range	{ 0 1 }
-	export	none
-    }
     group {
-	name	"folder0"
-	label	"Note"
+	name	"folder1"
+	label	"Takes to Merge"
 
+	parm {
+	    name	"labelparm3"
+	    label	"."
+	    type	label
+	    nolabel
+	    size	2
+	    default	{ "More than one take per line can be used." "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	multiparm {
+	    name	"tlist"
+	    label	"Takes"
+	    default	4
+
+	    parm {
+		name	"tlabel#"
+		label	"#"
+		type	button
+		invisible
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ tlist != 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"takes#"
+		label	"#."
+		type	string
+		nolabel
+		default	{ "" }
+		help	"List of takes to merge. Multiple names are allowed for each line."
+		menutoggle	{
+		    [ "ts = hou.hscript(\"takels\")[0].split('\\n')" ]
+		    [ "ts = [ [t.strip(), t] for t in ts ]" ]
+		    [ "ts = sum(ts, [])" ]
+		    [ "return ts" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Usage | Notes"
+
+	parm {
+	    name	"labelparm5"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "This ROP merges the listed takes into a single take," }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm6"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "then calls the specified Output Driver. It is very useful" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm7"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "for efficiently building render layers/passes." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sepparm"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
 	parm {
 	    name	"labelparm"
 	    label	"Label"
 	    type	label
 	    nolabel
-	    default	{ "Use \\$ACTIVETAKE.\\$F4.exr (or similar) for output sequences" }
+	    default	{ "For output image use \\$ACTIVETAKE.\\$F4.exr (or similar)" }
 	    range	{ 0 1 }
 	    export	none
 	}
@@ -121,32 +162,26 @@
 	    range	{ 0 1 }
 	    export	none
 	}
-	parm {
-	    name	"sepparm"
-	    label	"Separator"
-	    type	separator
-	    default	{ }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"createMergedTake"
-	    label	"Test: Create (Update) Merged Take"
-	    type	button
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback" "takerm -R `chs(\"mergedTake\")`; takeadd -c -p Main `chs(\"mergedTake\")`; takemerge -f `chs(\"mergedTake\")` `chs(\"takes1\")` `chs(\"takes2\")` `chs(\"takes3\")` `chs(\"takes4\")`;" }
-	}
-	parm {
-	    name	"createMergedTake2"
-	    label	"Test: Delete Merged Take"
-	    type	button
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback" "takerm -R `chs(\"mergedTake\")`;" }
-	}
     }
 
+    parm {
+	name	"createMergedTake"
+	label	"Test: Create Merged Take"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().hdaModule().takemerge(\".\", \"build\")" }
+    }
+    parm {
+	name	"deleteMergedTake"
+	label	"Cleanup: Delete Merged Take"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().hdaModule().takemerge(\".\", \"cleanup\")" }
+    }
 }
