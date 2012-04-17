@@ -36,7 +36,20 @@
 	    type	string
 	    default	{ "pscale" }
 	    menureplace	{
-		[ "echo pscale pscale uv uv" ]
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
 	    }
 	    range	{ 0 1 }
 	    export	none
