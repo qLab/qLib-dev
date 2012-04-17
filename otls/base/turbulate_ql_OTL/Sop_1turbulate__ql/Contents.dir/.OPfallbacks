@@ -1,16 +1,22 @@
-Vop/abs C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/abs otls/OPlibVop.otl
-Vop/invert C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/invert otls/OPlibVop.otl
-Vop/clamp C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/clamp otls/OPlibVop.otl
-Vop/makexform C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/makexform /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
 Vop/makexform otls/OPlibVop.otl
-Vop/turbnoise C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/turbnoise otls/OPlibVop.otl
-Vop/vectofloat C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
 Vop/vectofloat otls/OPlibVop.otl
-Vop/floattovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/floattovec otls/OPlibVop.otl
-Vop/align C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/mix /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/clamp /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/clamp otls/OPlibVop.otl
+Vop/abs /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/abs otls/OPlibVop.otl
+Vop/turbnoise /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/turbnoise otls/OPlibVop.otl
+Vop/importattrib /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/invert /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/invert otls/OPlibVop.otl
+Vop/align /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
 Vop/align otls/OPlibVop.otl
+Vop/complement /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/floattovec /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl

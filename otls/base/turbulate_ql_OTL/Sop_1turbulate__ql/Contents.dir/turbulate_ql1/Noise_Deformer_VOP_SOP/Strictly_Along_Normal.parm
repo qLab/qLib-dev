@@ -1,7 +1,7 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	stricktly_along_normal	)
-parmlabel	[ 0	locks=0 ]	(	"Stricktly Along Normal"	)
+parmname	[ 0	locks=0 ]	(	strictly_along_normal	)
+parmlabel	[ 0	locks=0 ]	(	"Strictly Along Normal"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"toggle"	)
 separator1	[ 0	locks=0 ]	(	)
