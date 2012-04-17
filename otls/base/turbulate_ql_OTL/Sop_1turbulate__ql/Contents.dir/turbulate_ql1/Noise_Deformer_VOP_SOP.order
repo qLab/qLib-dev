@@ -1,4 +1,4 @@
-34
+43
 global1
 output1
 turbnoise1
@@ -17,7 +17,7 @@ pivot
 invert1
 multiply1
 Amplitude
-Stricktly_Along_Normal
+Strictly_Along_Normal
 Stickt_Select
 floattovec1
 Axis_Amount
@@ -33,3 +33,12 @@ Y_Unit
 multiply2
 vectofloat1
 Abs_Y
+switch_weighted_deform
+use_weight_attr
+import_weight
+weight_attr
+P_orig
+mix1
+complement1
+switch2
+weight_invert

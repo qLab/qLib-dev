@@ -1,11 +1,12 @@
 {
 version 0.8
 vex_group	[ 8	locks=0 ]	(	[ vex_group	"" ] 	)
-vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
-attrib	[ 0	locks=0 ]	(	[ attrib	amount ] 	)
+attrib	[ 0	locks=0 ]	(	[ attrib	weight ] 	)
 input_index	[ 0	locks=0 ]	(	[ input_index	0 ] 	)
 envelope	[ 0	locks=0 ]	(	[ envelope	1 ] 	)
 attrib1	[ 0	locks=0 ]	(	"`arg(chs(\"../../attribs\"), stamp(\"..\", \"FORIDXVALUE\", 0))`"	)
+invert	[ 0	locks=0 ]	(	[ invert	0 ] 	)
 }

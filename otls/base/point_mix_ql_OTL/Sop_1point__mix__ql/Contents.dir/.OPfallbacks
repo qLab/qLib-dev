@@ -1,6 +1,8 @@
-Vop/importattrib C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/mix C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/mix otls/OPlibVop.otl
-Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/addattrib /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
 Vop/addattrib otls/OPlibVop.otl
+Vop/importattrib /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/complement /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/mix /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl

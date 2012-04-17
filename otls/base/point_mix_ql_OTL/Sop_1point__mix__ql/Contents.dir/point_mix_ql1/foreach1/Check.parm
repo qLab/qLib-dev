@@ -1,5 +1,5 @@
 {
 version 0.8
 cacheinput	[ 0	locks=0 ]	(	"off"	)
-attrsize	[ 8	locks=0 ]	(	[ attrsize	1 ] 	)
+attrsize	[ 8	locks=0 ]	(	[ attrsize	3 ] 	)
 }

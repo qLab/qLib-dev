@@ -119,3 +119,12 @@
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"invert_weight"
+	label	"invert_weight"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

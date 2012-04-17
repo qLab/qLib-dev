@@ -1,4 +1,4 @@
-12
+14
 global1
 output1
 Vector_Mix
@@ -8,6 +8,8 @@ input_index
 multiply1
 Envelope
 First_Vector
-Attrib
 Second_Vector
 addattrib1
+complement1
+switch2
+invert

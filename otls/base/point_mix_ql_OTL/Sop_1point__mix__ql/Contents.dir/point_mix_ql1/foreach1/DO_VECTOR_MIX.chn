@@ -25,4 +25,11 @@
       flags = 0
       segment { length = 0 expr = ch(\"../../envelope\") }
     }
+    channel invert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 38.166667938232422
+      segment { length = 0 expr = ch(\"../../invert\") }
+    }
   }

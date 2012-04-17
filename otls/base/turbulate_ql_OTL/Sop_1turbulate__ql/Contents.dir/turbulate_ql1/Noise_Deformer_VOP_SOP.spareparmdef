@@ -115,8 +115,8 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"stricktly_along_normal"
-	label	"Stricktly Along Normal"
+	name	"strictly_along_normal"
+	label	"Strictly Along Normal"
 	type	toggle
 	default	{ "off" }
 	range	{ 0 1 }
@@ -162,7 +162,7 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"calmp_max"
+	name	"clamp_max"
 	label	"Clamp_Max"
 	type	float
 	size	3
@@ -208,4 +208,31 @@
 	name	"vop_forcecompile"
 	baseparm
 	export	none
+    }
+    parm {
+	name	"use_weight_attr"
+	label	"use_weight_attr"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight_attr"
+	label	"weight_attr"
+	type	string
+	default	{ "amount" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight_invert"
+	label	"weight_invert"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
     }

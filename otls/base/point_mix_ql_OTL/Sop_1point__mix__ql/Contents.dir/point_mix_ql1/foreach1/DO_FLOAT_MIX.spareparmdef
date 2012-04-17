@@ -54,3 +54,12 @@
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"invert"
+	label	"invert"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

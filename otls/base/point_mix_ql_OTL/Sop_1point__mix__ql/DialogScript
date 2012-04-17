@@ -1,4 +1,4 @@
-# Dialog script for point_mix_ql automatically generated 03/14/12 18:00:55
+# Dialog script for point_mix_ql automatically generated 04/17/12 15:15:34
 
 {
     name	point_mix_ql
@@ -28,37 +28,89 @@
     }
     parm {
 	name	"attribs"
-	label	"Attributes"
+	label	"Attributes to Mix"
 	type	string
 	default	{ "P" }
 	help	"Attributes to mix."
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
 	range	{ 0 1 }
 	export	none
     }
-    parm {
-	name	"envelope"
-	label	"Envelope"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	export	none
+    group {
+	name	"folder0"
+	label	"Mix Attribute"
+
+	parm {
+	    name	"attrib"
+	    label	"Mix Control Attrib"
+	    type	string
+	    joinnext
+	    default	{ "amount" }
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"first"
+	    label	"From 2nd Input"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    menu	{
+		"0"	"1st Input"
+		"1"	"2nd Input"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"invert"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"envelope"
+	    label	"Envelope"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
     }
-    parm {
-	name	"attrib"
-	label	"Control Attrib"
-	type	string
-	default	{ "amount" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"first"
-	label	"Control Attrib On Second Input"
-	type	toggle
-	default	{ "0" }
-	range	{ 0 1 }
-	export	none
-    }
+
 }

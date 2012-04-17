@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	calmp_max	)
+parmname	[ 0	locks=0 ]	(	clamp_max	)
 parmlabel	[ 0	locks=0 ]	(	Clamp_Max	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float3"	)
