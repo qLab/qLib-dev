@@ -188,7 +188,7 @@
       righttype = extend
       flags = 0
       start = 38.166667938232422
-      segment { length = 0 expr = ch(\"../strickt\") }
+      segment { length = 0 expr = ch(\"../strict\") }
     }
     channel use_weight_attr {
       lefttype = extend
@@ -218,7 +218,7 @@
       default = 1
       flags = 0
       start = 38.166667938232422
-      segment { length = 0 value = 1 1 expr = ch(\"../calmp_max1\") }
+      segment { length = 0 value = 1 1 expr = ch(\"../clamp_max1\") }
     }
     channel clamp_max2 {
       lefttype = extend
@@ -226,7 +226,7 @@
       default = 1
       flags = 0
       start = 38.166667938232422
-      segment { length = 0 value = 1 1 expr = ch(\"../calmp_max2\") }
+      segment { length = 0 value = 1 1 expr = ch(\"../clamp_max2\") }
     }
     channel clamp_max3 {
       lefttype = extend
@@ -234,6 +234,6 @@
       default = 1
       flags = 0
       start = 38.166667938232422
-      segment { length = 0 value = 1 1 expr = ch(\"../calmp_max3\") }
+      segment { length = 0 value = 1 1 expr = ch(\"../clamp_max3\") }
     }
   }

@@ -1,4 +1,4 @@
-# Dialog script for turbulate_ql automatically generated 04/17/12 15:17:13
+# Dialog script for turbulate_ql automatically generated 04/17/12 16:44:33
 
 {
     name	turbulate_ql
@@ -51,7 +51,7 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"strickt"
+	name	"strict"
 	label	"Strictly Along Normal"
 	type	toggle
 	default	{ "off" }
@@ -65,7 +65,7 @@
 	label	"Absolute Y"
 	type	toggle
 	default	{ "off" }
-	disablewhen	"{ along_normal == 0 } { strickt == 1 }"
+	disablewhen	"{ along_normal == 0 } { strict == 1 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
@@ -73,7 +73,6 @@
     group {
 	name	"folder2"
 	label	"Noise"
-	tabbreak
 
 	parm {
 	    name	"noise_type"
@@ -81,7 +80,7 @@
 	    type	string
 	    default	{ "onoise" }
 	    menu	{
-		"pnoise"	"Perlin Noise"
+		"pnoise"	"Perlin Noise (*)"
 		"onoise"	"Original Perlin Noise"
 		"snoise"	"Sparse Convolution Noise"
 		"anoise"	"Alligator Noise"
@@ -194,9 +193,8 @@
 	}
 
 	group {
-	    name	"folder2_2"
+	    name	"folder2_1_1"
 	    label	"Clamping"
-	    tabbreak
 
 	    parm {
 		name	"clamp"
@@ -221,7 +219,7 @@
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"calmp_max"
+		name	"clamp_max"
 		label	"Clamp Max"
 		type	float
 		size	3
@@ -236,7 +234,7 @@
     }
 
     group {
-	name	"folder1"
+	name	"folder2_1"
 	label	"Transform"
 
 	parm {
