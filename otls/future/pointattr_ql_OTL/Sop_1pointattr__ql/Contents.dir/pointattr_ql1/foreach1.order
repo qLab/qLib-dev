@@ -1,4 +1,4 @@
-17
+19
 each1
 switch1
 set
@@ -16,3 +16,5 @@ attrib_del_2
 switch_attrib_del1
 switch2
 point_vtxi_vtxs
+switch3
+disabled
