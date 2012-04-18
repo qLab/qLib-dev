@@ -6,6 +6,6 @@ vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 attrib	[ 0	locks=0 ]	(	`chs(\"../../import_attrib\"+stamp(\"..\",\"FORVALUE\",0))`	)
 attrib_type	[ 0	locks=0 ]	(	[ attrib_type	0 ] 	)
-input_idx	[ 0	locks=0 ]	(	[ input_idx	0 ] 	)
+input_idx	[ 8	locks=0 ]	(	[ input_idx	0 ] 	)
 out_attrib	[ 0	locks=0 ]	(	`chs(\"../../name\")`	)
 }

@@ -1,4 +1,4 @@
-17
+18
 addattrib1
 attrib
 importattrib1
@@ -15,4 +15,5 @@ floor1
 abs1
 spline1
 zero
-trig1
+sinus
+mulconst1

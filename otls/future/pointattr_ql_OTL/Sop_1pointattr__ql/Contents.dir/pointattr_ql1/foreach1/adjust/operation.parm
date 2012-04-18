@@ -20,7 +20,7 @@ menuchoices	[ 0	locks=0 ]	(	"0 \"Add\"
 6 \"Floor (+Value)\"
 7 \"Absolute\"
 8 \"Triangle [0@0.. v@0.5 ..0@1]\"
-9 \"Sinus ('Value' Freq)\""	)
+9 \"Sine ('Value' Freq)\""	)
 separator2	[ 0	locks=0 ]	(	)
 invisible	[ 0	locks=0 ]	(	"off"	)
 joinnext	[ 0	locks=0 ]	(	"off"	)

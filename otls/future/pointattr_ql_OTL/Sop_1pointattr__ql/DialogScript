@@ -1,4 +1,4 @@
-# Dialog script for pointattr_ql automatically generated 03/29/12 22:43:27
+# Dialog script for pointattr_ql automatically generated 04/18/12 03:52:19
 
 {
     name	pointattr_ql
@@ -65,10 +65,21 @@
 		label	"-"
 
 		parm {
+		    name	"enabled_#_0"
+		    label	"Note"
+		    type	toggle
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"note#"
-		    label	"'Off' Meaning"
+		    label	"Note"
 		    type	string
+		    nolabel
 		    default	{ "" }
+		    disablewhen	"{ enabled_#_0 == 0 }"
 		    menureplace	{
 			""	"(Clear Field)"
 			"not yet set up"	"not yet set up"
@@ -86,10 +97,21 @@
 		label	"get"
 
 		parm {
+		    name	"enabled_#_1"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"import_attrib#"
 		    label	"Attribute"
 		    type	string
 		    default	{ "" }
+		    disablewhen	"{ enabled_#_1 == 0 }"
 		    menureplace	{
 			[ "# TODO: get attr list from the appropriate input" ]
 			[ "" ]
@@ -117,6 +139,7 @@
 		    type	integer
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_1 == 0 }"
 		    menu	{
 			"0"	"Float"
 			"1"	"Integer"
@@ -135,6 +158,7 @@
 		    nolabel
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_1 == 0 }"
 		    menu	{
 			"0"	"1st"
 			"1"	"2nd"
@@ -147,6 +171,7 @@
 		    label	"Delete"
 		    type	toggle
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_1 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -157,10 +182,21 @@
 		label	"set"
 
 		parm {
+		    name	"enabled_#_2"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"init_type#"
 		    label	"Type"
 		    type	integer
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_2 == 0 }"
 		    menu	{
 			"0"	"Constant Value"
 			"1"	"Random Range [0..1]"
@@ -184,7 +220,7 @@
 		    type	float
 		    joinnext
 		    default	{ "1" }
-		    disablewhen	"{ init_type# != 0 }"
+		    disablewhen	"{ enabled_#_2 == 0 } { init_type# != 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -193,7 +229,7 @@
 		    label	"Seed"
 		    type	integer
 		    default	{ "0" }
-		    disablewhen	"{ init_type# != 1 }"
+		    disablewhen	"{ enabled_#_2 == 0 } { init_type# != 1 }"
 		    range	{ 0 999 }
 		    export	none
 		}
@@ -204,11 +240,22 @@
 		label	"fit"
 
 		parm {
+		    name	"enabled_#_3"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"srcmin#"
-		    label	"Src Min"
+		    label	"Src Min/Max"
 		    type	float
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_3 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -216,16 +263,19 @@
 		    name	"srcmax#"
 		    label	"Max"
 		    type	float
+		    nolabel
 		    default	{ "1" }
+		    disablewhen	"{ enabled_#_3 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
 		parm {
 		    name	"destmin#"
-		    label	"Dest Min"
+		    label	"Dest Min/Max"
 		    type	float
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_3 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -233,7 +283,9 @@
 		    name	"destmax#"
 		    label	"Max"
 		    type	float
+		    nolabel
 		    default	{ "1" }
+		    disablewhen	"{ enabled_#_3 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -244,21 +296,32 @@
 		label	"tune"
 
 		parm {
+		    name	"enabled_#_4"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"adjust_op#"
 		    label	"Operation"
 		    type	integer
 		    default	{ "1" }
+		    disablewhen	"{ enabled_#_4 == 0 }"
 		    menu	{
 			"0"	"Add"
 			"1"	"Multiply"
 			"2"	"Power (Gamma)"
 			"3"	"Complement (Invert)"
 			"4"	"Modulo"
-			"5"	"Randomize ('Value' seed)"
+			"5"	"Randomize ('Value' Seed)"
 			"6"	"Add, then Floor"
 			"7"	"Absolute"
 			"8"	"Triangle [0..v..0]"
-			"9"	"Sine ('Value' as freq)"
+			"9"	"Sine ('Value' Freq)"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -268,8 +331,8 @@
 		    label	"Value"
 		    type	float
 		    default	{ "1" }
-		    disablewhen	"{ adjust_op# == 3 } { adjust_op# == 7 }"
-		    range	{ -1 4 }
+		    disablewhen	"{ enabled_#_4 == 0 } { adjust_op# == 3 } { adjust_op# == 7 }"
+		    range	{ 0 4 }
 		    export	none
 		}
 	    }
@@ -279,12 +342,23 @@
 		label	"mrg"
 
 		parm {
+		    name	"enabled_#_5"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"merge_mode#"
 		    label	"Mode"
 		    type	integer
 		    nolabel
 		    joinnext
 		    default	{ "1" }
+		    disablewhen	"{ enabled_#_5 == 0 }"
 		    menu	{
 			"0"	"Add"
 			"1"	"Multiply"
@@ -297,6 +371,7 @@
 		    label	"Attribute"
 		    type	string
 		    default	{ "" }
+		    disablewhen	"{ enabled_#_5 == 0 }"
 		    menureplace	{
 			[ "# TODO: get attr list from the appropriate input" ]
 			[ "" ]
@@ -324,6 +399,7 @@
 		    type	integer
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_5 == 0 }"
 		    menu	{
 			"0"	"Float"
 			"1"	"Integer"
@@ -342,6 +418,7 @@
 		    nolabel
 		    joinnext
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_5 == 0 }"
 		    menu	{
 			"0"	"1st"
 			"1"	"2nd"
@@ -355,6 +432,7 @@
 		    label	"Delete"
 		    type	toggle
 		    default	{ "0" }
+		    disablewhen	"{ enabled_#_5 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -364,6 +442,16 @@
 		name	"op_#__6"
 		label	"map"
 
+		parm {
+		    name	"enabled_#_6"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
 		parm {
 		    name	"lookup_todo#_2"
 		    label	"todo"
@@ -380,10 +468,21 @@
 		label	"out"
 
 		parm {
+		    name	"enabled_#_7"
+		    label	"Enabled"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"out_attrib#"
-		    label	"Rename Attribute to"
+		    label	"Rename Attrib to"
 		    type	string
 		    default	{ "" }
+		    disablewhen	"{ enabled_#_7 == 0 }"
 		    menureplace	{
 			[ "# TODO: get attr list from the appropriate input" ]
 			[ "" ]
