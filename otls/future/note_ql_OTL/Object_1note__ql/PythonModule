@@ -1,34 +1,32 @@
 import hou
 import re
 
-p_i = re.compile("image_file[0-9]+")
-p_n = re.compile("note[0-9]+")
-
-
 def update_node(mode=None):
-    pass
-    print "update_node(%s)..." % mode
+    """get list of images and notes and set as comment."""
 
-    # TODO: get list of images and notes and set as comment
-
+    p_i = re.compile("image_file[0-9]+")
+    p_n = re.compile("note[0-9]+")
 
     n = hou.pwd()
-
     ps = n.parms()
-
-    c = []
+    cp = []
 
     for p in ps:
         pn = p.name()
-        is_i = re.match(p_i, pn)
-        is_n = re.match(p_n, pn)
-        if is_i or is_n:
-            v = hou.ch(p.path())
-            if is_i: v = "(%s)" % v
-            if is_n: v = "  : %s" % v
+        if re.match(p_i, pn) or re.match(p_n, pn):
+            cp.append(p.path())
+
+    cp = sorted(cp)
+    c = []
+
+    for p in cp:
+            v = hou.ch(p)
+            if re.search(p_i, p):
+                v = "(image: %s)" % re.sub(".*/", ".../", v)
+            else:
+                v = "  : %s" % v
             c.append(v)
 
     c = "\n".join(c)
-
     n.setComment(c)
 
