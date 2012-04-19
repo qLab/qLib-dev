@@ -1,0 +1,27 @@
+sopflags sopflags = 
+comment "This VOP SOP assumes that the sequence blend SOP doesn't move
+particles that exist for the last frame.
+
+It takes all the particles whose positions remain static
+during a sequence blend, and offsets them along their
+velocity vector."
+position 3.27349 0.565797
+cachesize 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+inputs
+{
+0 	sblend_regular 0 1
+1 	floor_frame 0 1
+2 	sblend_max 0 1
+}
+stat
+{
+  create 1334843624
+  modify 1334851595
+  author tusi@johnnyquestlin.digicpictures.local
+  access 0777
+}
+color UT_Color RGB 0.8 1 0.8 
+delscript ""
+exprlanguage hscript
+end

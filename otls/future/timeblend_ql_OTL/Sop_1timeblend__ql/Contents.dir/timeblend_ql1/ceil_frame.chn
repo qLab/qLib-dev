@@ -1,0 +1,15 @@
+{
+    channel frame {
+      lefttype = extend
+      righttype = extend
+      default = 5
+      flags = 0
+      segment { length = 0 value = 5 5 expr = "$FF - ($FF % ch(\"../slice\")) + ch(\"../slice\")" }
+    }
+    channel time {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $T }
+    }
+  }

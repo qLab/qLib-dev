@@ -1,0 +1,22 @@
+{
+    channel blend {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "($FF % ch(\"../slice\")) / ch(\"../slice\")" }
+    }
+    channel ptidattr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../ptidattr\") }
+    }
+    channel primidattr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../primidattr\") }
+    }
+  }

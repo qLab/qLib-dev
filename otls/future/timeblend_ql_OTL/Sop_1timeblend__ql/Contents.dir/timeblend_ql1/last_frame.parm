@@ -1,0 +1,7 @@
+{
+version 0.8
+method	[ 0	locks=0 ]	(	"byframe"	)
+frame	[ 8	locks=0 ]	(	[ frame	240 ] 	)
+integerframe	[ 0	locks=0 ]	(	"off"	)
+time	[ 0	locks=0 ]	(	[ time	25.2335033 ] 	)
+}

@@ -1,0 +1,13 @@
+Operator:     timeblend_ql
+Label:        TimeBlend qL
+Path:         oplib:/Sop/timeblend_ql?Sop/timeblend_ql
+Icon:         SOP_timeblend
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Apr 19 19:31:48 2012
+

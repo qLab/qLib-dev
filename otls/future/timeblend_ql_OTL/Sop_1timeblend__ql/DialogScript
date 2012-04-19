@@ -1,0 +1,117 @@
+# Dialog script for timeblend_ql automatically generated 04/19/12 19:31:36
+
+{
+    name	timeblend_ql
+    script	timeblend
+    label	"TimeBlend qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"slice"
+	label	"Sample Slice Size"
+	type	float
+	joinnext
+	default	{ "1" }
+	range	{ 1e-05 1 }
+	export	none
+    }
+    parm {
+	name	"slice_presets"
+	label	"Presets"
+	type	ordinal
+	nolabel
+	default	{ "0" }
+	menumini	{
+	    "1"	"1.0: 1 sample / frame"
+	    "0.1"	"0.1: 10 samples / frame"
+	    "0.05"	"0.05: 20 samples / frame"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    group {
+	name	"folder0"
+	label	"Time Blend"
+
+	parm {
+	    name	"holdfirst"
+	    label	"Hold First Frame"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"firstframe"
+	    label	"Hold First Frame"
+	    type	integer
+	    default	{ "1" }
+	    disablewhen	"{ holdfirst == 0 }"
+	    range	{ 0 240 }
+	    export	none
+	}
+	parm {
+	    name	"holdlast"
+	    label	"Hold Last Frame"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"lastframe"
+	    label	"Hold Last Frame"
+	    type	integer
+	    default	{ "240" }
+	    disablewhen	"{ holdlast == 0 }"
+	    range	{ 0 240 }
+	    export	none
+	}
+	parm {
+	    name	"ptidattr"
+	    label	"Point Id Attribute"
+	    type	string
+	    default	{ "id" }
+	    menureplace	{
+		[ "opmenu -l blendshapes1 ptidattr" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"primidattr"
+	    label	"Primitive Id Attribute"
+	    type	string
+	    default	{ "name" }
+	    menureplace	{
+		[ "opmenu -l blendshapes1 primidattr" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    parm {
+	name	"particle_interp"
+	label	"Interpolate Dying Particles"
+	type	toggle
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

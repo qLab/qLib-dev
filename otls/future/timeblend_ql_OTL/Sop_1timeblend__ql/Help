@@ -1,0 +1,43 @@
+#icon: SOP/timeblend
+#context: sop
+#type: node
+
+= TimeBlend qL =
+
+*Version 0.0.1*
+
+"""An enhanced version of the original [Node:sop/timeblend] node."""
+
+This version of the TimeBlend SOP supports the following additional features:
+
+* Support for sub-frame samples: some file formats like Alembic can support multiple geometry samples per frame. The original TimeBlend node ignores these.
+
+* Support extrapolation of dying particles (particles that exist for the last frame will be interpolated along their velocity vectors.)
+
+
+@related
+    - [Node:sop/timeblend]
+
+
+
+@Parameters
+    Sample Slice Size:
+        The step between each frame sample in the incoming geometry. The slice size can be calculated using
+        the _1.0 / <no.of samples per frame>_ formula (e.g. the value for 20 samples per frame is
+        1.0/20 == *0.05* ).
+
+        This can be useful for file formats that can store multiple samples for each frame (e.g. Alembic).
+
+
+    Interpolate Dying Particles:
+        Particles that are not present on the next frame (or sample) will be interpolated using their velocity
+        vectors on the last frame.
+
+
+See the original [Node:sop/timeblend] help for description of the other parameters.
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

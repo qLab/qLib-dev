@@ -1,0 +1,11 @@
+{
+version 0.8
+blend	[ 8	locks=0 ]	(	[ blend	0.604003906 ] 	)
+dopos	[ 0	locks=0 ]	(	"on"	)
+doclr	[ 0	locks=0 ]	(	"on"	)
+donml	[ 0	locks=0 ]	(	"on"	)
+douvw	[ 0	locks=0 ]	(	"on"	)
+dovoxel	[ 0	locks=0 ]	(	"on"	)
+ptidattr	[ 8	locks=0 ]	(	[ ptidattr	id ] 	)
+primidattr	[ 8	locks=0 ]	(	[ primidattr	name ] 	)
+}
