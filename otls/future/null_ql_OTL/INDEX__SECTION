@@ -1,0 +1,13 @@
+Operator:     null_ql
+Label:        Null qL
+Path:         oplib:/Object/null_ql?Object/null_ql
+Icon:         VOP_add
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Apr 19 22:22:46 2012
+
