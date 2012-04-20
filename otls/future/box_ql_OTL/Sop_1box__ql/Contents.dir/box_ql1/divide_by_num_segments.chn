@@ -1,0 +1,23 @@
+{
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "abs(ch(\"../box/sizex\")) / (ch(\"../divrate1\")-1)" }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "abs(ch(\"../box/sizey\")) / (ch(\"../divrate2\")-1)" }
+    }
+    channel sizez {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "abs(ch(\"../box/sizez\")) / (ch(\"../divrate3\")-1)" }
+    }
+  }
