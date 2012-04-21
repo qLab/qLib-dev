@@ -74,6 +74,8 @@ TIP:
             and `0.0` for near-death values.
 
 
+TODO:
+    Implement a way to interpolate any specified per-point attribute.
 
 
 @Release_Notes

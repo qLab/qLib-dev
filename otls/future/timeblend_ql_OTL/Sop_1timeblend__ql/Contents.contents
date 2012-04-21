@@ -42,6 +42,7 @@ timeblend_ql1/vopsop_move_dying_particles/P2.def
 timeblend_ql1/vopsop_move_dying_particles/P2.parm
 timeblend_ql1/vopsop_move_dying_particles/compare1.init
 timeblend_ql1/vopsop_move_dying_particles/compare1.def
+timeblend_ql1/vopsop_move_dying_particles/compare1.chn
 timeblend_ql1/vopsop_move_dying_particles/compare1.parm
 timeblend_ql1/vopsop_move_dying_particles/switch1.init
 timeblend_ql1/vopsop_move_dying_particles/switch1.def
@@ -88,6 +89,16 @@ timeblend_ql1/vopsop_move_dying_particles/do_near_death.init
 timeblend_ql1/vopsop_move_dying_particles/do_near_death.def
 timeblend_ql1/vopsop_move_dying_particles/do_near_death.spareparmdef
 timeblend_ql1/vopsop_move_dying_particles/do_near_death.parm
+timeblend_ql1/vopsop_move_dying_particles/subtract1.init
+timeblend_ql1/vopsop_move_dying_particles/subtract1.def
+timeblend_ql1/vopsop_move_dying_particles/subtract1.parm
+timeblend_ql1/vopsop_move_dying_particles/length1.init
+timeblend_ql1/vopsop_move_dying_particles/length1.def
+timeblend_ql1/vopsop_move_dying_particles/length1.parm
+timeblend_ql1/vopsop_move_dying_particles/tolerance.init
+timeblend_ql1/vopsop_move_dying_particles/tolerance.def
+timeblend_ql1/vopsop_move_dying_particles/tolerance.spareparmdef
+timeblend_ql1/vopsop_move_dying_particles/tolerance.parm
 timeblend_ql1/floor_frame.init
 timeblend_ql1/floor_frame.def
 timeblend_ql1/floor_frame.chn

@@ -1,6 +1,6 @@
 {
 version 0.8
-blend	[ 8	locks=0 ]	(	[ blend	0.491999626 ] 	)
+blend	[ 8	locks=0 ]	(	[ blend	0.119995117 ] 	)
 dopos	[ 0	locks=0 ]	(	"on"	)
 doclr	[ 0	locks=0 ]	(	"on"	)
 donml	[ 0	locks=0 ]	(	"on"	)

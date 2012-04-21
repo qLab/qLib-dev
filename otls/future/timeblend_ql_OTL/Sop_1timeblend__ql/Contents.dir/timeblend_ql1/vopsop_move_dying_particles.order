@@ -1,4 +1,4 @@
-17
+20
 global1
 output1
 timestep
@@ -16,3 +16,6 @@ d_min
 d_max
 if1
 do_near_death
+subtract1
+length1
+tolerance
