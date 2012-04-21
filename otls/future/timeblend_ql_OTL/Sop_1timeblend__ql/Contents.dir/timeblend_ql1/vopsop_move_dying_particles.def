@@ -1,6 +1,6 @@
 sopflags sopflags = 
-comment "This VOP SOP assumes that the sequence blend SOP doesn't move
-particles that exist for the last frame.
+comment "This VOP SOP assumes that the sequence blend SOP doesn't
+move particles that exist for the last frame.
 
 It takes all the particles whose positions remain static
 during a sequence blend, and offsets them along their
@@ -17,7 +17,7 @@ inputs
 stat
 {
   create 1334843624
-  modify 1334851595
+  modify 1334963911
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

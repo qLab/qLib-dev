@@ -37,8 +37,18 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"is_const_b"
-	label	"Is Constant B"
+	name	"vec_a"
+	label	"Vector A"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"normalize_a"
+	label	"Normalize A"
 	type	toggle
 	default	{ "off" }
 	range	{ 0 1 }
@@ -46,10 +56,52 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
+	name	"mult_a"
+	label	"mult_a"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_attr_a"
+	label	"Mult A Attrib"
+	type	string
+	default	{ "pscale" }
+	disablewhen	"{ mult_a == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_a_input"
+	label	"mult_a_input"
+	type	integer
+	default	{ "0" }
+	disablewhen	"{ mult_a == 0 }"
+	menu	{
+	    "0"	"1st Input"
+	    "1"	"2nd Input"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"name_b"
-	label	"Attribute Name B"
+	label	"Attrib Name B"
 	type	string
 	default	{ "N" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"is_const_b"
+	label	"Is Constant B"
+	type	toggle
+	default	{ "off" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
@@ -65,11 +117,44 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"blend"
-	label	"Blend"
-	type	float
-	default	{ "0.5" }
+	name	"normalize_b"
+	label	"Normalize B"
+	type	toggle
+	default	{ "off" }
 	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_b"
+	label	"mult_b"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_attr_b"
+	label	"Mult B Attrib"
+	type	string
+	default	{ "pscale" }
+	disablewhen	"{ mult_b == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_b_input"
+	label	"mult_b_input"
+	type	integer
+	default	{ "1" }
+	disablewhen	"{ mult_b == 0 }"
+	menu	{
+	    "0"	"1st Input"
+	    "1"	"2nd Input"
+	}
+	range	{ 0 10 }
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
@@ -83,30 +168,65 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"normalize_a"
-	label	"Normalize A"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"normalize_b"
-	label	"Normalize B"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"vec_a"
-	label	"Vector A"
+	name	"blend"
+	label	"Blend"
 	type	float
-	size	3
-	default	{ "0" "0" "0" }
-	range	{ 0 10 }
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"custom_blend_attr"
+	label	"Custom Blend Attribute"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"blend_attr"
+	label	"Blend Attribute Name"
+	type	string
+	default	{ "blend" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"out_attr"
+	label	"Out Attribute"
+	type	string
+	default	{ "N" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"normalize_out"
+	label	"Normalize Out"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"invert_out"
+	label	"Invert Out"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
     }
@@ -129,46 +249,10 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"normalize_out"
-	label	"Normalize Out"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"scale"
-	label	"Scale"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"invert_out"
-	label	"Invert Out"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"export_result"
 	label	"Export Result"
 	type	toggle
 	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"out_attr"
-	label	"Out Attribute"
-	type	string
-	default	{ "N" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
@@ -214,24 +298,6 @@
 	label	"Angle Attr"
 	type	string
 	default	{ "angle" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"blend_attr"
-	label	"Blend Attribute Name"
-	type	string
-	default	{ "blend" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"custom_blend_attr"
-	label	"Custom Blend Attribute"
-	type	toggle
-	default	{ "off" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }

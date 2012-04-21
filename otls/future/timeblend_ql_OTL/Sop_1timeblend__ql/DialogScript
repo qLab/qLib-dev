@@ -1,4 +1,4 @@
-# Dialog script for timeblend_ql automatically generated 04/19/12 19:31:36
+# Dialog script for timeblend_ql automatically generated 04/21/12 03:32:22
 
 {
     name	timeblend_ql
@@ -20,22 +20,25 @@
 	type	float
 	joinnext
 	default	{ "1" }
+	help	"The step between each frame sample in the incoming geometry (sub-frame)."
 	range	{ 1e-05 1 }
 	export	none
     }
     parm {
 	name	"slice_presets"
 	label	"Presets"
-	type	ordinal
+	type	button
 	nolabel
 	default	{ "0" }
 	menumini	{
 	    "1"	"1.0: 1 sample / frame"
+	    "0.25"	"0.25: 4 samples / frame"
 	    "0.1"	"0.1: 10 samples / frame"
 	    "0.05"	"0.05: 20 samples / frame"
 	}
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` slice ( $script_value0 )" }
     }
     group {
 	name	"folder0"
@@ -105,13 +108,81 @@
 	}
     }
 
-    parm {
-	name	"particle_interp"
-	label	"Interpolate Dying Particles"
-	type	toggle
-	default	{ "0" }
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
+    group {
+	name	"folder0_1"
+	label	"Particles"
+
+	parm {
+	    name	"particle_interp"
+	    label	"Interpolate Dying Particles"
+	    type	toggle
+	    default	{ "0" }
+	    help	"Motion of particles at the end of their lifespan will be extrapolated using their velocity attribute."
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"v_scale"
+	    label	"Velocity Scale"
+	    type	float
+	    default	{ "1" }
+	    help	"Scale motion along velocity vectors for dying particles."
+	    disablewhen	"{ particle_interp == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"near_death_attrib"
+	    label	"Add Near-Death Attribute"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ particle_interp == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nd_attrib"
+	    label	"Attribute Name"
+	    type	string
+	    default	{ "near_death" }
+	    disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
+	    menureplace	{
+		"near_death"	"near_death"
+		"pscale"	"pscale"
+		"Alpha"	"Alpha"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nd_min"
+	    label	"Close-to-Life Value"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nd_max"
+	    label	"Close-to-Death Value"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
     }
+
 }

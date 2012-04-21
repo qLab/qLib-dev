@@ -1,7 +1,7 @@
 {
 version 0.8
 parmname	[ 0	locks=0 ]	(	name_b	)
-parmlabel	[ 0	locks=0 ]	(	"Attribute Name B"	)
+parmlabel	[ 0	locks=0 ]	(	"Attrib Name B"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"string"	)
 separator1	[ 0	locks=0 ]	(	)

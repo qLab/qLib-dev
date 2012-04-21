@@ -11,13 +11,13 @@ inputs
 4 	Mix 0 1
 5 	Cross_AB 0 1
 6 	Cross_BA 0 1
-7 	Normalize_A_Switch 0 1
-8 	Normalize_B_Switch 0 1
+7 	null1 0 1
+8 	null2 0 1
 }
 stat
 {
   create 1309264843
-  modify 1316728699
+  modify 1334967706
   author Mate@Mate.local.melon.hu
   access 0777
 }
