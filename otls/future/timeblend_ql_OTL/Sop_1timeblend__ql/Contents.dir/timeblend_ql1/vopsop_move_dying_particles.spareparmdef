@@ -37,10 +37,49 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"mult"
-	label	"mult"
+	name	"v_scale"
+	label	"v_scale"
 	type	float
 	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"near_death_attrib"
+	label	"Add Near-Death Attribute"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"nd_attrib"
+	label	"Attribute Name"
+	type	string
+	default	{ "near_death" }
+	disablewhen	"{ near_death_attrib == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"nd_min"
+	label	"Minimum Value"
+	type	float
+	default	{ "0" }
+	disablewhen	"{ near_death_attrib == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"nd_max"
+	label	"Maximum Value"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ near_death_attrib == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }

@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "(!ch(\"../holdfirst\") || ($FF > ch(\"../firstframe\"))) + (ch(\"../holdlast\") && ($FF > ch(\"../lastframe\")))" }
+      segment { length = 0 expr = "(!ch(\"../holdfirst\")u || ($FF > ch(\"../firstframe\"))) + (ch(\"../holdlast\") && ($FF > ch(\"../lastframe\")))" }
     }
   }
