@@ -4,47 +4,105 @@
 
 = Vector qL =
 
-*Version 0.1.1*
+*Version 0.1.2*
 
-"""Performs common operations between two vector attributes and/or constants."""
+"""Performs common operations between per-point vector attributes on the input geometry."""
+
+This is 
 
 @Parameters
     Point Group:
-        The group of points the deformer affects.
+        The group of points affected.
+
     Operation:
-        The operation to be executed.
-    Blend:
-        The mix bias when the operation is mix.
-    Vector:
-        Type of vector A/B.
-    Normalize:
-        Normalize vector A/B.
-    Compute Normal A/B:
-        Generate normal vectors for the first input.
-    Attrib Name A/B:
-        The name of the vector attribute of A/B. If the second input is not connected the attribute is read from the
-        first input.
-    Constant A/B:
-        The constant value of A/B.
-    Normalize Out:
-        Normalize the output vector.
-    Scale:
-        Scale factor for the output vector.
-    Invert Out:
-        Negate the output vector.
-    Out Attribute:
-        The name and toggle of the target attribute of the vector operation result.
-    Length Attrib:
-        Name and toggle for the length of the result vector. The normalization of the output is skpipped for the length
-        calculation, while scaling is not.
-    Dot Product Attrib:
-        Name and toggle for the dot product of the two input vectors.
-    Angle Attrib:
-        Name and toggle for the angle between the result vectors.
-    Angle In Degrees:
-        Output angle in degrees instead of radians.
+        The main vector operation to be performed.
+        The following operations are available:
+        * Add
+        * Substract (A-B)
+        * Substract (B-A)
+        * Mix
+        * Cross Product (AxB)
+        * Cross Product (BxA)
+        * Pass 1st Input (A)
+        * Pass 2nd Input (B)
+
+    Input:
+
+        Vector A/B:
+
+            The two tabs represent separate settings for each of the two sets of vectors.
+            All these settings are applied to the vectors (in order) before the main operation.
+
+            Pre-Compute Normal:
+                Precompute normals for the input geometry.
+    
+            Vector:
+                Type of vector (geometry attribute or constant).
+    
+            Attribute Name:
+                The name of the vector attribute. (If the second input is not connected
+                the attribute is read from the first input.)
+    
+            Constant:
+                Vector value for the Constant type.
+    
+            Normalize:
+                Normalize vector value. (Applies to the constant value as well.)
+
+            Scale with:
+                Scale the vector with the specified (float) attribute.
+
+
+        Mix Settings:
+
+            These settings are used in `Mix` mode only.
+    
+            Blend Value:
+                A constant mixing value.
+
+            Blend Attribute:
+                A per-point float attribute to use as mix value.
+
+    Output:
+        Normalize Output:
+            Normalize the output vector.
+
+        Scale:
+            Scale factor for the output vector.
+
+            TIP:
+                When generating velocity vectors, use `$FPS` as scale factor.
+                (Velocity vectors work on a per-second basis.)
+
+        Invert Result:
+            Negate the output vector (so it will point to the opposite direction).
+
+        Output Attributes:
+
+            Names and toggles of various attributes to output.
+
+            Vector:
+                The target attribute of the vector operation result.
+    
+            Length:
+                The length of the result vector.
+                (This vector is _not_ normalized--the Scale factor applies, though.)
+    
+            Dot Product:
+                Dot product of the two input vectors.
+    
+            Angle:
+                Angle between the two input vectors.
+    
+            Angle In Degrees:
+                Output angle in degrees instead of radians.
 
 @Release_Notes
+    Version 0.1.1:
+        * Added options for scaling both input vectors with a scalar (float) attribute before main operation.
+        * Some UI fixes, consolidations, cosmetics.
+        * Help card revision.
+
     Version 0.1.1:
         Interface updated. One thread per processor is now the default.
 

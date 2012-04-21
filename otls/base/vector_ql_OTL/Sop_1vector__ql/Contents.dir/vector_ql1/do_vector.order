@@ -1,4 +1,4 @@
-46
+60
 Vector_A_Switch
 importattrib1
 attrib
@@ -30,7 +30,7 @@ normalize3
 Norm_Out_Switch
 switcher5
 multiply1
-input2
+scale
 negate1
 Invert_Out_Switch
 switcher6
@@ -45,3 +45,17 @@ blend_attr_type_switch
 import_custom_blend_attr
 blend_attr
 custom_blend_attr
+importattrib3
+mult_attr_a
+mult_a_input
+mult_a
+switch_mult_a
+multiply3
+null1
+null2
+importattrib4
+mult_attr_b
+mult_b_input
+mult_b
+switch_mult_b
+multiply4

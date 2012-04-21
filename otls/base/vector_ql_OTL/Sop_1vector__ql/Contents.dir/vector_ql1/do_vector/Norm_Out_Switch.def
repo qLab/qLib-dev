@@ -1,5 +1,5 @@
 comment ""
-position 9.86167 2.00661
+position 9.48502 3.2098
 cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
@@ -11,7 +11,7 @@ inputs
 stat
 {
   create 1309274761
-  modify 1316728700
+  modify 1334967696
   author Mate@Mate.local.melon.hu
   access 0777
 }

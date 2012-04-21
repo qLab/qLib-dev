@@ -183,4 +183,43 @@
       flags = 0
       segment { length = 0 expr = chs(\"../blend_attr\") }
     }
+    channel mult_a {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mult_a\") }
+    }
+    channel mult_attr_a {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"pscale\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../mult_attr_a\") }
+    }
+    channel mult_a_input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mult_a_input\") }
+    }
+    channel mult_b {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mult_b\") }
+    }
+    channel mult_attr_b {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"pscale\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../mult_attr_b\") }
+    }
+    channel mult_b_input {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mult_b_input\") }
+    }
   }

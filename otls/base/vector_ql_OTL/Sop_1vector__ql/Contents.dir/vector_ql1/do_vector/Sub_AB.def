@@ -4,13 +4,13 @@ cachesize 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 inputs
 {
-0 	Normalize_A_Switch 0 1
-1 	Normalize_B_Switch 0 1
+0 	null1 0 1
+1 	null2 0 1
 }
 stat
 {
   create 1309264922
-  modify 1310323547
+  modify 1334967695
   author Mate@Mate.local.melon.hu
   access 0777
 }

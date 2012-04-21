@@ -1,4 +1,4 @@
-# Dialog script for vector_ql automatically generated 09/22/11 23:57:09
+# Dialog script for vector_ql automatically generated 04/21/12 03:14:19
 
 {
     name	vector_ql
@@ -57,7 +57,7 @@
 
 	    parm {
 		name	"compute_n_A"
-		label	"Compute Normal"
+		label	"Pre-Compute Normal"
 		type	toggle
 		default	{ "0" }
 		disablewhen	"{ operation == 7 }"
@@ -120,25 +120,82 @@
 		default	{ "0" }
 		disablewhen	"{ vector_type_a == 0 } { operation == 7 }"
 		menumini	{
-		    "one"	"X+"
-		    "two"	"Y+"
-		    "three"	"Z+"
-		    "four"	"X-"
-		    "five"	"Y-"
-		    "six"	"Z-"
+		    "1 0 0"	"X+"
+		    "0 1 0"	"Y+"
+		    "0 0 1"	"Z+"
+		    "-1 0 0"	"X-"
+		    "0 -1 0"	"Y-"
+		    "0 0 -1"	"Z-"
 		}
 		range	{ 0 10 }
 		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` vec_a ( $script_value0 )" }
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
 		name	"normalize_a"
-		label	"Normalize Vector A"
+		label	"Normalize"
 		type	toggle
 		default	{ "off" }
 		disablewhen	"{ operation == 7 }"
 		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_a"
+		label	"mult_a"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_attr_a"
+		label	"Scale with"
+		type	string
+		joinnext
+		default	{ "pscale" }
+		disablewhen	"{ mult_a == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_a_input"
+		label	"mult_a_input"
+		type	integer
+		nolabel
+		default	{ "0" }
+		disablewhen	"{ mult_a == 0 }"
+		menu	{
+		    "0"	"1st Input"
+		    "1"	"2nd Input"
+		}
+		range	{ 0 10 }
 		export	none
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
@@ -152,7 +209,7 @@
 
 	    parm {
 		name	"compute_n_B"
-		label	"Compute Normal"
+		label	"Pre-Compute Normal"
 		type	toggle
 		default	{ "0" }
 		disablewhen	"{ operation == 6 }"
@@ -200,7 +257,7 @@
 		type	float
 		joinnext
 		size	3
-		default	{ "0" "0" "0" }
+		default	{ "1" "0" "0" }
 		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
 		range	{ 0 10 }
 		export	none
@@ -215,25 +272,82 @@
 		default	{ "0" }
 		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
 		menumini	{
-		    "one"	"X+"
-		    "two"	"Y+"
-		    "three"	"Z+"
-		    "four"	"X-"
-		    "five"	"Y-"
-		    "six"	"Z-"
+		    "1 0 0"	"X+"
+		    "0 1 0"	"Y+"
+		    "0 0 1"	"Z+"
+		    "-1 0 0"	"X-"
+		    "0 -1 0"	"Y-"
+		    "0 0 -1"	"Z-"
 		}
 		range	{ 0 10 }
 		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` vec_b ( $script_value0 )" }
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
 		name	"normalize_b"
-		label	"Normalize Vector B"
+		label	"Normalize"
 		type	toggle
 		default	{ "off" }
 		disablewhen	"{ operation == 6 }"
 		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_b"
+		label	"Scale with"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_attr_b"
+		label	"Scale with"
+		type	string
+		joinnext
+		default	{ "pscale" }
+		disablewhen	"{ mult_b == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_b_input"
+		label	"mult_b_input"
+		type	integer
+		nolabel
+		default	{ "1" }
+		disablewhen	"{ mult_b == 0 }"
+		menu	{
+		    "0"	"1st Input"
+		    "1"	"2nd Input"
+		}
+		range	{ 0 10 }
 		export	none
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
@@ -246,10 +360,10 @@
 
 	    parm {
 		name	"blend"
-		label	"Blend"
+		label	"Blend Value"
 		type	float
 		default	{ "0.5" }
-		disablewhen	"{ operation != 3 }"
+		disablewhen	"{ operation != 3 } { custom_blend_attr != 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -257,8 +371,10 @@
 	    }
 	    parm {
 		name	"custom_blend_attr"
-		label	"Custom Blend Attribute"
+		label	"Blend Attribute"
 		type	toggle
+		nolabel
+		joinnext
 		default	{ "off" }
 		help	"A per-point float attribute for per-point weighting."
 		disablewhen	"{ operation != 3 }"
@@ -269,10 +385,26 @@
 	    }
 	    parm {
 		name	"blend_attr"
-		label	"Attribute Name"
+		label	"Blend Attribute"
 		type	string
 		default	{ "blend" }
 		disablewhen	"{ operation != 3 } { custom_blend_attr != 1 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -285,7 +417,6 @@
     group {
 	name	"input_1"
 	label	"Output"
-	tabbreak
 
 	parm {
 	    name	"normalize_out"
