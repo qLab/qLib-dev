@@ -1,4 +1,4 @@
-# Dialog script for deformbysurface_ql automatically generated 10/02/11 00:24:46
+# Dialog script for deformbysurface_ql automatically generated 04/24/12 00:13:07
 
 {
     name	deformbysurface_ql
@@ -8,6 +8,12 @@
     help {
 	""
     }
+    bindhandle bbox_min1 translate "Corner: Min" tx ""
+    bindhandle bbox_min2 translate "Corner: Min" ty ""
+    bindhandle bbox_min3 translate "Corner: Min" tz ""
+    bindhandle bbox_max1 translate "Corner: Max" tx ""
+    bindhandle bbox_max2 translate "Corner: Max" ty ""
+    bindhandle bbox_max3 translate "Corner: Max" tz ""
 
     inputlabel	1	"Geometry to deform"
     inputlabel	2	"Deformer NURBS Surface"
@@ -28,13 +34,14 @@
     }
     group {
 	name	"folder1"
-	label	"Input Geometry"
+	label	"Input Geometry Bounds"
 	tabbreak
 
 	parm {
 	    name	"bbox_min"
 	    label	"BBox Min"
 	    type	float
+	    joinnext
 	    size	3
 	    default	{ "-1.5" "0" "-1.5" }
 	    help	"Bounding box of the geometry to deform."
@@ -44,9 +51,19 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
+	    name	"fit_min"
+	    label	"fit"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "set I=`opinputpath(oppwd(),0)`; opparm `oppwd()` bbox_min ( `bbox($I,D_XMIN)` `bbox($I,D_YMIN)` `bbox($I,D_ZMIN)`)" }
+	}
+	parm {
 	    name	"bbox_max"
 	    label	"BBox Max"
 	    type	float
+	    joinnext
 	    size	3
 	    default	{ "1.5" "1" "1.5" }
 	    help	"Bounding box of the geometry to deform."
@@ -54,6 +71,24 @@
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"fit_max"
+	    label	"fit"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "set I=`opinputpath(oppwd(),0)`; opparm `oppwd()` bbox_max ( `bbox($I,D_XMAX)` `bbox($I,D_YMAX)` `bbox($I,D_ZMAX)`)" }
+	}
+	parm {
+	    name	"bbox_fit"
+	    label	"Fit Box (Min/Max) to Input Geometry"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "set I=`opinputpath(oppwd(),0)`; opparm `oppwd()` bbox_min ( `bbox($I,D_XMIN)` `bbox($I,D_YMIN)` `bbox($I,D_ZMIN)`); opparm `oppwd()` bbox_max ( `bbox($I,D_XMAX)` `bbox($I,D_YMAX)` `bbox($I,D_ZMAX)`)" }
 	}
     }
 
@@ -150,10 +185,11 @@
 	}
 	parm {
 	    name	"douv"
-	    label	"Set Surface UV(W) Attribute"
+	    label	"Inherit UV(W) Attrib"
 	    type	toggle
+	    joinnext
 	    default	{ "off" }
-	    help	"Store surface UVW coordinates for each point in an attribute."
+	    help	"Inherit control surface UVW coordinates as a per-point attribute."
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -163,9 +199,14 @@
 	    name	"uvname"
 	    label	"Attr Name"
 	    type	string
+	    nolabel
 	    default	{ "surface_uv" }
 	    help	"Name of the attribute that stores surface UVW coordinates."
 	    disablewhen	"{ douv == 0 }"
+	    menureplace	{
+		"surface_uv"	"surface_uv"
+		"uv"	"uv"
+	    }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
