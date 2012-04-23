@@ -1,0 +1,9 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../display_type\") }
+    }
+  }

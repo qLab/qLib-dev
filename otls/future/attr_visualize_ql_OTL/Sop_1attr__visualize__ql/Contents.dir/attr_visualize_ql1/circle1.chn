@@ -1,0 +1,16 @@
+{
+    channel radx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../sphere2/radx\") }
+    }
+    channel rady {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../sphere2/radx\") }
+    }
+  }

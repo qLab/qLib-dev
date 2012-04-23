@@ -1,0 +1,9 @@
+{
+    channel rad2 {
+      lefttype = extend
+      righttype = extend
+      default = 0.05
+      flags = 0
+      segment { length = 0 value = 0.05000000074505806 0.05000000074505806 expr = ch(\"../tube2/rad2\") }
+    }
+  }

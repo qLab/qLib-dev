@@ -1,4 +1,4 @@
-15
+17
 global1
 output1
 rampparm1
@@ -14,3 +14,5 @@ switch2
 attr_comp
 attr_type
 attr_int
+pow1
+display_gamma

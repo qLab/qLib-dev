@@ -88,3 +88,12 @@
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "rampbasisdefault" "linear" }
     }
+    parm {
+	name	"display_gamma"
+	label	"display_gamma"
+	type	float
+	default	{ "2.2" }
+	range	{ 0.01 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

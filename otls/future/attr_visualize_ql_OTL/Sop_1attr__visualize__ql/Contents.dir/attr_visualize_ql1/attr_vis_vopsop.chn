@@ -72,14 +72,6 @@
       start = 60.416667938232422
       segment { length = 0 value = 1 1 expr = ch(\"../attr_ramp2interp\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      start = 60.416667938232422
-      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
-    }
     channel attr_name {
       lefttype = extend
       righttype = extend
@@ -123,5 +115,12 @@
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../attr_comp\") }
+    }
+    channel display_gamma {
+      lefttype = extend
+      righttype = extend
+      default = 2.2
+      flags = 0
+      segment { length = 0 value = 2.2000000476837158 2.2000000476837158 expr = ch(\"../display_gamma\") }
     }
   }

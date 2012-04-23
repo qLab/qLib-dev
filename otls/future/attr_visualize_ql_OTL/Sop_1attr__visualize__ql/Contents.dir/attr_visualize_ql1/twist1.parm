@@ -1,0 +1,10 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+op	[ 0	locks=0 ]	(	"bend"	)
+paxis	[ 0	locks=0 ]	(	"y"	)
+saxis	[ 0	locks=0 ]	(	"z"	)
+p	[ 0	locks=0 ]	(	0	0	0	)
+strength	[ 0	locks=0 ]	(	15	)
+roll	[ 0	locks=0 ]	(	-0.5	)
+}

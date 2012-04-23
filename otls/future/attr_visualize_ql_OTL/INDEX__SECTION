@@ -4,10 +4,10 @@ Path:         oplib:/Sop/attr_visualize_ql?Sop/attr_visualize_ql
 Icon:         COP2_colorwheel
 Table:        Sop
 License:      
-Extra:        
-Inputs:       1 to 1
+Extra:        guide=./GUIDE 
+Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Wed Mar 14 14:26:08 2012
+Modified:     Tue Apr 24 01:30:08 2012
 
