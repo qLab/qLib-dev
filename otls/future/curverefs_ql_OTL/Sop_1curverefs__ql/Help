@@ -1,0 +1,53 @@
+#icon: CHOP/transformchain
+#context: sop
+#type: node
+
+= Curve Refs qL =
+
+*Version 0.0.1*
+
+"""Generate *non-flipping* tangent/normal/up vectors for all points on curves."""
+
+@related
+    - [Node:sop/texture]
+    - [Deform by Surface qL|Node:sop/deformbysurface_ql]
+
+
+This SOP generates reference frames (a set of three vectors that defines a local coordinate system)
+for all curve points.
+
+The algorithm generates each reference frame incrementally from the previous one to avoid flipping.
+This can be very useful where curves with 'on-curve orientation' information is needed
+(such as motion paths or hair curves).
+
+The method is based on the paper "Calculation of Reference Frames along a Space Curve" by Jules Bloomenthal
+(Graphics Gems, vol. 1).
+
+@Parameters
+    Input:
+        UV Attribute:
+            A per-point UV attribute to build the reference frames from (only the U parameter is used).
+            This attribute must be present (can be generated with an [Node:sop/texture] SOP).
+    
+        Up Vector Mode:
+            The mode for determining the first up vector on each curve. It can either be a constant,
+            or the up vector value of the first vertex can be used (if present).
+    
+        Up Vector:
+            Vector value for the 'Constant' up vector mode.
+
+    Output:
+        Tangent:
+            Name of the output tangent attribute (per-point vector).
+        Normal:
+            Name of the output normal (bi-tangent) attribute (per-point vector).
+        Up:
+            Name of the output up vector attribute (per-point vector).
+
+TODO:
+    Support selection ('group' parameter).
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.

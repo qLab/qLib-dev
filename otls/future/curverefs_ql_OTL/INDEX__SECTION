@@ -1,0 +1,13 @@
+Operator:     curverefs_ql
+Label:        Curve Refs qL
+Path:         oplib:/Sop/curverefs_ql?Sop/curverefs_ql
+Icon:         CHOP_transformchain
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Thu Apr 26 00:36:29 2012
+

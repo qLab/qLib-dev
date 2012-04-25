@@ -1,0 +1,142 @@
+# Dialog script for curverefs_ql automatically generated 04/26/12 00:36:29
+
+{
+    name	curverefs_ql
+    script	curverefs_ql
+    label	"Curve Refs qL"
+
+    help {
+	""
+    }
+
+    group {
+	name	"folder2"
+	label	"Curve Attributes (Per-Point)"
+
+	group {
+	    name	"folder0"
+	    label	"Input"
+	    tabbreak
+
+	    parm {
+		name	"uv_attrib"
+		label	"UV Attribute"
+		type	string
+		default	{ "uv" }
+		menureplace	{
+		    "uv"	"uv"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"up_mode"
+		label	"Up Vector Mode"
+		type	integer
+		default	{ "0" }
+		menu	{
+		    "0"	"Constant"
+		    "1"	"Up Vector from First Curve Point"
+		}
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"up_vector"
+		label	"Up Vector"
+		type	vector
+		size	3
+		default	{ "0" "1" "0" }
+		disablewhen	"{ up_mode != 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"u_offs"
+		label	"U Offset"
+		type	float
+		default	{ "0.001" }
+		help	"Offset value for tangent calculation."
+		range	{ 0.0001 0.1 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder1"
+	    label	"Output"
+
+	    parm {
+		name	"do_tan"
+		label	"Tangent"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"tan_attrib"
+		label	"Tangent"
+		type	string
+		default	{ "tangent" }
+		disablewhen	"{ do_tan == 0 }"
+		menureplace	{
+		    "tangent"	"tangent"
+		    "tangent_u"	"tangent_u"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_N"
+		label	"Normal"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"N_attrib"
+		label	"Normal"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ do_N == 0 }"
+		menureplace	{
+		    "N"	"N"
+		    "tangent_v"	"tangent_v"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_up"
+		label	"Up"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"up_attrib"
+		label	"Up"
+		type	string
+		default	{ "up" }
+		disablewhen	"{ do_up == 0 }"
+		menureplace	{
+		    "up"	"up"
+		    "N"	"N"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+}

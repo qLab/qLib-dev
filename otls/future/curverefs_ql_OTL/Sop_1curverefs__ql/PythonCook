@@ -1,0 +1,101 @@
+import sys
+
+
+def dbg(m):
+    #sys.__stderr__.write("[curverefs]: %s\n" % m)
+    pass
+
+
+
+def add_vect_attr(doit, G, name):
+    """Add a per-point vector attribute (if it doesn't exist)."""
+    a = None
+    if doit:
+        a = G.findPointAttrib(name)
+        if a is None: a = G.addAttrib(hou.attribType.Point, name, (0.0, 0.0, 0.0), True)
+    return a
+
+
+
+
+
+N = hou.pwd()
+G = N.geometry()
+
+dbg("")
+dbg("RUNNING: %s %s" % (N, G) )
+
+a_uv = N.parm("uv_attrib").eval()
+
+up_mode = N.parm("up_mode").eval()
+up_vect = hou.Vector3( N.parmTuple("up_vector").eval() ).normalized()
+u_offs  = N.parm("u_offs").eval()
+
+do_t  = N.parm("do_tan").eval()
+do_N  = N.parm("do_N").eval()
+do_up = N.parm("do_up").eval()
+
+a_t  = N.parm("tan_attrib").eval()
+a_N  = N.parm("N_attrib").eval()
+a_up = N.parm("up_attrib").eval()
+
+
+if not G.findPointAttrib(a_uv):
+    raise hou.Error("Per-point UV attribute '%s' doesn't exist" % a_uv)
+
+
+a__t  = add_vect_attr(do_t,  G, a_t)
+a__N  = add_vect_attr(do_N,  G, a_N)
+a__up = add_vect_attr(do_up, G, a_up)
+
+
+
+for prim in G.iterPrims():
+
+    dbg(" - %s. %s" % (prim.number(), prim.type()) )
+
+    t  = prim.type()
+    pt = hou.primType
+
+    if t==pt.NURBSCurve or t==pt.BezierCurve or t==pt.Polygon:
+
+        # calculate vectors for curve
+        dbg(" -- curve")
+    
+        verts = prim.vertices()
+    
+        U0 = up_vect
+    
+        first = True
+        for vtx in verts:
+    
+            pt = vtx.point()
+            uv = pt.attribValue(a_uv)
+    
+            if first and up_mode==1:
+                # use up vector of the first vertex
+                U0 = hou.Vector3( pt.attribValue(a_up) ).normalized()
+    
+            u = uv[0]
+            offs = u_offs
+            not_last = first or u+offs<1.0
+            u1 = u+offs if not_last else u-offs
+    
+            first = False
+    
+            dbg(" -- %s. %s" % (uv, not_last) )
+    
+            P = hou.Vector3( prim.attribValueAt("P", u) )
+            V = hou.Vector3( prim.attribValueAt("P", u1) )
+    
+            V = V-P if not_last else P-V
+            V = V.normalized()
+            N = V.cross(U0).normalized()
+    
+            U = N.cross(V).normalized()
+            U0 = U
+    
+            if do_t: pt.setAttribValue(a_t, V)
+            if do_N: pt.setAttribValue(a_N, N)
+            if do_up: pt.setAttribValue(a_up, U)
+
