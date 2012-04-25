@@ -1,0 +1,21 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
+cacheincoming	[ 0	locks=0 ]	(	"off"	)
+vex_source	[ 0	locks=0 ]	(	[ vex_source	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	[ vex_numthreads	1 ] 	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+direction	[ 0	locks=0 ]	(	[ direction1	0 ] 	[ direction2	-9.80000019 ] 	[ direction3	0 ] 	)
+mass	[ 0	locks=0 ]	(	1	)
+scale	[ 0	locks=0 ]	(	[ scale	1 ] 	)
+mass_mode	[ 0	locks=0 ]	(	[ mass_mode	0 ] 	)
+mass_override	[ 0	locks=0 ]	(	[ mass_override	1 ] 	)
+ntype	[ 0	locks=0 ]	(	[ ntype	snoise ] 	)
+freq	[ 0	locks=0 ]	(	[ freq1	1 ] 	[ freq2	1 ] 	[ freq3	1 ] 	)
+amplitude	[ 0	locks=0 ]	(	[ amplitude1	0 ] 	[ amplitude2	0 ] 	[ amplitude3	0 ] 	)
+offset	[ 0	locks=0 ]	(	[ offset1	0 ] 	[ offset2	0 ] 	[ offset3	0 ] 	)
+rough	[ 0	locks=0 ]	(	[ rough	0.0500000007 ] 	)
+atten	[ 0	locks=0 ]	(	[ atten	1 ] 	)
+turb	[ 0	locks=0 ]	(	[ turb	0 ] 	)
+}

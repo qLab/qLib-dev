@@ -1,0 +1,187 @@
+# Dialog script for force_ql automatically generated 04/26/12 00:58:42
+
+{
+    name	force_ql
+    script	force_ql
+    label	"Force qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"activate"
+	label	"Activation"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"source"
+	label	"Source Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l voppop_force vex_source" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"vex_numthreads"
+	label	"Number of Threads"
+	type	ordinal
+	default	{ "1perproc" }
+	menu	{
+	    [ "opmenu -l voppop_force vex_numthreads" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Force"
+
+	parm {
+	    name	"direction"
+	    label	"Direction"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"mass_mode"
+	    label	"Mass Mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Default"
+		"1"	"Ignore"
+		"2"	"Override"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"mass_override"
+	    label	"Mass Override"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ mass_mode != 2 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Noise"
+
+	parm {
+	    name	"turb"
+	    label	"Turbulence"
+	    type	integer
+	    default	{ "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rough"
+	    label	"Roughness"
+	    type	float
+	    default	{ "0.05" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"atten"
+	    label	"Exponent"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"freq"
+	    label	"Frequency"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"amplitude"
+	    label	"amplitude"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"offset"
+	    label	"Offset"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ntype"
+	    label	"Noise Type"
+	    type	string
+	    default	{ "snoise" }
+	    menu	{
+		"onoise"	"Original Perlin Noise"
+		"snoise"	"Sparse Convolution Noise"
+		"anoise"	"Alligator Noise"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

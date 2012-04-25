@@ -1,0 +1,146 @@
+{
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../activate\") }
+    }
+    channel vex_source {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../source\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
+    }
+    channel direction1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../direction1\") }
+    }
+    channel direction2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../direction2\") }
+    }
+    channel direction3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../direction3\") }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale\") }
+    }
+    channel mass_mode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mass_mode\") }
+    }
+    channel mass_override {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mass_override\") }
+    }
+    channel ntype {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"snoise\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../ntype\") }
+    }
+    channel freq1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq1\") }
+    }
+    channel freq2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq2\") }
+    }
+    channel freq3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq3\") }
+    }
+    channel amplitude1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../amplitude1\") }
+    }
+    channel amplitude2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../amplitude2\") }
+    }
+    channel amplitude3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../amplitude3\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset1\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset2\") }
+    }
+    channel offset3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset3\") }
+    }
+    channel rough {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../rough\") }
+    }
+    channel atten {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../atten\") }
+    }
+    channel turb {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../turb\") }
+    }
+  }

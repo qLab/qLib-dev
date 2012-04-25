@@ -1,0 +1,4 @@
+Vop/twoway /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Vop/turbnoise /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/turbnoise otls/OPlibVop.otl

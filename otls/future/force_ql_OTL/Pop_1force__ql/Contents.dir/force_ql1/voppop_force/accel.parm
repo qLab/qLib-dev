@@ -1,0 +1,6 @@
+{
+version 0.8
+contexttype	[ 0	locks=0 ]	(	pop	)
+usemenu	[ 0	locks=0 ]	(	"on"	)
+varname	[ 0	locks=0 ]	(	accel	)
+}

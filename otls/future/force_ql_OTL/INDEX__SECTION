@@ -1,0 +1,13 @@
+Operator:     force_ql
+Label:        Force qL
+Path:         oplib:/Pop/force_ql?Pop/force_ql
+Icon:         POP_force
+Table:        Pop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Apr 26 01:16:13 2012
+

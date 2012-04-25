@@ -1,0 +1,155 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"cacheincoming"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"direction"
+	label	"Direction"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mass"
+	label	"mass"
+	type	float
+	invisible
+	nolabel
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mass_mode"
+	label	"Mass Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Default"
+	    "1"	"Ignore"
+	    "2"	"Override"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mass_override"
+	label	"Mass Override"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ mass_mode != 2 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ntype"
+	label	"Noise Type"
+	type	string
+	default	{ "snoise" }
+	menu	{
+	    "onoise"	"Original Perlin Noise"
+	    "snoise"	"Sparse Convolution Noise"
+	    "anoise"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"freq"
+	label	"Frequency"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amplitude"
+	label	"amplitude"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"offset"
+	label	"Offset"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rough"
+	label	"Roughness"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"atten"
+	label	"Attenuation"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"turb"
+	label	"Turbulence"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
