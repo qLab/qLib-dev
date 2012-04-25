@@ -4,10 +4,10 @@ Path:         oplib:/Sop/peak_ql?Sop/peak_ql
 Icon:         SOP_peak
 Table:        Sop
 License:      
-Extra:        
+Extra:        guide=./IN 
 Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Mar 29 18:49:28 2012
+Modified:     Wed Apr 25 23:09:40 2012
 
