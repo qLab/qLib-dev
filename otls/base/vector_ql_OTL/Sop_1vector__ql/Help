@@ -8,7 +8,12 @@
 
 """Performs common operations between per-point vector attributes on the input geometry."""
 
-This is 
+This is ...
+
+
+Note: Although this node might seem a bit monolithic in nature, it encapsulates the most frequently
+required vector-related operations (and it does that within a single VOP SOP, so it is _fast_).
+
 
 @Parameters
     Point Group:

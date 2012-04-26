@@ -1,4 +1,4 @@
-60
+74
 Vector_A_Switch
 importattrib1
 attrib
@@ -15,7 +15,7 @@ Sub_AB
 Sub_BA
 Mix
 blend
-switcher2
+operation
 Cross_AB
 Cross_BA
 normalize1
@@ -59,3 +59,17 @@ mult_b_input
 mult_b
 switch_mult_b
 multiply4
+null3
+null4
+switch_mult_const_a
+multiply5
+null5
+mult_const_a
+mult_const_a_val
+switch_mult_const_b
+multiply6
+null6
+mult_const_b
+mult_const_b_val
+Min_AB
+Max_AB

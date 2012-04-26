@@ -1,4 +1,4 @@
-# Dialog script for vector_ql automatically generated 04/21/12 03:14:19
+# Dialog script for vector_ql automatically generated 04/26/12 20:08:15
 
 {
     name	vector_ql
@@ -40,6 +40,8 @@
 	    "5"	"Cross Product (BxA)"
 	    "6"	"Pass 1st Input (A)"
 	    "7"	"Pass 2nd Input (B)"
+	    "8"	"Min"
+	    "9"	"Max"
 	}
 	range	{ 0 10 }
 	export	none
@@ -139,6 +141,29 @@
 		type	toggle
 		default	{ "off" }
 		disablewhen	"{ operation == 7 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_a"
+		label	"mult_const_a"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_a_val"
+		label	"Scale"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ mult_const_a == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -291,6 +316,29 @@
 		type	toggle
 		default	{ "off" }
 		disablewhen	"{ operation == 6 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_b"
+		label	"mult_const_b"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_b_val"
+		label	"Scale"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ mult_const_b == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -466,8 +514,9 @@
 	    }
 	    parm {
 		name	"out_attr"
-		label	"Vector"
+		label	"Vector / Type"
 		type	string
+		joinnext
 		default	{ "N" }
 		disablewhen	"{ export_result == 0 }"
 		menureplace	{
@@ -482,6 +531,22 @@
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"typemodifier"
+		label	"Type Modifier"
+		type	string
+		nolabel
+		default	{ "vector" }
+		help	"Output data type. Use 'None' for color attributes such as Cd."
+		disablewhen	"{ export_result == 0 }"
+		menu	{
+		    ""	"None (e.g. Color)"
+		    "vector"	"Vector Data"
+		}
+		range	{ 0 1 }
+		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {

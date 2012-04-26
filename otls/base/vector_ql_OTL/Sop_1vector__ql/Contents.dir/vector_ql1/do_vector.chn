@@ -222,4 +222,30 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../mult_b_input\") }
     }
+    channel mult_const_a {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mult_const_a\") }
+    }
+    channel mult_const_a_val {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mult_const_a_val\") }
+    }
+    channel mult_const_b {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mult_const_b\") }
+    }
+    channel mult_const_b_val {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mult_const_b_val\") }
+    }
   }

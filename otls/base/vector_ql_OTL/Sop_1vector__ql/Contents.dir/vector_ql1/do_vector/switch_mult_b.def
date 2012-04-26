@@ -5,13 +5,13 @@ flags =  lock off model off template off footprint off xray off bypass off displ
 inputs
 {
 0 	mult_b 0 1
-1 	Normalize_B_Switch 0 1
+1 	null4 0 1
 2 	multiply4 0 1
 }
 stat
 {
   create 1334966316
-  modify 1334967678
+  modify 1335463174
   author tusi@demeisen
   access 0777
 }

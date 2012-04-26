@@ -1,0 +1,9 @@
+{
+    channel typemodifier {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"vector\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../../typemodifier\") }
+    }
+  }

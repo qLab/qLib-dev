@@ -56,6 +56,25 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
+	name	"mult_const_a"
+	label	"mult_const_a"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_const_a_val"
+	label	"mult_const_a_val"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ mult_const_a == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"mult_a"
 	label	"mult_a"
 	type	toggle
@@ -121,6 +140,25 @@
 	label	"Normalize B"
 	type	toggle
 	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_const_b"
+	label	"mult_const_b"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult_const_b_val"
+	label	"mult_const_b_val"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ mult_const_b == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
