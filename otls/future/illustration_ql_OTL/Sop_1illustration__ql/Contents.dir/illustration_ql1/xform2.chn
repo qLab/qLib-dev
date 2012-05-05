@@ -1,0 +1,14 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = 0.5*ch(\"../place_in_layout/w\") }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -0.5*ch(\"../place_in_layout/h\") }
+    }
+  }

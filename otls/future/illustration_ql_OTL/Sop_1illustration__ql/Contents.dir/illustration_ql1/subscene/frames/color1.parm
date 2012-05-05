@@ -1,0 +1,9 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	0	)
+class	[ 0	locks=0 ]	(	1	)
+colortype	[ 0	locks=0 ]	(	0	)
+color	[ 8	locks=0 ]	(	[ colorr	0.0599999987 ] 	[ colorg	0.055355899 ] 	[ colorb	0.0445200019 ] 	)
+seed	[ 0	locks=0 ]	(	0	)
+}

@@ -1,0 +1,9 @@
+{
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 0.925
+      flags = 0
+      segment { length = 0 value = 0.92500001192092896 0.92500001192092896 expr = ch(\"../label_at_margin\") }
+    }
+  }

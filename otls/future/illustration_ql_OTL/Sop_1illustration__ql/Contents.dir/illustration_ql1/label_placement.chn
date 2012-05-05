@@ -1,0 +1,21 @@
+{
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(0*ch(\"../index_align/align_right\"), 0.5, -0.5)*ch(\"../place_in_layout/w\")" }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -0.5*ch(\"../place_in_layout/h\") }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = -ch(\"ty\") }
+    }
+  }

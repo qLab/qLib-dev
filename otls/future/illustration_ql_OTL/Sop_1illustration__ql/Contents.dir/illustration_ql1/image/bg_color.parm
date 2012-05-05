@@ -1,0 +1,15 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+numcopies	[ 0	locks=0 ]	(	1	)
+effectamount	[ 0	locks=0 ]	(	1	)
+maskinput	[ 0	locks=0 ]	(	"mask"	)
+maskplane	[ 0	locks=0 ]	(	A	)
+maskresize	[ 0	locks=0 ]	(	"off"	)
+maskinvert	[ 0	locks=0 ]	(	"off"	)
+copyto1	[ 0	locks=0 ]	(	C	)
+newplane1	[ 0	locks=0 ]	(	"m"	)
+copyfrom1	[ 0	locks=0 ]	(	C-Set	)
+copyop1	[ 0	locks=0 ]	(	"lum"	)
+color1	[ 8	locks=0 ]	(	[ color1r	0.643999994 ] 	[ color1g	0.615405977 ] 	[ color1b	0.548687994 ] 	1	)
+}

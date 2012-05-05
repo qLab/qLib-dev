@@ -1,0 +1,20 @@
+{
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -$YMAX }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"align_right\"), -$XMAX, $XMIN)" }
+    }
+    channel align_right {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../idx_align\") }
+    }
+  }

@@ -1,0 +1,23 @@
+{
+    channel fontsize {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = 0.1*ch(\"../place_in_layout/w\") }
+    }
+    channel lod {
+      lefttype = extend
+      righttype = extend
+      default = 0.3
+      flags = 0
+      segment { length = 0 value = 0.30000001192092896 0.30000001192092896 expr = ch(\"../text_lod\") }
+    }
+    channel hole {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../switch_filled_index/input\")==2 }
+    }
+  }

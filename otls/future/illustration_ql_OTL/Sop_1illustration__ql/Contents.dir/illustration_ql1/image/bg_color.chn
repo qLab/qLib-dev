@@ -1,0 +1,23 @@
+{
+    channel color1r {
+      lefttype = extend
+      righttype = extend
+      default = 0.644
+      flags = 0
+      segment { length = 0 value = 0.64399999380111694 0.64399999380111694 expr = ch(\"../../bg_colorr\") }
+    }
+    channel color1g {
+      lefttype = extend
+      righttype = extend
+      default = 0.615406
+      flags = 0
+      segment { length = 0 value = 0.61540639400482178 0.61540639400482178 expr = ch(\"../../bg_colorg\") }
+    }
+    channel color1b {
+      lefttype = extend
+      righttype = extend
+      default = 0.548688
+      flags = 0
+      segment { length = 0 value = 0.54868799448013306 0.54868799448013306 expr = ch(\"../../bg_colorb\") }
+    }
+  }

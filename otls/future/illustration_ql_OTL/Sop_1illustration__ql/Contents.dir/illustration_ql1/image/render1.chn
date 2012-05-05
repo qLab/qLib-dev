@@ -1,0 +1,56 @@
+{
+    channel size1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CXRES }
+    }
+    channel size2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CYRES }
+    }
+    channel aspect {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CPIXA }
+    }
+    channel depthglobal {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CDEPTH }
+    }
+    channel bwpoints1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CBP }
+    }
+    channel bwpoints2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CWP }
+    }
+    channel start {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $FSTART }
+    }
+    channel length {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $NFRAMES }
+    }
+    channel render {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../render\") }
+    }
+  }

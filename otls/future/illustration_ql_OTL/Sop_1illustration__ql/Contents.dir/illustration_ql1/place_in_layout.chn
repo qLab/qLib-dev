@@ -1,0 +1,55 @@
+{
+    channel whm {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "max(ch(\"w\"), ch(\"h\"))" }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "( stamp(\"../copy_all_frames\", \"n\", 0) % ch(\"num_cols\") ) * (ch(\"w\")+ch(\"pad\"))" }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "-floor( stamp(\"../copy_all_frames\", \"n\", 0) / ch(\"num_cols\") ) * (ch(\"h\")+ch(\"pad\"))" }
+    }
+    channel num_cols {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch(\"../num_cols\") }
+    }
+    channel w {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = ch(\"../frame_width\") }
+    }
+    channel h {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = ch(\"../frame_height\") }
+    }
+    channel pad {
+      lefttype = extend
+      righttype = extend
+      default = 0.25
+      flags = 0
+      segment { length = 0 value = 0.25 0.25 expr = ch(\"../frame_pad\") }
+    }
+    channel clip_pad {
+      lefttype = extend
+      righttype = extend
+      default = 0.85
+      flags = 0
+      segment { length = 0 value = 0.85000002384185791 0.85000002384185791 expr = ch(\"../clip_pad\") }
+    }
+  }

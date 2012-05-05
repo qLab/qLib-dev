@@ -1,0 +1,16 @@
+{
+    channel ncy {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 accel = 0.333333 0.333333 expr = "len( hou.node(\"../switch1\").inputs() )"
+	 language = python }
+    }
+    channel val1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $CY }
+    }
+  }

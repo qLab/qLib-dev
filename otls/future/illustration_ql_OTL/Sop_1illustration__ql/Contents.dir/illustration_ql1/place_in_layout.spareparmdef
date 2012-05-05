@@ -1,0 +1,117 @@
+    parm {
+	name	"group"
+	baseparm
+	export	none
+	bindselector everything "Transform Geometry"
+	    "Select the geometry to transform and press Enter to complete. Hold down Alt to select from other objects. Middle mouse to select. Left mouse to select and drag."
+	    0 1 0xffffffff 1 grouptype 0
+    }
+    parm {
+	name	"grouptype"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"xOrd"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"rOrd"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"t"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"r"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"s"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"shear"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"p"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"scale"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"updatenmls"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vlength"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"invertxform"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"num_cols"
+	label	"num cols"
+	type	integer
+	default	{ "2" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"w"
+	label	"w"
+	type	float
+	default	{ "20" }
+	range	{ 0 100 }
+	export	none
+    }
+    parm {
+	name	"h"
+	label	"h"
+	type	float
+	default	{ "20" }
+	range	{ 0 100 }
+	export	none
+    }
+    parm {
+	name	"pad"
+	label	"pad"
+	type	float
+	default	{ "2" }
+	range	{ 0 5 }
+	export	none
+    }
+    parm {
+	name	"clip_pad"
+	label	"clip pad"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"whm"
+	label	"whmax"
+	type	float
+	default	{ "max(ch(\"w\"), ch(\"h\"))" }
+	range	{ 0 10 }
+	export	none
+    }

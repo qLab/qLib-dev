@@ -1,0 +1,61 @@
+{
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = lock(1) }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = lock(1) }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = lock(1) }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = lock(1) }
+    }
+    channel resx {
+      lefttype = extend
+      righttype = extend
+      default = 1280
+      flags = 0
+      segment { length = 0 value = 1280 1280 expr = 10*(ch(\"../../place_in_layout/w\")+ch(\"../../place_in_layout/pad\"))*ch(\"../../place_in_layout/num_cols\") }
+    }
+    channel resy {
+      lefttype = extend
+      righttype = extend
+      default = 120
+      flags = 0
+      segment { length = 0 value = 120 120 expr = 10*(ch(\"../../place_in_layout/h\")+ch(\"../../place_in_layout/pad\"))*ceil(ch(\"../../copy_all_frames/ncy\")/ch(\"../../place_in_layout/num_cols\")) }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      default = 21.1501
+      flags = 0
+      segment { length = 0 value = 28.267509460449219 28.267509460449219 expr = ((ch(\"../../place_in_layout/w\")+ch(\"../../place_in_layout/pad\"))*ch(\"../../place_in_layout/num_cols\")-ch(\"../../place_in_layout/pad\"))*0.5 }
+    }
+    channel orthowidth {
+      lefttype = extend
+      righttype = extend
+      default = 60
+      flags = 0
+      segment { length = 0 value = 60 60 expr = 1.02*(ch(\"../../place_in_layout/w\")+ch(\"../../place_in_layout/pad\"))*ch(\"../../place_in_layout/num_cols\") }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      default = -30
+      flags = 0
+      segment { length = 0 value = -30 -30 expr = -((ch(\"../../place_in_layout/h\")+ch(\"../../place_in_layout/pad\"))*ceil(ch(\"../../copy_all_frames/ncy\")/ch(\"../../place_in_layout/num_cols\"))-ch(\"../../place_in_layout/pad\"))*0.5 }
+    }
+  }

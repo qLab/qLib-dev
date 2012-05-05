@@ -1,0 +1,8 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "stamp(\"../copy_all_frames\", \"n\", 0)" }
+    }
+  }

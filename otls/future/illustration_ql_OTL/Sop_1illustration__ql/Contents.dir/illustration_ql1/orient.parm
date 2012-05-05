@@ -1,0 +1,16 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	"guess"	)
+xOrd	[ 0	locks=0 ]	(	"srt"	)
+rOrd	[ 0	locks=0 ]	(	"xyz"	)
+t	[ 0	locks=0 ]	(	[ tx	0 ] 	[ ty	1.34495997 ] 	[ tz	0 ] 	)
+r	[ 0	locks=0 ]	(	[ rx	-33 ] 	[ ry	-31 ] 	[ rz	1 ] 	)
+s	[ 0	locks=0 ]	(	[ sx	0.513213217 ] 	[ sy	0.513213217 ] 	[ sz	0.513213217 ] 	)
+shear	[ 0	locks=0 ]	(	[ shear1	0 ] 	[ shear2	0 ] 	[ shear3	0 ] 	)
+p	[ 8	locks=0 ]	(	[ px	0 ] 	[ py	0 ] 	[ pz	0 ] 	)
+scale	[ 0	locks=0 ]	(	[ scale	0.709999979 ] 	)
+updatenmls	[ 0	locks=0 ]	(	"off"	)
+vlength	[ 0	locks=0 ]	(	"on"	)
+invertxform	[ 0	locks=0 ]	(	"on"	)
+}
