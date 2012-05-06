@@ -7,25 +7,30 @@ A general purpose Digital Asset library for Houdini.
 Installation instructions
 =========================
 
-Place the unpacked folder to a convenient place, where everyone can access it,
-and add the qLib/otls/_SECTIONNAME_ (see below) folder to the
-HOUDINI_OTLSCAN_PATH environment variable. Creating a variable called QLIB can
-make adding the various sections a bit easier. For example the next two lines
-adds all sections to the path:
+Download and unpack the distribution tarball from the download section:
+https://github.com/gadfly16/qLib/downloads . Note that the git repository stores
+the assets in 'source' form which is not usable directly by Houdini. See
+README.developer for instructions on building the assets from the source.
+
+Place the unpacked folder to a convenient place - probably somewhere where
+others can access it also - and add the qLib/otls/_SECTIONNAME_ (see below)
+folder to the HOUDINI_OTLSCAN_PATH environment variable. Creating a variable
+called QLIB can make adding the various sections a bit easier. For example the
+next two lines adds all sections to the path:
 
     QLIB = /Users/mate/qLab/qLib/otls
     HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/future:$QLIB/core:$QLIB/spec
 
 Dumping the OTL files into a folder which contains other OTLs is considered bad
-practice -- it seriously and needlessly makes updating the library more difficult.
+practice: it seriously and needlessly makes updating the library more difficult.
 
 
 Sections
 ========
 
-There are four sections of the asset library: core, base, spec, and future.
-The assets belonging the different sections are stored in directories with the
-same name.
+There are five sections of the asset library: core, base, spec, future and
+graveyard.  The assets belonging the different sections are stored in
+directories with the same name.
 
 The 'base' assets are intended to be used as building blocks of more
 complex networks.
@@ -43,3 +48,7 @@ lack documentation or other mandatory requirementis. We release them because
 they can be useful even before they fulfill those requirements. In other words,
 'future' is the alpha testing ground in the "release early, release often"
 spirit.
+
+The 'graveyard' section is the resting place for obsolete assets. We keep them
+there for compatibility reasons for six month, after that they get removed from
+the distribution.
