@@ -1,0 +1,40 @@
+comment ""
+position -13.9294 1.49854
+cachesize 1
+connectornextid 15
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "P"
+1 "Pw"
+2 "v"
+3 "accel"
+4 "age"
+5 "life"
+6 "pstate"
+7 "id"
+8 "ptnum"
+9 "Cd"
+10 "N"
+11 "Npt"
+12 "Time"
+13 "Frame"
+14 "TimeInc"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1336588667
+  modify 1336590516
+  author Mate@MATE.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,28 @@
+#icon: VOP/align
+#context: sop
+#type: node
+
+= Vector Jitter qL =
+
+*Version 0.1.0*
+
+"""Jitters a vector in a cone with a given angle."""
+
+@Description
+    Rotates a vector with a random value inside a solid angle.
+
+@Parameters
+    Point Group:
+        The group of points the operator affects.
+    Vector Attribute:
+        Name of the jittered vector attribute.
+    Output Attribute:
+        Attribute name that stores the result.
+    Max Angle:
+        Maximum angle of rotation. This is the half angle of the cone containing the resulting vector.
+    Seed:
+        Random seed.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

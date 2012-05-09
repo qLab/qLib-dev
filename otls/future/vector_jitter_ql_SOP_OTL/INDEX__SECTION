@@ -1,0 +1,13 @@
+Operator:     vector_jitter_ql
+Label:        Vector Jitter qL
+Path:         oplib:/Sop/vector_jitter_ql?Sop/vector_jitter_ql
+Icon:         VOP_align
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed May 09 21:41:32 2012
+

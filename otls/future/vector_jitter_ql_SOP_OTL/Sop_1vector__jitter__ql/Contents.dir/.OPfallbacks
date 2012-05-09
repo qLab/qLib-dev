@@ -1,0 +1,18 @@
+Vop/degtorad //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/degtorad otls/OPlibVop.otl
+Vop/cross //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/cross otls/OPlibVop.otl
+Vop/subconst //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/subconst otls/OPlibVop.otl
+Vop/inttovec //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/inttovec otls/OPlibVop.otl
+Vop/addattrib //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/random //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/random otls/OPlibVop.otl
+Vop/normalize //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/normalize otls/OPlibVop.otl
+Vop/rotate //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/rotate otls/OPlibVop.otl
+Vop/importattrib //MLNFS/sidefx/Houdini 12.0.616/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
