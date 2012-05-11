@@ -1,0 +1,72 @@
+# Dialog script for superellipse_ql automatically generated 05/11/12 13:33:54
+
+{
+    name	superellipse_ql
+    script	superellipse_ql
+    label	"Superellipse qL"
+
+    input	vector	uv	uv
+    input	float	exp	"Shape Exponent"
+    input	float	black_point	"Black Point"
+    input	float	white_point	"White Point"
+    input	float	grad_exp	"Gradient Exponent"
+    output	float	amount	amount
+    inputflags	uv	0
+    inputflags	exp	0
+    inputflags	black_point	0
+    inputflags	white_point	0
+    inputflags	grad_exp	0
+    signature	"Default Inputs"	default	{ vector float float float float float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"uv"
+	label	"uv"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"exp"
+	label	"Shape Exponent"
+	type	float
+	default	{ "4" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"black_point"
+	label	"Black Point"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"white_point"
+	label	"White Point"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"grad_exp"
+	label	"Gradient Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+}
