@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position -0.300388 2.65272
+position 3.79194 3.74609
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -10,17 +10,17 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	Calc_Radius 1 1 "input1"
+0 	null1 1 1 "input1"
 }
 inputs
 {
-0 	Calc_Radius 0 1
+0 	null1 0 1
 }
 stat
 {
-  create 1283507083
-  modify 1332935238
-  author Mate@Mate.local.melon.hu
+  create 1336746868
+  modify 1336746878
+  author Mate@MATE.local.melon.hu
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

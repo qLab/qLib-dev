@@ -1,4 +1,4 @@
-# Automatically generated script: Wednesday March 28, 15:16 2012
+# Automatically generated script: Friday May 11, 16:37 2012
 \set noalias = 1
 #
 #  Creation script for distribute_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Sop/distribute_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

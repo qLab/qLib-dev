@@ -1,5 +1,5 @@
 {
 version 0.8
-input	[ 8	locks=0 ]	(	[ input	1 ] 	)
-parm	[ 8	locks=0 ]	(	[ parm	20 ] 	)
+input	[ 8	locks=0 ]	(	[ input	0 ] 	)
+parm	[ 8	locks=0 ]	(	[ parm	10 ] 	)
 }

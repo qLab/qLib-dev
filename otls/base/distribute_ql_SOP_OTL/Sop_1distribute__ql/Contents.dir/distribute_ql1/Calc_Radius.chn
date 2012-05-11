@@ -3,7 +3,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "if(ch(\"../calc_rad\"), sqrt(detail(\"../attribpromote1\",\"area\", 0)/npoints(\"../IN\")/$PI)*ch(\"../calc_rad_factor\"), ch(\"../radius\"))" }
+      segment { length = 0 expr = "if(ch(\"../calc_rad\"), sqrt(detail(\"../Safe_Area\",\"area\", 0)/npoints(\"../IN\")/$PI)*ch(\"../calc_rad_factor\"), ch(\"../radius\"))" }
     }
     channel test {
       lefttype = extend
