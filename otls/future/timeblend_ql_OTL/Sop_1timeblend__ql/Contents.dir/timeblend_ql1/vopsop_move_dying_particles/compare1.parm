@@ -1,7 +1,0 @@
-{
-version 0.8
-cmp	[ 0	locks=0 ]	(	lte	)
-input2	[ 0	locks=0 ]	(	[ input2	0.00100000005 ] 	)
-input2_i	[ 0	locks=0 ]	(	0	)
-input2_s	[ 0	locks=0 ]	(	""	)
-}

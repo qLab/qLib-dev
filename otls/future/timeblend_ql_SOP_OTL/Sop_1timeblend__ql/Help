@@ -1,0 +1,103 @@
+#icon: SOP/timeblend
+#context: sop
+#type: node
+
+= TimeBlend qL =
+
+*Version 0.0.2*
+
+"""An enhanced version of the original [Node:sop/timeblend] node."""
+
+This version of the TimeBlend SOP supports the following additional features:
+
+* Support for sub-frame samples: some file formats like Alembic can support multiple geometry samples per frame. This SOP can properly utilize sub-frame samples.
+
+* Support extrapolation of dying particles (motion of particles at the end of their lifespan will be extrapolated using their velocity vectors).
+
+
+@related
+    - [Node:sop/timeblend]
+
+
+TIP:
+    When dealing with cached geometry ([Node:sop/cache] or [Node:sop/file] SOP, etc.), be aware that the
+    `$F` variable is _rounded_ (it will be rounded _up to the next frame_ for subframe 0.5 and higher).
+
+    To get the nearest whole frame number use an expression like `floor($FF)`.
+
+
+@Parameters
+    Sample Slice Size:
+        The step between each frame sample in the incoming geometry. The slice size can be calculated using
+        the formula  *_1 / <no. of samples per frame>_* .
+
+        E.g.: the value for 20 samples per frame is _1 / 20 ==_ `0.05`.
+
+        This can be useful for file formats that can store multiple samples for each frame (e.g. Alembic).
+
+        Do _not_ adjust this value for regular File or Cache sequences.
+
+    Time Blend:
+        See [the original TimeBlend SOP help|Node:sop/timeblend] for the parameter descriptions.
+        Additional parameters follow.
+
+        Interpolate Using Velocity:
+            Use per-point velocity vector attributes to perform position interpolation.
+
+            This can be useful if the number of points change between frames and no `id` attribute
+            present but velocities are available (e.g. particle fluid simulated with 'Reseed Particles').
+
+            Using this option implicitly enables extrapolation of dying particles.
+
+            NOTE:
+                This mode will not interpolate other attributes (colors, normals, etc.)
+
+        Velocity Attribute:
+            The vector attribute to be used for all velocity-based interpolations
+            (including the extrapolation of dying particles, see below).
+
+        Velocity Scale:
+            A constant scaling applied to velocity vectors.
+
+    Particles:
+
+        The functions below are useful when applying "slo-mo"-like effects on particles.
+
+        Interpolate Dying Particles:
+            Positions of particles not present in the following geometry sample (ie. on the next frame)
+            will be extrapolated along their velocity vectors.
+    
+        Add Near-Death Attribute:
+            Adds an attribute (float) that stores the phase of the velocity extrapolation for dying particles.
+
+            (In other words, it can be used to determine how close is a dying particle to actual death.)
+
+            TIP:
+                This can be useful for fadeout-like effects on heavily slo-mo'd particles.
+
+        Attribute Name:
+            Attribute to store the near-death phase values to.
+
+        Close-to-Life Value:
+            Particles that just started dying (i.e. will not exist in the next geometry sample) will have this
+            value. (Non-dying particles assume this value as well.)
+
+        Close-to-Death Value:
+            The particle will reach this value at the time of its death (at the end of its velocity-extrapolated
+            sample).
+
+            All dying particles will have their values blended between the _close-to-life_ and _-death_ values accordingly.
+
+        TIP:
+            To scale particles to non-existence, use `pscale` as the Near-Death Attribute, and `1.0` for near-life
+            and `0.0` for near-death values.
+
+
+
+
+@Release_Notes
+    Version 0.0.2:
+        Added "Near-Death Attribute" features.
+
+    Version 0.0.1:
+        Initial release.

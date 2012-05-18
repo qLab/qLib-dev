@@ -1,0 +1,9 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 24.958333969116211
+      segment { length = 0 expr = "ch(\"../particle_interp\") || ch(\"../vel_interp\")" }
+    }
+  }
