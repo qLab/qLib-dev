@@ -1,13 +1,13 @@
 {
 version 0.8
-vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_group	[ 8	locks=0 ]	(	[ vex_group	"" ] 	)
 vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 scale	[ 0	locks=0 ]	(	[ scale	1 ] 	)
-axisscale	[ 0	locks=0 ]	(	[ axisscalex	0.25 ] 	[ axisscaley	1.5 ] 	[ axisscalez	0.25 ] 	)
+axisscale	[ 0	locks=0 ]	(	[ axisscalex	1 ] 	[ axisscaley	1 ] 	[ axisscalez	1 ] 	)
 seed	[ 0	locks=0 ]	(	[ seed	0 ] 	)
-usepscale	[ 0	locks=0 ]	(	[ usepscale	1 ] 	)
+usepscale	[ 0	locks=0 ]	(	[ usepscale	0 ] 	)
 pscalename	[ 0	locks=0 ]	(	[ pscalename	pscale ] 	)
 pscaleinvert	[ 0	locks=0 ]	(	[ pscaleinvert	0 ] 	)
 pscaleexp	[ 0	locks=0 ]	(	[ pscaleexp	1 ] 	)
