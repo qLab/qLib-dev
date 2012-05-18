@@ -58,3 +58,143 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"min_angle"
+	label	"Max Angle"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"angle_exponent"
+	label	"Angle Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"id_attrib"
+	label	"Id Attribute Name"
+	type	string
+	default	{ "id" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"useidattrib"
+	label	"Use Id Attrib"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"len_seed_offset"
+	label	"Length Seed Offset"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"len_exp"
+	label	"Length Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"len_min"
+	label	"Min Length"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"len_max"
+	label	"Max Length"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"do_angle"
+	label	"Do Angle"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"do_length"
+	label	"Do Length"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"normalize"
+	label	"Normalize"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"angle_amount"
+	label	"Angle Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"len_amount"
+	label	"Length Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

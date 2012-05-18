@@ -1,9 +1,0 @@
-{
-    channel attrib {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"N\"
-      flags = 0
-      segment { length = 0 expr = chs('../attrib_name/stringdef') }
-    }
-  }

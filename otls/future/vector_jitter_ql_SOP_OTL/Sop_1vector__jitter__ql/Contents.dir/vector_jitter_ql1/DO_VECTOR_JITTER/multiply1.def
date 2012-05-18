@@ -1,5 +1,5 @@
 comment ""
-position 1.22695 -1.12063
+position 16.3636 4.10346
 cachesize 1
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -9,18 +9,18 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	random2 1 1 "input1"
-2 	degtorad1 1 1 "input2"
+1 	Do_Normalize 0 1 "input1"
+2 	mix1 3 1 "input2"
 }
 inputs
 {
-0 	random2 0 1
-1 	degtorad1 0 1
+0 	Do_Normalize 0 1
+1 	mix1 0 1
 }
 stat
 {
-  create 1336589296
-  modify 1336590446
+  create 1337347642
+  modify 1337349643
   author Mate@MATE.local.melon.hu
   access 0777
 }

@@ -1,6 +1,0 @@
-{
-version 0.8
-signature	[ 0	locks=0 ]	(	default	)
-vec1	[ 0	locks=0 ]	(	1	0	0	)
-vec2	[ 0	locks=0 ]	(	0	1	0	)
-}

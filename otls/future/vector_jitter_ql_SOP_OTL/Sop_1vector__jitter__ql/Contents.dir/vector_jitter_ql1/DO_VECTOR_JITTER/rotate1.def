@@ -10,19 +10,19 @@ outputsNamed3
 inputsNamed3
 {
 0 	"" "" 1 "mat"
-1 	multiply1 0 1 "angle"
+1 	mix2 3 1 "angle"
 2 	cross1 2 1 "axis"
 }
 inputs
 {
 0 	"" 0 1
-1 	multiply1 0 1
+1 	mix2 0 1
 2 	cross1 0 1
 }
 stat
 {
   create 1336588918
-  modify 1336590548
+  modify 1337349642
   author Mate@MATE.local.melon.hu
   access 0777
 }

@@ -6,26 +6,19 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel max_angle {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../max_angle\") }
-    }
     channel attrib {
       lefttype = extend
       righttype = extend
       defaultString = \"N\"
       flags = 0
-      segment { length = 0 expr = chs(\"../attrib\") }
+      segment { length = 0 expr = chs(\"../in_attrib\") }
     }
     channel attrib2 {
       lefttype = extend
       righttype = extend
       defaultString = \"N\"
       flags = 0
-      segment { length = 0 expr = chs(\"../attrib2\") }
+      segment { length = 0 expr = chs(\"../out_attrib\") }
     }
     channel seed {
       lefttype = extend
@@ -33,5 +26,97 @@
       default = 5
       flags = 0
       segment { length = 0 value = 5 5 expr = ch(\"../seed\") }
+    }
+    channel max_angle {
+      lefttype = extend
+      righttype = extend
+      default = 53.299999999999997
+      flags = 0
+      segment { length = 0 value = 53.299999999999997 53.299999999999997 expr = ch(\"../max_angle\") }
+    }
+    channel min_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../min_angle\") }
+    }
+    channel angle_exponent {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../angle_exp\") }
+    }
+    channel useidattrib {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../useidattrib\") }
+    }
+    channel len_seed_offset {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../length_seed_offset\") }
+    }
+    channel len_exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../len_exp\") }
+    }
+    channel len_min {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../min_length\") }
+    }
+    channel len_max {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../max_length\") }
+    }
+    channel do_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_angle\") }
+    }
+    channel do_length {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_length\") }
+    }
+    channel normalize {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pre_normalize\") }
+    }
+    channel amount {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../amount\") }
+    }
+    channel len_amount {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../len_amount\") }
+    }
+    channel angle_amount {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../angle_amount\") }
     }
   }

@@ -1,4 +1,4 @@
-# Dialog script for vector_jitter_ql automatically generated 05/09/12 21:41:32
+# Dialog script for vector_jitter_ql automatically generated 05/18/12 16:35:57
 
 {
     name	vector_jitter_ql
@@ -27,9 +27,10 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"attrib"
+	name	"in_attrib"
 	label	"Vector Attribute"
 	type	string
+	joinnext
 	default	{ "N" }
 	range	{ 0 1 }
 	export	none
@@ -38,10 +39,10 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"attrib2"
+	name	"out_attrib"
 	label	"Output Attribute"
 	type	string
-	default	{ "N" }
+	default	{ "`chs(\"in_attrib\")`" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -49,15 +50,31 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"max_angle"
-	label	"Max Angle"
+	name	"useidattrib"
+	label	"Label"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"idattrib"
+	label	"Id Attribute"
+	type	string
+	default	{ "id" }
+	disablewhen	"{ useidattrib == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
 	type	float
 	default	{ "1" }
-	range	{ 0 180 }
+	range	{ 0 10 }
 	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"seed"
@@ -70,4 +87,123 @@
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
+    group {
+	name	"folder0"
+	label	"Angle"
+	tabbreak
+
+	parm {
+	    name	"do_angle"
+	    label	"Do Angle Jitter"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"angle_amount"
+	    label	"Angle Amount"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"min_angle"
+	    label	"Min Anlge"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	}
+	parm {
+	    name	"max_angle"
+	    label	"Max Angle"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	}
+	parm {
+	    name	"angle_exp"
+	    label	"Angle Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Length"
+
+	parm {
+	    name	"do_length"
+	    label	"Do Length Jitter"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"len_amount"
+	    label	"Length Amount"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"min_length"
+	    label	"Min Length Factor"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"max_length"
+	    label	"Max Length Factor"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"len_exp"
+	    label	"Length Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"pre_normalize"
+	    label	"Pre-Normalize"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"length_seed_offset"
+	    label	"Seed Offset"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 100 }
+	    export	none
+	}
+    }
+
 }

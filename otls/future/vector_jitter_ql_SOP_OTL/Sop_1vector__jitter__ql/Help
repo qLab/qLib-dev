@@ -4,12 +4,16 @@
 
 = Vector Jitter qL =
 
-*Version 0.1.0*
+*Version 0.2.0*
 
-"""Jitters a vector in a cone with a given angle."""
+"""Jitters a vector attribute's angle and length."""
 
 @Description
-    Rotates a vector with a random value inside a solid angle.
+    Rotates a vector with a random value inside a solid angle, and jitters it's length between the given limits.
+
+    TIP:
+        Since _Vector Jitter_ is implemented in VOP most of it's parameters can be mapped with attributes matching the
+        parameters name.
 
 @Parameters
     Point Group:
@@ -18,11 +22,39 @@
         Name of the jittered vector attribute.
     Output Attribute:
         Attribute name that stores the result.
-    Max Angle:
-        Maximum angle of rotation. This is the half angle of the cone containing the resulting vector.
+    Id Attribute:
+        Instead of using the point number as the seed, use this integer attribute.
+    Amount:
+        Global amount of both the angle and length jitter.
     Seed:
         Random seed.
+    Do Angle Jitter:
+        Turns on rotation jitter.
+    Angle Amount:
+        Amount of rotation jitter.
+    Min Angle:
+        Minimum angle of rotation.
+    Max Angle:
+        Maximum angle of rotation.
+    Angle Exponent:
+        Distribution exponent of the angle.
+    Do Length Jitter:
+        Turns on length jitter.
+    Length Amount:
+        Amount of length jitter.
+    Min Length Factor:
+        Minimum length factor.
+    Max Length Factor:
+        Maximum length factor.
+    Length Exponent:
+        Distribution exponent of the length factor.
+    Pre-Normalize:
+        Normalize the input vector before applying the jitter.
+    Seed Offset:
+        Offsets the seed for the length random function.
 
 @Release_Notes
     Version 0.1.0:
         Initial release.
+    Version 0.2.0:
+        Added length jittering capability, and a bunch of tweeking parameters.
