@@ -1,4 +1,4 @@
-21
+26
 global1
 output1
 axisscale
@@ -20,3 +20,8 @@ pscaleinvert
 pow1
 pscaleexp
 refit_range
+useidattrib
+import_id_attrib
+idattrib
+switch_id_attrib_seed
+maddconst1

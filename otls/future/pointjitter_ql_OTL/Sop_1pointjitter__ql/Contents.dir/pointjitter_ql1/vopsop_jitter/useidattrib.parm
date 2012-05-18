@@ -1,7 +1,7 @@
 {
 version 0.8
 parmname	[ 0	locks=0 ]	(	`opname(\".\")`	)
-parmlabel	[ 0	locks=0 ]	(	"Use PScale"	)
+parmlabel	[ 0	locks=0 ]	(	"Use Id Attribute"	)
 showlabel	[ 0	locks=0 ]	(	"off"	)
 parmtype	[ 0	locks=0 ]	(	"toggle"	)
 floatdef	[ 0	locks=0 ]	(	0	)

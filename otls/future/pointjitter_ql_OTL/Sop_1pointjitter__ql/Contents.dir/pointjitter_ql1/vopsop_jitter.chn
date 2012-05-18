@@ -66,4 +66,17 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../pscaleexp\") }
     }
+    channel useidattrib {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../useidattrib\") }
+    }
+    channel idattrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"id\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../idattrib\") }
+    }
   }

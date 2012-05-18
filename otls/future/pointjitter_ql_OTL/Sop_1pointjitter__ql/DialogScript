@@ -1,4 +1,4 @@
-# Dialog script for pointjitter_ql automatically generated 05/18/12 02:16:16
+# Dialog script for pointjitter_ql automatically generated 05/19/12 00:43:22
 
 {
     name	pointjitter_ql
@@ -33,9 +33,35 @@
 	import {
 	    label	params
 	    source	"op:vopsop_jitter"
-	    mask	"scale axisscale seed"
+	    mask	"useidattrib idattrib scale axisscale seed"
 	    enable	1
 
+	    parm {
+		name	"useidattrib"
+		label	"Use Id Attribute"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "useidattrib" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"idattrib"
+		label	"Id Attribute"
+		type	string
+		default	{ "id" }
+		help	"Use this per-point integer attribute as random seed."
+		disablewhen	"{ useidattrib == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "idattrib" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	    parm {
 		name	"scale"
 		label	"Scale"
@@ -64,7 +90,7 @@
 		label	"Seed"
 		type	float
 		default	{ "0" }
-		range	{ 0 999 }
+		range	{ 0 1000 }
 		export	none
 		parmtag	{ "import_token" "seed" }
 		parmtag	{ "import_source" "op:vopsop_jitter" }
@@ -99,25 +125,8 @@
 		    name	"pscalename"
 		    label	"PScale Attribute"
 		    type	string
-		    joinnext
 		    default	{ "pscale" }
 		    disablewhen	"{ usepscale == 0 }"
-		    menureplace	{
-			[ "r = []" ]
-			[ "" ]
-			[ "try:" ]
-			[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-			[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
-			[ "    " ]
-			[ "    for a in attrs:" ]
-			[ "        r.append(a)" ]
-			[ "        r.append(a)" ]
-			[ "except:" ]
-			[ "    pass" ]
-			[ "" ]
-			[ "return r" ]
-			language	python
-		    }
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "import_token" "pscalename" }

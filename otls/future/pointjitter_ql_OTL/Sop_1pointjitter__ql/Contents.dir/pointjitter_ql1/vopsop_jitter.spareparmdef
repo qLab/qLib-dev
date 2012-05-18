@@ -19,12 +19,37 @@
 	export	none
     }
     parm {
+	name	"useidattrib"
+	label	"Use Id Attribute"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"idattrib"
+	label	"Id Attribute"
+	type	string
+	default	{ "id" }
+	help	"Use this per-point integer attribute as random seed."
+	disablewhen	"{ useidattrib == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"scale"
 	label	"Scale"
 	type	float
 	default	{ "1" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -35,6 +60,7 @@
 	default	{ "1" "1" "1" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -44,15 +70,19 @@
 	default	{ "0" }
 	range	{ 0 1000 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
 	name	"usepscale"
 	label	"Use PScale"
 	type	toggle
+	nolabel
+	joinnext
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -63,6 +93,7 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -73,6 +104,7 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -83,5 +115,6 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0.1 4 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
