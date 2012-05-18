@@ -1,0 +1,13 @@
+Operator:     pointjitter_ql
+Label:        PointJitter qL
+Path:         oplib:/Sop/pointjitter_ql?Sop/pointjitter_ql
+Icon:         SOP_pointjitter
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat May 19 01:45:32 2012
+

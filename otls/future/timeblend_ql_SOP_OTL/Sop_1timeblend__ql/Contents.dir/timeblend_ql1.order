@@ -1,0 +1,13 @@
+12
+floor_frame
+ceil_frame
+IN
+first_frame
+last_frame
+switch1
+sblend_regular
+sblend_max
+vopsop_move_dying_particles
+OUT
+switch_particle_v_interp
+no_regular_blend
