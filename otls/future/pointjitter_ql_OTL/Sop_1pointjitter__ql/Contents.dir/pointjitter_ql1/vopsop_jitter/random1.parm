@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	fv	)
-gv	[ 0	locks=0 ]	(	0	0	)
 pos	[ 0	locks=0 ]	(	0	)
 pos_i	[ 0	locks=0 ]	(	0	)
 pos_v1d	[ 0	locks=0 ]	(	0	0	0	)

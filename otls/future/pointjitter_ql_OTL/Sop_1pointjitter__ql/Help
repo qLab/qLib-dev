@@ -1,6 +1,17 @@
+#icon: SOP/pointjitter
+#context: sop
+#type: node
+
 = PointJitter qL =
 
 *Version 0.0.1*
 
 """Enhanced version of the original SOP node with the same name."""
 
+@related
+    - [Node:sop/pointjitter]
+    - [VectorJitter qL|Node:sop/vectorjitter_ql]
+
+
+Jitter points in random directions. Useful for breaking 'perfect' symmetry.
+See the original [Node:sop/pointjitter] help page for parameter details.

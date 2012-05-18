@@ -1,4 +1,4 @@
-# Dialog script for pointjitter_ql automatically generated 01/12/12 23:50:46
+# Dialog script for pointjitter_ql automatically generated 05/18/12 02:16:16
 
 {
     name	pointjitter_ql
@@ -28,7 +28,7 @@
     }
     group {
 	name	"folder0"
-	label	"General"
+	label	"Jitter"
 
 	import {
 	    label	params
@@ -64,12 +64,92 @@
 		label	"Seed"
 		type	float
 		default	{ "0" }
-		range	{ 0 1000 }
+		range	{ 0 999 }
 		export	none
 		parmtag	{ "import_token" "seed" }
 		parmtag	{ "import_source" "op:vopsop_jitter" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
+	}
+
+	import {
+	    label	PScale
+	    enable	0
+
+	    import {
+		label	params_pscale
+		source	"op:vopsop_jitter"
+		mask	"*pscale*"
+		enable	1
+
+		parm {
+		    name	"usepscale"
+		    label	"Use PScale"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "usepscale" }
+		    parmtag	{ "import_source" "op:vopsop_jitter" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"pscalename"
+		    label	"PScale Attribute"
+		    type	string
+		    joinnext
+		    default	{ "pscale" }
+		    disablewhen	"{ usepscale == 0 }"
+		    menureplace	{
+			[ "r = []" ]
+			[ "" ]
+			[ "try:" ]
+			[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+			[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+			[ "    " ]
+			[ "    for a in attrs:" ]
+			[ "        r.append(a)" ]
+			[ "        r.append(a)" ]
+			[ "except:" ]
+			[ "    pass" ]
+			[ "" ]
+			[ "return r" ]
+			language	python
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "pscalename" }
+		    parmtag	{ "import_source" "op:vopsop_jitter" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"pscaleinvert"
+		    label	"Invert"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ usepscale == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "pscaleinvert" }
+		    parmtag	{ "import_source" "op:vopsop_jitter" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"pscaleexp"
+		    label	"Exponent"
+		    type	float
+		    default	{ "1" }
+		    disablewhen	"{ usepscale == 0 }"
+		    range	{ 0.1 4 }
+		    export	none
+		    parmtag	{ "import_token" "pscaleexp" }
+		    parmtag	{ "import_source" "op:vopsop_jitter" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
 	}
 
 	parm {
@@ -81,67 +161,6 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-    }
-
-    group {
-	name	"folder0_1"
-	label	"PScale"
-
-	import {
-	    label	params_pscale
-	    source	"op:vopsop_jitter"
-	    mask	"*pscale*"
-	    enable	1
-
-	    parm {
-		name	"usepscale"
-		label	"Use PScale"
-		type	toggle
-		default	{ "off" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "import_token" "usepscale" }
-		parmtag	{ "import_source" "op:vopsop_jitter" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"pscalename"
-		label	"PScale Attribute"
-		type	string
-		default	{ "pscale" }
-		disablewhen	"{ usepscale == 0 }"
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "import_token" "pscalename" }
-		parmtag	{ "import_source" "op:vopsop_jitter" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"pscaleinvert"
-		label	"Invert"
-		type	toggle
-		default	{ "off" }
-		disablewhen	"{ usepscale == 0 }"
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "import_token" "pscaleinvert" }
-		parmtag	{ "import_source" "op:vopsop_jitter" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"pscaleexp"
-		label	"Exponent"
-		type	float
-		default	{ "1" }
-		disablewhen	"{ usepscale == 0 }"
-		range	{ 0.1 4 }
-		export	none
-		parmtag	{ "import_token" "pscaleexp" }
-		parmtag	{ "import_source" "op:vopsop_jitter" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	}
-
     }
 
 }

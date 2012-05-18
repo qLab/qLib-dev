@@ -14,4 +14,5 @@ angle	[ 0	locks=0 ]	(	20	)
 remove	[ 0	locks=0 ]	(	"off"	)
 mkplanar	[ 0	locks=0 ]	(	"off"	)
 postnml	[ 0	locks=0 ]	(	"on"	)
+reversenml	[ 0	locks=0 ]	(	"off"	)
 }

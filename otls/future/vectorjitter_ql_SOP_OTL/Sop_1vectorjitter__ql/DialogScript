@@ -1,0 +1,325 @@
+# Dialog script for vectorjitter_ql automatically generated 05/18/12 03:37:03
+
+{
+    name	vectorjitter_ql
+    script	vectorjitter_ql
+    label	"VectorJitter qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	help	"Points to process the attributes of."
+	menutoggle	{
+	    [ "opmenu -l vopsop_vecjitter vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attribs"
+	label	"Vector Attributes"
+	type	string
+	default	{ "N" }
+	help	"Attributes to be jittered. Must be per-point vector types."
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().inputs()[0].geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.name()!='P' and a.size()==3 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"seed"
+	label	"seed"
+	type	integer
+	default	{ "42" }
+	disablewhen	"{ attribs == \"\" }"
+	range	{ 0 999 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"fps"
+	label	"FPS"
+	type	float
+	default	{ "$FPS" }
+	range	{ 0 10 }
+	export	none
+    }
+    group {
+	name	"folder0"
+	label	"Length Jitter"
+	tabbreak
+
+	parm {
+	    name	"do_length"
+	    label	"Length Jitter"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"length_normalize"
+	    label	"Pre-Normalize"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"length_min"
+	    label	"Min Scale"
+	    type	float
+	    default	{ "0.5" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"length_max"
+	    label	"Max Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"length_exp"
+	    label	"Variance Exp."
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0.01 4 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"len_scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"len_usepscale"
+	    label	"Use PScale"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"len_pscalename"
+	    label	"PScale Attrib"
+	    type	string
+	    joinnext
+	    default	{ "pscale" }
+	    disablewhen	"{ do_length == 0 } { len_usepscale == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"len_pscaleinvert"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ do_length == 0 } { len_usepscale == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"len_pscaleexp"
+	    label	"PScale Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 } { len_usepscale == 0 }"
+	    range	{ 0.1 4 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Angle Jitter"
+
+	parm {
+	    name	"do_angle"
+	    label	"Angle Jitter"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"angle_min"
+	    label	"Angle Min"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"angle_max"
+	    label	"Angle Max"
+	    type	float
+	    default	{ "30" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"angle_exp"
+	    label	"Variance Exp."
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0.01 4 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ang_scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ang_usepscale"
+	    label	"Use PScale"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ang_pscalename"
+	    label	"PScale Attrib"
+	    type	string
+	    joinnext
+	    default	{ "pscale" }
+	    disablewhen	"{ do_angle == 0 } { ang_usepscale == 0 }"
+	    menureplace	{
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ang_pscaleinvert"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ do_angle == 0 } { ang_usepscale == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"ang_pscaleexp"
+	    label	"PScale Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 } { ang_usepscale == 0 }"
+	    range	{ 0.1 4 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

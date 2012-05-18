@@ -1,0 +1,114 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../vex_group\") }
+    }
+    channel seed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../../seed\") + stamp(\"..\", \"FORIDXVALUE\", 0)" }
+    }
+    channel do_length {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../do_length\") }
+    }
+    channel length_normalize {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../length_normalize\") }
+    }
+    channel length_min {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../../length_min\") }
+    }
+    channel length_max {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../length_max\") }
+    }
+    channel length_exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../length_exp\") }
+    }
+    channel do_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../do_angle\") }
+    }
+    channel angle_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../angle_min\") }
+    }
+    channel angle_max {
+      lefttype = extend
+      righttype = extend
+      default = 30
+      flags = 0
+      segment { length = 0 value = 30 30 expr = ch(\"../../angle_max\") }
+    }
+    channel angle_exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../angle_exp\") }
+    }
+    channel len_scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../len_scale\") }
+    }
+    channel len_usepscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../len_usepscale\") }
+    }
+    channel len_pscalename {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"pscale\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../len_pscalename\") }
+    }
+    channel len_pscaleinvert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../len_pscaleinvert\") }
+    }
+    channel len_pscaleexp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../len_pscaleexp\") }
+    }
+    channel unit_length {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "if( strcmp(\"v\", chs(\"attrib\"))==0, ch(\"../../fps\"), 1.0 )" }
+    }
+  }

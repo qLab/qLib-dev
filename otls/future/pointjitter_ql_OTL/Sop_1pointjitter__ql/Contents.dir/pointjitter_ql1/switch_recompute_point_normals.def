@@ -2,7 +2,17 @@ sopflags sopflags =
 comment ""
 position 0.729412 2.66464
 cachesize 1
+connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+2 "output1"
+}
+inputsNamed3
+{
+0 	vopsop_jitter 1 1 "input1"
+1 	post_compute_normals 1 1 "input2"
+}
 inputs
 {
 0 	vopsop_jitter 0 1
