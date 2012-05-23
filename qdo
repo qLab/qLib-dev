@@ -94,20 +94,23 @@ def pack_cmd():
     if qlib_dir.split(os.sep)[-1] != "qLib":
         print "WARNING: Archived directory is not called 'qLib'."
     try:
+        git_tag = None
         git_tag = subprocess.check_output(["git", "describe", "--exact-match", "HEAD"],
                 stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as e:
         print "ERROR: Retrieving git tag failed."
         print e.output
-        sys.exit(1)
     except OSError as e:
         print 'ERROR: Git not accessible.'
         print '{0} ({1})'.format(e.strerror, e.errno)
-        sys.exit(1)
-    git_tag = git_tag[:-1]
-    if not git_tag:
-        print "WARNING: Empty git tag, using 'NOTAG' instead."
-        git_tag = "NOTAG"
+    if git_tag:
+        git_tag = git_tag[:-1]
+    else:
+        if args.force:
+            print "WARNING: Empty git tag, using 'NOTAG' instead."
+            git_tag = "NOTAG"
+        else:
+            sys.exit(1)
     debug("qLib dir: {0}  qLib parent dir: {1}, git tag: {2}".format(qlib_dir, qlib_parent, git_tag))
     file_list = []
     file_list.append(os.path.join(qlib_dir, "README"))
@@ -194,6 +197,8 @@ def parse_args():
 
     pack_parser.add_argument('-b', '--backup', action='store_true',
             help='Creates a backup archive instead of distribution archive.')
+    pack_parser.add_argument('-f', '--force', action='store_true',
+            help='Force pack creation ignoring errors.')
 
     global args
     args = main_parser.parse_args()
