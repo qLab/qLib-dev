@@ -1,12 +1,18 @@
-Vop/addattrib C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/bbox C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/bbox otls/OPlibVop.otl
-Vop/hvectovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/hvectovec otls/OPlibVop.otl
-Vop/texture C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/texture /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
 Vop/texture otls/OPlibVop.otl
-Vop/fit C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
-Vop/fit otls/OPlibVop.otl
-Vop/floattovec C:/PROGRA~1/Side Effects Software/Houdini 11.1.201/houdini/otls/OPlibVop.otl
+Vop/hvectovec /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/hvectovec otls/OPlibVop.otl
+Vop/addattrib /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/floattovec /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
 Vop/floattovec otls/OPlibVop.otl
+Vop/bbox /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/bbox otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/uvcoords /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/uvcoords otls/OPlibVop.otl
+Vop/twoway /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Vop/fit /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl

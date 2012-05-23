@@ -1,7 +1,16 @@
 comment ""
 position 0.453843 -8.16268
 cachesize 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	cropl 0 1 "input1"
+1 	cropr 0 1 "input2"
+}
 inputs
 {
 0 	cropl 0 1

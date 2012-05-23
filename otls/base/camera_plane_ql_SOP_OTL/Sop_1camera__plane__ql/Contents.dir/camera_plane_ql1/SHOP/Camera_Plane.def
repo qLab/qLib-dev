@@ -1,14 +1,22 @@
 comment ""
 position 1.53901 2.88994
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+0 "Surface Shader"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }
 stat
 {
   create 1327187710
-  modify 1331653248
+  modify 1337816287
   author mate@matild.local
   access 0777
 }

@@ -96,5 +96,6 @@
 	default	{ "$HFS/houdini/pic/butterfly1.pic" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
 	parmtag	{ "parmvop" "1" }
     }
