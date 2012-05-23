@@ -1,0 +1,48 @@
+#icon: DOP/anchor
+#context: sop
+#type: node
+
+= Apply Transform qL =
+
+*Version 0.0.1*
+
+"""Applies the full world-space transformation of another object to the input geometry."""
+
+(advanced; fundamental)
+
+@related
+    - [Node:sop/xform]
+    - [Node:sop/object_merge]
+
+
+This node applies the world space transformation of the specified object (OBJ) node to
+the input geometry. (This is the transformation that transforms geometry from the world
+space origin to its current location.) It's also possible to apply the _inverse_ of
+this transformation.
+
+Transformation to/from the world space origin is also supported. To access it, choose
+"`World Origin`" from the pop-down menu of the `Transform Object` parameter.
+
+(For example: applying the World Origin transformation to a SOP geometry will place it at
+the world origin, regardless of whatever transforms it has on its container OBJ node.)
+
+
+@Parameters
+    Transform Object:
+        Path to the OBJ node (object) to get the transformation from.
+
+        Choose "`World Origin`" from the pop-down menu to get the transformation to/from
+        the world space origin.
+
+    Apply:
+        Enable/disable transformation.
+
+    Invert:
+        Reverts the direction of the transformation (e.g. "world origin" means
+        "current space to world origin"; its inverse means "world origin to current space".)
+
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial version (prototype).
