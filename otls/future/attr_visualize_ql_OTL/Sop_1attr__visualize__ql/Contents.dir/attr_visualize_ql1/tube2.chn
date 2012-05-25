@@ -2,7 +2,7 @@
     channel rad2 {
       lefttype = extend
       righttype = extend
-      default = 0.05
+      default = 0.05000000074505806
       flags = 0
       segment { length = 0 value = 0.05000000074505806 0.05000000074505806 expr = ch(\"../spike_radius\") }
     }

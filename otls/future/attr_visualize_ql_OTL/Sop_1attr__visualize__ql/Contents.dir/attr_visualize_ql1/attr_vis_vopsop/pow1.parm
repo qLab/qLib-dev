@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	v	)
-gv	[ 0	locks=0 ]	(	0	0	)
 val	[ 0	locks=0 ]	(	1	)
 val_v	[ 0	locks=0 ]	(	1	1	1	)
 val_p	[ 0	locks=0 ]	(	1	1	1	)
@@ -13,5 +12,5 @@ val_uv	[ 0	locks=0 ]	(	1	1	1	)
 val_up	[ 0	locks=0 ]	(	1	1	1	)
 val_un	[ 0	locks=0 ]	(	1	1	1	)
 val_uc	[ 0	locks=0 ]	(	1	1	1	)
-exp	[ 0	locks=0 ]	(	2.20000005	)
+exp	[ 0	locks=0 ]	(	2.2000000499999999	)
 }

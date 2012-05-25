@@ -1,7 +1,16 @@
 comment ""
 position 2.22419 1.13896
 cachesize 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+1 "product"
+}
+inputsNamed3
+{
+0 	texture1 30 1 "input1"
+}
 inputs
 {
 0 	texture1 0 1

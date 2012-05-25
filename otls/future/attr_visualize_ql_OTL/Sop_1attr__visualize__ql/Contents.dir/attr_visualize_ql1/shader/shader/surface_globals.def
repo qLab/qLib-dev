@@ -1,7 +1,30 @@
 comment ""
 position 0.208515 -5.48708
 cachesize 1
+connectornextid 16
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "Cf"
+1 "Of"
+2 "Af"
+3 "P"
+4 "Pz"
+5 "I"
+6 "dPds"
+7 "dPdt"
+8 "N"
+9 "Ng"
+10 "Eye"
+11 "s"
+12 "t"
+13 "Time"
+14 "dPdz"
+15 "SID"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

@@ -1,4 +1,4 @@
-27
+43
 attr_vis_vopsop
 add_particles_to_points
 display_mode
@@ -26,3 +26,19 @@ switch_pscale_vis
 attr_to_pscale
 switch2
 merge1
+null1
+offset_by_vector
+keep_points_only
+merge2
+add1
+merge4
+NOPE_vector
+switch3
+NOPE_pscale
+null2
+unique_pts
+scale_primitives
+switch_unique
+attrib_promote
+switch_promote
+pscale_scale
