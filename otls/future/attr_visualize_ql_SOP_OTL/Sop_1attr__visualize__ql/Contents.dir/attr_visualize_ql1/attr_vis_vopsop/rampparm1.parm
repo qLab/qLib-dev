@@ -1,0 +1,16 @@
+{
+version 0.8
+parmname	[ 0	locks=0 ]	(	attr_ramp	)
+parmlabel	[ 0	locks=0 ]	(	"Attribute Ramp"	)
+ramptype	[ 0	locks=0 ]	(	"rgb"	)
+rampcolortype	[ 0	locks=0 ]	(	hsv	)
+rampbasisdefault	[ 0	locks=0 ]	(	linear	)
+separator1	[ 0	locks=0 ]	(	)
+useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
+separator2	[ 0	locks=0 ]	(	)
+rampshowcontrolsdefault	[ 0	locks=0 ]	(	"on"	)
+disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
+callback	[ 0	locks=0 ]	(	""	)
+help	[ 0	locks=0 ]	(	""	)
+}

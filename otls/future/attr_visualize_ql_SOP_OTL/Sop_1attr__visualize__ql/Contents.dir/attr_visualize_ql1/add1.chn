@@ -1,0 +1,9 @@
+{
+    channel inc {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = npoints(\"../keep_points_only\") }
+    }
+  }

@@ -1,0 +1,41 @@
+sopflags sopflags = 
+comment ""
+position 20.6036 -1.61385
+cachesize 1
+connectornextid 8
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+7 "output1"
+}
+inputsNamed3
+{
+0 	none 0 1 "input1"
+1 	line2 0 1 "input2"
+2 	tube2 0 1 "input3"
+3 	twist1 1 1 "input4"
+4 	circle1 0 1 "input5"
+5 	sphere2 0 1 "input6"
+6 	(1) "" 1 "input7"
+}
+inputs
+{
+0 	none 0 1
+1 	line2 0 1
+2 	tube2 0 1
+3 	twist1 0 1
+4 	circle1 0 1
+5 	sphere2 0 1
+6 	(1) 0 1
+}
+stat
+{
+  create 1284764445
+  modify 1337645056
+  author tusi@csoma
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,210 @@
+comment ""
+position 6.58542 -12.3364
+cachesize 1
+connectornextid 185
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+182 "Cf"
+183 "Of"
+184 "F"
+}
+inputsNamed3
+{
+91 	"" "" 1 "P"
+92 	"" "" 1 "N"
+93 	"" "" 1 "I"
+94 	"" "" 1 "uv"
+95 	"" "" 1 "utan"
+96 	"" "" 1 "vtan"
+97 	"" "" 1 "fresnel"
+98 	"" "" 0 "facefwd"
+99 	"" "" 0 "conserveenergy"
+100 	"" "" 0 "fres_enable"
+101 	"" "" 0 "fres_style"
+102 	"" "" 0 "ior_in"
+103 	"" "" 0 "ior_out"
+104 	"" "" 0 "tan_style"
+105 	"" "" 0 "maxdist_enable"
+106 	"" "" 0 "maxdist"
+107 	"" "" 1 "diff_enable"
+108 	"" "" 1 "diff_int"
+109 	"" "" 0 "diff_min"
+110 	multiply1 1 1 "diff_clr"
+111 	"" "" 0 "diff_rough"
+112 	"" "" 0 "sss_enable"
+113 	"" "" 1 "sss_int"
+114 	"" "" 1 "sss_clr"
+115 	"" "" 0 "sss_min"
+116 	"" "" 0 "sss_atten"
+117 	"" "" 0 "sss_attenclr"
+118 	"" "" 0 "sss_phase"
+119 	"" "" 0 "sss_1enable"
+120 	"" "" 0 "sss_1intensity"
+121 	"" "" 0 "sss_1quality"
+122 	"" "" 0 "sss_2enable"
+123 	"" "" 0 "sss_pcmode"
+124 	"" "" 0 "sss_pcname"
+125 	"" "" 0 "sss_2intensity"
+126 	"" "" 0 "sss_2quality"
+127 	"" "" 0 "refl_enable"
+128 	"" "" 0 "refl_lights"
+129 	"" "" 0 "spec_model"
+130 	"" "" 1 "spec_int"
+131 	"" "" 0 "spec_min"
+132 	"" "" 1 "spec_clr"
+133 	"" "" 0 "spec_angle"
+134 	"" "" 0 "spec_aniso"
+135 	"" "" 0 "refl_objs"
+136 	"" "" 0 "refl_qual"
+137 	"" "" 0 "refl_sep"
+138 	"" "" 0 "refl_int"
+139 	"" "" 0 "refl_clr"
+140 	"" "" 0 "refl_angle"
+141 	"" "" 0 "refl_enable2"
+142 	"" "" 0 "refl_lights2"
+143 	"" "" 0 "spec_model2"
+144 	"" "" 0 "spec_int2"
+145 	"" "" 0 "spec_min2"
+146 	"" "" 0 "spec_clr2"
+147 	"" "" 0 "spec_angle2"
+148 	"" "" 0 "spec_aniso2"
+149 	"" "" 0 "refl_objs2"
+150 	"" "" 0 "refl_qual2"
+151 	"" "" 0 "refl_sep2"
+152 	"" "" 0 "refl_int2"
+153 	"" "" 0 "refl_clr2"
+154 	"" "" 0 "refl_angle2"
+155 	"" "" 0 "refr_enable"
+156 	"" "" 0 "refr_lights"
+157 	"" "" 0 "refr_model"
+158 	"" "" 1 "refr_int"
+159 	"" "" 0 "refr_min"
+160 	"" "" 1 "refr_clr"
+161 	"" "" 0 "refr_angle"
+162 	"" "" 0 "refr_aniso"
+163 	"" "" 0 "refr_objs"
+164 	"" "" 0 "refr_qual"
+165 	"" "" 0 "atten_enable"
+166 	"" "" 0 "atten_den"
+167 	"" "" 0 "atten_clr"
+168 	complement1 2 1 "emit_enable"
+169 	"" "" 1 "emit_int"
+170 	multiply1 1 1 "emit_clr"
+171 	"" "" 1 "opac_int"
+172 	"" "" 1 "opac_clr"
+173 	"" "" 0 "fake_enable"
+174 	"" "" 0 "fake_min"
+175 	"" "" 0 "fake_max"
+176 	"" "" 0 "opac_falloff"
+177 	"" "" 0 "opac_para"
+178 	"" "" 0 "opac_perp"
+179 	"" "" 0 "opac_rolloff"
+180 	"" "" 0 "emit_illum"
+181 	"" "" 0 "refr_thin"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+4 	"" 0 1
+5 	"" 0 1
+6 	"" 0 1
+7 	"" 0 0
+8 	"" 0 0
+9 	"" 0 0
+10 	"" 0 0
+11 	"" 0 0
+12 	"" 0 0
+13 	"" 0 0
+14 	"" 0 0
+15 	"" 0 0
+16 	"" 0 1
+17 	"" 0 1
+18 	"" 0 0
+19 	multiply1 0 1
+20 	"" 0 0
+21 	"" 0 0
+22 	"" 0 1
+23 	"" 0 1
+24 	"" 0 0
+25 	"" 0 0
+26 	"" 0 0
+27 	"" 0 0
+28 	"" 0 0
+29 	"" 0 0
+30 	"" 0 0
+31 	"" 0 0
+32 	"" 0 0
+33 	"" 0 0
+34 	"" 0 0
+35 	"" 0 0
+36 	"" 0 0
+37 	"" 0 0
+38 	"" 0 0
+39 	"" 0 1
+40 	"" 0 0
+41 	"" 0 1
+42 	"" 0 0
+43 	"" 0 0
+44 	"" 0 0
+45 	"" 0 0
+46 	"" 0 0
+47 	"" 0 0
+48 	"" 0 0
+49 	"" 0 0
+50 	"" 0 0
+51 	"" 0 0
+52 	"" 0 0
+53 	"" 0 0
+54 	"" 0 0
+55 	"" 0 0
+56 	"" 0 0
+57 	"" 0 0
+58 	"" 0 0
+59 	"" 0 0
+60 	"" 0 0
+61 	"" 0 0
+62 	"" 0 0
+63 	"" 0 0
+64 	"" 0 0
+65 	"" 0 0
+66 	"" 0 0
+67 	"" 0 1
+68 	"" 0 0
+69 	"" 0 1
+70 	"" 0 0
+71 	"" 0 0
+72 	"" 0 0
+73 	"" 0 0
+74 	"" 0 0
+75 	"" 0 0
+76 	"" 0 0
+77 	complement1 0 1
+78 	"" 0 1
+79 	multiply1 0 1
+80 	"" 0 1
+81 	"" 0 1
+82 	"" 0 0
+83 	"" 0 0
+84 	"" 0 0
+85 	"" 0 0
+86 	"" 0 0
+87 	"" 0 0
+88 	"" 0 0
+89 	"" 0 0
+90 	"" 0 0
+}
+stat
+{
+  create 1333919958
+  modify 1335221237
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

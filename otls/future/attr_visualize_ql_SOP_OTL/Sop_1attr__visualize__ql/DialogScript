@@ -1,0 +1,432 @@
+# Dialog script for attr_visualize_ql automatically generated 05/22/12 02:29:40
+
+{
+    name	attr_visualize_ql
+    script	attr_visualize_ql
+    label	"Attr Visualize qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry with Attribute"
+    inputlabel	2	"Object to Copy"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder1"
+	label	"Preprocessing"
+
+	parm {
+	    name	"unique"
+	    label	"Unique Points"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"prim_scale"
+	    label	"Primitive Scale"
+	    type	float
+	    default	{ "0.85" }
+	    disablewhen	"{ unique == 0 }"
+	    range	{ 0.0001! 1! }
+	    export	none
+	}
+	parm {
+	    name	"promote"
+	    label	"Promote Attribute(s) to Per-Point"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	import {
+	    label	"promote params"
+	    source	"op:attrib_promote"
+	    token	""
+	    mask	"inname inclass method"
+	    enable	1
+
+	    parm {
+		name	"inname"
+		label	"Original Name"
+		type	string
+		default	{ "" }
+		disablewhen	"{ promote == 0 }"
+		menutoggle	{
+		    [ "opmenu -l attrib_promote inname" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "inname" }
+		parmtag	{ "import_source" "op:attrib_promote" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"inclass"
+		label	"Original Class"
+		type	ordinal
+		default	{ "primitive" }
+		disablewhen	"{ promote == 0 }"
+		menu	{
+		    "detail"	"Detail"
+		    "primitive"	"Primitive"
+		    "point"	"Point"
+		    "vertex"	"Vertex"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "inclass" }
+		parmtag	{ "import_source" "op:attrib_promote" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"method"
+		label	"Promotion Method"
+		type	ordinal
+		default	{ "first" }
+		disablewhen	"{ promote == 0 }"
+		menu	{
+		    "max"	"Maximum"
+		    "min"	"Minimum"
+		    "mean"	"Average"
+		    "mode"	"Mode"
+		    "median"	"Median"
+		    "sum"	"Sum"
+		    "sumsquare"	"Sum of Squares"
+		    "rms"	"Root Mean Square"
+		    "first"	"First Match"
+		    "last"	"Last Match"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "method" }
+		parmtag	{ "import_source" "op:attrib_promote" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Floats"
+
+	parm {
+	    name	"color_vis"
+	    label	"Enable"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_name"
+	    label	"Attribute Name"
+	    type	string
+	    default	{ "pscale" }
+	    disablewhen	"{ color_vis == 0 }"
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_type"
+	    label	"Type"
+	    type	integer
+	    joinnext
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 }"
+	    menu	{
+		"0"	"Float"
+		"1"	"Integer"
+		"2"	"Vector"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_comp"
+	    label	"Attribute Component"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 } { attr_type != 2 }"
+	    menu	{
+		"0"	"X"
+		"1"	"Y"
+		"2"	"Z"
+	    }
+	    range	{ 0 2 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcmin"
+	    label	"Min Value"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcmax"
+	    label	"Max Value"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attr_ramp"
+	    label	"Attribute Color Ramp"
+	    type	ramp_rgb
+	    default	{ "2" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampvalues_var" "attr_ramp_the_key_values" }
+	    parmtag	{ "rampkeys_var" "attr_ramp_the_key_positions" }
+	    parmtag	{ "rampbasis_var" "attr_ramp_the_basis_strings" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 1 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 0.0666666701 0 ) 2interp ( linear )" }
+	    parmtag	{ "rampshowcontrolsdefault" "1" }
+	    parmtag	{ "rampcolortype" "hsv" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "rampbasisdefault" "linear" }
+	}
+	parm {
+	    name	"display_mode"
+	    label	"Display Mode"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 }"
+	    menu	{
+		"0"	"Default"
+		"1"	"Geometry and Points"
+		"2"	"Points Only"
+	    }
+	    range	{ 0! 2! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"display_gamma"
+	    label	"Display Gamma"
+	    type	float
+	    joinnext
+	    default	{ "2.2" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 0.01 4 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"gamma_presets"
+	    label	"Label"
+	    type	button
+	    default	{ "1" }
+	    disablewhen	"{ color_vis == 0 }"
+	    menumini	{
+		"1.0"	"1.0 (linear)"
+		"2.2"	"2.2 (sRGB)"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `oppwf()` display_gamma ( $script_value0 )" }
+	}
+	parm {
+	    name	"const_material"
+	    label	"Use Constant Material"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder1_2"
+	label	"Vectors"
+
+	parm {
+	    name	"vector_vis"
+	    label	"Enable"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"vector_attr_name"
+	    label	"Attribute Name"
+	    type	string
+	    default	{ "N" }
+	    disablewhen	"{ vector_vis == 0 }"
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.size()==3 and a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"vector_scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ vector_vis == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"vector_unit"
+	    label	"Unit Length"
+	    type	float
+	    joinnext
+	    default	{ "1" }
+	    disablewhen	"{ vector_vis == 0 }"
+	    range	{ 0.001! 1 }
+	    export	none
+	}
+	parm {
+	    name	"vector_unit_menu"
+	    label	"Unit"
+	    type	ordinal
+	    nolabel
+	    default	{ "1" }
+	    disablewhen	"{ vector_vis == 0 }"
+	    menumini	{
+		"1.0"	"Regular (1.0)"
+		"$FPS"	"Velocity (fps)"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `oppwf()` vector_unit ( $script_value0 )" }
+	}
+    }
+
+    group {
+	name	"folder1_3"
+	label	"Orient--Scale"
+
+	parm {
+	    name	"pscale_vis"
+	    label	"Enable"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"display_type"
+	    label	"Display Type"
+	    type	integer
+	    default	{ "3" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    menu	{
+		"0"	"None"
+		"1"	"Line"
+		"2"	"Spike"
+		"3"	"Spike (Bent)"
+		"4"	"Circle"
+		"5"	"Sphere"
+		"6"	"Custom (2nd Input)"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"pscale_scale"
+	    label	"Uniform Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"spike_radius"
+	    label	"Spike Radius"
+	    type	float
+	    default	{ "0.1" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"sphere_radius"
+	    label	"Sphere Radius"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"output_geom"
+	    label	"Output Geometry"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    menu	{
+		"0"	"Unchanged"
+		"1"	"Guide Geometry Only"
+		"2"	"Original & Guide"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}
