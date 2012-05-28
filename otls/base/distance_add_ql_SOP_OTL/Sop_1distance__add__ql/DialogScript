@@ -1,4 +1,4 @@
-# Dialog script for distance_add_ql automatically generated 03/10/12 23:11:24
+# Dialog script for distance_add_ql automatically generated 05/28/12 03:55:40
 
 {
     name	distance_add_ql
@@ -8,6 +8,8 @@
     help {
 	""
     }
+
+    inputlabel	1	"Sub-Network Input #1"
 
     parm {
 	name	"group"

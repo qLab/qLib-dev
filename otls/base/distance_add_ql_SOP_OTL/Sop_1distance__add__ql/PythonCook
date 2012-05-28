@@ -21,60 +21,95 @@ checks = 0
 points = list(geo.points())
 points.sort(key=lambda p: p.position()[0])
 
-index = 0
 new_polys = []
 
 # Create the edges between points.
 # Outer loop iterates all the points. 
+
 pt_opt_dict = {}        # Build point -> other point dictionary.
-for pt_out in points:
-    pt_out_pos = pt_out.position()
-    # Inner loop only iterates points that are not processed yet.
-    for pt_in in points[index+1:]:
-        if group:
-            in_in = group.contains(pt_in)
-            in_out = group.contains(pt_out)
-        if not group or (in_in and in_out) or (in_in or in_out) and connect_group:
-            pt_in_pos = pt_in.position()
-            length_sq = (pt_out_pos - pt_in_pos).lengthSquared()
-            checks += 1     # DEBUG info.
-            # Input must be sorted by the X axis.
-            if pt_in_pos[0] - pt_out_pos[0] > max_length: break
-            if length_sq <= max_length_sq and length_sq >= min_length_sq:
-                # Insert points to pt -> opt dict.
-                if pt_out in pt_opt_dict:
-                    pt_opt_dict[pt_out].append(pt_in)
-                else:
-                    pt_opt_dict[pt_out] = [pt_in]
-                if pt_in in pt_opt_dict:
-                    pt_opt_dict[pt_in].append(pt_out)
-                else:
-                    pt_opt_dict[pt_in] = [pt_out]
 
-                if create_edges:
-                    poly = geo.createPolygon()
-                    poly.addVertex(pt_out)
-                    poly.addVertex(pt_in)
-                    new_polys.append(poly)
-    index += 1
+try:
+    with hou.InterruptableOperation(
+        "Collecting points", "Distance Add qL",
+        open_interrupt_dialog=True) as pass1:
+    
+        index = 0
+        for pt_out in points:
+    
+            pass1.updateProgress( float(index) / float(len(points)) )
+    
+            pt_out_pos = pt_out.position()
+    
+            # Inner loop only iterates points that are not processed yet.
+    
+            for pt_in in points[index+1:]:
+                if group:
+                    in_in = group.contains(pt_in)
+                    in_out = group.contains(pt_out)
+    
+                if not group or (in_in and in_out) or (in_in or in_out) and connect_group:
+                    pt_in_pos = pt_in.position()
+                    length_sq = (pt_out_pos - pt_in_pos).lengthSquared()
+                    checks += 1     # DEBUG info.
+    
+                    # Input must be sorted by the X axis.
+                    if pt_in_pos[0] - pt_out_pos[0] > max_length:
+                        break
+    
+                    if length_sq <= max_length_sq and length_sq >= min_length_sq:
+    
+                        # Insert points to pt -> opt dict.
+                        if pt_out in pt_opt_dict:
+                            pt_opt_dict[pt_out].append(pt_in)
+                        else:
+                            pt_opt_dict[pt_out] = [pt_in]
+                        if pt_in in pt_opt_dict:
+                            pt_opt_dict[pt_in].append(pt_out)
+                        else:
+                            pt_opt_dict[pt_in] = [pt_out]
+        
+                        if create_edges:
+                            poly = geo.createPolygon()
+                            poly.addVertex(pt_out)
+                            poly.addVertex(pt_in)
+                            new_polys.append(poly)
+            index += 1
+    
+    # Create faces.
+    
+    with hou.InterruptableOperation(
+        "Building geometry", "Distance Add qL",
+        open_interrupt_dialog=True) as pass2:
+    
+        if create_faces:
+            # Build the faces.
+    
+            pts_done = []
+            index = 0
+            for pt, opts in pt_opt_dict.items():
+    
+                pass2.updateProgress( float(index) / float(len(points)) )
+    
+                opts_done = []
+                for opt in opts:
+                    if opt not in pts_done:
+                        for op_opt in pt_opt_dict[opt]:
+                            if (op_opt not in opts_done) and (op_opt not in pts_done) and (op_opt in opts):
+                                # print "Face at: ", pt.number(), opt.number(), op_opt.number()
+                                ply = geo.createPolygon()
+                                ply.addVertex(pt)
+                                ply.addVertex(opt)
+                                ply.addVertex(op_opt)
+                    opts_done.append(opt)
+                pts_done.append(pt)
+    
+                index += 1
 
-# Create faces.
-if create_faces:
-    # Build the faces.
-    pts_done = []
-    for pt, opts in pt_opt_dict.items():
-        opts_done = []
-        for opt in opts:
-            if opt not in pts_done:
-                for op_opt in pt_opt_dict[opt]:
-                    if (op_opt not in opts_done) and (op_opt not in pts_done) and (op_opt in opts):
-                        # print "Face at: ", pt.number(), opt.number(), op_opt.number()
-                        ply = geo.createPolygon()
-                        ply.addVertex(pt)
-                        ply.addVertex(opt)
-                        ply.addVertex(op_opt)
-            opts_done.append(opt)
-        pts_done.append(pt)
+except:
+    pass
+    #hou.ui.displayMessage("aborted")
+
+
 
 # DEBUG
 # print max_length_sq, min_length_sq
