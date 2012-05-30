@@ -1,6 +1,6 @@
-Vop/importattrib /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/importattrib /opt/hfs12.0.620/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl
-Vop/addattrib /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/fit /opt/hfs12.0.621/houdini/otls/OPlibVop.otl
+Vop/fit /opt/hfs12.0.620/houdini/otls/OPlibVop.otl
 Vop/fit otls/OPlibVop.otl
+Vop/addattrib /opt/hfs12.0.620/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl

@@ -44,7 +44,7 @@
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../v_scale\") }
+      segment { length = 0 value = 1 1 expr = "ch(\"../v_scale\") * ch(\"../slice\")" }
     }
     channel vel_interp {
       lefttype = extend

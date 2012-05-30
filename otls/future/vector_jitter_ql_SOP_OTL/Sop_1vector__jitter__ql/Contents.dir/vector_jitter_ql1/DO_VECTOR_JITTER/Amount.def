@@ -1,5 +1,5 @@
 comment ""
-position -9.47822 8.94432
+position -3.9952 6.38235
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -17,11 +17,11 @@ inputs
 stat
 {
   create 1337349403
-  modify 1337349418
+  modify 1338289745
   author Mate@MATE.local.melon.hu
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0 0.2 1 
 delscript ""
 exprlanguage hscript
 end

@@ -1,4 +1,4 @@
-# Automatically generated script: Friday May 18, 16:35 2012
+# Automatically generated script: Wednesday May 30, 20:50 2012
 \set noalias = 1
 #
 #  Creation script for vector_jitter_ql operator
@@ -10,6 +10,5 @@ if ( "$arg1" == "" ) then
 endif
 
 # Node $arg1 (Sop/vector_jitter_ql)
-opspareds "" $arg1
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1
