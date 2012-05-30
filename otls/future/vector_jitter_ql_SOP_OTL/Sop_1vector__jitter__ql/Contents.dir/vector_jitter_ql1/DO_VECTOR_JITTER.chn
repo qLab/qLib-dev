@@ -30,9 +30,9 @@
     channel max_angle {
       lefttype = extend
       righttype = extend
-      default = 53.299999999999997
+      default = 53.299999237060547
       flags = 0
-      segment { length = 0 value = 53.299999999999997 53.299999999999997 expr = ch(\"../max_angle\") }
+      segment { length = 0 value = 53.299999237060547 53.299999237060547 expr = ch(\"../max_angle\") }
     }
     channel min_angle {
       lefttype = extend

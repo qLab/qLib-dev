@@ -1,5 +1,5 @@
 comment ""
-position -14.5649 -1.14101
+position -17.1033 0.460163
 cachesize 1
 connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -10,20 +10,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	attrib3 0 1 "attrib"
+0 	id_attrib 0 1 "attrib"
 1 	"" "" 1 "input_index"
 2 	"" "" 1 "ptnum"
 }
 inputs
 {
-0 	attrib3 0 1
+0 	id_attrib 0 1
 1 	"" 0 1
 2 	"" 0 1
 }
 stat
 {
   create 1337346439
-  modify 1337346494
+  modify 1338289908
   author Mate@MATE.local.melon.hu
   access 0777
 }

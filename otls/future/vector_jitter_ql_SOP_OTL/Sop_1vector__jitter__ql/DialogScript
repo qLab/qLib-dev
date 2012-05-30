@@ -1,4 +1,4 @@
-# Dialog script for vector_jitter_ql automatically generated 05/24/12 00:14:11
+# Dialog script for vector_jitter_ql automatically generated 05/30/12 20:50:53
 
 {
     name	vector_jitter_ql
@@ -148,7 +148,7 @@
 	}
 	parm {
 	    name	"min_angle"
-	    label	"Min Anlge"
+	    label	"Min Angle"
 	    type	float
 	    default	{ "0" }
 	    disablewhen	"{ do_angle == 0 }"
