@@ -1,0 +1,50 @@
+{
+    channel rivetgroup {
+      lefttype = extend
+      righttype = extend
+      defaultString = "\"84 85 86\""
+      flags = 0
+      segment { length = 0 expr = chs(\"../../rivetgroup\") }
+    }
+    channel rivetweights1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../rivetweights1\") }
+    }
+    channel rivetweights2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../rivetweights2\") }
+    }
+    channel rivetweights3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../rivetweights3\") }
+    }
+    channel rivetuseattribs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../rivetuseattribs\") }
+    }
+    channel rivetxattrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"up\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../rivetxattrib\") }
+    }
+    channel rivetzattrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../rivetzattrib\") }
+    }
+  }
