@@ -1,6 +1,6 @@
-Operator:     qLib.jq::rivet_ql::0.1
+Operator:     qLib::rivet_ql::0.1
 Label:        Rivet qL
-Path:         oplib:/qLib.jq::Sop/rivet_ql::0.1?qLib.jq::Sop/rivet_ql::0.1
+Path:         oplib:/qLib::Sop/rivet_ql::0.1?qLib::Sop/rivet_ql::0.1
 Icon:         OBJ_rivet
 Table:        Sop
 License:      
