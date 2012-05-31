@@ -1,0 +1,9 @@
+{
+version 0.8
+color	[ 0	locks=0 ]	(	1	1	1	)
+scale	[ 0	locks=0 ]	(	4	)
+displayicon	[ 0	locks=0 ]	(	"axis"	)
+controltype	[ 0	locks=0 ]	(	"null"	)
+orientation	[ 0	locks=0 ]	(	"xyz"	)
+shadedmode	[ 0	locks=0 ]	(	"off"	)
+}

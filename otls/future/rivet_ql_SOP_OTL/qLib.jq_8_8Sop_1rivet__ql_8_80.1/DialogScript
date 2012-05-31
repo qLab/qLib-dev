@@ -1,0 +1,111 @@
+# Dialog script for qLib.jq::rivet_ql::0.1 automatically generated 05/31/12 01:54:15
+
+{
+    name	qLib.jq::rivet_ql::0.1
+    script	qLib.jq::rivet_ql::0.1
+    label	"Rivet qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry to transform"
+    inputlabel	2	"Rivet geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Rivet (SOP)"
+
+	import {
+	    label	import_rivet
+	    source	"op:objnet/rivet"
+	    token	""
+	    mask	"rivetgroup rivetweights rivetuseattribs rivetxattrib rivetzattrib"
+	    enable	1
+
+	    parm {
+		name	"rivetgroup"
+		label	"Point Group"
+		type	string
+		default	{ "" }
+		menutoggle	{
+		    [ "opmenu -l objnet/rivet rivetgroup" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "rivetgroup" }
+		parmtag	{ "import_source" "op:objnet/rivet" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"rivetweights"
+		label	"Point Weights"
+		type	float
+		size	3
+		default	{ "1" "1" "1" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "rivetweights" }
+		parmtag	{ "import_source" "op:objnet/rivet" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"rivetuseattribs"
+		label	"Use Point Vector Attributes For Rivet Frame"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "rivetuseattribs" }
+		parmtag	{ "import_source" "op:objnet/rivet" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"rivetxattrib"
+		label	"X-Axis Attribute"
+		type	string
+		default	{ "up" }
+		disablewhen	"{ rivetuseattribs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "rivetxattrib" }
+		parmtag	{ "import_source" "op:objnet/rivet" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"rivetzattrib"
+		label	"Z-Axis Attribute"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ rivetuseattribs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "rivetzattrib" }
+		parmtag	{ "import_source" "op:objnet/rivet" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    parm {
+	name	"apply"
+	label	"Apply"
+	type	toggle
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

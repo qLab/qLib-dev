@@ -1,0 +1,13 @@
+Operator:     qLib.jq::rivet_ql::0.1
+Label:        Rivet qL
+Path:         oplib:/qLib.jq::Sop/rivet_ql::0.1?qLib.jq::Sop/rivet_ql::0.1
+Icon:         OBJ_rivet
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May 31 01:54:15 2012
+
