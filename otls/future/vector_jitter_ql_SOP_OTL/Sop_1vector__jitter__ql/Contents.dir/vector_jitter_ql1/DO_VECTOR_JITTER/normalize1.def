@@ -1,5 +1,5 @@
 comment ""
-position 0.830467 1.4008
+position 0.516853 5.64309
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -9,17 +9,17 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	importattrib1 4 1 "vec"
+0 	cross2 2 1 "vec"
 }
 inputs
 {
-0 	importattrib1 1 1
+0 	cross2 0 1
 }
 stat
 {
-  create 1336588681
-  modify 1338289648
-  author Mate@MATE.local.melon.hu
+  create 1338426178
+  modify 1338427396
+  author tusi@demeisen
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

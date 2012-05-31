@@ -3,7 +3,7 @@ version 0.8
 signature	[ 0	locks=0 ]	(	default	)
 srcmin	[ 0	locks=0 ]	(	0	)
 srcmax	[ 0	locks=0 ]	(	1	)
-destmin	[ 0	locks=0 ]	(	[ destmin	0 ] 	)
+destmin	[ 0	locks=0 ]	(	[ destmin	1 ] 	)
 destmax	[ 0	locks=0 ]	(	[ destmax	1 ] 	)
 srcmin_v	[ 0	locks=0 ]	(	0	0	0	)
 srcmax_v	[ 0	locks=0 ]	(	1	1	1	)

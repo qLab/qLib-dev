@@ -1,4 +1,4 @@
-# Dialog script for vector_jitter_ql automatically generated 05/30/12 20:50:53
+# Dialog script for vector_jitter_ql automatically generated 05/31/12 02:43:13
 
 {
     name	vector_jitter_ql
@@ -143,7 +143,7 @@
 	    type	float
 	    default	{ "1" }
 	    disablewhen	"{ do_angle == 0 }"
-	    range	{ 0 10 }
+	    range	{ 0 1 }
 	    export	none
 	}
 	parm {
@@ -193,7 +193,7 @@
 	    type	float
 	    default	{ "1" }
 	    disablewhen	"{ do_length == 0 }"
-	    range	{ 0 10 }
+	    range	{ 0 1 }
 	    export	none
 	}
 	parm {

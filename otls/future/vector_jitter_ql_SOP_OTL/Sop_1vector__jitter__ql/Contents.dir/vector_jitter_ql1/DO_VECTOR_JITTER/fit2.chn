@@ -3,13 +3,13 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch('../destmin/floatdef') }
+      segment { length = 0 expr = ch('../min_length/floatdef') }
     }
     channel destmax {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch('../destmax/floatdef') }
+      segment { length = 0 value = 1 1 expr = ch('../max_length/floatdef') }
     }
   }

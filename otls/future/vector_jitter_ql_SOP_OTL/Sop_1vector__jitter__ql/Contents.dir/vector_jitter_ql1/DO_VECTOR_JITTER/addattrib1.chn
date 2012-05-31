@@ -4,6 +4,6 @@
       righttype = extend
       defaultString = \"Cd\"
       flags = 0
-      segment { length = 0 expr = chs('../attrib2/stringdef') }
+      segment { length = 0 expr = chs('../out_attrib_name/stringdef') }
     }
   }

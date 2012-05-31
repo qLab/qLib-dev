@@ -80,18 +80,6 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../max_length\") }
     }
-    channel do_angle {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../do_angle\") }
-    }
-    channel do_length {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../do_length\") }
-    }
     channel normalize {
       lefttype = extend
       righttype = extend
@@ -118,5 +106,17 @@
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../angle_amount\") }
+    }
+    channel do_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_angle\") }
+    }
+    channel do_length {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_length\") }
     }
   }

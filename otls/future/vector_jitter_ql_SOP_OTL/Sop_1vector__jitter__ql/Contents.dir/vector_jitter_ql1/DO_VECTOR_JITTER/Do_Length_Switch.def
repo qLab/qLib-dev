@@ -1,5 +1,5 @@
 comment ""
-position 20.6729 2.41238
+position 13.122 8.45936
 cachesize 1
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -11,18 +11,18 @@ inputsNamed3
 {
 1 	do_length 0 1 "switcher"
 2 	Do_Angle_Switch 0 1 "input1"
-3 	multiply1 0 1 "input2"
+3 	multiply_length 0 1 "input2"
 }
 inputs
 {
 0 	do_length 0 1
 1 	Do_Angle_Switch 0 1
-2 	multiply1 0 1
+2 	multiply_length 0 1
 }
 stat
 {
   create 1337347837
-  modify 1338290411
+  modify 1338427637
   author Mate@MATE.local.melon.hu
   access 0777
 }
