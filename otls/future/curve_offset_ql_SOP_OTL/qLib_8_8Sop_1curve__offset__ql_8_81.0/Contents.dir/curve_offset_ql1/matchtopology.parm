@@ -1,0 +1,6 @@
+{
+version 0.8
+trackpts	[ 0	locks=0 ]	(	""	)
+refpts	[ 0	locks=0 ]	(	""	)
+assumeprimmatch	[ 0	locks=0 ]	(	"on"	)
+}

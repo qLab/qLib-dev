@@ -1,0 +1,9 @@
+8
+vopsop_apply_offset
+IN
+extrude
+carve1
+OUT
+matchtopology
+merge
+switch_keep_original

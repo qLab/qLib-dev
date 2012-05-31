@@ -1,0 +1,13 @@
+Operator:     qLib::curve_offset_ql::1.0
+Label:        Curve Offset qL
+Path:         oplib:/qLib::Sop/curve_offset_ql::1.0?qLib::Sop/curve_offset_ql::1.0
+Icon:         SOP_join
+Table:        Sop
+License:      
+Extra:        guide=./IN 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu May 31 12:22:58 2012
+

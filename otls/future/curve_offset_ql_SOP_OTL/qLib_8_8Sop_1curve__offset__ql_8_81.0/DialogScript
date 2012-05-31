@@ -1,0 +1,36 @@
+# Dialog script for qLib::curve_offset_ql::1.0 automatically generated 05/31/12 12:16:33
+
+{
+    name	qLib::curve_offset_ql::1.0
+    script	qLib::curve_offset_ql::1.0
+    label	"Curve Offset qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"offset"
+	label	"offset"
+	type	float
+	default	{ "0" }
+	range	{ -10 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"keepOriginal"
+	label	"Keep Original"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+}
