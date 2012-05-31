@@ -1,0 +1,27 @@
+#icon: SOP/join
+#context: sop
+#type: node
+
+= Curve Offset qL =
+
+*Version 0.0.1*
+
+"""Offsets a curve."""
+
+@related
+    - [Node:sop/extrude]
+    - [Node:sop/carve]
+
+
+@Parameters
+    Offset:
+        Offset amount.
+
+    Keep Original:
+        Keeps the original curve.
+
+
+@Release_Notes
+    Version 0.0.1:
+        Initial release.
+
