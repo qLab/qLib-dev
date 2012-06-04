@@ -1,4 +1,4 @@
-# Automatically generated script: Monday April 16, 03:08 2012
+# Automatically generated script: Monday June 04, 03:39 2012
 \set noalias = 1
 #
 #  Creation script for take_merge_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Driver/take_merge_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

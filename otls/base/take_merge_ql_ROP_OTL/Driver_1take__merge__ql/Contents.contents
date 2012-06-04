@@ -1,8 +1,10 @@
 node_type
 take_merge_ql1.init
 take_merge_ql1.def
+take_merge_ql1.userdata
 take_merge_ql1.inp
 take_merge_ql1/shell1.init
 take_merge_ql1/shell1.def
 take_merge_ql1/shell1.parm
+take_merge_ql1/shell1.userdata
 take_merge_ql1.net

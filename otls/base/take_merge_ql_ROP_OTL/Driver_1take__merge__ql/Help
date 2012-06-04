@@ -28,7 +28,11 @@ With regular hierarchical takes all of the above is much harder to achieve.
 
 
 
-@parameters
+@parameters Parameters
+
+HQueue Mode:
+    Enable this if the resulting render will be distributed using HQueue.
+    (see "Usage with HQueue" below for instructions).
 
 Merged Take Name:
     The name of the new take (the merge result) that will be rendered.
@@ -79,8 +83,26 @@ TIP:
     types of overrides ... I mean takes).
 
 
+@hqusage Usage with HQueue
 
-@Release_Notes
+    This ROP can be used with the [Node:out/hq_render] node, but frame ranges are to be set up
+    in a certain way so the [Node:out/hq_render] node can break down the process to smaller chunks.
+
+    The following steps are needed:
+    * Enable `HQueue Mode` on the Take Merge ROP.
+    * Set up your desired frame range on the Take Merge ROP (range controls are hidden unless in HQueue Mode).
+    * Set 'Render Any Frame' on the Output Driver called by the Take Merge ROP. (Warning: Make sure that none of the applied takes set an explicit render range on your Output Driver!)
+    * Set the Take Merge ROP as the output driver for the [Node:out/hq_render] node.
+    * Render with the [Node:out/hq_render] node.
+
+    This setup is necessary because the [Node:out/hq_render] node requires the frame range settings to be available
+    right on the specified Output Driver (the Take Merge ROP in this case).
+
+    Make sure the ROP node that does the actual rendering has 'Render Any Frame' set -- if it has a frame range set, it will
+    render that range for each frame-render job created by HQueue!
+
+
+@Release_Notes Release Notes
     Version 0.0.2:
         * Merge code rewritten in Python.
         * Lifted known limitation of ignoring contents in take hierarchy parents.

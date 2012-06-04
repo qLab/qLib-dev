@@ -1,4 +1,4 @@
-# Dialog script for take_merge_ql automatically generated 04/16/12 03:07:49
+# Dialog script for take_merge_ql automatically generated 06/04/12 03:39:54
 
 {
     name	take_merge_ql
@@ -23,6 +23,41 @@
     parm {
 	name	"renderdialog"
 	baseparm
+	export	none
+    }
+    parm {
+	name	"hqueue_mode"
+	label	"HQueue Mode"
+	type	toggle
+	default	{ "0" }
+	help	"Enable HQueue-compatible behaviour (see Notes below and the Help page for further information.)"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"trange"
+	label	"Valid Frame Range"
+	type	ordinal
+	default	{ "off" }
+	disablewhen	"{ hqueue_mode == 0 }"
+	hidewhen	"{ hqueue_mode == 0 }"
+	menu	{
+	    "off"	"Render Any Frame"
+	    "normal"	"Render Frame Range"
+	    "on"	"Render Frame Range Only (Strict)"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"f"
+	label	"Start/End/Inc"
+	type	float
+	size	3
+	default	{ "1" "40" "1" }
+	disablewhen	"{ hqueue_mode == 0 } { trange == off }"
+	hidewhen	"{ hqueue_mode == 0 }"
+	range	{ 0 10 }
 	export	none
     }
     parm {
@@ -98,7 +133,7 @@
 
     group {
 	name	"folder1_1"
-	label	"Usage | Notes"
+	label	"Usage | Notes | HQueue"
 
 	parm {
 	    name	"labelparm5"
@@ -159,6 +194,41 @@
 	    type	label
 	    nolabel
 	    default	{ "(IMPORTANT: No take should be set in the Output Driver itself!)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sepparm2"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm8"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "HQUEUE USAGE: Enable 'HQueue Mode', then set your desired" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm9"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "frame range here on this ROP. Then set your Output Driver to" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm10"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "'Render Any Frame' mode." }
 	    range	{ 0 1 }
 	    export	none
 	}

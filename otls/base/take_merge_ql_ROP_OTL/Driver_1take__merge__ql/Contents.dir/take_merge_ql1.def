@@ -1,14 +1,21 @@
 comment ""
-position 0.571212 1.72051
+position -5.0832 2.212
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+connectornextid 0
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
 inputs
 {
 }
 stat
 {
-  create 1334535771
-  modify 1334538472
+  create 1338769283
+  modify 1338774000
   author tusi@demeisen
   access 0777
 }
