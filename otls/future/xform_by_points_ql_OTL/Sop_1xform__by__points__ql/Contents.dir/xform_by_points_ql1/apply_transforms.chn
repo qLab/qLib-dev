@@ -6,13 +6,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
-    }
     channel index_attr {
       lefttype = extend
       righttype = extend
@@ -61,5 +54,12 @@
       defaultString = \"up\"
       flags = 0
       segment { length = 0 expr = chs(\"../up_attr\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../numthreads\") }
     }
   }

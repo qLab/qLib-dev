@@ -1,4 +1,4 @@
-# Dialog script for xform_by_points_ql automatically generated 08/05/11 02:13:30
+# Dialog script for xform_by_points_ql automatically generated 06/05/12 17:33:14
 
 {
     name	xform_by_points_ql
@@ -26,10 +26,10 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"vex_numthreads"
+	name	"numthreads"
 	label	"Number of Threads"
 	type	ordinal
-	default	{ "1perproc" }
+	default	{ "1" }
 	menu	{
 	    [ "opmenu -l apply_transforms vex_numthreads" ]
 	}
@@ -47,6 +47,24 @@
 	    label	"Index Attribute"
 	    type	string
 	    default	{ "__origpt" }
+	    menureplace	{
+		[ "r = ['piece', 'piece (h12)', '__origpt', '__origpt (h11)']" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().primAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		[ "" ]
+		[ "" ]
+		language	python
+	    }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
