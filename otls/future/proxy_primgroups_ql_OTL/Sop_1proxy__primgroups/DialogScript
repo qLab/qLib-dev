@@ -1,4 +1,4 @@
-# Dialog script for proxy_primgroups automatically generated 01/29/12 03:57:53
+# Dialog script for proxy_primgroups automatically generated 06/05/12 19:05:06
 
 {
     name	proxy_primgroups
@@ -15,12 +15,44 @@
     inputlabel	4	"Sub-Network Input #4"
 
     parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Primitive Groups"
+	    "1"	"Name Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
 	name	"groupmask"
 	label	"Group Mask"
 	type	string
 	default	{ "piece*" }
 	help	"Pattern specifying the groups to build proxies for."
+	disablewhen	"{ mode != 0 }"
 	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib"
+	label	"Attrib Name"
+	type	string
+	default	{ "name" }
+	disablewhen	"{ mode != 1 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"attribtol"
+	label	"Tolerance"
+	type	float
+	default	{ "0.001" }
+	disablewhen	"{ mode != 1 }"
+	range	{ 0 10 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
