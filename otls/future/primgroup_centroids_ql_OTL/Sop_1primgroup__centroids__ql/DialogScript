@@ -1,4 +1,4 @@
-# Dialog script for primgroup_centroids_ql automatically generated 01/29/12 03:13:48
+# Dialog script for primgroup_centroids_ql automatically generated 06/05/12 18:58:48
 
 {
     name	primgroup_centroids_ql
@@ -9,7 +9,7 @@
 	""
     }
 
-    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	1	"Input Fractures"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -19,12 +19,44 @@
 	label	"Parameters"
 
 	parm {
+	    name	"mode"
+	    label	"Mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Primitive Groups"
+		"1"	"Name Attribute"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
 	    name	"groupmask"
 	    label	"Group Mask"
 	    type	string
 	    default	{ "piece*" }
 	    help	"A pattern specifying the (primitive) groups to process."
+	    disablewhen	"{ mode != 0 }"
 	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attrib"
+	    label	"Attrib Name"
+	    type	string
+	    default	{ "name" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"attribtol"
+	    label	"Tolerance"
+	    type	float
+	    default	{ "0.001" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
@@ -133,7 +165,7 @@
 
 	parm {
 	    name	"preview"
-	    label	"Preview Individual Pieces"
+	    label	"Preview Individual Pieces (Group Mode Only)"
 	    type	toggle
 	    default	{ "0" }
 	    range	{ 0! 10 }

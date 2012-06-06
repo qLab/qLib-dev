@@ -6,4 +6,17 @@
       flags = 0
       segment { length = 0 expr = chs(\"../groupmask\") }
     }
+    channel fortype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"../mode\")==0, 0, 1)" }
+    }
+    channel attribtol {
+      lefttype = extend
+      righttype = extend
+      default = 0.0010000000474974513
+      flags = 0
+      segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../attribtol\") }
+    }
   }

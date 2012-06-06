@@ -84,13 +84,6 @@
       flags = 0
       segment { length = 0 value = 30 30 expr = $SPRINGK }
     }
-    channel pscale {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = $PSCALE }
-    }
     channel vx {
       lefttype = extend
       righttype = extend
@@ -128,5 +121,12 @@
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../point_add_normal_up/upz\") }
+    }
+    channel pscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $PSCALE }
     }
   }

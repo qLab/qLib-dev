@@ -52,6 +52,25 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = $CA }
     }
+    channel nx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../aimx\") }
+    }
+    channel ny {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../aimy\") }
+    }
+    channel nz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../aimz\") }
+    }
     channel mapu {
       lefttype = extend
       righttype = extend
@@ -102,32 +121,6 @@
       flags = 0
       segment { length = 0 expr = $VZ }
     }
-    channel pscale {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = $PSCALE }
-    }
-    channel nx {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../aimx\") }
-    }
-    channel ny {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../aimy\") }
-    }
-    channel nz {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../aimz\") }
-    }
     channel upx {
       lefttype = extend
       righttype = extend
@@ -146,5 +139,12 @@
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../upz\") }
+    }
+    channel pscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = $PSCALE }
     }
   }
