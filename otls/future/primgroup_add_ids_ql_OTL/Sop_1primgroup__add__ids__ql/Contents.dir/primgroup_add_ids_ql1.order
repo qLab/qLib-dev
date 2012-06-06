@@ -11,4 +11,4 @@ use_1st_if_2nd_is_empty
 del_groups
 switch_delete_groups
 switch_delete_detail_attrs
-attribute1
+delete_detail_attrs
