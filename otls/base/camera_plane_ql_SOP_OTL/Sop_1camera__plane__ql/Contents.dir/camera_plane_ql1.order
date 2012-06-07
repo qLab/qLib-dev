@@ -5,7 +5,7 @@ camera_plane_grid
 CAMERA_PLANE_unit_distance
 plane_distance
 CAMERA_PLANE
-Object_Soace
+plane_distance_in_cam_space
 Space_Switch
 SHOP
 material1

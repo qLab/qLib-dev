@@ -1,6 +1,5 @@
-13
-global1
-output1
+22
+global_P
 winsizex
 winsizey
 focal
@@ -12,3 +11,13 @@ winoffsy
 floattovec2
 out_rest
 multiply3
+winx
+winy
+floattovec3
+planesizex
+planesizey
+floattovec4
+multiply4
+add1
+divide2
+output2

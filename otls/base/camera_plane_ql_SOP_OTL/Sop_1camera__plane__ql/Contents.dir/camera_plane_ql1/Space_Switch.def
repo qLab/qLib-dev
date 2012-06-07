@@ -10,12 +10,12 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	Object_Soace 0 1 "input1"
+0 	plane_distance_in_cam_space 0 1 "input1"
 1 	plane_distance 1 1 "input2"
 }
 inputs
 {
-0 	Object_Soace 0 1
+0 	plane_distance_in_cam_space 0 1
 1 	plane_distance 0 1
 }
 stat

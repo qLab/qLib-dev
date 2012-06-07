@@ -19,21 +19,23 @@
 	export	none
     }
     parm {
-	name	"winsizex"
-	label	"winsizex"
+	name	"winx"
+	label	"winx"
 	type	float
-	default	{ "1" }
+	default	{ "0" }
 	range	{ 0 2 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"winsizey"
-	label	"winsizey"
+	name	"winy"
+	label	"winy"
 	type	float
-	default	{ "1" }
+	default	{ "0" }
 	range	{ 0 2 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -43,6 +45,7 @@
 	default	{ "40" }
 	range	{ 0 100 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -52,6 +55,7 @@
 	default	{ "0" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -61,5 +65,46 @@
 	default	{ "0" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"winsizex"
+	label	"winsizex"
+	type	float
+	default	{ "1" }
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"winsizey"
+	label	"winsizey"
+	type	float
+	default	{ "1" }
+	range	{ 0 2 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"planesizex"
+	label	"planesizex"
+	type	float
+	default	{ "40" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"planesizey"
+	label	"planesizey"
+	type	float
+	default	{ "12" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

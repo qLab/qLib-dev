@@ -1,11 +1,12 @@
 comment ""
-position 2.63118 -6.64237
+position -0.594337 -5.34818
 cachesize 1
-connectornextid 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
 0 "focal"
+1 "bound_focal"
 }
 inputsNamed3
 {
@@ -16,7 +17,7 @@ inputs
 stat
 {
   create 1316962590
-  modify 1327186429
+  modify 1339099705
   author tusi@demeisen
   access 0777
 }
