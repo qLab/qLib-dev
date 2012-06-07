@@ -64,6 +64,12 @@ in other words, do a test round.)
         See [Node:sop/smooth] for the parameter details.
 
 
-@Release_Notes
+@Dependencies
+    Uses the following operator(s):
+        - [Xform to BBox qL SOP|Node:sop/xform_to_bbox_ql]
+
+
+
+@Release_Notes Release Notes
     Version 0.0.1:
         Initial release.
