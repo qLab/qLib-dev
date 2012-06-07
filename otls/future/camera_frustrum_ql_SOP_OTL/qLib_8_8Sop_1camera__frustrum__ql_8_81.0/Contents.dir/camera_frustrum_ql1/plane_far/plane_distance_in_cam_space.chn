@@ -1,0 +1,10 @@
+{
+    channel xformpath {
+      lefttype = extend
+      righttype = extend
+      defaultString = chsop(\"../camera\")
+      flags = 0
+      start = 8.4166669845581055
+      segment { length = 0 accel = 0.33333298563957214 0.33333298563957214 expr = chsop(\"../camera\") }
+    }
+  }
