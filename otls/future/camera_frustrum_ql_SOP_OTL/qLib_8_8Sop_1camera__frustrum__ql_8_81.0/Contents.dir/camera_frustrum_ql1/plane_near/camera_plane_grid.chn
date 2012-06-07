@@ -1,0 +1,75 @@
+{
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = -1.0499999523162842
+      flags = 0
+      segment { length = 0 value = -1.0499999523162842 -1.0499999523162842 expr = -ch(chs(\"camera\")+\"/focal\") }
+    }
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000149011612
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = "1.0 * ch(chs(\"camera\")+\"/aperture\")" }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000149011612
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = "ch(chs(\"camera\")+\"/aperture\")
+* ( ch(chs(\"camera\")+\"/resy\")
+    / ch(chs(\"camera\")+\"/resx\")
+    / ch(chs(\"camera\")+\"/aspect\")
+)" }
+    }
+    channel camera {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"/obj/cam1\"
+      flags = 0
+      segment { length = 0 expr = chsop(\"../camera\") }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../type\") }
+    }
+    channel surftype {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../surftype\") }
+    }
+    channel rows {
+      lefttype = extend
+      righttype = extend
+      default = 5
+      flags = 0
+      segment { length = 0 value = 5 5 expr = ch(\"../rows\") }
+    }
+    channel cols {
+      lefttype = extend
+      righttype = extend
+      default = 5
+      flags = 0
+      segment { length = 0 value = 5 5 expr = ch(\"../cols\") }
+    }
+    channel orderu {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../orderu\") }
+    }
+    channel orderv {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../orderv\") }
+    }
+  }

@@ -1,0 +1,23 @@
+{
+version 0.8
+folder1	[ 0	locks=0 ]	(	0	)
+camera	[ 0	locks=0 ]	(	[ camera	/obj/cam1 ] 	)
+space	[ 0	locks=0 ]	(	[ space	0 ] 	)
+plane_distance	[ 0	locks=0 ]	(	[ plane_distance	10 ] 	)
+overscan	[ 0	locks=0 ]	(	1	1	)
+folder0	[ 0	locks=0 ]	(	0	0	0	)
+cam_crop	[ 0	locks=0 ]	(	"on"	)
+cropl	[ 0	locks=0 ]	(	0	)
+cropr	[ 0	locks=0 ]	(	1	)
+cropb	[ 0	locks=0 ]	(	0	)
+cropt	[ 0	locks=0 ]	(	1	)
+type	[ 0	locks=0 ]	(	"poly"	)
+surftype	[ 0	locks=0 ]	(	"quads"	)
+rows	[ 0	locks=0 ]	(	2	)
+cols	[ 0	locks=0 ]	(	2	)
+orderu	[ 0	locks=0 ]	(	4	)
+orderv	[ 0	locks=0 ]	(	4	)
+export_uv	[ 0	locks=0 ]	(	"off"	)
+material	[ 0	locks=0 ]	(	"off"	)
+texture	[ 0	locks=0 ]	(	Mandril.pic	)
+}

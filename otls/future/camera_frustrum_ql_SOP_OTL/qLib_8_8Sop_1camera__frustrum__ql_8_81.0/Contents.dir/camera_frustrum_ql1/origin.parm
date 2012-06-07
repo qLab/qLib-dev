@@ -1,0 +1,9 @@
+{
+version 0.8
+color	[ 0	locks=0 ]	(	[ colorr	0.33300000000000002 ] 	[ colorg	0 ] 	[ colorb	0 ] 	)
+scale	[ 0	locks=0 ]	(	[ scale	1 ] 	)
+displayicon	[ 0	locks=0 ]	(	"icon"	)
+controltype	[ 0	locks=0 ]	(	"nullandcircles"	)
+orientation	[ 0	locks=0 ]	(	"z"	)
+shadedmode	[ 0	locks=0 ]	(	"off"	)
+}

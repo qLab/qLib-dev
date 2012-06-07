@@ -1,0 +1,21 @@
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	0	)
+ogl_amb	[ 0	locks=0 ]	(	1	1	1	)
+ogl_diff	[ 0	locks=0 ]	(	1	1	1	)
+ogl_spec	[ 0	locks=0 ]	(	1	1	1	)
+ogl_emit	[ 0	locks=0 ]	(	0	0	0	)
+ogl_rough	[ 0	locks=0 ]	(	0.10000000100000001	)
+ogl_alpha	[ 0	locks=0 ]	(	1	)
+ogl_light	[ 0	locks=0 ]	(	"off"	)
+ogl_cutout	[ 0	locks=0 ]	(	"on"	)
+ogl_numtex	[ 0	locks=0 ]	(	1	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+ogl_tex1	[ 0	locks=0 ]	(	`chs(\"map\")`	)
+ogl_tex_min_filter1	[ 0	locks=0 ]	(	GL_LINEAR_MIPMAP_LINEAR	)
+ogl_tex_mag_filter1	[ 0	locks=0 ]	(	GL_LINEAR	)
+ogl_clamping_mode1	[ 0	locks=0 ]	(	"off"	)
+stdswitcher3	[ 0	locks=0 ]	(	0	0	)
+map	[ 0	locks=0 ]	(	`chs(\"../../texture\")`	)
+}

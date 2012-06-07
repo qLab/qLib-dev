@@ -1,0 +1,61 @@
+#icon: OBJ/camera
+#context: sop
+#type: node
+
+= Camera Frustrum qL =
+
+*Version 0.0.1*
+
+"""Builds the geometric representation of a camera viewing frustrum."""
+
+@related
+    - [Node:obj/cam]
+    - [Camera Plane qL SOP|Node:sop/camera_plane_ql]
+
+
+NOTE:
+    This node is built from [Camera Plane qL|Node:sop/camera_plane_ql] surface nodes.
+
+
+
+@Parameters
+
+    Camera:
+        The camera to build the frustrum geometry for.
+
+    Space:
+        See the help page for [Camera Plane qL SOP|Node:sop/camera_plane_ql] on coordinate spaces.
+
+    Near/Far Clipping:
+        Clipping plane settings can be used from the camera (default), or can be overridden
+        here (separately for each plane).
+
+    Display:
+        Frustrum display options.
+
+        Colors, Frustum/Center Color:
+            Apply colors to the results.
+
+        Shaded Mode:
+            Allow lighting. (Disabling this will result in constant viewport shading, regardless of
+            any viewport light settings.)
+
+        Solid:
+            Use solid (polygonal) geometry for the frustrum sides instead of the default wireframe lines.
+
+        Center Scale:
+            Size of the locator that marks the frustum apex (the location of the camera).
+
+        Inset:
+            An inset value for `Solid` frustrum sides.
+
+
+@Dependencies
+    Uses the following operator(s):
+    - [Camera Plane qL SOP|Node:sop/camera_plane_ql]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.1:
+        First release.

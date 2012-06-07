@@ -1,0 +1,160 @@
+# Dialog script for qLib::camera_frustrum_ql::1.0 automatically generated 06/08/12 01:04:25
+
+{
+    name	qLib::camera_frustrum_ql::1.0
+    script	qLib::camera_frustrum_ql::1.0
+    label	"Camera Frustrum qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Camera & Clipping Planes"
+
+	parm {
+	    name	"camera"
+	    label	"Camera"
+	    type	oplist
+	    joinnext
+	    default	{ "/obj/cam1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "oprelative" "/" }
+	    parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"space"
+	    label	"Space"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    menu	{
+		"0"	"Object Space"
+		"1"	"Camera Space"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"set_near"
+	    label	"Near"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"near"
+	    label	"Near Clipping"
+	    type	float
+	    default	{ "10" }
+	    disablewhen	"{ set_near == 0 }"
+	    range	{ 0.001 99 }
+	    export	none
+	}
+	parm {
+	    name	"set_far"
+	    label	"Far"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"far"
+	    label	"Far Clipping"
+	    type	float
+	    default	{ "80" }
+	    disablewhen	"{ set_far == 0 }"
+	    range	{ 0.001 99 }
+	    export	none
+	}
+	group {
+	    name	"folder1"
+	    label	"Display"
+
+	    parm {
+		name	"colors"
+		label	"Colors"
+		type	toggle
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"frustrum_color"
+		label	"Frustrum"
+		type	color
+		size	3
+		default	{ "0.05" "0.25" "0.05" }
+		disablewhen	"{ colors == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"center_color"
+		label	"Center"
+		type	color
+		size	3
+		default	{ "0.333" "0" "0" }
+		disablewhen	"{ colors == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"shadedmode"
+		label	"Shaded Mode"
+		type	toggle
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"solid"
+		label	"Solid"
+		type	toggle
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"scale_c"
+		label	"Center Scale"
+		type	float
+		default	{ "1" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"inset"
+		label	"Inset"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ solid == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}
