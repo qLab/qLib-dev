@@ -1,7 +1,19 @@
 comment ""
 position -6.47929 0.556976
 cachesize 1
+connectornextid 8
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+6 "success"
+7 "adata"
+}
+inputsNamed3
+{
+3 	rest_P_attr 0 1 "attrib"
+4 	"" "" 1 "input_index"
+5 	import_index_attrib1 7 1 "ptnum"
+}
 inputs
 {
 0 	rest_P_attr 0 1

@@ -4,7 +4,7 @@
 
 = PrimGroup Centroids qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Builds a point cloud, where each point represents a centroid of a primitive group ('PrimGroup family' SOP)."""
 
@@ -22,12 +22,23 @@ group names and point indices (in both directions -- index-to-name and name-to-i
 
 @Parameters
     Parameters:
+
+        Mode:
+            Mode for detecting each geometry fracture (by primitive groups or name attribute).
+
         Group Mask:
             Primitive groups matching this mask will be treated as individual pieces. A single center point
             for each piece will be generated.
 
             TIP:
                 The matched results are shown as guide geometry.
+    
+        Attrib Name:
+            Name of the attribute used to determine the geometry pieces.
+    
+        Tolerance:
+            A tolerance value name attribute values (in case it contains numerical values, e.g. fracture indices).
+            Values that differ less than the tolerance are considered equal.
     
         Group Name Attribute:
             If enabled, a per-point string attribute is created that stores the group name for each centroid
@@ -84,10 +95,13 @@ group names and point indices (in both directions -- index-to-name and name-to-i
 ---
 
 NOTE:
-    Group order and centroid-pt (ie. output) order ALWAYS match -- if you find otherwise,
+    Group order and centroid-pt (ie. output) order should ALWAYS match -- if you find otherwise,
     please report as a BUG.
 
 
-@Release_Notes
+@Release_Notes Release Notes
+    Version 0.0.2:
+        Support for fracture grouping with a name attribute (H12+).
+
     Version 0.0.1:
         Initial release.

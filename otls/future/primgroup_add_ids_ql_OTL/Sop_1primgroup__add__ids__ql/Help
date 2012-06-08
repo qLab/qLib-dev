@@ -4,7 +4,7 @@
 
 = PrimGroup Add IDs qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Creates the per-primitive piece ID attribute for geometry pieces (PrimGroup family SOP)."""
 
@@ -30,8 +30,18 @@ group ID attributes from the `PrimGroup Centroids qL` SOP, and the results can b
 `Xform by Points qL` SOP.
 
 @Parameters
+    Mode:
+        Mode for detecting each geometry fracture (by primitive groups or name attribute).
+
     Group Mask:
         Primitive groups matching this mask will be used for geometry pieces.
+
+    Attrib Name:
+        Name of the attribute used to determine the geometry pieces.
+
+    Tolerance:
+        A tolerance value name attribute values (in case it contains numerical values, e.g. fracture indices).
+        Values that differ less than the tolerance are considered equal.
 
     Group ID Attribute:
         Name of the attribute to create. The default name is `__origpt` (to emulate the output of the
@@ -71,6 +81,16 @@ group ID attributes from the `PrimGroup Centroids qL` SOP, and the results can b
 
 
 
-@Release_Notes
+@Release_Notes Release Notes
+    Version 0.0.2:
+        Support for fracture grouping with a name attribute (H12+).
+
+        WARNING:
+            Introduced parameter changes that break backwards-compatibility.
+            - parameter 'mode' became 'idmode'
+            - a new 'mode' parameter is introduced
+
+
+
     Version 0.0.1:
         Initial release.

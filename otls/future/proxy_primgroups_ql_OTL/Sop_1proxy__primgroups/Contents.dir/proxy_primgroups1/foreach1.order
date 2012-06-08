@@ -1,4 +1,4 @@
-15
+16
 each1
 box
 wrap
@@ -12,5 +12,6 @@ apply_postproc
 OUT
 custom
 switch_proxy_type
-TODO_fit_bbox
 geom_orig
+remove_point_normals
+xform_to_bbox_ql

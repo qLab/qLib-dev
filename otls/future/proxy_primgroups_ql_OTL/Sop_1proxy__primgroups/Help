@@ -4,6 +4,8 @@
 
 = Proxy PrimGroups qL =
 
+*Version 0.0.2*
+
 """Creates a proxy version of each primitive group by wrapping a low resolution proxy around them (PrimGroup family SOP)."""
 
 @related
@@ -24,11 +26,22 @@ the usual DOP Import SOP node.
 in other words, do a test round.)
 
 @parameters
+
+    Mode:
+        Mode for detecting each geometry fracture (by primitive groups or name attribute).
+
+    Group Mask:
+        Geometry groups matching this mask will be replaced with proxies.
+
+    Attrib Name:
+        Name of the attribute used to determine the geometry pieces.
+
+    Tolerance:
+        A tolerance value name attribute values (in case it contains numerical values, e.g. fracture indices).
+        Values that differ less than the tolerance are considered equal.
+
     Proxy Geometry:
         Settings for generation of an initial proxy shape.
-
-        Group Mask:
-            Geometry groups matching this mask will be replaced with proxies.
 
         Proxy Type:
             Base geometry type for the low-res proxy.
@@ -69,7 +82,11 @@ in other words, do a test round.)
         - [Xform to BBox qL SOP|Node:sop/xform_to_bbox_ql]
 
 
-
 @Release_Notes Release Notes
+    Version 0.0.2:
+        - Support for fracture grouping with a name attribute (H12+).
+        - 'Custom' proxy type now works (it uses the [Xform to BBox qL|Node:sop/xform_to_bbox_ql] SOP).
+
     Version 0.0.1:
         Initial release.
+

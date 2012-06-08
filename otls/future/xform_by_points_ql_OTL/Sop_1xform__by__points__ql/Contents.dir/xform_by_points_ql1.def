@@ -1,19 +1,30 @@
 sopflags sopflags = 
 comment ""
-position -1.50002 -5.1368
+position 5.22821 -4.53003
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+3 "output1"
+}
+inputsNamed3
+{
+0 	explodedview3 1 1 "input1"
+1 	primgroup_centroids_ql2 1 1 "input2"
+2 	xform1 1 1 "input3"
+}
 inputs
 {
-0 	primgroup_add_ids_ql1 0 1
-1 	point1 0 1
+0 	explodedview3 0 1
+1 	primgroup_centroids_ql2 0 1
 2 	xform1 0 1
 }
 stat
 {
-  create 1327798871
-  modify 1327804781
-  author tusi@demeisen
+  create 1338909694
+  modify 1338910402
+  author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

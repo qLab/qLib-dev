@@ -1,4 +1,4 @@
-# Dialog script for primgroup_add_ids_ql automatically generated 01/29/12 01:58:31
+# Dialog script for primgroup_add_ids_ql automatically generated 06/05/12 19:02:29
 
 {
     name	primgroup_add_ids_ql
@@ -15,10 +15,23 @@
     inputlabel	4	"Sub-Network Input #4"
 
     parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Primitive Groups"
+	    "1"	"Name Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
 	name	"groupmask"
 	label	"Group Mask"
 	type	string
 	default	{ "piece*" }
+	disablewhen	"{ mode != 0 }"
 	menureplace	{
 	    "piece*"	"piece*"
 	}
@@ -27,71 +40,98 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"attrname"
-	label	"Group ID Attribute"
+	name	"attrib"
+	label	"Attrib Name"
 	type	string
-	default	{ "__origpt" }
-	menureplace	{
-	    "__origpt"	"__origpt"
-	}
+	default	{ "name" }
+	disablewhen	"{ mode != 1 }"
 	range	{ 0 1 }
 	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"mode"
-	label	"Group IDs from"
-	type	integer
-	default	{ "1" }
-	menu	{
-	    "0"	"Group List Order"
-	    "1"	"Stored Detail Attributes"
-	    "2"	"Detail Attribs (Unchecked)"
-	}
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"del_groups"
-	label	"Delete Groups"
-	type	toggle
-	default	{ "1" }
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"del_attrs"
-	label	"Delete Detail Attributes"
-	type	toggle
-	default	{ "1" }
-	range	{ 0! 10 }
+	name	"attribtol"
+	label	"Tolerance"
+	type	float
+	default	{ "0.001" }
+	disablewhen	"{ mode != 1 }"
+	range	{ 0 10 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     group {
-	name	"folder0"
-	label	"Note"
+	name	"folder1"
+	label	"ID Attribute Generation"
 
 	parm {
-	    name	"labelparm"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "Detail Attributes can be created using" }
+	    name	"attrname"
+	    label	"Group ID Attribute"
+	    type	string
+	    default	{ "__origpt" }
+	    menureplace	{
+		"piece"	"piece (H12)"
+		"__origpt"	"__origpt (H11)"
+	    }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"labelparm2"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "(e.g.) a PrimGroups Centroids qL node." }
-	    range	{ 0 1 }
+	    name	"idmode"
+	    label	"Group IDs from"
+	    type	integer
+	    default	{ "1" }
+	    menu	{
+		"0"	"Group List Order"
+		"1"	"Stored Detail Attributes"
+		"2"	"Detail Attribs (Unchecked)"
+	    }
+	    range	{ 0! 10 }
 	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+	parm {
+	    name	"del_groups"
+	    label	"Delete Groups"
+	    type	toggle
+	    default	{ "1" }
+	    disablewhen	"{ mode != 0 }"
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"del_attrs"
+	    label	"Delete Detail Attributes"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Note"
+
+	    parm {
+		name	"labelparm"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "Detail Attributes can be created using" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"labelparm2"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "(e.g.) a PrimGroups Centroids qL node." }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
     }
 
 }
