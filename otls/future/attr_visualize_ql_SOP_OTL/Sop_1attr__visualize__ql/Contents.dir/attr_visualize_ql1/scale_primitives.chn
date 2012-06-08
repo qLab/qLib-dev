@@ -103,8 +103,8 @@
     channel sx {
       lefttype = extend
       righttype = extend
-      default = 0.90000000000000002
+      default = 0.89999997615814209
       flags = 0
-      segment { length = 0 value = 0.90000000000000002 0.90000000000000002 expr = ch(\"../prim_scale\") }
+      segment { length = 0 value = 0.89999997615814209 0.89999997615814209 expr = ch(\"../prim_scale\") }
     }
   }

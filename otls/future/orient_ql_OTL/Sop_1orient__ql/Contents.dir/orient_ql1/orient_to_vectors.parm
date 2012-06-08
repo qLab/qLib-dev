@@ -1,10 +1,12 @@
 {
 version 0.8
 vex_group	[ 0	locks=0 ]	(	""	)
-vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 attr_N	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_N\")`	)
 attr_up	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_up\")`	)
 attr_orient	[ 0	locks=0 ]	(	`chs(\"../vectors_to_orient/attr_orient\")`	)
+unit_aim	[ 0	locks=0 ]	(	[ unit_aim1	0 ] 	[ unit_aim2	0 ] 	[ unit_aim3	1 ] 	)
+unit_up	[ 0	locks=0 ]	(	[ unit_up1	0 ] 	[ unit_up2	1 ] 	[ unit_up3	0 ] 	)
 }

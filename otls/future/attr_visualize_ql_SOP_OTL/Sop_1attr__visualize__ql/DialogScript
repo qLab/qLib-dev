@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 05/22/12 02:29:40
+# Dialog script for attr_visualize_ql automatically generated 06/08/12 01:52:39
 
 {
     name	attr_visualize_ql
@@ -297,7 +297,7 @@
 	    type	string
 	    default	{ "N" }
 	    disablewhen	"{ vector_vis == 0 }"
-	    menureplace	{
+	    menutoggle	{
 		[ "r = []" ]
 		[ "" ]
 		[ "try:" ]
@@ -342,7 +342,7 @@
 	    label	"Unit"
 	    type	ordinal
 	    nolabel
-	    default	{ "1" }
+	    default	{ "0" }
 	    disablewhen	"{ vector_vis == 0 }"
 	    menumini	{
 		"1.0"	"Regular (1.0)"

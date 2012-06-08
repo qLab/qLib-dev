@@ -1,21 +1,32 @@
 comment ""
-position 4.34665 -2.54432
+position 5.32374 0.00473452
 cachesize 1
+connectornextid 7
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+6 "newadata"
+}
+inputsNamed3
+{
+3 	attrib_N_name 0 1 "attrib"
+4 	multiply1 2 1 "adata"
+5 	"" "" 1 "localvar"
+}
 inputs
 {
-0 	attrib 0 1
+0 	attrib_N_name 0 1
 1 	multiply1 0 1
 2 	"" 0 1
 }
 stat
 {
   create 1322007393
-  modify 1322007610
+  modify 1339115212
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0.2 0 0.4 
 delscript ""
 exprlanguage hscript
 end

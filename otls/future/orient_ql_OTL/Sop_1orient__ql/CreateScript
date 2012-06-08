@@ -1,4 +1,4 @@
-# Automatically generated script: Wednesday November 23, 01:57 2011
+# Automatically generated script: Friday June 08, 03:08 2012
 \set noalias = 1
 #
 #  Creation script for orient_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Sop/orient_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1
