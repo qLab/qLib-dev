@@ -10,7 +10,7 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	(0) 1 1 "input1"
+0 	(0) "" 1 "input1"
 }
 inputs
 {
