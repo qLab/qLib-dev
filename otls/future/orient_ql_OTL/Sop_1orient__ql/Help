@@ -4,25 +4,86 @@
 
 = Orient qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
-"""Converts between different representations of per-point orientation (or per-point rotation)."""
+"""Converts between different representations of per-point orientation (rotation)."""
+
+In Houdini there is more than one way to represent orientation (i.e. rotation) on a per-point basis.
+This node allows to easily convert between these representations. The following methods are supported:
+
+Aim / up vector pairs:
+    Rotation on each point is represented by two vectors. The aim vector is usually `N` (normal)
+    or `v` (velocity). The up vector should always be named `up`.
+
+Orient (quaternion) attribute:
+    A single per-point quaternion (vector4) attribute called `orient` stores the rotation for each point.
+    This is more efficient but not 'human-friendly'.
+
+
+Both ways are supported throughout Houdini wherever per-point orientation is needed (e.g. particle instancing,
+Copy SOP, etc).
+
+If vectors and quaternions are both present, _quaternions take preference_.
+
 
 @Parameters
     Operation:
-        Conversion from two vectors to quaternion, or vice versa.
-    Aim Vector:
-        Attribute representing the main aim direction for each point.
-    Up Vector:
-        Attribute of the up direction vector for each point.
-    Orient Attribute:
-        Attribute representing per-point orientation as a quaternion.
+        Main operation settings.
 
-@Limitations
-    When converting from Orient to Aim/Up, the resulting Aim vector will always be written
-    as a per-point N (normal), too.
+        Operation:
+            Main operation mode.
+
+            Construct:
+                Build `orient` attribute from vector pairs.
+
+            Extract:
+                Extract vector pairs from the `orient` attribute.
+
+        Aim Vector:
+            Name of the vector attribute that represents the aim direction for each point.
+            It is usually `N` (normal) or `v` (velocity).
+
+        Up Vector:
+            Name of the per-point up vector attribute (by default it's called `up`).
+
+        Orient Attribute:
+            Attribute representing per-point orientation (in a quaternion form).
+            The Houdini-supported attribute name is `orient` (type `vector4`).
+
+        Delete Source Attribute(s):
+            When converting to orient this will delete the vector pairs, and vice versa.
 
 
-@Release_Notes
+    Extract:
+        These parameters are used when quaternion orientations are
+        extracted back to aim/up vector pairs.
+
+        Initial Aim:
+            The resulting aim vector will be this vector with the quaternion rotation applied.
+
+        Initial Up:
+            The resulting up vector will be this vector with the quaternion rotation applied.
+
+
+@related
+    - [Node:sop/copy]
+    - [Xform by Points qL|Node:sop/xform_by_points_ql]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.2:
+        - Support for arbitrary base aim/up vectors on extract
+        - Known limitation of 0.0.1 is lifted (H12+)
+        - Some UI cosmetics.
+
+        WARNING:
+            Non backwards-compatible parameter changes:
+            - Parameter 'attr_N' renamed to 'attr_aim'
+
     Version 0.0.1:
         Initial release.
+
+        KNOWN LIMITATION:
+            When converting from Orient to Aim/Up, the resulting Aim vector will always be written
+            as a per-point N (normal), too.

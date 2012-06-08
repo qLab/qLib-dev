@@ -1,0 +1,40 @@
+{
+    channel unit_aim1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../unit_aim1\") }
+    }
+    channel unit_aim2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../unit_aim2\") }
+    }
+    channel unit_aim3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../unit_aim3\") }
+    }
+    channel unit_up1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../unit_up1\") }
+    }
+    channel unit_up2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../unit_up2\") }
+    }
+    channel unit_up3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../unit_up3\") }
+    }
+  }

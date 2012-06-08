@@ -4,7 +4,7 @@
       righttype = extend
       defaultString = \"N\"
       flags = 0
-      segment { length = 0 expr = chs(\"../attr_N\") }
+      segment { length = 0 expr = chs(\"../attr_aim\") }
     }
     channel attr_up {
       lefttype = extend
