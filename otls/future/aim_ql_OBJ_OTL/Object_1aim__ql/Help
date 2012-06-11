@@ -1,52 +1,63 @@
 #icon: SOP/matchaxis
-#context: sop
+#context: obj
 #type: node
 
-= Vector qL =
+= Aim qL =
 
-*Version 0.1.1*
+*Version 0.0.1*
 
-"""Performs common operations between two vector attributes and/or constants."""
+"""A simple aim/look-at transformation node, with up-vector object support."""
+
+This object type implements similar functionality like the 'Look At' parameter on
+objects nodes, but providing up vector controls.
+
+The aim is computer the same way as expected: the resulting transformation will
+look at the aim with its _negative Z axis_. The up vector will be matched with
+the _positive Y axis_ as much as possible (but the aim direction always takes
+preference).
+
+
+NOTE: (for beginners)
+    Aim (or 'look-at') transformation is one of the most fundamental things which
+    has relevance everywhere from camera controls to character rigs. So it is
+    worthwhile to grasp and keep in mind that _a plane is defined by_ *three* _points
+    in space_.
+
+
+@inputs Inputs
+    1. Position Object:
+        The world space position of the connected object will be the center point
+        (or origin) of the resulting aim transform. Rotations on this input are ignored.
+
+    2. Aim Object:
+        The object to look at. The resulting transform will have its _negative Z_ axis
+        aimed at this object.
+
+    3. Up Object (Optional):
+        If connected, the resulting transformation's _positive Y axis_ will be aimed
+        at this object as much as it is allowed by the main aim direction vector.
+
+        If no object is connected here, the up direction is determined by the 
+        `Up Vector` parameter.
+
 
 @Parameters
-    Point Group:
-        The group of points the deformer affects.
-    Operation:
-        The operation to be executed.
-    Blend:
-        The mix bias when the operation is mix.
-    Vector:
-        Type of vector A/B.
-    Normalize:
-        Normalize vector A/B.
-    Compute Normal A/B:
-        Generate normal vectors for the first input.
-    Attrib Name A/B:
-        The name of the vector attribute of A/B. If the second input is not connected the attribute is read from the
-        first input.
-    Constant A/B:
-        The constant value of A/B.
-    Normalize Out:
-        Normalize the output vector.
-    Scale:
-        Scale factor for the output vector.
-    Invert Out:
-        Negate the output vector.
-    Out Attribute:
-        The name and toggle of the target attribute of the vector operation result.
-    Length Attrib:
-        Name and toggle for the length of the result vector. The normalization of the output is skpipped for the length
-        calculation, while scaling is not.
-    Dot Product Attrib:
-        Name and toggle for the dot product of the two input vectors.
-    Angle Attrib:
-        Name and toggle for the angle between the result vectors.
-    Angle In Degrees:
-        Output angle in degrees instead of radians.
+    Up Vector:
+        The direction of the up vector. Only used if no `Up Object` is connected (3rd input).
 
-@Release_Notes
-    Version 0.1.1:
-        Interface updated. One thread per processor is now the default.
+    Show Vectors:
+        Draw lines from the center to both the aim and up points (or directions).
 
-    Version 0.1.0:
+    Show Transform:
+        Display a null object variant to represent the aim transformation.
+
+
+@related
+    - [Node:obj/null]
+    - [Null qL|Node:obj/null_ql]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.1:
         Initial release.

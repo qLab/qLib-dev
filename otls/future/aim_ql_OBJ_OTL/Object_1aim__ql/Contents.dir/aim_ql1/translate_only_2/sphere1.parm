@@ -2,7 +2,7 @@
 version 0.8
 type	[ 0	locks=0 ]	(	"prim"	)
 surftype	[ 0	locks=0 ]	(	"quads"	)
-rad	[ 0	locks=0 ]	(	0.100000001	0.100000001	0.100000001	)
+rad	[ 0	locks=0 ]	(	0.10000000100000001	0.10000000100000001	0.10000000100000001	)
 t	[ 0	locks=0 ]	(	0	0	0	)
 orient	[ 0	locks=0 ]	(	"y"	)
 freq	[ 0	locks=0 ]	(	2	)
