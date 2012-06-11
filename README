@@ -25,7 +25,7 @@ called QLIB can make adding the various sections a bit easier. For example the
 next two lines adds all sections to the path:
 
     QLIB = /Users/mate/qLab/qLib/otls
-    HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/future:$QLIB/core:$QLIB/spec
+    HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/spec:$QLIB/future
 
 (Dumping the OTL files into a folder which contains other OTLs is not a recommended
 practice: it'll needlessly make maintenance of your assets more difficult.)
@@ -34,16 +34,12 @@ practice: it'll needlessly make maintenance of your assets more difficult.)
 Sections
 ========
 
-The asset library contains the following sections: core, base, spec, future, and
+The asset library contains the following sections: base, spec, future, and
 graveyard. The assets belonging the different sections are stored in
 directories with the same name.
 
 The 'base' assets are intended to be used as building blocks of more
 complex networks.
-
-The 'core' assets are intended to be used as building blocks of 'base' level
-assets. The assets in this section are usually not very useful alone, but are
-needed by assets in other sections.
 
 The 'spec' assets are useful in specific situations and are probably less
 useful as generic tools. You may decide if you want to add the 'spec' section
@@ -68,7 +64,7 @@ A note on interdependencies
 ===========================
 
 Although we like to avoid any interdependencies of assets (except depending on
-'base' and 'core' assets), but it's not a rule set in stone. In a few cases
+'base' assets), but it's not a rule set in stone. In a few cases
 an asset might depend on another. This is always mentioned on the dependent
 asset's help page. (But if you have the complete library installed -- which is
 the reasonable thing to do --, you won't have any problems).
