@@ -2,7 +2,7 @@
 version 0.8
 stdswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
 _label1_	[ 0	locks=0 ]	(	From	To	)
-frompt0	[ 0	locks=0 ]	(	`chs(\"../attr_vis_vopsop/attr_name\")`	)
+frompt0	[ 0	locks=0 ]	(	`chs(\"../pscale_attr_name\")`	)
 topt0	[ 0	locks=0 ]	(	pscale	)
 frompt1	[ 0	locks=0 ]	(	""	)
 topt1	[ 0	locks=0 ]	(	""	)

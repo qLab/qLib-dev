@@ -1,6 +1,6 @@
 {
 version 0.8
-inname	[ 0	locks=0 ]	(	[ inname	Cd ] 	)
+inname	[ 0	locks=0 ]	(	[ inname	"" ] 	)
 inclass	[ 0	locks=0 ]	(	[ inclass	1 ] 	)
 outclass	[ 0	locks=0 ]	(	"point"	)
 method	[ 0	locks=0 ]	(	[ method	8 ] 	)

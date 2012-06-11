@@ -1,0 +1,16 @@
+{
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../vector_scale\") }
+    }
+    channel unit_length {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      segment { length = 0 value = 24 24 expr = ch(\"../../vector_unit\") }
+    }
+  }
