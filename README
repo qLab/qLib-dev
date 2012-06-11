@@ -1,19 +1,25 @@
 qLib
 ====
 
-A general purpose Digital Asset library for Houdini.
+A general-purpose Digital Asset library for Houdini.
 
 
 Installation instructions
 =========================
 
 Download and unpack the distribution tarball from the download section:
-https://github.com/gadfly16/qLib/downloads . Note that the git repository stores
-the assets in 'source' form which is not usable directly by Houdini. See
-README.developer for instructions on building the assets from the source.
 
-Place the unpacked folder to a convenient place - probably somewhere where
-others can access it also - and add the qLib/otls/_SECTIONNAME_ (see below)
+https://github.com/gadfly16/qLib/downloads
+
+You can download already built and ready-to-use archives (containing .otl files
+only) or retrieve the latest version from the git repo.
+
+Note that the git repository stores the assets in a textual form, which
+can't be used in Houdini directly. See README.developer for instructions
+on building the actual OTL files from source.
+
+Place the unpacked folder to a convenient location -- probably somewhere where
+others can access it as well -- and add the qLib/otls/<section_name> (see below)
 folder to the HOUDINI_OTLSCAN_PATH environment variable. Creating a variable
 called QLIB can make adding the various sections a bit easier. For example the
 next two lines adds all sections to the path:
@@ -21,15 +27,15 @@ next two lines adds all sections to the path:
     QLIB = /Users/mate/qLab/qLib/otls
     HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/future:$QLIB/core:$QLIB/spec
 
-Dumping the OTL files into a folder which contains other OTLs is considered bad
-practice: it seriously and needlessly makes updating the library more difficult.
+(Dumping the OTL files into a folder which contains other OTLs is not a recommended
+practice: it'll needlessly make maintenance of your assets more difficult.)
 
 
 Sections
 ========
 
-There are five sections of the asset library: core, base, spec, future and
-graveyard.  The assets belonging the different sections are stored in
+The asset library contains the following sections: core, base, spec, future, and
+graveyard. The assets belonging the different sections are stored in
 directories with the same name.
 
 The 'base' assets are intended to be used as building blocks of more
@@ -40,15 +46,33 @@ assets. The assets in this section are usually not very useful alone, but are
 needed by assets in other sections.
 
 The 'spec' assets are intended for per-project based inclusion (e.g. high level
-objects like water drops, etc.), so you probably don't want to include that
-in the HOUDINI_OTLSCAN_PATH. But this decision is up to you.
+objects like water drops, etc.). You probably don't want to include that
+in the HOUDINI_OTLSCAN_PATH, but this decision is up to you. ('spec' stands for
+'specific' or 'specialized'.)
 
-The 'future' assets are not yet integrated into the main distribution. They may
-lack documentation or other mandatory requirementis. We release them because
-they can be useful even before they fulfill those requirements. In other words,
-'future' is the alpha testing ground in the "release early, release often"
-spirit.
+The 'future' assets are still evolving and not yet integrated into the main
+distribution. They may lack documentation or other requirements (that we agree
+to be mandatory for an asset to be complete). We still release them so they
+can be used (therefore more extensively tested).
+
+In other words, 'future' is the alpha testing ground in the "release early,
+release often" spirit.
 
 The 'graveyard' section is the resting place for obsolete assets. We keep them
-there for compatibility reasons for six month, after that they get removed from
+for compatibility reasons for a while. After that they get removed from
 the distribution.
+
+
+
+A note on interdependencies
+===========================
+
+Although we like to avoid any asset interdependencies (except depending
+on 'base' assets), it's not a rule set in stone, so there are a few assets
+that depend on another. This is always mentioned on the dependent asset's
+help page. (If you have the complete library installed -- which is the
+reasonable thing to do --, you won't have any problems).
+
+'Spec' assets are the exception: they can depend on whatever they like.
+
+
