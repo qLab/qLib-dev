@@ -12,7 +12,7 @@ Download and unpack the distribution tarball from the download section:
 https://github.com/gadfly16/qLib/downloads
 
 You can download already built and ready-to-use archives (containing .otl files
-only) or retrieve the latest version from the git repo.
+only) or clone the latest version from the git repo.
 
 Note that the git repository stores the assets in a textual form, which
 can't be used in Houdini directly. See README.developer for instructions
@@ -45,10 +45,10 @@ The 'core' assets are intended to be used as building blocks of 'base' level
 assets. The assets in this section are usually not very useful alone, but are
 needed by assets in other sections.
 
-The 'spec' assets are intended for per-project based inclusion (e.g. high level
-objects like water drops, etc.). You probably don't want to include that
-in the HOUDINI_OTLSCAN_PATH, but this decision is up to you. ('spec' stands for
-'specific' or 'specialized'.)
+The 'spec' assets are useful in specific situations and are probably less
+useful as generic tools. You may decide if you want to add the 'spec' section
+to your path or not. No assets in other sections should ever depend on assets
+in this section.
 
 The 'future' assets are still evolving and not yet integrated into the main
 distribution. They may lack documentation or other requirements (that we agree
@@ -67,12 +67,10 @@ the distribution.
 A note on interdependencies
 ===========================
 
-Although we like to avoid any asset interdependencies (except depending
-on 'base' assets), it's not a rule set in stone, so there are a few assets
-that depend on another. This is always mentioned on the dependent asset's
-help page. (If you have the complete library installed -- which is the
-reasonable thing to do --, you won't have any problems).
+Although we like to avoid any interdependencies of assets (except depending on
+'base' and 'core' assets), but it's not a rule set in stone. In a few cases
+an asset might depend on another. This is always mentioned on the dependent
+asset's help page. (But if you have the complete library installed -- which is
+the reasonable thing to do --, you won't have any problems).
 
-'Spec' assets are the exception: they can depend on whatever they like.
-
-
+'Spec' assets are the exception: no other asset should depend on them.
