@@ -1,4 +1,4 @@
-17
+18
 global1
 output1
 rampparm1
@@ -16,3 +16,4 @@ attr_type
 attr_int
 pow1
 display_gamma
+vec_length

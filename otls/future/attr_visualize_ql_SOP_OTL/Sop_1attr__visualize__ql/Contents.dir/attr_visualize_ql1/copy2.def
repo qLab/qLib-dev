@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 24.1884 -3.45861
+position 15.1632 1.64189
 cachesize 1
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -11,17 +11,17 @@ outputsNamed3
 inputsNamed3
 {
 0 	pscale_scale 1 1 "input1"
-1 	geom 1 1 "input2"
+1 	attr_to_pscale 1 1 "input2"
 }
 inputs
 {
 0 	pscale_scale 0 1
-1 	geom 0 1
+1 	attr_to_pscale 0 1
 }
 stat
 {
   create 1284763340
-  modify 1337646326
+  modify 1339377495
   author tusi@csoma
   access 0777
 }

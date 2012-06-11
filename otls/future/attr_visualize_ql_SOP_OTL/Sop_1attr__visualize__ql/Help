@@ -1,0 +1,107 @@
+#icon: COP2/colorwheel
+#context: sop
+#type: node
+
+= Attr Visualize qL =
+
+*Version 0.0.4*
+
+"""Various visualization types for geometry attributes."""
+
+
+@Parameters
+    Preprocessing:
+        Parameters in this tab allows visualizing other attribute types than per-point,
+        by modifying the geometry itself and/or convert attribute(s) to per-point type.
+
+        Unique Points:
+            This splits all shared geometry points, so there will be the same number of
+            points as vertices -- allowing per-vertex attributes to be visualized as
+            per-point.
+
+        Primitive Scale:
+            Applied to all primitives after the Unique Points operation. Especially with
+            previously shared points, this can make individual points visually more
+            distinct.
+
+        Promote Attribute(s) to Per-Point:
+            After the preprocessing above, all other attribute types (ie. per-vertex,
+            per-primitive, etc.) can safely be converted to per-point type for
+            visualization. A list of multiple attribute names is supported.
+
+    Floats:
+        Visualization of floating-point values by mapping the values to a color ramp
+        and apply the colors to the geometry accordingly.
+
+        NOTE:
+            Other visualizations inherit these colors.
+
+        Attribute Name, Type, Component:
+            Name of the attribute to visualize (a single attribute name only), as well as
+            the attribute type (integer, float, vector) and component (X, Y, Z or length).
+
+        Value Range:
+            The value range the color ramp will be mapped to.
+
+        Attribute Color Ramp:
+            The ramp representing the range of values.
+
+        Display Gamma:
+            Color-correction for non-linear viewport settings. Set this gamma value to
+            the same you set up in your viewport (`2.2` for sRGB).
+
+    Vectors:
+        Vector visualization (drawn as line segments from geometry points).
+
+        Attribute Name:
+            Name of the attribute(s) to visualize (multiple attributes can be specified).
+
+        Scale:
+            An uniform scaling factor on the vectors display.
+
+        Unit Length:
+            The equivalent of unit type. This is relevant only with velocity-type vectors
+            where the unit is distance-per-second. (If visualizing velocity, select "`Velocity`"
+            from the preset menu.)
+
+            Note that this applies to all vectors being visualized.
+
+    Orient & Scale:
+        Orient/scale-type visualization (implemented using a Copy SOP). A geometric object is
+        copied to each point of the input geometry.
+        - The size of each copy will be affected by the `pscale` attribute;
+        - Orientation will be affected by existing orientation (`orient`), velocity (`v`),
+            normal (`N`) and up vector (`up`) attributes.
+
+    Output:
+        Settings on how to output visualization results.
+
+
+
+@related
+    - [Node:sop/color]
+    - [Node:sop/copy]
+    - [Point Attr qL|Node:sop/pointattr_ql]
+    - [Vector qL|Node:sop/vector_ql]
+
+
+@Release_Notes Release Notes
+
+    0.0.4:
+        - Minor bug fixes
+        - More consolidation on both UI and internal workings
+
+    0.0.3:
+        - A rough help page
+        - Minor UI cleanups
+        - Added 'Visualization Geometry Only' toggle
+        - Vector mode now supports multiple vectors
+
+    0.0.2:
+        Functionality additions:
+        - Geometry preprocessing (allows visualizing non-point attr types)
+        - Vector visualizations
+        - pscale/Copy SOP-style visualization
+
+    0.0.1:
+        First version.

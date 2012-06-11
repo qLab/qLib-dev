@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 06/08/12 01:52:39
+# Dialog script for attr_visualize_ql automatically generated 06/11/12 03:32:26
 
 {
     name	attr_visualize_ql
@@ -32,7 +32,7 @@
 	    type	float
 	    default	{ "0.85" }
 	    disablewhen	"{ unique == 0 }"
-	    range	{ 0.0001! 1! }
+	    range	{ 0.0001! 1 }
 	    export	none
 	}
 	parm {
@@ -113,12 +113,14 @@
 
     group {
 	name	"folder1_1"
-	label	"Floats"
+	label	"Floats & Colors"
 
 	parm {
 	    name	"color_vis"
 	    label	"Enable"
 	    type	toggle
+	    nolabel
+	    joinnext
 	    default	{ "0" }
 	    range	{ 0! 10 }
 	    export	none
@@ -126,8 +128,9 @@
 	}
 	parm {
 	    name	"attr_name"
-	    label	"Attribute Name"
+	    label	"Attribute(s)"
 	    type	string
+	    joinnext
 	    default	{ "pscale" }
 	    disablewhen	"{ color_vis == 0 }"
 	    menureplace	{
@@ -155,13 +158,14 @@
 	    name	"attr_type"
 	    label	"Type"
 	    type	integer
+	    nolabel
 	    joinnext
 	    default	{ "0" }
 	    disablewhen	"{ color_vis == 0 }"
 	    menu	{
-		"0"	"Float"
-		"1"	"Integer"
-		"2"	"Vector"
+		"0"	"float"
+		"1"	"Int."
+		"2"	"vector"
 	    }
 	    range	{ 0 1 }
 	    export	none
@@ -179,6 +183,7 @@
 		"0"	"X"
 		"1"	"Y"
 		"2"	"Z"
+		"3"	"length"
 	    }
 	    range	{ 0 2 }
 	    export	none
@@ -187,8 +192,9 @@
 	}
 	parm {
 	    name	"srcmin"
-	    label	"Min Value"
+	    label	"Value Range"
 	    type	float
+	    joinnext
 	    default	{ "0" }
 	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 10 }
@@ -200,6 +206,7 @@
 	    name	"srcmax"
 	    label	"Max Value"
 	    type	float
+	    nolabel
 	    default	{ "1" }
 	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 10 }
@@ -220,25 +227,10 @@
 	    parmtag	{ "rampbasis_var" "attr_ramp_the_basis_strings" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 1 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 0.0666666701 0 ) 2interp ( linear )" }
-	    parmtag	{ "rampshowcontrolsdefault" "1" }
+	    parmtag	{ "rampshowcontrolsdefault" "0" }
 	    parmtag	{ "rampcolortype" "hsv" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "rampbasisdefault" "linear" }
-	}
-	parm {
-	    name	"display_mode"
-	    label	"Display Mode"
-	    type	integer
-	    default	{ "0" }
-	    disablewhen	"{ color_vis == 0 }"
-	    menu	{
-		"0"	"Default"
-		"1"	"Geometry and Points"
-		"2"	"Points Only"
-	    }
-	    range	{ 0! 2! }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
 	    name	"display_gamma"
@@ -266,16 +258,6 @@
 	    export	none
 	    parmtag	{ "script_callback" "opparm `oppwf()` display_gamma ( $script_value0 )" }
 	}
-	parm {
-	    name	"const_material"
-	    label	"Use Constant Material"
-	    type	toggle
-	    default	{ "0" }
-	    disablewhen	"{ color_vis == 0 }"
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
     }
 
     group {
@@ -286,6 +268,8 @@
 	    name	"vector_vis"
 	    label	"Enable"
 	    type	toggle
+	    nolabel
+	    joinnext
 	    default	{ "0" }
 	    range	{ 0! 10 }
 	    export	none
@@ -356,15 +340,45 @@
 
     group {
 	name	"folder1_3"
-	label	"Orient--Scale"
+	label	"Orient & Scale"
+	tabbreak
 
 	parm {
 	    name	"pscale_vis"
 	    label	"Enable"
 	    type	toggle
+	    nolabel
+	    joinnext
 	    default	{ "0" }
 	    range	{ 0! 10 }
 	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pscale_attr_name"
+	    label	"Attribute Name"
+	    type	string
+	    default	{ "pscale" }
+	    disablewhen	"{ pscale_vis == 0 }"
+	    menutoggle	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.size()==3 and a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
@@ -413,19 +427,36 @@
 	    range	{ 0 10 }
 	    export	none
 	}
+    }
+
+    group {
+	name	"folder2"
+	label	"Output"
+
 	parm {
-	    name	"output_geom"
-	    label	"Output Geometry"
+	    name	"display_mode"
+	    label	"Display Mode"
 	    type	integer
-	    default	{ "0" }
-	    disablewhen	"{ pscale_vis == 0 }"
+	    default	{ "1" }
 	    menu	{
-		"0"	"Unchanged"
-		"1"	"Guide Geometry Only"
-		"2"	"Original & Guide"
+		"0"	"No Geometry"
+		"1"	"Show Original Geometry"
+		"2"	"Geometry + Points"
+		"3"	"Points Only"
 	    }
-	    range	{ 0 1 }
+	    range	{ 0! 3 }
 	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"const_material"
+	    label	"Use Constant Material"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ display_mode == 0 }"
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
     }
 

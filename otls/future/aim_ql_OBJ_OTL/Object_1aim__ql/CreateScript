@@ -1,4 +1,4 @@
-# Automatically generated script: Saturday April 14, 00:41 2012
+# Automatically generated script: Sunday June 10, 20:29 2012
 \set noalias = 1
 #
 #  Creation script for aim_ql operator
@@ -10,4 +10,6 @@ if ( "$arg1" == "" ) then
 endif
 
 # Node $arg1 (Object/aim_ql)
+opspareds "" $arg1
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

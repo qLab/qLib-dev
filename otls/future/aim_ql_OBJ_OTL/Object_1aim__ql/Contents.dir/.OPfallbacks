@@ -1,6 +1,6 @@
-Vop/lookat /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
-Vop/lookat otls/OPlibVop.otl
-Vop/importattrib /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/importattrib /opt/hfs12.0.644/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl
-Vop/extractxform /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/extractxform /opt/hfs12.0.644/houdini/otls/OPlibVop.otl
 Vop/extractxform otls/OPlibVop.otl
+Vop/lookat /opt/hfs12.0.644/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl
