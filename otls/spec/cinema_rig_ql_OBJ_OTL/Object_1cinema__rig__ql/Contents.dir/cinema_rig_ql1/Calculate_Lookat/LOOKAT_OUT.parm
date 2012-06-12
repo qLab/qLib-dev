@@ -1,5 +1,0 @@
-{
-version 0.8
-cacheinput	[ 0	locks=0 ]	(	"off"	)
-look_at_rotation	[ 8	locks=0 ]	(	[ look_at_rotationx	-29.410656 ] 	[ look_at_rotationy	-69.3285446 ] 	[ look_at_rotationz	0 ] 	)
-}

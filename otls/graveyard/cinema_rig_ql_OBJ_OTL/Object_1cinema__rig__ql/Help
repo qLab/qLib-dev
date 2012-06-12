@@ -1,0 +1,73 @@
+#icon: NETWORKS/rop
+#context: obj
+#type: node
+
+= Cinema Rig qL =
+
+*Version 0.1.0*
+
+"""Camera rig for cinematic camera motion creation."""
+
+WARNING:
+    This asset is obsolete and not maintained anymore. Use [Node:obj/camera_rig_ql] instead.
+
+@Inputs
+    Position Parent:
+        Parent of the Position point.
+    Look At Parent:
+        Parent of the Look At point.
+    Crane Head Parent:
+        Parent of the Crane base.
+
+NOTE:
+    Use the parent inputs to achieve more complex motions, like switching between different Look At points or
+    rotating the Position point around an arbitrary pivot point. Also if you want to move your rig as one unit, create
+    a parent null above your 'position' and 'look at' inputs and move and/or rotate them together.
+
+@Parameters
+    Use Look At:
+        Use the Look At point to calculate camera rotation.
+    Use Crane:
+        Use the Crane to calculate the Crane Head position.
+    Position:
+        Position of the camero or the crane base if crane is enabled.
+    Look At:
+        Position of the Look At point.
+    Pan:
+        Horizontal rotation of the camera axis.
+    Tilt:
+        Vertical rotation of the camera axis.
+    Roll:
+        Roll of the camera axis.
+    Arm Turn:
+        Rotation of the Crane Arm around its vertical axis.
+    Arm Elevation:
+        Elevation of the Crane Arm.
+    Arm Length:
+        Length of the Crane Arm.
+    Crane Head:
+        Position of the Crane Head.
+    Up Vector:
+        Up vector used by the look at calculation and the 'Pan' parameter.
+        It is relative to the rotation of the Position Parent, to allow easy whole rig placement and rotation.
+    Guides:
+        Display flag of the different guide geometries.
+
+TIP:
+    For technical reasons several manipulators are handled by separate Guides on the rig. For example the Crane
+    controls are separated into three different handles. Set *Persistent* on the handles to achieve a more confortable
+    workflow if needed.
+
+@Limitations
+    Crane head rotation is not implemented. Crane head transform inheritance selectors not implemented.
+
+@Release_Notes
+    Version 0.1.0:
+        Complete overhaul. All the secondary motion stuff is dropped from the asset. Use the separate "Motion" tools for
+        adding secondary motions. Pan, tilt and roll is included.
+
+    Version 0.0.2:
+        Squashed a bug which prevented the rig for working more than 10 seconds. :)
+
+    Version 0.0.1:
+        Early preview release, for testing and evaluation purposes only.

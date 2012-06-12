@@ -1,0 +1,13 @@
+Operator:     cinema_rig_ql
+Label:        Cinema Rig qL
+Path:         oplib:/Object/cinema_rig_ql?Object/cinema_rig_ql
+Icon:         NETWORKS_rop
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jun 12 15:37:20 2012
+

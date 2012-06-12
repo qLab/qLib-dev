@@ -1,0 +1,9 @@
+{
+version 0.8
+color	[ 0	locks=0	autoscope=0 ]	(	[ colorr	0 ] 	[ colorg	0.68020004000000001 ] 	[ colorb	0.71600002100000004 ] 	)
+scale	[ 0	locks=0	autoscope=0 ]	(	[ scale	1 ] 	)
+displayicon	[ 0	locks=0	autoscope=0 ]	(	[ displayicon	0 ] 	)
+controltype	[ 0	locks=0	autoscope=0 ]	(	[ controltype	1 ] 	)
+orientation	[ 0	locks=0	autoscope=0 ]	(	[ orientation	1 ] 	)
+shadedmode	[ 0	locks=0	autoscope=0 ]	(	[ shadedmode	0 ] 	)
+}
