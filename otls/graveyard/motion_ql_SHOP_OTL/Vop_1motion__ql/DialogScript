@@ -1,0 +1,60 @@
+# Dialog script for motion_ql automatically generated 06/12/12 16:45:51
+
+{
+    name	motion_ql
+    script	motion_ql
+    label	"Motion ql"
+
+    output	vector	motion	motion
+    signature	"Default Inputs"	default	{ vector }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"labelparm"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"2D (in pixels)"
+	    "1"	"2D (NDC)"
+	    "2"	"3D"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+}

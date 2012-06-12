@@ -1,0 +1,36 @@
+#icon: COP2/velblur
+#context: shop
+#type: node
+
+= Motion Vectors qL =
+
+*Version 0.1.1*
+
+"""Motion vector shader."""
+
+This is a convenience shader based on the Motion qL VOP. It exports the motion vectors to the color channel (Cf).
+If you need to export the motion vectors to another image plane you can use the VOP equivalent.
+
+TIP:
+    To render a motion pass:
+        # set the desired shutter speed on the camera
+        # turn on the *Allow Motion Blur* toggle on the ROP
+        # add (if it's not already there) and turn off the *Allow Image Motion Blur* toggle on the ROP
+        # Set pixel filter to either *minmax ocover* (Object With Most Pixel Coverage) or *minmax min* (closet sample filtering)
+
+@Parameters
+    Mode:
+        Motion qL supports three modes:
+            * 2D (pixel): movements in image space in pixels.
+            * 2D (NDC): movements in image space in normalized device coordinates.
+            * 3D: movements in 3D.
+
+@Release_Notes
+    Version 0.1.1:
+        Renamed from 'Motion' to 'Motion Vectors'.
+
+    Version 0.1.0:
+        Initial release.
+
+@Authors
+    Mate Birkas (gadfly16@gmail.com)

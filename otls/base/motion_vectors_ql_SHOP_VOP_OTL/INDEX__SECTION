@@ -1,0 +1,26 @@
+Operator:     motion_vectors_ql
+Label:        Motion Vectors qL
+Path:         oplib:/Shop/motion_vectors_ql?Shop/motion_vectors_ql
+Icon:         COP2_velblur
+Table:        Shop
+License:      
+Extra:        subtype=vopnet shadertype=vopmaterial rendermask='VMantra OGL'
+Inputs:       0 to 0
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Tue Jun 12 16:43:38 2012
+
+Operator:     motion_vectors_ql
+Label:        Motion Vectors qL
+Path:         oplib:/Vop/motion_vectors_ql?Vop/motion_vectors_ql
+Icon:         COP2_velblur
+Table:        Vop
+License:      
+Extra:        displace fog light photon shadow surface
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jun 12 16:43:30 2012
+
