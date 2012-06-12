@@ -1,0 +1,13 @@
+Operator:     attr_lookup_ql
+Label:        Attr Lookup qL
+Path:         oplib:/Sop/attr_lookup_ql?Sop/attr_lookup_ql
+Icon:         CHOP_lookup
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jun 12 18:23:59 2012
+

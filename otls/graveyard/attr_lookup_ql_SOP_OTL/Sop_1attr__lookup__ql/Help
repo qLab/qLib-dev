@@ -1,0 +1,4 @@
+Value-remapping of a per-point geometry attribute using a lookup curve.
+
+WARNING:
+    This node is obsolete, use the [Node:sop/attr_lookups_ql] SOP instead.
