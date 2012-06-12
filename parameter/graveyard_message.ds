@@ -1,0 +1,31 @@
+{
+    name	selectedparms
+
+    parm {
+	name	"graveyard"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"graveyard2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+
+}
