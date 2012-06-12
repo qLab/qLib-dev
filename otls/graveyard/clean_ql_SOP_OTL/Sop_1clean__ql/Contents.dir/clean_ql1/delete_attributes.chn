@@ -5,8 +5,8 @@
       defaultString = chs(\"../pt_attrs\")
       flags = 0
       start = 52.083332061767578
-      segment { length = 0.125 accel = 0 0.0416667 expr = chs(\"../pt_attrs\") }
-      segment { length = 0 accel = 0.333333 0 expr = chs(\"../pt_attrs\") }
+      segment { length = 0.125 accel = 0 0.041666701436042786 expr = chs(\"../pt_attrs\") }
+      segment { length = 0 accel = 0.33333298563957214 0 expr = chs(\"../pt_attrs\") }
     }
     channel vtxdel {
       lefttype = extend
@@ -14,8 +14,8 @@
       defaultString = chs(\"../vtx_attrs\")
       flags = 0
       start = 52.083332061767578
-      segment { length = 0.125 accel = 0 0.0416667 expr = chs(\"../vtx_attrs\") }
-      segment { length = 0 accel = 0.333333 0 expr = chs(\"../vtx_attrs\") }
+      segment { length = 0.125 accel = 0 0.041666701436042786 expr = chs(\"../vtx_attrs\") }
+      segment { length = 0 accel = 0.33333298563957214 0 expr = chs(\"../vtx_attrs\") }
     }
     channel primdel {
       lefttype = extend
@@ -23,8 +23,8 @@
       defaultString = chs(\"../prim_attrs\")
       flags = 0
       start = 52.083332061767578
-      segment { length = 0.125 accel = 0 0.0416667 expr = chs(\"../prim_attrs\") }
-      segment { length = 0 accel = 0.333333 0 expr = chs(\"../prim_attrs\") }
+      segment { length = 0.125 accel = 0 0.041666701436042786 expr = chs(\"../prim_attrs\") }
+      segment { length = 0 accel = 0.33333298563957214 0 expr = chs(\"../prim_attrs\") }
     }
     channel dtldel {
       lefttype = extend
@@ -32,8 +32,8 @@
       defaultString = chs(\"../detail_attrs\")
       flags = 0
       start = 52.083332061767578
-      segment { length = 0.125 accel = 0 0.0416667 expr = chs(\"../detail_attrs\") }
-      segment { length = 0 accel = 0.333333 0 expr = chs(\"../detail_attrs\") }
+      segment { length = 0.125 accel = 0 0.041666701436042786 expr = chs(\"../detail_attrs\") }
+      segment { length = 0 accel = 0.33333298563957214 0 expr = chs(\"../detail_attrs\") }
     }
     channel updatevar {
       lefttype = extend

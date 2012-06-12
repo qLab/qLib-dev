@@ -1,4 +1,4 @@
-# Dialog script for clean_ql automatically generated 03/13/12 03:15:52
+# Dialog script for clean_ql automatically generated 06/12/12 18:52:08
 
 {
     name	clean_ql
@@ -14,6 +14,32 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
+    parm {
+	name	"labelparm"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder0"
 	label	"Delete Group(s)"
