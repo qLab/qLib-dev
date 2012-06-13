@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-2 	IN 1 1 "input1"
+2 	switch_keep_first_n 0 1 "input1"
 }
 inputs
 {
-0 	IN 0 1
+0 	switch_keep_first_n 0 1
 }
 stat
 {
   create 1337645471
-  modify 1339374872
+  modify 1339620509
   author tusi@demeisen
   access 0777
 }

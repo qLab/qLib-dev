@@ -11,23 +11,39 @@
 
 @Parameters
     Preprocessing:
-        Parameters in this tab allows visualizing other attribute types than per-point,
-        by modifying the geometry itself and/or convert attribute(s) to per-point type.
 
-        Unique Points:
-            This splits all shared geometry points, so there will be the same number of
-            points as vertices -- allowing per-vertex attributes to be visualized as
-            per-point.
+        Decimation & Safeguards:
 
-        Primitive Scale:
-            Applied to all primitives after the Unique Points operation. Especially with
-            previously shared points, this can make individual points visually more
-            distinct.
+            Ways of reducing the amount of geometry to visualize.
 
-        Promote Attribute(s) to Per-Point:
-            After the preprocessing above, all other attribute types (ie. per-vertex,
-            per-primitive, etc.) can safely be converted to per-point type for
-            visualization. A list of multiple attribute names is supported.
+            Keep Every Nth:
+                Keep only a single item for each N points or primitives.
+    
+            Prim. # Limit:
+                Keep only the specified amount of primitives before doing any visualization.
+                This is a safeguard measure to avoid accidents like hanging on a very
+                large geometry.
+
+                *This function is intentionally enabled by default.*
+
+        Attribute Promotion:
+            Parameters in this tab allows visualizing other attribute types than per-point,
+            by modifying the geometry itself and/or convert attribute(s) to per-point type.
+
+            Unique Points:
+                This splits all shared geometry points, so there will be the same number of
+                points as vertices -- allowing per-vertex attributes to be visualized as
+                per-point.
+    
+            Primitive Scale:
+                Applied to all primitives after the Unique Points operation. Especially with
+                previously shared points, this can make individual points visually more
+                distinct.
+    
+            Promote Attribute(s) to Per-Point:
+                After the preprocessing above, all other attribute types (ie. per-vertex,
+                per-primitive, etc.) can safely be converted to per-point type for
+                visualization. A list of multiple attribute names is supported.
 
     Floats:
         Visualization of floating-point values by mapping the values to a color ramp
@@ -88,8 +104,9 @@
 @Release_Notes Release Notes
 
     0.0.4:
-        - Minor bug fixes
+        - Added geometry reduction/limit safeguard
         - More consolidation on both UI and internal workings
+        - Minor bug fixes
 
     0.0.3:
         - A rough help page
