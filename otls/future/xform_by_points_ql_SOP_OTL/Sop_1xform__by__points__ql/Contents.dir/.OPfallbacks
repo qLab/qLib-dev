@@ -1,12 +1,6 @@
 Vop/m3tom4 /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
 Vop/m3tom4 otls/OPlibVop.otl
-Vop/importattrib /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/lookat /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/lookat otls/OPlibVop.otl
-Vop/invert /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/invert otls/OPlibVop.otl
-Vop/normalize /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/normalize otls/OPlibVop.otl
 Vop/translate /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
 Vop/translate otls/OPlibVop.otl
+Vop/lookat /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl

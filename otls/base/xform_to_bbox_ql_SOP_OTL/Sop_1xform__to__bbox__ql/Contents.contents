@@ -1,4 +1,3 @@
-.OPfallbacks
 .OPdummydefs
 node_type
 xform_to_bbox_ql1.init
@@ -56,6 +55,19 @@ xform_to_bbox_ql1/vopsop3/add1.init
 xform_to_bbox_ql1/vopsop3/add1.def
 xform_to_bbox_ql1/vopsop3/add1.parm
 xform_to_bbox_ql1/vopsop3/add1.userdata
+xform_to_bbox_ql1/vopsop3/clamp1.init
+xform_to_bbox_ql1/vopsop3/clamp1.def
+xform_to_bbox_ql1/vopsop3/clamp1.parm
+xform_to_bbox_ql1/vopsop3/clamp1.userdata
+xform_to_bbox_ql1/vopsop3/switch1.init
+xform_to_bbox_ql1/vopsop3/switch1.def
+xform_to_bbox_ql1/vopsop3/switch1.parm
+xform_to_bbox_ql1/vopsop3/switch1.userdata
+xform_to_bbox_ql1/vopsop3/mode.init
+xform_to_bbox_ql1/vopsop3/mode.def
+xform_to_bbox_ql1/vopsop3/mode.spareparmdef
+xform_to_bbox_ql1/vopsop3/mode.parm
+xform_to_bbox_ql1/vopsop3/mode.userdata
 xform_to_bbox_ql1/vopsop3.order
 xform_to_bbox_ql1/vopsop3.net
 xform_to_bbox_ql1/attr_bb_min.init

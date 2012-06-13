@@ -1,29 +1,29 @@
 sopflags sopflags = 
 comment ""
-position 5.22821 -4.53003
+position 5.47833 -11.1279
 cachesize 1
 connectornextid 4
-flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
 3 "output1"
 }
 inputsNamed3
 {
-0 	explodedview3 1 1 "input1"
-1 	primgroup_centroids_ql2 1 1 "input2"
-2 	xform1 1 1 "input3"
+0 	clean1 1 1 "input1"
+1 	timeshift3 1 1 "input2"
+2 	orient_ql1 0 1 "input3"
 }
 inputs
 {
-0 	explodedview3 0 1
-1 	primgroup_centroids_ql2 0 1
-2 	xform1 0 1
+0 	clean1 0 1
+1 	timeshift3 0 1
+2 	orient_ql1 0 1
 }
 stat
 {
-  create 1338909694
-  modify 1338910402
+  create 1339425290
+  modify 1339589421
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
