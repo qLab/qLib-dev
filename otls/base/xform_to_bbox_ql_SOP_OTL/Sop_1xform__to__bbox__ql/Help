@@ -4,7 +4,7 @@
 
 = Xform to BBox qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Fits the input geometry into the bounding box of a secondary geometry."""
 
@@ -15,11 +15,28 @@
 
 
 @parameters
+    Mode:
+        How to fit the input geometry within the bounds of the secondary geometry.
+
+        Fit into Box:
+            Apply a non-proportional scaling to the input geometry to fit within bounds.
+
+        Clamp to Box Bounds:
+            Clamp the coordinates of each point to be fall within bounds range.
+
+            NOTE:
+                This mode can be useful for geometry with pieces that 'fell' too far
+                (e.g. when trying to add smoke effects to an RBD simulation, where
+                a few RBD pieces fell through the floor or were shot towards 'infinity').
+
     Padding:
         Extra padding distance along the three world axes.
 
 
 
 @Release_Notes Release Notes
+    Version 0.0.2:
+        Added 'clamp' fitting mode (and `Mode` parameter).
+
     Version 0.0.1:
         Initial release.

@@ -11,6 +11,6 @@ precision	[ 0	locks=0 ]	(	"32"	)
 size	[ 0	locks=0 ]	(	3	)
 default	[ 0	locks=0 ]	(	0	0	0	0	)
 writevalues	[ 0	locks=0 ]	(	"on"	)
-value	[ 0	locks=0 ]	(	[ value1	0 ] 	[ value2	0 ] 	[ value3	0 ] 	0	)
+value	[ 0	locks=0 ]	(	[ value1	24 ] 	[ value2	12 ] 	[ value3	16 ] 	0	)
 string	[ 0	locks=0 ]	(	""	)
 }

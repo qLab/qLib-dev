@@ -1,4 +1,4 @@
-# Dialog script for xform_to_bbox_ql automatically generated 06/05/12 19:09:47
+# Dialog script for xform_to_bbox_ql automatically generated 06/13/12 14:06:56
 
 {
     name	xform_to_bbox_ql
@@ -18,6 +18,21 @@
 	name	"folder0"
 	label	"Padding"
 
+	parm {
+	    name	"mode"
+	    label	"mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Fit into Box"
+		"1"	"Clamp to Box Bounds"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
 	parm {
 	    name	"padding_lo"
 	    label	"Low"
