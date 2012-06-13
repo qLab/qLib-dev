@@ -1,4 +1,4 @@
-# Dialog script for xform_by_points_ql automatically generated 06/13/12 14:10:17
+# Dialog script for xform_by_points_ql automatically generated 06/13/12 22:36:59
 
 {
     name	xform_by_points_ql
@@ -35,6 +35,7 @@
 	    label	"Index Attribute"
 	    type	string
 	    default	{ "__origpt" }
+	    help	"An attribute that determines which geometry component belongs to which xform-point."
 	    menureplace	{
 		[ "r = ['piece', 'piece (h12)', '__origpt', '__origpt (h11)']" ]
 		[ "" ]
@@ -61,16 +62,7 @@
 	    label	"Convert to Per-Point Type"
 	    type	toggle
 	    default	{ "1" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"del_index_on_completion"
-	    label	"Delete Index Attribute on Completion"
-	    type	toggle
-	    default	{ "1" }
-	    disablewhen	"{ convert_to_point == 0 }"
+	    help	"Since the index attribute is required to be per-point,\\nit can be converted here."
 	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -113,103 +105,166 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-    }
-
-    group {
-	name	"rest_attrs"
-	label	"Rest Point Attributes"
-
 	parm {
-	    name	"rest_p_attr"
-	    label	"Rest Position"
-	    type	string
-	    default	{ "P" }
-	    menureplace	{
-		"rest"	"rest"
-		"P"	"position (P)"
-	    }
-	    range	{ 0 1 }
+	    name	"del_index_on_completion"
+	    label	"Delete This Attribute on Completion"
+	    type	toggle
+	    default	{ "1" }
+	    help	"Delete the converted index attribute after the operation.\\n(For large amonts of geometry it might be faster not to delete it.)"
+	    disablewhen	"{ convert_to_point == 0 }"
+	    range	{ 0! 10 }
 	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"rest_aim_attr"
-	    label	"Rest Aim Vector"
-	    type	string
-	    default	{ "N" }
-	    menureplace	{
-		"N"	"normal (N)"
-		"v"	"velocity (v)"
-		""	"default (Z-)"
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"rest_up_attr"
-	    label	"Rest Up Vector"
-	    type	string
-	    default	{ "up" }
-	    menureplace	{
-		"up"	"up vector (up)"
-		""	"default (Y+)"
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
     }
 
     group {
-	name	"rest_attrs_1"
-	label	"Transform Point Attributes"
+	name	"folder0"
+	label	"Transformation"
 
 	parm {
-	    name	"p_attr"
-	    label	"Position"
-	    type	string
-	    default	{ "P" }
-	    menureplace	{
-		"P"	"position (P)"
+	    name	"orient_mode"
+	    label	"Orient Mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Vector Pairs (aim/up)"
+		"1"	"Quaternion (orient)"
 	    }
-	    range	{ 0 1 }
+	    range	{ 0 10 }
 	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	parm {
-	    name	"aim_attr"
-	    label	"Aim Vector"
-	    type	string
-	    default	{ "N" }
-	    menureplace	{
-		"N"	"normal (N)"
-		"v"	"velocity (v)"
-		""	"default (Z-)"
+	group {
+	    name	"rest_attrs"
+	    label	"Rest Point Attributes"
+
+	    parm {
+		name	"rest_p_attr"
+		label	"Rest Position"
+		type	string
+		default	{ "P" }
+		menureplace	{
+		    "rest"	"rest"
+		    "P"	"position (P)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"up_attr"
-	    label	"Up Vector"
-	    type	string
-	    default	{ "up" }
-	    menureplace	{
-		"up"	"up vector (up)"
-		""	"default (Y+)"
+	    parm {
+		name	"rest_aim_attr"
+		label	"Rest Aim Vector"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ orient_mode != 0 }"
+		menureplace	{
+		    "N"	"normal (N)"
+		    "v"	"velocity (v)"
+		    ""	"default (Z-)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+	    parm {
+		name	"rest_up_attr"
+		label	"Rest Up Vector"
+		type	string
+		default	{ "up" }
+		disablewhen	"{ orient_mode != 0 }"
+		menureplace	{
+		    "up"	"up vector (up)"
+		    ""	"default (Y+)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"rest_orient_attr"
+		label	"Rest Orient"
+		type	string
+		default	{ "orient" }
+		disablewhen	"{ orient_mode != 1 }"
+		menureplace	{
+		    "orient"	"orient"
+		    "rorient"	"rorient"
+		    "orient_r"	"orient_r"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	}
+
+	group {
+	    name	"rest_attrs_1"
+	    label	"Transform Point Attributes"
+
+	    parm {
+		name	"p_attr"
+		label	"Position"
+		type	string
+		default	{ "P" }
+		menureplace	{
+		    "P"	"position (P)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"aim_attr"
+		label	"Aim Vector"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ orient_mode != 0 }"
+		menureplace	{
+		    "N"	"normal (N)"
+		    "v"	"velocity (v)"
+		    ""	"default (Z-)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"up_attr"
+		label	"Up Vector"
+		type	string
+		default	{ "up" }
+		disablewhen	"{ orient_mode != 0 }"
+		menureplace	{
+		    "up"	"up vector (up)"
+		    ""	"default (Y+)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"orient_attr"
+		label	"Orient"
+		type	string
+		default	{ "orient" }
+		disablewhen	"{ orient_mode != 1 }"
+		menureplace	{
+		    "orient"	"orient"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
     }
 
 }

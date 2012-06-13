@@ -4,21 +4,14 @@
 
 = Xform by Points qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Transforms geometry groups, using point cloud points for individual placement (PrimGroup family SOP)."""
-
-@related
-    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
-    - [PrimGroup Add IDs qL|Node:sop/primgroup_add_ids_ql]
-    - [Node:sop/voronoifracture]
-    - [Node:sop/assemble]
-    - [Node:sop/explodedview]
 
 This SOP takes a geometry consisting of multiple geometry groups (pieces), and transforms each piece
 using point cloud(s), wherein each point represents a centroid for a corresponding piece.
 
-The input geometry should have an (usually per-primitive, called `__origpt`) attribute that specifies
+The input geometry should have an (usually per-primitive, called `__origpt` -- or `piece` in H12) attribute that specifies
 an index number for each geometry element. This index is used to refer to a point with the same index
 in the point cloud -- that point will be used for the transformation of the element.
 
@@ -56,36 +49,78 @@ positions for its points.
             Settings on how to promote the attribute.
             
 
-    Rest Point Attributes:
+    Transformation:
 
-        Rest Position:
-            Attribute that specifies the rest position (pivot) of each point cloud point
-            (hence each geometry piece).
+        Orient Mode:
+                How to apply rotation on the pieces.
 
-            Specify `rest` here when using a single point cloud.
+                Vector Pairs:
+                    Rotation is determined by two vectors for each point (an aim/up vector pair,
+                    e.g. `N` or `v` for aim and `up` for up vector).
 
-        Rest Aim Vector, Rest Up Vector:
-            Attributes that specify rest orientation for each point.
-            Empty string means the appropriate default world axis direction.
+                Quaternion ('orient'):
+                    Rotation is determined by a per-point quaternion type (`vector4`) attribute.
+                    The default attribute name for this is `orient` (it is supported throughout
+                    Houdini, from the Copy SOP to POP and DOP networks).
 
-    Transform Point Attributes:
+                    NOTE:
+                        For instance, if you set your DOPImport SOP to 'Create Points to Represent Objects'
+                        input style and use the Quaternion mode on this SOP, you'll get the exact
+                        same result as if the DOPImport node drove the geometry
+                        (but it will be faster, due to multithreading).
 
-        Position:
-            Attribute that specifies the current position of each point cloud point
-            (hence each geometry piece). Translation is calculated by the difference of
-            this position and the rest position.
+        Rest Point Attributes:
+    
+            Rest Position:
+                Attribute that specifies the rest position (pivot) of each point cloud point
+                (hence each geometry piece).
+    
+                Specify `rest` here when using a single point cloud.
+    
+            Rest Aim Vector, Rest Up Vector:
+                Attributes that specify rest orientation for each point.
+                Empty string means the appropriate default world axis direction.
 
-        Aim Vector, Up Vector:
-            Attributes that specify the current orientation of each point.
-            Empty string means the appropriate default world axis direction.
+            Rest Orient:
+                Name of the orientation quaternion attribute to use for determining
+                the rotation component of the rest position.
 
-            Rotation is calculated from the difference of the rest and the transform
-            aim and up vectors.
+        Transform Point Attributes:
+    
+            Position:
+                Attribute that specifies the current position of each point cloud point
+                (hence each geometry piece). Translation is calculated by the difference of
+                this position and the rest position.
+    
+            Aim Vector, Up Vector:
+                Attributes that specify the current orientation of each point.
+                Empty string means the appropriate default world axis direction.
+    
+                Rotation is calculated from the difference of the rest and the transform
+                aim and up vectors.
 
-    NOTE:
-            Scaling of individual pieces is not supported.
+            Orient:
+                Name of the orientation quaternion attribute to use for rotation.
+    
+        NOTE:
+                Scaling of individual pieces is not supported.
+    
+
+    
+@related
+    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
+    - [PrimGroup Add IDs qL|Node:sop/primgroup_add_ids_ql]
+    - [Orient qL|Node:sop/orient_ql]
+    - [Node:sop/voronoifracture]
+    - [Node:sop/assemble]
+    - [Node:sop/explodedview]
 
 
-@Release_Notes
+@Release_Notes Release Notes
+
+    Version 0.0.2:
+        - Added per-point quaternion rotation support (orient attribute).
+        - Various small internal cosmetics.
+
     Version 0.0.1:
         Initial release.

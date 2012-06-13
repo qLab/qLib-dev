@@ -1,4 +1,4 @@
-40
+49
 global1
 output1
 P1
@@ -39,3 +39,12 @@ switch1
 switch2
 switch3
 switch4
+attrib_orient
+import_orient
+quattomatx1
+switch_orient
+orient_mode
+attrib_rest_orient
+import_orient1
+quattomatx2
+switch5
