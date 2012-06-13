@@ -6,6 +6,10 @@
 
 """High-level asset for creating growing flowers (stem, with leaves and head)."""
 
+WARNING:
+    This asset is obsolete and it will be removed from the next release! qLib doesn't include any high
+    level assets like this anymore.
+
 (Alpha version)
 
 This node takes a flower head geometry (optional) and a stem curve to build a flower. The node result is
