@@ -8,6 +8,9 @@
 
 """Creates separate primitive for each poly curve segment."""
 
+WARNING:
+    This asset is obsolete. Use [Node:sop/polywirecurves_ql] instead.
+
 @Limitations
     Works correctly with single polygonal curves only.
 
