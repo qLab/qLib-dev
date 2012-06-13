@@ -1,4 +1,4 @@
-# Dialog script for pointneighbourcount_ql automatically generated 03/05/12 00:26:39
+# Dialog script for pointneighbourcount_ql automatically generated 06/13/12 21:34:18
 
 {
     name	pointneighbourcount_ql
@@ -15,10 +15,36 @@
     inputlabel	4	"Sub-Network Input #4"
 
     parm {
+	name	"labelparm"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"radius"
 	label	"Search radius"
 	type	float
-	default	{ "0.00999999978" }
+	default	{ "0.01" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
