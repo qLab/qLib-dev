@@ -39,7 +39,7 @@ def extract_cmd():
                 dir = f[:-4] + args.extension
                 print 'Extracting:', f
                 try:
-                    if args.clean:
+                    if not args.keep and os.path.exists(dir):
                         shutil.rmtree(dir)
                     output = subprocess.check_output(['hotl', '-X', dir, f],
                             stderr=subprocess.STDOUT)
@@ -189,8 +189,8 @@ def parse_args():
     pack_parser = subparsers.add_parser('pack', parents=[common_args],
             help='Creates tarballs for ditribution and backup purposes.')
 
-    extract_parser.add_argument("-c", "--clean", action="store_true",
-            help="Deletes the source folder before extraction.")
+    extract_parser.add_argument("-k", "--keep", action="store_true",
+            help="Keeps the source folder and extracts otl over it.")
 
     clean_parser.add_argument('-s', '--source', action='store_true',
             help='Deletes sources instead of built OTLs')
