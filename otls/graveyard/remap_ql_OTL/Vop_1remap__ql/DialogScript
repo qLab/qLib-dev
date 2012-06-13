@@ -1,4 +1,4 @@
-# Dialog script for remap_ql automatically generated 10/01/11 23:10:10
+# Dialog script for remap_ql automatically generated 06/13/12 21:44:23
 
 {
     name	remap_ql
@@ -28,6 +28,32 @@
 	""
     }
 
+    parm {
+	name	"labelparm"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
     parm {
 	name	"val"
 	label	"Input Value"
