@@ -2,7 +2,9 @@
     channel input {
       lefttype = extend
       righttype = extend
+      default = 1
       flags = 0
-      segment { length = 0 expr = ch(\"../do_promote/input\") }
+      start = 29.5
+      segment { length = 0 value = 1 1 expr = "ch(\"../do_promote/input\") && ch(\"../del_index_on_completion\")" }
     }
   }

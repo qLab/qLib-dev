@@ -1,4 +1,4 @@
-10
+13
 global1
 output1
 fit1
@@ -9,3 +9,6 @@ padding_lo
 padding_hi
 subtract1
 add1
+clamp1
+switch1
+mode

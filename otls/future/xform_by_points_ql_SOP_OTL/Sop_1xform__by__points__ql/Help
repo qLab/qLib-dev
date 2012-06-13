@@ -42,10 +42,15 @@ positions for its points.
             Name of the (usually per-primitive) attribute that specifies which group the primitive
             belongs to.
             The default name is `__origpt` (to be in accord with the [Node:sop/voronoifracture] SOP).
+            In Houdini 12 the attribute is called `piece` (and has to be explicitly enabled in the [Node:sop/voronoifracture] SOP).
 
         Convert to Per-Point Type:
             The index attribute needs to be of per-point type. If it is not, it has to be promoted
             temporarily.
+
+        Delete Index Attribute on Completion:
+            Delete the converted index attribute after the transformations are done.
+            (For large amounts of geometry it can be faster _not_ to delete this attribute.)
 
         Original Class, Promotion Method:
             Settings on how to promote the attribute.
