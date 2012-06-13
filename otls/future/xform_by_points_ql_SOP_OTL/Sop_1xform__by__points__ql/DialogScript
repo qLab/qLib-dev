@@ -1,4 +1,4 @@
-# Dialog script for xform_by_points_ql automatically generated 06/05/12 17:33:14
+# Dialog script for xform_by_points_ql automatically generated 06/13/12 14:10:17
 
 {
     name	xform_by_points_ql
@@ -20,18 +20,6 @@
 	default	{ "" }
 	menutoggle	{
 	    [ "opmenu -l apply_transforms vex_group" ]
-	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1" }
-	menu	{
-	    [ "opmenu -l apply_transforms vex_numthreads" ]
 	}
 	range	{ 0 1 }
 	export	none
@@ -61,8 +49,6 @@
 		[ "    pass" ]
 		[ "" ]
 		[ "return r" ]
-		[ "" ]
-		[ "" ]
 		language	python
 	    }
 	    range	{ 0 1 }
@@ -75,6 +61,16 @@
 	    label	"Convert to Per-Point Type"
 	    type	toggle
 	    default	{ "1" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"del_index_on_completion"
+	    label	"Delete Index Attribute on Completion"
+	    type	toggle
+	    default	{ "1" }
+	    disablewhen	"{ convert_to_point == 0 }"
 	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
