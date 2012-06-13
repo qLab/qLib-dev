@@ -6,6 +6,9 @@
 
 *Version 0.1.1*
 
+WARNING:
+    This asset is obsolete and will be removed from the next release. Use [Curve Offset qL|Node:sop/qLib::curve_offset_ql::1.0] instead.
+
 """Offsets a curve."""
 
 @Parameters
