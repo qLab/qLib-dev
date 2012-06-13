@@ -4,6 +4,11 @@
 
 = Merge Pieces qL =
 
+WARNING:
+    This asset is obsolete and will be removed from the next release. Use use group patterns like 'piece*' in
+    [Node:dop/rbdfracturedobject]'s Group Mask parameter to import more than one fractured object into one
+    simulation. 
+
 *Version 0.1.0*
 
 """Merges two geometry branches while keeping piece groups by renumbering them."""
