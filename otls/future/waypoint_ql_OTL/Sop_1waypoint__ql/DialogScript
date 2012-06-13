@@ -1,4 +1,4 @@
-# Dialog script for waypoint_ql automatically generated 03/13/12 01:09:20
+# Dialog script for waypoint_ql automatically generated 06/14/12 01:46:58
 
 {
     name	waypoint_ql
@@ -13,11 +13,21 @@
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
+    inputlabel	5	"Sub-Network Input #5"
 
     group {
 	name	"folder1"
-	label	".: SOP Waypoint :."
+	label	"..: SOP Waypoint :.."
 
+	parm {
+	    name	"passthru"
+	    label	"Pass Through (Disabled)"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
 	parm {
 	    name	"input"
 	    label	"Input Select"
@@ -34,18 +44,26 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"passthru"
-	    label	"Pass Through (Disabled)"
+	    name	"pts_only"
+	    label	"Points Only for Consecutive Frames"
 	    type	toggle
-	    default	{ "1" }
-	    range	{ 0! 10 }
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"delattribs"
+	    label	"Remove Attribs"
+	    type	string
+	    default	{ "* ^v" }
+	    disablewhen	"{ pts_only == 0 }"
+	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	group {
 	    name	"folder2"
-	    label	"Writer"
-	    tabbreak
+	    label	":: Writer ::"
 
 	    import {
 		label	Writer
@@ -124,10 +142,8 @@
 		    label	"Output File"
 		    type	file
 		    default	{ "$HIP/${OS}_i`ch(\"input\")`.bgeo.gz" }
-		    help	"Path/name of the stored geometry file (press MMB to toggle expanded string)."
 		    menureplace	{
 			[ "opmenu -l geom_writer sopoutput" ]
-			[ "echo '$HIP/${OS}_i`ch(\\\"input\\\")`.bgeo.gz' \"Filename_with_input_index\"" ]
 		    }
 		    range	{ 0 1 }
 		    export	none
@@ -183,14 +199,44 @@
 		    parmtag	{ "import_source" "op:geom_writer" }
 		    parmtag	{ "autoscope" "0000000000000000" }
 		}
+		parm {
+		    name	"savebackground"
+		    label	"Save in Background"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "savebackground" }
+		    parmtag	{ "import_source" "op:geom_writer" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
 
+	    parm {
+		name	"label_ptsonly_3"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "POINTS ONLY: A frame range should also be set for this mode." }
+		hidewhen	"{ pts_only == 0 } { trange != off }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"label_ptsonly_1"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "POINTS ONLY: the full geometry will be written for frame `ch(\"f1\")`." }
+		hidewhen	"{ pts_only == 0 } { trange == off }"
+		range	{ 0 1 }
+		export	none
+	    }
 	}
 
 	group {
 	    name	"folder2_1"
-	    label	"Reader"
-	    tabbreak
+	    label	":: Reader ::"
 
 	    import {
 		label	Reader
@@ -248,27 +294,77 @@
 		}
 	    }
 
+	    group {
+		name	"folder5"
+		label	"Frame Range"
+
+		parm {
+		    name	"clamp_frame_range"
+		    label	"Clamp Frame Range"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ trange == off }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"rf"
+		    label	"Clamp Range to"
+		    type	float
+		    size	2
+		    default	{ "ch(\"f1\")" "ch(\"f2\")" }
+		    disablewhen	"{ trange == off } { clamp_frame_range == 0 }"
+		    range	{ 0 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"frame"
+		    label	"Frame #"
+		    type	float
+		    default	{ "clamp(ch(\"rf1\"), ch(\"rf2\"), $FF)" }
+		    disablewhen	"{ trange == off } { clamp_frame_range == 0 }"
+		    range	{ 0 10 }
+		    export	none
+		}
+	    }
+
+	    parm {
+		name	"label_ptsonly_4"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "POINTS ONLY: full-geometry file expected @ frame `ch(\"f1\")`." }
+		hidewhen	"{ pts_only == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
 	}
 
 	group {
-	    name	"folder4"
+	    name	"folder2_2"
 	    label	"NOTE"
+	    invisibletab
 
 	    parm {
 		name	"labelparm"
 		label	"Label"
 		type	label
+		invisible
 		nolabel
-		default	{ "NOTE: Press 'Reload Geometry' in the Reader tab" }
+		default	{ "Press 'Reload' in Reader tab after (re-)Rendering geometry." }
 		range	{ 0 1 }
 		export	none
 	    }
 	    parm {
-		name	"labelparm2"
+		name	"label_ptsonly_2"
 		label	"Label"
 		type	label
 		nolabel
-		default	{ "after geometry writing ('Render')." }
+		default	{ "POINTS ONLY: full geometry stored for frame #`ch(\"f1\")` only." }
+		hidewhen	"{ pts_only == 0 }"
 		range	{ 0 1 }
 		export	none
 	    }

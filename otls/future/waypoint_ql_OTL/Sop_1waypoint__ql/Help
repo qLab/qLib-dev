@@ -66,14 +66,24 @@ WARNING:
 
 
 @parameters
-    Input Select:
-        Up to four (0-3) inputs can be connected; the geometry from the specified input will be written
-        to disk.
 
     Pass Through:
         If turned on, the Waypoint does nothing (behaves like a plain [Node:sop/switch] node).
         This is 'On' by default and needed to be turned off explicitly once the user performed a
         write-to-disk operation.
+
+    Input Select:
+        Up to four (0-3) inputs can be connected; the geometry from the specified input will be written
+        to disk.
+
+    Points Only:
+        When writing sequences, only the first frame will contain the complete geometry.
+        The other frames will store point data only. This is greatly reduce I/O and
+        geometry performance (usually about 2x).
+
+    Remove Attribs:
+        Which attributes to remove from the 'points-only' files. (Groups are always removed.)
+        The default is to remove all but `v` (velocity).
 
     Writer (tab):
         Geometry writing settings (see also [Geometry ROP|Node:out/geometry]).
@@ -98,7 +108,12 @@ WARNING:
 
 
 
-@Release_Notes
+@Release_Notes Release Notes
+
+    Version 0.0.2:
+        - Option for clamping the time range to the range set up in the Writer tab
+        - Option for writing point data only for all but the first frame
+
     Version 0.0.1:
         First release.
 
