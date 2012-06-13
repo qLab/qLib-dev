@@ -1,7 +1,7 @@
 comment ""
 position 11.6057 0.687012
 cachesize 1
-connectornextid 11
+connectornextid 15
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
@@ -16,6 +16,10 @@ outputsNamed3
 8 "ptnum"
 9 "Cd"
 10 "N"
+11 "Npt"
+12 "Time"
+13 "Frame"
+14 "TimeInc"
 }
 inputsNamed3
 {

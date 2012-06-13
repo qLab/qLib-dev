@@ -11,4 +11,7 @@ rest_up_attr	[ 0	locks=0 ]	(	[ rest_up_attr	up ] 	)
 p_attr	[ 0	locks=0 ]	(	[ p_attr	P ] 	)
 aim_attr	[ 0	locks=0 ]	(	[ aim_attr	N ] 	)
 up_attr	[ 0	locks=0 ]	(	[ up_attr	up ] 	)
+orient_attr	[ 0	locks=0 ]	(	orient	)
+rest_orient_attr	[ 0	locks=0 ]	(	orient	)
+orient_mode	[ 0	locks=0 ]	(	[ orient_mode	0 ] 	)
 }

@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 06/11/12 03:32:26
+# Dialog script for attr_visualize_ql automatically generated 06/13/12 23:33:34
 
 {
     name	attr_visualize_ql
@@ -18,95 +18,167 @@
 	name	"folder1"
 	label	"Preprocessing"
 
-	parm {
-	    name	"unique"
-	    label	"Unique Points"
-	    type	toggle
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"prim_scale"
-	    label	"Primitive Scale"
-	    type	float
-	    default	{ "0.85" }
-	    disablewhen	"{ unique == 0 }"
-	    range	{ 0.0001! 1 }
-	    export	none
-	}
-	parm {
-	    name	"promote"
-	    label	"Promote Attribute(s) to Per-Point"
-	    type	toggle
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	import {
-	    label	"promote params"
-	    source	"op:attrib_promote"
-	    token	""
-	    mask	"inname inclass method"
-	    enable	1
+	group {
+	    name	"folder3"
+	    label	"Decimation & Safeguards"
+	    tabbreak
 
 	    parm {
-		name	"inname"
-		label	"Original Name"
-		type	string
-		default	{ "" }
-		disablewhen	"{ promote == 0 }"
-		menutoggle	{
-		    [ "opmenu -l attrib_promote inname" ]
-		}
-		range	{ 0 1 }
+		name	"keep_every_n_comps"
+		label	"Keep Every n.# Prims"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
 		export	none
-		parmtag	{ "import_token" "inname" }
-		parmtag	{ "import_source" "op:attrib_promote" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"inclass"
-		label	"Original Class"
+		name	"keep_every_n"
+		label	"Keep Every Nth"
+		type	integer
+		joinnext
+		default	{ "10" }
+		help	"Keep only a single point/primitive of each N."
+		disablewhen	"{ keep_every_n_comps == 0 }"
+		range	{ 2 100 }
+		export	none
+	    }
+	    parm {
+		name	"keep_every_n_entity"
+		label	"Entity"
 		type	ordinal
+		nolabel
 		default	{ "primitive" }
-		disablewhen	"{ promote == 0 }"
+		disablewhen	"{ keep_every_n_comps == 0 }"
 		menu	{
-		    "detail"	"Detail"
-		    "primitive"	"Primitive"
-		    "point"	"Point"
-		    "vertex"	"Vertex"
+		    "primitive"	"Primitives"
+		    "point"	"Points"
 		}
 		range	{ 0 1 }
 		export	none
-		parmtag	{ "import_token" "inclass" }
-		parmtag	{ "import_source" "op:attrib_promote" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"method"
-		label	"Promotion Method"
-		type	ordinal
-		default	{ "first" }
-		disablewhen	"{ promote == 0 }"
-		menu	{
-		    "max"	"Maximum"
-		    "min"	"Minimum"
-		    "mean"	"Average"
-		    "mode"	"Mode"
-		    "median"	"Median"
-		    "sum"	"Sum"
-		    "sumsquare"	"Sum of Squares"
-		    "rms"	"Root Mean Square"
-		    "first"	"First Match"
-		    "last"	"Last Match"
-		}
-		range	{ 0 1 }
+		name	"prim_num_limit"
+		label	"Keep First # Prims"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		help	"Keep only the first no.# of primitives."
+		range	{ 0! 10 }
 		export	none
-		parmtag	{ "import_token" "method" }
-		parmtag	{ "import_source" "op:attrib_promote" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
+	    parm {
+		name	"prim_num_limit_n"
+		label	"Prim.# Limit"
+		type	integer
+		default	{ "25000" }
+		help	"Keep only the first no.# of primitives.\\nThis is a SAFETY option not to have Houdini hang\\nwhen trying to visualize lots of components."
+		disablewhen	"{ prim_num_limit == 0 }"
+		range	{ 0 50000 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder4"
+	    label	"Attribute Promotion"
+
+	    parm {
+		name	"unique"
+		label	"Unique Points"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"prim_scale"
+		label	"Primitive Scale"
+		type	float
+		default	{ "0.85" }
+		disablewhen	"{ unique == 0 }"
+		range	{ 0.0001! 1 }
+		export	none
+	    }
+	    parm {
+		name	"promote"
+		label	"Promote Attribute(s) to Per-Point"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    import {
+		label	"promote params"
+		source	"op:attrib_promote"
+		token	""
+		mask	"inname inclass method"
+		enable	1
+
+		parm {
+		    name	"inname"
+		    label	"Original Name"
+		    type	string
+		    default	{ "" }
+		    disablewhen	"{ promote == 0 }"
+		    menutoggle	{
+			[ "opmenu -l attrib_promote inname" ]
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "inname" }
+		    parmtag	{ "import_source" "op:attrib_promote" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"inclass"
+		    label	"Original Class"
+		    type	ordinal
+		    default	{ "primitive" }
+		    disablewhen	"{ promote == 0 }"
+		    menu	{
+			"detail"	"Detail"
+			"primitive"	"Primitive"
+			"point"	"Point"
+			"vertex"	"Vertex"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "inclass" }
+		    parmtag	{ "import_source" "op:attrib_promote" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"method"
+		    label	"Promotion Method"
+		    type	ordinal
+		    default	{ "first" }
+		    disablewhen	"{ promote == 0 }"
+		    menu	{
+			"max"	"Maximum"
+			"min"	"Minimum"
+			"mean"	"Average"
+			"mode"	"Mode"
+			"median"	"Median"
+			"sum"	"Sum"
+			"sumsquare"	"Sum of Squares"
+			"rms"	"Root Mean Square"
+			"first"	"First Match"
+			"last"	"Last Match"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "method" }
+		    parmtag	{ "import_source" "op:attrib_promote" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
 	}
 
     }

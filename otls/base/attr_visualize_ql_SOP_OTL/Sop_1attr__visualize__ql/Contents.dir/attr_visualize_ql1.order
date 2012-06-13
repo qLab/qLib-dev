@@ -1,4 +1,4 @@
-34
+38
 attr_vis_vopsop
 add_particles_to_points
 OUT
@@ -33,3 +33,7 @@ pscale_scale
 NOPE_original_geom
 switch_vis_only
 foreach_vector
+keep_first_n_primitives
+switch_keep_first_n
+keep_every_n_prims
+switch_keep_every_n

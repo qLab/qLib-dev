@@ -1,0 +1,9 @@
+{
+    channel rangeend {
+      lefttype = extend
+      righttype = extend
+      default = 6
+      flags = 0
+      segment { length = 0 value = 6 6 expr = ch(\"../prim_num_limit_n\") }
+    }
+  }
