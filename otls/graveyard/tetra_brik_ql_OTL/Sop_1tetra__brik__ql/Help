@@ -6,6 +6,10 @@
 
 *Version 0.2.0*
 
+WARNING:
+    This asset is obsolete and will be removed from the next release. qLib won't include such high level assets as this one
+    in the future. Tetrabrick is gone: this marks the end of an era..
+
 """Procedural tetra brik model."""
 
 @Parameters
