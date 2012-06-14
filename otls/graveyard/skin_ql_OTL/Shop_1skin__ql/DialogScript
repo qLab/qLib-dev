@@ -1,4 +1,4 @@
-# Dialog script for skin_ql automatically generated 02/24/11 13:40:55
+# Dialog script for skin_ql automatically generated 06/14/12 03:00:41
 
 {
     name	skin_ql
@@ -11,6 +11,32 @@
 	""
     }
 
+    parm {
+	name	"labelparm"
+	label	"Graveyard"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's graveyard section." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Please read the asset's Help page for further details." }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ }
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder1"
 	label	"Diffuse"
@@ -22,6 +48,7 @@
 	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -31,6 +58,7 @@
 	    default	{ "0.1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -42,6 +70,7 @@
 	    disablewhen	"{ diff_enable == 0 }"
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -51,6 +80,7 @@
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -60,6 +90,7 @@
 	    default	{ "Mandril.pic" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	group {
@@ -73,6 +104,7 @@
 		default	{ "0" }
 		range	{ -1 1 }
 		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
@@ -82,6 +114,7 @@
 		default	{ "1.2" }
 		range	{ 0 10 }
 		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
@@ -91,6 +124,7 @@
 		default	{ "1.1" }
 		range	{ 0 10 }
 		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
@@ -100,6 +134,7 @@
 		default	{ "1" }
 		range	{ 0 10 }
 		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	}
@@ -118,6 +153,7 @@
 	    default	{ "1" "1" "1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -127,6 +163,7 @@
 	    default	{ "0.1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -136,6 +173,7 @@
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -145,6 +183,7 @@
 	    default	{ "Mandril.pic" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -154,6 +193,7 @@
 	    default	{ "0" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -163,6 +203,7 @@
 	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -172,6 +213,7 @@
 	    default	{ "1" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -181,6 +223,7 @@
 	    default	{ "0" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
     }
@@ -196,6 +239,7 @@
 	    default	{ "0.5" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -205,6 +249,7 @@
 	    default	{ "2" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -214,6 +259,7 @@
 	    default	{ "2" }
 	    range	{ 1! 10 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "rampvalues_var" "ramp_the_key_values" }
 	    parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
 	    parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
@@ -235,6 +281,7 @@
 	    default	{ "1" }
 	    range	{ -1 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "displace" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -244,6 +291,7 @@
 	    default	{ "0" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "displace" }
 	    parmtag	{ "parmvop" "1" }
 	}
     }
@@ -259,6 +307,7 @@
 	    default	{ "0" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -269,6 +318,7 @@
 	    default	{ "0.6" "0.15" "0.06" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -278,6 +328,7 @@
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -287,6 +338,7 @@
 	    default	{ "$HIP/Misc/stewardess_head.pc" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -294,8 +346,9 @@
 	    label	"Pointcloud Sample"
 	    type	integer
 	    default	{ "50" }
-	    range	{ 1 100 }
+	    range	{ 0 10 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -305,6 +358,7 @@
 	    default	{ "0.15" }
 	    range	{ 0 2 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -314,6 +368,7 @@
 	    default	{ "0.75" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -323,6 +378,7 @@
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
@@ -332,6 +388,7 @@
 	    default	{ "Mandril.pic" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "surface" }
 	    parmtag	{ "parmvop" "1" }
 	}
     }
