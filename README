@@ -3,6 +3,10 @@ qLib
 
 A general-purpose Digital Asset library for Houdini.
 
+Get social, 'like' it and whatnot:
+- facebook: http://www.facebook.com/pages/qLib/145692112131248
+- twitter:  http://twitter.com/#!/qLib_houdini
+
 
 Installation instructions
 =========================
@@ -10,6 +14,7 @@ Installation instructions
 Download and unpack the distribution tarball from the download section:
 
 https://github.com/gadfly16/qLib/downloads
+
 
 You can download already built and ready-to-use archives (containing .otl files
 only) or clone the latest version from the git repo.
