@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "pointattribsize(\".\",arg(chs(\"../../attribs\"), stamp(\"..\", \"FORIDXVALUE\", 0)))" }
+      segment { length = 0 expr = "pointattribsize(\".\",arg(chs(\"../../mix_attribs\"), stamp(\"..\", \"FORIDXVALUE\", 0)))" }
     }
   }

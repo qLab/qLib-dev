@@ -6,13 +6,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../../group\") }
     }
-    channel attrib {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"amount\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../../attrib\") }
-    }
     channel input_index {
       lefttype = extend
       righttype = extend

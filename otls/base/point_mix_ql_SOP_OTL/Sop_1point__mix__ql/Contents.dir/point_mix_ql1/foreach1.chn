@@ -4,6 +4,6 @@
       righttype = extend
       default = 10
       flags = 0
-      segment { length = 0 value = 10 10 expr = argc(chs(\"../attribs\"))-1 }
+      segment { length = 0 value = 10 10 expr = argc(chs(\"../mix_attribs\"))-1 }
     }
   }

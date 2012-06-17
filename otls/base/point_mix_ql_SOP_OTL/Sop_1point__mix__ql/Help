@@ -4,31 +4,38 @@
 
 = Point Mix qL =
 
-*Version 0.2.0*
+*Version 0.3.0*
 
-"""Blends point attributes between two inputs by an attribute."""
+"""Blends point attributes between two inputs by a control attribute."""
 
 @Usage
     Connect the two geometries that you want to blend to the operator. Define a float attribute on one of the
-    input geometries that will controll the mix, and set the _Control Attribute_ parameter to this.
+    input geometries that will controll the mix, and set the _Control Attribute_ parameter to this. Set the _Attributes
+    To Mix_ parameter to a list of attributes that you want to mix. Non-Mixed attributes will be copied verbatim from the
+    first input.
 
 @Limitations
-    Currently it's only tested with point attributes of vector or float types. Further testing needed.
+    Currently float, vector and vector4 type attributes are supported only as mix targets. If you feed any other type to
+    mix the result will be garbage at best.
 
 @Parameters
     Group:
         The group of points the operator affects.
-    Attributes:
+    Attributes To Mix:
         List of attributes to mix.
-    Envelope:
-        A global multiplier of the effect.
     Control Attrib:
         Name of the attribute which controls the mix.
-    Attrib On Second Input:
-        Check this toggle if the control attribute is on the second input.
+    On:
+        Get control attribute from first or second input.
+    Invert:
+        Invert the effect of the mix.
+    Envelope:
+        A global multiplier of the effect.
 
 @Release_Notes
+    Version 0.3.0:
+        Supports vector4 attribs. Tailored to work with H12.
     Version 0.2.0:
-        Supports arbitrary numbers of attributes.
+        Supports arbitrary number of attributes.
     Version 0.1.0:
         Initial release.

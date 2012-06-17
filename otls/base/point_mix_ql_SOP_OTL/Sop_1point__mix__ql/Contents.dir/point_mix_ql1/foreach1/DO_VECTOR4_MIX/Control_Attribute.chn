@@ -1,0 +1,16 @@
+{
+    channel input_index {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../input_index/intdef') }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"chs('../attrib/stringdef')\"
+      flags = 0
+      segment { length = 0 expr = chs('../attrib1/stringdef') }
+    }
+  }

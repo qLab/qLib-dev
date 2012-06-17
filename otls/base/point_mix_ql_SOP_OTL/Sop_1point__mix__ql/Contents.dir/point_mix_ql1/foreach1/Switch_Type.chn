@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "if(ch(\"../Check/attrsize\") == 3, 0 ,1)" }
+      segment { length = 0 expr = "if(ch(\"../Check/attrsize\") == 1, 0 ,if(ch(\"../Check/attrsize\")==3,1,2))" }
     }
   }

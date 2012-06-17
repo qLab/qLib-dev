@@ -1,4 +1,4 @@
-# Dialog script for point_mix_ql automatically generated 04/17/12 15:15:34
+# Dialog script for point_mix_ql automatically generated 06/17/12 19:52:00
 
 {
     name	point_mix_ql
@@ -27,7 +27,7 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"attribs"
+	name	"mix_attribs"
 	label	"Attributes to Mix"
 	type	string
 	default	{ "P" }
@@ -51,66 +51,59 @@
 	range	{ 0 1 }
 	export	none
     }
-    group {
-	name	"folder0"
-	label	"Mix Attribute"
-
-	parm {
-	    name	"attrib"
-	    label	"Mix Control Attrib"
-	    type	string
-	    joinnext
-	    default	{ "amount" }
-	    menureplace	{
-		[ "r = []" ]
-		[ "" ]
-		[ "try:" ]
-		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-		[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
-		[ "    " ]
-		[ "    for a in attrs:" ]
-		[ "        r.append(a)" ]
-		[ "        r.append(a)" ]
-		[ "except:" ]
-		[ "    pass" ]
-		[ "" ]
-		[ "return r" ]
-		language	python
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+    parm {
+	name	"ctrl_attrib"
+	label	"Control Attrib"
+	type	string
+	joinnext
+	default	{ "amount" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
 	}
-	parm {
-	    name	"first"
-	    label	"From 2nd Input"
-	    type	integer
-	    nolabel
-	    default	{ "0" }
-	    menu	{
-		"0"	"1st Input"
-		"1"	"2nd Input"
-	    }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"invert"
-	    label	"Invert"
-	    type	toggle
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"envelope"
-	    label	"Envelope"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
+    parm {
+	name	"first"
+	label	"On"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"1st Input"
+	    "1"	"2nd Input"
+	}
+	range	{ 0! 1! }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+    }
 }

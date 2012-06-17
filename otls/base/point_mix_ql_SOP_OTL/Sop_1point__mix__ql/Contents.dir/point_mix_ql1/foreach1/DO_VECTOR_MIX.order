@@ -1,9 +1,9 @@
-14
+15
 global1
 output1
 Vector_Mix
-Control_Attrib
-attrib
+Control_Attribute
+Mixed_Attribute
 input_index
 multiply1
 Envelope
@@ -13,3 +13,4 @@ addattrib1
 complement1
 switch2
 invert
+attrib1
