@@ -4,7 +4,7 @@
 
 = Path Deform qL =
 
-*Version 0.2.1*
+*Version 0.3.1*
 
 """Slides and deforms geometry along a curve."""
 
@@ -19,8 +19,10 @@
 @Parameters
     Position:
         The position of the deformed geometry along the path.
+    Resize By Segment Length:
+        Resize the deformed geometry to be proportional to the deformer curve's length.
     Segment Length:
-        The relative length of the deformed geometry over the path.
+        The relative length of the deformed geometry over the path if _Resize By Segment Length_ is on.
     Divisions:
         Lattice divisions. Higher values results in more precise curve following.
     Resolution:
@@ -29,8 +31,20 @@
         path curve.
     Up Vector:
         If no Up Path is connected this vector defines the Up direction.
+    Interpolation:
+        Interpolation type of the underlying lattice.
 
-@Release_Notes
+        NOTE:
+            Due to a limitation of the Lattice SOP, `Bezier` mode only supports up to
+	    30 divisions (use `Linear` mode for higher resolutions).
+
+
+@Release_Notes Release Notes
+    Version 0.3.1:
+        Added input path curve as guide geometry (displaying the resampled resolution).
+    Version 0.3.0:
+        Now the Z axis is deformed along the curve. _Resize By Segment Length_ is an option, and the deformed geometry can
+        keep its size. Support of zero length side geometry like grids, etc.
     Version 0.2.1:
         Lattice intepolation type parameter exposed to the user.
     Version 0.2.0:
