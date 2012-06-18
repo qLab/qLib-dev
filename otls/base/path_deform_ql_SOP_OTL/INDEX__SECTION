@@ -4,10 +4,10 @@ Path:         oplib:/Sop/path_deform_ql?Sop/path_deform_ql
 Icon:         SOP_each
 Table:        Sop
 License:      
-Extra:        guide=./sweep1 
+Extra:        guide=./GUIDE 
 Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Jun 18 10:57:12 2012
+Modified:     Mon Jun 18 12:47:00 2012
 

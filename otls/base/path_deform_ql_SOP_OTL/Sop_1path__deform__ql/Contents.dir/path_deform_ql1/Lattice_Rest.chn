@@ -34,9 +34,9 @@
     channel sizey {
       lefttype = extend
       righttype = extend
-      default = 1.45
+      default = 1.4500000476837158
       flags = 0
-      segment { length = 0 value = 1.45 1.45 expr = "if(ch(\"resty\")==0, .001, ch(\"resty\"))" }
+      segment { length = 0 value = 1.4500000476837158 1.4500000476837158 expr = "if(ch(\"resty\")==0, .001, ch(\"resty\"))" }
     }
     channel sizez {
       lefttype = extend

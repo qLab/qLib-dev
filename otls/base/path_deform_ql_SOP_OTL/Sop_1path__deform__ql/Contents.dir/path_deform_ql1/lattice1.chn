@@ -20,4 +20,11 @@
       flags = 0
       segment { length = 0 value = 3 3 expr = ch(\"../Lattice_Rest/divsz\") }
     }
+    channel interptype {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../interptype\") }
+    }
   }

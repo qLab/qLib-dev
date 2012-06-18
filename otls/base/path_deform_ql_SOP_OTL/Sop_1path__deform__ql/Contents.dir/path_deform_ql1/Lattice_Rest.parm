@@ -2,14 +2,14 @@
 version 0.8
 type	[ 0	locks=0 ]	(	"poly"	)
 surftype	[ 0	locks=0 ]	(	"quads"	)
-size	[ 8	locks=0 ]	(	[ sizex	10 ] 	[ sizey	0.001 ] 	[ sizez	10 ] 	)
+size	[ 8	locks=0 ]	(	[ sizex	10 ] 	[ sizey	1.1412681341171265 ] 	[ sizez	1.2000002861022949 ] 	)
 t	[ 0	locks=0 ]	(	0	0	0	)
 divrate	[ 0	locks=0 ]	(	4	4	4	)
 orderrate	[ 0	locks=0 ]	(	4	4	4	)
 dodivs	[ 0	locks=0 ]	(	"on"	)
-divs	[ 8	locks=0 ]	(	[ divsx	4 ] 	1	1	)
+divs	[ 8	locks=0 ]	(	[ divsx	30 ] 	1	1	)
 rebar	[ 0	locks=0 ]	(	"off"	)
 consolidatepts	[ 0	locks=0 ]	(	"on"	)
 orientedbbox	[ 0	locks=0 ]	(	"off"	)
-rest	[ 0	locks=0 ]	(	[ restx	10 ] 	[ resty	0 ] 	[ restz	10 ] 	)
+rest	[ 0	locks=0 ]	(	[ restx	10 ] 	[ resty	1.1412681341171265 ] 	[ restz	1.2000002861022949 ] 	)
 }

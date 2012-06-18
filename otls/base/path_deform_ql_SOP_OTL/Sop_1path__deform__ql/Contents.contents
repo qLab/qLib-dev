@@ -85,5 +85,13 @@ path_deform_ql1/Swap_ZX.init
 path_deform_ql1/Swap_ZX.def
 path_deform_ql1/Swap_ZX.parm
 path_deform_ql1/Swap_ZX.userdata
+path_deform_ql1/GUIDE.init
+path_deform_ql1/GUIDE.def
+path_deform_ql1/GUIDE.parm
+path_deform_ql1/GUIDE.userdata
+path_deform_ql1/add1.init
+path_deform_ql1/add1.def
+path_deform_ql1/add1.parm
+path_deform_ql1/add1.userdata
 path_deform_ql1.order
 path_deform_ql1.net
