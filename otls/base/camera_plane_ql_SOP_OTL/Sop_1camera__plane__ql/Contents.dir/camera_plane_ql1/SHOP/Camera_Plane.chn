@@ -1,0 +1,40 @@
+{
+    channel material_mode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 29.5
+      segment { length = 0 expr = ch(\"../../material_mode\") }
+    }
+    channel material_colorr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 29.5
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorr\") }
+    }
+    channel material_colorg {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 29.5
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorg\") }
+    }
+    channel material_colorb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 29.5
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorb\") }
+    }
+    channel material_colora {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 29.5
+      segment { length = 0 expr = ch(\"../../material_colora\") }
+    }
+  }

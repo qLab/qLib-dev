@@ -4,7 +4,7 @@
 
 = Camera Plane qL =
 
-*Version 0.0.3*
+*Version 0.0.4*
 
 """Builds a properly-fitted view plane for a given camera at the specified distance."""
 
@@ -76,12 +76,22 @@ N:
     
         Apply Material:
             Applies a basic constant material.
+
+        Material Mode:
+            A constant color or a texture file.
+
+        Color:
+            Value of the constant color.
     
         Texture:
             Name of the texture file.
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.4:
+        - Added constant-color material mode.
+        - Fix: material works as expected with the PBR engine.
 
     Version 0.0.3:
         The `Screen Window X/Y` camera parameters are now supported; 

@@ -1,4 +1,4 @@
-# Dialog script for camera_plane_ql automatically generated 06/08/12 01:10:47
+# Dialog script for camera_plane_ql automatically generated 06/18/12 17:55:27
 
 {
     name	camera_plane_ql
@@ -210,11 +210,40 @@
 		export	none
 	    }
 	    parm {
+		name	"material_mode"
+		label	"Material Mode"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ material == 0 }"
+		menu	{
+		    "0"	"Constant Color"
+		    "1"	"Texture"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"material_color"
+		label	"Color"
+		type	color4
+		size	4
+		default	{ "1" "1" "1" "0" }
+		disablewhen	"{ material == 0 } { material_mode != 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "surface" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
 		name	"texture"
 		label	"Texture"
 		type	image
 		default	{ "Mandril.pic" }
-		disablewhen	"{ material == 0 }"
+		disablewhen	"{ material == 0 } { material_mode != 1 }"
 		range	{ 0 1 }
 		export	none
 	    }

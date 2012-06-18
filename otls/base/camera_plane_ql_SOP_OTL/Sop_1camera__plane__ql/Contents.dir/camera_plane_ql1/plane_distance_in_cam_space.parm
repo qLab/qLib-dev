@@ -1,7 +1,7 @@
 {
 version 0.8
 xformtype	[ 0	locks=0 ]	(	"object"	)
-xformpath	[ 8	locks=0 ]	(	[ xformpath	/obj/cam1 ] 	)
+xformpath	[ 8	locks=0 ]	(	[ xformpath	/obj/1170_camera_unwarped/root/camera/cameraShape ] 	)
 invertxform	[ 0	locks=0 ]	(	"on"	)
 createptgroups	[ 0	locks=0 ]	(	"off"	)
 ptgroupprefix	[ 0	locks=0 ]	(	_ptgrp_	)

@@ -99,3 +99,219 @@
 	parmtag	{ "shaderparmcontexts" "surface" }
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"material_color"
+	label	"material_color"
+	type	color4
+	size	4
+	default	{ "1" "1" "1" "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"material_mode"
+	label	"material_mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Constant"
+	    "1"	"Texture"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"Ce"
+	label	"Emission"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_diffuse"
+	label	"Direct Diffuse"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_reflect"
+	label	"Direct Reflect"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_specular"
+	label	"Direct Specular"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_volume"
+	label	"Direct Volume"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_refract"
+	label	"Direct Refract"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct"
+	label	"Direct Lighting"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_noshadow"
+	label	"Direct Unshadowed Lighting"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_shadow"
+	label	"Direct Shadow Matte"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_samples"
+	label	"Direct Samples"
+	type	float
+	invisible
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"multiglobclr"
+	label	"multiglobclr"
+	type	color
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"sss_single"
+	label	"Single Scattering"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"sss_multi"
+	label	"Multi Scattering"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"indirect_refract"
+	label	"Indirect Refract"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"indirect_reflect"
+	label	"Indirect Reflect"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"direct_reflectivity"
+	label	"Direct Reflectivity"
+	type	float
+	invisible
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "surface" }
+	parmtag	{ "parmvop" "1" }
+    }
