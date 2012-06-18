@@ -1,0 +1,87 @@
+# Dialog script for qLib::ray_smooth_ql::1.0 automatically generated 06/18/12 22:52:02
+
+{
+    name	qLib::ray_smooth_ql::1.0
+    script	qLib::ray_smooth_ql::1.0
+    label	"Ray-&-Smooth qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Geometry to Wrap Onto"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Wrapping: Ray & Smooth"
+
+	multiparm {
+	    name	"iters"
+	    label	"Iterations"
+	    default	1
+
+	    parm {
+		name	"enable#"
+		label	"Pass \\##"
+		type	toggle
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_ray#"
+		label	"Enable"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ enable# == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ray#"
+		label	"Ray"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ enable# == 0 } { do_ray# == 0 }"
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"do_smooth#"
+		label	"Enable"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"smooth#"
+		label	"Smoothing"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 } { do_smooth# == 0 }"
+		range	{ 0 40 }
+		export	none
+	    }
+	    parm {
+		name	"freq#"
+		label	"Cutoff Freq."
+		type	float
+		default	{ "0.1" }
+		disablewhen	"{ enable# == 0 } { do_smooth# == 0 }"
+		range	{ 0.0001! 0.2 }
+		export	none
+	    }
+	}
+
+    }
+
+}

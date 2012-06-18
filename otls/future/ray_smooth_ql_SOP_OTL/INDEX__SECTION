@@ -1,0 +1,13 @@
+Operator:     qLib::ray_smooth_ql::1.0
+Label:        Ray & Smooth qL
+Path:         oplib:/qLib::Sop/ray_smooth_ql::1.0?qLib::Sop/ray_smooth_ql::1.0
+Icon:         DOP_squishyobject
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Mon Jun 18 22:52:09 2012
+

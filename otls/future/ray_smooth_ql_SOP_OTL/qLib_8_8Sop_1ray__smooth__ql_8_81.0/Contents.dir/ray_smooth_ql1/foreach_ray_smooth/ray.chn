@@ -1,0 +1,27 @@
+{
+    channel dirx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $NX }
+    }
+    channel diry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $NY }
+    }
+    channel dirz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $NZ }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"../../ray\"+(stamp(\"..\", \"FORIDXVALUE\", 0)+1))" }
+    }
+  }
