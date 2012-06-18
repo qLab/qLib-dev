@@ -9,11 +9,6 @@
 	export	none
     }
     parm {
-	name	"orient"
-	baseparm
-	export	all
-    }
-    parm {
 	name	"size"
 	baseparm
 	export	all
@@ -24,40 +19,47 @@
 	export	none
     }
     parm {
-	name	"rows"
+	name	"divrate"
 	baseparm
 	export	all
     }
     parm {
-	name	"cols"
+	name	"orderrate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dodivs"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"divs"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"rebar"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"consolidatepts"
 	baseparm
 	export	all
     }
     parm {
-	name	"orderu"
+	name	"orientedbbox"
 	baseparm
 	export	none
     }
     parm {
-	name	"orderv"
-	baseparm
-	export	none
-    }
-    parm {
-	name	"interpu"
-	baseparm
-	export	none
-    }
-    parm {
-	name	"interpv"
-	baseparm
-	export	none
-    }
-    parm {
-	name	"aspect"
-	label	"Aspect"
-	type	float
-	default	{ "0" }
-	range	{ 0 10 }
+	name	"rest"
+	label	"Rest"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
 	export	none
     }

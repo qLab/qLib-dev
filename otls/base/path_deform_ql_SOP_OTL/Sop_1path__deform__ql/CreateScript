@@ -1,4 +1,4 @@
-# Automatically generated script: Friday September 23, 13:21 2011
+# Automatically generated script: Monday June 18, 10:57 2012
 \set noalias = 1
 #
 #  Creation script for path_deform_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Sop/path_deform_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

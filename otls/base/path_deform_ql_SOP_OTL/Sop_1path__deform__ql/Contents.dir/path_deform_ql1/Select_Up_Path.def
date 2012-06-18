@@ -2,7 +2,17 @@ sopflags sopflags =
 comment ""
 position 11.8906 4.20464
 cachesize 1
+connectornextid 7
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+2 "output1"
+}
+inputsNamed3
+{
+5 	xform1 1 1 "input1"
+6 	resample4 1 1 "input2"
+}
 inputs
 {
 0 	xform1 0 1
@@ -11,7 +21,7 @@ inputs
 stat
 {
   create 1300648258
-  modify 1300661184
+  modify 1340008665
   author Mate@Mate.local.melon.hu
   access 0777
 }

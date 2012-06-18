@@ -1,4 +1,4 @@
-# Dialog script for path_deform_ql automatically generated 09/23/11 13:21:54
+# Dialog script for path_deform_ql automatically generated 06/18/12 10:57:12
 
 {
     name	path_deform_ql
@@ -23,10 +23,19 @@
 	export	none
     }
     parm {
+	name	"resize"
+	label	"Resize By Segment Length"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"seglen"
 	label	"Segment Length"
 	type	float
 	default	{ "0.1" }
+	disablewhen	"{ resize == 0 }"
 	range	{ 0 1 }
 	export	none
     }

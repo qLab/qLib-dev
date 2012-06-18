@@ -6,25 +6,43 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../divs\") }
     }
+    channel restx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = max(abs(bbox(\"../BB_Info\",D_ZMAX)),abs(bbox(\"../BB_Info\",D_ZMIN)))*2 }
+    }
+    channel resty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = max(abs(bbox(\"../BB_Info\",D_YMAX)),abs(bbox(\"../BB_Info\",D_YMIN)))*2 }
+    }
+    channel restz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = max(abs(bbox(\"../BB_Info\",D_XMAX)),abs(bbox(\"../BB_Info\",D_XMIN)))*2 }
+    }
     channel sizex {
       lefttype = extend
       righttype = extend
-      default = 1
+      default = 10
       flags = 0
-      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_XMAX)),abs(bbox(\"../BB_Info\",D_XMIN)))*2 }
+      segment { length = 0 value = 10 10 expr = "if(ch(\"restx\")==0, .001, ch(\"restx\"))" }
     }
     channel sizey {
       lefttype = extend
       righttype = extend
-      default = 1
+      default = 1.45
       flags = 0
-      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_YMAX)),abs(bbox(\"../BB_Info\",D_YMIN)))*2 }
+      segment { length = 0 value = 1.45 1.45 expr = "if(ch(\"resty\")==0, .001, ch(\"resty\"))" }
     }
     channel sizez {
       lefttype = extend
       righttype = extend
-      default = 1
+      default = 1.5
       flags = 0
-      segment { length = 0 value = 1 1 expr = max(abs(bbox(\"../BB_Info\",D_ZMAX)),abs(bbox(\"../BB_Info\",D_ZMIN)))*2 }
+      segment { length = 0 value = 1.5 1.5 expr = "if(ch(\"restz\")==0, .001, ch(\"restz\"))" }
     }
   }
