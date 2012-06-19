@@ -1,4 +1,4 @@
-# Dialog script for xform_to_bbox_ql automatically generated 06/13/12 14:06:56
+# Dialog script for xform_to_bbox_ql automatically generated 06/19/12 03:34:12
 
 {
     name	xform_to_bbox_ql
@@ -14,47 +14,85 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
-    group {
-	name	"folder0"
-	label	"Padding"
-
-	parm {
-	    name	"mode"
-	    label	"mode"
-	    type	integer
-	    default	{ "0" }
-	    menu	{
-		"0"	"Fit into Box"
-		"1"	"Clamp to Box Bounds"
-	    }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Fit into Box"
+	    "1"	"Clamp to Box Bounds"
 	}
-	parm {
-	    name	"padding_lo"
-	    label	"Low"
-	    type	float
-	    size	3
-	    default	{ "0" "0" "0" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"padding_hi"
-	    label	"High"
-	    type	float
-	    size	3
-	    default	{ "0" "0" "0" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
+    parm {
+	name	"padding_lo"
+	label	"Padding, Low"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"padding_hi"
+	label	"Padding, High"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"grp_inside"
+	label	"Create Inside Group"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"grp_inside_name"
+	label	"Inside Group"
+	type	string
+	default	{ "inside" }
+	disablewhen	"{ grp_inside == 0 }"
+	menureplace	{
+	    "inside"	"inside"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"grp_outside"
+	label	"Create Outside Group"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"grp_outside_name"
+	label	"Outside Group"
+	type	string
+	default	{ "outside" }
+	disablewhen	"{ grp_outside == 0 }"
+	menureplace	{
+	    "outside"	"outside"
+	}
+	range	{ 0 1 }
+	export	none
+    }
 }

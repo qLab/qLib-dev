@@ -4,7 +4,7 @@
 
 = Xform to BBox qL =
 
-*Version 0.0.2*
+*Version 0.0.3*
 
 """Fits the input geometry into the bounding box of a secondary geometry."""
 
@@ -29,12 +29,27 @@
                 (e.g. when trying to add smoke effects to an RBD simulation, where
                 a few RBD pieces fell through the floor or were shot towards 'infinity').
 
-    Padding:
+    Padding, Low/High:
         Extra padding distance along the three world axes.
 
+    Inside Group:
+        Create a group with the given name, containing the points that are inside the box boundaries.
+
+    Outside Group:
+        Create a group with the given name for all the points that fell outside the box boundaries.
+
+        WARNING:
+            When clamping simulated geometry points (such as RBD fractures), it's good practice to
+            zero out the velocities of the outlier points. (Even with clamped point positions,
+            large per-point velocities can mess up any following simulation or rendering process.)
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.3:
+        - Options for creating inside/outside point groups.
+        - Added guide geometry (padding values included).
+
     Version 0.0.2:
         Added 'clamp' fitting mode (and `Mode` parameter).
 

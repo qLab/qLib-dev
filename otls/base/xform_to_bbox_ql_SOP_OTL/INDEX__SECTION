@@ -4,10 +4,10 @@ Path:         oplib:/Sop/xform_to_bbox_ql?Sop/xform_to_bbox_ql
 Icon:         SOP_bound
 Table:        Sop
 License:      
-Extra:        
+Extra:        guide=./GUIDE 
 Inputs:       2 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Wed Jun 13 14:07:25 2012
+Modified:     Tue Jun 19 03:34:15 2012
 

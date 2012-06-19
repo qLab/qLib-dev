@@ -1,0 +1,16 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+destmin	[ 8	locks=0 ]	(	[ destmin1	-0.37165337800979614 ] 	[ destmin2	0.30232140421867371 ] 	[ destmin3	-0.56486821174621582 ] 	)
+destmax	[ 8	locks=0 ]	(	[ destmax1	0.27846384048461914 ] 	[ destmax2	1.215989351272583 ] 	[ destmax3	0.50976371765136719 ] 	)
+padding_lo	[ 0	locks=0 ]	(	[ padding_lo1	0 ] 	[ padding_lo2	0 ] 	[ padding_lo3	0 ] 	)
+padding_hi	[ 0	locks=0 ]	(	[ padding_hi1	0 ] 	[ padding_hi2	0 ] 	[ padding_hi3	0 ] 	)
+mode	[ 0	locks=0 ]	(	[ mode	0 ] 	)
+grp_inside	[ 8	locks=0 ]	(	[ grp_inside	0 ] 	)
+grp_inside_name	[ 0	locks=0 ]	(	`chs(\"../grp_inside_name\")`	)
+grp_outside	[ 8	locks=0 ]	(	[ grp_outside	0 ] 	)
+grp_outside_name	[ 0	locks=0 ]	(	`chs(\"../grp_outside_name\")`	)
+}
