@@ -1,4 +1,4 @@
-# Automatically generated script: Wednesday October 20, 14:28 2010
+# Automatically generated script: Tuesday June 19, 12:19 2012
 \set noalias = 1
 #
 #  Creation script for sweep_plus_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Sop/sweep_plus_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

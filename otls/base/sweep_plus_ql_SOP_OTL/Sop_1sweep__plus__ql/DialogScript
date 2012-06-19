@@ -1,4 +1,4 @@
-# Dialog script for sweep_plus_ql automatically generated 10/20/10 14:28:49
+# Dialog script for sweep_plus_ql automatically generated 06/19/12 12:19:49
 
 {
     name	sweep_plus_ql
@@ -134,35 +134,55 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	parm {
-	    name	"profilescale"
-	    label	"Profile Scale"
-	    type	ramp_flt
-	    default	{ "2" }
-	    range	{ 1! 10 }
-	    export	none
-	    parmtag	{ "rampbasisdefault" "catmull-rom" }
-	    parmtag	{ "rampfloatdefault" "1pos ( 0.00100000005 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+	group {
+	    name	"folder0"
+	    label	"Scale"
+
+	    parm {
+		name	"scalemult"
+		label	"Scale Multiplier"
+		type	float
+		default	{ "1" }
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"profilescale"
+		label	"Profile Scale"
+		type	ramp_flt
+		default	{ "2" }
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampfloatdefault" "1pos ( 0.00100000005 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+	    }
 	}
-	parm {
-	    name	"profiletwist"
-	    label	"Profile Twist"
-	    type	ramp_flt
-	    default	{ "2" }
-	    range	{ 1! 10 }
-	    export	none
-	    parmtag	{ "rampbasisdefault" "catmull-rom" }
-	    parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 0 ) 2interp ( catmull-rom )" }
+
+	group {
+	    name	"folder1"
+	    label	"Twist"
+
+	    parm {
+		name	"twistmult"
+		label	"Twist Multiplier"
+		type	float
+		default	{ "360" }
+		range	{ 0 720 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"profiletwist"
+		label	"Profile Twist"
+		type	ramp_flt
+		default	{ "2" }
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 0 ) 2interp ( catmull-rom )" }
+	    }
 	}
-	parm {
-	    name	"totaltwistangle"
-	    label	"Total Twist Angle"
-	    type	float
-	    default	{ "360" }
-	    range	{ 0 720 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+
     }
 
     group {

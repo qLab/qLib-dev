@@ -106,18 +106,18 @@
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = "chramp(\"../profilescale\", $PCT, 0)" }
+      segment { length = 0 value = 1 1 expr = "chramp(\"../profilescale\", $PCT, 0) * ch(\"../scalemult\")" }
     }
     channel twist {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "chramp(\"../profiletwist\", $PCT, 0)*(1/($NPT-1))*ch(\"totaltwistangle\")" }
+      segment { length = 0 expr = "chramp(\"../profiletwist\", $PCT, 0) * (1/($NPT-1)) * ch(\"totaltwistangle\")" }
     }
     channel totaltwistangle {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../totaltwistangle\") }
+      segment { length = 0 expr = ch(\"../twistmult\") }
     }
   }
