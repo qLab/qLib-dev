@@ -1,0 +1,95 @@
+comment ""
+position -17.0739 3.27993
+cachesize 1
+connectornextid 37
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+33 "noise"
+34 "x_avg"
+35 "x_oct"
+36 "x_off"
+}
+inputsNamed3
+{
+0 	Driver_Attrib 4 1 "pos"
+1 	"" "" 1 "pos2"
+2 	"" "" 1 "kpos"
+3 	"" "" 1 "kpos2"
+4 	freq 0 1 "freq"
+5 	offset 0 1 "offset"
+6 	period 0 1 "period"
+7 	inv 0 1 "inv"
+8 	fold 0 1 "fold"
+9 	expon 0 1 "expon"
+10 	dolwarp 0 1 "dolwarp"
+11 	disp 0 1 "disp"
+12 	dispfreq 0 1 "dispfreq"
+13 	dogwarp 0 1 "dogwarp"
+14 	gflow 0 1 "gflow"
+15 	flowrot 0 1 "flowrot"
+16 	accuml 0 1 "accuml"
+17 	accumg 0 1 "accumg"
+18 	oct 0 1 "oct"
+19 	lac 0 1 "lac"
+20 	rough 0 1 "rough"
+21 	docc 0 1 "docc"
+22 	cc_dobias 0 1 "cc_dobias"
+23 	cc_bias 0 1 "cc_bias"
+24 	cc_dogain 0 1 "cc_dogain"
+25 	cc_gain 0 1 "cc_gain"
+26 	cc_inv 0 1 "cc_inv"
+27 	cc_dorng 0 1 "cc_dorng"
+28 	cc_rnglo 0 1 "cc_rnglo"
+29 	cc_rnghi 0 1 "cc_rnghi"
+30 	cc_amp 0 1 "cc_amp"
+31 	"" "" 1 "fw"
+32 	"" "" 1 "fscale"
+}
+inputs
+{
+0 	Driver_Attrib 1 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+4 	freq 0 1
+5 	offset 0 1
+6 	period 0 1
+7 	inv 0 1
+8 	fold 0 1
+9 	expon 0 1
+10 	dolwarp 0 1
+11 	disp 0 1
+12 	dispfreq 0 1
+13 	dogwarp 0 1
+14 	gflow 0 1
+15 	flowrot 0 1
+16 	accuml 0 1
+17 	accumg 0 1
+18 	oct 0 1
+19 	lac 0 1
+20 	rough 0 1
+21 	docc 0 1
+22 	cc_dobias 0 1
+23 	cc_bias 0 1
+24 	cc_dogain 0 1
+25 	cc_gain 0 1
+26 	cc_inv 0 1
+27 	cc_dorng 0 1
+28 	cc_rnglo 0 1
+29 	cc_rnghi 0 1
+30 	cc_amp 0 1
+31 	"" 0 1
+32 	"" 0 1
+}
+stat
+{
+  create 1340147605
+  modify 1340153686
+  author mate@matild.local
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

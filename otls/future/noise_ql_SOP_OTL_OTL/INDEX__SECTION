@@ -1,0 +1,13 @@
+Operator:     noise_ql
+Label:        Noise qL
+Path:         oplib:/Sop/noise_ql?Sop/noise_ql
+Icon:         SOP_mountain
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jun 20 02:54:55 2012
+

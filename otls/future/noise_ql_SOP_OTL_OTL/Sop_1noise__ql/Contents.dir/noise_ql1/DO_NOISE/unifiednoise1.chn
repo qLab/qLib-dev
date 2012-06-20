@@ -1,0 +1,50 @@
+{
+    channel ui_foldername {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = node('.').creator().relativePathTo(node('.')).replace('/','_') language = python }
+    }
+    channel pfx {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = ch('signature').replace('default','f3')[0] language = python }
+    }
+    channel ptype {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = ('float','vector','vector','vector4')[int(ch('signature').replace('default','f3')[1])-1] language = python }
+    }
+    channel rtype {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = {'d':'float','f':'float','v':'vector'}[ch('signature')[0]] language = python }
+    }
+    channel dim {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = int(ch('signature').replace('default','f3')[1]) language = python }
+    }
+    channel fractal {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"none\"
+      flags = 0
+      segment { length = 0 accel = 0.3333333432674408 0.3333333432674408 expr = chs(\"../fractal2\") }
+    }
+    channel basis {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"simplex\"
+      flags = 0
+      segment { length = 0 accel = 0.3333333432674408 0.3333333432674408 expr = chs(\"../basis2\") }
+    }
+  }

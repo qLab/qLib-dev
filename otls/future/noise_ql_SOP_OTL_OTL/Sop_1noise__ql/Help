@@ -1,0 +1,30 @@
+#icon: SOP/mountain
+#context: sop
+#type: node
+
+= Noise qL =
+
+*Version 0.1.0*
+
+"""Deforms geometry by a noise."""
+
+@Parameters
+    Point Goup:
+        Point group that gets affected by the deformer.
+    Driver Attribute:
+        Vector attribute that drives the noise generation.
+    Target Attribute:
+        Attribute that is modulated by the noise.
+    Weight Attribute:
+        Attribute that can _mask_ the modulation.
+    Amount:
+        Global multiplier of the modulation.
+    Noise Parameters:
+        If not otherwise indicated these are the exposed parameters of the underlying
+        [Unified Noise VOP|Node:vop/unifiednoise]. See details there.
+    Output Exponent:
+        Sign-safe exponent applied after noise generation, which doesn't offset the result.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

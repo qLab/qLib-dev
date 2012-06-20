@@ -1,0 +1,524 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"use_weight_attr"
+	label	"use_weight_attr"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight_attr"
+	label	"weight_attr"
+	type	string
+	default	{ "amount" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight_invert"
+	label	"weight_invert"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"driver_attrib"
+	label	"Driver Attribute"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"target_attrib"
+	label	"Target Attribute"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    group {
+	name	"folder_1"
+	label	"unifiednoise1"
+
+	parm {
+	    name	"spacer9"
+	    label	"spacer"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"freq"
+	    label	"Frequency"
+	    type	float
+	    size	4
+	    default	{ "1" "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"offset"
+	    label	"Offset"
+	    type	float
+	    size	4
+	    default	{ "0" "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"period"
+	    label	"Period"
+	    type	float
+	    size	4
+	    default	{ "1" "1" "1" "1" }
+	    disablewhen	"{ basis2 != pperlin basis2 != pflow }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	}
+	parm {
+	    name	"spacer10"
+	    label	"spacer9"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	group {
+	    name	"folder5"
+	    label	"Construction"
+
+	    parm {
+		name	"basis2"
+		label	"Noise Type"
+		type	string
+		default	{ "simplex" }
+		menu	{
+		    "sine"	"Sinusoid"
+		    "perlin"	"Perlin"
+		    "pperlin"	"Periodic Perlin"
+		    "simplex"	"Simplex (Improved Perlin)"
+		    "sparse"	"Sparse Convolution"
+		    "flow"	"Flow"
+		    "pflow"	"Periodic Flow"
+		    "worleyFA"	"Worley (cellular) F1"
+		    "worleyFB"	"Worley (cellular) F2-F1"
+		    "alligator"	"Alligator"
+		}
+		range	{ 0 1 }
+		export	none
+		unquoted
+	    }
+	    parm {
+		name	"inv"
+		label	"Complement"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"fold"
+		label	"Fold"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"expon"
+		label	"Exponent"
+		type	float
+		default	{ "1" }
+		range	{ 0 2 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dolwarp"
+		label	"Enable Lattice Warp"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"disp"
+		label	"Lattice Warp"
+		type	float
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ dolwarp == 0 }"
+		range	{ -0.5 0.5 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dispfreq"
+		label	"Freq"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ dolwarp == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"dogwarp"
+		label	"Enable Gradient Warp"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"gflow"
+		label	"Gradient Warp"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ dogwarp == 0 }"
+		range	{ -0.5 0.5 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"flowrot"
+		label	"Flow Rotation"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ basis2 != flow basis2 != pflow }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"spacer11"
+		label	"spacer10"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"fractal2"
+		label	"Fractal Type"
+		type	string
+		default	{ "none" }
+		menu	{
+		    "none"	"None"
+		    "fBm"	"Standard (fBm)"
+		    "mfT"	"Terrain"
+		    "hmfT"	"Hybrid Terrain"
+		}
+		range	{ 0 1 }
+		export	none
+		unquoted
+	    }
+	    parm {
+		name	"accuml"
+		label	"Accumulate Lattice Warp"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ fractal2 == none }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"accumg"
+		label	"Accumulate Gradient Warp"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ fractal2 == none }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"oct"
+		label	"Max Octaves"
+		type	float
+		default	{ "8" }
+		disablewhen	"{ fractal2 == none }"
+		range	{ 0 16 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"lac"
+		label	"Lacunarity"
+		type	float
+		default	{ "2.01234" }
+		disablewhen	"{ fractal2 == none }"
+		range	{ 0 4 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"rough"
+		label	"Roughness"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ fractal2 == none }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+	group {
+	    name	"folder5_1"
+	    label	"Output"
+
+	    parm {
+		name	"docc"
+		label	"Enable Output Correction"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"spacer12"
+		label	"spacer11"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_dobias"
+		label	"Do Bias"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ docc == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"cc_bias"
+		label	"Bias"
+		type	float
+		size	3
+		default	{ "0.5" "0.5" "0.5" }
+		disablewhen	"{ docc == 0 } { cc_dobias == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"cc_dogain"
+		label	"Do Gain"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ docc == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"cc_gain"
+		label	"Gain"
+		type	float
+		size	3
+		default	{ "0.5" "0.5" "0.5" }
+		disablewhen	"{ docc == 0 } { cc_dogain == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"spacer13"
+		label	"spacer12"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_inv"
+		label	"Complement"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ docc == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"spacer14"
+		label	"spacer13"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_dorng"
+		label	"Output Range (Clamped)"
+		type	toggle
+		default	{ "on" }
+		disablewhen	"{ docc == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"cc_rnglo"
+		label	"New Minimum"
+		type	float
+		size	3
+		default	{ "-1" "-1" "-1" }
+		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"cc_rnghi"
+		label	"New Maximum"
+		type	float
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"spacer15"
+		label	"spacer14"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_amp"
+		label	"Final Amplitude"
+		type	float
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ docc == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	}
+
+    }
+
+    parm {
+	name	"tsignature"
+	label	"Target Signature"
+	type	integer
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"out_exp"
+	label	"Output Exponent"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

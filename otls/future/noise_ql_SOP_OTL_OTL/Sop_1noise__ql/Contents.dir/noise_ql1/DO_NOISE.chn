@@ -1,0 +1,448 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel use_weight_attr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 38.166667938232422
+      segment { length = 0 expr = ch(\"../use_weight_attr\") }
+    }
+    channel weight_attr {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"weight\"
+      flags = 0
+      start = 38.166667938232422
+      segment { length = 0 expr = chs(\"../weight_attr\") }
+    }
+    channel weight_invert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 38.166667938232422
+      segment { length = 0 expr = ch(\"../weight_invert\") }
+    }
+    channel driver_attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"P\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../driver_attrib\") }
+    }
+    channel target_attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"P\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../target_attrib\") }
+    }
+    channel spacer9 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm\") }
+    }
+    channel freq1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq1\") }
+    }
+    channel freq2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq2\") }
+    }
+    channel freq3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq3\") }
+    }
+    channel freq4 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../freq4\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset1\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset2\") }
+    }
+    channel offset3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset3\") }
+    }
+    channel offset4 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../offset4\") }
+    }
+    channel period1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../period1\") }
+    }
+    channel period2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../period2\") }
+    }
+    channel period3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../period3\") }
+    }
+    channel period4 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../period4\") }
+    }
+    channel spacer10 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm2\") }
+    }
+    channel basis2 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"simplex\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../basis2\") }
+    }
+    channel inv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../inv\") }
+    }
+    channel fold {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../fold\") }
+    }
+    channel expon {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../expon\") }
+    }
+    channel dolwarp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dolwarp\") }
+    }
+    channel disp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../disp\") }
+    }
+    channel dispfreq {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dispfreq\") }
+    }
+    channel dogwarp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dogwarp\") }
+    }
+    channel gflow {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gflow\") }
+    }
+    channel flowrot {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../flowrot\") }
+    }
+    channel spacer11 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm3\") }
+    }
+    channel fractal2 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"none\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../fractal2\") }
+    }
+    channel accuml {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../accuml\") }
+    }
+    channel accumg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../accumg\") }
+    }
+    channel oct {
+      lefttype = extend
+      righttype = extend
+      default = 8
+      flags = 0
+      segment { length = 0 value = 8 8 expr = ch(\"../oct\") }
+    }
+    channel lac {
+      lefttype = extend
+      righttype = extend
+      default = 2.0123400688171387
+      flags = 0
+      segment { length = 0 value = 2.0123400688171387 2.0123400688171387 expr = ch(\"../lac\") }
+    }
+    channel rough {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../rough\") }
+    }
+    channel docc {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../docc\") }
+    }
+    channel spacer12 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm4\") }
+    }
+    channel cc_dobias {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../cc_dobias\") }
+    }
+    channel cc_bias1 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_bias1\") }
+    }
+    channel cc_bias2 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_bias2\") }
+    }
+    channel cc_bias3 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_bias3\") }
+    }
+    channel cc_dogain {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../cc_dogain\") }
+    }
+    channel cc_gain1 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_gain1\") }
+    }
+    channel cc_gain2 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_gain2\") }
+    }
+    channel cc_gain3 {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_gain3\") }
+    }
+    channel spacer13 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm5\") }
+    }
+    channel cc_inv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../cc_inv\") }
+    }
+    channel spacer14 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm6\") }
+    }
+    channel cc_dorng {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_dorng\") }
+    }
+    channel cc_rnglo1 {
+      lefttype = extend
+      righttype = extend
+      default = -1
+      flags = 0
+      segment { length = 0 value = -1 -1 expr = ch(\"../cc_rnglo1\") }
+    }
+    channel cc_rnglo2 {
+      lefttype = extend
+      righttype = extend
+      default = -1
+      flags = 0
+      segment { length = 0 value = -1 -1 expr = ch(\"../cc_rnglo2\") }
+    }
+    channel cc_rnglo3 {
+      lefttype = extend
+      righttype = extend
+      default = -1
+      flags = 0
+      segment { length = 0 value = -1 -1 expr = ch(\"../cc_rnglo3\") }
+    }
+    channel cc_rnghi1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_rnghi1\") }
+    }
+    channel cc_rnghi2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_rnghi2\") }
+    }
+    channel cc_rnghi3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_rnghi3\") }
+    }
+    channel spacer15 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm7\") }
+    }
+    channel cc_amp1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_amp1\") }
+    }
+    channel cc_amp2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_amp2\") }
+    }
+    channel cc_amp3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../cc_amp3\") }
+    }
+    channel amount {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../amount\") }
+    }
+    channel tsignature {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../tsignature\") }
+    }
+    channel out_exp1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../out_exp1\") }
+    }
+    channel out_exp2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../out_exp2\") }
+    }
+    channel out_exp3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../out_exp3\") }
+    }
+  }
