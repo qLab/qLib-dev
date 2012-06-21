@@ -1,5 +1,7 @@
 Vop/unifiednoise /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
 Vop/unifiednoise otls/OPlibVop.otl
+Vop/mix /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
 Vop/abs /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
 Vop/abs otls/OPlibVop.otl
 Vop/addattrib /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl

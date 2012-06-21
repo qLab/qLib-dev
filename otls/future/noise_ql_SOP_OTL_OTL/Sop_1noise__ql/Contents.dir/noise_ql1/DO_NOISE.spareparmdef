@@ -532,3 +532,13 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"mode_switch"
+	label	"Mode Switch"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

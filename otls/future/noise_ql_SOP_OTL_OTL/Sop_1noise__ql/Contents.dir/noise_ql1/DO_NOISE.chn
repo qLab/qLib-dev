@@ -437,4 +437,10 @@
       flags = 0
       segment { length = 0 expr = ch(\"../do_exp\") }
     }
+    channel mode_switch {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../mode\") }
+    }
   }

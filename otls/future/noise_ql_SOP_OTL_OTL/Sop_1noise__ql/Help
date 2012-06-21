@@ -6,7 +6,11 @@
 
 *Version 0.1.0*
 
-"""Deforms geometry by a noise."""
+"""Modulates an attribute - possibly P - by a noise."""
+
+TIP:
+    The Noise qL SOP is implemented as a single VOP SOP, so you can map most of the parameters to attributes to further
+    enhance the result. 
 
 @Parameters
     Point Goup:
@@ -15,6 +19,13 @@
         Vector attribute that drives the noise generation.
     Target Attribute:
         Attribute that is modulated by the noise.
+    Signature:
+        Signature of the target attribute. Currently _float_ and _vector_ types are supported as the output.
+    Mode:
+        Target mode.
+        * *Replace*: replaces the incoming value with the generated noise.
+        * *Add*: adds the generated noise to the target attribute's incoming value.
+        * *Multiply*: multiply the incoming value with the generated noise.
     Weight Attribute:
         Attribute that can _mask_ the modulation.
     Amount:

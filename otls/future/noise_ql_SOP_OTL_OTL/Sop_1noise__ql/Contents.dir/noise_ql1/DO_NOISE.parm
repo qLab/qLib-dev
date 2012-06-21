@@ -50,5 +50,6 @@ spacer15	[ 0	locks=0 ]	(	[ spacer15	"" ] 	)
 cc_amp	[ 0	locks=0 ]	(	[ cc_amp1	1 ] 	[ cc_amp2	1 ] 	[ cc_amp3	1 ] 	)
 tsignature	[ 0	locks=0 ]	(	[ tsignature	1 ] 	)
 out_exp	[ 0	locks=0 ]	(	[ out_exp1	1 ] 	[ out_exp2	1 ] 	[ out_exp3	1 ] 	)
-do_exp	[ 8	locks=0 ]	(	[ do_exp	0 ] 	)
+do_exp	[ 0	locks=0 ]	(	[ do_exp	0 ] 	)
+mode_switch	[ 8	locks=0 ]	(	[ mode_switch	1 ] 	)
 }

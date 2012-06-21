@@ -1,4 +1,4 @@
-# Dialog script for noise_ql automatically generated 06/21/12 02:27:13
+# Dialog script for noise_ql automatically generated 06/21/12 14:00:24
 
 {
     name	noise_ql
@@ -54,10 +54,25 @@
 	label	"Signature"
 	type	integer
 	nolabel
+	joinnext
 	default	{ "1" }
 	menu	{
 	    "0"	"Float"
 	    "1"	"Vector"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	nolabel
+	default	{ "1" }
+	menu	{
+	    "0"	"Replace"
+	    "1"	"Add"
+	    "2"	"Multiply"
 	}
 	range	{ 0 10 }
 	export	none

@@ -1,23 +1,24 @@
 comment ""
-position -15.1382 7.80981
+position -21.7591 14.0616
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-0 "out_exp"
-1 "bound_out_exp"
+1 "abs"
 }
 inputsNamed3
 {
+0 	subinput1 0 1 "val"
 }
 inputs
 {
+0 	subinput1 0 1
 }
 stat
 {
-  create 1340151080
-  modify 1340236001
+  create 1340151165
+  modify 1340280023
   author mate@matild.local
   access 0777
 }

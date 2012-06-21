@@ -1,26 +1,24 @@
 comment ""
-position 1.01274 8.02855
+position -20.0282 9.60592
 cachesize 1
-connectornextid 3
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-0 "sum"
+1 "sign"
 }
 inputsNamed3
 {
-1 	multiply2 0 1 "input1"
-2 	multiply1 0 1 "input2"
+0 	vectofloat2 2 1 "val"
 }
 inputs
 {
-0 	multiply2 0 1
-1 	multiply1 0 1
+0 	vectofloat2 1 1
 }
 stat
 {
-  create 1340136813
-  modify 1340238434
+  create 1340151237
+  modify 1340280023
   author mate@matild.local
   access 0777
 }
