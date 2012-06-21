@@ -1,4 +1,4 @@
-# Dialog script for noise_ql automatically generated 06/20/12 02:54:55
+# Dialog script for noise_ql automatically generated 06/21/12 02:27:13
 
 {
     name	noise_ql
@@ -113,21 +113,33 @@
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cc_amp"
+	label	"Amplitude"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
     group {
-	name	"folder_1"
+	name	"noise_folder"
 	label	"Noise"
 
-	parm {
-	    name	"amount"
-	    label	"Amount"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
 	parm {
 	    name	"freq"
 	    label	"Frequency"
@@ -367,7 +379,7 @@
 		name	"rough"
 		label	"Roughness"
 		type	float
-		default	{ ".5" }
+		default	{ "0.5" }
 		disablewhen	"{ fractal2 == none }"
 		range	{ 0 1 }
 		export	none
@@ -382,10 +394,10 @@
 	    label	"Output"
 
 	    parm {
-		name	"docc"
-		label	"Enable Output Correction"
+		name	"cc_inv"
+		label	"Complement"
 		type	toggle
-		default	{ "on" }
+		default	{ "off" }
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -399,7 +411,6 @@
 		nolabel
 		joinnext
 		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -412,7 +423,7 @@
 		type	float
 		size	3
 		default	{ "0.5" "0.5" "0.5" }
-		disablewhen	"{ docc == 0 } { cc_dobias == 0 }"
+		disablewhen	"{ cc_dobias == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -426,7 +437,6 @@
 		nolabel
 		joinnext
 		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -439,7 +449,7 @@
 		type	float
 		size	3
 		default	{ "0.5" "0.5" "0.5" }
-		disablewhen	"{ docc == 0 } { cc_dogain == 0 }"
+		disablewhen	"{ cc_dogain == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -447,36 +457,43 @@
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"cc_inv"
-		label	"Complement"
+		name	"do_exp"
+		label	"Do Exponent"
 		type	toggle
-		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
+		nolabel
+		joinnext
+		default	{ "0" }
 		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"out_exp"
+		label	"Exponent"
+		type	float
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ do_exp == 0 }"
+		range	{ 0! 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"cc_dorng"
-		label	"Output Range (Clamped)"
-		type	toggle
-		default	{ "on" }
-		disablewhen	"{ docc == 0 }"
+		name	"labelparm"
+		label	"labelparm"
+		type	label
+		nolabel
+		default	{ "" }
 		range	{ 0 1 }
 		export	none
-		parmtag	{ "shaderparmcontexts" "sop" }
-		parmtag	{ "parmvop" "1" }
-		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
 		name	"cc_rnglo"
-		label	"New Minimum"
+		label	"Minimum"
 		type	float
 		size	3
 		default	{ "-1" "-1" "-1" }
-		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -485,37 +502,11 @@
 	    }
 	    parm {
 		name	"cc_rnghi"
-		label	"New Maximum"
+		label	"Maximum"
 		type	float
 		size	3
 		default	{ "1" "1" "1" }
-		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
 		range	{ 0 10 }
-		export	none
-		parmtag	{ "shaderparmcontexts" "sop" }
-		parmtag	{ "parmvop" "1" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"cc_amp"
-		label	"Final Amplitude"
-		type	float
-		size	3
-		default	{ "1" "1" "1" }
-		disablewhen	"{ docc == 0 }"
-		range	{ 0 10 }
-		export	none
-		parmtag	{ "shaderparmcontexts" "sop" }
-		parmtag	{ "parmvop" "1" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
-		name	"out_exp"
-		label	"Output Exponent"
-		type	float
-		size	3
-		default	{ "1" "1" "1" }
-		range	{ 0! 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }

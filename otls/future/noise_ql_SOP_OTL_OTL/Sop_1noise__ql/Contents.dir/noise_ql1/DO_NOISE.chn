@@ -245,13 +245,6 @@
       flags = 0
       segment { length = 0 value = 0.5 0.5 expr = ch(\"../rough\") }
     }
-    channel docc {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../docc\") }
-    }
     channel spacer12 {
       lefttype = extend
       righttype = extend
@@ -332,13 +325,6 @@
       defaultString = \"\"
       flags = 0
       segment { length = 0 expr = chs(\"../labelparm6\") }
-    }
-    channel cc_dorng {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../cc_dorng\") }
     }
     channel cc_rnglo1 {
       lefttype = extend
@@ -444,5 +430,11 @@
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../out_exp3\") }
+    }
+    channel do_exp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_exp\") }
     }
   }

@@ -1,4 +1,4 @@
-62
+64
 switch_weighted_deform
 use_weight_attr
 import_weight
@@ -14,7 +14,7 @@ attrib1
 add2
 multiply1
 multiply2
-input2
+Amount_
 unifiednoise1
 freq
 offset
@@ -61,3 +61,5 @@ vectofloat4
 pow2
 pow3
 floattovec2
+twoway1
+condition

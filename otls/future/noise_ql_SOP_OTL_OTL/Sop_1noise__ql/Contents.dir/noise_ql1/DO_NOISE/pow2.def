@@ -1,5 +1,5 @@
 comment ""
-position -10.645 8.55966
+position -10.8223 8.47103
 cachesize 1
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -20,7 +20,7 @@ inputs
 stat
 {
   create 1340151075
-  modify 1340153686
+  modify 1340238431
   author mate@matild.local
   access 0777
 }

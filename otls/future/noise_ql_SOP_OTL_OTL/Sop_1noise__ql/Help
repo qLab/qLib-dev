@@ -22,7 +22,7 @@
     Noise Parameters:
         If not otherwise indicated these are the exposed parameters of the underlying
         [Unified Noise VOP|Node:vop/unifiednoise]. See details there.
-    Output Exponent:
+    Exponent:
         Sign-safe exponent applied after noise generation, which doesn't offset the result.
 
 @Release_Notes
