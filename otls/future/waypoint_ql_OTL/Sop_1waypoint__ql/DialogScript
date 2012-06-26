@@ -1,4 +1,4 @@
-# Dialog script for waypoint_ql automatically generated 06/14/12 01:46:58
+# Dialog script for waypoint_ql automatically generated 06/26/12 22:27:43
 
 {
     name	waypoint_ql
@@ -15,6 +15,26 @@
     inputlabel	4	"Sub-Network Input #4"
     inputlabel	5	"Sub-Network Input #5"
 
+    parm {
+	name	"label_passthru_0"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ ".. waypoint inactive .." }
+	hidewhen	"{ passthru == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"label_passthru_1"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "..:: WAYPOINT ACTIVE :: Using data from storage ::.." }
+	hidewhen	"{ passthru != 0 }"
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder1"
 	label	"..: SOP Waypoint :.."
@@ -26,6 +46,8 @@
 	    default	{ "1" }
 	    range	{ 0! 10 }
 	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_color(kwargs)" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
@@ -141,6 +163,7 @@
 		    name	"sopoutput"
 		    label	"Output File"
 		    type	file
+		    joinnext
 		    default	{ "$HIP/${OS}_i`ch(\"input\")`.bgeo.gz" }
 		    menureplace	{
 			[ "opmenu -l geom_writer sopoutput" ]
@@ -150,6 +173,21 @@
 		    parmtag	{ "import_token" "sopoutput" }
 		    parmtag	{ "import_source" "op:geom_writer" }
 		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"sopoutput_presets"
+		    label	"Output Presets"
+		    type	button
+		    nolabel
+		    default	{ "1" }
+		    menumini	{
+			"to_seq"	"sequence"
+			"to_single"	"single file"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().outpreset(kwargs)" }
 		}
 		parm {
 		    name	"xformtype"

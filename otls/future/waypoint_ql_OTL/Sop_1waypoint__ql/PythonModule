@@ -1,0 +1,36 @@
+
+def replace(kwargs, fromstr, tostr, noCheck=False):
+    n = hou.pwd()
+    op = n.parm('sopoutput')
+    #out = op.eval()
+    out = op.unexpandedString()
+
+    if not tostr in out or noCheck:
+        out = out.replace(fromstr, tostr)
+        op.set(out)
+
+
+
+def outpreset(kwargs):
+
+    m = kwargs['script_value']
+    f, t = None, None
+
+    if m=="to_seq":
+        f, t = ".bgeo", ".$F4.bgeo"
+        replace(kwargs, f, t)
+
+    if m=="to_single":
+        f, t = ".$F4.bgeo", ".bgeo"
+        replace(kwargs, f, t, noCheck=True)
+
+
+
+def set_color(kwargs):
+
+    hou.pwd().setColor(
+        hou.Color(
+            (0.6, 0.3, 0.0) if kwargs['script_value']=='off'
+            else (0.8, 0.6, 0.0) )
+        );
+
