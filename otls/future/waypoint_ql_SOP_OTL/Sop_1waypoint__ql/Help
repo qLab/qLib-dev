@@ -4,7 +4,7 @@
 
 = Waypoint qL =
 
-*Version 0.0.1*
+*Version 0.0.3*
 
 """Represents a 'waypoint' in a complex SOP network, where expensive intermediate results can be saved to disk and re-used."""
 
@@ -109,6 +109,11 @@ WARNING:
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.3:
+        - Output filename helper "preset" menu
+        - Node state (disabled/enabled) feedback both as node color and in a parameter editor message
+        - Start/end time for the last few render processes are stored (logged) in the node comment field
 
     Version 0.0.2:
         - Option for clamping the time range to the range set up in the Writer tab
