@@ -1,0 +1,13 @@
+Operator:     waypoint_ql
+Label:        Waypoint qL
+Path:         oplib:/Sop/waypoint_ql?Sop/waypoint_ql
+Icon:         SOP_control
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 4
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jun 27 00:30:47 2012
+

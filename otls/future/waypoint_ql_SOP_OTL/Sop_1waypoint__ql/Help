@@ -1,0 +1,140 @@
+#icon: SOP/file
+#context: sop
+#type: node
+
+= Waypoint qL =
+
+*Version 0.0.3 (alpha)*
+
+"""Represents a 'waypoint' in a complex SOP network, where expensive intermediate results can be saved to disk and re-used."""
+
+@related
+    - [Cache|Node:sop/cache]
+    - [File|Node:sop/file]
+
+If you have complex SOP networks with many nodes (such as large-scale RBD simulations), you probably want to
+break down your network to a few logical units. A Waypoint SOP can represent the end of such a logical unit,
+with the additional feature of being able to store it on disk (so it can be reused instead of recalculated).
+
+NOTE:
+    Waypointing is (conceptually) _not_ caching, although the underlining mechanism is similar
+    (and obviously the SOP node can be used as a cache). It's more akin to 'baking' than caching.
+
+
+*Conceptual differences between waypointing and caching*
+
+- _Waypoint: a separator between large logical units_
+
+    In really complex networks, the entire network consists of usually two or more large logical units.
+    A waypoint marks the end of such a unit ('compartment').
+
+- _Manual update: As workflow_
+
+    When the user finished working on (or modifying) a large logical block of SOP nodes, she marks it
+    by 'rendering' the related waypoint (possibly some downstream waypoints, too). Although this has
+    to be done manually, this level of caretaking always has to happen in practice
+    (it's also a good opportunity to compare with an earlier on-disk version, etc.)
+
+- _Manual update: Breaks procedural behaviour_
+
+    Caching is (supposed to be) automatic, waypointing is not.
+
+    A consequence of manual updating is that it is easy for the geometry on disk to get out of
+    sync with the state of the SOP network. This can be less of a problem if the waypoint represents the
+    end results of a large logical SOP block (as mentioned above).
+
+    On the other hand, a SOP network littered with Waypoint nodes _do_ turn into a nightmare quickly. So...
+
+WARNING:
+    This SOP introduces additional maintenance burdens to your SOP network --
+    as soon as you start using waypoints, you'll have to ensure that the geometry on disk corresponds
+    to the current state of the upstream network. This can be a source for
+    many mistakes. _Use as few instances of this node as possible._
+
+
+*Useful features*
+
+- _Multiple inputs_
+
+    Up to four inputs (0-3) can be connected. This can be used to write different variations of the same
+    geometry (e.g. plain/subdivided, etc).
+
+- _Takes_
+
+    Takes allow to work with lower-quality settings (if possible) and only calculate with higher settings
+    when writing the results to disk (e.g. when baking ambient occlusion to per-point colors, the sampling
+    quality can be boosted for the disk version only).
+
+
+@parameters
+
+    Pass Through:
+        If turned on, the Waypoint does nothing (behaves like a plain [Node:sop/switch] node).
+        This is 'On' by default and needed to be turned off explicitly once the user performed a
+        write-to-disk operation.
+
+    Input Select:
+        Up to four (0-3) inputs can be connected; the geometry from the specified input will be written
+        to disk.
+
+    Points Only:
+        When writing sequences, only the first frame will contain the complete geometry.
+        The other frames will store point data only. This is greatly reduce I/O and
+        geometry performance (usually about 2x).
+
+    Remove Attribs:
+        Which attributes to remove from the 'points-only' files. (Groups are always removed.)
+        The default is to remove all but `v` (velocity).
+
+    Writer (tab):
+        Geometry writing settings (see also [Geometry ROP|Node:out/geometry]).
+
+        Render:
+            Pressing this button will write the evaulated upstream network to disk.
+
+        Render with Take:
+            The upstream network will be evaluated using the specified Take.
+
+        Output File:
+            The path and filename of the geometry file. By default the geometry name is built
+            from the Waypoint SOP name and the Input Select index.
+
+        Initialize Simulation OPs:
+            Force all simulation OPs to be reset. This includes DOP Networks, POP SOPs, and other OPs that cache their results.
+
+            This is the safest way to render out a simulation, because it starts the simulation from scratch and discards any partial simulations you might have done with different parameters. However, throwing away an already-cooked simulation can be expensive.
+
+        PerfMon Output:
+            If enabled, the Performance Monitor will be recording during the rendering process,
+            and the resulting data will be saved to the file specified.
+
+        Clear Comment Log:
+            The comment field of the node is used as a simple message logging area (mostly logging
+            rendering start/finish times). This button clears the comment field.
+
+
+    Reader (tab):
+        Geometry reading settings (geometry file name is specified in
+        the Output File field above -- see also [File SOP|Node:sop/file]).
+
+        Reload Geometry:
+            Pressing this button will (re)read the geometry file from disk.
+            *This button has to be pressed every time the geometry file is overwritten.*
+
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.3:
+        - Output filename helper "preset" menu
+        - Node state (disabled/enabled) feedback both as node color and in a parameter editor message
+        - Start/end time for the last few render processes are stored (logged) in the node comment field
+        - Performance monitoring
+
+    Version 0.0.2:
+        - Option for clamping the time range to the range set up in the Writer tab
+        - Option for writing point data only for all but the first frame
+
+    Version 0.0.1:
+        First release.
+

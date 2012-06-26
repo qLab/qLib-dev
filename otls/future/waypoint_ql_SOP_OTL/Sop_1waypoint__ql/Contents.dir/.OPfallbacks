@@ -1,0 +1,10 @@
+Vop/vectofloat /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/addgroup /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addgroup otls/OPlibVop.otl
+Vop/twoway /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Sop/clean /opt/hfs/houdini/otls/OPlibSop.otl
+Sop/clean otls/OPlibSop.otl
+Vop/isnan /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/isnan otls/OPlibVop.otl
