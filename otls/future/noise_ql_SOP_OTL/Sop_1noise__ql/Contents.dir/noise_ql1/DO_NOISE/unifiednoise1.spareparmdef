@@ -1,0 +1,460 @@
+    parm {
+	name	"makeui"
+	baseparm
+	export	none
+    }
+    group {
+	name	"folder2"
+	label	"VOP Parameters"
+
+	parm {
+	    name	"signature"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"active"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"passval"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"freq"
+	    label	"Frequency"
+	    type	vector4
+	    size	4
+	    default	{ "1" "1" "1" "1" }
+	    disablewhen	"{ active == 0 }"
+	    range	{ -1 1 }
+	    export	none
+	}
+	parm {
+	    name	"offset"
+	    label	"Offset"
+	    type	vector4
+	    size	4
+	    default	{ "0" "0" "0" "0" }
+	    disablewhen	"{ active == 0 }"
+	    range	{ -1 1 }
+	    export	none
+	}
+	parm {
+	    name	"period"
+	    label	"Period"
+	    type	vector4
+	    size	4
+	    default	{ "1" "1" "1" "1" }
+	    disablewhen	"{ active == 0 } { basis != pperlin basis != pflow }"
+	    range	{ 0! 1 }
+	    export	none
+	}
+	parm {
+	    name	"fscale"
+	    label	"Filter Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ active == 0 } { fractal == none }"
+	    range	{ 0! 2 }
+	    export	none
+	}
+	parm {
+	    name	"spacer3"
+	    baseparm
+	    export	none
+	}
+	group {
+	    name	"folder3"
+	    label	"Construction"
+
+	    parm {
+		name	"basis"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"inv"
+		label	"Complement"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"fold"
+		label	"Fold"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"expon"
+		label	"Exponent"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ active == 0 }"
+		range	{ 0! 2 }
+		export	none
+	    }
+	    parm {
+		name	"dolwarp"
+		label	"Enable Lattice Warp"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"disp"
+		label	"Lattice Warp"
+		type	float
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { dolwarp == 0 }"
+		range	{ -0.5 0.5 }
+		export	none
+	    }
+	    parm {
+		name	"dispfreq"
+		label	"Freq"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ active == 0 } { dolwarp == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"dogwarp"
+		label	"Enable Gradient Warp"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"gflow"
+		label	"Gradient Warp"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { dogwarp == 0 }"
+		range	{ -0.5 0.5 }
+		export	none
+	    }
+	    parm {
+		name	"flowrot"
+		label	"Flow Rotation"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { basis != flow basis != pflow }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"fractal"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"accuml"
+		label	"Accumulate Lattice Warp"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { fractal == none }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"accumg"
+		label	"Accumulate Gradient Warp"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { fractal == none }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"oct"
+		label	"Max Octaves"
+		type	float
+		default	{ "8" }
+		disablewhen	"{ active == 0 } { fractal == none }"
+		range	{ 0! 16 }
+		export	none
+	    }
+	    parm {
+		name	"lac"
+		label	"Lacunarity"
+		type	float
+		default	{ "2.01234" }
+		disablewhen	"{ active == 0 } { fractal == none }"
+		range	{ 0 4 }
+		export	none
+	    }
+	    parm {
+		name	"rough"
+		label	"Roughness"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ active == 0 } { fractal == none }"
+		range	{ 0! 1 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder3_1"
+	    label	"Output"
+
+	    parm {
+		name	"docc"
+		label	"Output Correction"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"spacer8"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"cc_dobias"
+		label	"Do Bias"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_bias"
+		label	"Bias"
+		type	vector
+		size	3
+		default	{ "0.5" "0.5" "0.5" }
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dobias == 0 }"
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"cc_dogain"
+		label	"Do Gain"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_gain"
+		label	"Gain"
+		type	vector
+		size	3
+		default	{ "0.5" "0.5" "0.5" }
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dogain == 0 }"
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"spacer5"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"cc_inv"
+		label	"Complement"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"spacer6"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"cc_dorng"
+		label	"Output Range (Clamped)"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_rnglo"
+		label	"New Minimum"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dorng == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"cc_rnghi"
+		label	"New Maximum"
+		type	vector
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dorng == 0 }"
+		range	{ 0 2 }
+		export	none
+	    }
+	    parm {
+		name	"spacer7"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"cc_amp"
+		label	"Final Amplitude"
+		type	vector
+		size	3
+		default	{ "1" "1" "1" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
+		range	{ 0 2 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder2_1"
+	label	"UI Promotion"
+
+	parm {
+	    name	"ui_prefix"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"ui_postfix"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_infolder"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"ui_foldername"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"spacer4"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_withactive"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"leftalign"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_activename"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_activelabel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_initactive"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_withoffval"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"lalign3"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_initoffval"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_initsigned"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"leftalign3"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"leftalign4"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ui_dwhen"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"pfx"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"ptype"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"rtype"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"dim"
+	baseparm
+	invisible
+	export	none
+    }

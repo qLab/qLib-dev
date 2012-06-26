@@ -443,4 +443,10 @@
       flags = 0
       segment { length = 0 expr = ch(\"../mode\") }
     }
+    channel driver_signature {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../driver_signature\") }
+    }
   }

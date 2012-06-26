@@ -1,4 +1,4 @@
-53
+59
 switch_weighted_deform
 use_weight_attr
 import_weight
@@ -6,8 +6,8 @@ weight_attr
 complement1
 switch2
 weight_invert
-Driver_Attrib
-attrib
+Driver_Vec
+driver_attrib
 add1
 Target_Attrib
 attrib1
@@ -52,3 +52,9 @@ switch1
 multiply1
 switcher
 mix1
+vectohvec1
+Driver_Vec4
+Driver_Signature
+Driver_Float
+floattohvec1
+switch3

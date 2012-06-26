@@ -1,6 +1,6 @@
 {
 version 0.8
-signature	[ 0	locks=0 ]	(	v3	)
+signature	[ 0	locks=0 ]	(	v4	)
 makeui	[ 0	locks=0 ]	(	0	)
 folder1	[ 0	locks=0 ]	(	0	0	)
 active	[ 0	locks=0 ]	(	"on"	)
@@ -59,7 +59,9 @@ leftalign3	[ 0	locks=0 ]	(	""	)
 leftalign4	[ 0	locks=0 ]	(	""	)
 ui_dwhen	[ 0	locks=0 ]	(	""	)
 pfx	[ 0	locks=0 ]	(	[ pfx	v ] 	)
-ptype	[ 0	locks=0 ]	(	[ ptype	vector ] 	)
+ptype	[ 0	locks=0 ]	(	[ ptype	vector4 ] 	)
 rtype	[ 0	locks=0 ]	(	[ rtype	vector ] 	)
-dim	[ 0	locks=0 ]	(	[ dim	3 ] 	)
+dim	[ 0	locks=0 ]	(	[ dim	4 ] 	)
+folder2	[ 0	locks=0 ]	(	0	0	)
+folder3	[ 0	locks=0 ]	(	0	0	)
 }

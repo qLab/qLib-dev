@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 1.67975 0.291887
+position -4.36975 -1.39657
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	attrib_shape_ql1 2 1 "input1"
+0 	grid1 0 1 "input1"
 }
 inputs
 {
-0 	attrib_shape_ql1 0 1
+0 	grid1 0 1
 }
 stat
 {
-  create 1340135150
-  modify 1340280024
+  create 1340533145
+  modify 1340703093
   author mate@matild.local
   access 0777
 }

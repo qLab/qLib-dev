@@ -1,4 +1,4 @@
-# Dialog script for noise_ql automatically generated 06/21/12 14:00:24
+# Dialog script for noise_ql automatically generated 06/26/12 11:31:01
 
 {
     name	noise_ql
@@ -30,8 +30,26 @@
 	name	"driver_attrib"
 	label	"Driver Attribute"
 	type	string
+	joinnext
 	default	{ "P" }
 	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"driver_signature"
+	label	"Driver Signature"
+	type	integer
+	nolabel
+	default	{ "1" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	    "2"	"Vector4"
+	}
+	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
@@ -50,29 +68,29 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"tsignature"
-	label	"Signature"
+	name	"mode"
+	label	"Mode"
 	type	integer
 	nolabel
 	joinnext
 	default	{ "1" }
 	menu	{
-	    "0"	"Float"
-	    "1"	"Vector"
+	    "0"	"Replace"
+	    "1"	"Add"
+	    "2"	"Multiply"
 	}
 	range	{ 0 10 }
 	export	none
     }
     parm {
-	name	"mode"
-	label	"Mode"
+	name	"tsignature"
+	label	"Signature"
 	type	integer
 	nolabel
 	default	{ "1" }
 	menu	{
-	    "0"	"Replace"
-	    "1"	"Add"
-	    "2"	"Multiply"
+	    "0"	"Float"
+	    "1"	"Vector  "
 	}
 	range	{ 0 10 }
 	export	none
