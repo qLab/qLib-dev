@@ -1,4 +1,4 @@
-7
+8
 compute_normals
 vertex_normals
 attribcopy1
@@ -6,3 +6,4 @@ IN
 OUT
 Output_Select
 Mult_Normal
+Delete_Point_Normal

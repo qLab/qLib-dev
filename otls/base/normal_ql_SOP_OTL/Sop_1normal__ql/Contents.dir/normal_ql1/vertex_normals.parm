@@ -10,6 +10,6 @@ map	[ 8	locks=0 ]	(	[ mapu	0 ] 	[ mapv	0 ] 	[ mapw	0 ] 	)
 docrease	[ 0	locks=0 ]	(	"off"	)
 crease	[ 8	locks=0 ]	(	[ crease	0 ] 	)
 donormal	[ 0	locks=0 ]	(	"on"	)
-normal	[ 8	locks=0 ]	(	[ normalx	1.81732225 ] 	[ normaly	0.590481758 ] 	[ normalz	0.59048456 ] 	)
+normal	[ 8	locks=0 ]	(	[ normalx	0.090186625719070435 ] 	[ normaly	0.95646411180496216 ] 	[ normalz	0.277565598487854 ] 	)
 angle	[ 0	locks=0 ]	(	20	)
 }

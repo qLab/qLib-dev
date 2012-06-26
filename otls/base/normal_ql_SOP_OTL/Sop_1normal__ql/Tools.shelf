@@ -17,7 +17,6 @@
     </toolMenuContext>
     <toolSubmenu>qLib</toolSubmenu>
     <toolSubmenu>Attribute</toolSubmenu>
-    <toolSubmenu>Polygon</toolSubmenu>
     <script scriptType="python"><![CDATA[import soptoolutils
 
 soptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>

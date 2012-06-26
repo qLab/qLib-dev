@@ -1,16 +1,27 @@
 sopflags sopflags = 
 comment ""
-position 2.71289 1.56471
+position 5.05644 1.73481
 cachesize 1
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	Mult_Normal 1 1 "input1"
+3 	"" "" 1 "input2"
+}
 inputs
 {
 0 	Mult_Normal 0 1
+1 	"" 0 1
 }
 stat
 {
   create 1309992048
-  modify 1331491392
+  modify 1340734189
   author tusi@demeisen
   access 0777
 }

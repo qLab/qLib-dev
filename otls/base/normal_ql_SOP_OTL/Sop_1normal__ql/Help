@@ -4,9 +4,12 @@
 
 = Normal qL =
 
-*Version 0.0.1*
+*Version 0.0.2*
 
 """Convenience wrapper around common normal operations."""
+
+WARNING:
+    Currently only point normals are treated correctly as the input.
 
 @Parameters
     Group:
@@ -28,6 +31,10 @@
     Output:
         Output attribute type.
 
-@Release_Notes
+@Relnotes Release Notes
+
+    Version 0.0.2:
+        Point normal gets deleted if the output is vertex.
+
     Version 0.0.1:
         Initial release.
