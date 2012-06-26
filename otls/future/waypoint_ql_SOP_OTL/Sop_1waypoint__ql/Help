@@ -1,15 +1,16 @@
-#type: node
+#icon: SOP/file
 #context: sop
-#icon: SOP/null
+#type: node
 
 = Waypoint qL =
 
-*Version 0.0.3*
+*Version 0.0.3 (alpha)*
 
 """Represents a 'waypoint' in a complex SOP network, where expensive intermediate results can be saved to disk and re-used."""
 
 @related
     - [Cache|Node:sop/cache]
+    - [File|Node:sop/file]
 
 If you have complex SOP networks with many nodes (such as large-scale RBD simulations), you probably want to
 break down your network to a few logical units. A Waypoint SOP can represent the end of such a logical unit,
@@ -98,6 +99,20 @@ WARNING:
             The path and filename of the geometry file. By default the geometry name is built
             from the Waypoint SOP name and the Input Select index.
 
+        Initialize Simulation OPs:
+            Force all simulation OPs to be reset. This includes DOP Networks, POP SOPs, and other OPs that cache their results.
+
+            This is the safest way to render out a simulation, because it starts the simulation from scratch and discards any partial simulations you might have done with different parameters. However, throwing away an already-cooked simulation can be expensive.
+
+        PerfMon Output:
+            If enabled, the Performance Monitor will be recording during the rendering process,
+            and the resulting data will be saved to the file specified.
+
+        Clear Comment Log:
+            The comment field of the node is used as a simple message logging area (mostly logging
+            rendering start/finish times). This button clears the comment field.
+
+
     Reader (tab):
         Geometry reading settings (geometry file name is specified in
         the Output File field above -- see also [File SOP|Node:sop/file]).
@@ -114,6 +129,7 @@ WARNING:
         - Output filename helper "preset" menu
         - Node state (disabled/enabled) feedback both as node color and in a parameter editor message
         - Start/end time for the last few render processes are stored (logged) in the node comment field
+        - Performance monitoring
 
     Version 0.0.2:
         - Option for clamping the time range to the range set up in the Writer tab

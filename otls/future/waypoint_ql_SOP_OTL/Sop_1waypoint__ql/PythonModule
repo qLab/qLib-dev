@@ -44,12 +44,39 @@ def log_comment(n, c):
 
 
 
+def clear_log():
+    hou.pwd().setComment('')
+
+
+def pm_start(n):
+    d = datetime.datetime.now().strftime("%y%m%d-%H:%M.%S")
+    f = n.parm('perfmon_output').eval()
+    hou.session.__perf = ( hou.perfMon.startProfile("%s (%s)" % (n.name(), d) ), f )
+
+
+def pm_end(n):
+    if hasattr(hou.session, '__perf'):
+        hou.session.__perf[0].stop()
+        #n = hou.pwd()
+        f = hou.session.__perf[1]
+        print "* COMPLETED %s '%s' -- Saving hperf '%s' *" % (n.type().name().upper(), n.path(), f)
+        hou.session.__perf[0].save(f)
+        del hou.session.__perf
+
+
+
 def pre_render(path):
     n = hou.node(path)
     log_comment(n, "Render started...")
 
+    if n.parm('perfmon').eval()!=0:
+        pm_start(n)
 
 
 def post_render(path):
     n = hou.node(path)
     log_comment(n, "RENDER COMPLETED.")
+
+    if n.parm('perfmon').eval()!=0:
+        pm_end(n)
+

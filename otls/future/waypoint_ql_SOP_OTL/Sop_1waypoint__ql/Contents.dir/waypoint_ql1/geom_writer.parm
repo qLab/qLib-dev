@@ -2,7 +2,7 @@
 version 0.8
 execute	[ 0	locks=0 ]	(	[ execute	0 ] 	)
 renderdialog	[ 0	locks=0 ]	(	[ renderdialog	0 ] 	)
-trange	[ 0	locks=0 ]	(	[ trange	0 ] 	)
+trange	[ 0	locks=0 ]	(	[ trange	2 ] 	)
 f	[ 0	locks=0 ]	(	[ f1	1 ] 	[ f2	2400 ] 	[ f3	1 ] 	)
 take	[ 0	locks=0 ]	(	[ take	_current_ ] 	)
 soppath	[ 0	locks=0 ]	(	../switch_keep_pts_only	)

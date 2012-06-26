@@ -1,4 +1,4 @@
-# Dialog script for waypoint_ql automatically generated 06/26/12 23:00:50
+# Dialog script for waypoint_ql automatically generated 06/27/12 00:30:47
 
 {
     name	waypoint_ql
@@ -250,6 +250,37 @@
 		}
 	    }
 
+	    parm {
+		name	"perfmon"
+		label	"Performance Monitoring"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		help	"Enable the Performance Monitor during render and write the results to a file."
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"perfmon_output"
+		label	"PerfMon Output"
+		type	file
+		default	{ "$HIP/$HIPNAME:r.i`ch(\"input\")`.hperf" }
+		help	"Output file for recorded performance monitor data."
+		disablewhen	"{ perfmon == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"clear_log"
+		label	"Clear Comment Log"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().clear_log()" }
+	    }
 	    parm {
 		name	"label_ptsonly_3"
 		label	"Label"
