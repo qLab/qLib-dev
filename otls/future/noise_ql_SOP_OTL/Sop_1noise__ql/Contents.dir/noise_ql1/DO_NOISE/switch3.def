@@ -9,14 +9,14 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	Driver_Signature 0 1 "switcher"
+1 	"" "" 1 "switcher"
 2 	floattohvec1 4 1 "input1"
 3 	vectohvec1 2 1 "input2"
 4 	Driver_Vec4 4 1 "input3"
 }
 inputs
 {
-0 	Driver_Signature 0 1
+0 	"" 0 1
 1 	floattohvec1 0 1
 2 	vectohvec1 0 1
 3 	Driver_Vec4 1 1
@@ -24,7 +24,7 @@ inputs
 stat
 {
   create 1340625606
-  modify 1340637318
+  modify 1340727835
   author mate@matild.local
   access 0777
 }

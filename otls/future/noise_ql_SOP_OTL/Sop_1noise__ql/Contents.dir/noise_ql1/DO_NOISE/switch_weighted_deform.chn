@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../../mode\") }
+      segment { length = 0 expr = ch(\"../../use_mask_attr\") }
     }
   }

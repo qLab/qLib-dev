@@ -5,27 +5,14 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel use_weight_attr {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      start = 38.166667938232422
-      segment { length = 0 expr = ch(\"../use_weight_attr\") }
-    }
     channel weight_attr {
       lefttype = extend
       righttype = extend
-      defaultString = \"weight\"
+      defaultString = chs(\"../mask_attr\")
       flags = 0
-      start = 38.166667938232422
-      segment { length = 0 expr = chs(\"../weight_attr\") }
-    }
-    channel weight_invert {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      start = 38.166667938232422
-      segment { length = 0 expr = ch(\"../weight_invert\") }
+      start = 0.95999999999999996
+      segment { length = 37.206667938232421 accel = 12.402222646077472 0 expr = chs(\"../mask_attr\") }
+      segment { length = 0 accel = 0 0.33333333333333331 expr = chs(\"../weight_attr\") }
     }
     channel driver_attrib {
       lefttype = extend
@@ -430,23 +417,5 @@
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../out_exp3\") }
-    }
-    channel do_exp {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../do_exp\") }
-    }
-    channel mode_switch {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../mode\") }
-    }
-    channel driver_signature {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../driver_signature\") }
     }
   }

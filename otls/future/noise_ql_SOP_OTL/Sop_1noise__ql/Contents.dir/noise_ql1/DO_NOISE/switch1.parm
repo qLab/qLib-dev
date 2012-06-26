@@ -1,5 +1,5 @@
 {
 version 0.8
-switcher	[ 0	locks=0 ]	(	[ switcher	0 ] 	)
+switcher	[ 8	locks=0 ]	(	[ switcher	1 ] 	)
 outofbounds	[ 0	locks=0 ]	(	"last"	)
 }

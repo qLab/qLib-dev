@@ -9,20 +9,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	weight_invert 0 1 "switcher"
+0 	"" "" 1 "switcher"
 1 	import_weight 7 1 "input1"
 2 	complement1 2 1 "input2"
 }
 inputs
 {
-0 	weight_invert 0 1
+0 	"" 0 1
 1 	import_weight 1 1
 2 	complement1 0 1
 }
 stat
 {
   create 1334667402
-  modify 1340279458
+  modify 1340727838
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

@@ -9,20 +9,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	use_weight_attr 0 1 "switcher"
+0 	"" "" 1 "switcher"
 6 	switch1 0 1 "input1"
 7 	mix1 3 1 "input2"
 }
 inputs
 {
-0 	use_weight_attr 0 1
+0 	"" 0 1
 1 	switch1 0 1
 2 	mix1 0 1
 }
 stat
 {
   create 1334666388
-  modify 1340702399
+  modify 1340727846
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

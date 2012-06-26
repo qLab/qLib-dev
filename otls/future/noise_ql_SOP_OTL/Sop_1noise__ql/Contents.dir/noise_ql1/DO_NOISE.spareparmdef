@@ -19,30 +19,10 @@
 	export	none
     }
     parm {
-	name	"use_weight_attr"
-	label	"use_weight_attr"
-	type	toggle
-	default	{ "off" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"weight_attr"
 	label	"weight_attr"
 	type	string
 	default	{ "amount" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"weight_invert"
-	label	"weight_invert"
-	type	toggle
-	default	{ "off" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -517,36 +497,6 @@
 	type	float
 	size	3
 	default	{ "1" "1" "1" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"do_exp"
-	label	"Do Exponent"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"mode_switch"
-	label	"Mode Switch"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"driver_signature"
-	label	"Driver Signature"
-	type	integer
-	default	{ "D" }
 	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }

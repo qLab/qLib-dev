@@ -10,32 +10,38 @@
 
 TIP:
     The Noise qL SOP is implemented as a single VOP SOP, so you can map most of the parameters to attributes to further
-    enhance the result. 
+    enhance the result. Most of the toggles form exceptions in this case as they are connected to the network by expressions
+    instead of VOP parameters for performance reasons.
 
 @Parameters
     Point Goup:
         Point group that gets affected by the deformer.
     Driver Attribute:
         Vector attribute that drives the noise generation.
+    Driver Signature:
+        Data type of the driver attribute.
     Target Attribute:
         Attribute that is modulated by the noise.
-    Signature:
+    Target Signature:
         Signature of the target attribute. Currently _float_ and _vector_ types are supported as the output.
     Mode:
         Target mode.
         * *Replace*: replaces the incoming value with the generated noise.
         * *Add*: adds the generated noise to the target attribute's incoming value.
         * *Multiply*: multiply the incoming value with the generated noise.
-    Weight Attribute:
+    Mask Attribute:
         Attribute that can _mask_ the modulation.
+    Ivert:
+        Inverts the effect of the mask attribute.
     Amount:
         Global multiplier of the modulation.
     Noise Parameters:
         If not otherwise indicated these are the exposed parameters of the underlying
         [Unified Noise VOP|Node:vop/unifiednoise]. See details there.
     Exponent:
-        Sign-safe exponent applied after noise generation, which doesn't offset the result.
+        Sign-safe exponent applied after noise generation. It doesn't offset the result.
 
-@Release_Notes
+@relnotes Release Notes
+
     Version 0.1.0:
         Initial release.
