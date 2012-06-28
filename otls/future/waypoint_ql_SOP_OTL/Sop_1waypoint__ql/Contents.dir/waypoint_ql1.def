@@ -1,0 +1,43 @@
+sopflags sopflags = 
+comment "[120627 00:11.40] RENDER COMPLETED.
+[120627 00:11.50] Render started...
+[120627 00:11.52] RENDER COMPLETED.
+[120627 00:11.57] Render started...
+[120627 00:11.58] RENDER COMPLETED.
+[120627 00:12.44] Render started...
+[120627 00:12.47] RENDER COMPLETED.
+[120627 00:19.04] Render started...
+[120627 00:19.05] RENDER COMPLETED."
+position 1.23529 -2.88824
+cachesize 1
+connectornextid 13
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+4 "output1"
+}
+inputsNamed3
+{
+0 	pointjitter1 1 1 "input1"
+8 	pointjitter1 1 1 "input2"
+11 	"" "" 1 "input3"
+12 	"" "" 1 "input4"
+}
+inputs
+{
+0 	pointjitter1 0 1
+1 	pointjitter1 0 1
+2 	"" 0 1
+3 	"" 0 1
+}
+stat
+{
+  create 1340738898
+  modify 1340749872
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.6 0 
+delscript ""
+exprlanguage hscript
+end
