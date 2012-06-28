@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="$HDA_DEFAULT_TOOL" label="$HDA_LABEL" icon="MISC_digital_asset">
+    <toolMenuContext name="viewer">
+      <contextNetType>OBJ</contextNetType>
+    </toolMenuContext>
+    <toolMenuContext name="pop_viewer">
+      <contextNetType>OBJ</contextNetType>
+    </toolMenuContext>
+    <toolMenuContext name="network">
+      <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
+    </toolMenuContext>
+    <toolSubmenu>qLib</toolSubmenu>
+    <toolSubmenu>Utility</toolSubmenu>
+    <script scriptType="python"><![CDATA[from objecttoolutils import *
+
+scriptargs = kwargs
+nodetypename = '$HDA_NAME'
+nodename = None
+clicktoplace = False
+translate_parm_name = None
+exact_node_type = True
+prompt = "Select Camera to attach plane to, then press Enter."
+allow_multisel = False
+allowed_types = ("cam",)
+
+activepane = toolutils.activePane(scriptargs)
+if not isinstance(activepane, hou.SceneViewer):
+    toolutils.genericTool(scriptargs, nodetypename, nodename,
+            exact_node_type = exact_node_type)
+else:
+    # Get the current context.
+    sceneviewer = toolutils.sceneViewer()
+    cwd = sceneviewer.pwd()
+    # Get some information about the object type.
+    nodetype = hou.nodeType(hou.objNodeTypeCategory(), nodetypename)
+    # Get the current object selection.
+    selnodes = sceneviewer.selectObjects(
+        prompt = prompt or toolutils.selectionPrompt(hou.objNodeTypeCategory(),
+                                           allow_multisel),
+        allow_multisel = allow_multisel,
+        allowed_types = allowed_types)
+    # Find the best object container given the current context.
+    container = getObjNodeContainer(cwd)
+    # Create the filter with our inputs.
+    newnode = createObjNode(container, nodetypename, selnodes, nodename,
+                            exact_node_type ) 
+    # Make the new object current, and enter its state.
+    newnode.setCurrent(True, True)
+    toolutils.homeToSelectionNetworkEditorsFor(newnode)
+    sceneviewer.enterCurrentNodeState()
+
+    newnode.parm("camera").set(selnodes[0].path())]]></script>
+  </tool>
+</shelfDocument>

@@ -1,0 +1,40 @@
+#icon: SOP/facet
+#context: sop
+#type: node
+
+= Normal qL =
+
+*Version 0.0.2*
+
+"""Convenience wrapper around common normal operations."""
+
+WARNING:
+    Currently only point normals are treated correctly as the input.
+
+@Parameters
+    Group:
+        Point group to process.
+    Cusp Polygons:
+        Creates hard edges between adjacent sides.
+    Cusp Angle:
+        Threshold angle to cusp at.
+    Orient Polygons:
+        Winds all polygons the same direction.
+    Comupte Normals:
+        Compute normals based on the geometric output of this operator.
+    Normalize:
+        Make normals unit length.
+    Invert:
+        Multiplies normals with -1.
+    Scale:
+        Multiplies normals with scalar.
+    Output:
+        Output attribute type.
+
+@Relnotes Release Notes
+
+    Version 0.0.2:
+        Point normal gets deleted if the output is vertex.
+
+    Version 0.0.1:
+        Initial release.
