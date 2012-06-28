@@ -1,40 +1,23 @@
-#icon: SOP/facet
-#context: sop
+#icon: COP2/frontface
+#context: obj
 #type: node
 
-= Normal qL =
+= Camera Plane qL =
 
-*Version 0.0.2*
+*Version 0.0.1*
 
-"""Convenience wrapper around common normal operations."""
+"""Convenience wrapper around the [Camera Plane SOP|Node:sop/camera_plane_ql]."""
 
-WARNING:
-    Currently only point normals are treated correctly as the input.
+If not indicated otherwise the parameters are direct references to the respective parameters
+of the [Camera Plane SOP|Node:sop/camera_plane_ql].
 
 @Parameters
-    Group:
-        Point group to process.
-    Cusp Polygons:
-        Creates hard edges between adjacent sides.
-    Cusp Angle:
-        Threshold angle to cusp at.
-    Orient Polygons:
-        Winds all polygons the same direction.
-    Comupte Normals:
-        Compute normals based on the geometric output of this operator.
-    Normalize:
-        Make normals unit length.
-    Invert:
-        Multiplies normals with -1.
-    Scale:
-        Multiplies normals with scalar.
-    Output:
-        Output attribute type.
+    Viewport Display:
+        Displays the plane in the viewports.
+    Renderable:
+        Makes the plane renderable.
 
-@Relnotes Release Notes
-
-    Version 0.0.2:
-        Point normal gets deleted if the output is vertex.
+@Release_Notes Release Notes
 
     Version 0.0.1:
         Initial release.
