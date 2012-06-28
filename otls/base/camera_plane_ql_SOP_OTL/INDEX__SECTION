@@ -1,7 +1,7 @@
 Operator:     camera_plane_ql
 Label:        Camera Plane qL
 Path:         oplib:/Sop/camera_plane_ql?Sop/camera_plane_ql
-Icon:         VOP_planeclip
+Icon:         COP2_frontface
 Table:        Sop
 License:      
 Extra:        
@@ -9,7 +9,7 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Jun 18 18:55:29 2012
+Modified:     Fri Jun 29 01:33:48 2012
 
 Operator:     camera_plane_ql
 Label:        Camera plane ql

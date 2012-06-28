@@ -1,4 +1,4 @@
-#icon: VOP/planeclip
+#icon: COP2/frontface
 #context: sop
 #type: node
 
@@ -28,6 +28,9 @@ uv:
 N:
     points away from the camera, so it can be used to project the geometry to some other geometry while maintaining
     the screen filling properties of the grid.
+
+TIP:
+    Use the object level wrapper [Camera Plane OBJ|Node:obj/camera_plane_ql] to set up a simple camera plane belonging to a camera faster.
 
 
 @related
