@@ -1,0 +1,56 @@
+{
+    name	selectedparms
+
+    parm {
+	name	"use_mask_attr"
+	label	"Use Per-Point Weights"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"mask_attr"
+	label	"Mask Attribute"
+	type	string
+	joinnext
+	default	{ "mask" }
+	disablewhen	"{ use_mask_attr == 0 }"
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"mask_invert"
+	label	"Invert"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ use_mask_attr == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+
+}
