@@ -1,18 +1,33 @@
 comment ""
 position -1.35849 0.838058
 cachesize 1
+connectornextid 20
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+8 "prim"
+9 "pos"
+10 "u"
+11 "v"
+}
+inputsNamed3
+{
+16 	"" "" 1 "file"
+17 	add1 2 1 "rayorig"
+18 	multiply3 0 1 "raydir"
+19 	"" "" 1 "farthest"
+}
 inputs
 {
 0 	"" 0 1
 1 	add1 0 1
-2 	multiply2 0 1
+2 	multiply3 0 1
 3 	"" 0 1
 }
 stat
 {
   create 1334230880
-  modify 1334238567
+  modify 1341074316
   author Mate@MATE.local.melon.hu
   access 0777
 }

@@ -4,12 +4,15 @@
 
 = Thickness qL =
 
-*Version 0.1.0*
+*Version 0.1.1*
 
 """Stores the "thickness" of the geometry in an attribute."""
 
 @Description
     Thickness SOP casts a ray in the opposing direction of the normal and stores the distance of the first surface hit.
+
+WARNING:
+    The normals must be normalized or longer than 1 in order to get correct results.
 
 @Parameters
     Point Group:
@@ -22,5 +25,7 @@
         Invert the normal.
 
 @Release_Notes
+    Version 0.1.1:
+        Ray length bug fixed.
     Version 0.1.0:
         Initial release.

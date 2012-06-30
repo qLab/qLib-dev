@@ -1,42 +1,23 @@
 comment ""
-position 6.22353 0.611765
+position -7.29084 -1.31078
 cachesize 1
-connectornextid 31
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-10 "shader"
+0 "min"
+1 "max"
 }
 inputsNamed3
 {
-21 	"" "" 1 "P"
-22 	"" "" 1 "Pw"
-23 	"" "" 1 "v"
-24 	"" "" 1 "accel"
-25 	"" "" 1 "age"
-26 	"" "" 1 "life"
-27 	"" "" 1 "pstate"
-28 	"" "" 1 "id"
-29 	"" "" 1 "Cd"
-30 	"" "" 1 "N"
 }
 inputs
 {
-0 	"" 0 1
-1 	"" 0 1
-2 	"" 0 1
-3 	"" 0 1
-4 	"" 0 1
-5 	"" 0 1
-6 	"" 0 1
-7 	"" 0 1
-8 	"" 0 1
-9 	"" 0 1
 }
 stat
 {
-  create 1334230504
-  modify 1334231172
+  create 1341074071
+  modify 1341074295
   author Mate@MATE.local.melon.hu
   access 0777
 }

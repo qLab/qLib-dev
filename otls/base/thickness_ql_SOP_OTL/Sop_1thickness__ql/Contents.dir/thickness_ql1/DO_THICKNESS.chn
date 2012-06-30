@@ -16,7 +16,7 @@
     channel ray_bias {
       lefttype = extend
       righttype = extend
-      default = 0.001
+      default = 0.0010000000474974513
       flags = 0
       segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../ray_bias\") }
     }
