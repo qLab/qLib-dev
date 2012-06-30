@@ -1,4 +1,4 @@
-8
+10
 each1
 switch_enable
 ray
@@ -7,3 +7,5 @@ smooth
 OUT
 switch_do_smooth
 switch_do_ray
+switch_do_peak
+peak

@@ -1,0 +1,8 @@
+{
+    channel dist {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../../peak\"+(stamp(\"..\", \"FORIDXVALUE\", 0)+1))" }
+    }
+  }

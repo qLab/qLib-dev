@@ -4,7 +4,7 @@
 
 = Ray & Smooth qL =
 
-*Version 0.0.1*
+*Version 0.0.1 (prototype)*
 
 """A convenience operator for geometry wrapping."""
 
@@ -22,10 +22,17 @@ changes can be easily checked visually. Wrapping can be done quickly and more in
 
 
 @parameters
+
+    Pre-Compute Normals:
+        Generate default per-point normals for the object to be wrapped.
+        Normals are used for ray-operations in `project` mode.
+
+    Reverse Normals:
+        Reverse direction of per-point normals.
+
     Iterations:
         The number of wrapping operations to be performed.
 
-    :
         Pass #:
             Enable/disable switch for one pass (ray/smooth pair).
 
@@ -34,11 +41,22 @@ changes can be easily checked visually. Wrapping can be done quickly and more in
             geometry shape, and `1` is the shape completely projected onto the wrapper
             geometry.)
 
+            project:
+                Points will be projected along their normal vectors until they hit the collision geometry.
+                Points with no intersection found will not be moved.
+
+            nearest:
+                Snap each point to the nearest surface point of the collision geometry.
+
         Smoothing:
             Number of smoothing steps.
 
         Cutoff Frequency:
             Noise frequency to remove. The larger this value, the more it will keep the original shape of the geometry.
+
+        Peak:
+            Move points along their normal with this specified distance.
+
 
 
 @related
@@ -50,4 +68,4 @@ changes can be easily checked visually. Wrapping can be done quickly and more in
 @Release_Notes Release Notes
 
     Version 0.0.1:
-        Initial version.
+        First prototype.

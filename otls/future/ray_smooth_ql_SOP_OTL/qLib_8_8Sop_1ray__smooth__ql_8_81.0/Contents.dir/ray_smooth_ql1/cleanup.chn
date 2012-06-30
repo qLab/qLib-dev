@@ -1,0 +1,30 @@
+{
+    channel dodelattribs {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dodelattribs\") }
+    }
+    channel delattribs {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../delattribs\") }
+    }
+    channel dodelgroups {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../dodelgroups\") }
+    }
+    channel delgroups {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../delgroups\") }
+    }
+  }
