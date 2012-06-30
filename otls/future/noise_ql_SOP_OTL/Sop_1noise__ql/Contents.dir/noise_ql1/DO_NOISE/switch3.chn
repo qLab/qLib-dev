@@ -2,7 +2,8 @@
     channel switcher {
       lefttype = extend
       righttype = extend
+      default = 1
       flags = 0
-      segment { length = 0 expr = ch(\"../../driver_signature\") }
+      segment { length = 0 value = 1 1 expr = ch(\"../../driver_signature\") }
     }
   }

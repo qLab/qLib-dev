@@ -8,6 +8,10 @@
 
 """Modulates an attribute - possibly P - by a noise."""
 
+WARNING:
+    Currently _noise types_ Perlin and Simplex with _fractal type_ other than None produces results with a biased middle
+    point. Use Flow or Sparse Convolution for unbiased results until further notice.
+
 TIP:
     The Noise qL SOP is implemented as a single VOP SOP, so you can map most of the parameters to attributes to further
     enhance the result. Most of the toggles form exceptions in this case as they are connected to the network by expressions

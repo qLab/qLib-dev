@@ -1,4 +1,4 @@
-# Dialog script for noise_ql automatically generated 06/26/12 18:24:54
+# Dialog script for noise_ql automatically generated 06/30/12 20:09:55
 
 {
     name	noise_ql
@@ -9,7 +9,7 @@
 	""
     }
 
-    inputlabel	1	"Noise Source"
+    inputlabel	1	"Sub-Network Input #1"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -51,9 +51,6 @@
 	}
 	range	{ 0 10 }
 	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"target_attrib"
@@ -83,16 +80,16 @@
 	export	none
     }
     parm {
-	name	"tsignature"
-	label	"Signature"
-	type	integer
+	name	"target_signature"
+	label	"Target Signature"
+	type	string
 	nolabel
-	default	{ "1" }
+	default	{ "v4" }
 	menu	{
-	    "0"	"Float"
-	    "1"	"Vector  "
+	    "f4"	"Float"
+	    "v4"	"Vector  "
 	}
-	range	{ 0 10 }
+	range	{ 0 1 }
 	export	none
     }
     parm {
@@ -147,7 +144,7 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"labelparm2"
+	name	"labelparm"
 	label	"Label"
 	type	label
 	nolabel
@@ -168,7 +165,7 @@
     }
     parm {
 	name	"cc_amp"
-	label	"Amplitude"
+	label	"Final Amplitude"
 	type	float
 	size	3
 	default	{ "1" "1" "1" }
@@ -208,7 +205,7 @@
 	type	float
 	size	4
 	default	{ "1" "1" "1" "1" }
-	disablewhen	"{ basis2 != pperlin basis2 != pflow }"
+	disablewhen	"{ basis != pperlin basis != pflow }"
 	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -216,7 +213,7 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"labelparm3"
+	name	"labelparm2"
 	label	"Label"
 	type	label
 	nolabel
@@ -225,11 +222,11 @@
 	export	none
     }
     group {
-	name	"folder5"
+	name	"folder2"
 	label	"Construction"
 
 	parm {
-	    name	"basis2"
+	    name	"basis"
 	    label	"Noise Type"
 	    type	string
 	    default	{ "simplex" }
@@ -351,7 +348,7 @@
 	    label	"Flow Rotation"
 	    type	float
 	    default	{ "0" }
-	    disablewhen	"{ basis2 != flow basis2 != pflow }"
+	    disablewhen	"{ basis != flow basis != pflow }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -359,7 +356,7 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"fractal2"
+	    name	"fractal"
 	    label	"Fractal Type"
 	    type	string
 	    default	{ "fBm" }
@@ -379,7 +376,7 @@
 	    label	"Accumulate Lattice Warp"
 	    type	toggle
 	    default	{ "off" }
-	    disablewhen	"{ fractal2 == none }"
+	    disablewhen	"{ fractal == none }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -391,7 +388,7 @@
 	    label	"Accumulate Gradient Warp"
 	    type	toggle
 	    default	{ "off" }
-	    disablewhen	"{ fractal2 == none }"
+	    disablewhen	"{ fractal == none }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -403,7 +400,7 @@
 	    label	"Max Octaves"
 	    type	float
 	    default	{ "8" }
-	    disablewhen	"{ fractal2 == none }"
+	    disablewhen	"{ fractal == none }"
 	    range	{ 0 16 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -415,7 +412,7 @@
 	    label	"Lacunarity"
 	    type	float
 	    default	{ "2.01234" }
-	    disablewhen	"{ fractal2 == none }"
+	    disablewhen	"{ fractal == none }"
 	    range	{ 0 4 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -427,7 +424,7 @@
 	    label	"Roughness"
 	    type	float
 	    default	{ "0.5" }
-	    disablewhen	"{ fractal2 == none }"
+	    disablewhen	"{ fractal == none }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -437,20 +434,9 @@
     }
 
     group {
-	name	"folder5_1"
+	name	"folder2_1"
 	label	"Output"
 
-	parm {
-	    name	"cc_inv"
-	    label	"Complement"
-	    type	toggle
-	    default	{ "off" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
 	parm {
 	    name	"cc_dobias"
 	    label	"Do Bias"
@@ -520,24 +506,26 @@
 	    size	3
 	    default	{ "1" "1" "1" }
 	    disablewhen	"{ do_exp == 0 }"
-	    range	{ 0! 10 }
+	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"labelparm"
-	    label	"labelparm"
-	    type	label
-	    nolabel
-	    default	{ "" }
+	    name	"cc_inv"
+	    label	"Complement"
+	    type	toggle
+	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
 	    name	"cc_rnglo"
-	    label	"Minimum"
+	    label	"New Minimum"
 	    type	float
 	    size	3
 	    default	{ "-1" "-1" "-1" }
@@ -549,7 +537,7 @@
 	}
 	parm {
 	    name	"cc_rnghi"
-	    label	"Maximum"
+	    label	"New Maximum"
 	    type	float
 	    size	3
 	    default	{ "1" "1" "1" }

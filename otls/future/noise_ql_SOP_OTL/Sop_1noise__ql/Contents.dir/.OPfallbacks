@@ -1,26 +1,26 @@
-Vop/addattrib /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/mix /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/mix otls/OPlibVop.otl
-Vop/unifiednoise /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/unifiednoise otls/OPlibVop.otl
-Vop/vectohvec /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/vectohvec otls/OPlibVop.otl
-Vop/vectofloat /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/vectofloat otls/OPlibVop.otl
-Vop/importattrib /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/abs /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/abs otls/OPlibVop.otl
-Vop/pow /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/pow otls/OPlibVop.otl
-Vop/twoway /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/twoway otls/OPlibVop.otl
-Vop/complement /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/complement otls/OPlibVop.otl
-Vop/sign /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/sign //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
 Vop/sign otls/OPlibVop.otl
-Vop/floattovec /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
-Vop/floattovec otls/OPlibVop.otl
-Vop/floattohvec /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/abs //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/abs otls/OPlibVop.otl
+Vop/twoway //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Vop/floattohvec //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
 Vop/floattohvec otls/OPlibVop.otl
+Vop/complement //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/addattrib //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/pow //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl
+Vop/vectohvec //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/vectohvec otls/OPlibVop.otl
+Vop/mix //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/vectofloat //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/importattrib //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/unifiednoise //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/unifiednoise otls/OPlibVop.otl
+Vop/floattovec //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl

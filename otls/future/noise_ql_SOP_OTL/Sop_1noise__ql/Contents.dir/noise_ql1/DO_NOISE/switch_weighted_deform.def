@@ -1,5 +1,5 @@
 comment ""
-position 7.18899 8.44939
+position 26.2286 5.20705
 cachesize 1
 connectornextid 8
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -10,23 +10,23 @@ outputsNamed3
 inputsNamed3
 {
 0 	"" "" 1 "switcher"
-6 	switch1 0 1 "input1"
+6 	Mode_Switch 0 1 "input1"
 7 	mix1 3 1 "input2"
 }
 inputs
 {
 0 	"" 0 1
-1 	switch1 0 1
+1 	Mode_Switch 0 1
 2 	mix1 0 1
 }
 stat
 {
   create 1334666388
-  modify 1340727846
+  modify 1341079811
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 1 0.6 0.6 
 delscript ""
 exprlanguage hscript
 end

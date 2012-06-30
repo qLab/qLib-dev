@@ -2,17 +2,9 @@
     channel vex_group {
       lefttype = extend
       righttype = extend
+      defaultString = \"\"
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
-    }
-    channel weight_attr {
-      lefttype = extend
-      righttype = extend
-      defaultString = chs(\"../mask_attr\")
-      flags = 0
-      start = 0.95999999999999996
-      segment { length = 37.206667938232421 accel = 12.402222646077472 0 expr = chs(\"../mask_attr\") }
-      segment { length = 0 accel = 0 0.33333333333333331 expr = chs(\"../weight_attr\") }
     }
     channel driver_attrib {
       lefttype = extend
@@ -28,12 +20,19 @@
       flags = 0
       segment { length = 0 expr = chs(\"../target_attrib\") }
     }
-    channel spacer9 {
+    channel spacer2 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
       segment { length = 0 expr = chs(\"../labelparm\") }
+    }
+    channel spacer3 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm2\") }
     }
     channel freq1 {
       lefttype = extend
@@ -115,19 +114,19 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../period4\") }
     }
-    channel spacer10 {
+    channel spacer4 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm2\") }
+      segment { length = 0 expr = chs(\"../labelparm3\") }
     }
-    channel basis2 {
+    channel basis {
       lefttype = extend
       righttype = extend
       defaultString = \"simplex\"
       flags = 0
-      segment { length = 0 expr = chs(\"../basis2\") }
+      segment { length = 0 expr = chs(\"../basis\") }
     }
     channel inv {
       lefttype = extend
@@ -185,19 +184,19 @@
       flags = 0
       segment { length = 0 expr = ch(\"../flowrot\") }
     }
-    channel spacer11 {
+    channel spacer5 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm3\") }
+      segment { length = 0 expr = chs(\"../labelparm4\") }
     }
-    channel fractal2 {
+    channel fractal {
       lefttype = extend
       righttype = extend
-      defaultString = \"none\"
+      defaultString = \"fBm\"
       flags = 0
-      segment { length = 0 expr = chs(\"../fractal2\") }
+      segment { length = 0 expr = chs(\"../fractal\") }
     }
     channel accuml {
       lefttype = extend
@@ -232,12 +231,12 @@
       flags = 0
       segment { length = 0 value = 0.5 0.5 expr = ch(\"../rough\") }
     }
-    channel spacer12 {
+    channel spacer6 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm4\") }
+      segment { length = 0 expr = chs(\"../labelparm5\") }
     }
     channel cc_dobias {
       lefttype = extend
@@ -293,12 +292,12 @@
       flags = 0
       segment { length = 0 value = 0.5 0.5 expr = ch(\"../cc_gain3\") }
     }
-    channel spacer13 {
+    channel spacer7 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm5\") }
+      segment { length = 0 expr = chs(\"../labelparm6\") }
     }
     channel cc_inv {
       lefttype = extend
@@ -306,12 +305,12 @@
       flags = 0
       segment { length = 0 expr = ch(\"../cc_inv\") }
     }
-    channel spacer14 {
+    channel spacer8 {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm6\") }
+      segment { length = 0 expr = chs(\"../labelparm7\") }
     }
     channel cc_rnglo1 {
       lefttype = extend
@@ -355,12 +354,12 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../cc_rnghi3\") }
     }
-    channel spacer15 {
+    channel spacer {
       lefttype = extend
       righttype = extend
       defaultString = \"\"
       flags = 0
-      segment { length = 0 expr = chs(\"../labelparm7\") }
+      segment { length = 0 expr = chs(\"../labelparm8\") }
     }
     channel cc_amp1 {
       lefttype = extend
@@ -389,13 +388,6 @@
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../amount\") }
-    }
-    channel tsignature {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../tsignature\") }
     }
     channel out_exp1 {
       lefttype = extend

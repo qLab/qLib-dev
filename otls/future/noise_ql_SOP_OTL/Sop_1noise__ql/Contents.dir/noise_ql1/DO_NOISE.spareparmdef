@@ -18,52 +18,12 @@
 	baseparm
 	export	none
     }
-    parm {
-	name	"weight_attr"
-	label	"weight_attr"
-	type	string
-	default	{ "amount" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"driver_attrib"
-	label	"Driver Attribute"
-	type	string
-	default	{ "P" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"target_attrib"
-	label	"Target Attribute"
-	type	string
-	default	{ "P" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"amount"
-	label	"Amount"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
     group {
-	name	"folder_1"
+	name	"folder"
 	label	"unifiednoise1"
 
 	parm {
-	    name	"spacer9"
+	    name	"spacer2"
 	    label	"spacer"
 	    type	label
 	    nolabel
@@ -72,11 +32,40 @@
 	    export	none
 	}
 	parm {
+	    name	"active"
+	    label	"Active"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	}
+	parm {
+	    name	"spacer3"
+	    label	"spacer2"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"passval"
+	    label	"Inactive Output"
+	    type	vector
+	    size	3
+	    default	{ "0" "0" "0" }
+	    disablewhen	"{ active == 0 }"
+	    range	{ -1 1 }
+	    export	none
+	}
+	parm {
 	    name	"freq"
 	    label	"Frequency"
 	    type	float
 	    size	4
 	    default	{ "1" "1" "1" "1" }
+	    disablewhen	"{ active == 0 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -88,6 +77,7 @@
 	    type	float
 	    size	4
 	    default	{ "0" "0" "0" "0" }
+	    disablewhen	"{ active == 0 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -99,15 +89,15 @@
 	    type	float
 	    size	4
 	    default	{ "1" "1" "1" "1" }
-	    disablewhen	"{ basis2 != pperlin basis2 != pflow }"
+	    disablewhen	"{ active == 0 } { basis != pperlin basis != pflow }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	}
 	parm {
-	    name	"spacer10"
-	    label	"spacer9"
+	    name	"spacer4"
+	    label	"spacer3"
 	    type	label
 	    nolabel
 	    default	{ "" }
@@ -115,14 +105,15 @@
 	    export	none
 	}
 	group {
-	    name	"folder5"
+	    name	"folder2"
 	    label	"Construction"
 
 	    parm {
-		name	"basis2"
+		name	"basis"
 		label	"Noise Type"
 		type	string
 		default	{ "simplex" }
+		disablewhen	"{ active == 0 }"
 		menu	{
 		    "sine"	"Sinusoid"
 		    "perlin"	"Perlin"
@@ -144,6 +135,7 @@
 		label	"Complement"
 		type	toggle
 		default	{ "off" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -154,6 +146,7 @@
 		label	"Fold"
 		type	toggle
 		default	{ "off" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -164,6 +157,7 @@
 		label	"Exponent"
 		type	float
 		default	{ "1" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 2 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -176,6 +170,7 @@
 		nolabel
 		joinnext
 		default	{ "off" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -187,7 +182,7 @@
 		type	float
 		joinnext
 		default	{ "0" }
-		disablewhen	"{ dolwarp == 0 }"
+		disablewhen	"{ active == 0 } { dolwarp == 0 }"
 		range	{ -0.5 0.5 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -198,7 +193,7 @@
 		label	"Freq"
 		type	float
 		default	{ "1" }
-		disablewhen	"{ dolwarp == 0 }"
+		disablewhen	"{ active == 0 } { dolwarp == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -211,6 +206,7 @@
 		nolabel
 		joinnext
 		default	{ "off" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -221,7 +217,7 @@
 		label	"Gradient Warp"
 		type	float
 		default	{ "0" }
-		disablewhen	"{ dogwarp == 0 }"
+		disablewhen	"{ active == 0 } { dogwarp == 0 }"
 		range	{ -0.5 0.5 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -232,15 +228,15 @@
 		label	"Flow Rotation"
 		type	float
 		default	{ "0" }
-		disablewhen	"{ basis2 != flow basis2 != pflow }"
+		disablewhen	"{ active == 0 } { basis != flow basis != pflow }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
-		name	"spacer11"
-		label	"spacer10"
+		name	"spacer5"
+		label	"spacer4"
 		type	label
 		nolabel
 		default	{ "" }
@@ -248,10 +244,11 @@
 		export	none
 	    }
 	    parm {
-		name	"fractal2"
+		name	"fractal"
 		label	"Fractal Type"
 		type	string
 		default	{ "none" }
+		disablewhen	"{ active == 0 }"
 		menu	{
 		    "none"	"None"
 		    "fBm"	"Standard (fBm)"
@@ -267,7 +264,7 @@
 		label	"Accumulate Lattice Warp"
 		type	toggle
 		default	{ "off" }
-		disablewhen	"{ fractal2 == none }"
+		disablewhen	"{ active == 0 } { fractal == none }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -278,7 +275,7 @@
 		label	"Accumulate Gradient Warp"
 		type	toggle
 		default	{ "off" }
-		disablewhen	"{ fractal2 == none }"
+		disablewhen	"{ active == 0 } { fractal == none }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -289,7 +286,7 @@
 		label	"Max Octaves"
 		type	float
 		default	{ "8" }
-		disablewhen	"{ fractal2 == none }"
+		disablewhen	"{ active == 0 } { fractal == none }"
 		range	{ 0 16 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -300,7 +297,7 @@
 		label	"Lacunarity"
 		type	float
 		default	{ "2.01234" }
-		disablewhen	"{ fractal2 == none }"
+		disablewhen	"{ active == 0 } { fractal == none }"
 		range	{ 0 4 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -311,7 +308,7 @@
 		label	"Roughness"
 		type	float
 		default	{ "0.5" }
-		disablewhen	"{ fractal2 == none }"
+		disablewhen	"{ active == 0 } { fractal == none }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -320,22 +317,23 @@
 	}
 
 	group {
-	    name	"folder5_1"
+	    name	"folder2_1"
 	    label	"Output"
 
 	    parm {
 		name	"docc"
 		label	"Enable Output Correction"
 		type	toggle
-		default	{ "on" }
+		default	{ "off" }
+		disablewhen	"{ active == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
-		name	"spacer12"
-		label	"spacer11"
+		name	"spacer6"
+		label	"spacer5"
 		type	label
 		nolabel
 		default	{ "" }
@@ -349,7 +347,7 @@
 		nolabel
 		joinnext
 		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -361,7 +359,7 @@
 		type	float
 		size	3
 		default	{ "0.5" "0.5" "0.5" }
-		disablewhen	"{ docc == 0 } { cc_dobias == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dobias == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -374,7 +372,7 @@
 		nolabel
 		joinnext
 		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -386,15 +384,15 @@
 		type	float
 		size	3
 		default	{ "0.5" "0.5" "0.5" }
-		disablewhen	"{ docc == 0 } { cc_dogain == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dogain == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
-		name	"spacer13"
-		label	"spacer12"
+		name	"spacer7"
+		label	"spacer6"
 		type	label
 		nolabel
 		default	{ "" }
@@ -406,15 +404,15 @@
 		label	"Complement"
 		type	toggle
 		default	{ "off" }
-		disablewhen	"{ docc == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
-		name	"spacer14"
-		label	"spacer13"
+		name	"spacer8"
+		label	"spacer7"
 		type	label
 		nolabel
 		default	{ "" }
@@ -425,8 +423,8 @@
 		name	"cc_dorng"
 		label	"Output Range (Clamped)"
 		type	toggle
-		default	{ "on" }
-		disablewhen	"{ docc == 0 }"
+		default	{ "off" }
+		disablewhen	"{ active == 0 } { docc == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -437,8 +435,8 @@
 		label	"New Minimum"
 		type	float
 		size	3
-		default	{ "-1" "-1" "-1" }
-		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
+		default	{ "0" "0" "0" }
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dorng == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -450,15 +448,15 @@
 		type	float
 		size	3
 		default	{ "1" "1" "1" }
-		disablewhen	"{ docc == 0 } { cc_dorng == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 } { cc_dorng == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 	    }
 	    parm {
-		name	"spacer15"
-		label	"spacer14"
+		name	"spacer"
+		label	"spacer"
 		type	label
 		nolabel
 		default	{ "" }
@@ -471,7 +469,7 @@
 		type	float
 		size	3
 		default	{ "1" "1" "1" }
-		disablewhen	"{ docc == 0 }"
+		disablewhen	"{ active == 0 } { docc == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
@@ -482,11 +480,41 @@
     }
 
     parm {
-	name	"tsignature"
-	label	"Target Signature"
-	type	integer
+	name	"driver_attrib"
+	label	"Driver Attribute"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"target_attrib"
+	label	"Target Attribute"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight_attr"
+	label	"weight_attr"
+	type	string
+	default	{ "amount" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
 	default	{ "1" }
-	range	{ 0 10 }
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }

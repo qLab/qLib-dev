@@ -4,6 +4,6 @@
       righttype = extend
       defaultString = \"P\"
       flags = 0
-      segment { length = 0 expr = chs('../attrib1/stringdef') }
+      segment { length = 0 expr = chs('../Target_Attrib_Name1/stringdef') }
     }
   }
