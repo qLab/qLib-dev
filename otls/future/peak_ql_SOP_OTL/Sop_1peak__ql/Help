@@ -1,0 +1,14 @@
+#icon: SOP/peak
+#context: sop
+#type: node
+
+= Peak qL =
+
+*Version 0.0.2*
+
+"""Enhanced version of the original SOP node with the same name."""
+
+@relnotes Release Notes
+
+    Version 0.0.2
+        Guide geometry toggle added. Distance slider extended to -1.

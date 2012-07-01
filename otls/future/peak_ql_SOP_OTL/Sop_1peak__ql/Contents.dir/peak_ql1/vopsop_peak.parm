@@ -1,0 +1,14 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+usevector	[ 0	locks=0 ]	(	[ usevector	0 ] 	)
+vectorname	[ 0	locks=0 ]	(	[ vectorname	N ] 	)
+distance	[ 0	locks=0 ]	(	[ distance	-0.11899999999999999 ] 	)
+usepscale	[ 0	locks=0 ]	(	[ usepscale	0 ] 	)
+pscalename	[ 0	locks=0 ]	(	[ pscalename	pscale ] 	)
+pscaleinvert	[ 0	locks=0 ]	(	[ pscaleinvert	0 ] 	)
+pscaleexp	[ 0	locks=0 ]	(	[ pscaleexp	1 ] 	)
+}

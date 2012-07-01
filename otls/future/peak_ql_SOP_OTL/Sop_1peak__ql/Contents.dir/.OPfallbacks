@@ -1,0 +1,6 @@
+Vop/complement /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/importattrib /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/pow /Library/Frameworks/Houdini.framework/Versions/12.0.644/Resources/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl

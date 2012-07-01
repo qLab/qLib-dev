@@ -1,0 +1,10 @@
+9
+vopsop_peak
+IN
+OUT
+post_compute_normals
+switch_recompute_point_normals
+precompute_normals
+switch_precompute_point_normals
+NIL
+GUIDE
