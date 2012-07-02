@@ -1,6 +1,6 @@
 {
 version 0.8
-signature	[ 0	locks=0 ]	(	f	)
+signature	[ 0	locks=0 ]	(	default	)
 attrib	[ 0	locks=0 ]	(	Cd	)
 localvar	[ 0	locks=0 ]	(	""	)
 adata_f	[ 0	locks=0 ]	(	0	)

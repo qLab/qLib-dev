@@ -2,7 +2,7 @@
     name	selectedparms
 
     parm {
-	name	"use_mask_attr"
+	name	"use_weight_attr"
 	label	"Use Per-Point Weights"
 	type	toggle
 	nolabel
@@ -14,12 +14,12 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"mask_attr"
-	label	"Mask Attribute"
+	name	"weight_attr"
+	label	"Weight Attribute"
 	type	string
 	joinnext
-	default	{ "mask" }
-	disablewhen	"{ use_mask_attr == 0 }"
+	default	{ "weight" }
+	disablewhen	"{ use_weight_attr == 0 }"
 	menureplace	{
 	    [ "r = []" ]
 	    [ "" ]
@@ -42,11 +42,11 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"mask_invert"
+	name	"weight_invert"
 	label	"Invert"
 	type	toggle
 	default	{ "off" }
-	disablewhen	"{ use_mask_attr == 0 }"
+	disablewhen	"{ use_weight_attr == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
