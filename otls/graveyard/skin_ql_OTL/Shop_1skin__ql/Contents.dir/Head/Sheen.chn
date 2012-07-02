@@ -1,9 +1,0 @@
-{
-    channel rough {
-      lefttype = extend
-      righttype = extend
-      default = 2
-      flags = 0
-      segment { length = 0 value = 2 2 expr = ch('../rough1/floatdef') }
-    }
-  }

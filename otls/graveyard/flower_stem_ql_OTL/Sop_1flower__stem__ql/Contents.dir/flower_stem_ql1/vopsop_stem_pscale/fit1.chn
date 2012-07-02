@@ -1,9 +1,0 @@
-{
-    channel destmin {
-      lefttype = extend
-      righttype = extend
-      default = 0.766
-      flags = 0
-      segment { length = 0 value = 0.76599997282028198 0.76599997282028198 expr = ch('../destmin/floatdef') }
-    }
-  }

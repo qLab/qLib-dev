@@ -1,6 +1,0 @@
-Apply gamma correction on per-point color attributes.
-
-WARNING:
-    This asset is obsolete and not maintained any further. Implementing gamma correction is so easy in VOP's that it
-    doesn't justify the existence of a separate asset. In the future [Node:sop/pointattr_ql] should be able to do gamma
-    correction to all signatures.

@@ -1,7 +1,0 @@
-{
-version 0.8
-labelparm	[ 0	locks=0 ]	(	"WARNING: This asset is from qLib's graveyard section."	)
-labelparm2	[ 0	locks=0 ]	(	"Please read the asset's Help page for further details."	)
-sepparm	[ 0	locks=0 ]	(	)
-mode	[ 0	locks=0 ]	(	[ mode	0 ] 	)
-}

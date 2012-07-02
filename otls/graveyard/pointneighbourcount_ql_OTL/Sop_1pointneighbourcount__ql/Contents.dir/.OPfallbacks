@@ -1,8 +1,0 @@
-Vop/pcopen /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
-Vop/pcopen otls/OPlibVop.otl
-Vop/addattrib /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/pciterate /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
-Vop/pciterate otls/OPlibVop.otl
-Vop/twoway /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
-Vop/twoway otls/OPlibVop.otl
