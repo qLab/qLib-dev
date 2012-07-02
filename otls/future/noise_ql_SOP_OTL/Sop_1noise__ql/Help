@@ -35,7 +35,7 @@ TIP:
         * *Multiply*: multiply the incoming value with the generated noise.
     Mask Attribute:
         Attribute that can _mask_ the modulation.
-    Ivert:
+    Invert:
         Inverts the effect of the mask attribute.
     Amount:
         Global multiplier of the modulation.
