@@ -1,4 +1,4 @@
-# Dialog script for camera_rig_ql automatically generated 06/12/12 15:59:33
+# Dialog script for camera_rig_ql automatically generated 07/03/12 16:18:32
 
 {
     name	camera_rig_ql
@@ -11,7 +11,7 @@
 
     inputlabel	1	"Position Parent"
     inputlabel	2	"Look At Parent"
-    inputlabel	3	"Crane Parent"
+    inputlabel	3	"Crane Head Parent"
     inputlabel	4	"Rig Parent"
 
     parm {
@@ -47,9 +47,20 @@
 	type	vector
 	size	3
 	default	{ "0" "0" "-1" }
+	disablewhen	"{ lat == 0 }"
 	range	{ -1 1 }
 	export	none
 	parmtag	{ "autoscope" "1110000000000000" }
+    }
+    parm {
+	name	"up_vector"
+	label	"Up Vector"
+	type	vector
+	size	3
+	default	{ "0" "1" "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"pan"
@@ -76,10 +87,20 @@
 	export	all
     }
     parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"arm_length"
 	label	"Arm Length"
 	type	float
 	default	{ "1" }
+	disablewhen	"{ crane == 0 }"
 	range	{ 0 10 }
 	export	all
 	parmtag	{ "autoscope" "1110000000000000" }
@@ -89,6 +110,7 @@
 	label	"Arm Turn"
 	type	float
 	default	{ "0" }
+	disablewhen	"{ crane == 0 }"
 	range	{ -180 180 }
 	export	all
 	parmtag	{ "autoscope" "1110000000000000" }
@@ -98,6 +120,7 @@
 	label	"Arm Elevation"
 	type	float
 	default	{ "0" }
+	disablewhen	"{ crane == 0 }"
 	range	{ -180 180 }
 	export	all
 	parmtag	{ "autoscope" "1110000000000000" }
@@ -108,19 +131,19 @@
 	type	vector
 	size	3
 	default	{ "0" "0" "0" }
+	disablewhen	"{ crane == 0 }"
 	range	{ -1 1 }
 	export	none
 	parmtag	{ "autoscope" "1110000000000000" }
     }
     parm {
-	name	"up_vector"
-	label	"Up Vector"
-	type	vector
-	size	3
-	default	{ "0" "1" "0" }
-	range	{ -1 1 }
+	name	"labelparm3"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
 	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"pos_guide"
@@ -135,6 +158,7 @@
 	label	"Look At Guide"
 	type	toggle
 	default	{ "1" }
+	disablewhen	"{ lat == 0 }"
 	range	{ 0 1 }
 	export	none
     }
@@ -143,6 +167,7 @@
 	label	"Crane Guide"
 	type	toggle
 	default	{ "1" }
+	disablewhen	"{ crane == 0 }"
 	range	{ 0 1 }
 	export	none
     }

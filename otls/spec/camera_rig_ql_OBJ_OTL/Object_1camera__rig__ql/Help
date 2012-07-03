@@ -4,7 +4,7 @@
 
 = Camera Rig qL =
 
-*Version 0.1.1*
+*Version 0.1.2*
 
 """Camera rig for cinematic camera motion creation."""
 
@@ -30,6 +30,9 @@ NOTE:
         Position of the camero or the crane base if crane is enabled.
     Look At:
         Position of the Look At point.
+    Up Vector:
+        Up vector used by the look at calculation and the 'Pan' parameter.
+        It is relative to the rotation of the Position Parent, to allow easy whole rig placement and rotation.
     Pan:
         Horizontal rotation of the camera axis.
     Tilt:
@@ -44,9 +47,6 @@ NOTE:
         Length of the Crane Arm.
     Crane Head:
         Position of the Crane Head.
-    Up Vector:
-        Up vector used by the look at calculation and the 'Pan' parameter.
-        It is relative to the rotation of the Position Parent, to allow easy whole rig placement and rotation.
     Guides:
         Display flag of the different guide geometries.
 
@@ -59,6 +59,9 @@ TIP:
     Crane head rotation is not implemented. Crane head transform inheritance selectors not implemented.
 
 @Release_Notes
+    Version 0.1.2:
+        Disabled unnecessary parameters.
+ 
     Version 0.1.1:
         Renamed to 'Camera Rig' from 'Cinema Rig'. Arm elevation parameter negated.
 

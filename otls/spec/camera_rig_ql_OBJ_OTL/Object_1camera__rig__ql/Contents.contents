@@ -514,6 +514,7 @@ camera_rig_ql1/Roll_Ctrl.order
 camera_rig_ql1/Roll_Ctrl.net
 camera_rig_ql1/Crane_Head_Import.init
 camera_rig_ql1/Crane_Head_Import.def
+camera_rig_ql1/Crane_Head_Import.chn
 camera_rig_ql1/Crane_Head_Import.parm
 camera_rig_ql1/Crane_Head_Import.userdata
 camera_rig_ql1/Crane_Head_Import/control1.init
