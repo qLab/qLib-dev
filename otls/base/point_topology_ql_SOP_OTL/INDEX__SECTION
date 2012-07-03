@@ -1,0 +1,13 @@
+Operator:     point_topology_ql
+Label:        Point Topology qL
+Path:         oplib:/Sop/point_topology_ql?Sop/point_topology_ql
+Icon:         DOP_sopscalarfield
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jul 03 13:22:12 2012
+

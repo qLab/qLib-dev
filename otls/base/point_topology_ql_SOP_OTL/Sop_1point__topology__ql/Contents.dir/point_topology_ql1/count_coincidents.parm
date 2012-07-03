@@ -1,0 +1,17 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+file	[ 0	locks=0 ]	(	"op:`opinputpath(\".\", 0)`"	)
+radius	[ 0	locks=0 ]	(	[ radius	0.001 ] 	)
+maxpoints	[ 0	locks=0 ]	(	[ maxpoints	10 ] 	)
+do_attrib	[ 0	locks=0 ]	(	[ do_attrib	1 ] 	)
+attrib	[ 0	locks=0 ]	(	`chs(\"../coi_attrib\")`	)
+localvar	[ 0	locks=0 ]	(	`chs(\"../coi_localvar\")`	)
+do_group	[ 0	locks=0 ]	(	[ do_group	0 ] 	)
+compare_mode	[ 0	locks=0 ]	(	[ compare_mode	2 ] 	)
+grp_num	[ 8	locks=0 ]	(	[ grp_num	2 ] 	)
+groupname	[ 0	locks=0 ]	(	`chs(\"../coi_groupname\")`	)
+}

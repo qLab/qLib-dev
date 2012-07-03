@@ -1,0 +1,14 @@
+Vop/pcopen //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/pcopen otls/OPlibVop.otl
+Vop/floattoint //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/floattoint otls/OPlibVop.otl
+Vop/twoway //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/twoway otls/OPlibVop.otl
+Vop/addgroup //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/addgroup otls/OPlibVop.otl
+Vop/pciterate //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/pciterate otls/OPlibVop.otl
+Vop/addattrib //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/neighbourcount //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/neighbourcount otls/OPlibVop.otl
