@@ -1,4 +1,4 @@
-23
+33
 global1
 pcopen1
 file
@@ -9,7 +9,7 @@ attrib
 localvar
 radius
 maxpoints
-if1
+if_do_grouping
 do_group
 groupname
 compare_eq_or_less
@@ -17,8 +17,18 @@ grp_num
 and1
 floattoint1
 do_attrib
-if2
+if_do_attrib
 switch1
 compare_eq
 compare_eq_or_grtr3
 compare_mode
+visu
+do_visu
+and2
+if_do_visu
+visu_colors
+vis_min
+vis_max
+inttofloat1
+inttofloat2
+fit1

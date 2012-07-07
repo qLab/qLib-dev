@@ -19,34 +19,62 @@
 	export	none
     }
     parm {
-	name	"attrib"
-	label	"Attribute Name"
+	name	"do_ptindex"
+	label	"do_ptindex"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ptindex_attrib"
+	label	"ptindex_attrib"
 	type	string
 	default	{ "ptindex" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"localvar"
-	label	"Local Variable Name"
+	name	"ptindex_localvar"
+	label	"ptindex_localvar"
 	type	string
 	default	{ "" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"mode"
-	label	"mode"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "ptindex"	"Point Index"
-	    "ptid"	"Point Id"
-	    "pstate"	"Point State"
-	}
-	range	{ 0 10 }
+	name	"do_ptpercent"
+	label	"do_ptpercent"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ptpercent_attrib"
+	label	"ptpercent_attrib"
+	type	string
+	default	{ "ptpercent" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ptpercent_localvar"
+	label	"ptpercent_localvar"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

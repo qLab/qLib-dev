@@ -1,4 +1,4 @@
-17
+20
 count_coincidents
 count_neighbours
 attrib_pt_index
@@ -16,3 +16,6 @@ vtxs
 vtxp
 primi
 pt_index
+init_color
+vismode
+vis_points

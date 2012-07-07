@@ -1,0 +1,6 @@
+5
+visu_colors#pos ../vis_coincident_colors#pos
+visu_colors#cr ../vis_coincident_colors#cr
+visu_colors#cg ../vis_coincident_colors#cg
+visu_colors#cb ../vis_coincident_colors#cb
+visu_colors#interp ../vis_coincident_colors#interp

@@ -1,0 +1,6 @@
+5
+visu_colors#pos ../vis_neighbours_colors#pos
+visu_colors#cr ../vis_neighbours_colors#cr
+visu_colors#cg ../vis_neighbours_colors#cg
+visu_colors#cb ../vis_neighbours_colors#cb
+visu_colors#interp ../vis_neighbours_colors#interp

@@ -1,0 +1,28 @@
+comment ""
+position 1.54447 7.749
+cachesize 1
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+1 "fval"
+}
+inputsNamed3
+{
+0 	vis_min 0 1 "ival"
+}
+inputs
+{
+0 	vis_min 0 1
+}
+stat
+{
+  create 1341611648
+  modify 1341618357
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
