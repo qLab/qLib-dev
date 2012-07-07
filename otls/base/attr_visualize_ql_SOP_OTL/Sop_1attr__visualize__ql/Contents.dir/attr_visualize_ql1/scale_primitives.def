@@ -11,12 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	unique_pts 1 1 "input1"
-8 	"" "" 1 "input2"
 }
 inputs
 {
 0 	unique_pts 0 1
-1 	"" 0 1
 }
 stat
 {

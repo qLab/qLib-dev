@@ -26,6 +26,7 @@
 
                 *This function is intentionally enabled by default.*
 
+
         Attribute Promotion:
             Parameters in this tab allows visualizing other attribute types than per-point,
             by modifying the geometry itself and/or convert attribute(s) to per-point type.

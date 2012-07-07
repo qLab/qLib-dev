@@ -1,4 +1,4 @@
-# Dialog script for attr_visualize_ql automatically generated 06/13/12 23:33:34
+# Dialog script for attr_visualize_ql automatically generated 07/07/12 04:15:19
 
 {
     name	attr_visualize_ql
@@ -23,6 +23,23 @@
 	    label	"Decimation & Safeguards"
 	    tabbreak
 
+	    parm {
+		name	"dec_presets"
+		label	"Presets"
+		type	button
+		nolabel
+		default	{ "1" }
+		menu	{
+		    "off"	"Safeguards Off"
+		    "points"	"Point Cloud Mode"
+		    "geom"	"Regular Geometry"
+		    "on"	"Safeguards On"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().decpreset(kwargs)" }
+	    }
 	    parm {
 		name	"keep_every_n_comps"
 		label	"Keep Every n.# Prims"
@@ -413,7 +430,6 @@
     group {
 	name	"folder1_3"
 	label	"Orient & Scale"
-	tabbreak
 
 	parm {
 	    name	"pscale_vis"
@@ -502,7 +518,7 @@
     }
 
     group {
-	name	"folder2"
+	name	"folder1_4"
 	label	"Output"
 
 	parm {
