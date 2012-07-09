@@ -1,4 +1,4 @@
-# Dialog script for path_deform_ql automatically generated 06/18/12 12:46:33
+# Dialog script for path_deform_ql automatically generated 07/09/12 21:51:58
 
 {
     name	path_deform_ql
@@ -73,6 +73,15 @@
 	    "linear"	"Linear"
 	    "bezier"	"Bezier"
 	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"aimatref"
+	label	"Aim at Reference Points"
+	type	toggle
+	default	{ "off" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }

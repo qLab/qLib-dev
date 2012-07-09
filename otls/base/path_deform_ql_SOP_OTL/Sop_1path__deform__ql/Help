@@ -36,7 +36,7 @@
 
         NOTE:
             Due to a limitation of the Lattice SOP, `Bezier` mode only supports up to
-	    30 divisions (use `Linear` mode for higher resolutions).
+            30 divisions (use `Linear` mode for higher resolutions).
 
 
 @Release_Notes Release Notes

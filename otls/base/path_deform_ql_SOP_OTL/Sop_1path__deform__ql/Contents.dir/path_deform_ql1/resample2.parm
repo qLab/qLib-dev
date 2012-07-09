@@ -8,6 +8,6 @@ measure	[ 0	locks=0 ]	(	"arc"	)
 dolength	[ 0	locks=0 ]	(	"off"	)
 length	[ 0	locks=0 ]	(	0.10000000100000001	)
 dosegs	[ 0	locks=0 ]	(	"on"	)
-segs	[ 8	locks=0 ]	(	[ segs	30 ] 	)
+segs	[ 8	locks=0 ]	(	[ segs	29 ] 	)
 last	[ 0	locks=0 ]	(	"off"	)
 }

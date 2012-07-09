@@ -38,6 +38,7 @@ path_deform_ql1/grid1.parm
 path_deform_ql1/grid1.userdata
 path_deform_ql1/sweep1.init
 path_deform_ql1/sweep1.def
+path_deform_ql1/sweep1.chn
 path_deform_ql1/sweep1.parm
 path_deform_ql1/sweep1.userdata
 path_deform_ql1/measure1.init
