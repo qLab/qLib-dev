@@ -1,0 +1,23 @@
+{
+    channel objpath1 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"../../../../../GEO_pop_limit\"
+      flags = 0
+      segment { length = 0 expr = chsop(\"../../../objpath_full\") }
+    }
+    channel group1 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../../../objgroup\") }
+    }
+    channel xformtype {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../../objxformtype\") }
+    }
+  }

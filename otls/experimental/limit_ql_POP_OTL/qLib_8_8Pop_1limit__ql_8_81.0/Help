@@ -1,0 +1,56 @@
+#icon: SOP/volumesplice
+#context: pop
+#type: node
+
+= Limit qL =
+
+*Version 0.0.1*
+
+"""Applies spatial boundaries to particles using the bounds of a geometric object."""
+
+This is a convenience wrapper for [Node:pop/limit] and [Node:pop/softlimit] POPs.
+Instead of numeric bounds, it uses the bounding box (or sphere) of a specified geometric object.
+
+
+
+@parameters
+    Activation:
+        Turns this node on and off. The node is only active if this value is greater than 0. This is useful to control the effect of this node with an expression.
+
+        Note that this is activation of the node as a whole. You can't use this parameter to deactivate the node for certain particles.
+
+    Source Group:
+        Only affect a group of points out of all the points in the input.
+
+    Bounding Object:
+
+        Bounding Object:
+            Path to the geometry whose bounds are to be used.
+
+        Group:
+            An optional primitive group of the bounding object. If specified, only the bounds of this group will be used.
+
+        Type:
+            Specify...
+            - ... if the geometry should be used from world space or it's local (object) space;
+            - ... the shape of the boundary (box or sphere);
+            - ... the type of the limit operation (regular or soft, see below).
+
+    Regular Limit:
+        Parameters of the regular limit mode -- see the [Limit POP documentation|Node:pop/limit] for details.
+
+    Soft Limit:
+        Parameters of the soft limit mode -- see the [Soft Limit POP documentation|Node:pop/softlimit] for details.
+
+
+
+
+@related
+    - [Node:pop/limit]
+    - [Node:pop/softlimit]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.1:
+        Initial release.

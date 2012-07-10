@@ -1,0 +1,102 @@
+{
+    channel limitposx {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = "bbox(\"../objnet1/limit\", D_XMAX)" }
+    }
+    channel limitposy {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = "bbox(\"../objnet1/limit\", D_YMAX)" }
+    }
+    channel limitposz {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = "bbox(\"../objnet1/limit\", D_ZMAX)" }
+    }
+    channel limitnegx {
+      lefttype = extend
+      righttype = extend
+      default = -10
+      flags = 0
+      segment { length = 0 value = -10 -10 expr = "bbox(\"../objnet1/limit\", D_XMIN)" }
+    }
+    channel limitnegy {
+      lefttype = extend
+      righttype = extend
+      default = -10
+      flags = 0
+      segment { length = 0 value = -10 -10 expr = "bbox(\"../objnet1/limit\", D_YMIN)" }
+    }
+    channel limitnegz {
+      lefttype = extend
+      righttype = extend
+      default = -10
+      flags = 0
+      segment { length = 0 value = -10 -10 expr = "bbox(\"../objnet1/limit\", D_ZMIN)" }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../limit/type\") }
+    }
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../limit/activate\") }
+    }
+    channel behavior {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../behavior2\") }
+    }
+    channel force {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../force\") }
+    }
+    channel vscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vscale\") }
+    }
+    channel ignoremass {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../ignoremass\") }
+    }
+    channel overridemass {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../overridemass\") }
+    }
+    channel mass {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mass\") }
+    }
+    channel stabledrag {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../stabledrag\") }
+    }
+  }

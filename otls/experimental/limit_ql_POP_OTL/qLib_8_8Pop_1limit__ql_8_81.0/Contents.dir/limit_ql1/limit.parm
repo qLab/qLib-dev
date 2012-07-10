@@ -1,0 +1,23 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
+source	[ 0	locks=0 ]	(	[ source	"" ] 	)
+stdswitcher	[ 0	locks=0 ]	(	0	0	0	)
+type	[ 0	locks=0 ]	(	[ type	0 ] 	)
+limitpos	[ 8	locks=0 ]	(	[ limitposx	3 ] 	[ limitposy	2.25 ] 	[ limitposz	2 ] 	)
+limitneg	[ 8	locks=0 ]	(	[ limitnegx	-2 ] 	[ limitnegy	0 ] 	[ limitnegz	-22 ] 	)
+behavior	[ 0	locks=0 ]	(	[ behavior	0 ] 	)
+event	[ 0	locks=0 ]	(	[ event	"" ] 	)
+group	[ 0	locks=0 ]	(	[ group	"" ] 	)
+preservegroup	[ 0	locks=0 ]	(	[ preservegroup	0 ] 	)
+hitindex	[ 0	locks=0 ]	(	[ hitindex	0 ] 	)
+bounce	[ 0	locks=0 ]	(	[ bounce	10 ] 	)
+gaintan	[ 0	locks=0 ]	(	[ gaintan	1 ] 	)
+gainnml	[ 0	locks=0 ]	(	[ gainnml	1 ] 	)
+donumhit	[ 0	locks=0 ]	(	[ donumhit	0 ] 	)
+dohitid	[ 0	locks=0 ]	(	[ dohitid	0 ] 	)
+dohittime	[ 0	locks=0 ]	(	[ dohittime	0 ] 	)
+dohitpos	[ 0	locks=0 ]	(	[ dohitpos	0 ] 	)
+dohitnormal	[ 0	locks=0 ]	(	[ dohitnormal	0 ] 	)
+dodistance	[ 0	locks=0 ]	(	[ dodistance	0 ] 	)
+}

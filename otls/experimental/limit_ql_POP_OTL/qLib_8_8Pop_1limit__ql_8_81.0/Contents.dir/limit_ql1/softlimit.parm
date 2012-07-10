@@ -1,0 +1,15 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
+source	[ 0	locks=0 ]	(	`chs(\"../limit/source\")`	)
+type	[ 8	locks=0 ]	(	[ type	1 ] 	)
+limitpos	[ 8	locks=0 ]	(	[ limitposx	3.2433097362518311 ] 	[ limitposy	3.9034161567687988 ] 	[ limitposz	-5.0845322608947754 ] 	)
+limitneg	[ 8	locks=0 ]	(	[ limitnegx	-3.2433097362518311 ] 	[ limitnegy	-3.9034161567687988 ] 	[ limitnegz	-12.182332992553711 ] 	)
+behavior	[ 0	locks=0 ]	(	[ behavior	0 ] 	)
+force	[ 0	locks=0 ]	(	[ force	1 ] 	)
+vscale	[ 0	locks=0 ]	(	[ vscale	0 ] 	)
+ignoremass	[ 0	locks=0 ]	(	[ ignoremass	0 ] 	)
+overridemass	[ 0	locks=0 ]	(	[ overridemass	0 ] 	)
+mass	[ 0	locks=0 ]	(	[ mass	1 ] 	)
+stabledrag	[ 0	locks=0 ]	(	[ stabledrag	1 ] 	)
+}

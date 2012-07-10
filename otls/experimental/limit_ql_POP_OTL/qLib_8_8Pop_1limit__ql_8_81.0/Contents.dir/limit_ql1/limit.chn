@@ -1,0 +1,153 @@
+{
+    channel limitnegx {
+      lefttype = extend
+      righttype = extend
+      default = -4.2117338180541992
+      flags = 0
+      segment { length = 0 value = -4.2117338180541992 -4.2117338180541992 expr = "bbox(\"../objnet1/limit\", D_XMIN)" }
+    }
+    channel limitnegy {
+      lefttype = extend
+      righttype = extend
+      default = -1.7840131521224976
+      flags = 0
+      segment { length = 0 value = -1.7840131521224976 -1.7840131521224976 expr = "bbox(\"../objnet1/limit\", D_YMIN)" }
+    }
+    channel limitnegz {
+      lefttype = extend
+      righttype = extend
+      default = -22.915410995483398
+      flags = 0
+      segment { length = 0 value = -22.915410995483398 -22.915410995483398 expr = "bbox(\"../objnet1/limit\", D_ZMIN)" }
+    }
+    channel limitposx {
+      lefttype = extend
+      righttype = extend
+      default = 4.510136604309082
+      flags = 0
+      segment { length = 0 value = 4.510136604309082 4.510136604309082 expr = "bbox(\"../objnet1/limit\", D_XMAX)" }
+    }
+    channel limitposy {
+      lefttype = extend
+      righttype = extend
+      default = 4.346031665802002
+      flags = 0
+      segment { length = 0 value = 4.346031665802002 4.346031665802002 expr = "bbox(\"../objnet1/limit\", D_YMAX)" }
+    }
+    channel limitposz {
+      lefttype = extend
+      righttype = extend
+      default = 3.9800488948822021
+      flags = 0
+      segment { length = 0 value = 3.9800488948822021 3.9800488948822021 expr = "bbox(\"../objnet1/limit\", D_ZMAX)" }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../boundtype\") }
+    }
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../activate\") }
+    }
+    channel source {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../source\") }
+    }
+    channel behavior {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../behavior\") }
+    }
+    channel event {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../event\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../group\") }
+    }
+    channel preservegroup {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../preservegroup\") }
+    }
+    channel hitindex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hitindex\") }
+    }
+    channel bounce {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../bounce\") }
+    }
+    channel gaintan {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gaintan\") }
+    }
+    channel gainnml {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gainnml\") }
+    }
+    channel donumhit {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../donumhit\") }
+    }
+    channel dohitid {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dohitid\") }
+    }
+    channel dohittime {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dohittime\") }
+    }
+    channel dohitpos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dohitpos\") }
+    }
+    channel dohitnormal {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dohitnormal\") }
+    }
+    channel dodistance {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dodistance\") }
+    }
+  }
