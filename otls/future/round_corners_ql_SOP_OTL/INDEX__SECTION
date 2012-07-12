@@ -1,0 +1,13 @@
+Operator:     round_corners_ql
+Label:        Round Corners qL
+Path:         oplib:/Sop/round_corners_ql?Sop/round_corners_ql
+Icon:         DOP_applydata
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       false
+Python:       true
+Empty:        false
+Modified:     Thu Jul 12 18:56:04 2012
+

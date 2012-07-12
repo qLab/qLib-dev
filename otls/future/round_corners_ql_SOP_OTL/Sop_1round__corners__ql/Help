@@ -1,0 +1,33 @@
+#icon: DOP/applydata
+#context: sop
+#type: node
+
+= Round Corners qL =
+
+*Version 0.1.0*
+
+"""Replaces points with circular arcs in poligonal curves."""
+
+@Parameters
+    Group:
+        The group of points or primitives that gets affected by the operation.
+    Group Type:
+        Type of the group.
+    Radius:
+        Radius of the arc.
+    Radius Attribute:
+        Name of the primitive or point group attribute that sets the radius.
+    Segment Mode:
+        Mode of the segment length calculation.
+        * *Max Segment Length:* Sets the maximum length of a segment of the arc.
+        * *Number of Segments:* Sets the number of segments of the arcs.
+    Max Segment Length:
+        Maximum length of a segment if *Max Segment Length* is the active mode.
+    Segments:
+        Number of segments if *Number of Segments* is the active mode.
+    Min/Max Angle:
+        Minimum and maximum limits of the angle that gets rounded.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.
