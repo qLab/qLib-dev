@@ -1,4 +1,66 @@
 {
+    channel visu_colors1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors1pos\") }
+    }
+    channel visu_colors1cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors1cr\") }
+    }
+    channel visu_colors1cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors1cg\") }
+    }
+    channel visu_colors1cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors1cb\") }
+    }
+    channel visu_colors1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vis_coincident_colors1interp\") }
+    }
+    channel visu_colors2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors2pos\") }
+    }
+    channel visu_colors2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors2cr\") }
+    }
+    channel visu_colors2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors2cg\") }
+    }
+    channel visu_colors2cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vis_coincident_colors2cb\") }
+    }
+    channel visu_colors2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vis_coincident_colors2interp\") }
+    }
     channel radius {
       lefttype = extend
       righttype = extend
@@ -46,5 +108,40 @@
       flags = 0
       start = 1.2083333730697632
       segment { length = 0 value = 2 2 expr = ch(\"../coi_num_or_more\") }
+    }
+    channel do_visu {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vis_coincidents\") }
+    }
+    channel visu_colors {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../vis_coincident_colors\") }
+    }
+    channel vis_min {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vis_coincidents_rangex\") }
+    }
+    channel vis_max {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../vis_coincidents_rangey\") }
+    }
+    channel visu {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"../vismode\") != 0" }
     }
   }

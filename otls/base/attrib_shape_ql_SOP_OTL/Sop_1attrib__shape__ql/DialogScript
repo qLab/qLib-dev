@@ -1,4 +1,4 @@
-# Dialog script for attrib_shape_ql automatically generated 12/02/10 21:38:37
+# Dialog script for attrib_shape_ql automatically generated 07/04/12 12:03:12
 
 {
     name	attrib_shape_ql
@@ -79,7 +79,7 @@
 	    label	"Attribute"
 	    type	string
 	    joinnext
-	    default	{ "amount" }
+	    default	{ "weight" }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -158,7 +158,7 @@
     }
 
     group {
-	name	"folder0"
+	name	"attribfolder_1"
 	label	"Composite"
 
 	parm {
@@ -188,7 +188,7 @@
     }
 
     group {
-	name	"attribfolder_1"
+	name	"attribfolder_2"
 	label	"Transform"
 
 	parm {
@@ -274,7 +274,7 @@
     }
 
     group {
-	name	"attribfolder_2"
+	name	"attribfolder_3"
 	label	"Volume"
 
 	parm {

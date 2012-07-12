@@ -1,55 +1,57 @@
-Building and extracting OTLs
-============================
+## Getting and building qLib
+
+First of all clone it with git:
+
+    git clone git://github.com/gadfly16/qLib.git
+
+### Building and extracting OTLs
 
 For better version management the assets are distributed in ascii form. This
 means that the OTLs must be built before importing into houdini. qLib provides
-the 'qdo.py' helper script to aid the process of library management.
+the `qdo` utility script to aid you in this and other processes.
 
-Building binary OTLs from the ascii directories
------------------------------------------------
+### Building binary OTLs from the extracted directories
 
-The following command will build the whole library:
+The following command executed in qLib's root directory will build the whole
+library:
 
-./qdo.py build -R
+    ./qdo build -R
 
-The following command will build just the 'base' otls:
+The `-R` flags stands for recursive and that make `qdo` to descend into
+subdirectories. The following command will build just the 'base' otls:
 
-./qdo.py build -R houdini11.0/otls/base/
+    ./qdo build -R otls/base/
 
 Of course the exact commands may be different if you are not in the top level
 of the qLib distribution.
 
 You can also build just one single asset:
 
-./qdo.py build -R houdini11.0/otls/base/bend_ql_OTL
+    ./qdo build otls/base/bend_ql_SOP_OTL
 
-Extracting ascii directorie structures from binary OTLs
--------------------------------------------------------
+### Extracting ascii directory structures from binary OTLs
 
 The logic is the same here, just the subcommand differs:
 
-./qdo.py extract -R
-./qdo.py extract -R houdini11.0/otls/base
-./qdo.py extract houdini11.0/otls/base/bend_ql.otl
+    ./qdo extract -R ./qdo extract -R otls/base ./qdo extract
+otls/base/bend_ql_SOP.otl
 
-Cleaning up after yourself
---------------------------
+### Cleaning up after yourself
 
 Sometimes it's handy to clean up the mess after your work. The logic is the
-same here, you can use the '-R' flag to initiate recursive behavior. The next
+same here, you can use the `-R` flag to initiate recursive behavior. The next
 command will clear all binary OTLs recursively under the current directory:
 
-./qdo.py clean -R
+    ./qdo clean -R
 
-If you want to remove the extracted directories use the '-s' or '--source'
+If you want to remove the extracted directories use the `-s` or `--source`
 flag. For example:
 
-./qdo.py clean -sR houdini11.0/otls/base
+    ./qdo clean -sR otls/base
 
-Use the '--help' flag
----------------------
+### Use the `--help` flag
 
-If you are uncertain you can always use the '-h' or '--help' flag to see all
-the available subcommands and flags, or if you put it after a subcommand the
-help of that particular command.
+If you are uncertain you can always use the `-h` or `--help` flag to see all
+the available subcommands and flags, or if you put it after a subcommand to get
+the help of that particular command.
 

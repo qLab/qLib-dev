@@ -1,0 +1,29 @@
+comment ""
+position 9.19857 7.92108
+cachesize 1
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	and2 0 1 "condition"
+1 	visu_colors 1 1 "visu_colors"
+}
+inputs
+{
+0 	and2 0 1
+1 	visu_colors 0 1
+}
+stat
+{
+  create 1341611289
+  modify 1341618357
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

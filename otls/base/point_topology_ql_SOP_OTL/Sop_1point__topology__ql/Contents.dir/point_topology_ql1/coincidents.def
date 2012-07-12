@@ -10,18 +10,18 @@ outputsNamed3
 }
 inputsNamed3
 {
-3 	IN 1 1 "input1"
+3 	vismode 0 1 "input1"
 4 	count_coincidents 1 1 "input2"
 }
 inputs
 {
-0 	IN 0 1
+0 	vismode 0 1
 1 	count_coincidents 0 1
 }
 stat
 {
   create 1332802778
-  modify 1332805406
+  modify 1341617204
   author tusi@demeisen
   access 0777
 }

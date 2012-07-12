@@ -1,4 +1,4 @@
-# Dialog script for point_topology_ql automatically generated 07/03/12 13:22:12
+# Dialog script for point_topology_ql automatically generated 07/07/12 04:17:13
 
 {
     name	point_topology_ql
@@ -14,6 +14,20 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
+    parm {
+	name	"vismode"
+	label	"Visualization"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"Disabled"
+	    "1"	"Colors"
+	    "2"	"Colors + Points"
+	    "3"	"Colors, Points Only"
+	}
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder1"
 	label	"Coincident Points"
@@ -42,7 +56,7 @@
 	    name	"coi_maxpoints"
 	    label	"Max Points"
 	    type	integer
-	    default	{ "10" }
+	    default	{ "100" }
 	    disablewhen	"{ do_coincidents == 0 }"
 	    range	{ 0 9 }
 	    export	none
@@ -139,6 +153,56 @@
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+	group {
+	    name	"folder2"
+	    label	"Visualization"
+	    hidewhentab	"{ vismode == 0 }"
+
+	    parm {
+		name	"vis_coincidents"
+		label	"Visualize"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vis_coincidents_range"
+		label	"Value Range"
+		type	intvector2
+		size	2
+		default	{ "1" "2" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 } { vis_coincidents == 0 }"
+		range	{ 1 9 }
+		export	none
+	    }
+	    parm {
+		name	"vis_coincident_colors"
+		label	"Colors"
+		type	ramp_rgb
+		default	{ "2" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 } { vis_coincidents == 0 }"
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "linear" }
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampbasis_var" "visu_colors_the_basis_strings" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "rampkeys_var" "visu_colors_the_key_positions" }
+		parmtag	{ "rampcolortype" "rgb" }
+		parmtag	{ "rampvalues_var" "visu_colors_the_key_values" }
+		parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 0 0 ) 2interp ( linear )" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
     }
 
     group {
@@ -244,202 +308,271 @@
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+	group {
+	    name	"folder3"
+	    label	"Visualization"
+	    tabbreak
+	    hidewhentab	"{ vismode == 0 }"
+
+	    parm {
+		name	"vis_neighbours"
+		label	"Visualize"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vis_neighbours_range"
+		label	"Value Range"
+		type	intvector2
+		size	2
+		default	{ "2" "8" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 } { vis_neighbours == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"vis_neighbours_colors"
+		label	"Colors"
+		type	ramp_rgb
+		default	{ "2" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 } { vis_neighbours == 0 }"
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "linear" }
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampbasis_var" "visu_colors_the_basis_strings" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "rampkeys_var" "visu_colors_the_key_positions" }
+		parmtag	{ "rampcolortype" "rgb" }
+		parmtag	{ "rampvalues_var" "visu_colors_the_key_values" }
+		parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 1 0 ) 2interp ( linear )" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
     }
 
     group {
 	name	"folder1_2"
 	label	"Indices"
 
-	parm {
-	    name	"do_ptindex"
-	    label	"Point Indices"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"ptindex_mode"
-	    label	"Value to Store"
-	    type	integer
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    disablewhen	"{ do_ptindex == 0 }"
-	    menu	{
-		"ptindex"	"Point Index"
-		"ptid"	"Point Id"
-		"pstate"	"Point State"
+	group {
+	    name	"folder0"
+	    label	"Geometry"
+
+	    parm {
+		name	"do_ptindex"
+		label	"Point Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+	    parm {
+		name	"ptindex_attrib"
+		label	"Point Index"
+		type	string
+		joinnext
+		default	{ "ptindex" }
+		disablewhen	"{ do_ptindex == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptindex_localvar"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_ptindex == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_ptpercent"
+		label	"Point Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptpercent_attrib"
+		label	"Point Idx [0..1]"
+		type	string
+		joinnext
+		default	{ "ptpercent" }
+		disablewhen	"{ do_ptpercent == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptpercent_localvar"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_ptpercent == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxi"
+		label	"Vertex Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxi_name"
+		label	"Vertex Index"
+		type	string
+		joinnext
+		default	{ "vtindex" }
+		disablewhen	"{ do_vtxi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxi_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxp"
+		label	"Vertex Index [0..1]"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxp_name"
+		label	"Vertex Idx [0..1]"
+		type	string
+		joinnext
+		default	{ "vtpercent" }
+		disablewhen	"{ do_vtxp == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxp_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxp == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxs"
+		label	"Vertices Per Primitive"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxs_name"
+		label	"Vertices on Prim"
+		type	string
+		joinnext
+		default	{ "vtcount" }
+		disablewhen	"{ do_vtxs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxs_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_primi"
+		label	"Primitive Index"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"primi_name"
+		label	"Primitive Index"
+		type	string
+		joinnext
+		default	{ "prindex" }
+		disablewhen	"{ do_primi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"primi_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_primi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	}
-	parm {
-	    name	"ptindex_attrib"
-	    label	"Attrib"
-	    type	string
-	    nolabel
-	    joinnext
-	    default	{ "ptindex" }
-	    disablewhen	"{ do_ptindex == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+
+	group {
+	    name	"folder0_1"
+	    label	"Particles"
+
 	}
-	parm {
-	    name	"ptindex_localvar"
-	    label	"Variable"
-	    type	string
-	    default	{ "" }
-	    disablewhen	"{ do_ptindex == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"labelparm"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"do_vtxi"
-	    label	"Vertex Indices"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxi_name"
-	    label	"Vertex Index"
-	    type	string
-	    joinnext
-	    default	{ "vtindex" }
-	    disablewhen	"{ do_vtxi == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxi_varname"
-	    label	"Variable"
-	    type	string
-	    default	{ "" }
-	    disablewhen	"{ do_vtxi == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"do_vtxp"
-	    label	"Vertex Index [0..1]"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxp_name"
-	    label	"Vertex Idx [0..1]"
-	    type	string
-	    joinnext
-	    default	{ "vtpercent" }
-	    disablewhen	"{ do_vtxp == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxp_varname"
-	    label	"Variable"
-	    type	string
-	    default	{ "" }
-	    disablewhen	"{ do_vtxp == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"do_vtxs"
-	    label	"Vertices Per Primitive"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxs_name"
-	    label	"Vertices on Prim"
-	    type	string
-	    joinnext
-	    default	{ "vtcount" }
-	    disablewhen	"{ do_vtxs == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"vtxs_varname"
-	    label	"Variable"
-	    type	string
-	    default	{ "" }
-	    disablewhen	"{ do_vtxs == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"do_primi"
-	    label	"Primitive Index"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0! 10 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"primi_name"
-	    label	"Primitive Index"
-	    type	string
-	    joinnext
-	    default	{ "prindex" }
-	    disablewhen	"{ do_primi == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"primi_varname"
-	    label	"Variable"
-	    type	string
-	    default	{ "" }
-	    disablewhen	"{ do_primi == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+
     }
 
 }

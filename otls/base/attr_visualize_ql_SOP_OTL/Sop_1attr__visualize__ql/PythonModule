@@ -1,0 +1,24 @@
+def decpreset(kwargs):
+
+    m = kwargs['script_value']
+    n = hou.pwd()
+    p = n.parm
+
+    if m=="geom":
+        p("keep_every_n_entity").set("primitive")
+        p("keep_every_n_comps").set(False)
+        p("prim_num_limit").set(True)
+
+    if m=="points":
+        p("keep_every_n_comps").set(True)
+        p("prim_num_limit").set(False)
+        p("keep_every_n_entity").set("point")
+
+    if m=="on":
+        p("keep_every_n_comps").set(True)
+        p("prim_num_limit").set(True)
+
+    if m=="off":
+        p("keep_every_n_comps").set(False)
+        p("prim_num_limit").set(False)
+
