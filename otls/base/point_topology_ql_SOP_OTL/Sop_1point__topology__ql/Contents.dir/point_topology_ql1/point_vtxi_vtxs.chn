@@ -1,19 +1,4 @@
 {
-    channel val1i1 {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      start = 1.2083333730697632
-      segment { length = 0 expr = $VTX }
-    }
-    channel apply1 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      start = 1.2083333730697632
-      segment { length = 0 value = 1 1 expr = ch(\"../vtxi/input\") }
-    }
     channel tx {
       lefttype = extend
       righttype = extend
@@ -182,6 +167,21 @@
       flags = 0
       start = 1.2083333730697632
       segment { length = 0 value = 1 1 expr = $PSCALE }
+    }
+    channel val1i1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 expr = $VTX }
+    }
+    channel apply1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 1.2083333730697632
+      segment { length = 0 value = 1 1 expr = ch(\"../vtxi/input\") }
     }
     channel val2i1 {
       lefttype = extend

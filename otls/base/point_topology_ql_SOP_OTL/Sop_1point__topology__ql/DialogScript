@@ -1,4 +1,4 @@
-# Dialog script for point_topology_ql automatically generated 07/07/12 04:17:13
+# Dialog script for point_topology_ql automatically generated 07/12/12 21:17:20
 
 {
     name	point_topology_ql
@@ -27,6 +27,20 @@
 	}
 	range	{ 0 1 }
 	export	none
+    }
+    parm {
+	name	"baseColor"
+	label	"Base Color"
+	type	color
+	size	3
+	default	{ "0.1" "0.1" "0.1" }
+	disablewhen	"{ vismode == 0 }"
+	hidewhen	"{ vismode == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     group {
 	name	"folder1"

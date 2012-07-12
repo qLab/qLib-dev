@@ -10,19 +10,19 @@ outputsNamed3
 inputsNamed3
 {
 1 	importattrib1 3 1 "switcher"
-3 	Cd 0 1 "input1"
+3 	baseColor 0 1 "input1"
 4 	importattrib1 4 1 "input2"
 }
 inputs
 {
 0 	importattrib1 0 1
-1 	Cd 0 1
+1 	baseColor 0 1
 2 	importattrib1 1 1
 }
 stat
 {
   create 1341617276
-  modify 1341617316
+  modify 1342120338
   author tusi@demeisen
   access 0777
 }
