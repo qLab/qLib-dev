@@ -499,6 +499,8 @@ point_topology_ql1/attrib_pt_index/if_do_ptpercent/addattrib_ptpercent.parm
 point_topology_ql1/attrib_pt_index/if_do_ptpercent/addattrib_ptpercent.userdata
 point_topology_ql1/init_color.init
 point_topology_ql1/init_color.def
+point_topology_ql1/init_color.spareparmdef
+point_topology_ql1/init_color.chn
 point_topology_ql1/init_color.parm
 point_topology_ql1/init_color.userdata
 point_topology_ql1/init_color/global1.init
@@ -509,10 +511,6 @@ point_topology_ql1/init_color/output1.init
 point_topology_ql1/init_color/output1.def
 point_topology_ql1/init_color/output1.parm
 point_topology_ql1/init_color/output1.userdata
-point_topology_ql1/init_color/Cd.init
-point_topology_ql1/init_color/Cd.def
-point_topology_ql1/init_color/Cd.parm
-point_topology_ql1/init_color/Cd.userdata
 point_topology_ql1/init_color/importattrib1.init
 point_topology_ql1/init_color/importattrib1.def
 point_topology_ql1/init_color/importattrib1.parm
@@ -521,6 +519,11 @@ point_topology_ql1/init_color/switch1.init
 point_topology_ql1/init_color/switch1.def
 point_topology_ql1/init_color/switch1.parm
 point_topology_ql1/init_color/switch1.userdata
+point_topology_ql1/init_color/baseColor.init
+point_topology_ql1/init_color/baseColor.def
+point_topology_ql1/init_color/baseColor.spareparmdef
+point_topology_ql1/init_color/baseColor.parm
+point_topology_ql1/init_color/baseColor.userdata
 point_topology_ql1/count_coincidents/while1.order
 point_topology_ql1/count_coincidents/while1.net
 point_topology_ql1/count_coincidents/if_do_grouping.order
