@@ -1,4 +1,4 @@
-# Dialog script for primgroup_centroids_ql automatically generated 06/05/12 18:58:48
+# Dialog script for primgroup_centroids_ql automatically generated 07/14/12 20:52:20
 
 {
     name	primgroup_centroids_ql
@@ -18,6 +18,14 @@
 	name	"folder0"
 	label	"Parameters"
 
+	parm {
+	    name	"generate_centroids"
+	    label	"Generate Centroids"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
 	parm {
 	    name	"mode"
 	    label	"Mode"
@@ -67,7 +75,6 @@
 	    group {
 		name	"folder3"
 		label	"Group Indexing"
-		tabbreak
 
 		parm {
 		    name	"add_grpname_attr"
@@ -93,6 +100,51 @@
 
 	    group {
 		name	"folder3_1"
+		label	"Measure Pieces'"
+		tabbreak
+
+		parm {
+		    name	"measure_area"
+		    label	"Surface Area"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"attrib_area"
+		    label	"Surface Area"
+		    type	string
+		    default	{ "area" }
+		    disablewhen	"{ measure_area == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"measure_volume"
+		    label	"Volume"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"attrib_volume"
+		    label	"Volume"
+		    type	string
+		    default	{ "volume" }
+		    disablewhen	"{ measure_volume == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    group {
+		name	"folder3_2"
 		label	"Transformation Related"
 
 		parm {
