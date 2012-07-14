@@ -1,0 +1,36 @@
+sopflags sopflags = 
+comment "TODO: write this in python
+(would be much faster)"
+position 4.89835 2.6496
+cachesize 1
+connectornextid 26
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	foreach_pts_for_centroids 1 1 "input1"
+23 	"" "" 1 "input2"
+24 	"" "" 1 "input3"
+25 	"" "" 1 "input4"
+}
+inputs
+{
+0 	foreach_pts_for_centroids 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+}
+stat
+{
+  create 1321482674
+  modify 1342267620
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

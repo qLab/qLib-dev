@@ -1,0 +1,274 @@
+# Dialog script for primgroup_centroids_ql automatically generated 07/14/12 20:52:20
+
+{
+    name	primgroup_centroids_ql
+    script	primgroup_centroids_ql
+    label	"PrimGroup Centroids qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Fractures"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Parameters"
+
+	parm {
+	    name	"generate_centroids"
+	    label	"Generate Centroids"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"mode"
+	    label	"Mode"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"0"	"Primitive Groups"
+		"1"	"Name Attribute"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"groupmask"
+	    label	"Group Mask"
+	    type	string
+	    default	{ "piece*" }
+	    help	"A pattern specifying the (primitive) groups to process."
+	    disablewhen	"{ mode != 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"attrib"
+	    label	"Attrib Name"
+	    type	string
+	    default	{ "name" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"attribtol"
+	    label	"Tolerance"
+	    type	float
+	    default	{ "0.001" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder2"
+	    label	"Add Attributes"
+
+	    group {
+		name	"folder3"
+		label	"Group Indexing"
+
+		parm {
+		    name	"add_grpname_attr"
+		    label	"Group Name Attribute (Point; index->name)"
+		    type	toggle
+		    default	{ "1" }
+		    help	"Creates a per-point string attribute,containing\\nthe name of the group the point belongs to.\\n\\nThis attribute allows looking up the name of a group\\nfrom its centroid point."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"add_grpindex_attr"
+		    label	"Group Index Attribute (Detail; name->index)"
+		    type	toggle
+		    default	{ "0" }
+		    help	"Creates detail attributes with the names of all groups,\\ncontaining the point index of each centroid.\\n\\nThis attribute allows looking up the index of a centroid-point,\\nbased on the name of its group."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
+	    group {
+		name	"folder3_1"
+		label	"Measure Pieces'"
+		tabbreak
+
+		parm {
+		    name	"measure_area"
+		    label	"Surface Area"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"attrib_area"
+		    label	"Surface Area"
+		    type	string
+		    default	{ "area" }
+		    disablewhen	"{ measure_area == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"measure_volume"
+		    label	"Volume"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"attrib_volume"
+		    label	"Volume"
+		    type	string
+		    default	{ "volume" }
+		    disablewhen	"{ measure_volume == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    group {
+		name	"folder3_2"
+		label	"Transformation Related"
+
+		parm {
+		    name	"add_rest"
+		    label	"Rest Position"
+		    type	toggle
+		    default	{ "0" }
+		    help	"Store current point positions as rest position attribute."
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"add_orient"
+		    label	"Orientation Vectors"
+		    type	integer
+		    default	{ "0" }
+		    help	"Store default aim/up vectors for the points."
+		    menu	{
+			"0"	"None"
+			"1"	"N, up (normal/up)"
+			"2"	"v, up (velocity/up)"
+		    }
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"aim"
+		    label	"Aim"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "1" }
+		    help	"Aim vector direction."
+		    disablewhen	"{ add_orient == 0 }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"up"
+		    label	"Up"
+		    type	vector
+		    size	3
+		    default	{ "0" "1" "0" }
+		    help	"Up vector direction."
+		    disablewhen	"{ add_orient == 0 }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
+	}
+
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "NOTE: Centroid point order always matches original group order." }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Preview"
+
+	parm {
+	    name	"preview"
+	    label	"Preview Individual Pieces (Group Mode Only)"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"index"
+	    label	"Piece to Display"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ preview == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Center Pt Size"
+	    type	float
+	    default	{ "0.125" }
+	    disablewhen	"{ preview == 0 }"
+	    range	{ 0.05 0.5 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder1"
+	    label	"Pieces Info"
+
+	    parm {
+		name	"num_pieces"
+		label	"No.# of Pieces"
+		type	integer
+		default	{ "argc(primgroupmask(\"IN\", chs(\"groupmask\")))" }
+		disablewhen	"{ preview != 2 }"
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"piece_name"
+		label	"Current Piece (MMB)"
+		type	string
+		default	{ "`arg(primgroupmask(\"IN\", chs(\"groupmask\")), ch(\"index\"))`" }
+		help	"Name of current piece.\\nNOTE: press MMB to display expression result."
+		disablewhen	"{ preview != 2 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+}
