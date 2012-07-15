@@ -15,11 +15,11 @@ waypoint_ql1/geom_reader.def
 waypoint_ql1/geom_reader.chn
 waypoint_ql1/geom_reader.parm
 waypoint_ql1/geom_reader.userdata
-waypoint_ql1/geom_writer.init
-waypoint_ql1/geom_writer.def
-waypoint_ql1/geom_writer.chn
-waypoint_ql1/geom_writer.parm
-waypoint_ql1/geom_writer.userdata
+waypoint_ql1/RENDER.init
+waypoint_ql1/RENDER.def
+waypoint_ql1/RENDER.chn
+waypoint_ql1/RENDER.parm
+waypoint_ql1/RENDER.userdata
 waypoint_ql1/OUT.init
 waypoint_ql1/OUT.def
 waypoint_ql1/OUT.spareparmdef

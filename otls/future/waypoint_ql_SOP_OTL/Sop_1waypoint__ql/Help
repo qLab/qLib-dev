@@ -4,7 +4,7 @@
 
 = Waypoint qL =
 
-*Version 0.0.3 (alpha)*
+*Version 0.0.4 (alpha)*
 
 """Represents a 'waypoint' in a complex SOP network, where expensive intermediate results can be saved to disk and re-used."""
 
@@ -124,6 +124,9 @@ WARNING:
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.4:
+        - The asset's internal ROP output driver is now called `RENDER`. This might make it easier to refer to it when rendering in batch mode.
 
     Version 0.0.3:
         - Output filename helper "preset" menu
