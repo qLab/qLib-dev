@@ -1,4 +1,4 @@
-# Dialog script for pointjitter_ql automatically generated 05/19/12 00:43:22
+# Dialog script for pointjitter_ql automatically generated 07/15/12 17:38:49
 
 {
     name	pointjitter_ql
@@ -170,6 +170,154 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Axes"
+
+	import {
+	    label	axisranges
+	    source	"op:vopsop_jitter"
+	    mask	"axisrange*"
+	    enable	1
+
+	    parm {
+		name	"axisrangemin"
+		label	"Axis Range Min"
+		type	direction
+		size	3
+		default	{ "-0.5" "-0.5" "-0.5" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "axisrangemin" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"axisrangemax"
+		label	"Axis Range Max"
+		type	direction
+		size	3
+		default	{ "0.5" "0.5" "0.5" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "axisrangemax" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	import {
+	    label	vectors
+	    source	"op:vopsop_jitter"
+	    mask	"useaxisvectors vectype[xyz] attrib[xyz]"
+	    enable	1
+
+	    parm {
+		name	"useaxisvectors"
+		label	"Use Axis Vectors"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "useaxisvectors" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vectypex"
+		label	"X Axis"
+		type	integer
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ useaxisvectors == 0 }"
+		menu	{
+		    "0"	"Constant (X+)"
+		    "1"	"Attribute"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "vectypex" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"attribx"
+		label	"attribx"
+		type	string
+		nolabel
+		default	{ "N" }
+		disablewhen	"{ useaxisvectors == 0 } { vectypex != 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "attribx" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vectypey"
+		label	"Y Axis"
+		type	integer
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ useaxisvectors == 0 }"
+		menu	{
+		    "0"	"Constant (Y+)"
+		    "1"	"Attribute"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "vectypey" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"attriby"
+		label	"attriby"
+		type	string
+		nolabel
+		default	{ "up" }
+		disablewhen	"{ useaxisvectors == 0 } { vectypey != 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "attriby" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vectypez"
+		label	"Z Axis"
+		type	integer
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ useaxisvectors == 0 }"
+		menu	{
+		    "0"	"Constant (Z+)"
+		    "1"	"Attribute"
+		    "2"	"Cross X*Y"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "vectypez" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"attribz"
+		label	"attribz"
+		type	string
+		nolabel
+		default	{ "" }
+		disablewhen	"{ useaxisvectors == 0 } { vectypez != 1 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "attribz" }
+		parmtag	{ "import_source" "op:vopsop_jitter" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
     }
 
 }

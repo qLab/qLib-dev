@@ -79,4 +79,92 @@
       flags = 0
       segment { length = 0 expr = chs(\"../idattrib\") }
     }
+    channel axisrangeminx {
+      lefttype = extend
+      righttype = extend
+      default = -0.5
+      flags = 0
+      segment { length = 0 value = -0.5 -0.5 expr = ch(\"../axisrangeminx\") }
+    }
+    channel axisrangeminy {
+      lefttype = extend
+      righttype = extend
+      default = -0.5
+      flags = 0
+      segment { length = 0 value = -0.5 -0.5 expr = ch(\"../axisrangeminy\") }
+    }
+    channel axisrangeminz {
+      lefttype = extend
+      righttype = extend
+      default = -0.5
+      flags = 0
+      segment { length = 0 value = -0.5 -0.5 expr = ch(\"../axisrangeminz\") }
+    }
+    channel axisrangemaxx {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../axisrangemaxx\") }
+    }
+    channel axisrangemaxy {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../axisrangemaxy\") }
+    }
+    channel axisrangemaxz {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../axisrangemaxz\") }
+    }
+    channel useaxisvectors {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../useaxisvectors\") }
+    }
+    channel vectypex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vectypex\") }
+    }
+    channel attribx {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"N\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attribx\") }
+    }
+    channel vectypey {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vectypey\") }
+    }
+    channel attriby {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"up\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attriby\") }
+    }
+    channel vectypez {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vectypez\") }
+    }
+    channel attribz {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attribz\") }
+    }
   }

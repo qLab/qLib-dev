@@ -1,0 +1,7 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+preadd	[ 0	locks=0 ]	(	98.760000000000005	)
+mulconst	[ 0	locks=0 ]	(	54.32	)
+postadd	[ 0	locks=0 ]	(	10.23	)
+}
