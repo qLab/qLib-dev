@@ -1,12 +1,8 @@
-Vop/bbox /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/bbox otls/OPlibVop.otl
+Vop/clamp /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/clamp otls/OPlibVop.otl
 Vop/addgroup /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/addgroup otls/OPlibVop.otl
 Vop/length /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/length otls/OPlibVop.otl
-Vop/fit /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/fit otls/OPlibVop.otl
-Vop/clamp /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/clamp otls/OPlibVop.otl
 Vop/not /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/not otls/OPlibVop.otl

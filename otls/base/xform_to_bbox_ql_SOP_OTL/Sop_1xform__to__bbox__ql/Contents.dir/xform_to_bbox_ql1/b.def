@@ -1,0 +1,29 @@
+sopflags sopflags = 
+comment ""
+position 1.68116 1.66974
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+3 	bbox_2 1 1 "input1"
+}
+inputs
+{
+0 	bbox_2 0 1
+}
+stat
+{
+  create 1340068188
+  modify 1342477330
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.6 0.4 0.2 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,34 @@
+sopflags sopflags = 
+comment "This merge is needed only to enforce the
+evaluation dependency between the (optional)
+proxy and the source object (so the results
+would always be updated)."
+position -0.714547 -1.57058
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	blast_all_1 1 1 "input1"
+3 	group_and_clamp 2 1 "input2"
+}
+inputs
+{
+0 	blast_all_1 0 1
+1 	group_and_clamp 0 1
+}
+stat
+{
+  create 1342472729
+  modify 1342477177
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.36 0.36 0.36 
+delscript ""
+exprlanguage hscript
+end
