@@ -118,3 +118,120 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"useaxisvectors"
+	label	"Use Axis Vectors"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"axisrangemin"
+	label	"Axis Range Min"
+	type	direction
+	size	3
+	default	{ "-0.5" "-0.5" "-0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"axisrangemax"
+	label	"Axis Range Max"
+	type	direction
+	size	3
+	default	{ "0.5" "0.5" "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"vectypex"
+	label	"X Axis"
+	type	integer
+	joinnext
+	default	{ "0" }
+	disablewhen	"{ useaxisvectors == 0 }"
+	menu	{
+	    "0"	"Constant (X+)"
+	    "1"	"Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attribx"
+	label	"attribx"
+	type	string
+	nolabel
+	default	{ "N" }
+	disablewhen	"{ useaxisvectors == 0 } { vectypex != 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"vectypey"
+	label	"Y Axis"
+	type	integer
+	joinnext
+	default	{ "0" }
+	disablewhen	"{ useaxisvectors == 0 }"
+	menu	{
+	    "0"	"Constant (Y+)"
+	    "1"	"Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attriby"
+	label	"attriby"
+	type	string
+	nolabel
+	default	{ "up" }
+	disablewhen	"{ useaxisvectors == 0 } { vectypey != 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"vectypez"
+	label	"Z Axis"
+	type	integer
+	joinnext
+	default	{ "0" }
+	disablewhen	"{ useaxisvectors == 0 }"
+	menu	{
+	    "0"	"Constant (Z+)"
+	    "1"	"Attribute"
+	    "2"	"Cross X*Y"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attribz"
+	label	"attribz"
+	type	string
+	nolabel
+	default	{ "" }
+	disablewhen	"{ useaxisvectors == 0 } { vectypez != 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

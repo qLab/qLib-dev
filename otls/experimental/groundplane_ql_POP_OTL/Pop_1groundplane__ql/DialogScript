@@ -1,0 +1,91 @@
+# Dialog script for groundplane_ql automatically generated 07/17/12 02:48:57
+
+{
+    name	groundplane_ql
+    script	groundplane_ql
+    label	"Ground Plane qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"activation"
+	label	"Activation"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+    }
+    parm {
+	name	"source"
+	label	"Source Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l limit source" ]
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"group"
+	label	"Collision Group"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"preservegroup"
+	label	"Preserve Group"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "0" }
+	range	{ -50 50 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"gaintan"
+	label	"Gain Tangent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"gainnml"
+	label	"Gain Normal"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

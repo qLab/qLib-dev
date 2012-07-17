@@ -10,17 +10,17 @@ outputsNamed3
 inputsNamed3
 {
 0 	inttofloat1 2 1 "input1"
-1 	seed 0 1 "input2"
+1 	maddconst2 1 1 "input2"
 }
 inputs
 {
 0 	inttofloat1 0 1
-1 	seed 0 1
+1 	maddconst2 0 1
 }
 stat
 {
   create 1326405885
-  modify 1337381128
+  modify 1342363093
   author tusi@demeisen
   access 0777
 }

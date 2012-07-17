@@ -1,0 +1,56 @@
+    parm {
+	name	"set_name_0"
+	label	"Default ('null')"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"null1\", True)" }
+    }
+    parm {
+	name	"set_name_3"
+	label	"OUT"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"OUT\"); hou.pwd().setRenderFlag(True)" }
+    }
+    group {
+	name	"folder1"
+	label	"Waypoints"
+
+	parm {
+	    name	"set_name_4"
+	    label	":: POP_<name>"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"POP_\"+hou.pwd().name(), True)" }
+	}
+	parm {
+	    name	"set_name_5"
+	    label	":: POP_PRE_<name>"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"POP_PRE_\"+hou.pwd().name(), True)" }
+	}
+	parm {
+	    name	"set_name_6"
+	    label	":: POP_POST_<name>"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,.267,0))); hou.pwd().setName(\"POP_POST_\"+hou.pwd().name(), True)" }
+	}
+    }
+

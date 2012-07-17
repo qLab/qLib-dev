@@ -1,0 +1,153 @@
+{
+    channel invertxform {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/invertxform\") }
+    }
+    channel vlength {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../xform_to_bbox_proxy/vlength\") }
+    }
+    channel updatenmls {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../xform_to_bbox_proxy/updatenmls\") }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../xform_to_bbox_proxy/scale\") }
+    }
+    channel pz {
+      lefttype = extend
+      righttype = extend
+      default = 4.6654682159423828
+      flags = 0
+      segment { length = 0 value = 4.6654682159423828 4.6654682159423828 expr = ch(\"../xform_to_bbox_proxy/pz\") }
+    }
+    channel py {
+      lefttype = extend
+      righttype = extend
+      default = 6.8356108665466309
+      flags = 0
+      segment { length = 0 value = 6.8356108665466309 6.8356108665466309 expr = ch(\"../xform_to_bbox_proxy/py\") }
+    }
+    channel px {
+      lefttype = extend
+      righttype = extend
+      default = 3.0906600952148438
+      flags = 0
+      segment { length = 0 value = 3.0906600952148438 3.0906600952148438 expr = ch(\"../xform_to_bbox_proxy/px\") }
+    }
+    channel shear3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/shear3\") }
+    }
+    channel shear2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/shear2\") }
+    }
+    channel shear1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/shear1\") }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 2.7627348899841309
+      flags = 0
+      segment { length = 0 value = 2.7627348899841309 2.7627348899841309 expr = ch(\"../xform_to_bbox_proxy/sz\") }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      default = 0.36427798867225647
+      flags = 0
+      segment { length = 0 value = 0.36427798867225647 0.36427798867225647 expr = ch(\"../xform_to_bbox_proxy/sy\") }
+    }
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 2.78788161277771
+      flags = 0
+      segment { length = 0 value = 2.78788161277771 2.78788161277771 expr = ch(\"../xform_to_bbox_proxy/sx\") }
+    }
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/rz\") }
+    }
+    channel ry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/ry\") }
+    }
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/rx\") }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      default = -4.6654682159423828
+      flags = 0
+      segment { length = 0 value = -4.6654682159423828 -4.6654682159423828 expr = ch(\"../xform_to_bbox_proxy/tz\") }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      default = -3.7163853645324707
+      flags = 0
+      segment { length = 0 value = -3.7163853645324707 -3.7163853645324707 expr = ch(\"../xform_to_bbox_proxy/ty\") }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      default = -1.2427769899368286
+      flags = 0
+      segment { length = 0 value = -1.2427769899368286 -1.2427769899368286 expr = ch(\"../xform_to_bbox_proxy/tx\") }
+    }
+    channel rOrd {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/rOrd\") }
+    }
+    channel xOrd {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/xOrd\") }
+    }
+    channel grouptype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xform_to_bbox_proxy/grouptype\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../xform_to_bbox_proxy/group\") }
+    }
+  }

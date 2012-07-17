@@ -5,9 +5,9 @@ Icon:         SOP_bound
 Table:        Sop
 License:      
 Extra:        guide=./GUIDE 
-Inputs:       2 to 2
+Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Jun 28 12:06:47 2012
+Modified:     Tue Jul 17 00:40:09 2012
 

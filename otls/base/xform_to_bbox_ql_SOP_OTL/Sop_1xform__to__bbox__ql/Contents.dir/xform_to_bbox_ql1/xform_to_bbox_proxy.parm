@@ -1,0 +1,16 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	"guess"	)
+xOrd	[ 0	locks=0 ]	(	"srt"	)
+rOrd	[ 0	locks=0 ]	(	"xyz"	)
+t	[ 8	locks=0 ]	(	[ tx	-1.4201277494430542 ] 	[ ty	-0.45384120941162109 ] 	[ tz	-3.8573405742645264 ] 	)
+r	[ 0	locks=0 ]	(	0	0	0	)
+s	[ 8	locks=0 ]	(	[ sx	2.5912821093601308 ] 	[ sy	0.33758753479559689 ] 	[ sz	2.3629944925204729 ] 	)
+shear	[ 0	locks=0 ]	(	0	0	0	)
+p	[ 8	locks=0 ]	(	[ px	3.2680108547210693 ] 	[ py	3.5730667114257812 ] 	[ pz	3.8573405742645264 ] 	)
+scale	[ 0	locks=0 ]	(	1	)
+updatenmls	[ 0	locks=0 ]	(	"off"	)
+vlength	[ 0	locks=0 ]	(	"off"	)
+invertxform	[ 0	locks=0 ]	(	"off"	)
+}

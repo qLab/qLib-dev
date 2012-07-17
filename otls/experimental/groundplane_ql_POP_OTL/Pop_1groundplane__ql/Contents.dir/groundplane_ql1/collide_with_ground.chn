@@ -1,0 +1,41 @@
+{
+    channel do_group {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "strcmp(chs(\"../group_anew/group\"), \"\")" }
+    }
+    channel height {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../height\") }
+    }
+    channel gaintan {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gaintan\") }
+    }
+    channel gainnml {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../gainnml\") }
+    }
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../activation\") }
+    }
+    channel timestep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = 1.0/$FPS }
+    }
+  }

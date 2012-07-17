@@ -1,0 +1,15 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
+cacheincoming	[ 0	locks=0 ]	(	"off"	)
+vex_source	[ 0	locks=0 ]	(	`chs(\"../source\")`	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+timestep	[ 0	locks=0 ]	(	[ timestep	0.041666666666666664 ] 	)
+height	[ 0	locks=0 ]	(	[ height	8 ] 	)
+gaintan	[ 0	locks=0 ]	(	[ gaintan	0.5 ] 	)
+gainnml	[ 0	locks=0 ]	(	[ gainnml	0.20000000000000001 ] 	)
+group	[ 0	locks=0 ]	(	`chs(\"../group_anew/group\")`	)
+do_group	[ 0	locks=0 ]	(	[ do_group	0 ] 	)
+}

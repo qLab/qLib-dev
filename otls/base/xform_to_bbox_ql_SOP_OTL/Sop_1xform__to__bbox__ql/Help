@@ -4,14 +4,24 @@
 
 = Xform to BBox qL =
 
-*Version 0.0.3*
+*Version 0.0.4*
 
 """Fits the input geometry into the bounding box of a secondary geometry."""
 
-@related
-    - [Node:sop/xform]
-    - [Node:sop/bound]
-    - [Xform by Points qL|Node:sop/xform_by_points_ql]
+@inputs
+    Input Geometry:
+        The geometry to fit or clamp to the bounding box.
+
+    Bounding Geometry:
+        The geometry to be used as a bounding box. The geometry can be of any type
+        and shape (only its bounds will be used).
+
+    Input Proxy (optional):
+        If connected, the bounds of this geometry will be used for fitting calculations (instead of
+        the `Input Geometry`'s).
+
+        This can be useful for "unusual" geometry types such as metaballs: connect a [tessellated|Node:sop/convert]
+        version here to get more a accurate fit.
 
 
 @parameters
@@ -29,6 +39,9 @@
                 (e.g. when trying to add smoke effects to an RBD simulation, where
                 a few RBD pieces fell through the floor or were shot towards 'infinity').
 
+        Create Groups Only:
+            Do not modify the geometry itself, just create the point groups (if enabled).
+
     Padding, Low/High:
         Extra padding distance along the three world axes.
 
@@ -44,7 +57,19 @@
             large per-point velocities can mess up any following simulation or rendering process.)
 
 
+@related
+    - [Node:sop/xform]
+    - [Node:sop/bound]
+    - [Xform by Points qL|Node:sop/xform_by_points_ql]
+
+
 @Release_Notes Release Notes
+
+    Version 0.0.4:
+        - Fitting now works on all primitive types (including sphere primitives, metaballs, etc).
+        - There's an optional third input for a tessellated version of the input geometry (to enable more accurate fitting).
+        - Added 'create groups only' mode.
+        - Guide display options.
 
     Version 0.0.3:
         - Options for creating inside/outside point groups.
