@@ -1,0 +1,10 @@
+Vop/newgroup /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/newgroup otls/OPlibVop.otl
+Vop/vectofloat /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/vectofloat otls/OPlibVop.otl
+Vop/floattovec /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/floattovec otls/OPlibVop.otl
+Vop/addgroup /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addgroup otls/OPlibVop.otl
+Vop/vecsetcompon /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/vecsetcompon otls/OPlibVop.otl

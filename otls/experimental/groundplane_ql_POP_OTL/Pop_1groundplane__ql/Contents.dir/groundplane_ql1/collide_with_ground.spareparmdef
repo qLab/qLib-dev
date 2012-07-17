@@ -1,0 +1,91 @@
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"cacheincoming"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"timestep"
+	label	"timestep"
+	type	float
+	invisible
+	default	{ "1.0/$FPS" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "0" }
+	range	{ -50 50 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"gaintan"
+	label	"Gain Tangent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"gainnml"
+	label	"Gain Normal"
+	type	float
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"group"
+	label	"Collision Group"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"do_group"
+	label	"do_group"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }

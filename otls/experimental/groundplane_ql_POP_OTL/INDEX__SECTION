@@ -1,0 +1,13 @@
+Operator:     groundplane_ql
+Label:        Ground Plane qL
+Path:         oplib:/Pop/groundplane_ql?Pop/groundplane_ql
+Icon:         DOP_groundplane
+Table:        Pop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jul 17 02:48:57 2012
+

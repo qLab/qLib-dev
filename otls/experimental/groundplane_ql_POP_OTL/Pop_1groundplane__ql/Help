@@ -1,0 +1,65 @@
+#icon: DOP/groundplane
+#context: pop
+#type: node
+
+= Ground Plane qL =
+
+*Version 0.0.1*
+
+"""An infinite collision ground plane."""
+
+This POP implements a collision plane of infinite dimensions perpendicular to the world positive Y axis.
+
+Unlike the [Node:pop/limit] and [Node:pop/collision] POP nodes, this operator doesn't require any accuracy settings,
+and _no_ particles will be leaking below the ground plane.
+
+
+
+@parameters
+    Activation:
+        Turns this node on and off. The node is only active if this value is greater than 0. This is useful to control the effect of this node with an expression.
+
+        Note that this is activation of the node as a whole. You can't use this parameter to deactivate the node for certain particles.
+
+    Source Group:
+        Only affect a group of points out of all the points in the input.
+
+    Collision Group:
+        Add particles to this group that were currently collided.
+
+    Preserve Group:
+        Append to the contents of the collision group instead of replacing it.
+
+        WARNING:
+            This function is not yet implemented properly.
+
+    Height:
+        Height of the collision plane in world space.
+        The plane is always perpendicular to the world Y axis.
+
+    Gain Tangent:
+        Energy loss tangent to collision.
+
+    Gain Normal:
+        Energy loss normal to collision.
+
+
+
+@related
+    - [Node:pop/limit]
+    - [Node:pop/collision]
+    - [Node:dop/groundplane]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.1:
+        First prototype.
+
+        WARNING:
+            The `Preserve Group` function does not work.
+
+        TODO:
+            - fix/implement Preserve Group properly
+            - freeze particles below a minimum velocity (to get rid of jittering of almost-stopped particles)
+

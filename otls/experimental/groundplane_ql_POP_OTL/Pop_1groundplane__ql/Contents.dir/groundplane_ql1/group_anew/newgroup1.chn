@@ -1,0 +1,9 @@
+{
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"group1\"
+      flags = 0
+      segment { length = 0 expr = chs('../group/stringdef') }
+    }
+  }
