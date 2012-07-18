@@ -1,4 +1,4 @@
-# Dialog script for waypoint_ql automatically generated 07/15/12 03:17:48
+# Dialog script for waypoint_ql automatically generated 07/18/12 14:50:08
 
 {
     name	waypoint_ql
@@ -310,7 +310,7 @@
 	    import {
 		label	Reader
 		source	"op:geom_reader"
-		mask	"reload objpattern geodatapath missingframe"
+		mask	"reload objpattern geodatapath missingframe loadtype"
 		enable	1
 
 		parm {
@@ -358,6 +358,22 @@
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "import_token" "missingframe" }
+		    parmtag	{ "import_source" "op:geom_reader" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"loadtype"
+		    label	"Load"
+		    type	ordinal
+		    default	{ "full" }
+		    menu	{
+			"full"	"All Geometry"
+			"infobbox"	"Info Bounding Box"
+			"info"	"Info"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "loadtype" }
 		    parmtag	{ "import_source" "op:geom_reader" }
 		    parmtag	{ "autoscope" "0000000000000000" }
 		}

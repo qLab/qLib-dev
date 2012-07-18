@@ -25,4 +25,11 @@
       flags = 0
       segment { length = 0 expr = ch(\"../missingframe\") }
     }
+    channel loadtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 29.958292007446289
+      segment { length = 0 expr = ch(\"../loadtype\") }
+    }
   }
