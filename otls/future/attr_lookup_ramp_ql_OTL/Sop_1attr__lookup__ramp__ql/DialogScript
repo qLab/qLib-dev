@@ -1,4 +1,4 @@
-# Dialog script for attr_lookup_ramp_ql automatically generated 12/25/11 23:52:27
+# Dialog script for attr_lookup_ramp_ql automatically generated 07/18/12 14:00:18
 
 {
     name	attr_lookup_ramp_ql
@@ -26,121 +26,118 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    group {
-	name	"folder0"
+    parm {
+	name	"attrib_in"
 	label	"Input Attribute"
-
-	parm {
-	    name	"attrib_in"
-	    label	"Input Attribute"
-	    type	string
-	    default	{ "weight" }
-	    menureplace	{
-		[ "r = []" ]
-		[ "" ]
-		[ "try:" ]
-		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-		[ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
-		[ "    " ]
-		[ "    for a in attrs:" ]
-		[ "        r.append(a)" ]
-		[ "        r.append(a)" ]
-		[ "except:" ]
-		[ "    pass" ]
-		[ "" ]
-		[ "return r" ]
-		language	python
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+	type	string
+	joinnext
+	default	{ "weight" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
 	}
-	parm {
-	    name	"srcmin"
-	    label	"Input Range Min"
-	    type	float
-	    default	{ "0" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"srcmax"
-	    label	"Input Range Max"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
-    group {
-	name	"folder0_1"
+    parm {
+	name	"attrib_out"
 	label	"Output Attribute"
-	tabbreak
-
-	parm {
-	    name	"attrib_out"
-	    label	"Output Attribute"
-	    type	string
-	    default	{ "Cd" }
-	    menureplace	{
-		"Cd"	"color (Cd)"
-		"uv"	"uv"
-		"N"	"normal (N)"
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+	type	string
+	default	{ "Cd" }
+	menureplace	{
+	    "Cd"	"color (Cd)"
+	    "uv"	"uv"
+	    "N"	"normal (N)"
 	}
-	parm {
-	    name	"exp"
-	    label	"Out Gamma"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0.45 2.2 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
-    group {
-	name	"folder2"
+    parm {
+	name	"srcmin"
+	label	"Input Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Input Max"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rampcolortype"
+	label	"Color Type"
+	type	string
+	default	{ "hsv" }
+	menu	{
+	    "rgb"	"RGB"
+	    "hsv"	"HSV"
+	    "lab"	"LAB"
+	    "hsl"	"HSL"
+	    "xyz"	"XYZ"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"lookup_ramp"
 	label	"Lookup Ramp"
-
-	parm {
-	    name	"lookup_ramp"
-	    label	"Lookup Ramp"
-	    type	ramp_rgb
-	    default	{ "2" }
-	    range	{ 1! 10 }
-	    export	none
-	    parmtag	{ "rampvalues_var" "lookup_ramp_the_key_values" }
-	    parmtag	{ "rampkeys_var" "lookup_ramp_the_key_positions" }
-	    parmtag	{ "rampbasis_var" "lookup_ramp_the_basis_strings" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 1 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 0.116666675 1 0 ) 2interp ( linear )" }
-	    parmtag	{ "rampshowcontrolsdefault" "1" }
-	    parmtag	{ "rampcolortype" "hsv" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "rampbasisdefault" "linear" }
-	}
-	parm {
-	    name	"size"
-	    label	"Default Input Value"
-	    type	float
-	    default	{ "0" }
-	    range	{ 0 9 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampvalues_var" "lookup_ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "lookup_ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "lookup_ramp_the_basis_strings" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 1 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 0.116666675 1 0 ) 2interp ( linear )" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "hsv" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
     }
-
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0.45 2.2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
 }

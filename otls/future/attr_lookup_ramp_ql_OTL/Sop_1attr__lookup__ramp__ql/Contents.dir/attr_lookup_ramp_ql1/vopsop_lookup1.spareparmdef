@@ -19,21 +19,13 @@
 	export	none
     }
     parm {
-	name	"attrib_in"
-	label	"Input Attribute"
-	type	string
-	default	{ "attrib" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"srcmin"
 	label	"Input Range Min"
 	type	float
 	default	{ "0" }
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -43,15 +35,7 @@
 	default	{ "1" }
 	range	{ 0 10 }
 	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"size"
-	label	"Default Input Value"
-	type	float
-	default	{ "0" }
-	range	{ 0 9 }
-	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -61,6 +45,7 @@
 	default	{ "2" }
 	range	{ 1! 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "rampvalues_var" "lookup_ramp_the_key_values" }
 	parmtag	{ "rampkeys_var" "lookup_ramp_the_key_positions" }
 	parmtag	{ "rampbasis_var" "lookup_ramp_the_basis_strings" }
@@ -70,20 +55,22 @@
 	parmtag	{ "rampbasisdefault" "linear" }
     }
     parm {
-	name	"attrib_out"
-	label	"Output Attribute"
-	type	string
-	default	{ "Cd" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"exp"
 	label	"Out Gamma"
 	type	float
 	default	{ "2.2" }
 	range	{ 0 2.2 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"weight"
+	label	"Default Input Value"
+	type	float
+	default	{ "0" }
+	range	{ 0 9 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

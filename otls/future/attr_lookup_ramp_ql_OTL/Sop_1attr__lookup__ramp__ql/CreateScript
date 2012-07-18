@@ -1,4 +1,4 @@
-# Automatically generated script: Sunday December 25, 23:52 2011
+# Automatically generated script: Wednesday July 18, 14:00 2012
 \set noalias = 1
 #
 #  Creation script for attr_lookup_ramp_ql operator
@@ -11,3 +11,4 @@ endif
 
 # Node $arg1 (Sop/attr_lookup_ramp_ql)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1
