@@ -31,6 +31,37 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../lookup_ramp1interp\") }
     }
+    channel lookup_ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../lookup_ramp2pos\") }
+    }
+    channel lookup_ramp2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../lookup_ramp2cr\") }
+    }
+    channel lookup_ramp2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../lookup_ramp2cg\") }
+    }
+    channel lookup_ramp2cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../lookup_ramp2cb\") }
+    }
+    channel lookup_ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../lookup_ramp2interp\") }
+    }
     channel srcmin {
       lefttype = extend
       righttype = extend
@@ -64,36 +95,5 @@
       defaultString = \"\"
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
-    }
-    channel lookup_ramp2pos {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../lookup_ramp2pos\") }
-    }
-    channel lookup_ramp2cr {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../lookup_ramp2cr\") }
-    }
-    channel lookup_ramp2cg {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../lookup_ramp2cg\") }
-    }
-    channel lookup_ramp2cb {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../lookup_ramp2cb\") }
-    }
-    channel lookup_ramp2interp {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../lookup_ramp2interp\") }
     }
   }

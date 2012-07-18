@@ -12,11 +12,6 @@ attr_lookup_ramp_ql1/vopsop_lookup1.spareparmdef
 attr_lookup_ramp_ql1/vopsop_lookup1.chn
 attr_lookup_ramp_ql1/vopsop_lookup1.parm
 attr_lookup_ramp_ql1/vopsop_lookup1.userdata
-attr_lookup_ramp_ql1/vopsop_lookup1/attrib_in_value.init
-attr_lookup_ramp_ql1/vopsop_lookup1/attrib_in_value.def
-attr_lookup_ramp_ql1/vopsop_lookup1/attrib_in_value.spareparmdef
-attr_lookup_ramp_ql1/vopsop_lookup1/attrib_in_value.parm
-attr_lookup_ramp_ql1/vopsop_lookup1/attrib_in_value.userdata
 attr_lookup_ramp_ql1/vopsop_lookup1/lookup_ramp.init
 attr_lookup_ramp_ql1/vopsop_lookup1/lookup_ramp.def
 attr_lookup_ramp_ql1/vopsop_lookup1/lookup_ramp.spareparmdef
@@ -52,6 +47,10 @@ attr_lookup_ramp_ql1/vopsop_lookup1/exp.def
 attr_lookup_ramp_ql1/vopsop_lookup1/exp.spareparmdef
 attr_lookup_ramp_ql1/vopsop_lookup1/exp.parm
 attr_lookup_ramp_ql1/vopsop_lookup1/exp.userdata
+attr_lookup_ramp_ql1/vopsop_lookup1/importattrib1.init
+attr_lookup_ramp_ql1/vopsop_lookup1/importattrib1.def
+attr_lookup_ramp_ql1/vopsop_lookup1/importattrib1.parm
+attr_lookup_ramp_ql1/vopsop_lookup1/importattrib1.userdata
 attr_lookup_ramp_ql1/vopsop_lookup1.order
 attr_lookup_ramp_ql1/vopsop_lookup1.net
 attr_lookup_ramp_ql1.net

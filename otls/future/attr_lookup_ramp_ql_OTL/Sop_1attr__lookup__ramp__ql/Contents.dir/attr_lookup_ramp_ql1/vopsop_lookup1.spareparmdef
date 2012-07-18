@@ -64,13 +64,3 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
-    parm {
-	name	"weight"
-	label	"Default Input Value"
-	type	float
-	default	{ "0" }
-	range	{ 0 9 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }

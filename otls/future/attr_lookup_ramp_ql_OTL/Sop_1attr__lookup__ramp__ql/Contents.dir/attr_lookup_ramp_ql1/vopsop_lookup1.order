@@ -1,5 +1,4 @@
 8
-attrib_in_value
 lookup_ramp
 add_attrib_out
 fit1
@@ -7,3 +6,4 @@ srcmin
 srcmax
 pow1
 exp
+importattrib1
