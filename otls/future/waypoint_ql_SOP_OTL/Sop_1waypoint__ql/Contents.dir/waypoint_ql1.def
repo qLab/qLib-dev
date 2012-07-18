@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 0.770588 -2.26471
+position 0 -1.76471
 cachesize 1
 connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -10,23 +10,23 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	"" "" 1 "input1"
+0 	file1 1 1 "input1"
 1 	"" "" 1 "input2"
 2 	"" "" 1 "input3"
 3 	"" "" 1 "input4"
 }
 inputs
 {
-0 	"" 0 1
+0 	file1 0 1
 1 	"" 0 1
 2 	"" 0 1
 3 	"" 0 1
 }
 stat
 {
-  create 1342314936
-  modify 1342315106
-  author tusi@demeisen
+  create 1342615873
+  modify 1342615934
+  author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0.8 0.6 0 
