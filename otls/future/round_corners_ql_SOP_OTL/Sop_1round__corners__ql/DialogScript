@@ -1,4 +1,4 @@
-# Dialog script for round_corners_ql automatically generated 07/12/12 18:56:04
+# Dialog script for round_corners_ql automatically generated 07/19/12 23:55:32
 
 {
     name	round_corners_ql
@@ -16,6 +16,9 @@
 	label	"Group"
 	type	string
 	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l . group" ]
+	}
 	range	{ 0 1 }
 	export	none
     }
@@ -23,10 +26,10 @@
 	name	"group_type"
 	label	"Group Type"
 	type	string
-	default	{ "\"point\"" }
+	default	{ "point" }
 	menu	{
-	    "\"point\""	"Point"
-	    "\"prim\""	"Primitive"
+	    "point"	"Point"
+	    "prim"	"Primitive"
 	}
 	range	{ 0 10 }
 	export	none
@@ -35,8 +38,9 @@
 	name	"radius"
 	label	"Radius"
 	type	float
-	default	{ "1" }
-	range	{ 0! 1 }
+	default	{ "0.2" }
+	disablewhen	"{ radius_attrib != \"\" }"
+	range	{ 0.0001! 1 }
 	export	none
     }
     parm {
@@ -44,6 +48,22 @@
 	label	"Radius Attribute"
 	type	string
 	default	{ "" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType()==hou.attribData.Float and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
 	range	{ 0 1 }
 	export	none
     }
@@ -70,11 +90,11 @@
     }
     parm {
 	name	"segments"
-	label	"Segments"
+	label	"Num. Segments"
 	type	integer
 	default	{ "5" }
 	disablewhen	"{ seg_mode == 0 }"
-	range	{ 0 10 }
+	range	{ 1! 9 }
 	export	none
     }
     parm {

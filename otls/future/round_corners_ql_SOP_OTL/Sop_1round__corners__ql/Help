@@ -4,30 +4,52 @@
 
 = Round Corners qL =
 
-*Version 0.1.0*
+*Version 0.1.1*
 
-"""Replaces points with circular arcs in poligonal curves."""
+"""Replaces points (i.e. corners) with circular arcs in polygonal curves."""
 
 @Parameters
     Group:
         The group of points or primitives that gets affected by the operation.
+
     Group Type:
-        Type of the group.
+        Type of the group (point or primitive).
+
     Radius:
         Radius of the arc.
-    Radius Attribute:
-        Name of the primitive or point group attribute that sets the radius.
-    Segment Mode:
-        Mode of the segment length calculation.
-        * *Max Segment Length:* Sets the maximum length of a segment of the arc.
-        * *Number of Segments:* Sets the number of segments of the arcs.
-    Max Segment Length:
-        Maximum length of a segment if *Max Segment Length* is the active mode.
-    Segments:
-        Number of segments if *Number of Segments* is the active mode.
-    Min/Max Angle:
-        Minimum and maximum limits of the angle that gets rounded.
 
-@Release_Notes
+    Radius Attribute:
+        Name of a per-component attribute that sets the radius. (It can be
+        either per-point or per-primitive class, and of type `float`).
+
+    Segment Mode:
+        Segment length calculation mode.
+
+        Max Segment Length:
+            The maximum length of an individual segment for all arcs
+            (i.e. corners with larger radii will have more segments).
+
+        Number of Segments:
+            Each arc will have the same number of segments.
+
+    Max Segment Length:
+        Maximum length of a segment (for _Max Segment Length_ mode).
+
+    Segments:
+        Number of segments (in _Number of Segments_ mode).
+
+    Min/Max Angle:
+        If enabled, only corners with angles between these limits will get rounded.
+
+
+@related
+    - [Node:sop/fillet]
+    - [Node:sop/join]
+
+
+@Release_Notes Release Notes
+    Version 0.1.1:
+        Minor bug fixes, code and UI cosmetics and whatnot.
+
     Version 0.1.0:
         Initial release.

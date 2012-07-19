@@ -1,85 +1,98 @@
 import math
 
+
 def skipPoint(geo, new_poly, position):
     new_point = geo.createPoint()
     new_point.setPosition(position)
     new_poly.addVertex(new_point)
 
+
 node = hou.pwd()
 geo = node.geometry()
 prims_to_delete = []
 
+# shortcut for evaluating params
+p = lambda param: node.parm(param).eval()
+
+
 # Get parameters
-group_type = node.parm("group_type").eval()
-group_pattern = node.parm("group").eval()
-if group_pattern == "" or group_pattern == "*":
+group_type = p("group_type")
+group_pattern = p("group")
+point_group = None
+
+# do point/prim group pattern matching
+if group_type == "point" and group_pattern:
+    point_group = geo.globPoints(group_pattern)
     prims = geo.prims()
-    point_group = False
 else:
-    if group_type == "point":
-        point_group = geo.globPoints(group_pattern)
-        prims = geo.prims()
-    else:
-        prims = geo.globPrims(group_pattern)
-        point_group = False
+    prims = geo.globPrims(group_pattern) if group_pattern else geo.prims()
+
 num_prims = float(len(prims))
 
-radius = node.parm("radius").eval()
-radius_attrib_name = node.parm("radius_attrib").eval()
-if radius_attrib_name:
-    radius_point_attrib = geo.findPointAttrib(radius_attrib_name)
-    radius_prim_attrib = geo.findPrimAttrib(radius_attrib_name)
-else:
-    radius_point_attrib, radius_prim_attrib = None, None
+# get radius parameter / attribute(s)
+radius = p("radius")
 
-seg_mode = node.parm("seg_mode").eval()
-segments = node.parm("segments").eval()
-max_length = node.parm("max_length").eval()
-do_limit = node.parm("do_limit").eval()
-angle_limit_min = node.parm("angle_limitx").eval()
-angle_limit_max = node.parm("angle_limity").eval()
+radius_attrib_name = p("radius_attrib")
+radius_point_attrib = geo.findPointAttrib(radius_attrib_name)
+radius_prim_attrib = geo.findPrimAttrib(radius_attrib_name)
 
+# sanity check on radius attributes (should be single float)
+chk = lambda a: a if a and a.dataType()==hou.attribData.Float and a.size()==1 else None
+radius_point_attrib = chk(radius_point_attrib)
+radius_prim_attrib = chk(radius_prim_attrib)
+
+# get other parameters
+seg_mode = p("seg_mode")
+segments = p("segments")
+max_length = p("max_length")
+do_limit = p("do_limit")
+angle_limit_min = p("angle_limitx")
+angle_limit_max = p("angle_limity")
+
+
+# perform operation
 with hou.InterruptableOperation("Round Corners qL") as operation:
+
     for i, prim in enumerate(prims):
         operation.updateProgress(float(i) / num_prims)
+
         if prim.type() == hou.primType.Polygon:
             prims_to_delete.append(prim)
             new_poly = geo.createPolygon()
             vertices = prim.vertices()
+            is_closed = prim.isClosed()
+            new_poly.setIsClosed(is_closed)
+
+            if radius_prim_attrib:
+                radius = prim.floatAttribValue(radius_prim_attrib)
+
             for idx, vertex in enumerate(vertices):
                 point = vertex.point()
-                position = point.position()
+
                 if not point_group or point in point_group:
-                    if idx != 0 and idx != len(vertices)-1:
-                        prev_vec = (vertices[idx-1].point().position() - position).normalized()
-                        next_vec = (vertices[idx+1].point().position() - position).normalized()
-                    elif idx == 0:
-                        if prim.isClosed():
-                            prev_vec = (vertices[-1].point().position() - position).normalized()
-                            next_vec = (vertices[1].point().position() - position).normalized()
-                        else:
-                            new_point = geo.createPoint()
-                            new_point.setPosition(position)
-                            new_poly.addVertex(new_point)
-                            continue
-                    elif idx == len(vertices)-1:
-                        if prim.isClosed():
-                            prev_vec = (vertices[-2].point().position() - position).normalized()
-                            next_vec = (vertices[0].point().position() - position).normalized()
-                        else:
-                            skipPoint(geo, new_poly, position)
-                            new_poly.setIsClosed(False)
-                            continue
-        
+
+                    position = point.position()
+                    is_first, is_last = idx==0, idx==len(vertices)-1
+
+                    idx_1 = (idx+1) % len(vertices)
+                    prev_vec = (vertices[idx-1].point().position() - position).normalized()
+                    next_vec = (vertices[idx_1].point().position() - position).normalized()
+
+                    if (is_first or is_last) and not is_closed:
+                        skipPoint(geo, new_poly, position)
+                        continue
+
                     # Calculate variables
                     angle = prev_vec.angleTo(next_vec)
 
                     # Check angle limits
                     if not do_limit or (angle > angle_limit_min and angle < angle_limit_max):
+
                         if radius_point_attrib:
                             radius = point.floatAttribValue(radius_point_attrib)
-                        elif radius_prim_attrib:
-                            radius = prim.floatAttribValue(radius_prim_attrib)
+
+                        radius = max(radius, 0.000001) # avoid division-by-zero
+
                         bisect_vec = (prev_vec + next_vec).normalized()
                         cross_vec = prev_vec.cross(next_vec).normalized()
                         rangle = hou.hmath.degToRad(angle)
@@ -89,10 +102,11 @@ with hou.InterruptableOperation("Round Corners qL") as operation:
                         offset = position + bisect_vec * distance
             
                         # Create new geo
-                        if seg_mode == 0:
-                            actual_segments = int(math.ceil(hou.hmath.degToRad(180-angle) * radius / max_length))
-                        else:
-                            actual_segments = segments
+                        actual_segments = int(math.ceil(hou.hmath.degToRad(180-angle) * radius / max_length)) \
+                            if seg_mode==0 else segments
+
+                        actual_segments = max(1, actual_segments) # avoid division-by-zero
+
                         angle_step = -(180-angle) / actual_segments
                         for s in xrange(actual_segments + 1):
                             rot_matrix = hou.hmath.buildRotateAboutAxis(cross_vec, angle_step * s)
