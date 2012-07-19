@@ -9,6 +9,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "detail(\"../attribpromote1\",\"area\", 0)" }
+      segment { length = 0 expr = "detail(\"../area_as_detail\",\"area\", 0)" }
     }
   }

@@ -4,47 +4,77 @@
 
 = Distribute qL =
 
-*Version 0.1.3*
+*Version 0.1.4*
 
-"""Distribute points in space so, that a pscale radius sphere around them doesn't intersect."""
+"""Distribute points in space so they will keep given distances between each other."""
+
+
+This node considers each point to be a sphere with a given radius, and arranges them so
+they wouldn't intersect.
+
+The radius for each point is specified by the `pscale` per-point attribute.
+
 
 @Parameters
     Point Group:
         Points to distribute.
+
     Calculate Radius:
-        Calculate uniform radius based on the primitive area of the geometry connected to the second input
-        and the number of points.
+        Calculates an uniform radius based on the number of points and the
+        overall surface area of the geometry in the second input.
+
     Radius Factor:
-        Multiplies the result of the radius calculation.
+        Multiplier on the calculated radius.
+
     Radius:
         The radius of the points if the 'pscale' attribute is not present.
+
     Iterations:
-        Number of iterations.
-        
+        Number of iterations. Higher values give more regular distributions but longer calculation times.
+
         TIP:
-            Increase this gradually until you reach the desired result. Note that increasing the radius can also
-            result in better distibution without a speed penalty.
+            Keep increasing this gradually until you reach the desired result.
+
+            You can try to keep increasing the radius instead, which can also improve results and much faster
+            (especially with many points).
+
     Max Neighbours:
-        The maximum numbers of points that acount for the new position of a point in an iteration.
+        The maximum number of nearby points that influences the new position of a point during each iteration.
+
     Grow:
-        Gradually increase the radius of points during distribution. This may help points to get to places which
-        otherwise would be unreachable for them.
+        Gradually increase point radii during distribution. This might help points to get to
+        otherwise unreachable locations.
+
     Ray:
         Project points back to the geometry connected to the second input.
+
     Ray Every Nth:
-        Only project every Nth iteration and the last one.
+        Only project every _n_-th iteration and the last one.
+
     Ray Intersection Normal:
-        Points inherit the geometry normals of the ray surface.
+        Have points inherit the geometry normals of the ray surface.
+
     Ray Group:
         Group of points to project.
 
-@Release_Notes
+@related
+    - [Node:sop/scatter]
+
+
+@Release_Notes Release Notes
+
+    Version 0.1.4:
+        Bug fix: normals were zeroed out even if shouldn't have been. Fixed.
+
     Version 0.1.3:
         Point Group added. Caculate Radius added. Ray Every Nth added.
+
     Version 0.1.2:
         Ray Goup parameter added. Linked back Ray Intersection Normal.
+
     Version 0.1.1:
         Exposed the Point Intersection Normal parameter of the Ray SOP. It's label is Ray Intersection Normal for
         clarity.
+
     Version 0.1.0:
         Initial release. While it's really not ready, it's usable.
