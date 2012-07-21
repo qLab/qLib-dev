@@ -1,6 +1,6 @@
-Operator:     qLib::rivet_ql::0.1
+Operator:     qLib::rivet_ql::1.0
 Label:        Rivet qL
-Path:         oplib:/qLib::Sop/rivet_ql::0.1?qLib::Sop/rivet_ql::0.1
+Path:         oplib:/qLib::Sop/rivet_ql::1.0?qLib::Sop/rivet_ql::1.0
 Icon:         OBJ_rivet
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu May 31 01:54:15 2012
+Modified:     Sat Jul 21 23:12:39 2012
 

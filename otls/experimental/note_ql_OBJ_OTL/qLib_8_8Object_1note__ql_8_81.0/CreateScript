@@ -1,0 +1,14 @@
+# Automatically generated script: Saturday July 21, 23:04 2012
+\set noalias = 1
+#
+#  Creation script for note_ql operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Object/note_ql)
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

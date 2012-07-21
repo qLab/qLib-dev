@@ -1,0 +1,13 @@
+Operator:     qLib::illustration_ql::1.0
+Label:        Illustration qL
+Path:         oplib:/qLib::Sop/illustration_ql::1.0?qLib::Sop/illustration_ql::1.0
+Icon:         COP2_mosaic
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       0 to 25
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Jul 21 23:11:47 2012
+
