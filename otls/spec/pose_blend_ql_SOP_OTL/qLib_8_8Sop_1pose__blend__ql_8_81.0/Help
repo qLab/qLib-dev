@@ -1,0 +1,51 @@
+#icon: OBJ/blend
+#context: sop
+#type: node
+
+= Pose Blend qL =
+
+*Version 0.1.0*
+
+"""Allows to define blend shapes on a character in different poses."""
+
+The main purpose of this node is to allow the sculpting different poses on a character.
+For example one can define the shape of an elbow when it's straight and when it's bent and
+blend between them based on the angle between the bones.
+
+NOTE:
+    This node only works with deformers that support quaternion deformations, like [Node:sop/deform], [Node:sop/deformmeta], [Node:sop/deformmuscle].
+
+This node works in tandem with [Node:sop/prepare_pose_blend_ql] and it needs some careful setup to work properly.
+
+# Before the deform node a quaternion attribute has to be added to the geometry with the value of (0,0,0,1). The default on the nodes is "orient" so you may find it confortable to ues that name.
+
+# Turn on the "Deform Quaternion Attributes" on the deform node, and add the name of the previously created attribute to the list attributes to deform.
+
+# Save a version of the deformed pose in bgeo format. This will be the base shape.
+
+# Edit the base shape to the desired shape.
+
+# Prepare the goal shape with the [Node:sop/prepare_pose_blend_ql] node.
+
+# Plug the output of [Node:sop/prepare_pose_blend_ql] to one of the goal inputs of this node.
+
+NOTE:
+    You can use the lock feature for the base shape instead of an external file. 
+
+@Parameters
+    Group:
+        The group of points the operator affects.
+    Blend 1:
+        The amount of blend on the second input.
+    Blend 2:
+        The amount of blend on the third input.
+
+        NOTE:
+            If the third input is not connected this parameter must set to zero, otherwise the result is undefined.
+
+    Quaternion Attribute:
+        The name of the quaternion attribute.
+
+@Release_Notes
+    Version 0.1.0:
+        Initial release.

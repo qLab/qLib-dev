@@ -1,0 +1,34 @@
+comment ""
+position 22.6361 4.80482
+cachesize 1
+connectornextid 5
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "result"
+}
+inputsNamed3
+{
+1 	"" "" 1 "switcher"
+2 	Amount_Mult 0 1 "input1"
+3 	add1 0 1 "input2"
+4 	multiply1 0 1 "input3"
+}
+inputs
+{
+0 	"" 0 1
+1 	Amount_Mult 0 1
+2 	add1 0 1
+3 	multiply1 0 1
+}
+stat
+{
+  create 1340278124
+  modify 1342912941
+  author mate@matild.local
+  access 0777
+}
+color UT_Color RGB 1 0.6 0.6 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,27 @@
+# Dialog script for qLib::prepare_pose_blend_ql::1.0 automatically generated 07/22/12 01:22:49
+
+{
+    name	qLib::prepare_pose_blend_ql::1.0
+    script	qLib::prepare_pose_blend_ql::1.0
+    label	"Prepare Pose Blend ql"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Base Geometry"
+    inputlabel	2	"Deformed Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"quatname"
+	label	"Quaternion Attribute"
+	type	string
+	default	{ "orient" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
