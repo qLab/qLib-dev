@@ -1,0 +1,13 @@
+Operator:     qLib::shot_ql::1.0
+Label:        Shot qL
+Path:         oplib:/qLib::Object/shot_ql::1.0?qLib::Object/shot_ql::1.0
+Icon:         ROP_framecontainer
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 5
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Jul 21 23:04:07 2012
+

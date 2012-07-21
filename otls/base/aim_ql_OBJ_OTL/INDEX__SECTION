@@ -1,6 +1,6 @@
-Operator:     aim_ql
+Operator:     qLib::aim_ql::1.0
 Label:        Aim qL
-Path:         oplib:/Object/aim_ql?Object/aim_ql
+Path:         oplib:/qLib::Object/aim_ql::1.0?qLib::Object/aim_ql::1.0
 Icon:         SOP_matchaxis
 Table:        Object
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Jun 10 20:29:42 2012
+Modified:     Sat Jul 21 23:07:53 2012
 

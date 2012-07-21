@@ -1,0 +1,38 @@
+objflags objflags =  origin off
+pretransform UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
+comment ""
+position 4.51561 3.40311
+cachesize 1
+connectornextid 6
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on selectable on
+outputsNamed3
+{
+5 "output1"
+}
+inputsNamed3
+{
+0 	"" "" 1 "input1"
+1 	"" "" 1 "input2"
+2 	"" "" 1 "input3"
+3 	"" "" 1 "input4"
+4 	"" "" 1 "input5"
+}
+inputs
+{
+0 	"" 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+4 	"" 0 1
+}
+stat
+{
+  create 1342900213
+  modify 1342904646
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.6 0 
+delscript ""
+exprlanguage hscript
+end

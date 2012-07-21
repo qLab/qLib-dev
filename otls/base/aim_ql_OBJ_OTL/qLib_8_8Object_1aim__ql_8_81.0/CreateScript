@@ -1,0 +1,15 @@
+# Automatically generated script: Sunday June 10, 20:29 2012
+\set noalias = 1
+#
+#  Creation script for qLib::aim_ql::1.0 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Object/qLib::aim_ql::1.0)
+opspareds "" $arg1
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1
