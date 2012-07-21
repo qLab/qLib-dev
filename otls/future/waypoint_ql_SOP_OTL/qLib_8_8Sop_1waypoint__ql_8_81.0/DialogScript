@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::1.0 automatically generated 07/18/12 14:50:08
+# Dialog script for qLib::waypoint_ql::1.0 automatically generated 07/22/12 00:57:34
 
 {
     name	qLib::waypoint_ql::1.0
@@ -151,7 +151,7 @@
 		    type	string
 		    default	{ "_current_" }
 		    menu	{
-			[ "opmenu -l geom_writer take" ]
+			[ "opmenu -l RENDER take" ]
 		    }
 		    range	{ 0 1 }
 		    export	none
