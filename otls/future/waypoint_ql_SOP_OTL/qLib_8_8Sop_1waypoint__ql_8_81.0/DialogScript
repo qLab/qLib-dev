@@ -1,8 +1,8 @@
-# Dialog script for waypoint_ql automatically generated 07/18/12 14:50:08
+# Dialog script for qLib::waypoint_ql::1.0 automatically generated 07/18/12 14:50:08
 
 {
-    name	waypoint_ql
-    script	waypoint_ql
+    name	qLib::waypoint_ql::1.0
+    script	qLib::waypoint_ql::1.0
     label	"Waypoint qL"
 
     help {

@@ -1,8 +1,8 @@
-# Dialog script for box_ql automatically generated 04/20/12 23:54:34
+# Dialog script for qLib::box_ql::1.0 automatically generated 04/20/12 23:54:34
 
 {
-    name	box_ql
-    script	box_ql
+    name	qLib::box_ql::1.0
+    script	qLib::box_ql::1.0
     label	"Box qL"
 
     help {

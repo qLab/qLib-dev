@@ -1,6 +1,6 @@
-Operator:     box_ql
+Operator:     qLib::box_ql::1.0
 Label:        Box qL
-Path:         oplib:/Sop/box_ql?Sop/box_ql
+Path:         oplib:/qLib::Sop/box_ql::1.0?qLib::Sop/box_ql::1.0
 Icon:         VOP_boxclip
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Apr 20 23:56:41 2012
+Modified:     Sat Jul 21 23:41:38 2012
 
