@@ -1,10 +1,10 @@
-Vop/pcimport /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/pcimport /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/pcimport otls/OPlibVop.otl
-Vop/pciterate /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
-Vop/pciterate otls/OPlibVop.otl
-Vop/pow /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/pow /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/pow otls/OPlibVop.otl
-Vop/pcopen /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/pciterate /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pciterate otls/OPlibVop.otl
+Vop/pcopen /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/pcopen otls/OPlibVop.otl
-Vop/distance /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/distance /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/distance otls/OPlibVop.otl

@@ -1,10 +1,10 @@
 {
 version 0.8
 vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
-vex_numthreads	[ 0	locks=0 ]	(	"none"	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
-radius	[ 0	locks=0 ]	(	[ radius	0.40200001 ] 	)
-exp	[ 0	locks=0 ]	(	[ exp	0.00999999046 ] 	)
+radius	[ 0	locks=0 ]	(	[ radius	15 ] 	)
+exp	[ 0	locks=0 ]	(	[ exp	0.22 ] 	)
 falloff	[ 0	locks=0 ]	(	[ falloff	1 ] 	)
 }
