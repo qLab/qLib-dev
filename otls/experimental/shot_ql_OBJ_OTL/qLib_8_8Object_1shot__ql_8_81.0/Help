@@ -1,0 +1,163 @@
+#icon: ROP/framecontainer
+#context: obj
+#type: node
+
+= Shot qL =
+
+*Version 0.0.1*
+
+"""Node for storing information about the shot the hip file belongs to."""
+
+This operator allows to store all shot-specific information on one single node.
+Once such a shot-information node is set up, it can be easily dropped into any
+new .hip file so it can be set up to match shot settings with a few mouse clicks.
+
+See the _Parameters_ section below for details.
+
+NOTE:
+    _(wip)_ means the functionality is work-in-progress and subject to change.
+
+@parameters
+
+    Shot Details:
+        All shot-relevant information are stored under this tab.
+
+        Project Name:
+            Name of the project the shot belongs to. This is usually the name of
+            the movie, commercial, etc. the shot is part of.
+
+        Project (Short):
+            An (optional) abbreviated name of the project.
+            (Might be useful for log files, folder names, etc.)
+
+        Shot Name:
+            Name of the shot itself. (No limitations are imposed--name it any way you like.)
+
+        TIP:
+            You can use these parameters to construct filesystem path names on this node,
+            e.g. if you have a project *`Hola42`* and shot *`5600a`*, the expression
+
+            `/media/projects/\`chs("proj")\`/\`chs("shot")\`/shot.hip`
+
+            will result in _/media/projects/Hola42/5600a/shot.hip_.
+
+            (Note that this form of the expression works only on parameters of the same shot node
+            since it refers to local parameters).
+
+
+        Frame Ranges:
+            This section stores frame range(s) related to the shot. Clicking the 'Set' button of a
+            range will apply it to as current scene range.
+
+            Shot Frame Range:
+                Start/end frame for the shot, plain and simple.
+
+            Work Range:
+                An optional alternative frame range for the shot that can be used at will
+                (an example is to have it as a bit extended version of the regular range
+                to allow room for simulation runups, editing, etc).
+
+            Non-Retimed Range:
+                If the shot has any retime, time offset or 'time warp' effect, this range can store
+                the 'original' start/end frames with the retiming effects removed.
+
+            Extra Ranges:
+                Any number of extra frame ranges can be stored here, along with a note.
+                (Useful for storing simulation ranges, etc.)
+
+
+        Description & Notes:
+            A multi-line text field for storing shot description, notes, and the like.
+
+        Related Files:
+            This section stores a list of files (and an optional note for each).
+            Useful for quickly accessing any file related to the shot, such as concept
+            drawings, reference images or movies, etc.
+
+
+    Views:
+        _(wip)_
+        This tab provides functionality for storing (and describing) shot cameras.
+        It also allows to save and restore 3D viewing locations of the scenario
+        (view and related construction plane both).
+
+        The latter can be useful if you have to work with multiple spatial locations
+        in a single shot (e.g. simulations at different places, etc).
+
+        3D Viewport:
+            Name of the 3d viewport to work with. If empty, the current active 3d
+            viewport will be used.
+
+        Shot Camera(s):
+            _(wip)_
+            A list of camera objects (with notes) for quickly access (look through, select, etc.)
+            individual shot-related cameras.
+
+            (Only the names (paths) are stored--the cameras themselves have to exist
+            in the scene.)
+
+        Scene Locations:
+            This section provides functions for saving/restoring 3d view locations
+            (along with construction plane settings). This is like the viewports'
+            memory buttons, but with some additions:
+
+            - Saved views can (and should) have a description
+            - Any view/c-plane setting combination can be saved/restored
+            - Since the view locations are stored on a node, it can be saved/loaded, copy/pasted, etc.
+
+            The _Construction Planes_ and _Views_ toggles can be used to specify what is to
+            be saved to a location slot, and what is to be restored.
+
+            Construction Planes:
+                If enabled, construction plane settings will be saved/restored. (Even if you saved
+                cplane settings for a view location, it will be restored only if this toggle is on.)
+
+            Views:
+                If enabled, view location settings will be saved/restored. (No view location will
+                be restored if this toggle is _off_.)
+
+            _To store a new view location_...
+            - Enable what you'd like to store (view, c-plane)
+            - Add a new location to the list
+            - Enter a name of the location (the additional controls will only appear if the location is named)
+            - Click the location slot's _Save_ button.
+
+            TIP:
+                The most practical way of usage is to enable both _Construction Planes_ and _Views_
+                when _saving_, then use the toggles as filters when restoring a view (so you can
+                restore cplane settings, view location, or both).
+
+                The `c`/`v` letters indicate if a view slot has c-plane/view saved.
+
+
+
+    Paths:
+        _(wip)_
+        This section deals with filesystem paths related to the shot.
+
+        Root Directory:
+            Path to the root of 
+
+        Folders:
+            A space-separated list of subdirectories that should exist under the root directory.
+
+            Create/Update Sub-Directories...:
+                Click this button to create any sub-folders that does not exist.
+
+
+@todo
+    - The 'open folder' function should work cross-platform (currently it's linux-only, calling nautilus on the folder)
+    - The 'open file' button should work on _any_ platform :(
+    - Have some way to quickly display images (concepts/references), preferably using mplay (like [Note qL|Node:obj/note_ql])
+    - Utilize node's Comment field to store logs of shot-related events
+
+
+@related
+    - [Node:obj/shot_ql]
+    - ...
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.1:
+        Initial release.

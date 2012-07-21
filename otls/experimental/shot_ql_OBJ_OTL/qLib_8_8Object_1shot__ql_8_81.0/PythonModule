@@ -1,0 +1,196 @@
+# shot-related functions
+#
+
+import toolutils
+
+import os
+import re
+import subprocess
+
+
+def npt():
+    """node/parm/tuple functions creator."""
+    n = hou.pwd()
+    p = lambda pn: n.parm(pn).eval()
+    t = lambda pn: n.parmTuple(pn).eval()
+    return n, p, t
+
+
+
+
+def dispmsg(msg):
+    hou.ui.displayMessage(msg, ["Ok"])
+
+
+
+def ynreq(msg):
+    return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
+
+
+
+def open_dir(dir="", param=None):
+    # TODO: make this work on windows
+    if param: dir = hou.pwd().parm(param).eval()
+    subprocess.call(["nautilus", dir])
+
+def open_file(file=""):
+    # TODO: make this work at all :)
+    subprocess.call(["nautilus", file])
+
+
+
+
+def set_range(param_name='frange'):
+    """."""
+    n, p, t = npt()
+    range = t(param_name)
+    print "range:", range
+
+    if len(range)==2:
+        hou.hscript("tset `(%s-1)/$FPS` `%s/$FPS`" % (range[0], range[1]))
+        hou.hscript("frange %s %s" % (range[0], range[1]))
+
+
+
+def get_viewport(args):
+    n, p, t = npt()
+    viewer = p("viewer")
+    #print "viewer=", viewer
+
+    if viewer=="":
+        ap = toolutils.activePane(args)
+        if not isinstance(ap, hou.SceneViewer):
+            return None
+        viewer = "%s.%s.world" % (hou.ui.curDesktop().name(), ap.name())
+
+    #print "viewer=", viewer
+    return viewer
+
+
+
+
+def set_cam(args=None, mode=None):
+    """."""
+    n, p, t = npt()
+
+    if not mode: mode = args['script_value']
+    cam = p("camera_%s" % args['script_multiparm_index'])
+    viewer = get_viewport(args) # p("viewer")
+
+    if mode=='lookthru' and viewer!="":
+        hou.hscript("viewcamera -c %s %s" % (cam, viewer))
+
+    if mode=='select':
+        pass # TODO
+
+
+
+def set_location(mode=None, args=None, f=""):
+    """."""
+    n, p, t = npt()
+    viewer = get_viewport(args) # p("viewer")
+    viewer_persp = viewer+".persp1" # hackety-hack
+
+    if viewer=="":
+        dispmsg("No 3D Viewport specified.")
+        return
+
+    do_cplane = p("loc_cplanes") or 'cplane' in f
+    do_view   = p("loc_views") or 'view' in f
+
+    idx       = int(args['script_multiparm_index'])
+    cplanecmd = "loc_cplane_cmd_%d" % idx
+    viewcmd   = "loc_view_cmd_%d" % idx
+
+    try:
+        if mode=='clear':
+            do_cplane = False
+            do_view = False
+            mode='save'
+    
+        if mode=='save':
+            c = hou.hscript("cplane %s" % viewer)[0].replace(viewer, "%s") if do_cplane else ""
+            n.parm(cplanecmd).set(c)
+            c = hou.hscript("viewtransform -p %s" % viewer_persp)[0].replace(viewer_persp, "%s") if do_view else ""
+            n.parm(viewcmd).set(c)
+    
+        elif mode=='restore':
+            cplanecmd = p(cplanecmd)
+            viewcmd = p(viewcmd)
+            if do_cplane and '%s' in cplanecmd: hou.hscript( cplanecmd % viewer )
+            if do_view and '%s' in viewcmd: hou.hscript( viewcmd % viewer_persp )
+
+    except:
+        pass # ...
+
+
+
+
+def select_subdirs():
+    """."""
+    n, p, t = npt()
+    subdirs = p('subdirs').split()
+    print "subdirs:", subdirs
+
+    # TODO: do not select items in parentheses in the list
+
+    R = hou.ui.selectFromList(subdirs,
+            default_choices=tuple(range(len(subdirs))),
+            exclusive=False,
+            message="Select Sub-Directories",
+            title="Subdirs")
+
+    print "R:", R
+
+    if R:
+        d = [ subdirs[r] for r in R ]
+        print "d:", d
+
+
+
+def make_subdirs():
+    """."""
+    n, p, t = npt()
+
+    rootdir = p('root_dir')
+    subdirs = p('subdirs')
+    subdirs = re.sub("\([^)]*\)", " ", subdirs)
+    subdirs = subdirs.split()
+
+    print "subdirs:", subdirs
+
+    if ynreq( "Create the following subfolders?\n\n%s\n\nat:\n\n%s" % (str(subdirs), rootdir) ):
+        for d in subdirs:
+            D = os.path.join(rootdir, d)
+            print " -- creating dir %s" % D
+            try:
+                os.makedirs(D)
+            except:
+                pass # print "ERROR: failed to create %s" % D
+
+
+
+
+
+
+
+
+def delete_all_takes():
+    if ynreq("Are you sure you want to delete ALL Takes?"):
+        ts = hou.hscript("takels -i")[0].split()
+        for t in ts:
+            hou.hscript("takerm %s" % t)
+
+
+def delete_take(take, confirm=True):
+
+    if confirm:
+        if not ynreq("Delete take %s and all child takes?" % take):
+            return
+
+    cs = hou.hscript("takels -i -p %s" % take)[0].split()
+    if cs:
+        for c in cs:
+            delete_take(c, False)
+    hou.hscript("takerm %s" % take)
+

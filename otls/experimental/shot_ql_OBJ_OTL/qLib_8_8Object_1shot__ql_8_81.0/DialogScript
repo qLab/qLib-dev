@@ -1,0 +1,908 @@
+# Dialog script for qLib::shot_ql::1.0 automatically generated 07/21/12 22:59:40
+
+{
+    name	qLib::shot_ql::1.0
+    script	shot_xy
+    label	"Shot qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+    inputlabel	5	"Sub-Network Input #5"
+    inputlabel	6	"Sub-Network Input #6"
+    inputlabel	7	"Sub-Network Input #7"
+    inputlabel	8	"Sub-Network Input #8"
+
+    group {
+	name	"folder0"
+	label	"Shot Details"
+
+	parm {
+	    name	"proj"
+	    label	"Project Name"
+	    type	string
+	    default	{ "project" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"projs"
+	    label	"Project (Short)"
+	    type	string
+	    default	{ "prj" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"shot"
+	    label	"Shot Name"
+	    type	string
+	    joinnext
+	    default	{ "1000" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"get_name"
+	    label	"Use Node Name"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"get_range"
+	    label	"Get Range from Scene"
+	    type	button
+	    invisible
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	group {
+	    name	"folder3"
+	    label	"Frame Ranges"
+	    tabbreak
+
+	    parm {
+		name	"frange"
+		label	"Shot Frame Range"
+		type	intvector2
+		joinnext
+		size	2
+		default	{ "1" "240" }
+		help	"Frame range of this shot."
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"set_frange"
+		label	"Set Range"
+		type	button
+		default	{ "1" }
+		help	"Set this frame range."
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('frange')" }
+	    }
+	    parm {
+		name	"has_wrange"
+		label	"Has Extended Range"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"wrange"
+		label	"Work Range"
+		type	intvector2
+		joinnext
+		size	2
+		default	{ "-20" "260" }
+		help	"An alternative frame range that can be used for any purpose."
+		disablewhen	"{ has_wrange == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"set_wrange"
+		label	"Set Range"
+		type	button
+		default	{ "1" }
+		help	"Set this frame range."
+		disablewhen	"{ has_wrange == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('wrange')" }
+	    }
+	    parm {
+		name	"has_urange"
+		label	"Has Non-Retimed Range"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"urange"
+		label	"Non-Retimed"
+		type	intvector2
+		joinnext
+		size	2
+		default	{ "1" "400" }
+		help	"If the shot has any retime or 'time warp' effect, this range can store the valid start/end frames with the retiming effects removed."
+		disablewhen	"{ has_urange == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"set_urange"
+		label	"Set Range"
+		type	button
+		default	{ "1" }
+		help	"Set this frame range."
+		disablewhen	"{ has_urange == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('urange')" }
+	    }
+	    multiparm {
+		name	"ranges"
+		label	"Extra Ranges"
+		default	0
+
+		parm {
+		    name	"xrange#"
+		    label	"Range"
+		    type	intvector2
+		    nolabel
+		    joinnext
+		    size	2
+		    default	{ "1" "100" }
+		    range	{ -1 1 }
+		    export	none
+		}
+		parm {
+		    name	"xdesc#"
+		    label	"#."
+		    type	string
+		    nolabel
+		    joinnext
+		    default	{ "(descr.#)" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"set_xrange#"
+		    label	"Set"
+		    type	button
+		    default	{ "1" }
+		    help	"Set this frame range."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('wrange%s' % kwargs['script_multiparm_index'])" }
+		}
+	    }
+
+	}
+
+	group {
+	    name	"folder2"
+	    label	"Description & Notes"
+	    tabbreak
+
+	    multiparm {
+		name	"desc_lines"
+		label	"(lines #)"
+		default	2
+
+		parm {
+		    name	"desc#"
+		    label	"Desc.#"
+		    type	string
+		    nolabel
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	}
+
+	group {
+	    name	"folder4"
+	    label	"Related Files"
+	    tabbreak
+
+	    multiparm {
+		name	"folder5"
+		label	"files #"
+		default	1
+
+		parm {
+		    name	"file_note#"
+		    label	"Note"
+		    type	string
+		    nolabel
+		    default	{ "(description)" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"tmp_#"
+		    label	"Label"
+		    type	button
+		    invisible
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"filename#"
+		    label	"(#)"
+		    type	file
+		    joinnext
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"fileopen#"
+		    label	"Open"
+		    type	button
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='filename%s' % kwargs['script_multiparm_index'])" }
+		}
+	    }
+
+	}
+
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Hidden"
+	invisibletab
+
+	group {
+	    name	"stdswitcher4"
+	    label	"Transform"
+
+	    parm {
+		name	"keeppos"
+		baseparm
+		joinnext
+		export	none
+	    }
+	    parm {
+		name	"pre_xform"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"xOrd"
+		baseparm
+		joinnext
+		export	none
+	    }
+	    parm {
+		name	"rOrd"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"t"
+		baseparm
+		export	all
+	    }
+	    parm {
+		name	"r"
+		baseparm
+		export	all
+	    }
+	    parm {
+		name	"s"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"p"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"scale"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"lookatpath"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"lookup"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"pathobjpath"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"roll"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"pos"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"uparmtype"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"pathorient"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"up"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"bank"
+		baseparm
+		export	none
+	    }
+	}
+
+	group {
+	    name	"stdswitcher4_1"
+	    label	"Render"
+
+	    parm {
+		name	"tdisplay"
+		baseparm
+		joinnext
+		export	none
+	    }
+	    parm {
+		name	"display"
+		baseparm
+		export	none
+	    }
+	}
+
+	group {
+	    name	"stdswitcher4_2"
+	    label	"Misc"
+
+	    parm {
+		name	"use_dcolor"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"dcolor"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"picking"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"pickscript"
+		baseparm
+		export	none
+	    }
+	    parm {
+		name	"caching"
+		baseparm
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder0_2"
+	label	"Subnet"
+	invisibletab
+
+	parm {
+	    name	"label1"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"label2"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"label3"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"label4"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"outputobj"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"visibleobjects"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder0_3"
+	label	"Views"
+
+	parm {
+	    name	"viewer"
+	    label	"3D Viewport"
+	    type	string
+	    default	{ "" }
+	    menureplace	{
+		[ "views = hou.hscript(\"viewls -n -t world\")[0].split()" ]
+		[ "r = []" ]
+		[ "" ]
+		[ "for v in views:" ]
+		[ "    r.append(v)" ]
+		[ "    r.append(v)" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "These operations work on the 3D Viewport (see above)." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	group {
+	    name	"folder7"
+	    label	"Shot Camera(s)"
+	    tabbreak
+
+	    multiparm {
+		name	"folder8"
+		label	"Camera list"
+		default	1
+
+		parm {
+		    name	"camera_opts_#"
+		    label	"..."
+		    type	button
+		    nolabel
+		    joinnext
+		    default	{ "1" }
+		    menumini	{
+			"lookthru"	"Look Through Camera"
+			"select"	"Select Camera"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_cam(args=kwargs)" }
+		}
+		parm {
+		    name	"camera_#"
+		    label	"camera #."
+		    type	oppath
+		    default	{ "/obj/cam1" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "oprelative" "." }
+		    parmtag	{ "opfilter" "!!OBJ/CAMERA!!" }
+		}
+		parm {
+		    name	"camera_lookthru_#"
+		    label	"#."
+		    type	button
+		    joinnext
+		    default	{ "lookthru" }
+		    help	"Click here to switch the 3d viewport to this camera."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_cam(mode='lookthru', args=kwargs)" }
+		}
+		parm {
+		    name	"camera_note_#"
+		    label	"note:"
+		    type	string
+		    default	{ "cam #.: (descr.)" }
+		    menureplace	{
+			"cam.: (descr.)"	"Default"
+			"main shot camera"	"Main Shot Camera"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	}
+
+	group {
+	    name	"folder9"
+	    label	"Scene Locations"
+
+	    parm {
+		name	"loc_cplanes"
+		label	"Construction Planes"
+		type	toggle
+		default	{ "1" }
+		help	"Store Construction Plane settings for locations."
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"loc_views"
+		label	"Views"
+		type	toggle
+		default	{ "0" }
+		help	"Store 3d view placements for locations."
+		range	{ 0 1 }
+		export	none
+	    }
+	    multiparm {
+		name	"folder10"
+		label	"Location list"
+		default	0
+
+		parm {
+		    name	"loc_idx_dummy_#"
+		    label	"#."
+		    type	button
+		    invisible
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ loc_enable_# == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_C_#"
+		    label	"c"
+		    type	button
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ loc_cplane_cmd_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_V_#"
+		    label	"v"
+		    type	button
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ loc_view_cmd_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_name_#"
+		    label	"#."
+		    type	string
+		    nolabel
+		    default	{ "" }
+		    help	"Name of location."
+		    disablewhen	"{ loc_enable_# == 0 }"
+		    menureplace	{
+			""	"(clear field)"
+			"main location"	"Main Location"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_cplane_cmd_#"
+		    label	"cplane cmd #"
+		    type	string
+		    invisible
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_view_cmd_#"
+		    label	"view cmd #"
+		    type	string
+		    invisible
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_enable_#"
+		    label	"::"
+		    type	toggle
+		    joinnext
+		    default	{ "1" }
+		    help	"Lock all location controls."
+		    hidewhen	"{ loc_name_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"loc_save_#"
+		    label	"Save"
+		    type	button
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ loc_enable_# == 0 } { loc_cplanes == 0 loc_views == 0 }"
+		    hidewhen	"{ loc_name_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_location('save', args=kwargs)" }
+		}
+		parm {
+		    name	"loc_restore_#"
+		    label	"Restore"
+		    type	button
+		    joinnext
+		    default	{ "1" }
+		    disablewhen	"{ loc_enable_# == 0 } { loc_cplane_cmd_# == \"\" loc_view_cmd_# == \"\" }"
+		    hidewhen	"{ loc_name_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_location('restore', args=kwargs)" }
+		}
+		parm {
+		    name	"loc_clear_#"
+		    label	"Clear"
+		    type	button
+		    default	{ "1" }
+		    disablewhen	"{ loc_enable_# == 0 } { loc_cplane_cmd_# == \"\" loc_view_cmd_# == \"\" }"
+		    hidewhen	"{ loc_name_# == \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_location('clear', args=kwargs)" }
+		}
+	    }
+
+	}
+
+    }
+
+    group {
+	name	"folder0_4"
+	label	"Paths"
+
+	parm {
+	    name	"root_dir"
+	    label	"Root Directory"
+	    type	file
+	    joinnext
+	    default	{ "$HIP" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"open_root_dir"
+	    label	"Open"
+	    type	button
+	    default	{ "1" }
+	    help	"Open this directory in a file manager."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param=\"root_dir\")" }
+	}
+	parm {
+	    name	"subdirs"
+	    label	"Folders"
+	    type	string
+	    joinnext
+	    default	{ "clips images in--geo out--geo tmp--sim" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"subdirs_select"
+	    label	"..."
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().select_subdirs()" }
+	}
+	parm {
+	    name	"subdirs_create"
+	    label	"Create/Update Sub-Directories..."
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().make_subdirs()" }
+	}
+    }
+
+    group {
+	name	"folder0_5"
+	label	"work-in-progress"
+	invisibletab
+
+	group {
+	    name	"folder0_6"
+	    label	"I/O"
+
+	    group {
+		name	"folder0_7"
+		label	"Takes"
+
+		parm {
+		    name	"takes_file"
+		    label	"Takes File"
+		    type	file
+		    default	{ "$HIP/tmp_takes.txt" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"take_name"
+		    label	"Selected Take"
+		    type	string
+		    default	{ "Main" }
+		    menu	{
+			[ "ts = hou.hscript(\"takels\")[0].split('\\n')" ]
+			[ "ts = [ [t.strip(), t] for t in ts ]" ]
+			[ "ts = sum(ts, [])" ]
+			[ "return ts" ]
+			language	python
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		group {
+		    name	"folder1"
+		    label	"Import"
+
+		    parm {
+			name	"takes_import"
+			label	":: Import: Takes from File ::"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback" "takeload `chs(\"takes_file\")`" }
+		    }
+		    parm {
+			name	"takes_import_parent"
+			label	".  Import: Under Selected Take"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback" "takeload -p `chs(\"take_name\")` `chs(\"takes_file\")`" }
+		    }
+		}
+
+		group {
+		    name	"folder1_1"
+		    label	"Export"
+
+		    parm {
+			name	"takes_export_all"
+			label	":: Export: All Takes ::"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback" "takesave -o `chs(\"takes_file\")` -R Main" }
+		    }
+		    parm {
+			name	"takes_export_archy"
+			label	".  Export: Selected and Below"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback" "takesave -o `chs(\"takes_file\")` -R `chs(\"take_name\")`" }
+		    }
+		    parm {
+			name	"takes_export_single"
+			label	".  Export: Selected Only"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback" "takesave -o `chs(\"takes_file\")` `chs(\"take_name\")`" }
+		    }
+		}
+
+		group {
+		    name	"folder1_2"
+		    label	"Delete"
+
+		    parm {
+			name	"takes_export_single2"
+			label	":: Delete All Takes ::"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().delete_all_takes()" }
+		    }
+		    parm {
+			name	"takes_export_single3"
+			label	".  Delete Selected and Below"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().delete_take( hou.ch(\"%s/take_name\" % kwargs['node'].path()) )" }
+		    }
+		}
+
+	    }
+
+	    group {
+		name	"folder0_7_1"
+		label	"Bundles"
+
+		parm {
+		    name	"labelparm"
+		    label	"Label"
+		    type	label
+		    nolabel
+		    default	{ "( ...TODO: Bundles import/export here... )" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	}
+
+    }
+
+}
