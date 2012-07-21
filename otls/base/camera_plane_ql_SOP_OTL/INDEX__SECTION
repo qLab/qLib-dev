@@ -9,11 +9,11 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jun 29 01:33:48 2012
+Modified:     Fri Jun 29 02:33:48 2012
 
-Operator:     camera_plane_ql
+Operator:     qLib::camera_plane_ql::1.0
 Label:        Camera plane ql
-Path:         oplib:/Object/camera_plane_ql?Object/camera_plane_ql
+Path:         oplib:/qLib::Object/camera_plane_ql::1.0?qLib::Object/camera_plane_ql::1.0
 Icon:         COP2_frontface
 Table:        Object
 License:      
@@ -22,5 +22,5 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jun 29 01:23:54 2012
+Modified:     Sat Jul 21 23:24:51 2012
 

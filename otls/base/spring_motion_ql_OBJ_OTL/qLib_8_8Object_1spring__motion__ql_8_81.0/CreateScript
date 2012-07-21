@@ -1,7 +1,7 @@
 # Automatically generated script: Monday October 04, 07:17 2010
 \set noalias = 1
 #
-#  Creation script for spring_motion_ql operator
+#  Creation script for qLib::spring_motion_ql::1.0 operator
 #
 
 if ( "$arg1" == "" ) then
@@ -9,5 +9,5 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Object/spring_motion_ql)
+# Node $arg1 (Object/qLib::spring_motion_ql::1.0)
 opexprlanguage -s hscript $arg1

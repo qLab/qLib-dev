@@ -1,7 +1,7 @@
-# Dialog script for turbulate_motion_ql automatically generated 10/01/10 18:20:11
+# Dialog script for qLib::turbulate_motion_ql::1.0 automatically generated 10/01/10 18:20:11
 
 {
-    name	turbulate_motion_ql
+    name	qLib::turbulate_motion_ql::1.0
     script	motion_turbulate_ql
     label	"Turbulate Moiton qL"
 

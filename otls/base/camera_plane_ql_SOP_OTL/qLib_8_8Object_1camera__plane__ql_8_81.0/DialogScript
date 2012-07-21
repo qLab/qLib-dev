@@ -1,8 +1,8 @@
-# Dialog script for camera_plane_ql automatically generated 06/29/12 01:23:54
+# Dialog script for qLib::camera_plane_ql::1.0 automatically generated 06/29/12 01:23:54
 
 {
-    name	camera_plane_ql
-    script	camera_plane_ql
+    name	qLib::camera_plane_ql::1.0
+    script	qLib::camera_plane_ql::1.0
     label	"Camera plane ql"
 
     help {

@@ -1,8 +1,8 @@
-# Dialog script for spring_motion_ql automatically generated 10/04/10 07:17:48
+# Dialog script for qLib::spring_motion_ql::1.0 automatically generated 10/04/10 07:17:48
 
 {
-    name	spring_motion_ql
-    script	spring_motion_ql
+    name	qLib::spring_motion_ql::1.0
+    script	qLib::spring_motion_ql::1.0
     label	"Spring Motion qL"
 
     help {

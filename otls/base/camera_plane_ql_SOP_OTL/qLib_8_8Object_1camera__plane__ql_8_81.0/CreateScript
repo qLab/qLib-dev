@@ -1,7 +1,7 @@
 # Automatically generated script: Friday June 29, 01:23 2012
 \set noalias = 1
 #
-#  Creation script for camera_plane_ql operator
+#  Creation script for qLib::camera_plane_ql::1.0 operator
 #
 
 if ( "$arg1" == "" ) then
@@ -9,7 +9,7 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Object/camera_plane_ql)
+# Node $arg1 (Object/qLib::camera_plane_ql::1.0)
 opspareds "" $arg1
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

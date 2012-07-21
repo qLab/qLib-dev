@@ -1,8 +1,8 @@
-# Dialog script for aim_ql automatically generated 06/10/12 20:29:42
+# Dialog script for qLib::aim_ql::1.0 automatically generated 06/10/12 20:29:42
 
 {
-    name	aim_ql
-    script	aim_ql
+    name	qLib::aim_ql::1.0
+    script	qLib::aim_ql::1.0
     label	"Aim qL"
 
     help {
