@@ -1,8 +1,8 @@
-# Dialog script for vector_ql automatically generated 04/26/12 20:08:15
+# Dialog script for qLib::vector_ql::1.0 automatically generated 04/26/12 20:08:15
 
 {
-    name	vector_ql
-    script	vector_ql
+    name	qLib::vector_ql::1.0
+    script	qLib::vector_ql::1.0
     label	"Vector qL"
 
     help {

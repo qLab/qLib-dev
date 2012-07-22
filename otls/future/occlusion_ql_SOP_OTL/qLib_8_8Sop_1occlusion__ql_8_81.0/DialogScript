@@ -1,8 +1,8 @@
-# Dialog script for occlusion_ql automatically generated 09/18/11 21:32:36
+# Dialog script for qLib::occlusion_ql::1.0 automatically generated 09/18/11 21:32:36
 
 {
-    name	occlusion_ql
-    script	occlusion_ql
+    name	qLib::occlusion_ql::1.0
+    script	qLib::occlusion_ql::1.0
     label	"Occlusion qL"
 
     help {

@@ -1,6 +1,6 @@
-Operator:     attr_visualize_ql
+Operator:     qLib::attr_visualize_ql::1.0
 Label:        Attr Visualize qL
-Path:         oplib:/Sop/attr_visualize_ql?Sop/attr_visualize_ql
+Path:         oplib:/qLib::Sop/attr_visualize_ql::1.0?qLib::Sop/attr_visualize_ql::1.0
 Icon:         COP2_colorwheel
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul  7 04:16:43 2012
+Modified:     Sun Jul 22 01:01:36 2012
 

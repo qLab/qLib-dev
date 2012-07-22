@@ -1,8 +1,8 @@
-# Dialog script for attr_visualize_ql automatically generated 07/07/12 04:15:19
+# Dialog script for qLib::attr_visualize_ql::1.0 automatically generated 07/07/12 04:15:19
 
 {
-    name	attr_visualize_ql
-    script	attr_visualize_ql
+    name	qLib::attr_visualize_ql::1.0
+    script	qLib::attr_visualize_ql::1.0
     label	"Attr Visualize qL"
 
     help {
