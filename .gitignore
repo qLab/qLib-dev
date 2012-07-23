@@ -12,10 +12,14 @@ presets/*
 # vim swap files
 *.swp
 
+# python cuss
+*.pyc
+
 # backup dirs
 examples/backup
 
 # misc
 examples/images/*
 examples/*.log
-
+examples/tmp*
+examples/*/*
