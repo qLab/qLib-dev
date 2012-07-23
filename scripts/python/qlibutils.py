@@ -14,16 +14,21 @@ import traceback
 
 
 
-def set_namespace_aliases(prefix="qLib::", verbose=False):
+def set_namespace_aliases(prefix="qLib::", alias=True, verbose=False):
 	"""
 	Defines (non-)namespaced aliases for operators with a particular namespace prefix.
 
 	This is used for always creating the namespaced versions of assets, even if an
 	older .hip file contains non-namespaced asset names.
 
-	Mapping looks like:  <opname>  -->  <prefix>::<opname>
+	Mapping looks like:  <opname>  -->  <prefix>::<opname>::<version>
 
-	The namespaced name intentionally doesn't contain any version postfix, so always
+	
+	@note
+		IMPORTANT: Although the manual says it's fine to omit the version of a
+		namespaced asset (and that would refer to the latest version),
+		omitting it results in files getting messed up when loaded,
+		so version numbers _are_ included in the opaliases.
 
 	@note
 		This function should be called (preferably) on Houdini startup, e.g.
@@ -31,7 +36,12 @@ def set_namespace_aliases(prefix="qLib::", verbose=False):
 		import qlibutils
 		qlibutils.set_namespace_aliases( ["qLib::", "myStuff::"] )
 
+	@todo
+		For each asset, the highest version number should be found and used.
+		Right now it uses the first version it founds (which is fine for now).
+
 	"""
+
 	if type(prefix) is list:
 		for p in prefix: set_namespace_aliases(p)
 		return
@@ -52,14 +62,12 @@ def set_namespace_aliases(prefix="qLib::", verbose=False):
 				old = re.sub("^[^:]+::", "", n[0])
 				old = re.search("^[^:]+", old).group(0)	
 
-				# strip version postfix from new (meaning "always use latest")
-				new = re.sub("::[0-9.]+$", "", n[0])
-
-				cmd = "opalias %s %s %s" % (n[1], new, old)
+				# opalias <network> <namespaced-op.> <plain-old-op.>
+				cmd = "opalias %s %s %s" % (n[1], n[0], old)
 
 				if cmd not in cmds:
 					if verbose: print cmd
-					hou.hscript(cmd)
+					if alias: hou.hscript(cmd)
 					cmds.append(cmd)
 				else:
 					print "# ALREADY ALIASED: %s (%s)" % (cmd, file)
