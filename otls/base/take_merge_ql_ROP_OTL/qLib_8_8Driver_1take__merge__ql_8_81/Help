@@ -4,6 +4,8 @@
 
 = Take Merge qL =
 
+*Version 0.0.3*
+
 """Merges specified takes together into a (temporary) new take, then renders the result."""
 
 The takeMerge ROP merges all the specified takes together, then calls the specified
@@ -103,6 +105,10 @@ TIP:
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.3:
+        * Added on/off toggle for each take list field.
+
     Version 0.0.2:
         * Merge code rewritten in Python.
         * Lifted known limitation of ignoring contents in take hierarchy parents.

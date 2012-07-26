@@ -1,4 +1,4 @@
-# Dialog script for qLib::take_merge_ql::1 automatically generated 06/04/12 03:39:54
+# Dialog script for qLib::take_merge_ql::1 automatically generated 07/27/12 01:53:56
 
 {
     name	qLib::take_merge_ql::1
@@ -111,12 +111,22 @@
 		export	none
 	    }
 	    parm {
+		name	"enabled#"
+		label	"#"
+		type	toggle
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
 		name	"takes#"
-		label	"#."
+		label	"."
 		type	string
 		nolabel
 		default	{ "" }
 		help	"List of takes to merge. Multiple names are allowed for each line."
+		disablewhen	"{ enabled# == 0 }"
 		menutoggle	{
 		    [ "ts = hou.hscript(\"takels\")[0].split('\\n')" ]
 		    [ "ts = [ [t.strip(), t] for t in ts ]" ]

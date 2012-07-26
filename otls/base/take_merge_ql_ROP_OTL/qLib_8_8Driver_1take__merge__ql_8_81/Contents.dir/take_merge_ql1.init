@@ -1,2 +1,2 @@
-type = take_merge_ql
+type = qLib::take_merge_ql::1
 matchesdef = 0
