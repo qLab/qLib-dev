@@ -1,2 +1,2 @@
-type = group_to_attr_ql
+type = qLib::group_to_attr_ql::1
 matchesdef = 0

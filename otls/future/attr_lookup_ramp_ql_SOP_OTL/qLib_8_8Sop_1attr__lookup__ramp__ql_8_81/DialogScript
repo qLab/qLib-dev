@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_lookup_ramp_ql::1 automatically generated 07/18/12 14:49:17
+# Dialog script for qLib::attr_lookup_ramp_ql::1 automatically generated 07/26/12 23:55:54
 
 {
     name	qLib::attr_lookup_ramp_ql::1
@@ -132,9 +132,9 @@
     }
     parm {
 	name	"exp"
-	label	"Exponent"
+	label	"Gamma"
 	type	float
-	default	{ "1" }
+	default	{ "2.2" }
 	range	{ 0.45 2.2 }
 	export	none
 	parmtag	{ "parmvop" "1" }

@@ -1,7 +1,17 @@
 comment ""
 position 1.75533 2.82291
 cachesize 1
+connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on audio off export off
+outputsNamed3
+{
+2 "output1"
+}
+inputsNamed3
+{
+0 	geom_attrs 0 1 "input1"
+1 	from_min 1 1 "input2"
+}
 inputs
 {
 0 	geom_attrs 0 1

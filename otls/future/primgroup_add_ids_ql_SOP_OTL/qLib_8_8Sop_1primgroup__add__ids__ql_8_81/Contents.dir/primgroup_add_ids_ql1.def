@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position -0.827372 -2.29828
+position 5.72917 -4.16073
 cachesize 1
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -10,22 +10,22 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	GEO_object_groups 1 1 "input1"
-1 	primgroup_centroids_ql1 1 1 "input2"
+0 	"" "" 1 "input1"
+1 	"" "" 1 "input2"
 }
 inputs
 {
-0 	GEO_object_groups 0 1
-1 	primgroup_centroids_ql1 0 1
+0 	"" 0 1
+1 	"" 0 1
 }
 stat
 {
-  create 1330888600
-  modify 1338915750
+  create 1343334454
+  modify 1343334484
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0.8 0.6 0 
+color UT_Color RGB 0.8 0.8 0.8 
 delscript ""
 exprlanguage hscript
 end

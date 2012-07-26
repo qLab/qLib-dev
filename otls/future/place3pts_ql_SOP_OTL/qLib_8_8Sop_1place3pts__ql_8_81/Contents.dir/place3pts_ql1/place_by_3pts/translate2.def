@@ -1,7 +1,17 @@
 comment ""
 position 0.119594 1.08354
 cachesize 1
+connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+4 "thmatx"
+}
+inputsNamed3
+{
+2 	"" "" 1 "hmatx"
+3 	rest_base_pos 0 1 "amount"
+}
 inputs
 {
 0 	"" 0 1

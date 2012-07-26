@@ -1,4 +1,4 @@
-# Dialog script for qLib::matchpointsorder_ql::1 automatically generated 03/04/12 20:10:25
+# Dialog script for qLib::matchpointsorder_ql::1 automatically generated 07/26/12 23:48:14
 
 {
     name	qLib::matchpointsorder_ql::1
@@ -29,63 +29,85 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-    }
-
-    group {
-	name	"folder0"
-	label	"Testing"
-
 	group {
-	    name	"folder1"
-	    label	"Geometry Point Counts"
+	    name	"folder0"
+	    label	"Troubleshooting"
+
+	    group {
+		name	"folder1"
+		label	"Geometry Point Counts"
+
+		parm {
+		    name	"num_pts_geom"
+		    label	"Input (1st)"
+		    type	integer
+		    joinnext
+		    default	{ "npoints(\"IN\")" }
+		    disablewhen	"{ num_pts_geom > -1 }"
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"num_pts_ref"
+		    label	"Reference (2nd)"
+		    type	integer
+		    default	{ "npoints(\"REF\")" }
+		    disablewhen	"{ num_pts_geom > -1 }"
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"are_matching"
+		    label	"Label"
+		    type	integer
+		    invisible
+		    nolabel
+		    default	{ "npoints(\"IN\")==npoints(\"REF\")" }
+		    range	{ 0 10 }
+		    export	none
+		}
+		parm {
+		    name	"label_match"
+		    label	"Label"
+		    type	label
+		    nolabel
+		    default	{ "OK: Number of points are matching." }
+		    hidewhen	"{ are_matching == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
+		    name	"label_mismatch"
+		    label	"Label"
+		    type	label
+		    nolabel
+		    default	{ "WARNING: Mismatching number of points." }
+		    hidewhen	"{ are_matching != 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
 
 	    parm {
-		name	"num_pts_geom"
-		label	"Input (1st)"
-		type	integer
-		default	{ "npoints(\"IN\")" }
-		disablewhen	"{ num_pts_geom > -1 }"
-		range	{ 0 10 }
+		name	"blend"
+		label	"Test Shape Blend"
+		type	float
+		default	{ "0.5" }
+		range	{ 0 1 }
 		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
-		name	"num_pts_ref"
-		label	"Reference (2nd)"
-		type	integer
-		default	{ "npoints(\"REF\")" }
-		disablewhen	"{ num_pts_geom > -1 }"
-		range	{ 0 10 }
+		name	"labelparm2"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "Make sure the test blend shape (shown as guide) is OK." }
+		range	{ 0 1 }
 		export	none
 	    }
 	}
 
-	parm {
-	    name	"blend"
-	    label	"Test Shape Blend"
-	    type	float
-	    default	{ "0.5" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"labelparm"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "Make sure point counts match up and" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"labelparm2"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "test blend shape (shown as guide) is OK." }
-	    range	{ 0 1 }
-	    export	none
-	}
     }
 
 }

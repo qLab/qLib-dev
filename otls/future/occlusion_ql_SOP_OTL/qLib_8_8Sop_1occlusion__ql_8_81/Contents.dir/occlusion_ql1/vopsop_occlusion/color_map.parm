@@ -10,6 +10,7 @@ useasparmdefiner	[ 0	locks=0 ]	(	"off"	)
 separator2	[ 0	locks=0 ]	(	)
 rampshowcontrolsdefault	[ 0	locks=0 ]	(	"on"	)
 disablewhen	[ 0	locks=0 ]	(	""	)
+hidewhen	[ 0	locks=0 ]	(	""	)
 callback	[ 0	locks=0 ]	(	""	)
 help	[ 0	locks=0 ]	(	""	)
 }

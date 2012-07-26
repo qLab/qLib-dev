@@ -6,13 +6,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
-    }
     channel rest_base_pos1 {
       lefttype = extend
       righttype = extend

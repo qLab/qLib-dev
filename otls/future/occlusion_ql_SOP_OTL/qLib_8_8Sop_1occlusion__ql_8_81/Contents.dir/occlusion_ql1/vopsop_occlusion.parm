@@ -1,12 +1,12 @@
 {
 version 0.8
 vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
-vex_numthreads	[ 0	locks=0 ]	(	[ vex_numthreads	1 ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 file	[ 0	locks=0 ]	(	op:`opinputpath(\".\",1)`	)
-max_distance	[ 0	locks=0 ]	(	[ max_distance	1 ] 	)
-bias	[ 0	locks=0 ]	(	[ bias	0.00100000005 ] 	)
+max_distance	[ 0	locks=0 ]	(	[ max_distance	1.5 ] 	)
+bias	[ 0	locks=0 ]	(	[ bias	0.001 ] 	)
 focal	[ 0	locks=0 ]	(	[ focal	1 ] 	)
 aperture	[ 0	locks=0 ]	(	[ aperture	1 ] 	)
 num_samples	[ 0	locks=0 ]	(	[ num_samples	16 ] 	)
@@ -17,5 +17,6 @@ color_map1interp	[ 0	locks=0 ]	(	[ color_map1interp	1 ] 	)
 color_map2pos	[ 0	locks=0 ]	(	[ color_map2pos	1 ] 	)
 color_map2c	[ 0	locks=0 ]	(	[ color_map2cr	1 ] 	[ color_map2cg	1 ] 	[ color_map2cb	1 ] 	)
 color_map2interp	[ 0	locks=0 ]	(	[ color_map2interp	1 ] 	)
+gamma	[ 0	locks=0 ]	(	[ gamma	2.2000000000000002 ] 	)
 distance_attr	[ 0	locks=0 ]	(	[ distance_attr	pscale ] 	)
 }

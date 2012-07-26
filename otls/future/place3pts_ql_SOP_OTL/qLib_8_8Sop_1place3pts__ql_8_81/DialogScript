@@ -1,4 +1,4 @@
-# Dialog script for qLib::place3pts_ql::1 automatically generated 09/16/11 00:42:39
+# Dialog script for qLib::place3pts_ql::1 automatically generated 07/26/12 23:26:39
 
 {
     name	qLib::place3pts_ql::1
@@ -39,18 +39,6 @@
 	default	{ "" }
 	menutoggle	{
 	    [ "opmenu -l place_by_3pts vex_group" ]
-	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"vex_numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1perproc" }
-	menu	{
-	    [ "opmenu -l place_by_3pts vex_numthreads" ]
 	}
 	range	{ 0 1 }
 	export	none

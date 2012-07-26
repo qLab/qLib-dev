@@ -1,4 +1,4 @@
-# Dialog script for qLib::primgroup_add_ids_ql::1 automatically generated 06/05/12 19:02:29
+# Dialog script for qLib::primgroup_add_ids_ql::1 automatically generated 07/26/12 22:28:00
 
 {
     name	qLib::primgroup_add_ids_ql::1
@@ -66,7 +66,7 @@
 	    name	"attrname"
 	    label	"Group ID Attribute"
 	    type	string
-	    default	{ "__origpt" }
+	    default	{ "piece" }
 	    menureplace	{
 		"piece"	"piece (H12)"
 		"__origpt"	"__origpt (H11)"

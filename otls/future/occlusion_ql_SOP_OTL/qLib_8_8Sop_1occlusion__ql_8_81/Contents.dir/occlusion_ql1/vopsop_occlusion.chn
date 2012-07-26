@@ -68,13 +68,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../vex_numthreads\") }
-    }
     channel max_distance {
       lefttype = extend
       righttype = extend
@@ -85,7 +78,7 @@
     channel bias {
       lefttype = extend
       righttype = extend
-      default = 0.001
+      default = 0.0010000000474974513
       flags = 0
       segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = ch(\"../bias\") }
     }
@@ -123,5 +116,12 @@
       defaultString = \"pscale\"
       flags = 0
       segment { length = 0 expr = chs(\"../distance_attr\") }
+    }
+    channel gamma {
+      lefttype = extend
+      righttype = extend
+      default = 2.2000000476837158
+      flags = 0
+      segment { length = 0 value = 2.2000000476837158 2.2000000476837158 expr = ch(\"../exp\") }
     }
   }

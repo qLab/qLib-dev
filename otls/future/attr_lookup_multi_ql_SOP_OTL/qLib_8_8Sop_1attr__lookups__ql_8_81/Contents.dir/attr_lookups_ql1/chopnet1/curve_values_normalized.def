@@ -1,7 +1,16 @@
 comment ""
 position 3.35415 1.22544
 cachesize 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on audio off export off
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	div_by_amp 2 1 "input1"
+}
 inputs
 {
 0 	div_by_amp 0 1

@@ -12,16 +12,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	foreach_pts_for_centroids 1 1 "input1"
-23 	"" "" 1 "input2"
-24 	"" "" 1 "input3"
-25 	"" "" 1 "input4"
 }
 inputs
 {
 0 	foreach_pts_for_centroids 0 1
-1 	"" 0 1
-2 	"" 0 1
-3 	"" 0 1
 }
 stat
 {

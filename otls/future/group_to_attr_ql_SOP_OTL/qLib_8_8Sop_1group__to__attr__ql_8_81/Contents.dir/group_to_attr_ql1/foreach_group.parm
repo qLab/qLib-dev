@@ -11,4 +11,5 @@ usemaxiter	[ 0	locks=0 ]	(	"off"	)
 maxiter	[ 0	locks=0 ]	(	10	)
 mergeresults	[ 0	locks=0 ]	(	"on"	)
 eachpoint	[ 8	locks=0 ]	(	[ eachpoint	0 ] 	)
+stopcondition	[ 0	locks=0 ]	(	0	)
 }

@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::1 automatically generated 07/22/12 00:57:34
+# Dialog script for qLib::waypoint_ql::1 automatically generated 07/26/12 22:23:49
 
 {
     name	qLib::waypoint_ql::1
@@ -15,35 +15,19 @@
     inputlabel	4	"Sub-Network Input #4"
     inputlabel	5	"Sub-Network Input #5"
 
-    parm {
-	name	"label_passthru_0"
-	label	"Label"
-	type	label
-	nolabel
-	default	{ ".. waypoint inactive .." }
-	hidewhen	"{ passthru == 0 }"
-	range	{ 0 1 }
-	export	none
-    }
-    parm {
-	name	"label_passthru_1"
-	label	"Label"
-	type	label
-	nolabel
-	default	{ "..:: WAYPOINT ACTIVE :: Using data from storage ::.." }
-	hidewhen	"{ passthru != 0 }"
-	range	{ 0 1 }
-	export	none
-    }
     group {
 	name	"folder1"
-	label	"..: SOP Waypoint :.."
+	label	"SOP Waypoint"
 
 	parm {
 	    name	"passthru"
-	    label	"Pass Through (Disabled)"
-	    type	toggle
+	    label	"Waypoint State"
+	    type	integer
 	    default	{ "1" }
+	    menu	{
+		"0"	"ACTIVE: Read from Disk"
+		"1"	"Pass Through (disabled)"
+	    }
 	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "script_callback_language" "python" }
@@ -85,7 +69,7 @@
 	}
 	group {
 	    name	"folder2"
-	    label	":: Writer ::"
+	    label	"Writer"
 
 	    import {
 		label	Writer
@@ -305,7 +289,7 @@
 
 	group {
 	    name	"folder2_1"
-	    label	":: Reader ::"
+	    label	"Reader"
 
 	    import {
 		label	Reader

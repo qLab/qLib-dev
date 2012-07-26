@@ -1,2 +1,2 @@
-type = occlusion_ql
+type = qLib::occlusion_ql::1
 matchesdef = 0

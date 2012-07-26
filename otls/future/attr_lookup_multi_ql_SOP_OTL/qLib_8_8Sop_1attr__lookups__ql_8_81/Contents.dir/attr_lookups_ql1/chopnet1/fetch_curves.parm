@@ -17,6 +17,6 @@ units	[ 0	locks=0 ]	(	"seconds"	)
 timeslice	[ 0	locks=0 ]	(	"off"	)
 unload	[ 0	locks=0 ]	(	"off"	)
 export	[ 0	locks=0 ]	(	""	)
-gcolor	[ 0	locks=0 ]	(	0	0.449999988	0.899999976	)
-gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+gcolor	[ 0	locks=0 ]	(	0	0.44999998800000002	0.89999997600000003	)
+gcolorstep	[ 0	locks=0 ]	(	0.050000000699999998	)
 }
