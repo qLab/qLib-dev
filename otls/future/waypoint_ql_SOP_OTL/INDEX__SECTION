@@ -1,6 +1,6 @@
-Operator:     qLib::waypoint_ql::1.0
+Operator:     qLib::waypoint_ql::1
 Label:        Waypoint qL
-Path:         oplib:/qLib::Sop/waypoint_ql::1.0?qLib::Sop/waypoint_ql::1.0
+Path:         oplib:/qLib::Sop/waypoint_ql::1?qLib::Sop/waypoint_ql::1
 Icon:         SOP_control
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 4
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 21 23:37:17 2012
+Modified:     Thu Jul 26 21:41:20 2012
 

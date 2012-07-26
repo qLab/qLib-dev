@@ -1,6 +1,6 @@
-Operator:     polywirecurves_ql
+Operator:     qLib::polywirecurves_ql::1
 Label:        PolyWireCurves qL
-Path:         oplib:/Sop/polywirecurves_ql?Sop/polywirecurves_ql
+Path:         oplib:/qLib::Sop/polywirecurves_ql::1?qLib::Sop/polywirecurves_ql::1
 Icon:         SOP_wire
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Mar  4 19:24:14 2012
+Modified:     Thu Jul 26 21:48:22 2012
 

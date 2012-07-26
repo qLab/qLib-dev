@@ -1,0 +1,109 @@
+# Dialog script for qLib::distance_ql::1 automatically generated 04/10/12 01:08:21
+
+{
+    name	qLib::distance_ql::1
+    script	qLib::distance_ql::1
+    label	"Distance qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"points"
+	label	"Points"
+	type	string
+	default	{ "0 1" }
+	menutoggle	{
+	    [ "opmenu -l keep_first_2_pts group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"size"
+	label	"Arrow Size"
+	type	float
+	default	{ "0.1" }
+	range	{ 0.1 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"width"
+	label	"Arrow Width"
+	type	float
+	default	{ "0.25" }
+	range	{ 0 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"label"
+	label	"Show Label"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"label_size"
+	label	"Label Size"
+	type	float
+	default	{ "0.1" }
+	disablewhen	"{ label == 0 }"
+	range	{ 0.01 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"label_prefix"
+	label	"Prefix"
+	type	string
+	joinnext
+	default	{ "length:" }
+	disablewhen	"{ label == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"label_postfix"
+	label	"Postfix"
+	type	string
+	default	{ "" }
+	disablewhen	"{ label == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"apply_color"
+	label	"Apply Color"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"color"
+	label	"Color"
+	type	color
+	size	3
+	default	{ "1" "1" "1" }
+	disablewhen	"{ apply_color == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

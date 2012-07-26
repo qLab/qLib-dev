@@ -1,6 +1,6 @@
-Operator:     qLib::round_corners_ql::1.0
+Operator:     qLib::round_corners_ql::1
 Label:        Round Corners qL
-Path:         oplib:/qLib::Sop/round_corners_ql::1.0?qLib::Sop/round_corners_ql::1.0
+Path:         oplib:/qLib::Sop/round_corners_ql::1?qLib::Sop/round_corners_ql::1
 Icon:         DOP_applydata
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       false
 Python:       true
 Empty:        false
-Modified:     Sun Jul 22 01:21:28 2012
+Modified:     Thu Jul 26 21:41:28 2012
 

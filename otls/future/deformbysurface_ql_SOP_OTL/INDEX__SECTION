@@ -1,6 +1,6 @@
-Operator:     deformbysurface_ql
+Operator:     qLib::deformbysurface_ql::1
 Label:        Deform by Surface qL
-Path:         oplib:/Sop/deformbysurface_ql?Sop/deformbysurface_ql
+Path:         oplib:/qLib::Sop/deformbysurface_ql::1?qLib::Sop/deformbysurface_ql::1
 Icon:         SOP_deform
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Apr 24 00:15:32 2012
+Modified:     Thu Jul 26 21:45:45 2012
 

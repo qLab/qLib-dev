@@ -1,6 +1,6 @@
-Operator:     peak_ql
+Operator:     qLib::peak_ql::1
 Label:        Peak qL
-Path:         oplib:/Sop/peak_ql?Sop/peak_ql
+Path:         oplib:/qLib::Sop/peak_ql::1?qLib::Sop/peak_ql::1
 Icon:         SOP_peak
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Jul  1 14:18:53 2012
+Modified:     Thu Jul 26 21:48:04 2012
 

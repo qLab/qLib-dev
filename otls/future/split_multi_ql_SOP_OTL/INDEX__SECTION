@@ -1,6 +1,6 @@
-Operator:     split_multi_ql
+Operator:     qLib::split_multi_ql::1
 Label:        Split Multi qL
-Path:         oplib:/Sop/split_multi_ql?Sop/split_multi_ql
+Path:         oplib:/qLib::Sop/split_multi_ql::1?qLib::Sop/split_multi_ql::1
 Icon:         VOP_divide
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Oct  1 23:57:24 2011
+Modified:     Thu Jul 26 21:50:07 2012
 

@@ -1,6 +1,6 @@
-Operator:     rbd_fetch_sdf_ql
+Operator:     qLib::rbd_fetch_sdf_ql::1
 Label:        RBD Fetch SDF qL
-Path:         oplib:/Dop/rbd_fetch_sdf_ql?Dop/rbd_fetch_sdf_ql
+Path:         oplib:/qLib::Dop/rbd_fetch_sdf_ql::1?qLib::Dop/rbd_fetch_sdf_ql::1
 Icon:         VOP_texture3dbox
 Table:        Dop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Jan 29 04:08:31 2012
+Modified:     Thu Jul 26 21:49:51 2012
 

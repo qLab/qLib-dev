@@ -1,6 +1,6 @@
-Operator:     group_to_attr_ql
+Operator:     qLib::group_to_attr_ql::1
 Label:        Group to Attr qL
-Path:         oplib:/Sop/group_to_attr_ql?Sop/group_to_attr_ql
+Path:         oplib:/qLib::Sop/group_to_attr_ql::1?qLib::Sop/group_to_attr_ql::1
 Icon:         VOP_addattrib
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Apr  9 01:28:27 2012
+Modified:     Thu Jul 26 21:46:30 2012
 

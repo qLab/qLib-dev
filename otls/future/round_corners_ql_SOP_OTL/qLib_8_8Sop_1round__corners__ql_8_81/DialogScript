@@ -1,0 +1,146 @@
+# Dialog script for qLib::round_corners_ql::1 automatically generated 07/22/12 01:21:28
+
+{
+    name	qLib::round_corners_ql::1
+    script	qLib::round_corners_ql::1
+    label	"Round Corners qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l . group" ]
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"group_type"
+	label	"Group Type"
+	type	string
+	default	{ "point" }
+	menu	{
+	    "point"	"Point"
+	    "prim"	"Primitive"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"radius"
+	label	"Radius"
+	type	float
+	default	{ "0.2" }
+	disablewhen	"{ radius_attrib != \"\" }"
+	range	{ 0.0001! 1 }
+	export	none
+    }
+    parm {
+	name	"radius_attrib"
+	label	"Radius Attribute"
+	type	string
+	default	{ "" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType()==hou.attribData.Float and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"seg_mode"
+	label	"Segment Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Max Segment Length"
+	    "1"	"Number of Segments"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"max_length"
+	label	"Max Segment Length"
+	type	log
+	default	{ "0.1" }
+	disablewhen	"{ seg_mode == 1 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"segments"
+	label	"Num. Segments"
+	type	integer
+	default	{ "5" }
+	disablewhen	"{ seg_mode == 0 }"
+	range	{ 1! 9 }
+	export	none
+    }
+    parm {
+	name	"do_limit"
+	label	"Limit Angle"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"angle_limit"
+	label	"Min/Max Angle"
+	type	vector2
+	size	2
+	default	{ "0" "180" }
+	disablewhen	"{ do_limit == 0 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"sepparm"
+	label	"Separator"
+	type	separator
+	default	{ }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "WARNING: This asset is from qLib's 'future' section," }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Its interface and implementation is subject to change." }
+	range	{ 0 1 }
+	export	none
+    }
+}

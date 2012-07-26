@@ -1,6 +1,6 @@
-Operator:     matchpointsorder_ql
+Operator:     qLib::matchpointsorder_ql::1
 Label:        Match Points Order qL
-Path:         oplib:/Sop/matchpointsorder_ql?Sop/matchpointsorder_ql
+Path:         oplib:/qLib::Sop/matchpointsorder_ql::1?qLib::Sop/matchpointsorder_ql::1
 Icon:         SOP_sort
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Mar  4 20:11:10 2012
+Modified:     Thu Jul 26 21:46:43 2012
 

@@ -1,0 +1,258 @@
+# Dialog script for qLib::ray_smooth_ql::1 automatically generated 06/30/12 00:31:19
+
+{
+    name	qLib::ray_smooth_ql::1
+    script	qLib::ray_smooth_ql::1
+    label	"Ray & Smooth qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Geometry to Wrap Onto"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Wrapping: Ray & Smooth"
+
+	parm {
+	    name	"prenml"
+	    label	"Pre-Compute Normals"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"reversenml"
+	    label	"Reverse Normals"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	multiparm {
+	    name	"iters"
+	    label	"Iterations"
+	    default	1
+
+	    parm {
+		name	"enable#"
+		label	"Pass \\##"
+		type	toggle
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_ray#"
+		label	"Enable"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ enable# == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ray#"
+		label	"Ray"
+		type	float
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ enable# == 0 } { do_ray# == 0 }"
+		range	{ 0! 1! }
+		export	none
+	    }
+	    parm {
+		name	"method#"
+		label	"Method"
+		type	ordinal
+		nolabel
+		default	{ "minimum" }
+		menu	{
+		    "minimum"	"nearest"
+		    "project"	"project"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_smooth#"
+		label	"Enable"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"smooth#"
+		label	"Smoothing"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 } { do_smooth# == 0 }"
+		range	{ 0 40 }
+		export	none
+	    }
+	    parm {
+		name	"freq#"
+		label	"Cutoff Freq."
+		type	float
+		default	{ "0.1" }
+		disablewhen	"{ enable# == 0 } { do_smooth# == 0 }"
+		range	{ 0.0001! 0.2 }
+		export	none
+	    }
+	    parm {
+		name	"do_peak#"
+		label	"Enable"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"peak#"
+		label	"Peak"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ enable# == 0 } { do_peak# == 0 }"
+		range	{ -10 10 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Settings"
+
+	group {
+	    name	"folder3"
+	    label	"Ray ('project' mode only)"
+
+	    parm {
+		name	"sample"
+		label	"Sample"
+		type	integer
+		default	{ "1" }
+		range	{ 1! 100 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"jitter"
+		label	"Jitter Scale"
+		type	float
+		default	{ "0" }
+		range	{ 0! 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"combinetype"
+		label	"Ray Combiner"
+		type	ordinal
+		default	{ "average" }
+		menu	{
+		    "average"	"Average ray"
+		    "median"	"Median ray"
+		    "shortest"	"Shortest ray"
+		    "longest"	"Longest ray"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"seed"
+		label	"Seed"
+		type	integer
+		default	{ "1" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder0_2"
+	label	"Cleanup"
+
+	import {
+	    label	"cleanup attrs"
+	    source	"op:clean"
+	    mask	"*delattribs *delgroups"
+	    enable	1
+
+	    parm {
+		name	"dodelattribs"
+		label	"Remove Attributes"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "dodelattribs" }
+		parmtag	{ "import_source" "op:clean" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"delattribs"
+		label	"Remove Attribs"
+		type	string
+		default	{ "*" }
+		disablewhen	"{ dodelattribs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "delattribs" }
+		parmtag	{ "import_source" "op:clean" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dodelgroups"
+		label	"Remove Groups"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "dodelgroups" }
+		parmtag	{ "import_source" "op:clean" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"delgroups"
+		label	"Remove Groups"
+		type	string
+		default	{ "*" }
+		disablewhen	"{ dodelgroups == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "delgroups" }
+		parmtag	{ "import_source" "op:clean" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}

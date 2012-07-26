@@ -1,6 +1,6 @@
-Operator:     qLib::limit_ql::1.0
+Operator:     qLib::limit_ql::1
 Label:        Limit qL
-Path:         oplib:/qLib::Pop/limit_ql::1.0?qLib::Pop/limit_ql::1.0
+Path:         oplib:/qLib::Pop/limit_ql::1?qLib::Pop/limit_ql::1
 Icon:         SOP_volumesplice
 Table:        Pop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Jul 10 01:21:37 2012
+Modified:     Thu Jul 26 21:39:48 2012
 

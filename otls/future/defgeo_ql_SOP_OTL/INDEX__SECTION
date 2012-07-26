@@ -1,6 +1,6 @@
-Operator:     defgeo_ql
+Operator:     qLib::defgeo_ql::1
 Label:        Default Geo qL
-Path:         oplib:/Sop/defgeo_ql?Sop/defgeo_ql
+Path:         oplib:/qLib::Sop/defgeo_ql::1?qLib::Sop/defgeo_ql::1
 Icon:         OBJ_geo
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Oct  9 20:16:37 2011
+Modified:     Thu Jul 26 21:44:55 2012
 

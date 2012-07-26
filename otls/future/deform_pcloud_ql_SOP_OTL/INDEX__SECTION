@@ -1,6 +1,6 @@
-Operator:     deform_pcloud_ql
+Operator:     qLib::deform_pcloud_ql::1
 Label:        Deform by PointCloud qL
-Path:         oplib:/Sop/deform_pcloud_ql?Sop/deform_pcloud_ql
+Path:         oplib:/qLib::Sop/deform_pcloud_ql::1?qLib::Sop/deform_pcloud_ql::1
 Icon:         POP_attractor
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       3 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 27 02:34:53 2012
+Modified:     Thu Jul 26 21:45:02 2012
 
