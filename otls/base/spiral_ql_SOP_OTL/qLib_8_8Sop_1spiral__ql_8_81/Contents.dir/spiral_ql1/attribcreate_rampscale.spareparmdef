@@ -74,3 +74,13 @@
 	range	{ 0 10 }
 	export	none
     }
+    parm {
+	name	"typeinfo"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"precision"
+	baseparm
+	export	all
+    }
