@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_store_ql::1 automatically generated 03/11/12 02:49:38
+# Dialog script for qLib::vector_store_ql::1 automatically generated 07/27/12 01:58:24
 
 {
     name	qLib::vector_store_ql::1
@@ -28,7 +28,8 @@
     }
     group {
 	name	"folder0"
-	label	"Common"
+	label	"Settings"
+	tabbreak
 
 	parm {
 	    name	"attrs"
@@ -70,45 +71,47 @@
 	    range	{ 0 1 }
 	    export	none
 	}
-    }
+	group {
+	    name	"folder0_1"
+	    label	"Save"
+	    hidewhentab	"{ mode != 0 }"
 
-    group {
-	name	"folder0_1"
-	label	"Save"
-
-	parm {
-	    name	"delattr"
-	    label	"Delete Source Attributes"
-	    type	toggle
-	    default	{ "1" }
-	    disablewhen	"{ mode != 0 }"
-	    range	{ 0 1 }
-	    export	none
+	    parm {
+		name	"delattr"
+		label	"Delete Source Attributes"
+		type	toggle
+		default	{ "1" }
+		disablewhen	"{ mode != 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
 	}
-    }
 
-    group {
-	name	"folder0_2"
-	label	"Restore"
+	group {
+	    name	"folder0_2"
+	    label	"Restore"
+	    hidewhentab	"{ mode != 1 }"
 
-	parm {
-	    name	"norm"
-	    label	"Normalize Vectors"
-	    type	toggle
-	    default	{ "0" }
-	    disablewhen	"{ mode != 1 }"
-	    range	{ 0 1 }
-	    export	none
+	    parm {
+		name	"norm"
+		label	"Normalize Vectors"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ mode != 1 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"outlen"
+		label	"Output Length Mult"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ mode != 1 }"
+		range	{ 0.01 4 }
+		export	none
+	    }
 	}
-	parm {
-	    name	"outlen"
-	    label	"Output Length Mult"
-	    type	float
-	    default	{ "1" }
-	    disablewhen	"{ mode != 1 }"
-	    range	{ 0.01 4 }
-	    export	none
-	}
+
     }
 
 }
