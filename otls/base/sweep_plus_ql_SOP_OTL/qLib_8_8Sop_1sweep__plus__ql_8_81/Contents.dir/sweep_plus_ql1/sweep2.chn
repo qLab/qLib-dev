@@ -67,7 +67,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../roll\") }
+      segment { length = 0 expr = "ch(\"../roll\") + ch(\"../rollmult\") * if(ch(\"../use_roll\"), point(opinputpath(\".\", 1), $PT, chs(\"../roll_attrib\"), 0), 0.0)" }
     }
     channel newg {
       lefttype = extend
@@ -106,13 +106,13 @@
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = "chramp(\"../profilescale\", $PCT, 0) * ch(\"../scalemult\")" }
+      segment { length = 0 value = 1 1 expr = "ch(\"../scalemult\") * chramp(\"../profilescale\", $PT/($NPT-1), 0) * if(ch(\"../use_pscale\"), point(opinputpath(\".\", 1), $PT, chs(\"../pscale_attrib\"), 0), 1.0)" }
     }
     channel twist {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "chramp(\"../profiletwist\", $PCT, 0) * (1/($NPT-1)) * ch(\"totaltwistangle\")" }
+      segment { length = 0 expr = "ch(\"totaltwistangle\") * (1/($NPT-1)) * chramp(\"../profiletwist\", $PT/($NPT-1), 0)" }
     }
     channel totaltwistangle {
       lefttype = extend

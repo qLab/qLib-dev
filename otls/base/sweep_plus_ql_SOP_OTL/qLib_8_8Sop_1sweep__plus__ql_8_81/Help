@@ -1,28 +1,47 @@
-#icon: SOP/Sweep
+#icon: SOP/sweep
 #context: sop
 #type: node
 
 = Sweep Plus qL =
 
-*Version 0.1.2*
+*Version 0.1.3*
 
 """Creates a surface by sweeping cross-sections along a backbone curve with ramp parameters controling scale and twist."""
 
 @Parameters
-    Standard [Sweep SOP|Node:sop/sweep] parameters plus ramp controls:
-        Scale Multiplier:
-            Global scale multiplier for profile scale.
-        Profile Scale:
-            Modulates the profile along the backbone, default is 1.
-        Twist Multiplier:
-            Multiplyer of the _Profile Twist_ parameter in degrees.
-        Profile Twist:
-            Modulates the twist parameter along the backbone, default is 0 (no twist).
+    Sweep:
+        See the [Node:sop/sweep] documentation for parameters.
 
-@Release_Notes
+        Scale:
+            Scale Multiplier:
+                Global scale multiplier for profile scale.
+        
+            Profile Scale:
+                Modulates the profile along the backbone, default is 1.
+
+        Twist:        
+            Twist Multiplier:
+                Multiplyer of the _Profile Twist_ parameter in degrees.
+        
+            Profile Twist:
+                Modulates the twist parameter along the backbone, default is 0 (no twist).
+
+
+@related
+    - [Node:sop/sweep]
+
+
+@Release_Notes Release Notes
+
+    Version 0.1.3:
+        - Fixed last-vertex mismatch in scale/twist ramp evaluation
+        - Support for per-point scale and roll attributes on backbone curve 
+
     Version 0.1.2:
         _Turns_ parameter deleted. 
+
     Version 0.1.1:
         Added Profile Scale Multiplier/Turns.
+
     Version 0.1.0:
         Initial release.

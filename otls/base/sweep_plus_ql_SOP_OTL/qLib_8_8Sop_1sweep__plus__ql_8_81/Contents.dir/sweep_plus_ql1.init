@@ -1,2 +1,2 @@
-type = sweep_plus_ql
+type = qLib::sweep_plus_ql::1
 matchesdef = 0
