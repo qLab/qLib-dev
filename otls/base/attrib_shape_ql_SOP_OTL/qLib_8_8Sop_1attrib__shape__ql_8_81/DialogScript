@@ -1,0 +1,299 @@
+# Dialog script for qLib::attrib_shape_ql::1 automatically generated 07/04/12 12:03:12
+
+{
+    name	qLib::attrib_shape_ql::1
+    script	qLib::attrib_shape_ql::1
+    label	"Attrib Shape qL"
+
+    help {
+	""
+    }
+    bindhandle pivot1 xform "Transformer" px ""
+    bindhandle pivot2 xform "Transformer" py ""
+    bindhandle pivot3 xform "Transformer" pz ""
+    bindhandle rot1 xform "Transformer" rx ""
+    bindhandle rot2 xform "Transformer" ry ""
+    bindhandle rot3 xform "Transformer" rz ""
+    bindhandle scale1 xform "Transformer" sx ""
+    bindhandle scale2 xform "Transformer" sy ""
+    bindhandle scale3 xform "Transformer" sz ""
+    bindhandle trs xform "Transformer" trs_order ""
+    bindhandle trans1 xform "Transformer" tx ""
+    bindhandle trans2 xform "Transformer" ty ""
+    bindhandle trans3 xform "Transformer" tz ""
+    bindhandle xyz xform "Transformer" xyz_order ""
+
+    inputlabel	1	"Target Geo"
+    inputlabel	2	"Shape Geo"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"attribfolder"
+	label	"Attribute"
+
+	parm {
+	    name	"vex_group"
+	    label	"Point Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l DO_ATTRIB_SHAPE vex_group" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"shape"
+	    label	"Shape"
+	    type	ordinal
+	    default	{ "0" }
+	    menu	{
+		"0"	"Sphere"
+		"1"	"Box"
+		"2"	"Cylinder"
+		"3"	"Object"
+		"4"	"Volume"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"signature"
+	    label	"Signature"
+	    type	ordinal
+	    default	{ "0" }
+	    menu	{
+		"0"	"Float"
+		"1"	"Vector"
+		"2"	"Vector4"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"out_attrib_name"
+	    label	"Attribute"
+	    type	string
+	    joinnext
+	    default	{ "weight" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"localvar"
+	    label	"Local Variable"
+	    type	toggle
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"locvarname"
+	    label	"Local Variable"
+	    type	string
+	    nolabel
+	    default	{ "" }
+	    disablewhen	"{ localvar == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"inner_value"
+	    label	"Inner Value"
+	    type	color4
+	    size	4
+	    default	{ "1" "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"outer_value"
+	    label	"Outer Value"
+	    type	color4
+	    size	4
+	    default	{ "0" "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"falloff"
+	    label	"Falloff Distance"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"exp"
+	    label	"Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ falloff == 0 }"
+	    range	{ 0.01! 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"invert"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"attribfolder_1"
+	label	"Composite"
+
+	parm {
+	    name	"compose"
+	    label	"Mode"
+	    type	ordinal
+	    default	{ "0" }
+	    menu	{
+		"0"	"Replace"
+		"1"	"Add"
+		"2"	"Maximum"
+		"3"	"Multiply"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"in_attrib"
+	    label	"Source Attribute"
+	    type	string
+	    default	{ "`chs(\"out_attrib_name\")`" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"attribfolder_2"
+	label	"Transform"
+
+	parm {
+	    name	"trs"
+	    label	"Transform Order"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"srt"	"Scale Rotate Translate"
+		"str"	"Scale Translate Rotate"
+		"rst"	"Rotate Scale Translate"
+		"rts"	"Rotate Translate Scale"
+		"tsr"	"Translate Scale Rotate"
+		"trs"	"Translate Rotate Scale"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xyz"
+	    label	"Rotation Order"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"xyz"	"Rx Ry Rz"
+		"xzy"	"Rx Rz Ry"
+		"yxz"	"Ry Rx Rz"
+		"yzx"	"Ry Rz Rx"
+		"zxy"	"Rz Rx Ry"
+		"zyx"	"Rz Ry Rx"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"trans"
+	    label	"Translate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rot"
+	    label	"Rotate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pivot"
+	    label	"Pivot"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"attribfolder_3"
+	label	"Volume"
+
+	parm {
+	    name	"volres"
+	    label	"Volume Resolution"
+	    type	float
+	    default	{ "0.1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"laserscan"
+	    label	"Laser Scan"
+	    type	toggle
+	    default	{ "on" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

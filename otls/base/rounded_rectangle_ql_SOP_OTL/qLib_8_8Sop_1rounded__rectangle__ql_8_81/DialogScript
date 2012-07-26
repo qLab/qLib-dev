@@ -1,0 +1,104 @@
+# Dialog script for qLib::rounded_rectangle_ql::1 automatically generated 06/22/11 16:12:07
+
+{
+    name	qLib::rounded_rectangle_ql::1
+    script	qLib::rounded_rectangle_ql::1
+    label	"Rounded Rectangle qL"
+
+    help {
+	""
+    }
+    bindhandle orient circle "Circle_Transform" orient ""
+    bindhandle sizex circle "Circle_Transform" sx ""
+    bindhandle sizey circle "Circle_Transform" sy ""
+    bindhandle centerx circle "Circle_Transform" tx ""
+    bindhandle centery circle "Circle_Transform" ty ""
+    bindhandle centerz circle "Circle_Transform" tz ""
+    bindhandle radiusx ladder "Ladder" parm0 ""
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"type"
+	label	"Type"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "1"	"Polygon"
+	    "2"	"Nurbs"
+	    "3"	"Bezier"
+	}
+	range	{ 0 1 }
+	export	all
+    }
+    parm {
+	name	"orient"
+	label	"Orientation"
+	type	ordinal
+	default	{ "zx" }
+	menu	{
+	    "xy"	"XY plane"
+	    "yz"	"YZ plane"
+	    "zx"	"ZX plane"
+	}
+	range	{ 0 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"size"
+	label	"Size"
+	type	vector2
+	size	2
+	default	{ "1" "1" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"center"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"radius"
+	label	"Corner Radius"
+	type	vector4
+	size	4
+	default	{ "0.1" "ch(\"radiusx\")" "ch(\"radiusx\")" "ch(\"radiusx\")" }
+	range	{ -1 1 }
+	export	all
+    }
+    parm {
+	name	"order"
+	label	"Order"
+	type	integer
+	default	{ "4" }
+	range	{ 2! 11! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"divs"
+	label	"Corner Divisions"
+	type	integer
+	default	{ "6" }
+	range	{ 1! 50 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"close"
+	label	"Closed"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+}

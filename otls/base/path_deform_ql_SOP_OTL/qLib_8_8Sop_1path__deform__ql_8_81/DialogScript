@@ -1,0 +1,89 @@
+# Dialog script for qLib::path_deform_ql::1 automatically generated 07/09/12 21:51:58
+
+{
+    name	qLib::path_deform_ql::1
+    script	qLib::path_deform_ql::1
+    label	"Path Deform qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry To Deform"
+    inputlabel	2	"Path Curve"
+    inputlabel	3	"Up Curve"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"pos"
+	label	"Position"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"resize"
+	label	"Resize By Segment Length"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"seglen"
+	label	"Segment Length"
+	type	float
+	default	{ "0.1" }
+	disablewhen	"{ resize == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"divs"
+	label	"Divisions"
+	type	integer
+	default	{ "4" }
+	range	{ 0 30 }
+	export	none
+    }
+    parm {
+	name	"resolution"
+	label	"Resolution"
+	type	integer
+	default	{ "100" }
+	range	{ 0 200 }
+	export	none
+    }
+    parm {
+	name	"up"
+	label	"Up Vector"
+	type	vector
+	size	3
+	default	{ "0" "1" "0" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"interptype"
+	label	"Interpolation"
+	type	ordinal
+	default	{ "bezier" }
+	menu	{
+	    "linear"	"Linear"
+	    "bezier"	"Bezier"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"aimatref"
+	label	"Aim at Reference Points"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

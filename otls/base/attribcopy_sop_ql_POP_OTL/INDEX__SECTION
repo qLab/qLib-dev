@@ -1,6 +1,6 @@
-Operator:     attribcopy_sop_ql
+Operator:     qLib::attribcopy_sop_ql::1
 Label:        AttribCopy SOP qL
-Path:         oplib:/Pop/attribcopy_sop_ql?Pop/attribcopy_sop_ql
+Path:         oplib:/qLib::Pop/attribcopy_sop_ql::1?qLib::Pop/attribcopy_sop_ql::1
 Icon:         SOP_attribcopy
 Table:        Pop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Wed Nov 23 02:51:47 2011
+Modified:     Fri Jul 27 00:22:13 2012
 

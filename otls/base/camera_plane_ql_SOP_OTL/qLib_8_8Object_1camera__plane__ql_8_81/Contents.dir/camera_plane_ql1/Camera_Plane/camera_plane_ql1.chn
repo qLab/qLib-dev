@@ -1,0 +1,146 @@
+{
+    channel camera {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chsop(\"../../camera\") }
+    }
+    channel space {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../space\") }
+    }
+    channel plane_distance {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../../plane_distance\") }
+    }
+    channel overscanx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../overscanx\") }
+    }
+    channel overscany {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../overscany\") }
+    }
+    channel cam_crop {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../cam_crop\") }
+    }
+    channel cropl {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../cropl\") }
+    }
+    channel cropr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../cropr\") }
+    }
+    channel cropb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../cropb\") }
+    }
+    channel cropt {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../cropt\") }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../type\") }
+    }
+    channel surftype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../../surftype\") }
+    }
+    channel rows {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 5 5 expr = ch(\"../../rows\") }
+    }
+    channel cols {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 7 7 expr = ch(\"../../cols\") }
+    }
+    channel orderu {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../../orderu\") }
+    }
+    channel orderv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../../orderv\") }
+    }
+    channel export_uv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../export_uv\") }
+    }
+    channel material {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../material\") }
+    }
+    channel material_mode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../material_mode\") }
+    }
+    channel material_colorr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorr\") }
+    }
+    channel material_colorg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorg\") }
+    }
+    channel material_colorb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../material_colorb\") }
+    }
+    channel material_colora {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../material_colora\") }
+    }
+    channel texture {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chs(\"../../texture\") }
+    }
+  }

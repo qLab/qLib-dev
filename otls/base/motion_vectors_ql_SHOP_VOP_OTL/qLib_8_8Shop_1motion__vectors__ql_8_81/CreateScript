@@ -1,0 +1,14 @@
+# Automatically generated script: Friday July 27, 00:27 2012
+\set noalias = 1
+#
+#  Creation script for qLib::motion_vectors_ql::1 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (qLib::Shop/motion_vectors_ql::1)
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

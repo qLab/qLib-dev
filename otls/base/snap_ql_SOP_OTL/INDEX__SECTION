@@ -1,6 +1,6 @@
-Operator:     snap_ql
+Operator:     qLib::snap_ql::1
 Label:        Snap qL
-Path:         oplib:/Sop/snap_ql?Sop/snap_ql
+Path:         oplib:/qLib::Sop/snap_ql::1?qLib::Sop/snap_ql::1
 Icon:         TOOLS_snap_point
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 20 16:15:26 2012
+Modified:     Fri Jul 27 00:28:38 2012
 

@@ -1,0 +1,246 @@
+# Dialog script for qLib::vector_jitter_ql::1 automatically generated 05/31/12 02:43:13
+
+{
+    name	qLib::vector_jitter_ql::1
+    script	qLib::vector_jitter_ql::1
+    label	"Vector Jitter qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l vopsop1 vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"in_attrib"
+	label	"Attribute Input"
+	type	string
+	joinnext
+	default	{ "N" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==3 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"out_attrib"
+	label	"Out"
+	type	string
+	default	{ "`chs(\"in_attrib\")`" }
+	menureplace	{
+	    [ "r = [" ]
+	    [ "        \"`chs(\\\"in_attrib\\\")`\", \"Same as input\"," ]
+	    [ "        \"N\", \"N: normal\"," ]
+	    [ "        \"up\", \"up: up vector\"," ]
+	    [ "        \"v\", \"v: velocity\"" ]
+	    [ "    ]" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==3 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"useidattrib"
+	label	"Label"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"idattrib"
+	label	"Id Attribute"
+	type	string
+	default	{ "id" }
+	disablewhen	"{ useidattrib == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"seed"
+	label	"Seed"
+	type	integer
+	default	{ "0" }
+	range	{ 0 100 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Angle"
+	tabbreak
+
+	parm {
+	    name	"do_angle"
+	    label	"Do Angle Jitter"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"angle_amount"
+	    label	"Angle Amount"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"min_angle"
+	    label	"Min Angle"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	}
+	parm {
+	    name	"max_angle"
+	    label	"Max Angle"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 90 }
+	    export	none
+	}
+	parm {
+	    name	"angle_exp"
+	    label	"Angle Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_angle == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Length"
+
+	parm {
+	    name	"do_length"
+	    label	"Do Length Jitter"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"len_amount"
+	    label	"Length Amount"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"min_length"
+	    label	"Min Length Factor"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"max_length"
+	    label	"Max Length Factor"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"len_exp"
+	    label	"Length Exponent"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"pre_normalize"
+	    label	"Pre-Normalize"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"length_seed_offset"
+	    label	"Seed Offset"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ do_length == 0 }"
+	    range	{ 0 100 }
+	    export	none
+	}
+    }
+
+}

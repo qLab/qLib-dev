@@ -1,0 +1,592 @@
+# Dialog script for qLib::point_topology_ql::1 automatically generated 07/12/12 21:17:20
+
+{
+    name	qLib::point_topology_ql::1
+    script	qLib::point_topology_ql::1
+    label	"Point Topology qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vismode"
+	label	"Visualization"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"Disabled"
+	    "1"	"Colors"
+	    "2"	"Colors + Points"
+	    "3"	"Colors, Points Only"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"baseColor"
+	label	"Base Color"
+	type	color
+	size	3
+	default	{ "0.1" "0.1" "0.1" }
+	disablewhen	"{ vismode == 0 }"
+	hidewhen	"{ vismode == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder1"
+	label	"Coincident Points"
+
+	parm {
+	    name	"do_coincidents"
+	    label	"Count Coincident Points"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_radius"
+	    label	"Search Radius"
+	    type	float
+	    default	{ "0.001" }
+	    disablewhen	"{ do_coincidents == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_maxpoints"
+	    label	"Max Points"
+	    type	integer
+	    default	{ "100" }
+	    disablewhen	"{ do_coincidents == 0 }"
+	    range	{ 0 9 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_do_attrib"
+	    label	"Create Attribute"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ do_coincidents == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_attrib"
+	    label	"Attribute"
+	    type	string
+	    joinnext
+	    default	{ "count_ci" }
+	    disablewhen	"{ do_coincidents == 0 } { coi_do_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_localvar"
+	    label	"Variable"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ do_coincidents == 0 } { coi_do_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_do_group"
+	    label	"Create Group"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    disablewhen	"{ do_coincidents == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_groupname"
+	    label	"Group"
+	    type	string
+	    default	{ "coincidents" }
+	    disablewhen	"{ do_coincidents == 0 } { coi_do_group == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_compare_mode"
+	    label	"Compare Mode"
+	    type	integer
+	    nolabel
+	    joinnext
+	    default	{ "2" }
+	    disablewhen	"{ do_coincidents == 0 } { coi_do_group == 0 }"
+	    menu	{
+		"eq_or_less"	"Equal or Less"
+		"eq"	"Equal"
+		"eq_or_grtr"	"Equal or Greater"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"coi_num_or_more"
+	    label	"No.# of Pts"
+	    type	integer
+	    nolabel
+	    default	{ "2" }
+	    disablewhen	"{ do_coincidents == 0 } { coi_do_group == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder2"
+	    label	"Visualization"
+	    hidewhentab	"{ vismode == 0 }"
+
+	    parm {
+		name	"vis_coincidents"
+		label	"Visualize"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vis_coincidents_range"
+		label	"Value Range"
+		type	intvector2
+		size	2
+		default	{ "1" "2" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 } { vis_coincidents == 0 }"
+		range	{ 1 9 }
+		export	none
+	    }
+	    parm {
+		name	"vis_coincident_colors"
+		label	"Colors"
+		type	ramp_rgb
+		default	{ "2" }
+		disablewhen	"{ vismode == 0 } { do_coincidents == 0 } { vis_coincidents == 0 }"
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "linear" }
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampbasis_var" "visu_colors_the_basis_strings" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "rampkeys_var" "visu_colors_the_key_positions" }
+		parmtag	{ "rampcolortype" "rgb" }
+		parmtag	{ "rampvalues_var" "visu_colors_the_key_values" }
+		parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 0 0 ) 2interp ( linear )" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Neighbours"
+
+	parm {
+	    name	"do_neighbours"
+	    label	"Count Neighbours"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_do_attrib"
+	    label	"Create Attribute"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "on" }
+	    disablewhen	"{ do_neighbours == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_attrib"
+	    label	"Attribute"
+	    type	string
+	    joinnext
+	    default	{ "count_nbr" }
+	    disablewhen	"{ do_neighbours == 0 } { nbr_do_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_localvar"
+	    label	"Variable"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ do_neighbours == 0 } { nbr_do_attrib == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_do_group"
+	    label	"Create Group"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    disablewhen	"{ do_neighbours == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_groupname"
+	    label	"Group"
+	    type	string
+	    default	{ "endpoints" }
+	    disablewhen	"{ do_neighbours == 0 } { nbr_do_group == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_compare_mode"
+	    label	"Compare Mode"
+	    type	integer
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    disablewhen	"{ do_neighbours == 0 } { nbr_do_group == 0 }"
+	    menu	{
+		"eq_or_less"	"Equal or Less"
+		"eq"	"Equal"
+		"eq_or_grtr"	"Equal or Greater"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nbr_grp_num"
+	    label	"No.# of Pts"
+	    type	integer
+	    nolabel
+	    default	{ "1" }
+	    disablewhen	"{ do_neighbours == 0 } { nbr_do_group == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder3"
+	    label	"Visualization"
+	    tabbreak
+	    hidewhentab	"{ vismode == 0 }"
+
+	    parm {
+		name	"vis_neighbours"
+		label	"Visualize"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vis_neighbours_range"
+		label	"Value Range"
+		type	intvector2
+		size	2
+		default	{ "2" "8" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 } { vis_neighbours == 0 }"
+		range	{ -1 1 }
+		export	none
+	    }
+	    parm {
+		name	"vis_neighbours_colors"
+		label	"Colors"
+		type	ramp_rgb
+		default	{ "2" }
+		disablewhen	"{ vismode == 0 } { do_neighbours == 0 } { vis_neighbours == 0 }"
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "linear" }
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampbasis_var" "visu_colors_the_basis_strings" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "rampkeys_var" "visu_colors_the_key_positions" }
+		parmtag	{ "rampcolortype" "rgb" }
+		parmtag	{ "rampvalues_var" "visu_colors_the_key_values" }
+		parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 1 1 0 ) 2interp ( linear )" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_2"
+	label	"Indices"
+
+	group {
+	    name	"folder0"
+	    label	"Geometry"
+
+	    parm {
+		name	"do_ptindex"
+		label	"Point Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptindex_attrib"
+		label	"Point Index"
+		type	string
+		joinnext
+		default	{ "ptindex" }
+		disablewhen	"{ do_ptindex == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptindex_localvar"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_ptindex == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_ptpercent"
+		label	"Point Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptpercent_attrib"
+		label	"Point Idx [0..1]"
+		type	string
+		joinnext
+		default	{ "ptpercent" }
+		disablewhen	"{ do_ptpercent == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ptpercent_localvar"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_ptpercent == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxi"
+		label	"Vertex Indices"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxi_name"
+		label	"Vertex Index"
+		type	string
+		joinnext
+		default	{ "vtindex" }
+		disablewhen	"{ do_vtxi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxi_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxp"
+		label	"Vertex Index [0..1]"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxp_name"
+		label	"Vertex Idx [0..1]"
+		type	string
+		joinnext
+		default	{ "vtpercent" }
+		disablewhen	"{ do_vtxp == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxp_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxp == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_vtxs"
+		label	"Vertices Per Primitive"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxs_name"
+		label	"Vertices on Prim"
+		type	string
+		joinnext
+		default	{ "vtcount" }
+		disablewhen	"{ do_vtxs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vtxs_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_vtxs == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_primi"
+		label	"Primitive Index"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"primi_name"
+		label	"Primitive Index"
+		type	string
+		joinnext
+		default	{ "prindex" }
+		disablewhen	"{ do_primi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"primi_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_primi == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder0_1"
+	    label	"Particles"
+
+	}
+
+    }
+
+}

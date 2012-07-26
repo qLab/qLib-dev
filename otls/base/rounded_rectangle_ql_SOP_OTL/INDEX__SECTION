@@ -1,6 +1,6 @@
-Operator:     rounded_rectangle_ql
+Operator:     qLib::rounded_rectangle_ql::1
 Label:        Rounded Rectangle qL
-Path:         oplib:/Sop/rounded_rectangle_ql?Sop/rounded_rectangle_ql
+Path:         oplib:/qLib::Sop/rounded_rectangle_ql::1?qLib::Sop/rounded_rectangle_ql::1
 Icon:         VOP_atten
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Wed Jun 22 16:12:07 2011
+Modified:     Fri Jul 27 00:28:31 2012
 

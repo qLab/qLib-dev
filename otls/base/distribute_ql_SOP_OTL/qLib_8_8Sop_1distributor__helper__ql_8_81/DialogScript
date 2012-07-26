@@ -1,0 +1,100 @@
+# Dialog script for qLib::distributor_helper_ql::1 automatically generated 09/03/10 19:01:37
+
+{
+    name	qLib::distributor_helper_ql::1
+    script	distribute_dev_A
+    label	"Distributor Helper qL"
+
+    help {
+	""
+    }
+
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"vex_edit"
+	baseparm
+	invisible
+	joinnext
+	export	none
+    }
+    parm {
+	name	"vex_reload"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"file"
+	label	"File"
+	type	file
+	default	{ "op:`opinputpath(\".\",0)`" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"pscale"
+	label	"PScale"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"maxpscale"
+	label	"Max Pscale"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"minpscale"
+	label	"Min Pscale"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"maxpoints"
+	label	"Maxpoints"
+	type	integer
+	default	{ "1000" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"citer"
+	label	"Current Iteration"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"niter"
+	label	"Iterations"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"grow"
+	label	"Grow Points"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+}

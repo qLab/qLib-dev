@@ -1,6 +1,6 @@
-Operator:     distribute_ql
+Operator:     qLib::distribute_ql::1
 Label:        Distribute qL
-Path:         oplib:/Sop/distribute_ql?Sop/distribute_ql
+Path:         oplib:/qLib::Sop/distribute_ql::1?qLib::Sop/distribute_ql::1
 Icon:         VOP_pcopen
 Table:        Sop
 License:      
@@ -9,11 +9,11 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Jul 19 03:07:25 2012
+Modified:     Fri Jul 27 00:25:27 2012
 
-Operator:     distributor_helper_ql
+Operator:     qLib::distributor_helper_ql::1
 Label:        Distributor Helper qL
-Path:         oplib:/Sop/distributor_helper_ql?Sop/distributor_helper_ql
+Path:         oplib:/qLib::Sop/distributor_helper_ql::1?qLib::Sop/distributor_helper_ql::1
 Icon:         SOP_vex
 Table:        Sop
 License:      
@@ -22,5 +22,5 @@ Inputs:       1 to 1
 Subnet:       false
 Python:       false
 Empty:        false
-Modified:     Fri Sep  3 22:01:37 2010
+Modified:     Fri Jul 27 00:24:48 2012
 

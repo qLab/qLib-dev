@@ -1,6 +1,6 @@
-Operator:     triangle_grid_ql
+Operator:     qLib::triangle_grid_ql::1
 Label:        Triangle Grid qL
-Path:         oplib:/Sop/triangle_grid_ql?Sop/triangle_grid_ql
+Path:         oplib:/qLib::Sop/triangle_grid_ql::1?qLib::Sop/triangle_grid_ql::1
 Icon:         SOP_triangulate2d
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Sep 21 20:56:44 2010
+Modified:     Fri Jul 27 00:30:16 2012
 

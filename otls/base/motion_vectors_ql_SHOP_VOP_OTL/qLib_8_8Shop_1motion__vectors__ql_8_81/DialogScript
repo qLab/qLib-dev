@@ -1,0 +1,28 @@
+# Dialog script for qLib::motion_vectors_ql::1 automatically generated 07/27/12 00:27:29
+
+{
+    name	qLib::motion_vectors_ql::1
+    script	qLib::motion_vectors_ql::1
+    label	"Motion Vectors qL"
+
+    rendermask	"VMantra OGL"
+
+    help {
+	""
+    }
+
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"2D (in pixels)"
+	    "1"	"2D (NDC)"
+	    "2"	"3D"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

@@ -1,0 +1,155 @@
+# Dialog script for qLib::uvquickshade_ql::1 automatically generated 04/09/12 00:46:25
+
+{
+    name	qLib::uvquickshade_ql::1
+    script	qLib::uvquickshade_ql::1
+    label	"UVQuickShade qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"texture"
+	label	"Texture"
+	type	image
+	default	{ "UVcolor.rat" }
+	range	{ 0 1 }
+	export	all
+    }
+    parm {
+	name	"diff_clr"
+	label	"Diffuse"
+	type	color
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 1 }
+	export	all
+	parmtag	{ "cook_dependent" "1" }
+	parmtag	{ "spare_category" "OGL" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"lighting"
+	label	"Use Lighting"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	all
+    }
+    group {
+	name	"folder0"
+	label	"Viewport Display"
+
+	group {
+	    name	"folder1"
+	    label	"Diffuse"
+
+	    parm {
+		name	"diff"
+		label	"Diffuse Map"
+		type	toggle
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"diff_clamp"
+		label	"Diffuse: Clamp Texture Map"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ diff == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"ogl_emit"
+		label	"OGL Emission"
+		type	color
+		size	3
+		default	{ "0" "0" "0" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "cook_dependent" "1" }
+		parmtag	{ "spare_category" "OGL" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder1_1"
+	    label	"Bump"
+
+	    parm {
+		name	"bump"
+		label	"Bump Map"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"bumpscale"
+		label	"Bump Scale"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ bump == 0 }"
+		range	{ 0 10 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder1_2"
+	    label	"Environment"
+
+	    parm {
+		name	"env"
+		label	"Environment Mapping"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"envmap"
+		label	"Environment Map"
+		type	image
+		default	{ "DOSCH_CARB_04SN_lowres.rat" }
+		disablewhen	"{ env == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"envscale"
+		label	"Reflection Intensity"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ env == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "cook_dependent" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"envrotate"
+		label	"Env Map Rotation"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		disablewhen	"{ env == 0 }"
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "cook_dependent" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}

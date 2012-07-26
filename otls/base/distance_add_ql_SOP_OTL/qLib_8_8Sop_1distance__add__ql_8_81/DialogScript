@@ -1,0 +1,77 @@
+# Dialog script for qLib::distance_add_ql::1 automatically generated 05/28/12 03:55:40
+
+{
+    name	qLib::distance_add_ql::1
+    script	qLib::distance_add_ql::1
+    label	"Distance Add qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	help	"The group of points that gets connected."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"max_len_attr"
+	label	"Max Length Attribute"
+	type	string
+	invisible
+	default	{ "default.pic" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"connect_group"
+	label	"Connect Others"
+	type	toggle
+	default	{ "1" }
+	help	"Connect points outside of Group to points inside of Group."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"edges"
+	label	"Create Edges"
+	type	toggle
+	default	{ "1" }
+	help	"Create zero area polygons between the points."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"faces"
+	label	"Create Faces"
+	type	toggle
+	default	{ "1" }
+	help	"Create faces for point triplets that all has generated edges."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"max_len"
+	label	"Maximum Length"
+	type	float
+	default	{ "0" }
+	help	"The maximum distance between points that gets connected."
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"min_len"
+	label	"Minimum Length"
+	type	float
+	default	{ "0" }
+	help	"The minimum distance between points that gets connected."
+	range	{ 0 10 }
+	export	none
+    }
+}

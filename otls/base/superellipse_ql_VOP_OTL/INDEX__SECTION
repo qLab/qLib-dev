@@ -1,6 +1,6 @@
-Operator:     superellipse_ql
+Operator:     qLib::superellipse_ql::1
 Label:        Superellipse qL
-Path:         oplib:/Vop/superellipse_ql?Vop/superellipse_ql
+Path:         oplib:/qLib::Vop/superellipse_ql::1?qLib::Vop/superellipse_ql::1
 Icon:         SOP_circle
 Table:        Vop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 5
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri May 11 13:33:54 2012
+Modified:     Fri Jul 27 00:29:41 2012
 

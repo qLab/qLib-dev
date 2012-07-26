@@ -1,0 +1,100 @@
+# Dialog script for qLib::symmetry_ql::1 automatically generated 12/04/10 17:21:34
+
+{
+    name	qLib::symmetry_ql::1
+    script	qLib::symmetry_ql::1
+    label	"Symmetry qL"
+
+    help {
+	""
+    }
+    bindhandle centerx translate "Translate" tx ""
+    bindhandle centery translate "Translate" ty ""
+    bindhandle centerz translate "Translate" tz ""
+
+    inputlabel	1	"Input Geo"
+    inputlabel	2	"Reference Geo"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_SYMMETRY vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"axis"
+	label	"Axis"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"X"
+	    "1"	"Y"
+	    "2"	"Z"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"direction"
+	label	"Opposite"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"center"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"Match Topology"
+	    "1"	"Reference"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"trackpts"
+	label	"Tracking Points"
+	type	string
+	default	{ "" }
+	disablewhen	"{ mode == 1 }"
+	menutoggle	{
+	    [ "opmenu -l matchtopology1 trackpts" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"refpts"
+	label	"Reference Points"
+	type	string
+	default	{ "" }
+	disablewhen	"{ mode == 1 }"
+	menutoggle	{
+	    [ "opmenu -l matchtopology1 refpts" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

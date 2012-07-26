@@ -1,0 +1,95 @@
+# Dialog script for qLib::motion_trail_ql::1 automatically generated 10/02/11 20:12:06
+
+{
+    name	qLib::motion_trail_ql::1
+    script	qLib::motion_trail_ql::1
+    label	"Motion Trail qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"target"
+	label	"Target"
+	type	oppath
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!OBJ!!" }
+    }
+    parm {
+	name	"range"
+	label	"Frame Range"
+	type	vector
+	size	3
+	default	{ "$FSTART" "$FEND" "1" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"type"
+	label	"Geometry Type"
+	type	ordinal
+	default	{ "poly" }
+	menu	{
+	    "poly"	"Polygon"
+	    "nurbs"	"NURBS"
+	    "bezier"	"Bezier"
+	    "points"	"Points"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"order"
+	label	"Order"
+	type	integer
+	default	{ "4" }
+	disablewhen	"{ type == poly } { type == points }"
+	range	{ 2! 11! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"calculate_velocity"
+	label	"Add Velocity"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"velocity_attr"
+	label	"Velocity Attribute"
+	type	string
+	default	{ "v" }
+	disablewhen	"{ calculate_velocity == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"calc_accel"
+	label	"Add Acceleration"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"accel_attr"
+	label	"Acceleration Attribute"
+	type	string
+	default	{ "accel" }
+	disablewhen	"{ calc_accel == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+}

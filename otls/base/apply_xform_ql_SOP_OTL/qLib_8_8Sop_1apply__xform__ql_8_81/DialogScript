@@ -1,0 +1,51 @@
+# Dialog script for qLib::apply_xform_ql::1 automatically generated 05/24/12 00:09:30
+
+{
+    name	qLib::apply_xform_ql::1
+    script	qLib::apply_xform_ql::1
+    label	"Apply Transform qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"xformpath"
+	label	"Transform Object"
+	type	oppath
+	default	{ "../../../geo1" }
+	menureplace	{
+	    "space/origin"	"World Origin"
+	    ""	"(clear field)"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!OBJ!!" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"apply"
+	label	"Apply"
+	type	toggle
+	default	{ "1" }
+	disablewhen	"{ xformpath == \"\" }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ xformpath == \"\" }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

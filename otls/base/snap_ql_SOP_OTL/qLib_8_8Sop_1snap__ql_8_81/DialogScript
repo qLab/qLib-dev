@@ -1,0 +1,72 @@
+# Dialog script for qLib::snap_ql::1 automatically generated 07/20/12 16:14:56
+
+{
+    name	qLib::snap_ql::1
+    script	qLib::snap_ql::1
+    label	"Snap qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Optional Target"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_SNAP vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"targets"
+	label	"Target Points"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l blast1 group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"dist"
+	label	"Distance"
+	type	float
+	default	{ "0.1" }
+	range	{ 0! 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"falloff"
+	label	"Falloff"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ falloff == 0 }"
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

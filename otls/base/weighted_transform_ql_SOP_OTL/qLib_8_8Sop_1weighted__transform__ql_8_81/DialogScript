@@ -1,0 +1,194 @@
+# Dialog script for qLib::weighted_transform_ql::1 automatically generated 04/17/12 15:20:39
+
+{
+    name	qLib::weighted_transform_ql::1
+    script	qLib::weighted_transform_ql::1
+    label	"Weighted Transform qL"
+
+    help {
+	""
+    }
+    bindhandle pivot1 xform "Transformer" px ""
+    bindhandle pivot2 xform "Transformer" py ""
+    bindhandle pivot3 xform "Transformer" pz ""
+    bindhandle rot1 xform "Transformer" rx ""
+    bindhandle rot2 xform "Transformer" ry ""
+    bindhandle rot3 xform "Transformer" rz ""
+    bindhandle scale1 xform "Transformer" sx ""
+    bindhandle scale2 xform "Transformer" sy ""
+    bindhandle scale3 xform "Transformer" sz ""
+    bindhandle trs xform "Transformer" trs_order ""
+    bindhandle trans1 xform "Transformer" tx ""
+    bindhandle trans2 xform "Transformer" ty ""
+    bindhandle trans3 xform "Transformer" tz ""
+    bindhandle xyz xform "Transformer" xyz_order ""
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_WIGHTED_TRANSFORM vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder1"
+	label	"Weight"
+	tabbreak
+
+	parm {
+	    name	"attrib"
+	    label	"Weight Attribute"
+	    type	string
+	    default	{ "amount" }
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"invert_weight"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"envelope"
+	    label	"Envelope"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0"
+	label	"Transform"
+
+	parm {
+	    name	"trs"
+	    label	"Transform Order"
+	    type	integer
+	    joinnext
+	    default	{ "0" }
+	    menu	{
+		"srt"	"Scale Rotate Translate"
+		"str"	"Scale Translate Rotate"
+		"rst"	"Rotate Scale Translate"
+		"rts"	"Rotate Translate Scale"
+		"tsr"	"Translate Scale Rotate"
+		"trs"	"Translate Rotate Scale"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xyz"
+	    label	"Rotation Order"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    menu	{
+		"xyz"	"Rx Ry Rz"
+		"xzy"	"Rx Rz Ry"
+		"yxz"	"Ry Rx Rz"
+		"yzx"	"Ry Rz Rx"
+		"zxy"	"Rz Rx Ry"
+		"zyx"	"Rz Ry Rx"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"trans"
+	    label	"Translate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rot"
+	    label	"Rotate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pivot"
+	    label	"Pivot"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"invert"
+	    label	"Invert Transform"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}
