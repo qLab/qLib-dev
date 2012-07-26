@@ -15,6 +15,8 @@ Download and unpack the distribution tarball from the download section:
 
 https://github.com/gadfly16/qLib/downloads
 
+(NOTE: Do NOT USE THE "Download as .zip" BUTTON if you're looking for ready-to-use
+.otl files -- grab the latest .tbz2 file from the Download Packages section.)
 
 You can download already built and ready-to-use archives (containing .otl files
 only) or clone the latest version from the git repo.
