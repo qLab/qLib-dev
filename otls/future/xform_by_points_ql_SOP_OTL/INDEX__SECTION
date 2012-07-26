@@ -1,6 +1,6 @@
-Operator:     xform_by_points_ql
+Operator:     qLib::xform_by_points_ql::1
 Label:        Xform by Points qL
-Path:         oplib:/Sop/xform_by_points_ql?Sop/xform_by_points_ql
+Path:         oplib:/qLib::Sop/xform_by_points_ql::1?qLib::Sop/xform_by_points_ql::1
 Icon:         POP_position
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       3 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Jun 26 18:46:50 2012
+Modified:     Thu Jul 26 21:50:23 2012
 

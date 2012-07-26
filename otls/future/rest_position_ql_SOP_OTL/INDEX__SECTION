@@ -1,6 +1,6 @@
-Operator:     rest_position_ql
+Operator:     qLib::rest_position_ql::1
 Label:        Rest Position qL
-Path:         oplib:/Sop/rest_position_ql?Sop/rest_position_ql
+Path:         oplib:/qLib::Sop/rest_position_ql::1?qLib::Sop/rest_position_ql::1
 Icon:         SOP_rest
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Mar 27 01:01:37 2012
+Modified:     Thu Jul 26 21:49:59 2012
 

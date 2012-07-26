@@ -1,0 +1,12 @@
+{
+version 0.8
+points	[ 0	locks=0	autoscope=0 ]	(	"0 1"	)
+size	[ 0	locks=0	autoscope=0 ]	(	[ size	0.5 ] 	)
+width	[ 0	locks=0	autoscope=0 ]	(	[ width	0.25 ] 	)
+label	[ 0	locks=0	autoscope=0 ]	(	[ label	1 ] 	)
+label_size	[ 0	locks=0	autoscope=0 ]	(	[ label_size	0.40000000000000002 ] 	)
+label_prefix	[ 0	locks=0	autoscope=0 ]	(	[ label_prefix	"d = " ] 	)
+label_postfix	[ 0	locks=0	autoscope=0 ]	(	[ label_postfix	"" ] 	)
+apply_color	[ 0	locks=0	autoscope=0 ]	(	[ apply_color	0 ] 	)
+color	[ 0	locks=0	autoscope=0 ]	(	[ colorr	1 ] 	[ colorg	1 ] 	[ colorb	1 ] 	)
+}

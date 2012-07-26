@@ -1,6 +1,6 @@
-Operator:     qLib::note_ql::1.0
+Operator:     qLib::note_ql::1
 Label:        Note qL
-Path:         oplib:/qLib::Object/note_ql::1.0?qLib::Object/note_ql::1.0
+Path:         oplib:/qLib::Object/note_ql::1?qLib::Object/note_ql::1
 Icon:         COP2_convolve
 Table:        Object
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 8
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 21 23:07:13 2012
+Modified:     Thu Jul 26 21:39:44 2012
 

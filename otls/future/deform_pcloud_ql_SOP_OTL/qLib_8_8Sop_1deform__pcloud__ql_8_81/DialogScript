@@ -1,0 +1,37 @@
+# Dialog script for qLib::deform_pcloud_ql::1 automatically generated 03/27/12 02:34:51
+
+{
+    name	qLib::deform_pcloud_ql::1
+    script	qLib::deform_pcloud_ql::1
+    label	"Deform by PointCloud qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Rest Points"
+    inputlabel	3	"Deform Points"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"radius"
+	label	"Search radius"
+	type	float
+	default	{ "0.1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"maxpoints"
+	label	"Number of points"
+	type	integer
+	default	{ "10" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

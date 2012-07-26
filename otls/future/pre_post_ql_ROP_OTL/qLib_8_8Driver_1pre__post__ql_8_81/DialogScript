@@ -1,0 +1,52 @@
+# Dialog script for qLib::pre_post_ql::1 automatically generated 10/12/11 00:39:12
+
+{
+    name	qLib::pre_post_ql::1
+    script	qLib::pre_post_ql::1
+    label	"Pre/Post qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	Pre-Render
+    inputlabel	2	"Main Job"
+    inputlabel	3	Post-Render
+    inputlabel	4	"Input 4"
+
+    parm {
+	name	"execute"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"renderdialog"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"trange"
+	label	"Valid Frame Range"
+	type	ordinal
+	default	{ "on" }
+	menu	{
+	    "off"	"Render Any Frame"
+	    "normal"	"Render Frame Range"
+	    "on"	"Render Frame Range Only (Strict)"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"f"
+	label	"Start/End/Inc"
+	type	float
+	size	3
+	default	{ "1" "10" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

@@ -1,0 +1,15 @@
+# Automatically generated script: Tuesday June 05, 19:02 2012
+\set noalias = 1
+#
+#  Creation script for qLib::primgroup_add_ids_ql::1 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/qLib::primgroup_add_ids_ql::1)
+opspareds "" $arg1
+opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

@@ -1,0 +1,13 @@
+# Automatically generated script: Sunday January 29, 04:08 2012
+\set noalias = 1
+#
+#  Creation script for qLib::rbd_fetch_sdf_ql::1 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Dop/qLib::rbd_fetch_sdf_ql::1)
+opexprlanguage -s hscript $arg1

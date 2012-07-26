@@ -1,6 +1,6 @@
-Operator:     primgroup_centroids_ql
+Operator:     qLib::primgroup_centroids_ql::1
 Label:        PrimGroup Centroids qL
-Path:         oplib:/Sop/primgroup_centroids_ql?Sop/primgroup_centroids_ql
+Path:         oplib:/qLib::Sop/primgroup_centroids_ql::1?qLib::Sop/primgroup_centroids_ql::1
 Icon:         DOP_rbdfracturedobject
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 14 20:59:49 2012
+Modified:     Thu Jul 26 21:48:49 2012
 
