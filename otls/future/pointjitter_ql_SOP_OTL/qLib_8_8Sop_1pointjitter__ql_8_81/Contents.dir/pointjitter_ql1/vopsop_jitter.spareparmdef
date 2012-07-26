@@ -171,7 +171,7 @@
 	label	"attribx"
 	type	string
 	nolabel
-	default	{ "N" }
+	default	{ "v" }
 	disablewhen	"{ useaxisvectors == 0 } { vectypex != 1 }"
 	range	{ 0 1 }
 	export	none
