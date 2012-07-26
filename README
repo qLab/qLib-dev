@@ -15,15 +15,13 @@ Download and unpack the distribution tarball from the download section:
 
 https://github.com/gadfly16/qLib/downloads
 
-(NOTE: Do NOT USE THE "Download as .zip" BUTTON if you're looking for ready-to-use
-.otl files -- grab the latest .tbz2 file from the Download Packages section.)
+    NOTE: Do NOT USE THE "Download as .zip" button on github.com. Use the
+    above link if you need the ready-to-use .otl files or use 'git clone'
+    if you want to tinker with the sources.
 
-You can download already built and ready-to-use archives (containing .otl files
-only) or clone the latest version from the git repo.
-
-Note that the git repository stores the assets in a textual form, which
-can't be used in Houdini directly. See README.developer for instructions
-on building the actual OTL files from source.
+    The repository stores the assets in a textual form, which can't be used in
+    Houdini directly. See README.developer or the Wiki for instructions on
+    building the actual OTL files from source.
 
 Place the unpacked folder to a convenient location -- probably somewhere where
 others can access it as well -- and add the qLib/otls/<section_name> (see below)
