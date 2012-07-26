@@ -1,6 +1,6 @@
-Operator:     uvquickshade_ql
+Operator:     qLib::uvquickshade_ql::1
 Label:        UVQuickShade qL
-Path:         oplib:/Sop/uvquickshade_ql?Sop/uvquickshade_ql
+Path:         oplib:/qLib::Sop/uvquickshade_ql::1?qLib::Sop/uvquickshade_ql::1
 Icon:         SOP_uvquickshade
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Apr  9 00:46:40 2012
+Modified:     Fri Jul 27 00:30:36 2012
 

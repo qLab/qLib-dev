@@ -1,0 +1,257 @@
+# Dialog script for qLib::take_merge_ql::1 automatically generated 06/04/12 03:39:54
+
+{
+    name	qLib::take_merge_ql::1
+    script	qLib::take_merge_ql::1
+    label	"Take Merge qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input 1"
+    inputlabel	2	"Input 2"
+    inputlabel	3	"Input 3"
+    inputlabel	4	"Input 4"
+
+    parm {
+	name	"execute"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"renderdialog"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"hqueue_mode"
+	label	"HQueue Mode"
+	type	toggle
+	default	{ "0" }
+	help	"Enable HQueue-compatible behaviour (see Notes below and the Help page for further information.)"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"trange"
+	label	"Valid Frame Range"
+	type	ordinal
+	default	{ "off" }
+	disablewhen	"{ hqueue_mode == 0 }"
+	hidewhen	"{ hqueue_mode == 0 }"
+	menu	{
+	    "off"	"Render Any Frame"
+	    "normal"	"Render Frame Range"
+	    "on"	"Render Frame Range Only (Strict)"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"f"
+	label	"Start/End/Inc"
+	type	float
+	size	3
+	default	{ "1" "40" "1" }
+	disablewhen	"{ hqueue_mode == 0 } { trange == off }"
+	hidewhen	"{ hqueue_mode == 0 }"
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"mergedTake"
+	label	"Merged Take Name"
+	type	string
+	default	{ "$OS" }
+	help	"Name of the merged take. By default it inherits the name of the render node. IMPORTANT: make sure a take with such name doesn't exist."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"renderROP"
+	label	"Output Driver"
+	type	oppath
+	default	{ "/out/mantra1" }
+	help	"The ROP node that is to render the merged take. IMPORTANT: Make sure the Output Driver take settings is set to '(Current)'!"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!ROP!!" }
+    }
+    group {
+	name	"folder1"
+	label	"Takes to Merge"
+
+	parm {
+	    name	"labelparm3"
+	    label	"."
+	    type	label
+	    nolabel
+	    size	2
+	    default	{ "More than one take per line can be used." "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	multiparm {
+	    name	"tlist"
+	    label	"Takes"
+	    default	4
+
+	    parm {
+		name	"tlabel#"
+		label	"#"
+		type	button
+		invisible
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ tlist != 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"takes#"
+		label	"#."
+		type	string
+		nolabel
+		default	{ "" }
+		help	"List of takes to merge. Multiple names are allowed for each line."
+		menutoggle	{
+		    [ "ts = hou.hscript(\"takels\")[0].split('\\n')" ]
+		    [ "ts = [ [t.strip(), t] for t in ts ]" ]
+		    [ "ts = sum(ts, [])" ]
+		    [ "return ts" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Usage | Notes | HQueue"
+
+	parm {
+	    name	"labelparm5"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "This ROP merges the listed takes into a single take," }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm6"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "then calls the specified Output Driver. It is very useful" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm7"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "for efficiently building render layers/passes." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sepparm"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "For output image use \\$ACTIVETAKE.\\$F4.exr (or similar)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "to share the same Output Driver between multiple takeMerges." }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm4"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "(IMPORTANT: No take should be set in the Output Driver itself!)" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sepparm2"
+	    label	"Separator"
+	    type	separator
+	    default	{ }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm8"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "HQUEUE USAGE: Enable 'HQueue Mode', then set your desired" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm9"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "frame range here on this ROP. Then set your Output Driver to" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"labelparm10"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "'Render Any Frame' mode." }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    parm {
+	name	"createMergedTake"
+	label	"Test: Create Merged Take"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().hdaModule().takemerge(\".\", \"build\")" }
+    }
+    parm {
+	name	"deleteMergedTake"
+	label	"Cleanup: Delete Merged Take"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "hou.pwd().hdaModule().takemerge(\".\", \"cleanup\")" }
+    }
+}

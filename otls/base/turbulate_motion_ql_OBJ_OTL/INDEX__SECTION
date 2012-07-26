@@ -1,6 +1,6 @@
-Operator:     qLib::turbulate_motion_ql::1.0
+Operator:     qLib::turbulate_motion_ql::1
 Label:        Turbulate Motion qL
-Path:         oplib:/qLib::Object/turbulate_motion_ql::1.0?qLib::Object/turbulate_motion_ql::1.0
+Path:         oplib:/qLib::Object/turbulate_motion_ql::1?qLib::Object/turbulate_motion_ql::1
 Icon:         VOP_turbnoise
 Table:        Object
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 21 23:25:24 2012
+Modified:     Fri Jul 27 00:30:22 2012
 

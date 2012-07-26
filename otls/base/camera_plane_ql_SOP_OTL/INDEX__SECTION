@@ -1,19 +1,6 @@
-Operator:     camera_plane_ql
+Operator:     qLib::camera_plane_ql::1
 Label:        Camera Plane qL
-Path:         oplib:/Sop/camera_plane_ql?Sop/camera_plane_ql
-Icon:         COP2_frontface
-Table:        Sop
-License:      
-Extra:        
-Inputs:       0 to 0
-Subnet:       true
-Python:       false
-Empty:        false
-Modified:     Fri Jun 29 02:33:48 2012
-
-Operator:     qLib::camera_plane_ql::1.0
-Label:        Camera plane ql
-Path:         oplib:/qLib::Object/camera_plane_ql::1.0?qLib::Object/camera_plane_ql::1.0
+Path:         oplib:/qLib::Object/camera_plane_ql::1?qLib::Object/camera_plane_ql::1
 Icon:         COP2_frontface
 Table:        Object
 License:      
@@ -22,5 +9,18 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 21 23:24:51 2012
+Modified:     Fri Jul 27 00:25:01 2012
+
+Operator:     qLib::camera_plane_ql::1
+Label:        Camera Plane qL
+Path:         oplib:/qLib::Sop/camera_plane_ql::1?qLib::Sop/camera_plane_ql::1
+Icon:         COP2_frontface
+Table:        Sop
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Jul 27 00:22:42 2012
 

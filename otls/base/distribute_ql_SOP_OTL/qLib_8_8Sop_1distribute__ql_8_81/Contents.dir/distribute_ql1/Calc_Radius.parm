@@ -1,0 +1,6 @@
+{
+version 0.8
+cacheinput	[ 0	locks=0 ]	(	"off"	)
+radius	[ 8	locks=0 ]	(	[ radius	0 ] 	)
+test	[ 8	locks=0 ]	(	[ test	0 ] 	)
+}

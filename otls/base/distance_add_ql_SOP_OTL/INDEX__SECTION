@@ -1,6 +1,6 @@
-Operator:     distance_add_ql
+Operator:     qLib::distance_add_ql::1
 Label:        Distance Add qL
-Path:         oplib:/Sop/distance_add_ql?Sop/distance_add_ql
+Path:         oplib:/qLib::Sop/distance_add_ql::1?qLib::Sop/distance_add_ql::1
 Icon:         SOP_pointcloudiso
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       false
 Python:       true
 Empty:        false
-Modified:     Mon May 28 03:55:40 2012
+Modified:     Fri Jul 27 00:24:33 2012
 

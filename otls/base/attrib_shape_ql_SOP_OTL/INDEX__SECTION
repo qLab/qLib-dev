@@ -1,6 +1,6 @@
-Operator:     attrib_shape_ql
+Operator:     qLib::attrib_shape_ql::1
 Label:        Attrib Shape qL
-Path:         oplib:/Sop/attrib_shape_ql?Sop/attrib_shape_ql
+Path:         oplib:/qLib::Sop/attrib_shape_ql::1?qLib::Sop/attrib_shape_ql::1
 Icon:         COP2_shape
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Dec  2 21:38:37 2010
+Modified:     Fri Jul 27 00:22:03 2012
 

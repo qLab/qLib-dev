@@ -1,0 +1,15 @@
+{
+version 0.8
+vex_group	[ 0	locks=0	autoscope=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0	autoscope=0 ]	(	"none"	)
+vex_edit	[ 0	locks=0 ]	(	0	)
+vex_reload	[ 0	locks=0 ]	(	0	)
+file	[ 0	locks=0	autoscope=0 ]	(	op:`opinputpath(\".\",0)`	)
+pscale	[ 0	locks=0	autoscope=0 ]	(	[ pscale	0 ] 	)
+maxpscale	[ 0	locks=0	autoscope=0 ]	(	[ maxpscale	0 ] 	)
+minpscale	[ 0	locks=0	autoscope=0 ]	(	[ minpscale	0 ] 	)
+maxpoints	[ 0	locks=0	autoscope=0 ]	(	[ maxpoints	1000 ] 	)
+citer	[ 0	locks=0	autoscope=0 ]	(	[ citer	10 ] 	)
+niter	[ 0	locks=0	autoscope=0 ]	(	[ niter	10 ] 	)
+grow	[ 0	locks=0	autoscope=0 ]	(	[ grow	1 ] 	)
+}

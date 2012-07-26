@@ -1,6 +1,6 @@
-Operator:     point_topology_ql
+Operator:     qLib::point_topology_ql::1
 Label:        Point Topology qL
-Path:         oplib:/Sop/point_topology_ql?Sop/point_topology_ql
+Path:         oplib:/qLib::Sop/point_topology_ql::1?qLib::Sop/point_topology_ql::1
 Icon:         DOP_sopscalarfield
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Jul 12 21:17:24 2012
+Modified:     Fri Jul 27 00:28:16 2012
 

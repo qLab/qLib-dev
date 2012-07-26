@@ -1,6 +1,6 @@
-Operator:     vector_store_ql
+Operator:     qLib::vector_store_ql::1
 Label:        Vector Store qL
-Path:         oplib:/Sop/vector_store_ql?Sop/vector_store_ql
+Path:         oplib:/qLib::Sop/vector_store_ql::1?qLib::Sop/vector_store_ql::1
 Icon:         CHOP_para
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Mar 11 02:49:38 2012
+Modified:     Fri Jul 27 00:31:09 2012
 

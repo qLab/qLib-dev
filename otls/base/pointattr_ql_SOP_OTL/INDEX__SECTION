@@ -1,6 +1,6 @@
-Operator:     pointattr_ql
+Operator:     qLib::pointattr_ql::1
 Label:        PointAttr qL
-Path:         oplib:/Sop/pointattr_ql?Sop/pointattr_ql
+Path:         oplib:/qLib::Sop/pointattr_ql::1?qLib::Sop/pointattr_ql::1
 Icon:         COP2_mosaic
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Wed Apr 18 03:52:22 2012
+Modified:     Fri Jul 27 00:28:24 2012
 

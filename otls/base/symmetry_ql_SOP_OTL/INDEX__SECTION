@@ -1,6 +1,6 @@
-Operator:     symmetry_ql
+Operator:     qLib::symmetry_ql::1
 Label:        Symmetry qL
-Path:         oplib:/Sop/symmetry_ql?Sop/symmetry_ql
+Path:         oplib:/qLib::Sop/symmetry_ql::1?qLib::Sop/symmetry_ql::1
 Icon:         COP2_flip
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Dec  4 17:21:34 2010
+Modified:     Fri Jul 27 00:29:54 2012
 

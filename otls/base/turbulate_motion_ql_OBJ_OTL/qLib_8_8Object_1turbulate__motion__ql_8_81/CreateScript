@@ -1,0 +1,13 @@
+# Automatically generated script: Friday October 01, 18:20 2010
+\set noalias = 1
+#
+#  Creation script for qLib::turbulate_motion_ql::1 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Object/qLib::turbulate_motion_ql::1)
+opexprlanguage -s hscript $arg1

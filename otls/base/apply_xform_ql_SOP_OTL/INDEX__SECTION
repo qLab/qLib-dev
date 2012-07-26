@@ -1,6 +1,6 @@
-Operator:     apply_xform_ql
+Operator:     qLib::apply_xform_ql::1
 Label:        Apply Transform qL
-Path:         oplib:/Sop/apply_xform_ql?Sop/apply_xform_ql
+Path:         oplib:/qLib::Sop/apply_xform_ql::1?qLib::Sop/apply_xform_ql::1
 Icon:         DOP_anchor
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu May 24 00:09:32 2012
+Modified:     Fri Jul 27 00:21:39 2012
 

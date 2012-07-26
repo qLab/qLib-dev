@@ -1,6 +1,6 @@
-Operator:     sweep_plus_ql
+Operator:     qLib::sweep_plus_ql::1
 Label:        Sweep Plus qL
-Path:         oplib:/Sop/sweep_plus_ql?Sop/sweep_plus_ql
+Path:         oplib:/qLib::Sop/sweep_plus_ql::1?qLib::Sop/sweep_plus_ql::1
 Icon:         SOP_sweep
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Jun 19 12:19:49 2012
+Modified:     Fri Jul 27 00:29:47 2012
 

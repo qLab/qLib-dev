@@ -1,6 +1,6 @@
-Operator:     cloth_refine_3d_ql
+Operator:     qLib::cloth_refine_3d_ql::1
 Label:        Cloth Refine 3d qL
-Path:         oplib:/Sop/cloth_refine_3d_ql?Sop/cloth_refine_3d_ql
+Path:         oplib:/qLib::Sop/cloth_refine_3d_ql::1?qLib::Sop/cloth_refine_3d_ql::1
 Icon:         SOP_tribez
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Sep  7 18:32:43 2010
+Modified:     Fri Jul 27 00:24:21 2012
 

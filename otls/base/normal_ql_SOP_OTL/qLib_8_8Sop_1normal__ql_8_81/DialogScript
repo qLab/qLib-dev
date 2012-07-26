@@ -1,0 +1,104 @@
+# Dialog script for qLib::normal_ql::1 automatically generated 06/26/12 21:39:29
+
+{
+    name	qLib::normal_ql::1
+    script	qLib::normal_ql::1
+    label	"Normal qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Normal Source"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l compute_normals group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cusp"
+	label	"Cusp Polygons"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"angle"
+	label	"Cusp Angle"
+	type	angle
+	default	{ "20" }
+	disablewhen	"{ cusp == 0 }"
+	range	{ 0 40 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"orientPolys"
+	label	"Orient Polygons"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"postnml"
+	label	"Compute Normals"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"unit"
+	label	"Normalize"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ postnml == 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	default	{ "1" }
+	range	{ -10 10 }
+	export	none
+    }
+    parm {
+	name	"output_type"
+	label	"Output Type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Point"
+	    "1"	"Vertex"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+}

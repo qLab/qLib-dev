@@ -1,0 +1,89 @@
+# Dialog script for qLib::star_ql::1 automatically generated 11/08/10 15:36:44
+
+{
+    name	qLib::star_ql::1
+    script	qLib::star_ql::1
+    label	"Star qL"
+
+    help {
+	""
+    }
+    bindhandle radiusx circle "Circle_Transform" sx ""
+    bindhandle radiusy circle "Circle_Transform" sy ""
+    bindhandle ctx circle "Circle_Transform" tx ""
+    bindhandle cty circle "Circle_Transform" ty ""
+    bindhandle ctz circle "Circle_Transform" tz ""
+    bindhandle sections stepladder "Step_Ladder" parm0 ""
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"orient"
+	label	"Orientation"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"XY"
+	    "1"	"YZ"
+	    "2"	"ZX"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"sections"
+	label	"Sections"
+	type	integer
+	default	{ "5" }
+	range	{ 0 10 }
+	export	all
+    }
+    parm {
+	name	"radius"
+	label	"Radius"
+	type	vector2
+	size	2
+	default	{ "0.5" "1" }
+	range	{ -1 1 }
+	export	all
+    }
+    parm {
+	name	"ct"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"gap"
+	label	"Gaps"
+	type	vector2
+	size	2
+	default	{ "0" "0" }
+	range	{ 0! 1 }
+	export	none
+    }
+    parm {
+	name	"segment"
+	label	"Gap Segments"
+	type	intvector2
+	size	2
+	default	{ "1" "1" }
+	range	{ 1! 10 }
+	export	none
+    }
+    parm {
+	name	"closed"
+	label	"Closed"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	all
+    }
+}

@@ -1,6 +1,6 @@
-Operator:     path_deform_ql
+Operator:     qLib::path_deform_ql::1
 Label:        Path Deform qL
-Path:         oplib:/Sop/path_deform_ql?Sop/path_deform_ql
+Path:         oplib:/qLib::Sop/path_deform_ql::1?qLib::Sop/path_deform_ql::1
 Icon:         SOP_each
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Jul 09 21:51:58 2012
+Modified:     Fri Jul 27 00:27:49 2012
 

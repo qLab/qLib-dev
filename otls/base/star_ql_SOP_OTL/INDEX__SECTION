@@ -1,6 +1,6 @@
-Operator:     star_ql
+Operator:     qLib::star_ql::1
 Label:        Star qL
-Path:         oplib:/Sop/star_ql?Sop/star_ql
+Path:         oplib:/qLib::Sop/star_ql::1?qLib::Sop/star_ql::1
 Icon:         VOP_qmultiply
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Nov  8 15:36:44 2010
+Modified:     Fri Jul 27 00:29:20 2012
 

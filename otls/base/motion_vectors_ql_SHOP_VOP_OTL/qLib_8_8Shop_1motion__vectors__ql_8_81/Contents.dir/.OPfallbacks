@@ -1,0 +1,4 @@
+Vop/getblurP /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/getblurP otls/OPlibVop.otl
+Vop/transform /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/transform otls/OPlibVop.otl

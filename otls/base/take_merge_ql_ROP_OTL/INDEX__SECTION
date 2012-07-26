@@ -1,6 +1,6 @@
-Operator:     take_merge_ql
+Operator:     qLib::take_merge_ql::1
 Label:        Take Merge qL
-Path:         oplib:/Driver/take_merge_ql?Driver/take_merge_ql
+Path:         oplib:/qLib::Driver/take_merge_ql::1?qLib::Driver/take_merge_ql::1
 Icon:         COP2_max
 Table:        Driver
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Jun  4 03:39:58 2012
+Modified:     Fri Jul 27 00:30:02 2012
 

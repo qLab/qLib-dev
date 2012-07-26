@@ -1,0 +1,166 @@
+# Dialog script for qLib::spiral_ql::1 automatically generated 12/02/10 14:42:44
+
+{
+    name	qLib::spiral_ql::1
+    script	qLib::spiral_ql::1
+    label	"Spiral qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Path Curve"
+    inputlabel	2	"Cross Section"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"typechooser"
+	label	"Spiral Type"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "0"	"Simple"
+	    "1"	"Around Curve"
+	}
+	range	{ 0! 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"folder0"
+	label	"Simple Spiral"
+
+	parm {
+	    name	"type"
+	    label	"Primitive Type"
+	    type	ordinal
+	    default	{ "nurbs" }
+	    menu	{
+		"poly"	"Polygon"
+		"nurbs"	"NURBS"
+		"bezier"	"Bezier"
+		"points"	"Points"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"spheight"
+	    label	"Height"
+	    type	float
+	    default	{ "3" }
+	    disablewhen	"{ typechooser == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"numturns"
+	    label	"Number of Turns"
+	    type	float
+	    default	{ "3" }
+	    disablewhen	"{ typechooser == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"points"
+	    label	"Points"
+	    type	integer
+	    default	{ "100" }
+	    disablewhen	"{ typechooser == 1 }"
+	    range	{ 0! 50 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"width"
+	    label	"Width"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ typechooser == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"widthmod"
+	    label	"Width Mod"
+	    type	ramp_flt
+	    default	{ "2" }
+	    disablewhen	"{ typechooser == 1 }"
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampbasisdefault" "catmull-rom" }
+	    parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+	}
+    }
+
+    group {
+	name	"folder0_1"
+	label	"Around Curve"
+
+	parm {
+	    name	"labelparm3"
+	    label	"(Needs Path Input)"
+	    type	label
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"segs"
+	    label	"Number of Points"
+	    type	float
+	    default	{ "100" }
+	    disablewhen	"{ typechooser == 0 }"
+	    range	{ 2! 100 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"dist"
+	    label	"Base Radius"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ typechooser == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"roll2"
+	    label	"Offset"
+	    type	float
+	    default	{ "0" }
+	    disablewhen	"{ typechooser == 0 }"
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"turns"
+	    label	"Turns"
+	    type	float
+	    default	{ "10" }
+	    disablewhen	"{ typechooser == 0 }"
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"curvedShape"
+	    label	"Spiral on Curve Shape Mod"
+	    type	ramp_flt
+	    default	{ "2" }
+	    disablewhen	"{ typechooser == 0 }"
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampbasisdefault" "catmull-rom" }
+	    parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+	}
+    }
+
+}

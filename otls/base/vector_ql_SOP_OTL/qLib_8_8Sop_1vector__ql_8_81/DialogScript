@@ -1,0 +1,647 @@
+# Dialog script for qLib::vector_ql::1 automatically generated 04/26/12 20:08:15
+
+{
+    name	qLib::vector_ql::1
+    script	qLib::vector_ql::1
+    label	"Vector qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Secondary Geometry"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l do_vector vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"operation"
+	label	"Operation"
+	type	integer
+	default	{ "6" }
+	menu	{
+	    "0"	"Add"
+	    "1"	"Substract (A-B)"
+	    "2"	"Substract (B-A)"
+	    "3"	"Mix"
+	    "4"	"Cross Product (AxB)"
+	    "5"	"Cross Product (BxA)"
+	    "6"	"Pass 1st Input (A)"
+	    "7"	"Pass 2nd Input (B)"
+	    "8"	"Min"
+	    "9"	"Max"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    group {
+	name	"input"
+	label	"Input"
+
+	group {
+	    name	"folder0"
+	    label	"Input #1: Vector A"
+	    tabbreak
+
+	    parm {
+		name	"compute_n_A"
+		label	"Pre-Compute Normal"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ operation == 7 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"vector_type_a"
+		label	"Vector A"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ operation == 7 }"
+		menu	{
+		    "0"	"Attribute from 1st Input"
+		    "1"	"Constant"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"name_a"
+		label	"Attribute Name A"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ vector_type_a == 1 } { operation == 7 }"
+		menureplace	{
+		    "P"	"position (P)"
+		    "N"	"normal (N)"
+		    "v"	"velocity (v)"
+		    "up"	"up vector (up)"
+		    "uv"	"texture (uv)"
+		    "rest"	"rest position (rest)"
+		    "Cd"	"color (Cd)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vec_a"
+		label	"Constant"
+		type	float
+		joinnext
+		size	3
+		default	{ "0" "1" "0" }
+		disablewhen	"{ vector_type_a == 0 } { operation == 7 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vec_a_menu"
+		label	"Constant"
+		type	ordinal
+		nolabel
+		default	{ "0" }
+		disablewhen	"{ vector_type_a == 0 } { operation == 7 }"
+		menumini	{
+		    "1 0 0"	"X+"
+		    "0 1 0"	"Y+"
+		    "0 0 1"	"Z+"
+		    "-1 0 0"	"X-"
+		    "0 -1 0"	"Y-"
+		    "0 0 -1"	"Z-"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` vec_a ( $script_value0 )" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"normalize_a"
+		label	"Normalize"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ operation == 7 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_a"
+		label	"mult_const_a"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_a_val"
+		label	"Scale"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ mult_const_a == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_a"
+		label	"mult_a"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_attr_a"
+		label	"Scale with"
+		type	string
+		joinnext
+		default	{ "pscale" }
+		disablewhen	"{ mult_a == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_a_input"
+		label	"mult_a_input"
+		type	integer
+		nolabel
+		default	{ "0" }
+		disablewhen	"{ mult_a == 0 }"
+		menu	{
+		    "0"	"1st Input"
+		    "1"	"2nd Input"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder1"
+	    label	"Input #2: Vector B"
+	    tabbreak
+
+	    parm {
+		name	"compute_n_B"
+		label	"Pre-Compute Normal"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ operation == 6 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"vector_type_b"
+		label	"Vector B"
+		type	integer
+		default	{ "0" }
+		disablewhen	"{ operation == 6 }"
+		menu	{
+		    "0"	"Attribute from 2nd Input"
+		    "1"	"Constant"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"name_b"
+		label	"Attribute Name B"
+		type	string
+		default	{ "N" }
+		disablewhen	"{ vector_type_b == 1 } { operation == 6 }"
+		menureplace	{
+		    "P"	"position (P)"
+		    "N"	"normal (N)"
+		    "v"	"velocity (v)"
+		    "up"	"up vector (up)"
+		    "uv"	"texture (uv)"
+		    "rest"	"rest position (rest)"
+		    "Cd"	"color (Cd)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vec_b"
+		label	"Constant"
+		type	float
+		joinnext
+		size	3
+		default	{ "1" "0" "0" }
+		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vec_b_menu"
+		label	"Constant"
+		type	ordinal
+		nolabel
+		default	{ "0" }
+		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
+		menumini	{
+		    "1 0 0"	"X+"
+		    "0 1 0"	"Y+"
+		    "0 0 1"	"Z+"
+		    "-1 0 0"	"X-"
+		    "0 -1 0"	"Y-"
+		    "0 0 -1"	"Z-"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` vec_b ( $script_value0 )" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"normalize_b"
+		label	"Normalize"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ operation == 6 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_b"
+		label	"mult_const_b"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_const_b_val"
+		label	"Scale"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ mult_const_b == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_b"
+		label	"Scale with"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_attr_b"
+		label	"Scale with"
+		type	string
+		joinnext
+		default	{ "pscale" }
+		disablewhen	"{ mult_b == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"mult_b_input"
+		label	"mult_b_input"
+		type	integer
+		nolabel
+		default	{ "1" }
+		disablewhen	"{ mult_b == 0 }"
+		menu	{
+		    "0"	"1st Input"
+		    "1"	"2nd Input"
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder2"
+	    label	"Mix Settings"
+
+	    parm {
+		name	"blend"
+		label	"Blend Value"
+		type	float
+		default	{ "0.5" }
+		disablewhen	"{ operation != 3 } { custom_blend_attr != 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"custom_blend_attr"
+		label	"Blend Attribute"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		help	"A per-point float attribute for per-point weighting."
+		disablewhen	"{ operation != 3 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"blend_attr"
+		label	"Blend Attribute"
+		type	string
+		default	{ "blend" }
+		disablewhen	"{ operation != 3 } { custom_blend_attr != 1 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"input_1"
+	label	"Output"
+
+	parm {
+	    name	"normalize_out"
+	    label	"Normalize Output"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"invert_out"
+	    label	"Invert Result"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"output_attrs"
+	    label	"Output Attributes"
+
+	    parm {
+		name	"export_result"
+		label	"Export Result"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"out_attr"
+		label	"Vector / Type"
+		type	string
+		joinnext
+		default	{ "N" }
+		disablewhen	"{ export_result == 0 }"
+		menureplace	{
+		    "P"	"position (P)"
+		    "N"	"normal (N)"
+		    "v"	"velocity (v)"
+		    "up"	"up vector (up)"
+		    "uv"	"texture (uv)"
+		    "rest"	"rest position (rest)"
+		    "Cd"	"color (Cd)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"typemodifier"
+		label	"Type Modifier"
+		type	string
+		nolabel
+		default	{ "vector" }
+		help	"Output data type. Use 'None' for color attributes such as Cd."
+		disablewhen	"{ export_result == 0 }"
+		menu	{
+		    ""	"None (e.g. Color)"
+		    "vector"	"Vector Data"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"length"
+		label	"Export Length"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"length_name"
+		label	"Length"
+		type	string
+		default	{ "pscale" }
+		disablewhen	"{ length == 0 }"
+		menureplace	{
+		    "pscale"	"pscale"
+		    "Alpha"	"Alpha"
+		    "weight"	"weight"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"export_dot"
+		label	"Export Dot Product"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dot_attr"
+		label	"Dot Product"
+		type	string
+		default	{ "dot" }
+		disablewhen	"{ export_dot == 0 }"
+		menureplace	{
+		    "dot"	"dot"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"angle_export"
+		label	"Export Angle"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"angle_attr"
+		label	"Angle"
+		type	string
+		default	{ "angle" }
+		disablewhen	"{ angle_export == 0 }"
+		menureplace	{
+		    "angle"	"angle"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"deg"
+		label	"Angle in Degrees"
+		type	toggle
+		default	{ "0" }
+		disablewhen	"{ angle_export == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}

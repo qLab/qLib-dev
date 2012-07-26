@@ -1,6 +1,6 @@
-Operator:     cardinal_ql
+Operator:     qLib::cardinal_ql::1
 Label:        Cardinal qL
-Path:         oplib:/Sop/cardinal_ql?Sop/cardinal_ql
+Path:         oplib:/qLib::Sop/cardinal_ql::1?qLib::Sop/cardinal_ql::1
 Icon:         SOP_fit
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Mar 12 23:44:22 2012
+Modified:     Fri Jul 27 00:24:06 2012
 

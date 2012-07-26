@@ -1,0 +1,20 @@
+# Dialog script for qLib::varmap_ql::1 automatically generated 06/28/11 11:45:52
+
+{
+    name	qLib::varmap_ql::1
+    script	qLib::varmap_ql::1
+    label	"Varmap qL"
+
+    help {
+	""
+    }
+
+    parm {
+	name	"map"
+	label	"Attributes"
+	type	string
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+}

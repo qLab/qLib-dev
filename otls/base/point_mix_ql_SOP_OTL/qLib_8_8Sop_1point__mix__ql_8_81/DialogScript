@@ -1,0 +1,109 @@
+# Dialog script for qLib::point_mix_ql::1 automatically generated 06/17/12 19:52:00
+
+{
+    name	qLib::point_mix_ql::1
+    script	qLib::point_mix_ql::1
+    label	"Point Mix qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_POINT_MIX vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"mix_attribs"
+	label	"Attributes to Mix"
+	type	string
+	default	{ "P" }
+	help	"Attributes to mix."
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"ctrl_attrib"
+	label	"Control Attrib"
+	type	string
+	joinnext
+	default	{ "amount" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"first"
+	label	"On"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"1st Input"
+	    "1"	"2nd Input"
+	}
+	range	{ 0! 1! }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+    }
+}

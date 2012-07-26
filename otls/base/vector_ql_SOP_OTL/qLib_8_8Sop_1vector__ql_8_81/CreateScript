@@ -1,0 +1,15 @@
+# Automatically generated script: Thursday April 26, 20:08 2012
+\set noalias = 1
+#
+#  Creation script for qLib::vector_ql::1 operator
+#
+
+if ( "$arg1" == "" ) then
+    echo This script is intended as a creation script
+    exit
+endif
+
+# Node $arg1 (Sop/qLib::vector_ql::1)
+opexprlanguage -s hscript $arg1
+opuserdata -n '___toolcount___' -v '6' $arg1
+opuserdata -n '___toolid___' -v 'sop_qLib::vector_ql::1' $arg1
