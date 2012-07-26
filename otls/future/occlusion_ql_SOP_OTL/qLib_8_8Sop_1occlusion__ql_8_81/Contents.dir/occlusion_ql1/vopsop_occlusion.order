@@ -1,4 +1,4 @@
-23
+25
 global1
 output1
 multiply1
@@ -22,3 +22,5 @@ inttofloat1
 aperture
 file
 distance_attr
+pow1
+gamma

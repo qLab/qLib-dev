@@ -29,9 +29,11 @@ def outpreset(kwargs):
 
 def set_color(kwargs):
 
+    print "----", kwargs['script_value']
+
     hou.pwd().setColor(
         hou.Color(
-            (0.0, 0.0, 0.0) if kwargs['script_value']=='off'
+            (0.2, 0.0, 0.0) if int(kwargs['script_value'])==0
             else (0.8, 0.6, 0.0) )
         );
 

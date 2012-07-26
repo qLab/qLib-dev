@@ -1,4 +1,4 @@
-# Dialog script for qLib::pointjitter_ql::1 automatically generated 07/15/12 17:38:49
+# Dialog script for qLib::pointjitter_ql::1 automatically generated 07/26/12 23:24:44
 
 {
     name	qLib::pointjitter_ql::1
@@ -173,8 +173,8 @@
     }
 
     group {
-	name	"folder1"
-	label	"Axes"
+	name	"folder0_1"
+	label	"Axis Settings"
 
 	import {
 	    label	axisranges
@@ -247,8 +247,26 @@
 		label	"attribx"
 		type	string
 		nolabel
-		default	{ "N" }
+		default	{ "v" }
 		disablewhen	"{ useaxisvectors == 0 } { vectypex != 1 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==3 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "attribx" }
@@ -279,6 +297,24 @@
 		nolabel
 		default	{ "up" }
 		disablewhen	"{ useaxisvectors == 0 } { vectypey != 1 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==3 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "attriby" }
@@ -310,6 +346,24 @@
 		nolabel
 		default	{ "" }
 		disablewhen	"{ useaxisvectors == 0 } { vectypez != 1 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==3 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "attribz" }

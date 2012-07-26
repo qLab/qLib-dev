@@ -1,7 +1,7 @@
 {
 version 0.8
 stdswitcher	[ 0	locks=0 ]	(	1	1	)
-index	[ 0	locks=0 ]	(	[ index1	0 ] 	[ index2	10 ] 	)
+index	[ 0	locks=0 ]	(	[ index1	0 ] 	[ index2	1 ] 	)
 chanmatch	[ 0	locks=0 ]	(	"onetoone"	)
 match	[ 0	locks=0 ]	(	"index"	)
 scope	[ 0	locks=0 ]	(	*	)
@@ -10,6 +10,6 @@ units	[ 0	locks=0 ]	(	"seconds"	)
 timeslice	[ 0	locks=0 ]	(	"off"	)
 unload	[ 0	locks=0 ]	(	"off"	)
 export	[ 0	locks=0 ]	(	""	)
-gcolor	[ 0	locks=0 ]	(	0	0.899999976	0.899999976	)
-gcolorstep	[ 0	locks=0 ]	(	0.0500000007	)
+gcolor	[ 0	locks=0 ]	(	0	0.89999997600000003	0.89999997600000003	)
+gcolorstep	[ 0	locks=0 ]	(	0.050000000699999998	)
 }

@@ -1,7 +1,14 @@
 comment ""
 position -0.5648 4.65586
 cachesize 1
+connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

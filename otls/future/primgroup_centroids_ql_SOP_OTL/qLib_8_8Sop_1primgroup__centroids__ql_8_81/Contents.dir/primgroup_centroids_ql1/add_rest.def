@@ -11,12 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	switch_lookup_by_name 2 1 "input1"
-9 	"" "" 1 "input2"
 }
 inputs
 {
 0 	switch_lookup_by_name 0 1
-1 	"" 0 1
 }
 stat
 {

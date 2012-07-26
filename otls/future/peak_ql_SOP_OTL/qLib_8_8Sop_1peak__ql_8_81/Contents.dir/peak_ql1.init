@@ -1,2 +1,2 @@
-type = peak_ql
+type = qLib::peak_ql::1
 matchesdef = 0

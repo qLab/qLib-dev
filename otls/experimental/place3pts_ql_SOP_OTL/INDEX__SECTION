@@ -1,0 +1,13 @@
+Operator:     qLib::place3pts_ql::1
+Label:        Place-3-Pts qL
+Path:         oplib:/qLib::Sop/place3pts_ql::1?qLib::Sop/place3pts_ql::1
+Icon:         VOP_lookat
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Jul 26 23:27:20 2012
+

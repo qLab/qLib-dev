@@ -12,7 +12,7 @@ createptstring	[ 0	locks=0 ]	(	"off"	)
 createprimstring	[ 0	locks=0 ]	(	"off"	)
 numobj	[ 0	locks=0 ]	(	1	)
 enable1	[ 0	locks=0 ]	(	"on"	)
-objpath1	[ 8	locks=0 ]	(	[ objpath1	/obj/particle/GEO_pop_limit ] 	)
+objpath1	[ 8	locks=0 ]	(	[ objpath1	"" ] 	)
 group1	[ 8	locks=0 ]	(	[ group1	"" ] 	)
 expand1	[ 0	locks=0 ]	(	"off"	)
 }

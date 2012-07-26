@@ -1,4 +1,4 @@
-# Dialog script for qLib::occlusion_ql::1 automatically generated 09/18/11 21:32:36
+# Dialog script for qLib::occlusion_ql::1 automatically generated 07/26/12 23:36:59
 
 {
     name	qLib::occlusion_ql::1
@@ -21,18 +21,6 @@
 	default	{ "" }
 	menutoggle	{
 	    [ "opmenu -l vopsop_occlusion vex_group" ]
-	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"vex_numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1perproc" }
-	menu	{
-	    [ "opmenu -l vopsop_occlusion vex_numthreads" ]
 	}
 	range	{ 0 1 }
 	export	none
@@ -129,10 +117,39 @@
 	    parmtag	{ "rampbasisdefault" "linear" }
 	}
 	parm {
+	    name	"exp"
+	    label	"Gamma"
+	    type	float
+	    default	{ "2.2" }
+	    range	{ 0.001 4 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
 	    name	"distance_attr"
 	    label	"Distance Attribute"
 	    type	string
 	    default	{ "pscale" }
+	    menureplace	{
+		[ "r = []" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs \\" ]
+		[ "        if a.dataType() is not hou.attribData.String \\" ]
+		[ "        and a.size()==1 ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }

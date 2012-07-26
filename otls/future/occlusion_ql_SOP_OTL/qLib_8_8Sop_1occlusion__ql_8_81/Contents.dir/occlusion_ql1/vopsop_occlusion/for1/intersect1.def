@@ -1,7 +1,20 @@
 comment ""
 position -0.957533 4.36481
 cachesize 1
+connectornextid 10
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+8 "prim"
+9 "pos"
+}
+inputsNamed3
+{
+4 	subinput1 3 1 "file"
+5 	subinput1 5 1 "rayorig"
+6 	calculate_random_direction 5 1 "raydir"
+7 	"" "" 1 "farthest"
+}
 inputs
 {
 0 	subinput1 3 1

@@ -3,7 +3,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 value = 0.10000000000000001 0.10000000000000001 expr = ch(\"../../size\") }
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../../size\") }
     }
     channel width {
       lefttype = extend
@@ -21,7 +21,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 value = 0.40000000000000002 0.40000000000000002 expr = ch(\"../../label_size\") }
+      segment { length = 0 value = 0.40000000596046448 0.40000000596046448 expr = ch(\"../../label_size\") }
     }
     channel label_prefix {
       lefttype = extend

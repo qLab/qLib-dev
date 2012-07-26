@@ -1,4 +1,4 @@
-# Dialog script for qLib::proxy_primgroups_ql::1 automatically generated 06/05/12 19:05:06
+# Dialog script for qLib::proxy_primgroups_ql::1 automatically generated 07/26/12 22:28:54
 
 {
     name	qLib::proxy_primgroups_ql::1
@@ -158,7 +158,7 @@
 	    type	toggle
 	    nolabel
 	    joinnext
-	    default	{ "on" }
+	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -182,7 +182,7 @@
 	    type	toggle
 	    nolabel
 	    joinnext
-	    default	{ "on" }
+	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }

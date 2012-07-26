@@ -1,3 +1,7 @@
 # setting 'Output Transform' to 'No Object'
 #
 opparm $arg1 outputobj ( "" )
+
+# disable selectability by default
+#
+opset -S off $arg1

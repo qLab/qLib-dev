@@ -1,2 +1,2 @@
-type = orient_ql
+type = qLib::orient_ql::1
 matchesdef = 0

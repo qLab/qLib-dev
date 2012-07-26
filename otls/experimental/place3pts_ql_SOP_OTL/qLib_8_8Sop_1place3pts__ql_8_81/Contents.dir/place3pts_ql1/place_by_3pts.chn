@@ -1,0 +1,154 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel rest_base_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_base_pos1\") }
+    }
+    channel rest_base_pos2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_base_pos2\") }
+    }
+    channel rest_base_pos3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_base_pos3\") }
+    }
+    channel rest_aim_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_aim_pos1\") }
+    }
+    channel rest_aim_pos2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_aim_pos2\") }
+    }
+    channel rest_aim_pos3 {
+      lefttype = extend
+      righttype = extend
+      default = -4
+      flags = 0
+      segment { length = 0 value = -4 -4 expr = ch(\"../rest_aim_pos3\") }
+    }
+    channel rest_up_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_up_pos1\") }
+    }
+    channel rest_up_pos2 {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../rest_up_pos2\") }
+    }
+    channel rest_up_pos3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rest_up_pos3\") }
+    }
+    channel invert_rest_xform {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../invert_rest_xform\") }
+    }
+    channel base_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../base_pos1\") }
+    }
+    channel base_pos2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../base_pos2\") }
+    }
+    channel base_pos3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../base_pos3\") }
+    }
+    channel aim_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../aim_pos1\") }
+    }
+    channel aim_pos2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../aim_pos2\") }
+    }
+    channel aim_pos3 {
+      lefttype = extend
+      righttype = extend
+      default = -4
+      flags = 0
+      segment { length = 0 value = -4 -4 expr = ch(\"../aim_pos3\") }
+    }
+    channel up_pos1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../up_pos1\") }
+    }
+    channel up_pos2 {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../up_pos2\") }
+    }
+    channel up_pos3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../up_pos3\") }
+    }
+    channel invert_xform {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert_xform\") }
+    }
+    channel apply_rest_xform {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../apply_rest_xform\") }
+    }
+    channel apply_xform {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../apply_xform\") }
+    }
+    channel switch_aim_up {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../switch_aim_up\") }
+    }
+  }

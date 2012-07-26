@@ -1,2 +1,2 @@
-type = primgroup_add_ids_ql
+type = qLib::primgroup_add_ids_ql::1
 matchesdef = 0

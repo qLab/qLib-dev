@@ -4,14 +4,66 @@
 
 = PointJitter qL =
 
-*Version 0.0.1*
+*Version 0.0.3*
 
-"""Enhanced version of the original SOP node with the same name."""
+"""Jitter points in random directions, along three main axes."""
+
+Jitter points in random directions. Useful for breaking 'perfect' (artificial) symmetry.
+See the original [Node:sop/pointjitter] help page for parameter details.
+
+@parameters
+    Jitter:
+        Jittering settings. See the original [Node:sop/pointjitter] help page for parameter details.
+
+    Axes:
+        Details about the three axes along which the jittering takes place.
+
+        Axis Range Min/Max:
+            Specifies the value range of the jittering along each axis.
+
+        Use Axis Vectors:
+            If enabled, the three main axes for the jittering can be individually specified.
+
+        X, Y, Z Axis:
+            Setting for each individual main axis.
+
+            Constant X+, Y+, Z+:
+                Use the appropriate main world axis. This is the default behaviour.
+
+            Attribute:
+                Specify a per-point vector attribute. (This allows for defining a local
+                coordinate space for each point -- an example is to jitter along per-point
+                velocity vectors.)
+
+            Cross Product X*Y (Z only):
+                The third axis will be the cross product of the X and Y main axis
+                (i.e. it will be perpendicular to the plane defined by those axes).
+
+                This is a convenience setting to remove the need of generating an extra vector
+                attribute just for this purpose. It can be a relief when dealing with heavy
+                geometry.
+
+        TIP:
+            An example when jittering along arbitrary vectors can be useful is emitting particles
+            from deforming geometry. A regular POP artifact is particles emitted in 'chunks' on
+            each frame.
+
+            A quick way of getting rid of that problem is to generate per-point velocity vectors
+            using a Trail node, then jittering the geometry along the resulting velocities.
+            If you emit from such a geometry, the 'chunk-emission' effect will be minimized.
+
 
 @related
     - [Node:sop/pointjitter]
-    - [VectorJitter qL|Node:sop/vectorjitter_ql]
+    - [Vector Jitter qL|Node:qLib::sop/vector_jitter_ql::1]
 
 
-Jitter points in random directions. Useful for breaking 'perfect' symmetry.
-See the original [Node:sop/pointjitter] help page for parameter details.
+@release_notes Release Notes
+    Version 0.0.3:
+        Support for specifying arbitrary main axes.
+
+    Version 0.0.2:
+        Support for 'id' attribute.
+
+    Version 0.0.1:
+        First version (intended to be a multiprocessor-aware PointJitter alternative).

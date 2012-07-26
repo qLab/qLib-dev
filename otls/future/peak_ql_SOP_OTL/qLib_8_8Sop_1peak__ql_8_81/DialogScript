@@ -1,4 +1,4 @@
-# Dialog script for qLib::peak_ql::1 automatically generated 07/01/12 14:18:53
+# Dialog script for qLib::peak_ql::1 automatically generated 07/26/12 23:23:04
 
 {
     name	qLib::peak_ql::1
@@ -26,28 +26,19 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    parm {
-	name	"prenml"
-	label	"Pre-Compute Normals"
-	type	toggle
-	default	{ "0" }
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"guide"
-	label	"Guide"
-	type	toggle
-	default	{ "0" }
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
     group {
 	name	"folder0"
 	label	"Peak"
 
+	parm {
+	    name	"prenml"
+	    label	"Pre-Compute Normals"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
 	import {
 	    label	params
 	    source	"op:vopsop_peak"
@@ -58,6 +49,8 @@
 		name	"usevector"
 		label	"Use Custom Vector Attribute"
 		type	toggle
+		nolabel
+		joinnext
 		default	{ "off" }
 		range	{ 0 1 }
 		export	none
@@ -71,6 +64,24 @@
 		type	string
 		default	{ "N" }
 		disablewhen	"{ usevector == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==3 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "vectorname" }
@@ -82,7 +93,7 @@
 		label	"Distance"
 		type	float
 		default	{ "0" }
-		range	{ -1 1 }
+		range	{ 0 1 }
 		export	none
 		parmtag	{ "import_token" "distance" }
 		parmtag	{ "import_source" "op:vopsop_peak" }
@@ -93,6 +104,15 @@
 	parm {
 	    name	"updatenmls"
 	    label	"Post-Compute Normals"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"guide"
+	    label	"Display Guide Geometry"
 	    type	toggle
 	    default	{ "0" }
 	    range	{ 0! 10 }

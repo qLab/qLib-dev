@@ -25,6 +25,7 @@
 	default	{ "op:`opinputpath(\".\",0)`" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -34,6 +35,7 @@
 	default	{ "1" }
 	range	{ 0.001 8 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -43,6 +45,7 @@
 	default	{ "0.001" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -52,6 +55,7 @@
 	default	{ "1" }
 	range	{ 0 8 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -61,6 +65,7 @@
 	default	{ "1" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -68,8 +73,9 @@
 	label	"num_samples"
 	type	integer
 	default	{ "8" }
-	range	{ 1 16 }
+	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -79,6 +85,7 @@
 	default	{ "2" }
 	range	{ 1! 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "rampvalues_var" "color_map_the_key_values" }
 	parmtag	{ "rampkeys_var" "color_map_the_key_positions" }
 	parmtag	{ "rampbasis_var" "color_map_the_basis_strings" }
@@ -88,11 +95,22 @@
 	parmtag	{ "rampbasisdefault" "linear" }
     }
     parm {
+	name	"gamma"
+	label	"gamma"
+	type	float
+	default	{ "2.2" }
+	range	{ 0.001 4 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"distance_attr"
 	label	"distance_attr"
 	type	string
 	default	{ "pscale" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
