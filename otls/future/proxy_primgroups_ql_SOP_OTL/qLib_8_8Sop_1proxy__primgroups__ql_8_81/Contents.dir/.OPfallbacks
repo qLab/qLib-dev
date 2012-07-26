@@ -1,6 +1,10 @@
-Vop/fit /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/fit otls/OPlibVop.otl
-Sop/xform_to_bbox_ql /home/tusi/houdini12.0/otls/qLib/future/xform_to_bbox_ql.otl
-Sop/xform_to_bbox_ql otls/qLib/future/xform_to_bbox_ql.otl
-Vop/bbox /opt/hfs12.0.641/houdini/otls/OPlibVop.otl
-Vop/bbox otls/OPlibVop.otl
+Sop/xform_to_bbox_ql /home/tusi/houdini12.0/otls/qLib/base/xform_to_bbox_ql_SOP.otl
+Sop/xform_to_bbox_ql otls/qLib/base/xform_to_bbox_ql_SOP.otl
+Vop/length /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/length otls/OPlibVop.otl
+Vop/clamp /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/clamp otls/OPlibVop.otl
+Vop/addgroup /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addgroup otls/OPlibVop.otl
+Vop/not /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/not otls/OPlibVop.otl

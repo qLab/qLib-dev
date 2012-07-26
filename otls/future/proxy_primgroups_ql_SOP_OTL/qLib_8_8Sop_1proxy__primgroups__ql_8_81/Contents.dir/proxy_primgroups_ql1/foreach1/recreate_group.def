@@ -11,12 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	transfer_attrs 2 1 "input1"
-5 	"" "" 1 "input2"
 }
 inputs
 {
 0 	transfer_attrs 0 1
-1 	"" 0 1
 }
 stat
 {
