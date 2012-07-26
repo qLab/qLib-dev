@@ -13,6 +13,6 @@ cusp	[ 0	locks=0 ]	(	"off"	)
 angle	[ 0	locks=0 ]	(	20	)
 remove	[ 0	locks=0 ]	(	"off"	)
 mkplanar	[ 0	locks=0 ]	(	"off"	)
-postnml	[ 0	locks=0 ]	(	"on"	)
+postnml	[ 8	locks=0 ]	(	[ postnml	0 ] 	)
 reversenml	[ 0	locks=0 ]	(	"off"	)
 }

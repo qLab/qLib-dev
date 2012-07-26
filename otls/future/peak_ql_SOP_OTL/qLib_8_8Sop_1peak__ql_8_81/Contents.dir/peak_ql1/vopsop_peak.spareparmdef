@@ -22,9 +22,12 @@
 	name	"usevector"
 	label	"Use Custom Vector Attribute"
 	type	toggle
+	nolabel
+	joinnext
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -35,6 +38,7 @@
 	disablewhen	"{ usevector == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -44,6 +48,7 @@
 	default	{ "0" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -53,6 +58,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -63,6 +69,7 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -73,6 +80,7 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -83,5 +91,6 @@
 	disablewhen	"{ usepscale == 0 }"
 	range	{ 0.1 4 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
