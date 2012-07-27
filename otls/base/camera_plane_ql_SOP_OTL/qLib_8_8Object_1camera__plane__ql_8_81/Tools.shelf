@@ -5,7 +5,7 @@
  Note, that two definitions of the same element are not allowed in
  a single file. -->
 
-  <tool name="$HDA_DEFAULT_TOOL" label="$HDA_LABEL" icon="MISC_digital_asset">
+  <tool name="$HDA_DEFAULT_TOOL" label="$HDA_LABEL" icon="$HDA_ICON">
     <toolMenuContext name="viewer">
       <contextNetType>OBJ</contextNetType>
     </toolMenuContext>
@@ -16,7 +16,7 @@
       <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
     </toolMenuContext>
     <toolSubmenu>qLib</toolSubmenu>
-    <toolSubmenu>Utility</toolSubmenu>
+    <toolSubmenu>Render</toolSubmenu>
     <script scriptType="python"><![CDATA[from objecttoolutils import *
 
 scriptargs = kwargs
