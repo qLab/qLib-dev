@@ -4,7 +4,7 @@
 
 = Spiral qL =
 
-*Version 0.1.0*
+*Version 0.1.1*
 
 """Generates a simple spiral or a spiral around curve"""
 
@@ -38,6 +38,10 @@
         Spiral on curve shape mod:
             Modulates the shape of the whole spiral along the curve with a ramp, default is 1
 
-@Release_Notes
+@Release_Notes Release Notes
+
+    Version 0.1.1:
+        Fixed `Number of Turns` and `Points` relationship.
+
     Version 0.1.0:
         Initial release.

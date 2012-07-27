@@ -1,4 +1,4 @@
-# Dialog script for qLib::sweep_plus_ql::1 automatically generated 06/19/12 12:19:49
+# Dialog script for qLib::sweep_plus_ql::1 automatically generated 07/27/12 01:36:39
 
 {
     name	qLib::sweep_plus_ql::1
@@ -147,6 +147,43 @@
 		export	none
 	    }
 	    parm {
+		name	"use_pscale"
+		label	"use pscale"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"pscale_attrib"
+		label	"PScale Attribute"
+		type	string
+		default	{ "pscale" }
+		disablewhen	"{ use_pscale == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().inputs()[1].geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==1 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
 		name	"profilescale"
 		label	"Profile Scale"
 		type	ramp_flt
@@ -154,12 +191,13 @@
 		range	{ 1! 10 }
 		export	none
 		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
 		parmtag	{ "rampfloatdefault" "1pos ( 0.00100000005 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
 	    }
 	}
 
 	group {
-	    name	"folder1"
+	    name	"folder0_1"
 	    label	"Twist"
 
 	    parm {
@@ -179,7 +217,59 @@
 		range	{ 1! 10 }
 		export	none
 		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
 		parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 0 ) 2interp ( catmull-rom )" }
+	    }
+	}
+
+	group {
+	    name	"folder0_2"
+	    label	"Roll"
+
+	    parm {
+		name	"rollmult"
+		label	"Roll Multiplier"
+		type	float
+		default	{ "360" }
+		range	{ 0 360 }
+		export	none
+	    }
+	    parm {
+		name	"use_roll"
+		label	"use roll"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"roll_attrib"
+		label	"Roll Attribute"
+		type	string
+		default	{ "roll" }
+		disablewhen	"{ use_roll == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().inputs()[1].geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==1 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
 	    }
 	}
 

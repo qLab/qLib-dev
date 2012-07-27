@@ -1,4 +1,4 @@
-# Automatically generated script: Monday June 04, 03:39 2012
+# Automatically generated script: Friday July 27, 01:54 2012
 \set noalias = 1
 #
 #  Creation script for qLib::take_merge_ql::1 operator
@@ -9,6 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Driver/qLib::take_merge_ql::1)
+# Node $arg1 (qLib::Driver/take_merge_ql::1)
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

@@ -52,8 +52,17 @@ def takemerge(path, mode="build"):
 
     if mode=="build":
 
-        ts = [ hou.ch(p.path()) for p in ps if "takes" in p.name() ]
-        ts = " ".join(ts)
+        if True:
+            num_items = n.parm("tlist").eval()
+            ts = []
+            for i in range(1, num_items+1):
+                if n.parm("enabled%d" % i).eval()!=0:
+                    ts.append( n.parm("takes%d" % i).evalAsString() )
+            ts = " ".join(ts)
+
+        if False:
+            ts = [ hou.ch(p.path()) for p in ps if "takes" in p.name() ]
+            ts = " ".join(ts)
         print "takes/given:", ts
     
         ps = get_all_takes()

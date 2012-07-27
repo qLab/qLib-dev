@@ -1,2 +1,2 @@
-type = spiral_ql
+type = qLib::spiral_ql::1
 matchesdef = 0

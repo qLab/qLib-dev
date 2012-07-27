@@ -3,7 +3,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "sin($PT/ch(\"points\")*360*ch(\"numturns\")) * ch(\"width\")*chramp(\"../widthmod\", $PT/($NPT-1), 0)" }
+      segment { length = 0 expr = "sin($PT/(ch(\"points\")-1)*360*ch(\"numturns\")) * ch(\"width\")*chramp(\"../widthmod\", $PT/($NPT-1), 0)" }
     }
     channel ty {
       lefttype = extend
@@ -15,7 +15,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = "cos($PT/ch(\"points\")*360*ch(\"numturns\")) * ch(\"width\")*chramp(\"../widthmod\", $PT/($NPT-1), 0)" }
+      segment { length = 0 expr = "cos($PT/(ch(\"points\")-1)*360*ch(\"numturns\")) * ch(\"width\")*chramp(\"../widthmod\", $PT/($NPT-1), 0)" }
     }
     channel weight {
       lefttype = extend
