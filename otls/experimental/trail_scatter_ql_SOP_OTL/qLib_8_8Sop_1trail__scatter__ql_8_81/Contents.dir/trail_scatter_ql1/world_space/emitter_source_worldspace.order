@@ -1,0 +1,11 @@
+10
+store_spline_points__forwards
+objm_emitter_in_world_space
+shift_0
+shift_2
+shift_3
+OUT
+shift_1
+shift_-1
+store_spline_points__backwards
+switch_backwards_forwards

@@ -1,0 +1,13 @@
+Operator:     qLib::trail_scatter_ql::1
+Label:        Trail Scatter qL
+Path:         oplib:/qLib::Sop/trail_scatter_ql::1?qLib::Sop/trail_scatter_ql::1
+Icon:         DOP_particlefluidemitter
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Fri Jul 27 02:50:43 2012
+

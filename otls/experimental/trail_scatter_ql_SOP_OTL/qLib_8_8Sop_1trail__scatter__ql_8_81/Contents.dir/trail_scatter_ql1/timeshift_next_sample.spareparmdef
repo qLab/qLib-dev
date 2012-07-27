@@ -1,0 +1,28 @@
+    parm {
+	name	"method"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"frame"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"integerframe"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"time"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"slice"
+	label	"slice"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }

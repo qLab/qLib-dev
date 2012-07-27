@@ -1,0 +1,9 @@
+{
+    channel inc {
+      lefttype = extend
+      righttype = extend
+      default = 50
+      flags = 0
+      segment { length = 0 value = 50 50 expr = npoints(\"../objm_back_to_object_space\") }
+    }
+  }

@@ -1,0 +1,32 @@
+comment ""
+position 0.652941 0.305988
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "product"
+}
+inputsNamed3
+{
+1 	global1 2 1 "input1"
+2 	timeslice 0 1 "input2"
+3 	slice 0 1 "input3"
+}
+inputs
+{
+0 	global1 2 1
+1 	timeslice 0 1
+2 	slice 0 1
+}
+stat
+{
+  create 1337564799
+  modify 1337564859
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

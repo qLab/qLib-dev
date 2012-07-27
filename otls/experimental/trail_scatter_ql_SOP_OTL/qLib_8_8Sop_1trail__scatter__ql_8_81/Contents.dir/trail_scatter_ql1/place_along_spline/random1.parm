@@ -1,0 +1,16 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	i1d	)
+pos	[ 0	locks=0 ]	(	0	)
+pos_i	[ 0	locks=0 ]	(	0	)
+pos_v1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_p1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_n1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_c1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_v41d	[ 0	locks=0 ]	(	0	0	0	0	)
+pos_uf1d	[ 0	locks=0 ]	(	0	)
+pos_uv1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_up1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_un1d	[ 0	locks=0 ]	(	0	0	0	)
+pos_uc1d	[ 0	locks=0 ]	(	0	0	0	)
+}

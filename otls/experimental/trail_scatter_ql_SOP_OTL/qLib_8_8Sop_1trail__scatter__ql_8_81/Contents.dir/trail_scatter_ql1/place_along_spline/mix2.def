@@ -1,0 +1,32 @@
+comment ""
+position -4.65252 -2.05591
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+3 "blend"
+}
+inputsNamed3
+{
+0 	length_v_current 1 1 "input1"
+1 	length_v_prev 1 1 "input2"
+2 	fit1 10 1 "bias"
+}
+inputs
+{
+0 	length_v_current 0 1
+1 	length_v_prev 0 1
+2 	fit1 0 1
+}
+stat
+{
+  create 1337903445
+  modify 1337903509
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,49 @@
+{
+    channel ptsperarea {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../ptsperarea\") }
+    }
+    channel usedensity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../usedensity\") }
+    }
+    channel seed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../seed\") }
+    }
+    channel area {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../area\") }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attrib\") }
+    }
+    channel npts {
+      lefttype = extend
+      righttype = extend
+      default = 500
+      flags = 0
+      segment { length = 0 value = 500 500 expr = ch(\"../npts\") }
+    }
+    channel nptsperarea {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../nptsperarea\") }
+    }
+  }

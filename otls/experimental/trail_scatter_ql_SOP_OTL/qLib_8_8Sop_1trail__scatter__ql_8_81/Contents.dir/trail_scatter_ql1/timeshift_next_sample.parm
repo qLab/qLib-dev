@@ -1,0 +1,8 @@
+{
+version 0.8
+method	[ 0	locks=0 ]	(	"byframe"	)
+frame	[ 0	locks=0 ]	(	[ frame	21.99999 ] 	)
+integerframe	[ 0	locks=0 ]	(	"off"	)
+time	[ 0	locks=0 ]	(	[ time	68.041666666666671 ] 	)
+slice	[ 0	locks=0 ]	(	[ slice	1 ] 	)
+}

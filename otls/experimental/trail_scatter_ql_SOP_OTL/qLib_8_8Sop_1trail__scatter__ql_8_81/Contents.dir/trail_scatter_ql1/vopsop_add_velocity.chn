@@ -1,0 +1,15 @@
+{
+    channel timeslice {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      segment { length = 0 value = 24 24 expr = 1.0/ch(\"../fps\") }
+    }
+    channel slice {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "1.0 / ch(\"../substep\")" }
+    }
+  }

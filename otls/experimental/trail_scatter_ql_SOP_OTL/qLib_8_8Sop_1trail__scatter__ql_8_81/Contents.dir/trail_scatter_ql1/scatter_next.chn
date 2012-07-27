@@ -1,0 +1,141 @@
+{
+    channel intattrib {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/intattrib\") }
+    }
+    channel sprimuv {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"primuv\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/sprimuv\") }
+    }
+    channel doprimuv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/doprimuv\") }
+    }
+    channel sprimnum {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"primnum\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/sprimnum\") }
+    }
+    channel doprimnum {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/doprimnum\") }
+    }
+    channel sgroup {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"scatter\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/sgroup\") }
+    }
+    channel dogroup {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/dogroup\") }
+    }
+    channel nearname {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"ptarea\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/nearname\") }
+    }
+    channel nearcount {
+      lefttype = extend
+      righttype = extend
+      default = 4
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../scatter_current/nearcount\") }
+    }
+    channel donear {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"off\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/donear\") }
+    }
+    channel bias {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../scatter_current/bias\") }
+    }
+    channel blend {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"mult\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/blend\") }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"density\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/attrib\") }
+    }
+    channel area {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/area\") }
+    }
+    channel seed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/seed\") }
+    }
+    channel usedensity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scatter_current/usedensity\") }
+    }
+    channel nptsperarea {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../scatter_current/nptsperarea\") }
+    }
+    channel npts {
+      lefttype = extend
+      righttype = extend
+      default = 8000
+      flags = 0
+      segment { length = 0 value = 8000 8000 expr = ch(\"../scatter_current/npts\") }
+    }
+    channel ptsperarea {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/ptsperarea\") }
+    }
+    channel keep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../scatter_current/keep\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../scatter_current/group\") }
+    }
+  }

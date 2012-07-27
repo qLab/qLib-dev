@@ -1,0 +1,27 @@
+#icon: DOP/particlefluidemitter
+#context: sop
+#type:node
+
+= Trail Scatter qL =
+
+"""Scatters points on the motion trail of a geometry (for particle/fluid emission)."""
+
+...
+
+pros:
+- calulates velocity vectors both for obj and sop level transformations;
+
+
+
+cons/bugs:
+- (FIXED) animated 'seed' value is not yet supported
+- (FIXED) forwards/backwards get screwed up at substep 5, 10, (...)
+    - 'fix': hackety-hack at world_space/emitter_source_worldspace/slice param
+        - should be okay up to about 20 substeps ( blame floating point! :( )
+
+
+TODO:
+- jitter points along resulting velocity vectors
+- make sure emitter velocity has the same magnitude, independent of any substep settings (i think its ok)
+- velocity scale parameters should work in the negative range as well
+

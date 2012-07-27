@@ -1,0 +1,65 @@
+{
+    channel fps {
+      lefttype = extend
+      righttype = extend
+      default = 24
+      flags = 0
+      segment { length = 0 value = 24 24 expr = ch(\"../fps\") }
+    }
+    channel destmin {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../sfmin\") }
+    }
+    channel destmax {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../sfmax\") }
+    }
+    channel exponent {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../sfexp\") }
+    }
+    channel input_v_scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 9.0833301544189453
+      segment { length = 0 value = 1 1 expr = ch(\"../vscale_in\") }
+    }
+    channel v_mult {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vscale\")*ch(\"../substep\") }
+    }
+    channel nptsscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../nptsscale\") }
+    }
+    channel nptsscale_exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../nptsscale_exp\") }
+    }
+    channel input_v_jitterback {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"../vjitter_in\") / (ch(\"fps\")*ch(\"../substep\"))" }
+    }
+  }

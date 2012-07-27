@@ -1,0 +1,270 @@
+# Dialog script for qLib::trail_scatter_ql::1 automatically generated 07/27/12 02:50:39
+
+{
+    name	qLib::trail_scatter_ql::1
+    script	pfluid_emitter_pq
+    label	"Trail Scatter qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder0"
+	label	"Scatter"
+	tabbreak
+
+	parm {
+	    name	"nptsscale"
+	    label	"Num Points Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"nptsscale_exp"
+	    label	"Exponent"
+	    type	float
+	    default	{ "2" }
+	    range	{ 0.001 4 }
+	    export	none
+	}
+	parm {
+	    name	"ptsperarea"
+	    label	"Compute Number of Points"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"npts"
+	    label	"Number Of Points"
+	    type	integer
+	    default	{ "500" }
+	    disablewhen	"{ ptsperarea != 0 }"
+	    range	{ 0! 10000 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"nptsperarea"
+	    label	"Points per Area"
+	    type	float
+	    default	{ "10" }
+	    disablewhen	"{ ptsperarea == 0 }"
+	    range	{ 0! 100 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	import {
+	    label	"scatter settings"
+	    source	"op:scatter1"
+	    token	""
+	    mask	"ptsperarea npts nptsperarea usedensity seed area attrib"
+	    enable	1
+
+	    parm {
+		name	"usedensity"
+		label	"Use Density for Volumes"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usedensity" }
+		parmtag	{ "import_source" "op:scatter1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"seed"
+		label	"Random Seed"
+		type	integer
+		default	{ "0" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "seed" }
+		parmtag	{ "import_source" "op:scatter1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"area"
+		label	"Scatter Based On Primitive Area"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "area" }
+		parmtag	{ "import_source" "op:scatter1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"attrib"
+		label	"Alternate Attribute"
+		type	string
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "attrib" }
+		parmtag	{ "import_source" "op:scatter1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder2"
+	label	"Interpolator"
+
+	parm {
+	    name	"substep"
+	    label	"DOP Sub Steps"
+	    type	float
+	    default	{ "1" }
+	    range	{ 1! 10 }
+	    export	none
+	}
+	parm {
+	    name	"fps"
+	    label	"FPS"
+	    type	float
+	    default	{ "$FPS" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"addparticlesystem"
+	    label	"Add Particle System"
+	    type	toggle
+	    default	{ "1" }
+	    help	"Create particles from the scattered points. (The DOP fluid emitters only emit from particles.)"
+	    range	{ 0 1 }
+	    export	none
+	}
+	group {
+	    name	"folder3"
+	    label	"Segment"
+	    tabbreak
+
+	    parm {
+		name	"traildir"
+		label	"Trail Direction"
+		type	integer
+		default	{ "0" }
+		menu	{
+		    "0"	"Backwards"
+		    "1"	"Forwards"
+		}
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"sfmin"
+		label	"Subframe Min"
+		type	float
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"sfmax"
+		label	"Subframe Max"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"sfexp"
+		label	"Placement Exponent"
+		type	float
+		default	{ "1" }
+		range	{ 0.001 4 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"v_jitter"
+		label	"Jitter Along Velocity"
+		type	float
+		default	{ "1" }
+		help	"TODO"
+		disablewhen	"{ v_jitter == 1 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"v_jitter_seed"
+		label	"Jitter Seed"
+		type	float
+		default	{ "42" }
+		help	"TODO"
+		disablewhen	"{ v_jitter == 1 }"
+		range	{ 0 999 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder4"
+	    label	"Velocity"
+
+	    parm {
+		name	"vscale"
+		label	"Emit Velocity Scale"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vscale_in"
+		label	"Input Velocity Scale"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vjitter_in"
+		label	"Jitter Along Input V"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ vscale_in < 0.0001 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"velguides"
+		label	"Show Velocity Guides"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+}
