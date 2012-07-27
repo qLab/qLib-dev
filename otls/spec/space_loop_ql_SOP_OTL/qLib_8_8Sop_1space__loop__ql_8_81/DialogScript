@@ -1,0 +1,110 @@
+# Dialog script for qLib::space_loop_ql::1 automatically generated 01/02/12 23:36:47
+
+{
+    name	qLib::space_loop_ql::1
+    script	qLib::space_loop_ql::1
+    label	"Space Loop qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l vopsop_space_loop vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"xOrd"
+	label	"Transform Order"
+	type	integer
+	joinnext
+	default	{ "0" }
+	menu	{
+	    "srt"	"Scale Rotate Translate"
+	    "str"	"Scale Translate Rotate"
+	    "rst"	"Rotate Scale Translate"
+	    "rts"	"Rotate Translate Scale"
+	    "tsr"	"Translate Scale Rotate"
+	    "trs"	"Translate Rotate Scale"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rOrd"
+	label	"Rot.O."
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "xyz"	"Rx Ry Rz"
+	    "xzy"	"Rx Rz Ry"
+	    "yxz"	"Ry Rx Rz"
+	    "yzx"	"Ry Rz Rx"
+	    "zxy"	"Rz Rx Ry"
+	    "zyx"	"Rz Ry Rx"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"t"
+	label	"Translate"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"r"
+	label	"Rotate"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"s"
+	label	"Scale"
+	type	vector
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"p"
+	label	"Pivot"
+	type	vector
+	size	3
+	default	{ "0.5" "0.5" "0.5" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

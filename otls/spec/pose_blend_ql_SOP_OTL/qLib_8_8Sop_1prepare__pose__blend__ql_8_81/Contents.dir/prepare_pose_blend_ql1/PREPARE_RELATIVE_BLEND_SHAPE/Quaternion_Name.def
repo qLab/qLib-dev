@@ -1,0 +1,26 @@
+comment ""
+position -3.14862 -1.8495
+cachesize 1
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "quatname"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1296140975
+  modify 1298374329
+  author Mate@Mate.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0.6 0.4 1 
+delscript ""
+exprlanguage hscript
+end

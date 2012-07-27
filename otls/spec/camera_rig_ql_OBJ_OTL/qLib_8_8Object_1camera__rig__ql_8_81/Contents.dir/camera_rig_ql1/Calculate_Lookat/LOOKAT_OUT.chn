@@ -1,0 +1,20 @@
+{
+    channel look_at_rotationx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 0)" }
+    }
+    channel look_at_rotationy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 1)" }
+    }
+    channel look_at_rotationz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "point(\".\", 0, \"P\", 2)" }
+    }
+  }

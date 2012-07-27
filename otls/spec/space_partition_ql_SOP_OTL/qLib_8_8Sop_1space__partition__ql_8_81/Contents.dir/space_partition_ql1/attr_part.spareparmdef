@@ -1,0 +1,67 @@
+    parm {
+	name	"group"
+	baseparm
+	export	none
+	bindselector uveditselect "Create Attributes"
+	    "Select the geometry for which to create attribute and press Enter to complete. Hold down Alt to select from other objects."
+	    0 1 0xffffffff 1 grouptype 0
+    }
+    parm {
+	name	"grouptype"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"name"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"varname"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"class"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"type"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"size"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"default"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"writevalues"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"value"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"string"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"d"
+	label	"divs"
+	type	intvector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 1! 8 }
+	export	none
+    }

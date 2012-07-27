@@ -1,6 +1,6 @@
-Operator:     uv_tile_ql
+Operator:     qLib::uv_tile_ql::1
 Label:        UV Tile qL
-Path:         oplib:/Sop/uv_tile_ql?Sop/uv_tile_ql
+Path:         oplib:/qLib::Sop/uv_tile_ql::1?qLib::Sop/uv_tile_ql::1
 Icon:         opdef:/Cop2/edgeblur?Icon
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       false
 Python:       true
 Empty:        false
-Modified:     Mon Jun 27 20:52:08 2011
+Modified:     Fri Jul 27 12:26:08 2012
 

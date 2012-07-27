@@ -1,6 +1,6 @@
-Operator:     checker_3d_ql
+Operator:     qLib::checker_3d_ql::1
 Label:        Checker 3D qL
-Path:         oplib:/Sop/checker_3d_ql?Sop/checker_3d_ql
+Path:         oplib:/qLib::Sop/checker_3d_ql::1?qLib::Sop/checker_3d_ql::1
 Icon:         SHOP_gingham
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Apr  9 01:20:51 2012
+Modified:     Fri Jul 27 12:24:16 2012
 

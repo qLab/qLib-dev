@@ -1,0 +1,12 @@
+Vop/rotate //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/rotate otls/OPlibVop.otl
+Vop/lookat //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/lookat otls/OPlibVop.otl
+Vop/extractxform //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/extractxform otls/OPlibVop.otl
+Vop/m3tom4 //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/m3tom4 otls/OPlibVop.otl
+Vop/degtorad //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/degtorad otls/OPlibVop.otl
+Vop/align //Mlnfs/Sidefx/Houdini 12.0.672/houdini/otls/OPlibVop.otl
+Vop/align otls/OPlibVop.otl

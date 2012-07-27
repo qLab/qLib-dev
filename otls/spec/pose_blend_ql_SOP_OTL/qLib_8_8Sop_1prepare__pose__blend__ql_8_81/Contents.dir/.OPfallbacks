@@ -1,0 +1,6 @@
+Vop/importattrib /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/invert /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/invert otls/OPlibVop.otl
+Vop/quattomatx /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/quattomatx otls/OPlibVop.otl
