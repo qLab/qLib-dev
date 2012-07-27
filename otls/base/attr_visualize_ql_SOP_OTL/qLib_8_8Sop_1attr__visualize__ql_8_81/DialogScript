@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 07/07/12 04:15:19
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 07/28/12 01:40:32
 
 {
     name	qLib::attr_visualize_ql::1
@@ -266,7 +266,7 @@
 	    label	"Attribute Component"
 	    type	integer
 	    nolabel
-	    default	{ "0" }
+	    default	{ "3" }
 	    disablewhen	"{ color_vis == 0 } { attr_type != 2 }"
 	    menu	{
 		"0"	"X"
@@ -281,9 +281,8 @@
 	}
 	parm {
 	    name	"srcmin"
-	    label	"Value Range"
+	    label	"Value Min"
 	    type	float
-	    joinnext
 	    default	{ "0" }
 	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 10 }
@@ -293,13 +292,34 @@
 	}
 	parm {
 	    name	"srcmax"
-	    label	"Max Value"
+	    label	"Value Max"
 	    type	float
-	    nolabel
 	    default	{ "1" }
 	    disablewhen	"{ color_vis == 0 }"
-	    range	{ 0 10 }
+	    range	{ 0 4 }
 	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcexp"
+	    label	"Exponent"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0.1 8 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"srcrepeat"
+	    label	"Repeat"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
@@ -320,6 +340,30 @@
 	    parmtag	{ "rampcolortype" "hsv" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "rampbasisdefault" "linear" }
+	}
+	parm {
+	    name	"range_in"
+	    label	"In/Out Range Mult"
+	    type	float
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"range_out"
+	    label	"Out"
+	    type	float
+	    nolabel
+	    default	{ "0.5" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
 	    name	"display_gamma"

@@ -1,4 +1,4 @@
-18
+33
 global1
 output1
 rampparm1
@@ -17,3 +17,18 @@ attr_int
 pow1
 display_gamma
 vec_length
+efit1
+src_exp
+pow2
+switch_repeat
+src_repeat
+inttofloat1
+multiply1
+less_than_min_
+more_than_max_
+is_outside_range_
+mix1
+range_in
+range_out
+inline_repeat
+and1

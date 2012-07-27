@@ -4,9 +4,31 @@
 
 = Attr Visualize qL =
 
-*Version 0.0.4*
+*Version 0.0.5*
 
 """Various visualization types for geometry attributes."""
+
+This node can perform various attribute visualizations:
+
+- Display attribute values on geometry, using a color ramp
+- Show vector attributes (as lines; multiple vector attributes can be displayed)
+- Show 'pscale'-type attribute values (by copying appropriately-scaled geometry to each point)
+
+Combinations are also supported, e.g. you can display velocity vectors and have them colored
+according to their length, etc.
+
+TIP:
+    This node is very useful as "visual checkpoint" when constructing complex effects involving
+    more attributes. It's good practice to keep visualizer node(s) at important points of
+    the node tree.
+
+NOTE:
+    By default the primitive-count limit is enabled (to avoid hanging Houdini when connecting this node
+    to heavy geometry). This setting also deletes all "unused" points, so you might see some unexpected
+    results if applied to point clouds.
+
+    Use the _Preprocessing/Decimation -> Presets_ menu to quickly switch between the most frequently
+    used settings. For visualizing point clouds, choose _Point Cloud Mode_.
 
 
 @Parameters
@@ -57,11 +79,19 @@
             Name of the attribute to visualize (a single attribute name only), as well as
             the attribute type (integer, float, vector) and component (X, Y, Z or length).
 
-        Value Range:
+        Value Min, Max, Exponent:
             The value range the color ramp will be mapped to.
+
+        Repeat:
+            The ramp will be "repeated" for values outside the specified range
+            (so values outside the visualization range can still be distinguished).
 
         Attribute Color Ramp:
             The ramp representing the range of values.
+
+        In/Out Range Mult:
+            Intensity multiplier (brightness) both for values inside and outside the
+            visualization range. By default outside-range colors have an 50% brightness (`0.5`).
 
         Display Gamma:
             Color-correction for non-linear viewport settings. Set this gamma value to
@@ -98,11 +128,18 @@
 @related
     - [Node:sop/color]
     - [Node:sop/copy]
-    - [Point Attr qL|Node:sop/pointattr_ql]
-    - [Vector qL|Node:sop/vector_ql]
+    - [Point Attr qL|Node:qLib::sop/pointattr_ql::1]
+    - [Vector qL|Node:qLib::sop/vector_ql::1]
 
 
 @Release_Notes Release Notes
+
+    0.0.5:
+        _Floats & Colors_ section improvements:
+        - Added exponent (gamma) to value mapper
+        - Added `Repeat` toggle
+        - Added intensity multipliers for within and outside the value range
+        - The _length_ component is now the default for vector attributes
 
     0.0.4:
         - Added geometry reduction/limit safeguard
