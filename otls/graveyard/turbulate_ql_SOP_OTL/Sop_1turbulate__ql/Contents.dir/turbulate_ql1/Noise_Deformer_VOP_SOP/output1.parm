@@ -1,6 +1,0 @@
-{
-version 0.8
-contexttype	[ 0	locks=0 ]	(	sop	)
-outputcodelast	[ 0	locks=0 ]	(	"on"	)
-parmorder	[ 0	locks=0 ]	(	"Noise_Type_Menu Along_Normal_Switch trs xyz trans rot scale pivot rough atten Displace_By_Length Amplitude_XYZ Amplitude_Global CLAMP/Clamp_Switch CLAMP/Clamp_Min CLAMP/Clamp_Max FALLOFF/Falloff_Switch FALLOFF/trs1 FALLOFF/xyz1 FALLOFF/trans1 FALLOFF/rot1 FALLOFF/scale1 FALLOFF/pivot1 FALLOFF/Gamma"	)
-}
