@@ -30,12 +30,12 @@ N:
     the screen filling properties of the grid.
 
 TIP:
-    Use the object level wrapper [Camera Plane OBJ|Node:obj/camera_plane_ql] to set up a simple camera plane belonging to a camera faster.
+    Use the object level wrapper [Camera Plane OBJ|Node:obj/qLib::camera_plane_ql::1] to set up a simple camera plane belonging to a camera faster.
 
 
 @related
     - [Node:obj/cam]
-    - [Camera Frusrum qL|Node:sop/camera_frustrum_ql]
+    - [Camera Frusrum qL|Node:sop/qLib::camera_frustrum_ql::1]
 
 
 @Parameters

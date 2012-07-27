@@ -6,10 +6,10 @@
 
 *Version 0.0.1*
 
-"""Convenience wrapper around the [Camera Plane SOP|Node:sop/camera_plane_ql]."""
+"""Convenience wrapper around the [Camera Plane SOP|Node:sop/qLib::camera_plane_ql::1]."""
 
 If not indicated otherwise the parameters are direct references to the respective parameters
-of the [Camera Plane SOP|Node:sop/camera_plane_ql].
+of the [Camera Plane SOP|Node:sop/qLib::camera_plane_ql::1].
 
 @Parameters
     Viewport Display:
