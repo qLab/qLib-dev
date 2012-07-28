@@ -1,0 +1,9 @@
+{
+    channel delattribs {
+      lefttype = extend
+      righttype = extend
+      defaultString = "\"* ^v\""
+      flags = 0
+      segment { length = 0 expr = chs(\"../delattribs\") }
+    }
+  }
