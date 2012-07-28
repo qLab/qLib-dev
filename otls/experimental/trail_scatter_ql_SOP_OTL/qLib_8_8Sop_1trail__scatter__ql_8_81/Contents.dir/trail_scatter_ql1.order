@@ -1,4 +1,4 @@
-25
+26
 world_space
 place_along_spline
 GEO_emitter_source
@@ -24,3 +24,4 @@ switch_if_zero_percentage
 empty_geo
 apply_num_pts_scale
 scatter_next
+switch_show_geom_guide

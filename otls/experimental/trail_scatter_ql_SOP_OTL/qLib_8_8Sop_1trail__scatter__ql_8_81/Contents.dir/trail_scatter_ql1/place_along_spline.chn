@@ -62,4 +62,36 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = "ch(\"../vjitter_in\") / (ch(\"fps\")*ch(\"../substep\"))" }
     }
+    channel current_time {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $T }
+    }
+    channel timestep {
+      lefttype = extend
+      righttype = extend
+      default = 0.041000001132488251
+      flags = 0
+      segment { length = 0 value = 0.041000001132488251 0.041000001132488251 expr = "1.0 / (ch(\"fps\")*ch(\"../substep\"))" }
+    }
+    channel direction {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../traildir\") }
+    }
+    channel add_birthtime {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../add_birthtime\") }
+    }
+    channel birthtime_attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"birthtime\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../birthtime_attrib\") }
+    }
   }

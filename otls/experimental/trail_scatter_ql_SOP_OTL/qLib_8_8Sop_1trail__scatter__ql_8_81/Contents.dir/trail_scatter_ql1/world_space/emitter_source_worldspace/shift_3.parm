@@ -1,7 +1,7 @@
 {
 version 0.8
 method	[ 0	locks=0 ]	(	"byframe"	)
-frame	[ 8	locks=0 ]	(	[ frame	1634.3999899998364 ] 	)
+frame	[ 8	locks=0 ]	(	[ frame	3.9999899999995998 ] 	)
 integerframe	[ 0	locks=0 ]	(	"off"	)
 time	[ 0	locks=0 ]	(	[ time	68.041666666666671 ] 	)
 }

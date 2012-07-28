@@ -1,4 +1,4 @@
-# Dialog script for qLib::trail_scatter_ql::1 automatically generated 07/27/12 02:50:39
+# Dialog script for qLib::trail_scatter_ql::1 automatically generated 07/28/12 18:47:40
 
 {
     name	qLib::trail_scatter_ql::1
@@ -140,6 +140,14 @@
 	    export	none
 	}
 	parm {
+	    name	"time"
+	    label	"Time"
+	    type	float
+	    default	{ "$T" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
 	    name	"addparticlesystem"
 	    label	"Add Particle System"
 	    type	toggle
@@ -218,6 +226,31 @@
 		range	{ 0 999 }
 		export	none
 	    }
+	    parm {
+		name	"add_birthtime"
+		label	"add_birthtime"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "autoscope" "0000000000000000" }
+		parmtag	{ "parmvop" "1" }
+	    }
+	    parm {
+		name	"birthtime_attrib"
+		label	"Birth Time Attrib"
+		type	string
+		default	{ "birthtime" }
+		disablewhen	"{ add_birthtime == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "autoscope" "0000000000000000" }
+		parmtag	{ "parmvop" "1" }
+	    }
 	}
 
 	group {
@@ -267,4 +300,13 @@
 
     }
 
+    parm {
+	name	"geoguides"
+	label	"Show Emitter Geometry as Guide"
+	type	toggle
+	default	{ "1" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
 }
