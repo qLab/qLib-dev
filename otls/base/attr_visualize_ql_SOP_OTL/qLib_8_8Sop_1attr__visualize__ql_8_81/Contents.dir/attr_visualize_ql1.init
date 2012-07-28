@@ -1,2 +1,2 @@
-type = attr_visualize_ql
+type = qLib::attr_visualize_ql::1
 matchesdef = 0

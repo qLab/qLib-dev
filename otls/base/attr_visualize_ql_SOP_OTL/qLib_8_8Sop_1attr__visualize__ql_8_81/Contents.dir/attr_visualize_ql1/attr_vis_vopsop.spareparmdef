@@ -47,7 +47,7 @@
 	name	"attr_comp"
 	label	"Attribute Component"
 	type	integer
-	default	{ "0" }
+	default	{ "3" }
 	menu	{
 	    "0"	"X"
 	    "1"	"Y"
@@ -80,6 +80,26 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
+	name	"src_exp"
+	label	"src_exp"
+	type	float
+	default	{ "1" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"src_repeat"
+	label	"src_repeat"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"attr_ramp"
 	label	"Attribute Ramp"
 	type	ramp_rgb
@@ -101,6 +121,26 @@
 	type	float
 	default	{ "2.2" }
 	range	{ 0.01 4 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"range_out"
+	label	"range_out"
+	type	float
+	default	{ "0.25" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"range_in"
+	label	"range_in"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
