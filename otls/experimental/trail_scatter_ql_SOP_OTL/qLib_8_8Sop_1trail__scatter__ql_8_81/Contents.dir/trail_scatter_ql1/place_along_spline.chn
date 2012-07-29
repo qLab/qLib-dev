@@ -81,6 +81,19 @@
       flags = 0
       segment { length = 0 expr = ch(\"../traildir\") }
     }
+    channel add_phase {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../add_phase\") }
+    }
+    channel phase_attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"phase\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../phase_attrib\") }
+    }
     channel add_birthtime {
       lefttype = extend
       righttype = extend

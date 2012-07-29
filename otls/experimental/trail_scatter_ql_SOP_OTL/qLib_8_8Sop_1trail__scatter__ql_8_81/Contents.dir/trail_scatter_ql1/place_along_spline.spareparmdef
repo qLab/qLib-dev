@@ -163,6 +163,27 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
+	name	"add_phase"
+	label	"add_phase"
+	type	toggle
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"phase_attrib"
+	label	"phase_attrib"
+	type	string
+	default	{ "phase" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"add_birthtime"
 	label	"add_birthtime"
 	type	toggle

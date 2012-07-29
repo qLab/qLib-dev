@@ -1,4 +1,4 @@
-# Dialog script for qLib::trail_scatter_ql::1 automatically generated 07/28/12 18:47:40
+# Dialog script for qLib::trail_scatter_ql::1 automatically generated 07/29/12 18:30:02
 
 {
     name	qLib::trail_scatter_ql::1
@@ -21,7 +21,7 @@
 
 	parm {
 	    name	"nptsscale"
-	    label	"Num Points Scale"
+	    label	"Num Points Scale %%"
 	    type	float
 	    default	{ "1" }
 	    range	{ 0 1 }
@@ -123,39 +123,52 @@
 	name	"folder2"
 	label	"Interpolator"
 
-	parm {
-	    name	"substep"
-	    label	"DOP Sub Steps"
-	    type	float
-	    default	{ "1" }
-	    range	{ 1! 10 }
-	    export	none
+	group {
+	    name	"folder5"
+	    label	"Settings"
+
+	    parm {
+		name	"substep"
+		label	"DOP Sub Steps"
+		type	float
+		default	{ "1" }
+		range	{ 1! 10 }
+		export	none
+	    }
+	    parm {
+		name	"addparticlesystem"
+		label	"Add Particle System"
+		type	toggle
+		default	{ "1" }
+		help	"Create particles from the scattered points. (The DOP fluid emitters only emit from particles.)"
+		range	{ 0 1 }
+		export	none
+	    }
 	}
-	parm {
-	    name	"fps"
-	    label	"FPS"
-	    type	float
-	    default	{ "$FPS" }
-	    range	{ 0 10 }
-	    export	none
-	}
-	parm {
-	    name	"time"
+
+	group {
+	    name	"folder6"
 	    label	"Time"
-	    type	float
-	    default	{ "$T" }
-	    range	{ 0 10 }
-	    export	none
+	    tabbreak
+
+	    parm {
+		name	"fps"
+		label	"FPS"
+		type	float
+		default	{ "$FPS" }
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"time"
+		label	"Time"
+		type	float
+		default	{ "$T" }
+		range	{ 0 10 }
+		export	none
+	    }
 	}
-	parm {
-	    name	"addparticlesystem"
-	    label	"Add Particle System"
-	    type	toggle
-	    default	{ "1" }
-	    help	"Create particles from the scattered points. (The DOP fluid emitters only emit from particles.)"
-	    range	{ 0 1 }
-	    export	none
-	}
+
 	group {
 	    name	"folder3"
 	    label	"Segment"
@@ -227,6 +240,31 @@
 		export	none
 	    }
 	    parm {
+		name	"add_phase"
+		label	"add_phase"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"phase_attrib"
+		label	"Birth Phase Attrib"
+		type	string
+		default	{ "phase" }
+		disablewhen	"{ add_phase == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
 		name	"add_birthtime"
 		label	"add_birthtime"
 		type	toggle
@@ -236,8 +274,8 @@
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
-		parmtag	{ "autoscope" "0000000000000000" }
 		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
 		name	"birthtime_attrib"
@@ -248,18 +286,18 @@
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "shaderparmcontexts" "sop" }
-		parmtag	{ "autoscope" "0000000000000000" }
 		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	}
 
 	group {
 	    name	"folder4"
-	    label	"Velocity"
+	    label	"Velocity Components"
 
 	    parm {
 		name	"vscale"
-		label	"Emit Velocity Scale"
+		label	"Emit Velocity %%"
 		type	float
 		default	{ "1" }
 		range	{ 0 1 }
@@ -270,7 +308,7 @@
 	    }
 	    parm {
 		name	"vscale_in"
-		label	"Input Velocity Scale"
+		label	"Input Velocity %%"
 		type	float
 		default	{ "1" }
 		range	{ 0 1 }
@@ -288,25 +326,25 @@
 		range	{ 0 1 }
 		export	none
 	    }
-	    parm {
-		name	"velguides"
-		label	"Show Velocity Guides"
-		type	toggle
-		default	{ "0" }
-		range	{ 0 1 }
-		export	none
-	    }
 	}
 
+	parm {
+	    name	"geoguides"
+	    label	"Show Emitter Geometry as Guide"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"velguides"
+	    label	"Show Velocity Guides"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
     }
 
-    parm {
-	name	"geoguides"
-	label	"Show Emitter Geometry as Guide"
-	type	toggle
-	default	{ "1" }
-	range	{ 0! 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
 }

@@ -4,13 +4,73 @@
 
 = Trail Scatter qL =
 
+*Version 0.0.2*
+
 """Scatters points on the motion trail of a geometry (for particle/fluid emission)."""
 
-...
+This node is a general-purpose particle emission helper, to support artifact-less
+emission from geometry. It works with all particle types (regular POP, particle fluids, etc.)
+
+TIP:
+    When used as particle fluid emitter, it is faster, more controllable, and gives more
+    accurate results than the built-in (volume-based) fluid emitters (in Houdini 12.0.xxx).
+
+    To use it with particle fluids, create the fluid emitter as usual (from the shelf),
+    then the emitter SOP network replace the fluid source SOP with this node.
+
+(...)
+
+@parameters
+    Scatter:
+
+        Num Points Scale %:
+            This value acts as a multiplier on the number of scattered points.
+            It can be used to apply gradual changes to particle emission amounts.
+
+            NOTE:
+                Use this value for animating emission (this is explicitly designed for that purpose).
+                Do *not* animate the _Number of Points_ parameter.
+
+        Exponent:
+            An additional exponent value applied to the multiplier. (The default value of `2`
+            results of linear changes to the above parameter to appear linear "visually".)
+
+        See the [Scatter SOP|Node:sop/scatter] help for other parameter descriptions.
+
+        (Note taht for deforming geometry it's usually better to turn off
+        _Scatter Based on Primitive Area_.)
+
+
+    Interpolator:
+
+        DOP Sub Steps:
+            Substep (or oversampling) setting of the related DOP (or POP) simulation.
+            Make sure the values match (the easiest way of it is to link the DOP or POP
+            network's _Substep_ or _Oversampling_ value to this parameter).
+
+        FPS, Time:
+            The current frames-per-second settings and the current time to pass along to
+            the interpolation function. Usually there's no need to touch these.
+
+        Add Particle System:
+            Creates the resulting points as a particle system. This is required for particle
+            fluids (for the DOP network emitter).
+
+    Segment:
+        ...
+
+    Velocity Components:
+        ...
+
+----
+
 
 pros:
+- emission from the generated point cloud gives gap-free emitted particles;
 - calulates velocity vectors both for obj and sop level transformations;
+- it is faster and more accurate fluid emitter than the built-in one;
 
+practical
 
 
 cons/bugs:
@@ -25,3 +85,17 @@ TODO:
 - make sure emitter velocity has the same magnitude, independent of any substep settings (i think its ok)
 - velocity scale parameters should work in the negative range as well
 
+----
+
+@related
+    - [Node:sop/scatter]
+    - [Time Blend qL (SOP)|Node:sop/qLib::timeblend_ql::1]
+
+@release_notes Release Notes
+
+    Version 0.0.2:
+        Added support for creating birth time and birth phase attributes on the generated points
+        (allows for subframe-exact particle interpolation).
+
+    Version 0.0.1:
+        The first version included in qLib.
