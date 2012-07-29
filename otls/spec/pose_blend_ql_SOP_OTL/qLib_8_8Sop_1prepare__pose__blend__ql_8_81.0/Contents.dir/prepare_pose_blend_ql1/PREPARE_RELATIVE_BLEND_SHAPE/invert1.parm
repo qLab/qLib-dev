@@ -1,7 +1,0 @@
-{
-version 0.8
-signature	[ 0	locks=0 ]	(	m3	)
-val	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
-val_m3	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
-val_f	[ 0	locks=0 ]	(	1	)
-}

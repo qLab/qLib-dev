@@ -1,9 +1,0 @@
-{
-version 0.8
-color	[ 8	locks=0 ]	(	[ colorr	0 ] 	[ colorg	0.44999998800000002 ] 	[ colorb	0.89999997600000003 ] 	)
-scale	[ 0	locks=0 ]	(	0.80000001200000004	)
-displayicon	[ 0	locks=0 ]	(	"icon"	)
-controltype	[ 0	locks=0 ]	(	"circles"	)
-orientation	[ 0	locks=0 ]	(	"y"	)
-shadedmode	[ 0	locks=0 ]	(	"off"	)
-}
