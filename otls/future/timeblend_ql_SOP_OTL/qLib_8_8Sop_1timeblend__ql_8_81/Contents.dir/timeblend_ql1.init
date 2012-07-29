@@ -1,2 +1,2 @@
-type = timeblend_ql
+type = qLib::timeblend_ql::1
 matchesdef = 0

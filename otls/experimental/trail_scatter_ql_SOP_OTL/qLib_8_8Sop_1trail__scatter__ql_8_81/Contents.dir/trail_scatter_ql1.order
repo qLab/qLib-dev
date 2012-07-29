@@ -1,4 +1,4 @@
-26
+27
 world_space
 place_along_spline
 GEO_emitter_source
@@ -25,3 +25,4 @@ empty_geo
 apply_num_pts_scale
 scatter_next
 switch_show_geom_guide
+vopsop1
