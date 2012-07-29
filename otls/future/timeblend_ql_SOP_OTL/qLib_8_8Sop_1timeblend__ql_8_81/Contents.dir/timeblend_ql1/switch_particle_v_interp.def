@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 0.595472 -1.54072
+position 0.595472 -2.65129
 cachesize 1
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -11,17 +11,17 @@ outputsNamed3
 inputsNamed3
 {
 0 	sblend_regular 2 1 "input1"
-1 	vopsop_move_dying_particles 3 1 "input2"
+1 	delete_unborn 1 1 "input2"
 }
 inputs
 {
 0 	sblend_regular 0 1
-1 	vopsop_move_dying_particles 0 1
+1 	delete_unborn 0 1
 }
 stat
 {
   create 1334850489
-  modify 1337377978
+  modify 1343573924
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

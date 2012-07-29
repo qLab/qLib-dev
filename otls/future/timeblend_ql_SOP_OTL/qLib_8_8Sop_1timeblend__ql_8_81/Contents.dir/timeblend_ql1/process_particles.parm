@@ -1,0 +1,20 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+timestep	[ 0	locks=0 ]	(	[ timestep	0.041666666666666664 ] 	)
+phase	[ 0	locks=0 ]	(	[ phase	0 ] 	)
+v_scale	[ 0	locks=0 ]	(	[ v_scale	0 ] 	)
+near_death_attrib	[ 0	locks=0 ]	(	[ near_death_attrib	0 ] 	)
+nd_attrib	[ 0	locks=0 ]	(	[ nd_attrib	near_death ] 	)
+nd_min	[ 0	locks=0 ]	(	[ nd_min	0 ] 	)
+nd_max	[ 0	locks=0 ]	(	[ nd_max	1 ] 	)
+vel_interp	[ 0	locks=0 ]	(	[ vel_interp	0 ] 	)
+vel_attrib	[ 0	locks=0 ]	(	`chs(\"../velattr\")`	)
+do_unborn	[ 0	locks=0 ]	(	[ do_unborn	1 ] 	)
+current_time	[ 0	locks=0 ]	(	[ current_time	0 ] 	)
+birthtime_attrib	[ 0	locks=0 ]	(	[ birthtime_attrib	birthtime ] 	)
+unborn_group_name	[ 0	locks=0 ]	(	__unborn	)
+}
