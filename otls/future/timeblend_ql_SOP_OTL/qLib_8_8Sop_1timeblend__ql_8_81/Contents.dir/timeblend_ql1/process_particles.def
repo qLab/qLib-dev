@@ -7,7 +7,7 @@ during a sequence blend, and offsets them along their
 velocity vector."
 position 3.9509 -0.468249
 cachesize 1
-connectornextid 9
+connectornextid 10
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
@@ -17,18 +17,18 @@ inputsNamed3
 {
 0 	no_regular_blend 0 1 "input1"
 1 	floor_frame 1 1 "input2"
-2 	sblend_max 2 1 "input3"
+2 	switch_detect_dying 0 1 "input3"
 }
 inputs
 {
 0 	no_regular_blend 0 1
 1 	floor_frame 0 1
-2 	sblend_max 0 1
+2 	switch_detect_dying 0 1
 }
 stat
 {
   create 1334843624
-  modify 1343573144
+  modify 1343586655
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

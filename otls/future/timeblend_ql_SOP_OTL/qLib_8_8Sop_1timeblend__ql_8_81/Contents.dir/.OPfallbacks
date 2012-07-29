@@ -1,8 +1,8 @@
-Vop/addattrib /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
 Vop/addgroup /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/addgroup otls/OPlibVop.otl
 Vop/importattrib /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl
 Vop/fit /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/fit otls/OPlibVop.otl
+Vop/addattrib /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl

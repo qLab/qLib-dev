@@ -1,4 +1,4 @@
-# Dialog script for qLib::timeblend_ql::1 automatically generated 07/29/12 18:01:43
+# Dialog script for qLib::timeblend_ql::1 automatically generated 07/29/12 20:46:04
 
 {
     name	qLib::timeblend_ql::1
@@ -166,6 +166,8 @@
 		name	"near_death_attrib"
 		label	"Add Near-Death Attribute"
 		type	toggle
+		nolabel
+		joinnext
 		default	{ "off" }
 		disablewhen	"{ particle_interp == 0 }"
 		range	{ 0 1 }
@@ -191,8 +193,9 @@
 	    }
 	    parm {
 		name	"nd_min"
-		label	"Close-to-Life Value"
+		label	"Life->Death Values"
 		type	float
+		joinnext
 		default	{ "0" }
 		disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
 		range	{ 0 1 }
@@ -204,12 +207,23 @@
 		name	"nd_max"
 		label	"Close-to-Death Value"
 		type	float
+		nolabel
 		default	{ "1" }
 		disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"labelparm"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "NOTE: Velocity interpolation already enabled." }
+		hidewhen	"{ vel_interp == 0 }"
+		range	{ 0 1 }
+		export	none
 	    }
 	}
 

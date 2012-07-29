@@ -1,4 +1,4 @@
-13
+15
 floor_frame
 ceil_frame
 IN
@@ -12,3 +12,5 @@ OUT
 switch_particle_v_interp
 no_regular_blend
 delete_unborn
+switch_detect_dying
+nope

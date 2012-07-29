@@ -4,7 +4,7 @@
 
 = TimeBlend qL =
 
-*Version 0.0.3*
+*Version 0.0.4*
 
 """An enhanced version of the original [Node:sop/timeblend] node."""
 
@@ -126,6 +126,10 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.4:
+        - Minor UI changes
+        - Optimization: should be way faster when not using Interpolate Dying Particles (needs TESTING if it works as expected)
 
     Version 0.0.3:
         - Added "Delete Unborn Particles" feature

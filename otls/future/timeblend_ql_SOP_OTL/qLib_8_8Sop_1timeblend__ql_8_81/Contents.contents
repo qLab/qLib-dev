@@ -248,5 +248,15 @@ timeblend_ql1/delete_unborn.def
 timeblend_ql1/delete_unborn.chn
 timeblend_ql1/delete_unborn.parm
 timeblend_ql1/delete_unborn.userdata
+timeblend_ql1/switch_detect_dying.init
+timeblend_ql1/switch_detect_dying.def
+timeblend_ql1/switch_detect_dying.chn
+timeblend_ql1/switch_detect_dying.parm
+timeblend_ql1/switch_detect_dying.userdata
+timeblend_ql1/nope.init
+timeblend_ql1/nope.def
+timeblend_ql1/nope.spareparmdef
+timeblend_ql1/nope.parm
+timeblend_ql1/nope.userdata
 timeblend_ql1.order
 timeblend_ql1.net
