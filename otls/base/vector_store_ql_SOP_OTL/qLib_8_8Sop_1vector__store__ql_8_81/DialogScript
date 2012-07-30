@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_store_ql::1 automatically generated 07/27/12 01:58:24
+# Dialog script for qLib::vector_store_ql::1 automatically generated 07/30/12 22:21:59
 
 {
     name	qLib::vector_store_ql::1
@@ -18,7 +18,8 @@
 	name	"mode"
 	label	"Mode"
 	type	integer
-	default	{ "0" }
+	default	{ "ch(\"op_mode1\")" }
+	disablewhen	"{ mode != -1 }"
 	menu	{
 	    "0"	"Save  (Vectors to Points)"
 	    "1"	"Restore  (Points to Vectors)"
@@ -26,92 +27,99 @@
 	range	{ 0 10 }
 	export	none
     }
-    group {
-	name	"folder0"
-	label	"Settings"
-	tabbreak
+    parm {
+	name	"attrs"
+	label	"Vector Attributes"
+	type	string
+	joinnext
+	default	{ "N" }
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().inputs()[0].geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs \\" ]
+	    [ "        if a.name()!='P' \\" ]
+	    [ "        and a.size()==3 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"grpprefix"
+	label	"Grp Prefix"
+	type	string
+	default	{ "_vec_" }
+	menureplace	{
+	    "_vec_"	"_vec_"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"length"
+	label	"Length Multiplier"
+	type	float
+	default	{ "0.1" }
+	range	{ 0 1 }
+	export	none
+    }
+    groupradio {
+	name	"op_mode"
+	label	"Save"
 
 	parm {
-	    name	"attrs"
-	    label	"Vector Attributes"
-	    type	string
-	    default	{ "N" }
-	    menutoggle	{
-		[ "r = []" ]
-		[ "" ]
-		[ "try:" ]
-		[ "    attrs = hou.pwd().inputs()[0].geometry().pointAttribs()" ]
-		[ "    attrs = [ a.name() for a in attrs if a.name()!='P' and a.size()==3 ]" ]
-		[ "    " ]
-		[ "    for a in attrs:" ]
-		[ "        r.append(a)" ]
-		[ "        r.append(a)" ]
-		[ "except:" ]
-		[ "    pass" ]
-		[ "" ]
-		[ "return r" ]
-		language	python
-	    }
+	    name	"delattr"
+	    label	"Delete Source Attributes"
+	    type	toggle
+	    default	{ "1" }
+	    disablewhen	"{ mode != 0 }"
 	    range	{ 0 1 }
 	    export	none
 	}
-	parm {
-	    name	"grpprefix"
-	    label	"Group Prefix"
-	    type	string
-	    default	{ "_vec_" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"length"
-	    label	"Length Multiplier"
-	    type	float
-	    default	{ "0.1" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	group {
-	    name	"folder0_1"
-	    label	"Save"
-	    hidewhentab	"{ mode != 0 }"
-
-	    parm {
-		name	"delattr"
-		label	"Delete Source Attributes"
-		type	toggle
-		default	{ "1" }
-		disablewhen	"{ mode != 0 }"
-		range	{ 0 1 }
-		export	none
-	    }
-	}
-
-	group {
-	    name	"folder0_2"
-	    label	"Restore"
-	    hidewhentab	"{ mode != 1 }"
-
-	    parm {
-		name	"norm"
-		label	"Normalize Vectors"
-		type	toggle
-		default	{ "0" }
-		disablewhen	"{ mode != 1 }"
-		range	{ 0 1 }
-		export	none
-	    }
-	    parm {
-		name	"outlen"
-		label	"Output Length Mult"
-		type	float
-		default	{ "1" }
-		disablewhen	"{ mode != 1 }"
-		range	{ 0.01 4 }
-		export	none
-	    }
-	}
-
     }
 
+    groupradio {
+	name	"op_mode_1"
+	label	"Restore"
+
+	parm {
+	    name	"norm"
+	    label	"Normalize Vectors"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"outlen"
+	    label	"Output Length Mult"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ mode != 1 }"
+	    range	{ 0.01 4 }
+	    export	none
+	}
+    }
+
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "not good..." }
+	hidewhen	"{ op_mode1 != mode }"
+	range	{ 0 1 }
+	export	none
+    }
 }

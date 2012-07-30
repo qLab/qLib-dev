@@ -2,7 +2,7 @@ sopflags sopflags =
 comment ""
 position 5.0748 1.98176
 cachesize 1
-connectornextid 8
+connectornextid 11
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
@@ -10,11 +10,9 @@ outputsNamed3
 }
 inputsNamed3
 {
-7 	"" "" 1 "input1"
 }
 inputs
 {
-0 	"" 0 1
 }
 stat
 {

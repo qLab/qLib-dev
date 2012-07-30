@@ -5,9 +5,9 @@ Icon:         COP2_colorwheel
 Table:        Sop
 License:      
 Extra:        guide=./GUIDE 
-Inputs:       1 to 2
+Inputs:       1 to 5
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sat Jul 28 01:41:01 2012
+Modified:     Mon Jul 30 23:19:45 2012
 

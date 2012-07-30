@@ -1,27 +1,33 @@
 sopflags sopflags = 
 comment ""
-position 2.26611 20.5243
+position -7.15686 -4.63235
 cachesize 1
-connectornextid 3
-flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on
+connectornextid 26
+flags =  lock off model off template on footprint on xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
-2 "output1"
+5 "output1"
 }
 inputsNamed3
 {
-0 	pointattr_ql3 2 1 "input1"
-1 	"" "" 1 "input2"
+21 	vector_store_ql3 1 1 "input1"
+22 	vector_store_ql4 1 1 "input2"
+23 	"" "" 1 "input3"
+24 	"" "" 1 "input4"
+25 	"" "" 1 "input5"
 }
 inputs
 {
-0 	pointattr_ql3 0 1
-1 	"" 0 1
+0 	vector_store_ql3 0 1
+1 	vector_store_ql4 0 1
+2 	"" 0 1
+3 	"" 0 1
+4 	"" 0 1
 }
 stat
 {
-  create 1343428387
-  modify 1343432438
+  create 1343680371
+  modify 1343683189
   author tusi@demeisen
   access 0777
 }

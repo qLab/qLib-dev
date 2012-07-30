@@ -4,7 +4,7 @@
 
 = Vector Store qL =
 
-*Version 0.0.2*
+*Version 0.0.3*
 
 """Converts vector attributes to points (and vice versa), allowing any deforming SOP to work on vector attributes."""
 
@@ -62,8 +62,18 @@ NOTE:
     and groups, not just the ones you restored (this is the intended behaviour).
 
 
+@related
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Vector qL|Node:sop/qLib::vector_ql::1]
+    - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
+
 
 @Release_Notes Release Notes
+
+    Version 0.0.3:
+        UI change: mode is now selected using radio buttons.
+        WARNING:
+            This change is not backwards-compatible.
 
     Version 0.0.2:
         Minor UI enhancements.
