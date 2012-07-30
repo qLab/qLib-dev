@@ -4,7 +4,7 @@
 
 = Attr Visualize qL =
 
-*Version 0.0.5*
+*Version 0.0.6*
 
 """Various visualization types for geometry attributes."""
 
@@ -32,6 +32,13 @@ NOTE:
 
 
 @Parameters
+
+    Input:
+        Select which geometry input to visualize. Up to 4 input slots are available.
+
+        Workflow-wise this allows to connect a "before" and an "after" state, and quickly switch between
+        them for comparison.
+
     Preprocessing:
 
         Decimation & Safeguards:
@@ -133,6 +140,9 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+    0.0.6:
+        Support for multiple inputs with an input selector (allows connecting and switching between 'before'/'after' states).
 
     0.0.5:
         _Floats & Colors_ section improvements:

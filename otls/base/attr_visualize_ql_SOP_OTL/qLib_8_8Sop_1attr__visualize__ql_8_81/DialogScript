@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 07/28/12 01:40:32
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 07/30/12 23:19:42
 
 {
     name	qLib::attr_visualize_ql::1
@@ -9,11 +9,39 @@
 	""
     }
 
-    inputlabel	1	"Geometry with Attribute"
-    inputlabel	2	"Object to Copy"
-    inputlabel	3	"Sub-Network Input #3"
-    inputlabel	4	"Sub-Network Input #4"
+    inputlabel	1	"Geometry to Visualize #1"
+    inputlabel	2	"Geometry to Visualize #2"
+    inputlabel	3	"Geometry to Visualize #3"
+    inputlabel	4	"Geometry to Visualize #4"
+    inputlabel	5	"Object to Copy"
 
+    parm {
+	name	"input"
+	label	"Input"
+	type	integer
+	default	{ "1" }
+	range	{ 1 4 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"display_info"
+	label	"display_info"
+	type	label
+	nolabel
+	default	{ "(*) showing: `opinput(\".\", ch(\"input\")-1)`" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder1"
 	label	"Preprocessing"
@@ -25,10 +53,10 @@
 
 	    parm {
 		name	"dec_presets"
-		label	"Presets"
+		label	"Presets *"
 		type	button
 		nolabel
-		default	{ "1" }
+		default	{ "on" }
 		menu	{
 		    "off"	"Safeguards Off"
 		    "points"	"Point Cloud Mode"
