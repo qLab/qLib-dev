@@ -10,7 +10,7 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	(1) 1 1 "input1"
+0 	(1) "" 1 "input1"
 }
 inputs
 {
@@ -19,7 +19,7 @@ inputs
 stat
 {
   create 1323546388
-  modify 1323640490
+  modify 1343679296
   author tusi@demeisen
   access 0777
 }

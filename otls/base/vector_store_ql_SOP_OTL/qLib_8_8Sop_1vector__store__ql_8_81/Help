@@ -4,7 +4,7 @@
 
 = Vector Store qL =
 
-*Version 0.0.2*
+*Version 0.0.3*
 
 """Converts vector attributes to points (and vice versa), allowing any deforming SOP to work on vector attributes."""
 
@@ -64,6 +64,11 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+    Version 0.0.3:
+        UI change: mode is now selected using radio buttons.
+        WARNING:
+            This change is not backwards-compatible.
 
     Version 0.0.2:
         Minor UI enhancements.

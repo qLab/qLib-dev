@@ -1,4 +1,4 @@
-13
+17
 foreach__build_vec_pointgroups
 foreach__restore_vector_attrs
 keep_points_only
@@ -12,3 +12,7 @@ OUT
 del_src_attrs1
 orig_geom
 vec_pts
+show_points
+GUIDE
+nope
+switch1
