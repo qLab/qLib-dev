@@ -3,6 +3,6 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../switch3/input\") }
+      segment { length = 0 expr = ch(\"../switch_if_2nd_volume/input\") }
     }
   }

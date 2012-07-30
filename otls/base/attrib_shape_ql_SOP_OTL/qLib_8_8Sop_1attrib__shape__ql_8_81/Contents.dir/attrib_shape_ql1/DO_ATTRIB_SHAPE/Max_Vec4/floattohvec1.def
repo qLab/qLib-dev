@@ -1,7 +1,19 @@
 comment ""
 position 6.12941 0.576448
 cachesize 1
+connectornextid 9
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+8 "hvec"
+}
+inputsNamed3
+{
+4 	max1 2 1 "fval1"
+5 	max2 2 1 "fval2"
+6 	max3 2 1 "fval3"
+7 	max4 2 1 "fval4"
+}
 inputs
 {
 0 	max1 0 1
