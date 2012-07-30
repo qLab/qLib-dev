@@ -62,6 +62,11 @@ NOTE:
     and groups, not just the ones you restored (this is the intended behaviour).
 
 
+@related
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Vector qL|Node:sop/qLib::vector_ql::1]
+    - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
+
 
 @Release_Notes Release Notes
 

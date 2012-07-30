@@ -8,11 +8,12 @@
 
 """Performs common operations between per-point vector attributes on the input geometry."""
 
-This is ...
+The most common vector-related operations encapsulated in one node. One of the most frequently used operators.
 
 
-Note: Although this node might seem a bit monolithic in nature, it encapsulates the most frequently
-required vector-related operations (and it does that within a single VOP SOP, so it is _fast_).
+NOTE:
+    Although this node might seem a bit monolithic in nature, it encapsulates the most frequently
+    required vector-related operations (and it does that within a single VOP SOP, so it is _fast_).
 
 
 @Parameters
@@ -102,7 +103,15 @@ required vector-related operations (and it does that within a single VOP SOP, so
             Angle In Degrees:
                 Output angle in degrees instead of radians.
 
-@Release_Notes
+
+@related
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
+    - [Vector Store qL|Node:sop/qLib::vector_store_ql::1]
+
+
+
+@Release_Notes Release Notes
     Version 0.1.1:
         * Added options for scaling both input vectors with a scalar (float) attribute before main operation.
         * Some UI fixes, consolidations, cosmetics.
