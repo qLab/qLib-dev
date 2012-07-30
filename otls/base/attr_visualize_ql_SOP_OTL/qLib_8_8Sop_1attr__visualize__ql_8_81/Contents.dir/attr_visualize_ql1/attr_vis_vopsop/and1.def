@@ -1,0 +1,30 @@
+comment ""
+position 8.69868 1.99267
+cachesize 1
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "and"
+}
+inputsNamed3
+{
+1 	src_repeat 0 1 "input1"
+2 	is_outside_range_ 0 1 "input2"
+}
+inputs
+{
+0 	src_repeat 0 1
+1 	is_outside_range_ 0 1
+}
+stat
+{
+  create 1343431748
+  modify 1343431757
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,4 +1,4 @@
-# Dialog script for qLib::timeblend_ql::1 automatically generated 05/19/12 00:22:58
+# Dialog script for qLib::timeblend_ql::1 automatically generated 07/29/12 20:46:04
 
 {
     name	qLib::timeblend_ql::1
@@ -126,6 +126,7 @@
 		type	string
 		default	{ "v" }
 		help	"Name of per-point velocity vector attribute."
+		disablewhen	"{ vel_interp == 0 }"
 		menureplace	{
 		    [ "opmenu -l blendshapes1 velattr" ]
 		}
@@ -139,6 +140,7 @@
 		type	float
 		default	{ "1" }
 		help	"Constant scale value applied to velocity vectors."
+		disablewhen	"{ vel_interp == 0 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -147,15 +149,15 @@
 	}
 
 	group {
-	    name	"folder0_1"
-	    label	"Particles"
+	    name	"folder1_1"
+	    label	"Particles (Death)"
 
 	    parm {
 		name	"particle_interp"
 		label	"Interpolate Dying Particles"
 		type	toggle
 		default	{ "0" }
-		help	"Motion of particles at the end of their lifespan will be extrapolated using their velocity attribute."
+		help	"Motion of particles at the end of their lifespan will be extrapolated using their velocity attribute. Particles 'not yet born' will be deleted."
 		range	{ 0! 10 }
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
@@ -164,6 +166,8 @@
 		name	"near_death_attrib"
 		label	"Add Near-Death Attribute"
 		type	toggle
+		nolabel
+		joinnext
 		default	{ "off" }
 		disablewhen	"{ particle_interp == 0 }"
 		range	{ 0 1 }
@@ -173,7 +177,7 @@
 	    }
 	    parm {
 		name	"nd_attrib"
-		label	"Attribute Name"
+		label	"Near-Death Attrib"
 		type	string
 		default	{ "near_death" }
 		disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
@@ -189,8 +193,9 @@
 	    }
 	    parm {
 		name	"nd_min"
-		label	"Close-to-Life Value"
+		label	"Life->Death Values"
 		type	float
+		joinnext
 		default	{ "0" }
 		disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
 		range	{ 0 1 }
@@ -202,10 +207,80 @@
 		name	"nd_max"
 		label	"Close-to-Death Value"
 		type	float
+		nolabel
 		default	{ "1" }
 		disablewhen	"{ particle_interp == 0 } { near_death_attrib == 0 }"
 		range	{ 0 1 }
 		export	none
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"labelparm"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "NOTE: Velocity interpolation already enabled." }
+		hidewhen	"{ vel_interp == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	group {
+	    name	"folder1_2"
+	    label	"Particles (Future)"
+
+	    parm {
+		name	"do_unborn"
+		label	"Delete Unborn Particles"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"birthtime_attrib"
+		label	"Birth Time Attrib"
+		type	string
+		default	{ "birthtime" }
+		disablewhen	"{ do_unborn == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.size()==1 \\" ]
+		    [ "        and a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
+		parmtag	{ "parmvop" "1" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"current_time"
+		label	"Current Time"
+		type	float
+		default	{ [ "$T" hscript-expr ] }
+		disablewhen	"{ do_unborn == 0 }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "shaderparmcontexts" "sop" }
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }

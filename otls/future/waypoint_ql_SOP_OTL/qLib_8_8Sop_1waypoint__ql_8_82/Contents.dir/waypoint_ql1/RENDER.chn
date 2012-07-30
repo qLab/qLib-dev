@@ -1,0 +1,86 @@
+{
+    channel execute {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../execute\") }
+    }
+    channel renderdialog {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../renderdialog\") }
+    }
+    channel trange {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trange\") }
+    }
+    channel f1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../f1\") }
+    }
+    channel f2 {
+      lefttype = extend
+      righttype = extend
+      default = 240
+      flags = 0
+      segment { length = 0 value = 240 240 expr = ch(\"../f2\") }
+    }
+    channel f3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../f3\") }
+    }
+    channel take {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"_current_\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../take\") }
+    }
+    channel sopoutput {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"$HIP/$F4.bgeo.gz\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../sopoutput\") }
+    }
+    channel xformtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xformtype\") }
+    }
+    channel initsim {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../initsim\") }
+    }
+    channel reportnetwork {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../reportnetwork\") }
+    }
+    channel saveretry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../saveretry\") }
+    }
+    channel savebackground {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../savebackground\") }
+    }
+  }

@@ -1,0 +1,117 @@
+import datetime
+import subprocess
+import os
+import shutil
+import getpass
+
+
+def dispmsg(msg):
+    hou.ui.displayMessage(msg, ["Ok"])
+
+
+def ynreq(msg):
+    return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
+
+
+def get_user():
+    return getpass.getuser()
+
+def get_hostname():
+    return os.uname()[1]
+
+
+
+def replace(kwargs, fromstr, tostr, noCheck=False):
+    n = hou.pwd()
+    op = n.parm('sopoutput')
+    out = op.unexpandedString()
+
+    if not tostr in out or noCheck:
+        out = out.replace(fromstr, tostr)
+        op.set(out)
+
+
+
+def set_color(kwargs):
+    hou.pwd().setColor(
+        hou.Color(
+            (0.2, 0.0, 0.0) if int(kwargs['script_value'])==0
+            else (0.8, 0.6, 0.0) )
+        );
+
+
+def open_dir(dir="", param=None):
+    # TODO: make this work on windows
+    if param: dir = hou.pwd().parm(param).eval()
+    subprocess.call(["nautilus", dir])
+
+
+def log_comment(n, c):
+    c0 = '\n'.join( n.comment().split('\n')[-8:] )
+    n.setComment("%s\n[%s] %s" % \
+        (c0, datetime.datetime.now().strftime("%y%m%d %H:%M.%S"), c))
+
+
+
+def clear_log():
+    if ynreq("Are you sure to clear the comment log for this waypoint?"):
+        hou.pwd().setComment('')
+
+
+def pm_start(n):
+    d = datetime.datetime.now().strftime("%y%m%d-%H:%M.%S")
+    f = n.parm('perfmon_output').eval()
+    hou.session.__perf = ( hou.perfMon.startProfile("%s (%s)" % (n.name(), d) ), f )
+
+
+def pm_end(n):
+    if hasattr(hou.session, '__perf'):
+        hou.session.__perf[0].stop()
+        #n = hou.pwd()
+        f = hou.session.__perf[1]
+        print "* COMPLETED %s '%s' -- Saving hperf '%s' *" % (n.type().name().upper(), n.path(), f)
+        hou.session.__perf[0].save(f)
+        del hou.session.__perf
+
+
+def mk_dir(dir="", param=None):
+    try:
+        if param: dir = hou.pwd().parm(param).eval()
+        if dir!="":
+            os.makedirs(dir)
+            print "created directory '%s'" % dir
+    except:
+        pass
+
+
+def rm_dir(dir="", param=None):
+    try:
+        if param: dir = hou.pwd().parm(param).eval()
+        if dir!="":
+
+            if ynreq("DELETE directory '%s'?" % dir):
+                shutil.rmtree(dir)
+                print "deleted directory '%s'" % dir
+    except:
+        pass
+
+
+def pre_render(path):
+    n = hou.node(path)
+    log_comment( n, "Render started (%s @ %s)..." % (get_user(), get_hostname()) )
+
+    d = n.parm('outdir').eval()
+    mk_dir(d) # create output dir
+
+    if n.parm('perfmon').eval()!=0:
+        pm_start(n)
+
+
+
+def post_render(path):
+    n = hou.node(path)
+    log_comment(n, "RENDER COMPLETED.")
+
+    if n.parm('perfmon').eval()!=0:
+        pm_end(n)
+

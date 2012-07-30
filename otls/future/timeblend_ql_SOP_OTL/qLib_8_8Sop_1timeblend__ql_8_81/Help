@@ -4,26 +4,30 @@
 
 = TimeBlend qL =
 
-*Version 0.0.2*
+*Version 0.0.4*
 
 """An enhanced version of the original [Node:sop/timeblend] node."""
 
 This version of the TimeBlend SOP supports the following additional features:
 
-* Support for sub-frame samples: some file formats like Alembic can support multiple geometry samples per frame. This SOP can properly utilize sub-frame samples.
+* _Support for sub-frame samples:_ some file formats like Alembic can support multiple geometry samples per frame. This SOP can properly utilize sub-frame samples.
 
-* Support extrapolation of dying particles (motion of particles at the end of their lifespan will be extrapolated using their velocity vectors).
+* _Pure velocity-based interpolation:_ current point positions are calculated using only their velocity vectors (e.g. particles without `id` attribute, or other simulated/generated geometry.)
 
+* _Extrapolation of dying particles_ (motion of particles at the end of their lifespan will be extrapolated using their velocity vectors).
 
-@related
-    - [Node:sop/timeblend]
-
+* _Deletion of "future" or not-yet-born particles:_ if particles have their accurate birth time stored, particles with birth times larger than the current time can be deleted. This is useful to get rid of 'emission popping' when retiming particle simulations. (See [Trail Scatter qL|Node:sop/qLib::trail_scatter_ql::1] node *Birth Time* related settings.)
 
 TIP:
     When dealing with cached geometry ([Node:sop/cache] or [Node:sop/file] SOP, etc.), be aware that the
     `$F` variable is _rounded_ (it will be rounded _up to the next frame_ for subframe 0.5 and higher).
 
     To get the nearest whole frame number use an expression like `floor($FF)`.
+
+NOTE:
+    Using [Trail Scatter qL|Node:sop/qLib::trail_scatter_ql::1]-based emission together with the
+    death/birth extrapolation options on this node, particle simulations can be retimed to any degree
+    without artifacts (and without the use of simulation oversampling).
 
 
 @Parameters
@@ -40,6 +44,8 @@ TIP:
     Time Blend:
         See [the original TimeBlend SOP help|Node:sop/timeblend] for the parameter descriptions.
         Additional parameters follow.
+
+    Velocity:
 
         Interpolate Using Velocity:
             Use per-point velocity vector attributes to perform position interpolation.
@@ -59,9 +65,7 @@ TIP:
         Velocity Scale:
             A constant scaling applied to velocity vectors.
 
-    Particles:
-
-        The functions below are useful when applying "slo-mo"-like effects on particles.
+    Particles (Death):
 
         Interpolate Dying Particles:
             Positions of particles not present in the following geometry sample (ie. on the next frame)
@@ -93,9 +97,44 @@ TIP:
             and `0.0` for near-death values.
 
 
+    Particles (Future):
+
+        Delete Unborn Particles:
+            If particles have an attribute storing their exact (sub-frame) birth time, this option
+            will delete any particles that are "born in the future", related to the current time.
+
+            The practical application of this is to have newborn particles their birth times slightly
+            randomized to have slightly "futuristic" values. This will mean as if the particles were
+            emitted gradually over time (between timesteps), instead of all of them popping into
+            existence at the timestep beginning.
+
+            This option will have its effect when blending between timesteps: instead of particles
+            popping into existence in chunks, it will look as if particles appear gradually.
+
+        Birth Time Attrib:
+            Name of the per-point attribute that stores the exact birth times of particles.
+
+        Current Time:
+            The current time in seconds (the `$T` variable). No need to touch this ever (unless
+            some "advanced" trickery is being devised, which probably will turn out pointless :D).
 
 
-@Release_Notes
+
+@related
+    - [Node:sop/timeblend]
+    - [Trail Scatter qL (SOP)|Node:sop/qLib::trail_scatter_ql::1]
+
+
+@Release_Notes Release Notes
+
+    Version 0.0.4:
+        - Minor UI changes
+        - Optimization: should be way faster when not using Interpolate Dying Particles (needs TESTING if it works as expected)
+
+    Version 0.0.3:
+        - Added "Delete Unborn Particles" feature
+        - UI and help cleanup
+
     Version 0.0.2:
         Added "Near-Death Attribute" features.
 

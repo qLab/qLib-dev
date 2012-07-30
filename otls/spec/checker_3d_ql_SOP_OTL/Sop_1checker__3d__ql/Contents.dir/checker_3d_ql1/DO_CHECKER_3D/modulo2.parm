@@ -1,7 +1,0 @@
-{
-version 0.8
-signature	[ 0	locks=0 ]	(	default	)
-input2	[ 0	locks=0 ]	(	2	)
-input2_i	[ 0	locks=0 ]	(	1	)
-input2_uf	[ 0	locks=0 ]	(	1	)
-}

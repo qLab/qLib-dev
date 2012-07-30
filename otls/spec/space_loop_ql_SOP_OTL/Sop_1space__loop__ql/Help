@@ -1,4 +1,0 @@
-Group geometry (points or primitives) by partitioning space along the main axes into specified number of segments.
-
-Known bugs: For planar objects, the no. of segments for the according main plane should be 1.
-

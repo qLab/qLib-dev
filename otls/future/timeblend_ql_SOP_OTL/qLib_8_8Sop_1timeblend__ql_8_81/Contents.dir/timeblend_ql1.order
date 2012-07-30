@@ -1,4 +1,4 @@
-12
+15
 floor_frame
 ceil_frame
 IN
@@ -7,7 +7,10 @@ last_frame
 switch1
 sblend_regular
 sblend_max
-vopsop_move_dying_particles
+process_particles
 OUT
 switch_particle_v_interp
 no_regular_blend
+delete_unborn
+switch_detect_dying
+nope

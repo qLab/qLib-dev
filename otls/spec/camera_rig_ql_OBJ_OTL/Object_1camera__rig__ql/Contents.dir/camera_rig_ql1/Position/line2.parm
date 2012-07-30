@@ -1,9 +1,0 @@
-{
-version 0.8
-type	[ 0	locks=0 ]	(	"poly"	)
-origin	[ 0	locks=0 ]	(	0.20000000300000001	0	0	)
-dir	[ 0	locks=0 ]	(	1	0	0	)
-dist	[ 0	locks=0 ]	(	0.075000002999999996	)
-points	[ 0	locks=0 ]	(	2	)
-order	[ 0	locks=0 ]	(	4	)
-}

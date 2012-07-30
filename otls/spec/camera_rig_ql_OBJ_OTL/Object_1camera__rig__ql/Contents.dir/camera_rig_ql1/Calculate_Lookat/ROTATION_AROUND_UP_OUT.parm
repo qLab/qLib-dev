@@ -1,5 +1,0 @@
-{
-version 0.8
-cacheinput	[ 0	locks=0 ]	(	"off"	)
-up_rotation	[ 0	locks=0 ]	(	[ up_rotationx	0 ] 	[ up_rotationy	8.4999990463256836 ] 	[ up_rotationz	0 ] 	)
-}

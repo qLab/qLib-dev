@@ -1,5 +1,0 @@
-{
-version 0.8
-cacheinput	[ 0	locks=0 ]	(	"off"	)
-orient_up	[ 0	locks=0 ]	(	[ orient_upx	0 ] 	[ orient_upy	-0 ] 	[ orient_upz	0 ] 	)
-}
