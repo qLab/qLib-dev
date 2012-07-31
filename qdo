@@ -8,11 +8,15 @@ import glob
 import tarfile
 import datetime
 import shutil
+import re
 
 # Declare global variable name
 args = None
 
 def build_cmd():
+    """
+    Build asset from source.
+    """
     for f in files():
         if os.path.isdir(f):
             debug('Processing: ' + f)
@@ -32,6 +36,9 @@ def build_cmd():
                     break
 
 def extract_cmd():
+    """
+    Extracts source from binary asset.
+    """
     for f in files():
         if os.path.isfile(f):
             debug('Processing: ' + f)
@@ -53,6 +60,9 @@ def extract_cmd():
                     break
 
 def clean_cmd():
+    """
+    Removes compiled assets or sources.
+    """
     for f in files():
         if args.source:
             if os.path.isdir(f):
@@ -89,6 +99,9 @@ def clean_cmd():
                         break
 
 def pack_cmd():
+    """
+    Creates the distribution archive.
+    """
     qlib_dir = os.path.dirname(os.path.realpath(__file__))
     qlib_parent = os.path.dirname(qlib_dir)
     if qlib_dir.split(os.sep)[-1] != "qLib":
@@ -129,9 +142,90 @@ def pack_cmd():
         print "Adding: {0}".format(f[1])
         tar_file.add(f[0],f[1])
     tar_file.close()
-    
+
+
+def list_cmd():
+    """
+    Assembles a Markdown formatted list of assets from help files.
+    """
+    section_order = {
+            "base":         "0",
+            "spec":         "1",
+            "future":       "2",
+            "experimental": "3",
+            "graveyard":    "4",
+            }
+    context_order = {
+            "Object":       "0",
+            "Sop":          "1",
+            "Pop":          "2",
+            "Dop":          "3",
+            "Driver":       "4",
+            "Shop":         "5",
+            "Vop":          "6",
+            }
+    context_abbrev = {
+            "Object":       "OBJ",
+            "Sop":          "SOP",
+            "Pop":          "POP",
+            "Dop":          "DOP",
+            "Driver":       "ROP",
+            "Shop":         "SHOP",
+            "Vop":          "VOP",
+            }
+    otls_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "otls")
+    args.file = (otls_dir,)
+    args.recursive = True
+    print args.file, args.recursive
+    assets = {}
+    for f in files():
+        if os.path.basename(f) == "Help":
+            asset_dir = os.path.basename(os.path.dirname(f))
+            section = os.path.basename(os.path.dirname(os.path.dirname(os.path.dirname(f))))
+            ns, name, version = tuple(re.split("_8_8", asset_dir))
+            name = re.split("_1",name)
+            context = name[0]
+            name = name[1] + "_" + name[0]
+            if name in assets:
+                assets[name]["version"].append(int(version))
+            else:
+                assets[name] = {
+                        "version": [int(version)],
+                        "section": section,
+                        "context": context,
+                        "file": f,
+                        }
+
+    asset_list = list(assets.items())
+    asset_list.sort(key=lambda a:section_order[a[1]["section"]]+context_order[a[1]["context"]]+a[0])
+
+    with open(os.path.join(os.path.dirname(otls_dir), "assets.list"), "w") as alist:
+        alist.write("""# Assets
+This page lists all the assets and their brief descriptions extracted from their Help cards.
+
+""")
+        sections = set()
+        for asset_name, asset in asset_list:
+            if asset["section"] not in sections:
+                alist.write("## " + asset["section"].capitalize() + " Section\n\n")
+                sections.add(asset["section"])
+            with open(asset["file"]) as f:
+                help_text = f.read()
+                name = re.search(r"\n\s*=(.*)=", help_text)
+                description = re.search(r"\n\s*\"\"\"(.*)\"\"\"", help_text)
+                if name is not None:
+                    alist.write("### " + name.group(1).strip() + " " + context_abbrev[asset["context"]] + "\n")
+                else:
+                    alist.write("> **" + " ".join(asset_name.split("_")) + "**'s help card doesn't define a proper name..\n\n")
+                if description is not None:
+                    alist.write(re.sub(r"\[(.*?)\|.*?\]", lambda m: "**" + m.group(1) + "**", description.group(1).strip()) + "\n\n")
+                else:
+                    alist.write("> **" + " ".join(asset_name.split("_")) + "**'s help card doesn't define a proper description..\n\n")
 
 def files():
+    """
+    Yield files based on command line arguments.
+    """
     for a in args.file:
         if a[-1:] == "/":
             a = a[0:-1]
@@ -188,6 +282,8 @@ def parse_args():
             description='Removes OTLs or OTL sources.')
     pack_parser = subparsers.add_parser('pack', parents=[common_args],
             help='Creates tarballs for ditribution and backup purposes.')
+    list_parser = subparsers.add_parser('list', parents=[common_args],
+            help='Creates a list of assets from help files')
 
     extract_parser.add_argument("-k", "--keep", action="store_true",
             help="Keeps the source folder and extracts otl over it.")
@@ -212,4 +308,5 @@ parse_args()
 'extract': extract_cmd,
 'clean': clean_cmd,
 'pack': pack_cmd,
+'list': list_cmd,
 }[args.command]()
