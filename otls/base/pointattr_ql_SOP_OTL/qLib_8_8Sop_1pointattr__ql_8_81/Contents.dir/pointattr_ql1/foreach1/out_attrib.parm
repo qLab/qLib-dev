@@ -71,5 +71,5 @@ riname4	[ 0	locks=0 ]	(	""	)
 ritype4	[ 0	locks=0 ]	(	vtx_float	)
 rioff4	[ 0	locks=0 ]	(	0	)
 ridefault	[ 0	locks=0 ]	(	"off"	)
-updatevar	[ 0	locks=0 ]	(	"on"	)
+updatevar	[ 0	locks=0 ]	(	"off"	)
 }
