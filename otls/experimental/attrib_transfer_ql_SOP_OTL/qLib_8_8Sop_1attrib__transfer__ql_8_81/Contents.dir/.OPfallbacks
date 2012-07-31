@@ -1,0 +1,6 @@
+Vop/addattrib /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/pcfilter /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pcfilter otls/OPlibVop.otl
+Vop/pcopen /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pcopen otls/OPlibVop.otl

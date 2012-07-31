@@ -1,0 +1,64 @@
+# Dialog script for qLib::attrib_transfer_ql::1 automatically generated 07/31/12 02:46:42
+
+{
+    name	qLib::attrib_transfer_ql::1
+    script	qLib::attrib_transfer_ql::1
+    label	"Attrib Transfer qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"pointattriblist"
+	label	"Point Attributes"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().inputs()[1].geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs \\" ]
+	    [ "        if a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"radius"
+	label	"Search radius"
+	type	float
+	default	{ "10" }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"maxpoints"
+	label	"Number of points"
+	type	integer
+	default	{ "1" }
+	range	{ 1! 100 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
