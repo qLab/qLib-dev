@@ -1,0 +1,16 @@
+{
+    channel radius {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000149011612
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../radius/floatdef') }
+    }
+    channel maxpoints {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch('../maxpoints/intdef') }
+    }
+  }

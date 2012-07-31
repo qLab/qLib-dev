@@ -1,0 +1,15 @@
+{
+version 0.8
+fortype	[ 0	locks=0 ]	(	"number"	)
+forstamp	[ 0	locks=0 ]	(	FORVALUE	)
+foridxstamp	[ 0	locks=0 ]	(	FORIDXVALUE	)
+groupmask	[ 0	locks=0 ]	(	""	)
+attrib	[ 0	locks=0 ]	(	""	)
+attribtol	[ 0	locks=0 ]	(	0.0010000000474974513	)
+numrange	[ 8	locks=0 ]	(	0	[ numrange2	1 ] 	1	)
+usemaxiter	[ 0	locks=0 ]	(	"off"	)
+maxiter	[ 0	locks=0 ]	(	10	)
+mergeresults	[ 0	locks=0 ]	(	"off"	)
+eachpoint	[ 0	locks=0 ]	(	"off"	)
+stopcondition	[ 0	locks=0 ]	(	0	)
+}

@@ -5,6 +5,6 @@ vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
 vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 attrib	[ 0	locks=0 ]	(	"`arg(chs(\"../../vector_attr_name\"), stamp(\"..\", \"FORIDXVALUE\", 0))`"	)
-unit_length	[ 8	locks=0 ]	(	[ unit_length	1 ] 	)
-scale	[ 8	locks=0 ]	(	[ scale	1 ] 	)
+unit_length	[ 0	locks=0 ]	(	[ unit_length	1 ] 	)
+scale	[ 0	locks=0 ]	(	[ scale	0.40000000000000002 ] 	)
 }

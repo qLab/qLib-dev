@@ -8,14 +8,6 @@
 
 """Creation/manipulation of per-point float attributes using a series of basic operations."""
 
-@related
-    - [Node:sop/point]
-    - [Node:sop/attribcreate]
-    - [Vector qL|Node:sop/vector_ql]
-    - [Attr Lookups qL|Node:sop/attr_lookups_ql]
-    - [Attr Lookup Ramp qL|Node:sop/attr_lookup_ramp_ql]
-
-
 @Parameters
     Attribute:
         Name of the attribute to create or modify.
@@ -116,7 +108,16 @@
             (similar to [Attr Lookups qL|Node:sop/attr_lookups_ql] or the [Lookup CHOP|Node:chop/lookup]).
 
 
+@related
+    - [Node:sop/point]
+    - [Node:sop/attribcreate]
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Attr Lookups qL|Node:sop/qLib::attr_lookups_ql::1]
+    - [Attr Lookup Ramp qL|Node:sop/qLib::attr_lookup_ramp_ql::1]
+    - [Vector qL|Node:sop/qLib::vector_ql::1]
 
-@Release_Notes
+
+
+@Release_Notes Release Notes
     Version 0.0.1:
         Initial release.

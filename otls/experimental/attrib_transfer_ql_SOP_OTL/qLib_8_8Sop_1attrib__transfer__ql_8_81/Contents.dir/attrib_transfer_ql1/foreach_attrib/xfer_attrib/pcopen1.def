@@ -1,0 +1,44 @@
+comment ""
+position 0.111765 2.72354
+cachesize 1
+connectornextid 10
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+9 "handle"
+}
+inputsNamed3
+{
+0 	file 0 1 "file"
+1 	"" "" 1 "pchannel"
+2 	global1 0 1 "P"
+3 	"" "" 1 "nchannel"
+4 	"" "" 1 "N"
+5 	radius 0 1 "radius"
+6 	maxpoints 0 1 "maxpoints"
+7 	"" "" 1 "cone"
+8 	"" "" 1 "preload"
+}
+inputs
+{
+0 	file 0 1
+1 	"" 0 1
+2 	global1 0 1
+3 	"" 0 1
+4 	"" 0 1
+5 	radius 0 1
+6 	maxpoints 0 1
+7 	"" 0 1
+8 	"" 0 1
+}
+stat
+{
+  create 1343691765
+  modify 1343693878
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

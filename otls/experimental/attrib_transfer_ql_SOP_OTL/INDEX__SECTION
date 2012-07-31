@@ -1,0 +1,13 @@
+Operator:     qLib::attrib_transfer_ql::1
+Label:        Attrib Transfer qL
+Path:         oplib:/qLib::Sop/attrib_transfer_ql::1?qLib::Sop/attrib_transfer_ql::1
+Icon:         POP_attribtransfer
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jul 31 02:46:53 2012
+

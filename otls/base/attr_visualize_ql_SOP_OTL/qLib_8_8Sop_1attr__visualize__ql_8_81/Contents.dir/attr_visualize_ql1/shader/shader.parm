@@ -34,4 +34,5 @@ sss_single	[ 0	locks=0 ]	(	0	0	0	)
 sss_multi	[ 0	locks=0 ]	(	0	0	0	)
 indirect_refract	[ 0	locks=0 ]	(	0	0	0	)
 indirect_reflect	[ 0	locks=0 ]	(	0	0	0	)
+direct_reflectivity	[ 0	locks=0 ]	(	0	0	0	)
 }

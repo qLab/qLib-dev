@@ -4,26 +4,30 @@
 
 = Attrib Shape qL =
 
-*Version 0.2.0*
+*Version 0.2.1*
 
-"""Assigns attribute values defined by an object or SDF volume."""
+"""Assigns attribute values defined by the shape of an object, or an SDF volume."""
+
+This nodes generates per-point attribute values for a geometry, using the shape of a secondary geometry
+as mask.
+
 
 @Parameters
     Point Group:
         Points that get affected.
+
     Shape:
         Type of the boundary shape. The "object" or "volume" should be connected to the second input.
-    Signature:
-        Signature of the attribute.
-    Attribute:
-        The name of the attribute where the new values get stored.
-    Local Variable:
-        Create a local variable mapping for the attribute. If the string field is left blank, the variable name will be
-        the upper case version of the attribute name.
-    Inner Value:
-        Value inside the shape.
-    Outer Value:
-        Value outside the shape.
+
+    Attribute, Local Variable:
+        Name, type (signature) and local variable name of the attribute where the values get stored.
+
+        If the local variable field is left blank, the name will be the upper-case version of
+        the attribute name.
+
+    Inner Value, Outer Value:
+        Value inside/outside the shape.
+
     Falloff Distance:
         Falloff distance measured from the surface.
         
@@ -32,14 +36,19 @@
 
     Exponent:
         Exponent of the falloff.
+
     Invert:
         Switch inner and outer values.
+
     Mode:
         How the newly created values get composed to the existing values.
+
     Source Attribute:
         Name of the source attribute used in compositing operations.
+
     Transform:
         Standard transform parametres determines the size and position of the shape.
+
     Volume Resolution:
         Resolution of the generated volume.
 
@@ -50,11 +59,34 @@
     Laser Scan:
         Turn it off for objects with inner structures.
 
+    Show Geometry Guide, Show Weights:
+        Display the secondary geometry as a wireframe guide, and/or visualize the generated weight map
+        on the geometry points (using a heat map).
+
+        NOTE:
+            Only the weight map of the current shape is displayed. If multiple shapes are composited together,
+            use an [Attr Visualize qL SOP|Node:sop/qLib::attr_visualize_ql::1] at the end of the chain to
+            inspect the results.
+
+
 @Limitations
     When the input attribute is not present in the geometry only the 'Replace' mode works correctly. This is due to
     performance considerations, probably won't change in the future.
 
-@Release_Notes
+
+@related
+    - [Attr Visualize qL (SOP)|Node:sop/qLib::attr_visualize_ql::1]
+    - [Point Attr qL (SOP)|Node:sop/qLib::pointattr_ql::1]
+    - ...
+
+
+@Release_Notes Release Notes
+
+    Version 0.2.1:
+        - Minor internal cleanups and UI enhancements
+        - Visualization of current shape weight results
+        - Toggles for guide displays
+
     Version 0.2.0:
         Almost complete overhaul of the inner workings. Now the operator uses SDF volumes instead of distance measures,
         which results in much more flexibility and probably slower cooking.

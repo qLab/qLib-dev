@@ -4,10 +4,10 @@ Path:         oplib:/qLib::Sop/attrib_shape_ql::1?qLib::Sop/attrib_shape_ql::1
 Icon:         COP2_shape
 Table:        Sop
 License:      
-Extra:        guide=./GUIDE_OUT 
+Extra:        guide=./GUIDE 
 Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:22:03 2012
+Modified:     Tue Jul 31 01:07:39 2012
 

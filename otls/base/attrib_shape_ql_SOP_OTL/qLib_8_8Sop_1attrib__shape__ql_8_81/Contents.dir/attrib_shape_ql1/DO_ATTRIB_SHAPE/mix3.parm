@@ -2,7 +2,6 @@
 version 0.8
 signature	[ 0	locks=0 ]	(	v4	)
 bias	[ 0	locks=0 ]	(	0.5	)
-gf	[ 0	locks=0 ]	(	0	0	0	0	)
 input1	[ 0	locks=0 ]	(	0	)
 input2	[ 0	locks=0 ]	(	1	)
 input1_v	[ 0	locks=0 ]	(	0	0	0	)

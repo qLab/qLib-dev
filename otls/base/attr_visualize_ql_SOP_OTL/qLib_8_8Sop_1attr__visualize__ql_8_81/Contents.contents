@@ -484,5 +484,10 @@ attr_visualize_ql1/switch_keep_every_n.def
 attr_visualize_ql1/switch_keep_every_n.chn
 attr_visualize_ql1/switch_keep_every_n.parm
 attr_visualize_ql1/switch_keep_every_n.userdata
+attr_visualize_ql1/switch_input_geometry.init
+attr_visualize_ql1/switch_input_geometry.def
+attr_visualize_ql1/switch_input_geometry.chn
+attr_visualize_ql1/switch_input_geometry.parm
+attr_visualize_ql1/switch_input_geometry.userdata
 attr_visualize_ql1.order
 attr_visualize_ql1.net

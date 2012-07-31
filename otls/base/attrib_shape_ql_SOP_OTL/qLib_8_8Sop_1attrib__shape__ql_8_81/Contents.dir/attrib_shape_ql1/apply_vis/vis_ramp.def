@@ -1,0 +1,32 @@
+comment ""
+position 6.83932 -3.18533
+cachesize 1
+connectornextid 6
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+1 "vis_ramp"
+2 "vis_ramp_the_basis_strings"
+3 "vis_ramp_the_key_positions"
+4 "vis_ramp_the_key_values"
+5 "vis_ramp_the_color_space"
+}
+inputsNamed3
+{
+0 	switch2 0 1 "input"
+}
+inputs
+{
+0 	switch2 0 1
+}
+stat
+{
+  create 1343687322
+  modify 1343687494
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

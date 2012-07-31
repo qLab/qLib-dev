@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	(0) "" 1 "input1"
+0 	switch_input_geometry 0 1 "input1"
 }
 inputs
 {
-0 	(0) 0 1
+0 	switch_input_geometry 0 1
 }
 stat
 {
   create 1335221870
-  modify 1339622713
+  modify 1343680224
   author tusi@demeisen
   access 0777
 }

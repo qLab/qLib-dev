@@ -1,0 +1,29 @@
+#icon: POP/attribtransfer
+#context: sop
+#type: node
+
+= Attrib Transfer qL =
+
+*Version 0.0.1*
+
+"""An alternative version of the regular Attrib Transfer SOP."""
+
+This alternative implementation uses a VOPSOP/pointcloud functions, and works only for per-point
+float and vector attributes.
+
+
+Alternative Attrib Transfer SOP prototype:
+
+- should be rewritten in full VEX
+- due to current implementation, only transferring a single attribute is faster
+- about 2x faster than the plain Attrib Transfer SOP (when transferring a single attribute)
+
+
+@related
+    - [Node:sop/attribtransfer]
+
+
+@release_notes Release Notes
+
+    Version 0.0.1:
+        Initial prototype.

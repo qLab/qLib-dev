@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_shape_ql::1 automatically generated 07/04/12 12:03:12
+# Dialog script for qLib::attrib_shape_ql::1 automatically generated 07/31/12 01:07:39
 
 {
     name	qLib::attrib_shape_ql::1
@@ -23,27 +23,27 @@
     bindhandle trans3 xform "Transformer" tz ""
     bindhandle xyz xform "Transformer" xyz_order ""
 
-    inputlabel	1	"Target Geo"
-    inputlabel	2	"Shape Geo"
+    inputlabel	1	"Geometry to add attribute to"
+    inputlabel	2	"Shape geometry"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_ATTRIB_SHAPE vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
     group {
 	name	"attribfolder"
 	label	"Attribute"
 
-	parm {
-	    name	"vex_group"
-	    label	"Point Group"
-	    type	string
-	    default	{ "" }
-	    menutoggle	{
-		[ "opmenu -l DO_ATTRIB_SHAPE vex_group" ]
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
 	parm {
 	    name	"shape"
 	    label	"Shape"
@@ -53,16 +53,48 @@
 		"0"	"Sphere"
 		"1"	"Box"
 		"2"	"Cylinder"
-		"3"	"Object"
-		"4"	"Volume"
+		"3"	"Object (2nd Input)"
+		"4"	"SDF Volume (2nd Input)"
 	    }
 	    range	{ 0 1 }
 	    export	none
 	}
 	parm {
+	    name	"out_attrib_name"
+	    label	"Attribute"
+	    type	string
+	    joinnext
+	    default	{ "weight" }
+	    menureplace	{
+		[ "r = [ \"weight\", \"weight (default)\"," ]
+		[ "        \"pscale\", \"pscale\", " ]
+		[ "        \"Cd\", \"Cd\"," ]
+		[ "        \"Alpha\", \"Alpha\" ]" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs \\" ]
+		[ "        if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
 	    name	"signature"
 	    label	"Signature"
 	    type	ordinal
+	    nolabel
 	    default	{ "0" }
 	    menu	{
 		"0"	"Float"
@@ -75,20 +107,10 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"out_attrib_name"
-	    label	"Attribute"
-	    type	string
-	    joinnext
-	    default	{ "weight" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
 	    name	"localvar"
 	    label	"Local Variable"
 	    type	toggle
+	    nolabel
 	    joinnext
 	    default	{ "1" }
 	    range	{ 0 1 }
@@ -98,8 +120,7 @@
 	    name	"locvarname"
 	    label	"Local Variable"
 	    type	string
-	    nolabel
-	    default	{ "" }
+	    default	{ "`toupper(chs(\"out_attrib_name\"))`" }
 	    disablewhen	"{ localvar == 0 }"
 	    range	{ 0 1 }
 	    export	none
@@ -127,6 +148,14 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
+	    name	"invert"
+	    label	"Switch Values"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
 	    name	"falloff"
 	    label	"Falloff Distance"
 	    type	float
@@ -147,48 +176,10 @@
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	parm {
-	    name	"invert"
-	    label	"Invert"
-	    type	toggle
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	}
     }
 
     group {
 	name	"attribfolder_1"
-	label	"Composite"
-
-	parm {
-	    name	"compose"
-	    label	"Mode"
-	    type	ordinal
-	    default	{ "0" }
-	    menu	{
-		"0"	"Replace"
-		"1"	"Add"
-		"2"	"Maximum"
-		"3"	"Multiply"
-	    }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"in_attrib"
-	    label	"Source Attribute"
-	    type	string
-	    default	{ "`chs(\"out_attrib_name\")`" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-    }
-
-    group {
-	name	"attribfolder_2"
 	label	"Transform"
 
 	parm {
@@ -274,6 +265,53 @@
     }
 
     group {
+	name	"attribfolder_2"
+	label	"Composite"
+
+	parm {
+	    name	"compose"
+	    label	"Mode"
+	    type	ordinal
+	    default	{ "0" }
+	    menu	{
+		"0"	"Replace"
+		"1"	"Add"
+		"2"	"Maximum"
+		"3"	"Multiply"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"in_attrib"
+	    label	"Source Attribute"
+	    type	string
+	    default	{ "`chs(\"out_attrib_name\")`" }
+	    menureplace	{
+		[ "r = [ \"`chs(\\\"out_attrib_name\\\")`\", \"Same as output attrib.\" ]" ]
+		[ "" ]
+		[ "try:" ]
+		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		[ "    attrs = [ a.name() for a in attrs \\" ]
+		[ "        if a.dataType() is not hou.attribData.String ]" ]
+		[ "    " ]
+		[ "    for a in attrs:" ]
+		[ "        r.append(a)" ]
+		[ "        r.append(a)" ]
+		[ "except:" ]
+		[ "    pass" ]
+		[ "" ]
+		[ "return r" ]
+		language	python
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
 	name	"attribfolder_3"
 	label	"Volume"
 
@@ -296,4 +334,20 @@
 	}
     }
 
+    parm {
+	name	"vis_geo"
+	label	"Show Geometry Guide"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"vis_pts"
+	label	"Show Weights (Current shape only)"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
 }

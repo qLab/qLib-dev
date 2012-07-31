@@ -4,10 +4,10 @@ Path:         oplib:/qLib::Sop/vector_store_ql::1?qLib::Sop/vector_store_ql::1
 Icon:         CHOP_para
 Table:        Sop
 License:      
-Extra:        
+Extra:        guide=./GUIDE 
 Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 01:58:26 2012
+Modified:     Mon Jul 30 22:25:24 2012
 
