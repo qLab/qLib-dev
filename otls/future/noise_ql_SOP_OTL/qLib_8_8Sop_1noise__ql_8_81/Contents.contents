@@ -127,7 +127,6 @@ noise_ql1/DO_NOISE/cc_amp.parm
 noise_ql1/DO_NOISE/cc_amp.userdata
 noise_ql1/DO_NOISE/Driver_Vec.init
 noise_ql1/DO_NOISE/Driver_Vec.def
-noise_ql1/DO_NOISE/Driver_Vec.chn
 noise_ql1/DO_NOISE/Driver_Vec.parm
 noise_ql1/DO_NOISE/Driver_Vec.userdata
 noise_ql1/DO_NOISE/vectohvec2.init
@@ -136,12 +135,10 @@ noise_ql1/DO_NOISE/vectohvec2.parm
 noise_ql1/DO_NOISE/vectohvec2.userdata
 noise_ql1/DO_NOISE/Driver_Vec4.init
 noise_ql1/DO_NOISE/Driver_Vec4.def
-noise_ql1/DO_NOISE/Driver_Vec4.chn
 noise_ql1/DO_NOISE/Driver_Vec4.parm
 noise_ql1/DO_NOISE/Driver_Vec4.userdata
 noise_ql1/DO_NOISE/Driver_Float.init
 noise_ql1/DO_NOISE/Driver_Float.def
-noise_ql1/DO_NOISE/Driver_Float.chn
 noise_ql1/DO_NOISE/Driver_Float.parm
 noise_ql1/DO_NOISE/Driver_Float.userdata
 noise_ql1/DO_NOISE/floattohvec1.init

@@ -1,6 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
-attrib	[ 0	locks=0 ]	(	[ attrib	"" ] 	)
+attrib	[ 8	locks=0 ]	(	`chs('../../driver_attrib')`	)
 input_index	[ 0	locks=0 ]	(	0	)
 }

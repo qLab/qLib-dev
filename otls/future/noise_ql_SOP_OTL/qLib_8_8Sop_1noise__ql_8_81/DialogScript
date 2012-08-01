@@ -1,4 +1,4 @@
-# Dialog script for qLib::noise_ql::1 automatically generated 07/26/12 23:39:40
+# Dialog script for qLib::noise_ql::1 automatically generated 08/01/12 12:06:20
 
 {
     name	qLib::noise_ql::1
@@ -26,197 +26,201 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    group {
-	name	"folder0"
-	label	"Attributes"
-	tabbreak
-
-	parm {
-	    name	"driver_attrib"
-	    label	"Driver Attribute"
-	    type	string
-	    joinnext
-	    default	{ "P" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"driver_signature"
-	    label	"Driver Signature"
-	    type	integer
-	    nolabel
-	    default	{ "1" }
-	    menu	{
-		"0"	"Float"
-		"1"	"Vector"
-		"2"	"Vector4"
-	    }
-	    range	{ 0 10 }
-	    export	none
-	}
-	parm {
-	    name	"target_attrib"
-	    label	"Target Attribute"
-	    type	string
-	    joinnext
-	    default	{ "P" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"mode"
-	    label	"Mode"
-	    type	integer
-	    nolabel
-	    joinnext
-	    default	{ "1" }
-	    menu	{
-		"0"	"Replace"
-		"1"	"Add"
-		"2"	"Multiply"
-	    }
-	    range	{ 0 10 }
-	    export	none
-	}
-	parm {
-	    name	"target_signature"
-	    label	"Target Signature"
-	    type	string
-	    nolabel
-	    default	{ "v4" }
-	    menu	{
-		"f4"	"Float"
-		"v4"	"Vector  "
-	    }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"use_weight_attr"
-	    label	"Use Per-Point Weights"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "off" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"weight_attr"
-	    label	"Weight Attribute"
-	    type	string
-	    joinnext
-	    default	{ "weight" }
-	    disablewhen	"{ use_weight_attr == 0 }"
-	    menureplace	{
-		[ "r = []" ]
-		[ "" ]
-		[ "try:" ]
-		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-		[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
-		[ "    " ]
-		[ "    for a in attrs:" ]
-		[ "        r.append(a)" ]
-		[ "        r.append(a)" ]
-		[ "except:" ]
-		[ "    pass" ]
-		[ "" ]
-		[ "return r" ]
-		language	python
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"weight_invert"
-	    label	"Invert"
-	    type	toggle
-	    default	{ "off" }
-	    disablewhen	"{ use_weight_attr == 0 }"
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+    parm {
+	name	"driver_attrib"
+	label	"Driver Attribute"
+	type	string
+	joinnext
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
-    group {
-	name	"folder1"
-	label	"Main Settings"
-	tabbreak
-
-	parm {
-	    name	"amount"
-	    label	"Amount"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+    parm {
+	name	"driver_signature"
+	label	"Driver Signature"
+	type	integer
+	nolabel
+	default	{ "1" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	    "2"	"Vector4"
 	}
-	parm {
-	    name	"cc_amp"
-	    label	"Final Amplitude"
-	    type	float
-	    size	3
-	    default	{ "1" "1" "1" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"freq"
-	    label	"Frequency"
-	    type	float
-	    size	4
-	    default	{ "1" "1" "1" "1" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"offset"
-	    label	"Offset"
-	    type	float
-	    size	4
-	    default	{ "0" "0" "0" "0" }
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"period"
-	    label	"Period"
-	    type	float
-	    size	4
-	    default	{ "1" "1" "1" "1" }
-	    disablewhen	"{ basis != pperlin basis != pflow }"
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 10 }
+	export	none
     }
-
+    parm {
+	name	"target_attrib"
+	label	"Target Attribute"
+	type	string
+	joinnext
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	nolabel
+	joinnext
+	default	{ "1" }
+	menu	{
+	    "0"	"Replace"
+	    "1"	"Add"
+	    "2"	"Multiply"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"target_signature"
+	label	"Target Signature"
+	type	string
+	nolabel
+	default	{ "v4" }
+	menu	{
+	    "f4"	"Float"
+	    "v4"	"Vector  "
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"use_weight_attr"
+	label	"Use Per-Point Weights"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"weight_attr"
+	label	"Weight Attribute"
+	type	string
+	joinnext
+	default	{ "weight" }
+	disablewhen	"{ use_weight_attr == 0 }"
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"weight_invert"
+	label	"Invert"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ use_weight_attr == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"amount"
+	label	"Amount"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"cc_amp"
+	label	"Final Amplitude"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"freq"
+	label	"Frequency"
+	type	float
+	size	4
+	default	{ "1" "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"offset"
+	label	"Offset"
+	type	float
+	size	4
+	default	{ "0" "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"period"
+	label	"Period"
+	type	float
+	size	4
+	default	{ "1" "1" "1" "1" }
+	disablewhen	"{ basis != pperlin basis != pflow }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
     group {
 	name	"folder2"
 	label	"Construction"

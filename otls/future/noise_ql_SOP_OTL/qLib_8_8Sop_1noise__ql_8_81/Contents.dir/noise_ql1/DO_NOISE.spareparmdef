@@ -480,16 +480,6 @@
     }
 
     parm {
-	name	"driver_attrib"
-	label	"Driver Attribute"
-	type	string
-	default	{ "P" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"target_attrib"
 	label	"Target Attribute"
 	type	string

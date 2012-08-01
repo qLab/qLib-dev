@@ -6,13 +6,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../vex_group\") }
     }
-    channel driver_attrib {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"P\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../driver_attrib\") }
-    }
     channel target_attrib {
       lefttype = extend
       righttype = extend
