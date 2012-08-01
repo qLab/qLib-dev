@@ -199,28 +199,29 @@ def list_cmd():
     asset_list = list(assets.items())
     asset_list.sort(key=lambda a:section_order[a[1]["section"]]+context_order[a[1]["context"]]+a[0])
 
-    with open(os.path.join(os.path.dirname(otls_dir), "assets.list"), "w") as alist:
-        alist.write("""# Assets
-This page lists all the assets and their brief descriptions extracted from their Help cards.
-
-""")
+    with open(os.path.join(os.path.dirname(otls_dir), "assets.md"), "w") as alist:
+        alist.write("# Assets\n")
+        alist.write("This page lists all the assets and their brief descriptions extracted from their Help cards.\n\n")
         sections = set()
         for asset_name, asset in asset_list:
             if asset["section"] not in sections:
                 alist.write("## " + asset["section"].capitalize() + " Section\n\n")
                 sections.add(asset["section"])
+                contexts = set()
+            if asset["context"] not in contexts:
+                if len(contexts) > 0:
+                    alist.write("---\n\n")
+                contexts.add(asset["context"])
             with open(asset["file"]) as f:
                 help_text = f.read()
                 name = re.search(r"\n\s*=(.*)=", help_text)
                 description = re.search(r"\n\s*\"\"\"(.*)\"\"\"", help_text)
-                if name is not None:
-                    alist.write("### " + name.group(1).strip() + " " + context_abbrev[asset["context"]] + "\n")
+                if name is None or description is None:
+                    alist.write("> **" + " ".join(asset_name.split("_")) +
+                            "**'s help card doesn't define a proper name and/or description..\n\n")
                 else:
-                    alist.write("> **" + " ".join(asset_name.split("_")) + "**'s help card doesn't define a proper name..\n\n")
-                if description is not None:
+                    alist.write("#### " + name.group(1).strip() + " " + context_abbrev[asset["context"]] + "\n")
                     alist.write(re.sub(r"\[(.*?)\|.*?\]", lambda m: "**" + m.group(1) + "**", description.group(1).strip()) + "\n\n")
-                else:
-                    alist.write("> **" + " ".join(asset_name.split("_")) + "**'s help card doesn't define a proper description..\n\n")
 
 def files():
     """
