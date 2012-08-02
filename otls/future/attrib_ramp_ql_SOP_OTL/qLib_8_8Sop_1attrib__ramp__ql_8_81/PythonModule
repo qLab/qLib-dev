@@ -1,0 +1,5 @@
+def changeColorMode(kwargs):
+    if kwargs["parm"].eval() == 0:
+        kwargs["node"].parm("rgb_ramp").set(kwargs["node"].parm("hsv_ramp").eval())
+    else:
+        kwargs["node"].parm("hsv_ramp").set(kwargs["node"].parm("rgb_ramp").eval())

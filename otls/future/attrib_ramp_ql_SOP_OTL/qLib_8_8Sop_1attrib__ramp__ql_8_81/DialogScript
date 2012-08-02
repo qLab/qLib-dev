@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/02/12 04:16:41
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/02/12 10:34:57
 
 {
     name	qLib::attrib_ramp_ql::1
@@ -55,8 +55,9 @@
     }
     parm {
 	name	"attrib_out"
-	label	"Output Attribute"
+	label	"Output"
 	type	string
+	joinnext
 	default	{ "Cd" }
 	menureplace	{
 	    "Cd"	"color (Cd)"
@@ -65,6 +66,40 @@
 	}
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"signature"
+	label	"Signature"
+	type	integer
+	nolabel
+	joinnext
+	default	{ "1" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"operation"
+	label	"Operation"
+	type	integer
+	nolabel
+	default	{ "0" }
+	menu	{
+	    "0"	"Add"
+	    "1"	"Multiply"
+	    "2"	"Replace"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
@@ -89,37 +124,6 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"operation"
-	label	"Operation"
-	type	integer
-	default	{ "0" }
-	menu	{
-	    "0"	"Add"
-	    "1"	"Multiply"
-	    "2"	"Replace"
-	}
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"signature"
-	label	"Signature"
-	type	integer
-	default	{ "1" }
-	menu	{
-	    "0"	"Float"
-	    "1"	"Vector"
-	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
 	name	"ramp_mode"
 	label	"Color Mode"
 	type	integer
@@ -132,8 +136,10 @@
 	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
+	parmtag	{ "script_callback_language" "python" }
 	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "script_callback" "kwargs[\"node\"].hdaModule().changeColorMode(kwargs)" }
+	parmtag	{ "parmvop" "1" }
     }
     parm {
 	name	"float_ramp"
@@ -165,7 +171,7 @@
 	parmtag	{ "script_callback_language" "python" }
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "rampshowcontrolsdefault" "1" }
-	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"rgb_ramp\").set(kwargs[\"parm\"].eval())" }
+	parmtag	{ "script_callback" "" }
 	parmtag	{ "rampbasis_var" "hsv_ramp_the_basis_strings" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "rampkeys_var" "hsv_ramp_the_key_positions" }
@@ -186,7 +192,7 @@
 	parmtag	{ "script_callback_language" "python" }
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "rampshowcontrolsdefault" "1" }
-	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"hsv_ramp\").set(kwargs[\"parm\"].eval())" }
+	parmtag	{ "script_callback" "" }
 	parmtag	{ "rampbasis_var" "rgb_ramp_the_basis_strings" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "rampkeys_var" "rgb_ramp_the_key_positions" }
