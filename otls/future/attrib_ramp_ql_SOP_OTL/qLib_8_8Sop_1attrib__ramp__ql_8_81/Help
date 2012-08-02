@@ -13,26 +13,21 @@
         The group of points the operator affects.
     Input Attribute:
         Name of the attribute that drives the mapping.
-    Output Attribute:
+    Output:
         Name of the attribute that stores the result of the mapping.
-    Input Min/Max:
-        Minimum and maximum values of the input that fit to the start end end of the ramp.
+    Signature:
+        Signature of the output attribute.
     Operation:
         Type of operation. The original value of the output attribute can be *added*, *multiplied* or be *replaced*
         with the result.
-    Signature:
-        Signature of the output attribute.
+    Input Min/Max:
+        Minimum and maximum values of the input that fit to the start end end of the ramp.
     Color Mode:
         Color mode of the ramp.
     Ramp:
         The ramp that gets mapped.
     Exponent:
         Exponent of a power operation that allows you to make a gamma correction of the output.
-
-WARNING:
-    Changing the color of a ramp point doesn't trigger the parameter callback script that syncronizes the HSV and
-    RGB ramps. To cirvumvent this please move the position sliders back and forth a bit before changing color modes.
-    This is a bug of Houdini.
 
 @relnotes Release Notes
 
