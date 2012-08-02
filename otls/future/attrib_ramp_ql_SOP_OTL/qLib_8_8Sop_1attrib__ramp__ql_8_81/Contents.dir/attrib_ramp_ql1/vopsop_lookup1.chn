@@ -1,0 +1,349 @@
+{
+    channel hsv_ramp1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp1pos\") }
+    }
+    channel hsv_ramp1cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp1cr\") }
+    }
+    channel hsv_ramp1cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp1cg\") }
+    }
+    channel hsv_ramp1cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp1cb\") }
+    }
+    channel hsv_ramp1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../hsv_ramp1interp\") }
+    }
+    channel ramp1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp1pos\") }
+    }
+    channel ramp1value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp1value\") }
+    }
+    channel ramp1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp1interp\") }
+    }
+    channel rgb_ramp1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp1pos\") }
+    }
+    channel rgb_ramp1cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp1cr\") }
+    }
+    channel rgb_ramp1cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp1cg\") }
+    }
+    channel rgb_ramp1cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp1cb\") }
+    }
+    channel rgb_ramp1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../rgb_ramp1interp\") }
+    }
+    channel ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp2pos\") }
+    }
+    channel ramp2value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp2value\") }
+    }
+    channel ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp2interp\") }
+    }
+    channel srcmin {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../srcmin\") }
+    }
+    channel srcmax {
+      lefttype = extend
+      righttype = extend
+      default = 7
+      flags = 0
+      segment { length = 0 value = 7 7 expr = ch(\"../srcmax\") }
+    }
+    channel exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../exp\") }
+    }
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel ramp {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../float_ramp\") }
+    }
+    channel signature {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../signature\") }
+    }
+    channel hsv_ramp {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../hsv_ramp\") }
+    }
+    channel rgb_ramp {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../rgb_ramp\") }
+    }
+    channel mode {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../ramp_mode\") }
+    }
+    channel operation {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../operation\") }
+    }
+    channel ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp3pos\") }
+    }
+    channel ramp3value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp3value\") }
+    }
+    channel ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp3interp\") }
+    }
+    channel ramp4pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp4pos\") }
+    }
+    channel ramp4value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp4value\") }
+    }
+    channel ramp4interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp4interp\") }
+    }
+    channel ramp5pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp5pos\") }
+    }
+    channel ramp5value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp5value\") }
+    }
+    channel ramp5interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp5interp\") }
+    }
+    channel rgb_ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp2pos\") }
+    }
+    channel rgb_ramp2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp2cr\") }
+    }
+    channel rgb_ramp2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp2cg\") }
+    }
+    channel rgb_ramp2cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp2cb\") }
+    }
+    channel rgb_ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../rgb_ramp2interp\") }
+    }
+    channel rgb_ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp3pos\") }
+    }
+    channel rgb_ramp3cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp3cr\") }
+    }
+    channel rgb_ramp3cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp3cg\") }
+    }
+    channel rgb_ramp3cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rgb_ramp3cb\") }
+    }
+    channel rgb_ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../rgb_ramp3interp\") }
+    }
+    channel hsv_ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp2pos\") }
+    }
+    channel hsv_ramp2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp2cr\") }
+    }
+    channel hsv_ramp2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp2cg\") }
+    }
+    channel hsv_ramp2cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp2cb\") }
+    }
+    channel hsv_ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../hsv_ramp2interp\") }
+    }
+    channel hsv_ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp3pos\") }
+    }
+    channel hsv_ramp3cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp3cr\") }
+    }
+    channel hsv_ramp3cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp3cg\") }
+    }
+    channel hsv_ramp3cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../hsv_ramp3cb\") }
+    }
+    channel hsv_ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../hsv_ramp3interp\") }
+    }
+  }

@@ -1,0 +1,13 @@
+Operator:     qLib::attrib_ramp_ql::1
+Label:        Attrib Ramp qL
+Path:         oplib:/qLib::Sop/attrib_ramp_ql::1?qLib::Sop/attrib_ramp_ql::1
+Icon:         COP2_hsv
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Aug  2 04:16:41 2012
+

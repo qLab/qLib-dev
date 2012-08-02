@@ -1,0 +1,147 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"srcmin"
+	label	"Input Range Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Input Range Max"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"hsv_ramp"
+	label	"HSV Ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampvalues_var" "hsv_ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "hsv_ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "hsv_ramp_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "hsv" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"exp"
+	label	"Out Gamma"
+	type	float
+	default	{ "2.2" }
+	range	{ 0 2.2 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ramp"
+	label	"Parameter"
+	type	ramp_flt
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"signature"
+	label	"Signature"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"driver_attr"
+	label	"Driver Attr"
+	type	string
+	default	{ "weight" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"out_attr"
+	label	"Out Attrib"
+	type	string
+	default	{ "Cd" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rgb_ramp"
+	label	"RGB Ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampvalues_var" "rgb_ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "rgb_ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "rgb_ramp_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "rgb" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"operation"
+	label	"Operation"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

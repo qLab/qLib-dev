@@ -1,0 +1,14 @@
+13
+ramp#pos ../float_ramp#pos
+ramp#value ../float_ramp#value
+ramp#interp ../float_ramp#interp
+hsv_ramp#pos ../hsv_ramp#pos
+hsv_ramp#cr ../hsv_ramp#cr
+hsv_ramp#cg ../hsv_ramp#cg
+hsv_ramp#cb ../hsv_ramp#cb
+hsv_ramp#interp ../hsv_ramp#interp
+rgb_ramp#pos ../rgb_ramp#pos
+rgb_ramp#cr ../rgb_ramp#cr
+rgb_ramp#cg ../rgb_ramp#cg
+rgb_ramp#cb ../rgb_ramp#cb
+rgb_ramp#interp ../rgb_ramp#interp

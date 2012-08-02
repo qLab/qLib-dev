@@ -1,0 +1,217 @@
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/02/12 04:16:41
+
+{
+    name	qLib::attrib_ramp_ql::1
+    script	qLib::attrib_ramp_ql::1
+    label	"Attrib Ramp qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	Source
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l vopsop_lookup1 vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib_in"
+	label	"Input Attribute"
+	type	string
+	joinnext
+	default	{ "weight" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib_out"
+	label	"Output Attribute"
+	type	string
+	default	{ "Cd" }
+	menureplace	{
+	    "Cd"	"color (Cd)"
+	    "uv"	"uv"
+	    "N"	"normal (N)"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcmin"
+	label	"Input Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Input Max"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"operation"
+	label	"Operation"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Add"
+	    "1"	"Multiply"
+	    "2"	"Replace"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"signature"
+	label	"Signature"
+	type	integer
+	default	{ "1" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"ramp_mode"
+	label	"Color Mode"
+	type	integer
+	default	{ "0" }
+	disablewhen	"{ signature == 0 }"
+	menu	{
+	    "0"	"RGB"
+	    "1"	"HSV"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"float_ramp"
+	label	"Ramp"
+	type	ramp_flt
+	default	{ "2" }
+	hidewhen	"{ signature == 1 }"
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( linear ) 2pos ( 1 ) 2value ( 0.96428573131561279 ) 2interp ( linear )" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"hsv_ramp"
+	label	"Ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	hidewhen	"{ ramp_mode == 0 } { signature == 0 }"
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampbasisdefault" "linear" }
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"rgb_ramp\").set(kwargs[\"parm\"].eval())" }
+	parmtag	{ "rampbasis_var" "hsv_ramp_the_basis_strings" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampkeys_var" "hsv_ramp_the_key_positions" }
+	parmtag	{ "rampcolortype" "hsv" }
+	parmtag	{ "rampvalues_var" "hsv_ramp_the_key_values" }
+	parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0.89999997615814209 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 0.89999997615814209 0 0 ) 2interp ( linear )" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"rgb_ramp"
+	label	"Ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	hidewhen	"{ ramp_mode == 1 } { signature == 0 }"
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "rampbasisdefault" "linear" }
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"hsv_ramp\").set(kwargs[\"parm\"].eval())" }
+	parmtag	{ "rampbasis_var" "rgb_ramp_the_basis_strings" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampkeys_var" "rgb_ramp_the_key_positions" }
+	parmtag	{ "rampcolortype" "rgb" }
+	parmtag	{ "rampvalues_var" "rgb_ramp_the_key_values" }
+	parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0 0 0.89999997615814209 ) 1interp ( linear ) 2pos ( 1 ) 2c ( 0.89999997615814209 0 0 ) 2interp ( linear )" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"exp"
+	label	"Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0.45 2.2 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
