@@ -37,6 +37,7 @@ waypoint_ql1/clamp_frame_range_1.parm
 waypoint_ql1/clamp_frame_range_1.userdata
 waypoint_ql1/switch_clamp_frame_range_1.init
 waypoint_ql1/switch_clamp_frame_range_1.def
+waypoint_ql1/switch_clamp_frame_range_1.chn
 waypoint_ql1/switch_clamp_frame_range_1.parm
 waypoint_ql1/switch_clamp_frame_range_1.userdata
 waypoint_ql1/cached.init
@@ -56,6 +57,7 @@ waypoint_ql1/keep_points_only.parm
 waypoint_ql1/keep_points_only.userdata
 waypoint_ql1/switch_keep_pts_only.init
 waypoint_ql1/switch_keep_pts_only.def
+waypoint_ql1/switch_keep_pts_only.chn
 waypoint_ql1/switch_keep_pts_only.parm
 waypoint_ql1/switch_keep_pts_only.userdata
 waypoint_ql1/read_first_frame.init
@@ -89,6 +91,7 @@ waypoint_ql1/clamp_frame_range_2.parm
 waypoint_ql1/clamp_frame_range_2.userdata
 waypoint_ql1/switch_clamp_frame_range_2.init
 waypoint_ql1/switch_clamp_frame_range_2.def
+waypoint_ql1/switch_clamp_frame_range_2.chn
 waypoint_ql1/switch_clamp_frame_range_2.parm
 waypoint_ql1/switch_clamp_frame_range_2.userdata
 waypoint_ql1.order

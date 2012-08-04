@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 07/28/12 04:10:54
+# Dialog script for qLib::waypoint_ql::2 automatically generated 08/05/12 01:26:00
 
 {
     name	qLib::waypoint_ql::2
@@ -15,10 +15,9 @@
     inputlabel	4	"Sub-Network Input #4"
     inputlabel	5	"Sub-Network Input #5"
 
-    group {
-	name	"folder1"
+    import {
 	label	"SOP Waypoint"
-	tabbreak
+	enable	0
 
 	parm {
 	    name	"passthru"
@@ -57,68 +56,70 @@
 	    name	"folder3"
 	    label	"File Name"
 
-	    group {
-		name	"folder8"
-		label	"Output"
-		tabbreak
-
-		parm {
-		    name	"outdir"
-		    label	"Output Directory"
-		    type	file
-		    joinnext
-		    default	{ "$HIP/tmp--sim/${OS}" }
-		    menureplace	{
-			"$HIP/tmp--sim/${OS}"	"default: sim dir/op.name"
-			"$HIP/tmp--sim/${OS}_v`ch(\"variant\")`"	"sim dir/op.name + variant"
-			"$HIP/tmp--sim/${OS}_`chs(\"variantname\")`"	"sim dir/op.name + variant name"
-		    }
-		    range	{ 0 1 }
-		    export	none
+	    parm {
+		name	"outdir"
+		label	"Output Directory"
+		type	file
+		joinnext
+		default	{ "$HIP/tmp--sim/${OS}" }
+		menureplace	{
+		    "$HIP/tmp--sim/${OS}"	"default: sim dir/op.name"
+		    "$HIP/tmp--sim/${OS}_v`ch(\"variant\")`"	"sim dir/op.name + variant"
+		    "$HIP/tmp--sim/${OS}_`chs(\"variantname\")`"	"sim dir/op.name + variant name"
 		}
-		parm {
-		    name	"outdir_open"
-		    label	"..."
-		    type	button
-		    default	{ "1" }
-		    help	"Open this directory in the OS file manager."
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "script_callback_language" "python" }
-		    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
-		}
-		parm {
-		    name	"outname"
-		    label	"* Name"
-		    type	string
-		    default	{ "${OS}_v`ch(\"variant\")`" }
-		    menureplace	{
-			"${OS}"	"waypoint OP name"
-			"${OS}_v`ch(\"variant\")`"	"OP name & variant number"
-			"${OS}_`chs(\"variantname\")`"	"OP name + variant (name)"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		}
-		parm {
-		    name	"outext"
-		    label	"Extension"
-		    type	string
-		    default	{ "$F4.bgeo.gz" }
-		    menureplace	{
-			"bgeo.gz"	"single file (bgeo.gz)"
-			"$F4.bgeo.gz"	"sequence ($F4.bgeo.gz)"
-			"$F4.bgeo"	"sequence ($F4.bgeo)"
-			"$F4.bhclassic"	"sequence ($F4.bhclassic)"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		}
+		range	{ 0 1 }
+		export	none
 	    }
-
-	    group {
-		name	"folder7"
-		label	"Variants"
+	    parm {
+		name	"outdir_open"
+		label	"..."
+		type	button
+		default	{ "1" }
+		help	"Open this directory in the OS file manager."
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
+	    }
+	    parm {
+		name	"outname"
+		label	"* Name"
+		type	string
+		default	{ "${OS}_v`ch(\"variant\")`" }
+		menureplace	{
+		    "${OS}"	"waypoint OP name"
+		    "${OS}_v`ch(\"variant\")`"	"OP name & variant number"
+		    "${OS}_`chs(\"variantname\")`"	"OP name + variant (name)"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"outext"
+		label	"Extension"
+		type	string
+		default	{ "$F4.bgeo.gz" }
+		menureplace	{
+		    "bgeo.gz"	"single file (bgeo.gz)"
+		    "$F4.bgeo.gz"	"sequence ($F4.bgeo.gz)"
+		    "$F4.bgeo"	"sequence ($F4.bgeo)"
+		    "$F4.bhclassic"	"sequence ($F4.bhclassic)"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"empty_label_3"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    import {
+		label	Variants
+		enable	0
 
 		parm {
 		    name	"variant"
@@ -148,7 +149,7 @@
 	    }
 
 	    parm {
-		name	"labelparm2"
+		name	"empty_label_2"
 		label	"Label"
 		type	label
 		nolabel
@@ -188,161 +189,145 @@
 	    name	"folder3_1"
 	    label	"Writer"
 
-	    import {
-		label	writer_import_1
-		source	"op:RENDER"
-		mask	"execute renderdialog trange f take"
-		enable	1
-
-		parm {
-		    name	"execute"
-		    label	"Render"
-		    type	button
-		    joinnext
-		    default	{ [ "ch(\"../execute\")" hscript-expr ] }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "execute" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"renderdialog"
-		    label	"Render Control..."
-		    type	button
-		    default	{ [ "ch(\"../renderdialog\")" hscript-expr ] }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "renderdialog" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"trange"
-		    label	"Valid Frame Range"
-		    type	ordinal
-		    default	{ "off" }
-		    menu	{
-			"off"	"Render Any Frame"
-			"normal"	"Render Frame Range"
-			"on"	"Render Frame Range Only (Strict)"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "trange" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"f"
-		    label	"Start/End/Inc"
-		    type	float
-		    size	3
-		    default	{ "1" "240" "1" }
-		    disablewhen	"{ trange == off }"
-		    range	{ 0 10 }
-		    export	none
-		    parmtag	{ "import_token" "f" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"take"
-		    label	"Render With Take"
-		    type	string
-		    default	{ "_current_" }
-		    menu	{
-			[ "opmenu -l RENDER take" ]
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "take" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
+	    parm {
+		name	"execute"
+		label	"Render"
+		type	button
+		joinnext
+		default	{ [ "ch(\"../execute\")" hscript-expr ] }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "execute" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-
-	    import {
-		label	writer_import_2
-		source	"op:RENDER"
-		mask	"sopoutput xformtype initsim reportnetwork save*"
-		enable	1
-
-		parm {
-		    name	"sopoutput"
-		    label	"Output File"
-		    type	file
-		    default	{ "`chs(\"outfile\")`" }
-		    menureplace	{
-			[ "opmenu -l RENDER sopoutput" ]
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "sopoutput" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"xformtype"
-		    label	"Transform"
-		    type	ordinal
-		    default	{ "none" }
-		    menu	{
-			"none"	"None"
-			"world"	"Into World Space"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "xformtype" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"initsim"
-		    label	"Initialize Simulation OPs"
-		    type	toggle
-		    default	{ "off" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "initsim" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"reportnetwork"
-		    label	"Report Network Use"
-		    type	toggle
-		    default	{ "off" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "reportnetwork" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"saveretry"
-		    label	"Save Retries"
-		    type	integer
-		    default	{ "0" }
-		    range	{ 0! 5 }
-		    export	none
-		    parmtag	{ "import_token" "saveretry" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"savebackground"
-		    label	"Save in Background"
-		    type	toggle
-		    default	{ "on" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "savebackground" }
-		    parmtag	{ "import_source" "op:RENDER" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
+	    parm {
+		name	"renderdialog"
+		label	"Render Control..."
+		type	button
+		default	{ [ "ch(\"../renderdialog\")" hscript-expr ] }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "renderdialog" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-
+	    parm {
+		name	"trange"
+		label	"Valid Frame Range"
+		type	ordinal
+		default	{ "off" }
+		menu	{
+		    "off"	"Render Any Frame"
+		    "normal"	"Render Frame Range"
+		    "on"	"Render Frame Range Only (Strict)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "trange" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"f"
+		label	"Start/End/Inc"
+		type	float
+		size	3
+		default	{ "1" "240" "1" }
+		disablewhen	"{ trange == off }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "f" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"take"
+		label	"Render With Take"
+		type	string
+		default	{ "_current_" }
+		menu	{
+		    [ "opmenu -l RENDER take" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "take" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"sopoutput"
+		label	"Output File"
+		type	file
+		default	{ "`chs(\"outfile\")`" }
+		menureplace	{
+		    [ "opmenu -l RENDER sopoutput" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "sopoutput" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"xformtype"
+		label	"Transform"
+		type	ordinal
+		default	{ "none" }
+		menu	{
+		    "none"	"None"
+		    "world"	"Into World Space"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "xformtype" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"initsim"
+		label	"Initialize Simulation OPs"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "initsim" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"reportnetwork"
+		label	"Report Network Use"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "reportnetwork" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"saveretry"
+		label	"Save Retries"
+		type	integer
+		default	{ "0" }
+		range	{ 0! 5 }
+		export	none
+		parmtag	{ "import_token" "saveretry" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"savebackground"
+		label	"Save in Background"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "savebackground" }
+		parmtag	{ "import_source" "op:RENDER" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	    parm {
 		name	"perfmon"
 		label	"Performance Monitoring"
@@ -400,78 +385,70 @@
 	    name	"folder3_2"
 	    label	"Reader"
 
-	    import {
-		label	Reader
-		source	"op:geom_reader"
-		mask	"reload objpattern geodatapath missingframe loadtype"
-		enable	1
-
-		parm {
-		    name	"reload"
-		    label	"Reload Geometry"
-		    type	button
-		    default	{ "0" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "reload" }
-		    parmtag	{ "import_source" "op:geom_reader" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"objpattern"
-		    label	"Object Mask"
-		    type	string
-		    default	{ "*" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "objpattern" }
-		    parmtag	{ "import_source" "op:geom_reader" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"geodatapath"
-		    label	"Geometry Data Path"
-		    type	string
-		    default	{ "" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "geodatapath" }
-		    parmtag	{ "import_source" "op:geom_reader" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"missingframe"
-		    label	"Missing Frame"
-		    type	ordinal
-		    default	{ "error" }
-		    menu	{
-			"error"	"Report Error"
-			"empty"	"No Geometry"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "missingframe" }
-		    parmtag	{ "import_source" "op:geom_reader" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
-		parm {
-		    name	"loadtype"
-		    label	"Load"
-		    type	ordinal
-		    default	{ "full" }
-		    menu	{
-			"full"	"All Geometry"
-			"infobbox"	"Info Bounding Box"
-			"info"	"Info"
-		    }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "import_token" "loadtype" }
-		    parmtag	{ "import_source" "op:geom_reader" }
-		    parmtag	{ "autoscope" "0000000000000000" }
-		}
+	    parm {
+		name	"reload"
+		label	"Reload Geometry"
+		type	button
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "reload" }
+		parmtag	{ "import_source" "op:geom_reader" }
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-
+	    parm {
+		name	"objpattern"
+		label	"Object Mask"
+		type	string
+		default	{ "*" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "objpattern" }
+		parmtag	{ "import_source" "op:geom_reader" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"geodatapath"
+		label	"Geometry Data Path"
+		type	string
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "geodatapath" }
+		parmtag	{ "import_source" "op:geom_reader" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"missingframe"
+		label	"Missing Frame"
+		type	ordinal
+		default	{ "error" }
+		menu	{
+		    "error"	"Report Error"
+		    "empty"	"No Geometry"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "missingframe" }
+		parmtag	{ "import_source" "op:geom_reader" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"loadtype"
+		label	"Load"
+		type	ordinal
+		default	{ "full" }
+		menu	{
+		    "full"	"All Geometry"
+		    "infobbox"	"Info Bounding Box"
+		    "info"	"Info"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "loadtype" }
+		parmtag	{ "import_source" "op:geom_reader" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	    group {
 		name	"folder5"
 		label	"Frame Range"
