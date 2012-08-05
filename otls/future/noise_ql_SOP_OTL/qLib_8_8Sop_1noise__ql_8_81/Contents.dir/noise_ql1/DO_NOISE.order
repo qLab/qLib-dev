@@ -1,5 +1,5 @@
-50
-unifiednoise1
+57
+Noise_Generator
 freq
 offset
 period
@@ -32,12 +32,12 @@ vectohvec2
 Driver_Vec4
 Driver_Float
 floattohvec1
-switch3
-switch_weighted_deform
+Driver_Signature_Switch
+Weight_Switch
 import_weight
 weight_attr
 complement1
-switch2
+Invert_Weight
 add1
 Target_Attrib1
 Target_Attrib_Name1
@@ -49,3 +49,10 @@ Mode_Switch
 multiply1
 mix1
 Export_Result
+condition
+switcher
+switcher1
+switcher2
+switcher3
+Driver_Attrib_Name
+Driver_Sign_Switch

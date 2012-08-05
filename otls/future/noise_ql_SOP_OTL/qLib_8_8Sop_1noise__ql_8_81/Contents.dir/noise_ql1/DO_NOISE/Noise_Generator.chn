@@ -64,28 +64,11 @@
 
 	 length = 0 expr = ch(\"../passvalz\") }
     }
-    channel active {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { options = {	   untie  iv ov is os ia oa }
-
-	 length = 0 expr = ch(\"../active\") }
-    }
     channel fractal {
       lefttype = extend
       righttype = extend
       defaultString = \"none\"
       flags = 0
       segment { length = 0 accel = 0.3333333432674408 0.3333333432674408 expr = chs(\"../fractal\") }
-    }
-    channel signature {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"f4\"
-      flags = 0
-      start = 3.7083332538604736
-      segment { length = 0 accel = 0.3333333432674408 0.3333333432674408 expr = chs(\"../../target_signature\") }
     }
   }

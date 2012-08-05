@@ -403,4 +403,36 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../out_exp3\") }
     }
+    channel do_exp {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_exp\") }
+    }
+    channel invert_weight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert_weight\") }
+    }
+    channel mode {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../mode\") }
+    }
+    channel use_weight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../use_weight\") }
+    }
+    channel driver_signature {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../driver_signature\") }
+    }
   }

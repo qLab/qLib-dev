@@ -1,4 +1,4 @@
-# Dialog script for qLib::noise_ql::1 automatically generated 08/01/12 12:06:20
+# Dialog script for qLib::noise_ql::1 automatically generated 08/06/12 00:16:40
 
 {
     name	qLib::noise_ql::1
@@ -9,7 +9,7 @@
 	""
     }
 
-    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	1	Source
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -51,6 +51,8 @@
 	}
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"DO_NOISE/Driver_Sign_Switch/switcher\").set(kwargs[\"script_value\"])" }
     }
     parm {
 	name	"target_attrib"
@@ -91,9 +93,11 @@
 	}
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"DO_NOISE/Noise_Generator/signature\").set(kwargs[\"script_value\"])" }
     }
     parm {
-	name	"use_weight_attr"
+	name	"use_weight"
 	label	"Use Per-Point Weights"
 	type	toggle
 	nolabel
@@ -110,7 +114,7 @@
 	type	string
 	joinnext
 	default	{ "weight" }
-	disablewhen	"{ use_weight_attr == 0 }"
+	disablewhen	"{ use_weight == 0 }"
 	menureplace	{
 	    [ "r = []" ]
 	    [ "" ]
@@ -133,11 +137,11 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"weight_invert"
+	name	"invert_weight"
 	label	"Invert"
 	type	toggle
 	default	{ "off" }
-	disablewhen	"{ use_weight_attr == 0 }"
+	disablewhen	"{ use_weight == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "parmvop" "1" }
@@ -245,6 +249,8 @@
 	    range	{ 0 1 }
 	    export	none
 	    unquoted
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"DO_NOISE/Noise_Generator/basis\").set(kwargs[\"script_value\"])" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
@@ -369,6 +375,7 @@
 	    range	{ 0 1 }
 	    export	none
 	    unquoted
+	    parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"DO_NOISE/Noise_Generator/fractal\").set(kwargs[\"script_value\"])" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
