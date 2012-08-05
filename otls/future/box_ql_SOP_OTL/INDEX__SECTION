@@ -1,7 +1,7 @@
 Operator:     qLib::box_ql::1
 Label:        Box qL
 Path:         oplib:/qLib::Sop/box_ql::1?qLib::Sop/box_ql::1
-Icon:         VOP_boxclip
+Icon:         BUTTONS_materials_assigned
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Thu Jul 26 21:41:04 2012
+Modified:     Mon Aug  6 00:51:37 2012
 

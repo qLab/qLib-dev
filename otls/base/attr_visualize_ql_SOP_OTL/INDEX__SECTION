@@ -1,7 +1,7 @@
 Operator:     qLib::attr_visualize_ql::1
 Label:        Attr Visualize qL
 Path:         oplib:/qLib::Sop/attr_visualize_ql::1?qLib::Sop/attr_visualize_ql::1
-Icon:         COP2_colorwheel
+Icon:         DATATYPES_rgb
 Table:        Sop
 License:      
 Extra:        guide=./GUIDE 
@@ -9,5 +9,5 @@ Inputs:       1 to 5
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Jul 30 23:19:45 2012
+Modified:     Mon Aug  6 01:46:04 2012
 

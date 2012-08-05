@@ -16,6 +16,7 @@
       <contextOpType>$HDA_TABLE/$HDA_NAME</contextOpType>
     </toolMenuContext>
     <toolSubmenu>qLib</toolSubmenu>
+    <toolSubmenu>Primitive</toolSubmenu>
     <script scriptType="python"><![CDATA[import soptoolutils
 
 soptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>

@@ -1,7 +1,7 @@
 Operator:     qLib::distribute_ql::1
 Label:        Distribute qL
 Path:         oplib:/qLib::Sop/distribute_ql::1?qLib::Sop/distribute_ql::1
-Icon:         VOP_pcopen
+Icon:         VOP_neighbourcount
 Table:        Sop
 License:      
 Extra:        
@@ -9,7 +9,7 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:25:27 2012
+Modified:     Mon Aug  6 01:38:51 2012
 
 Operator:     qLib::distributor_helper_ql::1
 Label:        Distributor Helper qL
@@ -22,5 +22,5 @@ Inputs:       1 to 1
 Subnet:       false
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:24:48 2012
+Modified:     Fri Jul 27 01:24:48 2012
 
