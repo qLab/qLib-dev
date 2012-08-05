@@ -115,3 +115,65 @@ def post_render(path):
     if n.parm('perfmon').eval()!=0:
         pm_end(n)
 
+
+
+
+
+def create_file_loader():
+    """Create related file SOP (loader)."""
+    n = hou.pwd()
+    p = n.parent()
+
+    if ynreq("Create loader File SOP for %s?" % n.name()):
+
+        f = p.createNode("file", "%s_loader" % n.name())
+
+        # hackety-hack    
+        cmd = 'parm { name "filemode" baseparm export none } parm { name "file" baseparm export all } parm { name "reload" baseparm export none } parm { name "objpattern" baseparm export none } parm { name "geodatapath" baseparm export none } parm { name "missingframe" baseparm export none } parm { name "loadtype" baseparm export none } parm { name "OS" label "Waypoint Name" type string default { "waypoint_ql1" } export none } parm { name "outdir" label "Output Directory" type string default { "$HIP/tmp--sim/`chs(\\"OS\\")`" } export none } parm { name "outname" label "Name" type string default { "`chs(\\"OS\\")`_`ch(\\"variant\\")`" } export none } parm { name "outext" label "Extension" type string default { "$F4.bgeo.gz" } export none } parm { name "variant" label "Variant" type integer default { "0" } export none } parm { name "variantnames" label "Variant Names" type string default { "default hires proxy" } export none } parm { name "variantname" label "Variant Name" type string default { "" } export none }'
+        cmd = "opspareds '%s' %s" % (cmd, f.path())
+        hou.hscript(cmd)
+    
+        hou.hscript("opparm %s file ('`chs(\"outdir\")`/`chs(\"outname\")`.`chs(\"outext\")`') OS ( %s )" % (f.path(), n.name()))
+    
+        # copy string parameters
+        for parm in ['outdir', 'outname', 'outext', 'variantnames', 'variantname']:
+            v = n.parm(parm).unexpandedString()
+            v = v.replace('${OS}', '`chs("OS")`')
+            v = v.replace('$OS', '`chs("OS")`')
+            f.parm(parm).set(v)
+    
+        f.parm("variant").set( n.parm("variant").eval() )
+    
+        dispmsg("Created node: %s" % f.path())
+
+
+
+def create_rop_fetch(wedge=False):
+    """Create related ROP nodes (fetch/wedge)."""
+    n = hou.pwd()
+
+    if ynreq("Create ROP(s) for %s?" % n.name()):
+        try:
+            p = n.parm("out_ropnet").eval()
+            r = hou.node(p)
+    
+            f = r.createNode("fetch", "%s_fetch" % n.name())
+            f.parm("source").set("%s/RENDER" % n.path())
+    
+            msg = "Created node(s): %s" % f.path()
+    
+            if wedge:
+                w = r.createNode("wedge", "%s_wedge" % n.name())
+                w.parm("driver").set("%s" % f.path())
+                w.parm("random").set(False)
+                w.parm("wedgeparams").set(1)
+    
+                w.parm("name1").set("variant")
+                w.parm("chan1").set("%s/variant" % n.path())
+    
+                msg += " / %s" % w.name()
+
+            dispmsg(msg)
+    
+        except:
+            pass

@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 08/05/12 01:26:00
+# Dialog script for qLib::waypoint_ql::2 automatically generated 08/05/12 05:07:07
 
 {
     name	qLib::waypoint_ql::2
@@ -117,37 +117,31 @@
 		range	{ 0 1 }
 		export	none
 	    }
-	    import {
-		label	Variants
-		enable	0
-
-		parm {
-		    name	"variant"
-		    label	"Output Variant"
-		    type	integer
-		    default	{ "0" }
-		    range	{ 0! 9 }
-		    export	none
-		}
-		parm {
-		    name	"variantnames"
-		    label	"Variant Names"
-		    type	string
-		    default	{ "default proxy hires" }
-		    range	{ 0 1 }
-		    export	none
-		}
-		parm {
-		    name	"variantname"
-		    label	"* Variant Name"
-		    type	string
-		    default	{ "`arg(chs(\"variantnames\"), ch(\"variant\"))`" }
-		    disablewhen	"{ variant >= 0 }"
-		    range	{ 0 1 }
-		    export	none
-		}
+	    parm {
+		name	"variant"
+		label	"Output Variant"
+		type	integer
+		default	{ "0" }
+		range	{ 0! 9 }
+		export	none
 	    }
-
+	    parm {
+		name	"variantnames"
+		label	"Variant Names"
+		type	string
+		default	{ "default proxy hires" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"variantname"
+		label	"* Variant Name"
+		type	string
+		default	{ "`arg(chs(\"variantnames\"), ch(\"variant\"))`" }
+		disablewhen	"{ variant >= 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
 	    parm {
 		name	"empty_label_2"
 		label	"Label"
@@ -171,15 +165,6 @@
 		type	string
 		invisible
 		default	{ "`chs(\"outdir\")`/`chs(\"outname\")`.*" }
-		range	{ 0 1 }
-		export	none
-	    }
-	    parm {
-		name	"delete_files"
-		label	"Delete Cached Files..."
-		type	button
-		invisible
-		default	{ "1" }
 		range	{ 0 1 }
 		export	none
 	    }
@@ -525,6 +510,122 @@
 	    }
 	}
 
+	group {
+	    name	"folder3_4"
+	    label	"Tools"
+
+	    group {
+		name	"folder4"
+		label	"File System"
+		tabbreak
+
+		parm {
+		    name	"make_dir"
+		    label	"Create Output Directory"
+		    type	button
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().mk_dir(param='outdir')" }
+		}
+		parm {
+		    name	"outdir_open2"
+		    label	"Open in File Manager..."
+		    type	button
+		    default	{ "1" }
+		    help	"Open this directory in the OS file manager."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
+		}
+		parm {
+		    name	"outdir_delete"
+		    label	"Delete Directory..."
+		    type	button
+		    default	{ "1" }
+		    help	"Open this directory in the OS file manager."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().rm_dir(param='outdir')" }
+		}
+		parm {
+		    name	"labelparm3"
+		    label	"Label"
+		    type	label
+		    nolabel
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
+	    group {
+		name	"folder1"
+		label	"Create Related"
+
+		parm {
+		    name	"create_file_loader"
+		    label	"Build File SOP (loader) for this node"
+		    type	button
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().create_file_loader()" }
+		}
+		parm {
+		    name	"empty_label_4"
+		    label	"Label"
+		    type	label
+		    invisible
+		    nolabel
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		group {
+		    name	"folder2"
+		    label	"ROP Node(s)"
+
+		    parm {
+			name	"create_fetch"
+			label	"Create linked Fetch ROP"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch()" }
+		    }
+		    parm {
+			name	"create_fetch_wedge"
+			label	"Create Fetch + Wedge ROP"
+			type	button
+			default	{ "1" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch(wedge=True)" }
+		    }
+		    parm {
+			name	"out_ropnet"
+			label	"Target ROP Network"
+			type	oppath
+			default	{ "/out" }
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "oprelative" "." }
+			parmtag	{ "opfilter" "!!ROP!!" }
+		    }
+		}
+
+	    }
+
+	}
+
 	parm {
 	    name	"note_"
 	    label	"."
@@ -533,47 +634,6 @@
 	    default	{ "[*]: Press MMB to display result values." }
 	    range	{ 0 1 }
 	    export	none
-	}
-	parm {
-	    name	"labelparm3"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"make_dir"
-	    label	"Create Output Directory"
-	    type	button
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback_language" "python" }
-	    parmtag	{ "script_callback" "hou.pwd().hdaModule().mk_dir(param='outdir')" }
-	}
-	parm {
-	    name	"outdir_open2"
-	    label	"Open in File Manager..."
-	    type	button
-	    default	{ "1" }
-	    help	"Open this directory in the OS file manager."
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback_language" "python" }
-	    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
-	}
-	parm {
-	    name	"outdir_delete"
-	    label	"Delete Directory..."
-	    type	button
-	    default	{ "1" }
-	    help	"Open this directory in the OS file manager."
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback_language" "python" }
-	    parmtag	{ "script_callback" "hou.pwd().hdaModule().rm_dir(param='outdir')" }
 	}
     }
 

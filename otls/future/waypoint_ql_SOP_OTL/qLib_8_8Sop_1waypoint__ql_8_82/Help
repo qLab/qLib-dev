@@ -4,13 +4,9 @@
 
 = Waypoint qL =
 
-*Version 0.0.3 (alpha)*
+*interface version 2*
 
-"""Represents a 'waypoint' in a complex SOP network, where expensive intermediate results can be saved to disk and re-used."""
-
-@related
-    - [Cache|Node:sop/cache]
-    - [File|Node:sop/file]
+"""Marks a point in a SOP network where intermediate (or expensive) results can be saved to disk and re-used."""
 
 If you have complex SOP networks with many nodes (such as large-scale RBD simulations), you probably want to
 break down your network to a few logical units. A Waypoint SOP can represent the end of such a logical unit,
@@ -46,24 +42,30 @@ NOTE:
     On the other hand, a SOP network littered with Waypoint nodes _do_ turn into a nightmare quickly. So...
 
 WARNING:
-    This SOP introduces additional maintenance burdens to your SOP network --
-    as soon as you start using waypoints, you'll have to ensure that the geometry on disk corresponds
-    to the current state of the upstream network. This can be a source for
+    This SOP introduces additional (manual) maintenance burdens to your SOP network --
+    as soon as you start using waypoints, you'll have to ensure that the geometry on disk matches
+    the current state of the upstream network. This can be a source for
     many mistakes. _Use as few instances of this node as possible._
 
 
 *Useful features*
-
-- _Multiple inputs_
-
-    Up to four inputs (0-3) can be connected. This can be used to write different variations of the same
-    geometry (e.g. plain/subdivided, etc).
 
 - _Takes_
 
     Takes allow to work with lower-quality settings (if possible) and only calculate with higher settings
     when writing the results to disk (e.g. when baking ambient occlusion to per-point colors, the sampling
     quality can be boosted for the disk version only).
+
+- _Variants_
+
+    The writing/reading of multiple _variants_ of the same input is supported (see the `Output Variant`
+    and `Variant Names` parameters below). One practical application is when used together
+    with a [Wedge output driver (ROP)|Node:out/wedge].
+
+    TIP:
+        You can invoke the "Writer" mode of a Waypoint from an output network using a [Fetch ROP|Node:out/fetch]
+        (for this purpose, the internal writer node in a Waypoint is called `RENDER` -- e.g. `/obj/geo1/waypoint_ql1/RENDER`).
+        This way it's easy to build [Node:out/fetch]/[Node:out/wedge] networks that generate variants quicksville.
 
 
 @parameters
@@ -73,18 +75,81 @@ WARNING:
         This is 'On' by default and needed to be turned off explicitly once the user performed a
         write-to-disk operation.
 
-    Input Select:
-        Up to four (0-3) inputs can be connected; the geometry from the specified input will be written
-        to disk.
+    Waypoint State:
+        Main node state.
+        Whenever it's changed, the node color also gets updated to give more distinct visual feedback.
 
-    Points Only:
+        Pass Through (Disabled):
+            An inactive waypoint. It just passes through any input geometry as it is.
+
+        Active (Read from Disk):
+            An active waypoint that reads geometry from disk and feeds it to its output.
+
+    Points-Only for Consecutive Frames:
         When writing sequences, only the first frame will contain the complete geometry.
-        The other frames will store point data only. This is greatly reduce I/O and
-        geometry performance (usually about 2x).
+        The other frames will store point data only (even that is stripped down to
+        position and velocity by default -- the idea to reduce disk consumption,
+        I/O and geometry construction time.)
+
+        Works best with "regular" high-res geometry (i.e. lots of primitives).
+        *Do not use it for particles* (or objects with changing topology).
 
     Remove Attribs:
-        Which attributes to remove from the 'points-only' files. (Groups are always removed.)
+        Which attributes to remove from the 'points-only' files.
         The default is to remove all but `v` (velocity).
+
+        Groups are always removed.
+
+    File Name (tab):
+        Settings for the path/name of the output file(s).
+
+        The folder, name and extension parts are each represented by a parameter. This makes
+        setting them up quick and easy (it's usually just clicking on one of the preset menu items).
+
+        They also come with very reasonable default values (basically you're just have to give the
+        Waypoint a meaningful name and that's it).
+
+        Output Directory:
+            The folder to store the output file(s) in. If it doesn't exist, it will be created before
+            writing. By default it's a subfolder with the name of the Waypoint node.
+
+        Name:
+            The output file name. (See the pop-down menu for the most common settings, including
+            _variant-by-number_ and _variant-by-name_, see below.)
+
+        Extension:
+            Output file extension (with file numbering for sequences). See the pop-down menu for
+            the most regular values. The `.gz` suffix indicates file compression; `.bhclassic`
+            is the "old" H11 bgeo format, compatible with other applications such as PartIO.
+
+        Output Variant:
+            This parameter allows to include a _variant_ (version) in the output file name (using the
+            appropriate `Name` presets).
+
+            It lets the user save a new version instead of overwriting the previous one (just by incrementing
+            this parameter), or to use a [Wedge ROP|Node:out/wedge] to generate multiple versions from a ROP
+            network.
+
+        Variant Names:
+            A list of names associated with variant indices (space-separated -- first is variant #0, second
+            is variant #1, and so on).
+
+        Variant Name (feedback):
+            This is a read-only parameter that returns the variant name specified by the variant number.
+            (Try pressing MMB on the parameter label, then pull on the `variant` slider to see the names displayed).
+
+            This is a "feedback" parameter for display purposes, but it can also be used in expressions
+            (e.g. in the output file name, see above).
+
+        Full Path/Name:
+            This parameter contains the final pathname that is passed to both the geometry writer and reader.
+
+            _Although it can be edited, it's recommended to keep the default expression as it is, and use the
+            parameters above to build the output file name_.
+
+            This parameter is intended to be used mostly as feedback. Press *MMB* on the parameter label to toggle
+            its display to show the current path string.
+
 
     Writer (tab):
         Geometry writing settings (see also [Geometry ROP|Node:out/geometry]).
@@ -122,8 +187,55 @@ WARNING:
             *This button has to be pressed every time the geometry file is overwritten.*
 
 
+    Tools (tab):
+        Miscellaneous functions.
+
+        Create Output Directory:
+            Pressing this button will create the directory set up in the _File Name_ section.
+            Note that this also happens automatically before each geometry write, so there's
+            usually no need to do this manually.
+
+        Open in File Manager:
+            Open the output directory in the operating system's native file manager
+            (right now it's linux-only and launches the Gnome _nautilus_ application).
+
+        Delete Directory:
+            Pressing this button will delete the entire output folder _with all contents_.
+            Useful for getting rid of large amounts of cached geometry (but make sure the
+            folder doesn't contain anything else important).
+
+        Build File SOP (Loader):
+            Creates a [File SOP|Node:sop/file] that is set up to read the file(s) written by
+            the current waypoint node (including variants).
+
+        Create Fetch, Fetch+Wedge ROP:
+            Creates a [Fetch ROP|Node:out/fetch] or a [Node:out/fetch]/[Node:out/wedge]
+            combination to render this waypoint (in the specified ROP network).
+
+            NOTE:
+                For Wedge ROP(s), make sure the variant range is set up properly.
+
+
+
+@related
+    - [Node:sop/cache]
+    - [Node:sop/file]
+    - [Node:out/fetch]
+    - [Node:out/wedge]
+
+
 
 @Release_Notes Release Notes
+
+    _interface version 2_ ---
+
+    2012-08-05:
+        - Full output file (sequence) path is now constructed from three components (path, name, extension) -- all represented with a separate parameter. This results in shorter filename expressions.
+        - Got rid of multiple inputs, added _variants_ instead (so there's still built-in support for writing multiple variants of the same input). Variants can be numeric or textual.
+        - The output directory is created before writing (if it doesn't exist).
+
+
+    _interface version 1_ ---
 
     Version 0.0.3:
         - Output filename helper "preset" menu
