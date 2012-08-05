@@ -1,5 +1,5 @@
 comment ""
-position 9.4135 4.17634
+position 10.0362 4.24076
 cachesize 1
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -9,20 +9,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	"" "" 1 "condition"
+0 	condition 0 1 "condition"
 1 	Sign_Safe_Power 1 1 "input1"
-2 	unifiednoise1 33 1 "input2"
+2 	Noise_Generator 33 1 "input2"
 }
 inputs
 {
-0 	"" 0 1
+0 	condition 0 1
 1 	Sign_Safe_Power 0 1
-2 	unifiednoise1 0 1
+2 	Noise_Generator 0 1
 }
 stat
 {
   create 1340235991
-  modify 1343815562
+  modify 1344204973
   author mate@matild.local
   access 0777
 }

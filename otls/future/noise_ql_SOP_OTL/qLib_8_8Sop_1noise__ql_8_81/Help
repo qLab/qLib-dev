@@ -1,16 +1,12 @@
-#icon: SOP/mountain
+#icon: COP2/bump
 #context: sop
 #type: node
 
 = Noise qL =
 
-*Version 0.1.0*
+*Version 1*
 
-"""Modulates an attribute - possibly P - by a noise."""
-
-WARNING:
-    Currently _noise types_ Perlin and Simplex with _fractal type_ other than None produces results with a biased middle
-    point. Use Flow or Sparse Convolution for unbiased results until further notice.
+"""Modulates point positions or some other attribute by a noise."""
 
 TIP:
     The Noise qL SOP is implemented as a single VOP SOP, so you can map most of the parameters to attributes to further
@@ -40,12 +36,17 @@ TIP:
     Amount:
         Global multiplier of the modulation.
     Noise Parameters:
-        If not otherwise indicated these are the exposed parameters of the underlying
+        If not indicated otherwise these are the exposed parameters of the underlying
         [Unified Noise VOP|Node:vop/unifiednoise]. See details there.
+
+        TIP:
+            Use the fourth component of the *offset* parameter to animate the noise through time.
     Exponent:
         Sign-safe exponent applied after noise generation. It doesn't offset the result.
 
 @relnotes Release Notes
 
-    Version 0.1.0:
+    2012-08-06:
+        Fixed copy stamp performance degradation. Enhanced the example scene.
+    2012-07-21:
         Initial release.

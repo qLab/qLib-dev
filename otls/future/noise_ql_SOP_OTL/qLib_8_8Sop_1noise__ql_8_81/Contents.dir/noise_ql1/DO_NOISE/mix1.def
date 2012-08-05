@@ -11,18 +11,18 @@ inputsNamed3
 {
 0 	Target_Attrib1 4 1 "input1"
 1 	Mode_Switch 0 1 "input2"
-2 	switch2 3 1 "bias"
+2 	Invert_Weight 3 1 "bias"
 }
 inputs
 {
 0 	Target_Attrib1 1 1
 1 	Mode_Switch 0 1
-2 	switch2 0 1
+2 	Invert_Weight 0 1
 }
 stat
 {
   create 1340279393
-  modify 1343815556
+  modify 1344204971
   author mate@matild.local
   access 0777
 }
