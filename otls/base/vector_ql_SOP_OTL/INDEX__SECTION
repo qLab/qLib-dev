@@ -1,7 +1,7 @@
 Operator:     qLib::vector_ql::1
 Label:        Vector qL
 Path:         oplib:/qLib::Sop/vector_ql::1?qLib::Sop/vector_ql::1
-Icon:         SOP_matchaxis
+Icon:         DATATYPES_angle
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       1 to 2
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:31:00 2012
+Modified:     Mon Aug  6 02:00:02 2012
 
