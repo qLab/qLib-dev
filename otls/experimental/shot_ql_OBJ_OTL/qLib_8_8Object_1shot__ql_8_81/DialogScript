@@ -194,7 +194,7 @@
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "script_callback_language" "python" }
-		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('wrange%s' % kwargs['script_multiparm_index'])" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_range('xrange%s' % kwargs['script_multiparm_index'])" }
 		}
 	    }
 
