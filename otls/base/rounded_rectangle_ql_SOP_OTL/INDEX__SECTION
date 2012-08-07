@@ -1,7 +1,7 @@
 Operator:     qLib::rounded_rectangle_ql::1
 Label:        Rounded Rectangle qL
 Path:         oplib:/qLib::Sop/rounded_rectangle_ql::1?qLib::Sop/rounded_rectangle_ql::1
-Icon:         VOP_atten
+Icon:         DATATYPES_button
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:28:31 2012
+Modified:     Tue Aug  7 23:08:42 2012
 

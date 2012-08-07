@@ -1,0 +1,17 @@
+node_type
+switch_off_ql1.init
+switch_off_ql1.def
+switch_off_ql1.userdata
+switch_off_ql1.inp
+switch_off_ql1/nope.init
+switch_off_ql1/nope.def
+switch_off_ql1/nope.spareparmdef
+switch_off_ql1/nope.parm
+switch_off_ql1/nope.userdata
+switch_off_ql1/switch_inputs.init
+switch_off_ql1/switch_inputs.def
+switch_off_ql1/switch_inputs.chn
+switch_off_ql1/switch_inputs.parm
+switch_off_ql1/switch_inputs.userdata
+switch_off_ql1.order
+switch_off_ql1.net

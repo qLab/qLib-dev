@@ -1,7 +1,7 @@
 Operator:     qLib::point_topology_ql::1
 Label:        Point Topology qL
 Path:         oplib:/qLib::Sop/point_topology_ql::1?qLib::Sop/point_topology_ql::1
-Icon:         DOP_sopscalarfield
+Icon:         VIEW_display_particle_origins
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:28:16 2012
+Modified:     Tue Aug  7 22:14:10 2012
 

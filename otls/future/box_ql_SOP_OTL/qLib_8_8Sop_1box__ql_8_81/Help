@@ -1,4 +1,4 @@
-#icon: SOP/box
+#icon: BUTTONS/materials_assigned
 #context: sop
 #type: node
 
@@ -7,9 +7,6 @@
 *Version 0.0.1*
 
 """An alternative version of the Box SOP, with differently-fashioned parameters."""
-
-@related
-    - [Node:sop/box]
 
 The following are the differences from the original [Node:sop/box] SOP:
 
@@ -23,7 +20,12 @@ NOTE:
 
 
 
-@Release_Notes
+@related
+    - [Node:sop/box]
+
+
+@Release_Notes Release Notes
+
     Version 0.0.1:
         Initial release.
         TODO: Number of divisions mode doesn't work with connected input geometry, fix it.

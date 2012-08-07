@@ -1,7 +1,7 @@
 Operator:     qLib::motion_trail_ql::1
 Label:        Motion Trail qL
 Path:         oplib:/qLib::Sop/motion_trail_ql::1?qLib::Sop/motion_trail_ql::1
-Icon:         OBJ_path
+Icon:         SHELF_followpath
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:26:22 2012
+Modified:     Tue Aug  7 22:32:46 2012
 

@@ -1,4 +1,4 @@
-#icon: COP2/colorwheel
+#icon: BUTTONS/displayoptions
 #context: sop
 #type: node
 
@@ -34,7 +34,7 @@ NOTE:
 @Parameters
 
     Input:
-        Select which geometry input to visualize. Up to 4 input slots are available.
+        Select which geometry input to visualize. Two (2) input slots are available.
 
         Workflow-wise this allows to connect a "before" and an "after" state, and quickly switch between
         them for comparison.

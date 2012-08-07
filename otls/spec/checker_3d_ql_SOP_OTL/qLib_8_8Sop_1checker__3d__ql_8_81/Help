@@ -1,0 +1,16 @@
+#icon: VIEW/vex
+#context: sop
+#type: node
+
+= Checker-3D qL =
+
+*Version 0.0.1*
+
+"""Generates a 3D checkerboard color pattern on the points of a geometry."""
+
+
+@release_notes Release Notes
+
+    Version 0.0.1:
+        First version.
+

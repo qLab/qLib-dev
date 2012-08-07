@@ -1,1 +1,18 @@
-Simple per-point occlusion SOP (initial prototype).
+#icon: VIEW/shadow_quality_high
+#context: sop
+#type:node
+
+= Occlusion qL =
+
+*Version 0.0.1*
+
+"""Simple per-point occlusion SOP (initial prototype)."""
+
+...
+
+
+@release_notes Release Notes
+
+    Version 0.0.1:
+        Initial version. (Slow -- an alternative, pointcloud-based method would be much faster.)
+

@@ -1,4 +1,4 @@
-#icon: NETWORKS_cop2
+#icon: SHELF/temperature_from_texture
 #context: sop
 #type: node
 
@@ -6,7 +6,7 @@
 
 *Version 0.2.0*
 
-"""Assigns the content of a texture file to a point attribute"""
+"""Assigns the content of a texture file to a point attribute."""
 
 @Parameters
     Point Group:
@@ -22,10 +22,10 @@
     Local Variable:
         Name of the local variable if one is needed.
 
-@Release_Notes
+@Release_Notes Release Notes
     Version 0.2.0:
         Added support of arbitrary destination attributes with various signatures. Also added the ability to
         create a local variable mapping if needed.
 
     Version 0.1.0:
-        Initial release
+        Initial release.

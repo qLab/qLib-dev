@@ -1,4 +1,4 @@
-#icon: VOP/atten
+#icon: DATATYPES/button
 #context: sop
 #type: node
 
@@ -26,7 +26,9 @@
     Close:
         Generate closed curve.
 
-@Release_Notes
+
+@Release_Notes Release Notes
+
     Version 0.1.2:
         Now generates regular shaped primitive when type is NURBS and "corner divisions" are low. Also corrected
         the help card formatting.

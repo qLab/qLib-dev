@@ -1,0 +1,23 @@
+#icon: BUTTONS/switch
+#context: sop
+#type: node
+
+= Switch Off qL =
+
+*Version 0.0.1*
+
+"""Outputs empty geometry instead of the input if its switch is _off_."""
+
+@Parameters
+    Select Input:
+        Outputs the input geometry if `1` and empty geometry if `0`.
+
+
+@related
+    - [Node:sop/switch]
+
+
+
+@Release_Notes Release Notes
+    Version 0.0.1:
+        Initial release.

@@ -1,4 +1,4 @@
-#icon: SOP/group
+#icon: SHELF/extract_object
 #context: sop
 #type: node
 
@@ -50,7 +50,6 @@ In other words, this operator is more of a scene-management tool than a regular 
     Relative Path:
         This flag indicates if a relative path should be set on the Object Merge nodes.
 
-
     "Build/Update Objects":
         Pressing this button will create the new Objects and/or SOPs.
         (Already existing nodes will also have their parameters updated, according to current node settings.)
@@ -59,7 +58,9 @@ In other words, this operator is more of a scene-management tool than a regular 
         This will delete all nodes created by this operator.
 
 
-@Release_Notes
+
+@Release_Notes Release Notes
 
     Version 0.1.0:
         Initial release.
+

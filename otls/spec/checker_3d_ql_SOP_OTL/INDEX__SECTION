@@ -1,7 +1,7 @@
 Operator:     qLib::checker_3d_ql::1
 Label:        Checker 3D qL
 Path:         oplib:/qLib::Sop/checker_3d_ql::1?qLib::Sop/checker_3d_ql::1
-Icon:         SHOP_gingham
+Icon:         VIEW_vex
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 14:24:16 2012
+Modified:     Tue Aug  7 22:22:03 2012
 

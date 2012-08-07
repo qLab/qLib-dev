@@ -1,3 +1,5 @@
 # set node color on creation
 #
-opcolor -c 0.6 1 0.6 $arg1
+opcolor -c 0.8 1 0.8 $arg1
+
+opparm $arg1 tdisplay ( off ) display ( 1 ) picking ( off )
