@@ -1,7 +1,7 @@
-# Dialog script for note_ql automatically generated 07/21/12 23:03:34
+# Dialog script for qLib::note_ql::1 automatically generated 08/08/12 00:01:29
 
 {
-    name	note_ql
+    name	qLib::note_ql::1
     script	note_ql
     label	"Note qL"
 
