@@ -1,6 +1,21 @@
-Value-remapping of per-point geometry attributes using lookup curves.
+#icon: NODEFLAGS/graph
+#context: sop
+#type: node
+
+= Attr Lookup Multi qL =
+
+*Version 0.0.1*
+
+"""Value-remapping of per-point geometry attributes using lookup curves."""
 
 WARNING:
     Houdini currently treats this node as time-dependent, so it will trigger unnecessary
     evaluations.
+
+
+
+@release_notes Release Notes
+
+    Version 0.0.1:
+        First prototype. (Important known issue: time-dependency)
 

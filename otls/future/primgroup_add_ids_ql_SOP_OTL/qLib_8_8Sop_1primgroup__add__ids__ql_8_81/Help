@@ -1,6 +1,6 @@
-#type: node
+#icon: VIEW/display_primitive_numbers
 #context: sop
-#icon: DOP/group
+#type: node
 
 = PrimGroup Add IDs qL =
 

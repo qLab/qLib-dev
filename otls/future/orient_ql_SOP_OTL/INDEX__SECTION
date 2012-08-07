@@ -1,7 +1,7 @@
 Operator:     qLib::orient_ql::1
 Label:        Orient qL
 Path:         oplib:/qLib::Sop/orient_ql::1?qLib::Sop/orient_ql::1
-Icon:         VOP_slerp
+Icon:         NODEFLAGS_highlight
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Aug  6 01:40:03 2012
+Modified:     Tue Aug  7 22:44:57 2012
 

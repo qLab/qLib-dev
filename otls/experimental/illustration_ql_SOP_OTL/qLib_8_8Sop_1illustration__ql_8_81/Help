@@ -1,5 +1,24 @@
+#icon: VIEW/display_background
+#context: sop
+#type: node
+
+= Illustration qL =
+
+*Version 0.0.1*
+
+"""Renders a "step-by-step" illustration guideline of a SOP network."""
+
+
+
 
 TODO:
 - help :)
 - title/subtitle
 - animation
+
+
+
+@release_notes Release Notes
+
+    Version 0.0.1:
+        Initial prototype.

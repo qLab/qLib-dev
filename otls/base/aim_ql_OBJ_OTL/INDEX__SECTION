@@ -1,7 +1,7 @@
 Operator:     qLib::aim_ql::1
 Label:        Aim qL
 Path:         oplib:/qLib::Object/aim_ql::1?qLib::Object/aim_ql::1
-Icon:         SOP_matchaxis
+Icon:         SHELF_lookat
 Table:        Object
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       2 to 3
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Fri Jul 27 00:21:27 2012
+Modified:     Tue Aug  7 23:22:10 2012
 

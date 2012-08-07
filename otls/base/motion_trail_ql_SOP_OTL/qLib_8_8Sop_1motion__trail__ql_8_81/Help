@@ -1,4 +1,4 @@
-#icon: OBJ/path
+#icon: SHELF/followpath
 #context: sop
 #type: node
 
@@ -17,25 +17,36 @@ NOTE:
 @Parameters
     Target:
         The object which creates the trail.
+
     Frame Range:
         Start/End/Step of the frame range that limits the trail creation in time.
+
     Geometry Type:
         Geometry type of the curve that gets created.
+
     Order:
         The order of the curve for NURBS and Bezier types.
+
     Add Velocity:
         Calculate and create velocity attribute.
+
     Velocity Attribute:
         Name of the attribute where velocity values gets stored.
+
     Add Acceleration:
         Calculate and create acceleration attribute.
+
     Acceleration Attribute:
         Name of the attribute where acceleration values gets stored.
 
-@Release_Notes
+
+
+@Release_Notes Release Notes
+
     Version 0.1.1:
         Bug fixes:
             - The correct number of path points are created if frame step is greater than 1.
             - The appropriate velocity values are returned, regardless of the frame step setting.
+
     Version 0.1.0:
         Initial release.

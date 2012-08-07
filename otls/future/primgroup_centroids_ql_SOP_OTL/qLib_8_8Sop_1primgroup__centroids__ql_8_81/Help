@@ -1,6 +1,6 @@
-#type: node
+#icon: PANETYPES/bundle_list
 #context: sop
-#icon: DOP/rbdfracturedobject
+#type: node
 
 = PrimGroup Centroids qL =
 
