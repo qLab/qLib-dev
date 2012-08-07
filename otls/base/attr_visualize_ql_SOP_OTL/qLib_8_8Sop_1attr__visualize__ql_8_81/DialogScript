@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 07/30/12 23:19:42
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 08/07/12 22:10:07
 
 {
     name	qLib::attr_visualize_ql::1
@@ -11,7 +11,7 @@
 
     inputlabel	1	"Geometry to Visualize #1"
     inputlabel	2	"Geometry to Visualize #2"
-    inputlabel	3	"Geometry to Visualize #3"
+    inputlabel	3	"Custom pscale geometry"
     inputlabel	4	"Geometry to Visualize #4"
     inputlabel	5	"Object to Copy"
 
@@ -20,7 +20,7 @@
 	label	"Input"
 	type	integer
 	default	{ "1" }
-	range	{ 1 4 }
+	range	{ 1 2 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
