@@ -1,10 +1,10 @@
 objflags objflags =  origin off
 pretransform UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 comment ""
-position 4.51561 3.40311
+position 1.14196 14.2596
 cachesize 1
 connectornextid 6
-flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on selectable on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on selectable off
 outputsNamed3
 {
 5 "output1"
@@ -27,12 +27,12 @@ inputs
 }
 stat
 {
-  create 1342900213
-  modify 1342904646
+  create 1344376193
+  modify 1344376819
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0 0.6 0 
+color UT_Color RGB 0.6 0.4 0.2 
 delscript ""
 exprlanguage hscript
 end
