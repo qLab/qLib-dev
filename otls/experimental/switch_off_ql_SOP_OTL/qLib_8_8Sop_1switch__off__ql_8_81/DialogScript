@@ -1,0 +1,26 @@
+# Dialog script for qLib::switch_off_ql::1 automatically generated 08/07/12 23:03:01
+
+{
+    name	qLib::switch_off_ql::1
+    script	qLib::switch_off_ql::1
+    label	"Switch Off qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"input"
+	label	"Select Input"
+	type	integer
+	default	{ "1" }
+	range	{ 0! 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

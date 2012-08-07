@@ -1,0 +1,13 @@
+Operator:     qLib::switch_off_ql::1
+Label:        Switch Off qL
+Path:         oplib:/qLib::Sop/switch_off_ql::1?qLib::Sop/switch_off_ql::1
+Icon:         BUTTONS_switch
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Aug  7 23:03:28 2012
+
