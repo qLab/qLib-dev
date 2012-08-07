@@ -577,11 +577,11 @@ trail_scatter_ql1/OUT.def
 trail_scatter_ql1/OUT.spareparmdef
 trail_scatter_ql1/OUT.parm
 trail_scatter_ql1/OUT.userdata
-trail_scatter_ql1/out.init
-trail_scatter_ql1/out.def
-trail_scatter_ql1/out.spareparmdef
-trail_scatter_ql1/out.parm
-trail_scatter_ql1/out.userdata
+trail_scatter_ql1/out_1.init
+trail_scatter_ql1/out_1.def
+trail_scatter_ql1/out_1.spareparmdef
+trail_scatter_ql1/out_1.parm
+trail_scatter_ql1/out_1.userdata
 trail_scatter_ql1/vopsop_add_velocity.order
 trail_scatter_ql1/vopsop_add_velocity.net
 trail_scatter_ql1/merge1.init
