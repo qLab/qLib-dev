@@ -1,0 +1,2 @@
+opcolor -c 1 0.8 0 $arg1
+opparm $arg1 tdisplay ( off ) display ( 1 ) picking ( off )
