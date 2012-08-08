@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/02/12 10:34:57
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/08/12 02:35:48
 
 {
     name	qLib::attrib_ramp_ql::1
@@ -36,12 +36,13 @@
 	    [ "r = []" ]
 	    [ "" ]
 	    [ "try:" ]
-	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-	    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String and a.size()==1 ]" ]
+	    [ "    attrs = [ a for a in hou.pwd().geometry().pointAttribs() \\" ]
+	    [ "        if a.dataType() is not hou.attribData.String \\" ]
+	    [ "        and (a.size()==1 or a.size()==3 ) ]" ]
 	    [ "    " ]
 	    [ "    for a in attrs:" ]
-	    [ "        r.append(a)" ]
-	    [ "        r.append(a)" ]
+	    [ "        r.append(a.name())" ]
+	    [ "        r.append(\"%s%s\" % (a.name(), ('' if a.size()==1 else ' (vector)') ) )" ]
 	    [ "except:" ]
 	    [ "    pass" ]
 	    [ "" ]
@@ -50,6 +51,73 @@
 	}
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib_type"
+	label	"attrib_type"
+	type	integer
+	nolabel
+	joinnext
+	default	{ "0" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"attrib_comp"
+	label	"attrib_comp"
+	type	integer
+	nolabel
+	default	{ "3" }
+	disablewhen	"{ attrib_type != 1 }"
+	menu	{
+	    "0"	"X"
+	    "1"	"Y"
+	    "2"	"Z"
+	    "3"	"Length"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcmin"
+	label	"Input Min"
+	type	float
+	default	{ "0" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcmax"
+	label	"Input Max"
+	type	float
+	default	{ "1" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"srcexp"
+	label	"Input Exp."
+	type	float
+	default	{ "1" }
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
@@ -104,26 +172,6 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"srcmin"
-	label	"Input Min"
-	type	float
-	default	{ "0" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"srcmax"
-	label	"Input Max"
-	type	float
-	default	{ "1" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "parmvop" "1" }
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
 	name	"ramp_mode"
 	label	"Color Mode"
 	type	integer
@@ -143,7 +191,7 @@
     }
     parm {
 	name	"float_ramp"
-	label	"Ramp"
+	label	"Ramp (float)"
 	type	ramp_flt
 	default	{ "2" }
 	hidewhen	"{ signature == 1 }"
@@ -161,7 +209,7 @@
     }
     parm {
 	name	"hsv_ramp"
-	label	"Ramp"
+	label	"Ramp (HSV)"
 	type	ramp_rgb
 	default	{ "2" }
 	hidewhen	"{ ramp_mode == 0 } { signature == 0 }"
@@ -182,7 +230,7 @@
     }
     parm {
 	name	"rgb_ramp"
-	label	"Ramp"
+	label	"Ramp (RGB)"
 	type	ramp_rgb
 	default	{ "2" }
 	hidewhen	"{ ramp_mode == 1 } { signature == 0 }"
@@ -212,7 +260,7 @@
     }
     parm {
 	name	"exp"
-	label	"Exponent"
+	label	"Output Exponent"
 	type	float
 	default	{ "1" }
 	range	{ 0.45 2.2 }

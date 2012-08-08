@@ -227,35 +227,27 @@
       flags = 0
       segment { length = 0 expr = ch(\"../operation\") }
     }
-    channel rgb_ramp3pos {
+    channel attrib_type {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../rgb_ramp3pos\") }
+      start = 15.5
+      segment { length = 0 expr = ch(\"../attrib_type\") }
     }
-    channel rgb_ramp3cr {
+    channel attrib_comp {
       lefttype = extend
       righttype = extend
+      default = 3
       flags = 0
-      segment { length = 0 expr = ch(\"../rgb_ramp3cr\") }
+      start = 15.5
+      segment { length = 0 value = 3 3 expr = ch(\"../attrib_comp\") }
     }
-    channel rgb_ramp3cg {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../rgb_ramp3cg\") }
-    }
-    channel rgb_ramp3cb {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../rgb_ramp3cb\") }
-    }
-    channel rgb_ramp3interp {
+    channel srcexp {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../rgb_ramp3interp\") }
+      start = 15.5
+      segment { length = 0 value = 1 1 expr = ch(\"../srcexp\") }
     }
   }
