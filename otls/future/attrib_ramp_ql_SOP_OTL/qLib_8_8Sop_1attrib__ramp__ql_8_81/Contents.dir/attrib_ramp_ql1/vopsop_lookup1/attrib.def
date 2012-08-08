@@ -1,8 +1,8 @@
 comment ""
-position -6.17879 4.25268
+position -14.0453 4.52666
 cachesize 1
 connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
 0 "driver_attr"
@@ -17,11 +17,11 @@ inputs
 stat
 {
   create 1343861155
-  modify 1343861178
+  modify 1344385638
   author mate@matild.local
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0 0.2 1 
 delscript ""
 exprlanguage hscript
 end

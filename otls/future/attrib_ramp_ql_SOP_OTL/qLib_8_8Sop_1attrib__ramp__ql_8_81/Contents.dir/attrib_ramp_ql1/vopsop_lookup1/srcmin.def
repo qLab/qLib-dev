@@ -1,11 +1,12 @@
 comment ""
-position -3.84507 4.17028
+position -6.78509 0.760259
 cachesize 1
-connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
 0 "srcmin"
+1 "bound_srcmin"
 }
 inputsNamed3
 {
@@ -16,11 +17,11 @@ inputs
 stat
 {
   create 1324849229
-  modify 1342612230
+  modify 1344385713
   author tusi@demeisen
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0 0.2 1 
 delscript ""
 exprlanguage hscript
 end

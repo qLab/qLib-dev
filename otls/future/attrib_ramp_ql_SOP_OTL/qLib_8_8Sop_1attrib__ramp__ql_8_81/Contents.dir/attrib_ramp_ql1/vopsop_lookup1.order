@@ -1,4 +1,4 @@
-26
+36
 rgb_ramp
 fit1
 srcmin
@@ -25,3 +25,13 @@ importattrib3
 add2
 multiply2
 Op_Switch1
+importattrib_vec1
+vectofloat1
+length1
+switch_input_comp
+attrib_type
+attrib_comp
+multiply3
+add3
+pow3
+srcexp
