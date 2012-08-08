@@ -1,17 +1,12 @@
-#icon: SOP/join
+#icon: CHOP/resample
 #context: sop
 #type: node
 
 = Curve Offset qL =
 
-*Version 0.0.1*
+*version 1*
 
 """Offsets a curve."""
-
-@related
-    - [Node:sop/extrude]
-    - [Node:sop/carve]
-
 
 @Parameters
     Offset:
@@ -21,7 +16,15 @@
         Keeps the original curve.
 
 
-@Release_Notes
-    Version 0.0.1:
+@related
+    - [Node:sop/extrude]
+    - [Node:sop/carve]
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-05-31:
         Initial release.
 
