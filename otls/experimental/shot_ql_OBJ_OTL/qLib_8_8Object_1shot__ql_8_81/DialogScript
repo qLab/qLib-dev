@@ -1,4 +1,4 @@
-# Dialog script for qLib::shot_ql::1 automatically generated 08/08/12 00:00:09
+# Dialog script for qLib::shot_ql::1 automatically generated 08/08/12 23:55:41
 
 {
     name	qLib::shot_ql::1
@@ -18,43 +18,85 @@
     inputlabel	7	"Sub-Network Input #7"
     inputlabel	8	"Sub-Network Input #8"
 
+    parm {
+	name	"edit"
+	label	"(edit)"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"proj"
+	label	"Project:"
+	type	string
+	joinnext
+	default	{ "project" }
+	disablewhen	"{ edit == 0 }"
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "for a in hou.expandString(\"$HIP\").split(\"/\"):" ]
+	    [ "    if a and a!=\"\":" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"projs"
+	label	"Short"
+	type	string
+	default	{ "prj" }
+	disablewhen	"{ edit == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"shot"
+	label	"Shot Label:"
+	type	string
+	joinnext
+	default	{ "1000" }
+	disablewhen	"{ edit == 0 }"
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "ps = hou.expandString(\"$HIP\").split(\"/\")" ]
+	    [ "ps.reverse()" ]
+	    [ "" ]
+	    [ "for a in ps:" ]
+	    [ "    if a and a!=\"\":" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"name_shot_node"
+	label	"Name Shot Node..."
+	type	button
+	default	{ "1" }
+	disablewhen	"{ edit == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "hscript" }
+	parmtag	{ "script_callback" "opname -u `oppwf()` _`chs(\"proj\")`_`chs(\"shot\")`_" }
+    }
     group {
 	name	"folder0"
 	label	"Shot Details"
 
-	parm {
-	    name	"proj"
-	    label	"Project Name"
-	    type	string
-	    default	{ "project" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"projs"
-	    label	"Project (Short)"
-	    type	string
-	    default	{ "prj" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"shot"
-	    label	"Shot Name"
-	    type	string
-	    joinnext
-	    default	{ "1000" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"get_name"
-	    label	"Use Node Name"
-	    type	button
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	}
 	parm {
 	    name	"get_range"
 	    label	"Get Range from Scene"
@@ -67,7 +109,6 @@
 	group {
 	    name	"folder3"
 	    label	"Frame Ranges"
-	    tabbreak
 
 	    parm {
 		name	"frange"
@@ -201,14 +242,14 @@
 	}
 
 	group {
-	    name	"folder2"
-	    label	"Description & Notes"
+	    name	"folder3_1"
+	    label	"Information"
 	    tabbreak
 
 	    multiparm {
 		name	"desc_lines"
-		label	"(lines #)"
-		default	2
+		label	"Description & Notes:"
+		default	0
 
 		parm {
 		    name	"desc#"
@@ -221,17 +262,10 @@
 		}
 	    }
 
-	}
-
-	group {
-	    name	"folder4"
-	    label	"Related Files"
-	    tabbreak
-
 	    multiparm {
-		name	"folder5"
-		label	"files #"
-		default	1
+		name	"related_files"
+		label	"Related Files:"
+		default	0
 
 		parm {
 		    name	"file_note#"
@@ -500,14 +534,22 @@
 	    range	{ 0 1 }
 	    export	none
 	}
-	group {
-	    name	"folder7"
+	parm {
+	    name	"separator_1"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	import {
 	    label	"Shot Camera(s)"
-	    tabbreak
+	    enable	0
 
 	    multiparm {
 		name	"folder8"
-		label	"Camera list"
+		label	"Shot camera list"
 		default	1
 
 		parm {
