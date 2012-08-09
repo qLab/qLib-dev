@@ -4,7 +4,7 @@
 
 = PointAttr qL =
 
-*Version 0.0.1*
+*version 1*
 
 """Creation/manipulation of per-point float attributes using a series of basic operations."""
 
@@ -32,10 +32,10 @@
 
         The following operations are available:
 
-        '---' (Off):
+        '---':
             No operation.
 
-        _'Get'_:
+        _'get'_:
             Import another attribute -- copy the incoming values to the attribute being edited.
             (The imported values will be converted to `float` type.)
 
@@ -48,7 +48,7 @@
                 Input:
                     The geometry to import the attribute from (ie. connected to the first or second input).
 
-        _'Set'_:
+        _'set'_:
             Generate attribute values. The following modes are available:
 
             Constant Value:
@@ -67,14 +67,14 @@
             Point ID, Age, Life, Lifespan:
                 The POP/particle-related attribute will be used.
 
-        _'Fit'_:
+        _'fit'_:
             Apply a [Fit Range|Node:vop/fit] operation on the attribute values
             (values in the 'source' range will be mapped to the 'destination' range).
 
             Values out of the range min/max settings are clamped (this can be used
             as a side effect).
 
-        _'Tune'_:
+        _'tune'_:
             Adjust all attribute values.
             The `Value` parameter is used wherever it makes sense.
 
@@ -100,12 +100,44 @@
             Add then Floor:
                 Rounds down the attribute values to the nearest integer but adds `Value`
                 first (regular rounding can be applied using `0.5` for `Value`).
-                
 
+            Absolute:
+                Takes the absolute if the input value.
 
-        _'Map'_:
+            Triangle \[0..v..0\]:
+                Generates a triangle-shaped graph for the input value in the `[0..1]` range, where
+                - for `0.0` the result will be `0`,
+                - for `0.5` the result will be `value`, and
+                - for `1.0` the result will be `0` again.
+                The output value between the keys are interpolated linearly.
+
+            Sine ('Value' freq):
+                A sine (sinus) function, using `value` as a frequency multiplier. (The function is
+                _not_ radian-based: it has a period length of `4`.)
+
+            Ease ('Value' blend):
+                Turns the `[0..1]` value range from linear to ease-in/out curved. The `value` is
+                used to blend between the two (`0` is linear, `1` is ease-in/out).
+
+            Fraction:
+                Takes the fractional part of the input value.
+
+        _'mrg'_:
+            "Merge" (_Add_ or _Multiply_) values with another per-point attribute.
+            It can be a float or a vector component, coming from any geometry input.
+
+        _'map'_:
             Remap attribute values using a lookup curve
             (similar to [Attr Lookups qL|Node:sop/attr_lookups_ql] or the [Lookup CHOP|Node:chop/lookup]).
+
+        _'out'_:
+            Output the attribute with a different name.
+
+            This makes a copy of the attribute, so it can be used to output "partial" results to another
+            attribute, while continue working on the original one.
+
+            Delete original:
+                This deletes the original attribute (the next logical step will probably be a _get_ or _set_ operation).
 
 
 @related
@@ -117,7 +149,14 @@
     - [Vector qL|Node:sop/qLib::vector_ql::1]
 
 
+@relnotes Release Notes
 
-@Release_Notes Release Notes
-    Version 0.0.1:
-        Initial release.
+    _version 1_ ---
+
+    2012-08-09:
+        Changes/fixes:
+        - Local variables are now created/handled properly
+        - The 'out' mode now duplicates the attribute instead of renaming it. (Note that this is now the default behaviour, which is different from the previous one.)
+
+    2012-03-17:
+        Initial prototype.

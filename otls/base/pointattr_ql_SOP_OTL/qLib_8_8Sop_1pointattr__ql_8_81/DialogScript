@@ -1,4 +1,4 @@
-# Dialog script for qLib::pointattr_ql::1 automatically generated 04/18/12 03:52:19
+# Dialog script for qLib::pointattr_ql::1 automatically generated 08/09/12 02:37:56
 
 {
     name	qLib::pointattr_ql::1
@@ -322,6 +322,8 @@
 			"7"	"Absolute"
 			"8"	"Triangle [0..v..0]"
 			"9"	"Sine ('Value' Freq)"
+			"10"	"Ease ('Value' blend)"
+			"11"	"Fraction"
 		    }
 		    range	{ 0 10 }
 		    export	none
@@ -331,7 +333,7 @@
 		    label	"Value"
 		    type	float
 		    default	{ "1" }
-		    disablewhen	"{ enabled_#_4 == 0 } { adjust_op# == 3 } { adjust_op# == 7 }"
+		    disablewhen	"{ enabled_#_4 == 0 } { adjust_op# == 3 } { adjust_op# == 7 } { adjust_op# == 11 }"
 		    range	{ 0 4 }
 		    export	none
 		}
@@ -468,6 +470,16 @@
 		label	"out"
 
 		parm {
+		    name	"separator_#_7"
+		    label	"Label"
+		    type	label
+		    invisible
+		    nolabel
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"enabled_#_7"
 		    label	"Enabled"
 		    type	toggle
@@ -479,8 +491,9 @@
 		}
 		parm {
 		    name	"out_attrib#"
-		    label	"Rename Attrib to"
+		    label	"Output as"
 		    type	string
+		    joinnext
 		    default	{ "" }
 		    disablewhen	"{ enabled_#_7 == 0 }"
 		    menureplace	{
@@ -505,9 +518,19 @@
 		    export	none
 		}
 		parm {
+		    name	"out_del_orig#"
+		    label	"Delete original"
+		    type	toggle
+		    default	{ "0" }
+		    disablewhen	"{ enabled_#_7 == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"sepparm#_2"
 		    label	"Separator"
 		    type	separator
+		    invisible
 		    default	{ }
 		    range	{ 0 1 }
 		    export	none

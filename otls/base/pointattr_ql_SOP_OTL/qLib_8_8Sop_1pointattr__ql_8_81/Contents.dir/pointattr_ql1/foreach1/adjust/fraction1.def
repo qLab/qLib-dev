@@ -1,0 +1,28 @@
+comment ""
+position 8.4803 -25.4298
+cachesize 1
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+1 "fraction"
+}
+inputsNamed3
+{
+0 	importattrib1 7 1 "val"
+}
+inputs
+{
+0 	importattrib1 1 1
+}
+stat
+{
+  create 1344472193
+  modify 1344472396
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 0.8 0 
+delscript ""
+exprlanguage hscript
+end

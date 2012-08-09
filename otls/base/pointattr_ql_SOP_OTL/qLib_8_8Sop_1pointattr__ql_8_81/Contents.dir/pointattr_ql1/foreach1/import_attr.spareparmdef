@@ -25,6 +25,7 @@
 	default	{ "" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -42,6 +43,7 @@
 	}
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -49,8 +51,9 @@
 	label	"input_idx"
 	type	integer
 	default	{ "0" }
-	range	{ 0 1 }
+	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -60,5 +63,6 @@
 	default	{ "pscale" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

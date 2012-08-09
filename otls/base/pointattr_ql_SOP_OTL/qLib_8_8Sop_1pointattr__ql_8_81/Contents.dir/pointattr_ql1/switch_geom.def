@@ -2,7 +2,18 @@ sopflags sopflags =
 comment ""
 position -0.0374544 0.855544
 cachesize 1
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+3 "output1"
+}
+inputsNamed3
+{
+0 	geom 1 1 "input1"
+1 	keep_points_only 1 1 "input2"
+2 	add_particles 1 1 "input3"
+}
 inputs
 {
 0 	geom 0 1

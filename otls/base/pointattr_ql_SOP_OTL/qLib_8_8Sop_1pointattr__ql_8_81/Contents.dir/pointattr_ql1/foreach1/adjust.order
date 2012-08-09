@@ -1,4 +1,4 @@
-18
+22
 addattrib1
 attrib
 importattrib1
@@ -17,3 +17,7 @@ spline1
 zero
 sinus
 mulconst1
+smooth1
+in_value1
+mix1
+fraction1
