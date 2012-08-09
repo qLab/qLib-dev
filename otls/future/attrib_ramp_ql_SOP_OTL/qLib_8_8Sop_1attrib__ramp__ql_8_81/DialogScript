@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/08/12 02:35:48
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/09/12 00:17:38
 
 {
     name	qLib::attrib_ramp_ql::1
@@ -112,7 +112,7 @@
     }
     parm {
 	name	"srcexp"
-	label	"Input Exp."
+	label	"Input Exponent"
 	type	float
 	default	{ "1" }
 	range	{ 0 4 }
@@ -250,9 +250,10 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"labelparm2"
+	name	"separator_1"
 	label	"Label"
 	type	label
+	invisible
 	nolabel
 	default	{ "" }
 	range	{ 0 1 }
@@ -267,5 +268,23 @@
 	export	none
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"separator_2"
+	label	"Label"
+	type	label
+	invisible
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"del_attrib"
+	label	"Delete Input Attribute"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
     }
 }

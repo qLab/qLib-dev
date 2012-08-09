@@ -1,0 +1,12 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+min	[ 0	locks=0 ]	(	0	)
+max	[ 0	locks=0 ]	(	1	)
+amount	[ 0	locks=0 ]	(	0.5	)
+rolloff	[ 0	locks=0 ]	(	1	)
+min_uf	[ 0	locks=0 ]	(	0	)
+max_uf	[ 0	locks=0 ]	(	1	)
+amount_uf	[ 0	locks=0 ]	(	0.5	)
+rolloff_uf	[ 0	locks=0 ]	(	1	)
+}

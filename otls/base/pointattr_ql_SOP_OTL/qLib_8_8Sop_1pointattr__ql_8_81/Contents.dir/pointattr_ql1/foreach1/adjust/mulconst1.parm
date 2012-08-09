@@ -1,5 +1,5 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
-mulconst	[ 8	locks=0 ]	(	1.57079637	)
+mulconst	[ 8	locks=0 ]	(	1.5707963700000001	)
 }

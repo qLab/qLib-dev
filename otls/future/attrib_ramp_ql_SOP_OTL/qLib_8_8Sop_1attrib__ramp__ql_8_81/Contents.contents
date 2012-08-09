@@ -201,4 +201,14 @@ attrib_ramp_ql1/vopsop_lookup1/If_Vector.order
 attrib_ramp_ql1/vopsop_lookup1/If_Vector.net
 attrib_ramp_ql1/vopsop_lookup1.order
 attrib_ramp_ql1/vopsop_lookup1.net
+attrib_ramp_ql1/switch_del_input_attrib.init
+attrib_ramp_ql1/switch_del_input_attrib.def
+attrib_ramp_ql1/switch_del_input_attrib.chn
+attrib_ramp_ql1/switch_del_input_attrib.parm
+attrib_ramp_ql1/switch_del_input_attrib.userdata
+attrib_ramp_ql1/del_input_attrib.init
+attrib_ramp_ql1/del_input_attrib.def
+attrib_ramp_ql1/del_input_attrib.parm
+attrib_ramp_ql1/del_input_attrib.userdata
+attrib_ramp_ql1.order
 attrib_ramp_ql1.net
