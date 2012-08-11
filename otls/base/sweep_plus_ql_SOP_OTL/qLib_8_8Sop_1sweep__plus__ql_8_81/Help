@@ -4,13 +4,19 @@
 
 = Sweep Plus qL =
 
-*Version 0.1.3*
+*version 1*
 
 """Creates a surface by sweeping cross-sections along a backbone curve with ramp parameters controling scale and twist."""
 
 @Parameters
     Sweep:
         See the [Node:sop/sweep] documentation for parameters.
+        Additional parameters are described below.
+
+        Reverse Cross Section(s), Reverse Backbone:
+            Reverse the direction of the profile and/or path curve(s).
+
+            (e.g.: if the surface normals of the resulting geometry point inwards, reverse cross-section curve direction.)
 
         Scale:
             Scale Multiplier:
@@ -26,12 +32,45 @@
             Profile Twist:
                 Modulates the twist parameter along the backbone, default is 0 (no twist).
 
+    Output:
+        Add Texture UVs:
+            A quick convenience switch to generate basic UV coordinates for the resulting surface.
+
+            NOTE:
+                It is geared towards working with parametric-type geometry, so make sure all inputs
+                are of that type (NURBS curves, etc.)
+
+                Also, make sure the _Cycle Type_ parameter is set to a mode that supports UV generation
+                (marked with `*` in the UI).
+
+        Cross Section(s), Backbone:
+            Parametrization setting for UV coordinates generation for the cross section and backbone curves.
+            (See the [UV Texture SOP|Node:sop/texture] for description.)
+
+TIP:
+    To have proper UV texturing coordinates, do the following:
+    - Assign UVs to the backbone spline using an [Node:sop/texture], SOP (using one of its _Spline_ modes)
+    - Assign UVs to the cross section curve(s) the same way, but rotate the UVs by `-90` degrees.
+    - Set _Cycle Type_ to "One Primitive at a Time" (or "Cycle Primitives").
+
+
 
 @related
     - [Node:sop/sweep]
+    - [Node:sop/texture]
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-08-11:
+        - Options for reversing direction of profile and path curves
+        - Option for refining backbone (path) resolution
+        - Options for generating basic UV coordinates for the resulting surface
+        - Minor UI fixes/changes.
+
+    ---
 
     Version 0.1.3:
         - Fixed last-vertex mismatch in scale/twist ramp evaluation
