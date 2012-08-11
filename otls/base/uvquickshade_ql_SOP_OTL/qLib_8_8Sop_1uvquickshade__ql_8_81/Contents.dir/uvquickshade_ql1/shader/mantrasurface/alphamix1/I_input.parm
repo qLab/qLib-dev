@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	v	)
-g0	[ 0	locks=0 ]	(	0	0	0	)
 notconnected	[ 0	locks=0 ]	(	0	)
 notconnected_i	[ 0	locks=0 ]	(	0	)
 notconnected_s	[ 0	locks=0 ]	(	""	)

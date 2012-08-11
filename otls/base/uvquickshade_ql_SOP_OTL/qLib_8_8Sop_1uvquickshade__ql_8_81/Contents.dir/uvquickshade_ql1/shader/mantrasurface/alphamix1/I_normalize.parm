@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	v	)
-g0	[ 0	locks=0 ]	(	0	0	)
 vec	[ 0	locks=0 ]	(	1	0	0	)
 vec_p	[ 0	locks=0 ]	(	1	0	0	)
 vec_v	[ 0	locks=0 ]	(	1	0	0	)

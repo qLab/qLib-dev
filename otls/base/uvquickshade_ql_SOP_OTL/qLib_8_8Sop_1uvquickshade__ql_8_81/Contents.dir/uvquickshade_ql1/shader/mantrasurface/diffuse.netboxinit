@@ -6,11 +6,11 @@
 	y_position := 17.4287472;
 	width := 11.8335724;
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
-	height := 7.72215271;
+	height := 7.7221527099999996;
 }
 {
   create 1300891325
-  modify 1333924631
+  modify 1344511421
   author rmagee@taxco.local
   access 0777
 }

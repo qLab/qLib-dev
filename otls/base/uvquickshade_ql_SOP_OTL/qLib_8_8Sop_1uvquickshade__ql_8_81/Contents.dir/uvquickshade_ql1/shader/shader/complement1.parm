@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	i	)
-gv	[ 0	locks=0 ]	(	0	0	)
 val	[ 0	locks=0 ]	(	1	)
 val_i	[ 0	locks=0 ]	(	1	)
 val_v	[ 0	locks=0 ]	(	1	1	1	)

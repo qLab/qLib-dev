@@ -1,7 +1,20 @@
 comment ""
 position 19.7507 17.569
 cachesize 1
+connectornextid 11
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+10 "alpha"
+}
+inputsNamed3
+{
+5 	"" "" 1 "I"
+6 	globalNAlpha 0 1 "N"
+7 	alphaPara 0 1 "apara"
+8 	alphaPerp 0 1 "aperp"
+9 	alphaRoll 0 1 "aroll"
+}
 inputs
 {
 0 	"" 0 1

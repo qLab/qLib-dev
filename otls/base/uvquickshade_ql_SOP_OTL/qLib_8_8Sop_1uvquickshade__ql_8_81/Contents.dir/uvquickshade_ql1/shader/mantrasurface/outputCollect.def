@@ -1,7 +1,17 @@
 comment ""
 position 32.2174 5.57701
 cachesize 1
+connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	properties 2 1 "shader1"
+1 	surfaceOutput 5 1 "shader2"
+2 	dispOutput 2 1 "shader3"
+}
 inputs
 {
 0 	properties 0 1

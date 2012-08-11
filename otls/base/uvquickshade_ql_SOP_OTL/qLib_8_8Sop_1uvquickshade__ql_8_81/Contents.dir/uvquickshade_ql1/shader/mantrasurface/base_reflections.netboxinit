@@ -2,15 +2,15 @@
 2
 {
 	minimized := 0;
-	x_position := -24.4171524;
-	y_position := -8.44690895;
-	width := 10.5604486;
+	x_position := -24.417152399999999;
+	y_position := -8.4469089499999992;
+	width := 10.560448600000001;
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
-	height := 8.60127163;
+	height := 8.6012716299999994;
 }
 {
   create 1302625023
-  modify 1333924627
+  modify 1344511417
   author rmagee@taxco.local
   access 0777
 }

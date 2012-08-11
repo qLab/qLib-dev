@@ -2,17 +2,11 @@
 #type: node
 #icon: SOP/uvquickshade
 
-= UV QuickShade qL =
+= UV Quickshade qL =
 
-*Version 0.0.1*
+*version 1*
 
 """Applies an image file as a textured shader to a surface (an enhanced version of [Node:sop/uvquickshade])."""
-
-@related
-    - [Node:sop/uvquickshade]
-    - [Node:sop/texture]
-    - [Node:sop/uvunwrap]
-    - [Node:sop/uvproject]
 
 This is a convenience operator that lets you very quickly put an image file on a surface.
 
@@ -32,4 +26,24 @@ Please note that this SOP _does not generate_ UV mapping coordinates.
 
 NOTE:
     TODO: Finish this help.
+
+
+@related
+    - [Node:sop/uvquickshade]
+    - [Node:sop/texture]
+    - [Node:sop/uvunwrap]
+    - [Node:sop/uvproject]
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-08-11:
+        - Node is now created with a blue color (indicating that it's a "display" type of node)
+	- It now contains an UV texture bitmap
+	- Other minor UI (and help card) changes
+
+    2012-04-09:
+        First version.
 

@@ -1,7 +1,15 @@
 comment ""
 position -4.81983 -6.28963
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "atten_clr"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

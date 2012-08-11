@@ -1,7 +1,23 @@
 comment ""
 position 5.43743 -14.5717
 cachesize 1
+connectornextid 17
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+16 "noise"
+}
+inputsNamed3
+{
+8 	noiseType 0 1 "type"
+9 	restpos1 4 1 "pos"
+10 	noiseFreq 0 1 "freq"
+11 	noiseOffset 0 1 "offset"
+12 	noiseAmp 0 1 "amp"
+13 	noiseRough 0 1 "rough"
+14 	noiseAtten 0 1 "atten"
+15 	noiseTurb 0 1 "turb"
+}
 inputs
 {
 0 	noiseType 0 1
