@@ -1,0 +1,11 @@
+# this is run _before_ the node is created (so it doesn't exist yet)
+# it is only run on scene load, and _once_ (not on interactive node creation)
+#
+
+import sys
+
+sys.__stderr__.write("PreFirstCreate: %s\n" % hou.pwd().path() )
+
+print "PreFirstCreate: %s" % hou.pwd().path()
+print " - $HIP: %s" % hou.expandString("$HIP")
+
