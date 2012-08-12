@@ -1,4 +1,4 @@
-# Dialog script for qLib::sweep_plus_ql::1 automatically generated 07/27/12 01:36:39
+# Dialog script for qLib::sweep_plus_ql::1 automatically generated 08/12/12 01:15:05
 
 {
     name	qLib::sweep_plus_ql::1
@@ -9,8 +9,8 @@
 	""
     }
 
-    inputlabel	1	"Cross Section"
-    inputlabel	2	Backbone
+    inputlabel	1	"Cross Section(s) (or Profiles)"
+    inputlabel	2	"Backbone (or Path)"
     inputlabel	3	"Reference Points"
     inputlabel	4	"Sub-Network Input #4"
 
@@ -59,15 +59,64 @@
 	}
 	parm {
 	    name	"cycle"
-	    label	"Cycle Type"
+	    label	"* Cycle Type"
 	    type	ordinal
+	    joinnext
 	    default	{ "all" }
 	    menu	{
 		"all"	"All Primitives at Each Point"
-		"each"	"One Primitive at a Time"
-		"cycle"	"Cycle Primitives"
+		"each"	"One Primitive at a Time *"
+		"cycle"	"Cycle Primitives *"
 	    }
 	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"label_uvs"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "`ifs(strcmp(chs(\"cycle\"), \"all\")==0, \"\", \"* can provide UVs\")`" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"refine_path"
+	    label	"Refine Backbone"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"refine_divsu"
+	    label	"Backbone Refine"
+	    type	integer
+	    default	{ "2" }
+	    disablewhen	"{ refine_path == 0 }"
+	    range	{ 2! 20 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rev_x"
+	    label	"Reverse Cross-Section(s)"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rev_path"
+	    label	"Reverse Backbone"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
@@ -111,6 +160,8 @@
 	    name	"usevtx"
 	    label	"Use Vertex"
 	    type	toggle
+	    nolabel
+	    joinnext
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
@@ -118,9 +169,10 @@
 	}
 	parm {
 	    name	"vertex"
-	    label	"Connection Vertex"
+	    label	"Connection Vtx"
 	    type	integer
 	    default	{ "0" }
+	    disablewhen	"{ usevtx == 0 }"
 	    range	{ 0! 100! }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -280,6 +332,45 @@
 	label	"Output"
 
 	parm {
+	    name	"texture"
+	    label	"Add Texture UVs (Curve Inputs Only) *"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"tex_type_profile"
+	    label	"Cross Section(s)"
+	    type	ordinal
+	    default	{ "suniform" }
+	    disablewhen	"{ texture == 0 }"
+	    menu	{
+		"suniform"	"Uniform Spline"
+		"saverage"	"Average Spline"
+		"sarclen"	"Arc Length Spline"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"tex_type_path"
+	    label	"Backbone"
+	    type	ordinal
+	    default	{ "sarclen" }
+	    disablewhen	"{ texture == 0 }"
+	    menu	{
+		"suniform"	"Uniform Spline"
+		"saverage"	"Average Spline"
+		"sarclen"	"Arc Length Spline"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
 	    name	"newg"
 	    label	"Create Groups"
 	    type	toggle
@@ -293,6 +384,7 @@
 	    label	"Sweep Groups"
 	    type	string
 	    default	{ "sweepGroup" }
+	    disablewhen	"{ newg == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
@@ -327,6 +419,7 @@
 	    label	"Output Polygons"
 	    type	toggle
 	    default	{ "on" }
+	    disablewhen	"{ skin == off }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }

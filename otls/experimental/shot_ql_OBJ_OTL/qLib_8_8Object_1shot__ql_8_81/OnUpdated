@@ -1,0 +1,4 @@
+import sys
+
+sys.__stderr__.write("OnUpdated: %s\n" % hou.pwd().path() )
+

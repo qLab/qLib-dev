@@ -4,28 +4,20 @@
 import toolutils
 
 import os
+import sys
 import re
 import subprocess
+import imp
 
-
-def npt():
-    """node/parm/tuple functions creator."""
-    n = hou.pwd()
-    p = lambda pn: n.parm(pn).eval()
-    t = lambda pn: n.parmTuple(pn).eval()
-    return n, p, t
-
-
+global QDIR, QFILE
 
 
 def dispmsg(msg):
+    sys.__stderr__.write("[shot_ql]: %s\n" % msg)
     hou.ui.displayMessage(msg, ["Ok"])
-
-
 
 def ynreq(msg):
     return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
-
 
 
 def open_dir(dir="", param=None):
@@ -37,6 +29,71 @@ def open_file(file=""):
     # TODO: make this work at all :)
     subprocess.call(["nautilus", file])
 
+
+def npt():
+    """node/parm/tuple functions creator."""
+    n = hou.pwd()
+    p = lambda pn: n.parm(pn).eval()
+    t = lambda pn: n.parmTuple(pn).eval()
+    return n, p, t
+
+
+def find_config_file(dir="$HIP", name=["Q.py", ".Q.py", "q.py", ".q.py"]):
+    """
+    Look for a textual config file in the specified folder and all parent folders.
+    """
+    r = None
+    d1 = hou.expandString(dir)
+    d0 = None
+
+    while r is None and d1!=d0:
+        fs = os.listdir(d1)
+
+        for n in name:
+            if n in fs:
+                r = os.path.join(d1, n)
+                print " --- found %s" % r
+                break
+
+        d0, d1 = d1, os.path.dirname(d1)
+
+    print " --- found %s" % r
+    return r
+
+
+def has_q():
+    return 'Q' in dir()
+
+
+def import_q():
+    """Import a qLib site-config file."""
+    q_file = find_config_file()
+    if q_file:
+        QDIR, QFILE = os.path.dirname(q_file), q_file
+        print "loading Q"
+        imp.load_source('Q', QFILE)
+        import Q
+        print "Q.file", Q.__file__ ###
+
+        print "found Q: %s" % Q.__file__ ###
+    return q_file
+
+
+def process_q():
+    """Process the imported Q module."""
+    if has_q():                                         # this might be done more elegantly
+        vars = [ v for v in dir(Q) if v==v.upper() ]    # find env variable names in Q (all upper-case ones)
+        qdir = os.path.dirname(Q.__file__)              # q.py folder name
+
+    else:
+        pass
+
+
+
+def find_env_file():
+    env = import_q()
+    process_q()
+    dispmsg("env file found: %s" % str(env))
 
 
 

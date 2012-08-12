@@ -2,7 +2,7 @@
     channel scale {
       lefttype = extend
       righttype = extend
-      default = 0.01
+      default = 0.0099999997764825821
       flags = 0
       segment { length = 0 value = 0.0099999997764825821 0.0099999997764825821 expr = ch('../scale/floatdef') }
     }

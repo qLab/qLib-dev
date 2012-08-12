@@ -1,7 +1,20 @@
 comment ""
 position -4.66108 -3.01711
 cachesize 1
+connectornextid 6
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+5 "result"
+}
+inputsNamed3
+{
+0 	reflMaskChannel1 0 1 "switcher"
+1 	luminance2 2 1 "input1"
+2 	RGBChannel1 2 1 "input2"
+3 	RGBChannel1 3 1 "input3"
+4 	RGBChannel1 4 1 "input4"
+}
 inputs
 {
 0 	reflMaskChannel1 0 1

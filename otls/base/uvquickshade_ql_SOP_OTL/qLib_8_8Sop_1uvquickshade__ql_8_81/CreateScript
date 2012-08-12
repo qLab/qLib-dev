@@ -1,4 +1,4 @@
-# Automatically generated script: Monday April 09, 00:46 2012
+# Automatically generated script: Thursday August 09, 13:27 2012
 \set noalias = 1
 #
 #  Creation script for qLib::uvquickshade_ql::1 operator
@@ -9,5 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Sop/qLib::uvquickshade_ql::1)
+# Node $arg1 (qLib::Sop/uvquickshade_ql::1)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

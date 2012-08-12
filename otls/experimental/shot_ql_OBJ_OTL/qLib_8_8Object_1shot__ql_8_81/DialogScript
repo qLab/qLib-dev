@@ -1,4 +1,4 @@
-# Dialog script for qLib::shot_ql::1 automatically generated 08/08/12 23:55:41
+# Dialog script for qLib::shot_ql::1 automatically generated 08/12/12 04:14:47
 
 {
     name	qLib::shot_ql::1
@@ -988,6 +988,22 @@
 
 	}
 
+    }
+
+    group {
+	name	"folder0_6"
+	label	"Env"
+
+	parm {
+	    name	"find_env"
+	    label	"Find env file..."
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().find_env_file()" }
+	}
     }
 
 }

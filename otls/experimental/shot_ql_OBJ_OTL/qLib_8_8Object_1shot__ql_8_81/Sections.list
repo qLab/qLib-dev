@@ -7,4 +7,8 @@ Tools.shelf	Tools.shelf
 Contents.gz	Contents.gz
 PythonModule	PythonModule
 OnCreated	OnCreated
+PreFirstCreate	PreFirstCreate
+OnLoaded	OnLoaded
+OnUpdated	OnUpdated
+OnDeleted	OnDeleted
 ExtraFileOptions	ExtraFileOptions

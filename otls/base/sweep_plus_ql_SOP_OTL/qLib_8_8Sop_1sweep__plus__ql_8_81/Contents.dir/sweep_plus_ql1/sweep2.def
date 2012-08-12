@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 1.25191 4.15147
+position 1.31176 3.3535
 cachesize 1
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
@@ -10,20 +10,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	(0) "" 1 "input1"
-1 	(1) "" 1 "input2"
+0 	do_texture_1 0 1 "input1"
+1 	do_texture_2 0 1 "input2"
 2 	(2) "" 1 "input3"
 }
 inputs
 {
-0 	(0) 0 1
-1 	(1) 0 1
+0 	do_texture_1 0 1
+1 	do_texture_2 0 1
 2 	(2) 0 1
 }
 stat
 {
   create 1287305799
-  modify 1343345689
+  modify 1344724648
   author buki@3D11.FOCUSFOX
   access 0777
 }

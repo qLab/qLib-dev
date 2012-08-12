@@ -1,7 +1,15 @@
 comment ""
 position 10.7407 5.5642
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "spec_angle2"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

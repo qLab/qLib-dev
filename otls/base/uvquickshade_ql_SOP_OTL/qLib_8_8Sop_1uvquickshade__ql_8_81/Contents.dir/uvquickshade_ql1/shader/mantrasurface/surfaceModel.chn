@@ -42,7 +42,7 @@
     channel ior_in {
       lefttype = extend
       righttype = extend
-      default = 1.2
+      default = 1.2000000476837158
       flags = 0
       segment { length = 0 value = 1.2000000476837158 1.2000000476837158 expr = ch('../ior_in/floatdef') }
     }
@@ -63,7 +63,7 @@
     channel spec_int {
       lefttype = extend
       righttype = extend
-      default = 0.1
+      default = 0.10000000149011612
       flags = 0
       segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../spec_int/floatdef') }
     }
@@ -109,7 +109,7 @@
     channel refl_int {
       lefttype = extend
       righttype = extend
-      default = 0.1
+      default = 0.10000000149011612
       flags = 0
       segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../refl_int/floatdef') }
     }
@@ -449,7 +449,7 @@
     channel spec_int2 {
       lefttype = extend
       righttype = extend
-      default = 0.1
+      default = 0.10000000149011612
       flags = 0
       segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../spec_int2/floatdef') }
     }
@@ -495,7 +495,7 @@
     channel refl_int2 {
       lefttype = extend
       righttype = extend
-      default = 0.1
+      default = 0.10000000149011612
       flags = 0
       segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch('../refl_int2/floatdef') }
     }

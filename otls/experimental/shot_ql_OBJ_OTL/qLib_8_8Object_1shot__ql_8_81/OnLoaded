@@ -1,0 +1,4 @@
+import sys
+
+sys.__stderr__.write("OnLoaded: %s\n" % hou.pwd().path() )
+

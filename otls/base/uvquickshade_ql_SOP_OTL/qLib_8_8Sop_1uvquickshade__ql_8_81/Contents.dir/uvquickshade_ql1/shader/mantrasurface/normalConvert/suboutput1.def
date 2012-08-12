@@ -1,7 +1,16 @@
 comment ""
 position 6.09611 18.7072
 cachesize 1
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	"" "" 1 "_color"
+1 	transformCamera 6 1 "to"
+}
 inputs
 {
 0 	"" 0 1

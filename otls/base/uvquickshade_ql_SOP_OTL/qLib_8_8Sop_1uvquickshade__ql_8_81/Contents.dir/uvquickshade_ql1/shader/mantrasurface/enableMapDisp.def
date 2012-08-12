@@ -1,7 +1,18 @@
 comment ""
 position 9.21273 -16.548
 cachesize 1
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+3 "result"
+}
+inputsNamed3
+{
+0 	enableDisplaceMap 0 1 "switcher"
+1 	disableDispValue 0 1 "input1"
+2 	subtract1 2 1 "input2"
+}
 inputs
 {
 0 	enableDisplaceMap 0 1

@@ -18,7 +18,7 @@ newg	[ 0	locks=0 ]	(	[ newg	0 ] 	)
 sweepgrp	[ 0	locks=0 ]	(	[ sweepgrp	sweepGroup ] 	)
 skin	[ 0	locks=0 ]	(	[ skin	3 ] 	)
 fast	[ 0	locks=0 ]	(	[ fast	0 ] 	)
-polyout	[ 0	locks=0 ]	(	[ polyout	1 ] 	)
+polyout	[ 0	locks=0 ]	(	[ polyout	0 ] 	)
 stdswitcher3	[ 0	locks=0 ]	(	0	0	)
 totaltwistangle	[ 0	locks=0 ]	(	[ totaltwistangle	360 ] 	)
 }

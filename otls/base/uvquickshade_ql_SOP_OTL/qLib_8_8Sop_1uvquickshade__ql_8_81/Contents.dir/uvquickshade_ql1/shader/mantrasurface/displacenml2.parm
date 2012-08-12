@@ -1,7 +1,7 @@
 {
 version 0.8
 amount	[ 0	locks=0 ]	(	0	)
-scale	[ 0	locks=0 ]	(	[ scale	0.100000001 ] 	)
+scale	[ 0	locks=0 ]	(	[ scale	0.10000000100000001 ] 	)
 sshear	[ 0	locks=0 ]	(	0	)
 tshear	[ 0	locks=0 ]	(	0	)
 polys	[ 0	locks=0 ]	(	"on"	)

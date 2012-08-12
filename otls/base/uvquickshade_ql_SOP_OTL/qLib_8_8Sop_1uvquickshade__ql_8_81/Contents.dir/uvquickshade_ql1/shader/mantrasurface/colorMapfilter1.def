@@ -1,7 +1,15 @@
 comment ""
 position -8.6917 2.70493
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "spec_Mapfilter2"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

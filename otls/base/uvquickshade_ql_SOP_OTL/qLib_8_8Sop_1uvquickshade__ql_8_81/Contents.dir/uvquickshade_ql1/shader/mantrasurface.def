@@ -3,7 +3,14 @@ comment "Created from Gallery Entry: Mantra Surface
 Mantra Surface Shader"
 position 3.20717 5.16622
 cachesize 1
+connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+}
 inputs
 {
 }
