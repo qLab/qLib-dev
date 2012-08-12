@@ -1,0 +1,13 @@
+Operator:     qLib::sweep_ql::1
+Label:        Sweep qL
+Path:         oplib:/qLib::Sop/sweep_ql::1?qLib::Sop/sweep_ql::1
+Icon:         SOP_sweep
+Table:        Sop
+License:      
+Extra:        
+Inputs:       2 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Aug 12 20:15:43 2012
+

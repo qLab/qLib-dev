@@ -1,0 +1,107 @@
+#icon: SOP/sweep
+#context: sop
+#type: node
+
+= Sweep Plus qL =
+
+*version 1*
+
+"""Creates a surface by sweeping cross-sections along a backbone curve with ramp parameters controling scale and twist."""
+
+This node is a replacement of the original [Sweep SOP|Node:sop/sweep], providing additional features,
+such as reversing input curve directions, refining of the path curve, scale/twist/roll driven by per-point
+attributes and/or ramp controls, and basic UV coordinate generation.
+
+@Parameters
+    Sweep:
+        See the [Node:sop/sweep] documentation for parameters.
+        Additional parameters are described below.
+
+        Backbone Refine:
+            The number of divisions to create along the path spline (if enabled).
+
+            This can be useful if the resulting surface doesn't follow the path curve
+            accurately enough (might happen with path curves with points placed
+            too un-evenly along the curve).
+
+        Reverse Cross Section(s), Reverse Backbone:
+            Reverse the direction of the profile and/or path curve(s).
+
+            (e.g.: if the surface normals of the resulting geometry point inwards, reverse cross-section curve direction.)
+
+        Scale:
+            Scale Multiplier:
+                Global scale multiplier for profile scale.
+        
+            Profile Scale:
+                Modulates the profile along the backbone, default is 1.
+
+        Twist:        
+            Twist Multiplier:
+                Multiplyer of the _Profile Twist_ parameter in degrees.
+        
+            Profile Twist:
+                Modulates the twist parameter along the backbone, default is 0 (no twist).
+
+    Output:
+        Add Texture UVs:
+            A quick convenience switch to generate basic UV coordinates for the resulting surface.
+
+            NOTE:
+                It is geared towards working with parametric-type geometry, so make sure all inputs
+                are of that type (NURBS curves, etc.)
+
+                Also, make sure the _Cycle Type_ parameter is set to a mode that supports UV generation
+                (marked with `*` in the UI).
+
+        Cross Section(s), Backbone:
+            Parametrization setting for UV coordinates generation for the cross section and backbone curves.
+            (See the [UV Texture SOP|Node:sop/texture] for description.)
+
+            NOTE:
+                The _Arc Length Spline_ mode can cause some "swimming" of the texture for animated path geometry.
+
+TIP:
+    To have proper UV texturing coordinates, do the following:
+    - Assign UVs to the backbone spline using an [Node:sop/texture], SOP (using one of its _Spline_ modes)
+    - Assign UVs to the cross section curve(s) the same way, but rotate the UVs by `-90` degrees.
+    - Set _Cycle Type_ to "One Primitive at a Time" (or "Cycle Primitives").
+
+
+
+@related
+    - [Node:sop/sweep]
+    - [Node:sop/texture]
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-08-12:
+        - Sweep Plus qL is retired, the name is Sweep qL now;
+        - Completely removed the coincident path points' merging option (the user can fall back to using a Fuse SOP if this is needed)
+
+    2012-08-12:
+        - 'Remove Coincident Points on Path' is now _off_ by default.
+
+    2012-08-11:
+        - Options for reversing direction of profile and path curves
+        - Option for refining backbone (path) resolution
+        - Options for generating basic UV coordinates for the resulting surface
+        - Minor UI fixes/changes.
+
+    ---
+
+    Version 0.1.3:
+        - Fixed last-vertex mismatch in scale/twist ramp evaluation
+        - Support for per-point scale and roll attributes on backbone curve 
+
+    Version 0.1.2:
+        _Turns_ parameter deleted. 
+
+    Version 0.1.1:
+        Added Profile Scale Multiplier/Turns.
+
+    Version 0.1.0:
+        Initial release.
