@@ -8,10 +8,19 @@
 
 """Creates a surface by sweeping cross-sections along a backbone curve with ramp parameters controling scale and twist."""
 
+This node is a replacement of the original [Sweep SOP|Node:sop/sweep], providing 
+
 @Parameters
     Sweep:
         See the [Node:sop/sweep] documentation for parameters.
         Additional parameters are described below.
+
+        WARNING:
+            Do *not* enable _Remove Coincident Points on Path_ if you have an animated path (backbone) spline,
+            as it can cause frame-to-frame topology changes (and a lot of grief when dealing with motion blur
+            and/or exporing to other applications, expecting consistent topology).
+
+            This node has this parameter _off_ by default.
 
         Reverse Cross Section(s), Reverse Backbone:
             Reverse the direction of the profile and/or path curve(s).
@@ -63,6 +72,9 @@ TIP:
 @relnotes Release Notes
 
     _version 1_ ---
+
+    2012-08-12:
+        - 'Remove Coincident Points on Path' is now _off_ by default.
 
     2012-08-11:
         - Options for reversing direction of profile and path curves
