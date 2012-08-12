@@ -1,0 +1,9 @@
+{
+    channel type {
+      lefttype = extend
+      righttype = extend
+      default = 6
+      flags = 0
+      segment { length = 0 value = 6 6 expr = ch(\"../tex_type_path\")+6 }
+    }
+  }

@@ -1,0 +1,429 @@
+# Dialog script for qLib::sweep_plus_ql::1 automatically generated 08/12/12 19:52:49
+
+{
+    name	qLib::sweep_plus_ql::1
+    script	qLib::sweep_plus_ql::1
+    label	"Sweep Plus qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Cross Section(s) (or Profiles)"
+    inputlabel	2	"Backbone (or Path)"
+    inputlabel	3	"Reference Points"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"stdswitcher"
+	label	"Sweep"
+
+	parm {
+	    name	"xgrp"
+	    label	"X-Section Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l sweep2 xgrp" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "sop_input" "0" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pathgrp"
+	    label	"Path Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l sweep2 pathgrp" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "sop_input" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"refgrp"
+	    label	"Reference Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l sweep2 refgrp" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "sop_input" "2" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"cycle"
+	    label	"* Cycle Type"
+	    type	ordinal
+	    joinnext
+	    default	{ "all" }
+	    menu	{
+		"all"	"All Primitives at Each Point"
+		"each"	"One Primitive at a Time *"
+		"cycle"	"Cycle Primitives *"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"label_uvs"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "`ifs(strcmp(chs(\"cycle\"), \"all\")==0, \"\", \"* can provide UVs\")`" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"refine_path"
+	    label	"Refine Backbone"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"refine_divsu"
+	    label	"Backbone Refine"
+	    type	integer
+	    default	{ "2" }
+	    disablewhen	"{ refine_path == 0 }"
+	    range	{ 2! 20 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rev_x"
+	    label	"Reverse Cross-Section(s)"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rev_path"
+	    label	"Reverse Backbone"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"angle"
+	    label	"Angle Fix"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"noflip"
+	    label	"Fix Flipping"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"skipcoin"
+	    label	"Remove Coincident Points on Path"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"aimatref"
+	    label	"Aim at Reference Points"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"usevtx"
+	    label	"Use Vertex"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"vertex"
+	    label	"Connection Vtx"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ usevtx == 0 }"
+	    range	{ 0! 100! }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"roll"
+	    label	"Roll"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 360 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Scale"
+
+	    parm {
+		name	"scalemult"
+		label	"Scale Multiplier"
+		type	float
+		default	{ "1" }
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"use_pscale"
+		label	"use pscale"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"pscale_attrib"
+		label	"PScale Attribute"
+		type	string
+		default	{ "pscale" }
+		disablewhen	"{ use_pscale == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().inputs()[1].geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==1 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"profilescale"
+		label	"Profile Scale"
+		type	ramp_flt
+		default	{ "2" }
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampfloatdefault" "1pos ( 0.00100000005 ) 1value ( 1 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 1 ) 2interp ( catmull-rom )" }
+	    }
+	}
+
+	group {
+	    name	"folder0_1"
+	    label	"Twist"
+
+	    parm {
+		name	"twistmult"
+		label	"Twist Multiplier"
+		type	float
+		default	{ "360" }
+		range	{ 0 720 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"profiletwist"
+		label	"Profile Twist"
+		type	ramp_flt
+		default	{ "2" }
+		range	{ 1! 10 }
+		export	none
+		parmtag	{ "rampbasisdefault" "catmull-rom" }
+		parmtag	{ "rampshowcontrolsdefault" "0" }
+		parmtag	{ "rampfloatdefault" "1pos ( 0 ) 1value ( 0 ) 1interp ( catmull-rom ) 2pos ( 1 ) 2value ( 0 ) 2interp ( catmull-rom )" }
+	    }
+	}
+
+	group {
+	    name	"folder0_2"
+	    label	"Roll"
+
+	    parm {
+		name	"rollmult"
+		label	"Roll Multiplier"
+		type	float
+		default	{ "360" }
+		range	{ 0 360 }
+		export	none
+	    }
+	    parm {
+		name	"use_roll"
+		label	"use roll"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"roll_attrib"
+		label	"Roll Attribute"
+		type	string
+		default	{ "roll" }
+		disablewhen	"{ use_roll == 0 }"
+		menureplace	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().inputs()[1].geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs \\" ]
+		    [ "        if a.dataType() is not hou.attribData.String \\" ]
+		    [ "        and a.size()==1 ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+    group {
+	name	"stdswitcher_1"
+	label	"Output"
+
+	parm {
+	    name	"texture"
+	    label	"Add Texture UVs (Curve Inputs Only) *"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"tex_type_profile"
+	    label	"Cross Section(s)"
+	    type	ordinal
+	    default	{ "suniform" }
+	    disablewhen	"{ texture == 0 }"
+	    menu	{
+		"suniform"	"Uniform Spline"
+		"saverage"	"Average Spline"
+		"sarclen"	"Arc Length Spline"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"tex_type_path"
+	    label	"Backbone"
+	    type	ordinal
+	    default	{ "sarclen" }
+	    disablewhen	"{ texture == 0 }"
+	    menu	{
+		"suniform"	"Uniform Spline"
+		"saverage"	"Average Spline"
+		"sarclen"	"Arc Length Spline"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"newg"
+	    label	"Create Groups"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sweepgrp"
+	    label	"Sweep Groups"
+	    type	string
+	    default	{ "sweepGroup" }
+	    disablewhen	"{ newg == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"skin"
+	    label	"Skin Output"
+	    type	ordinal
+	    default	{ "onpreserve" }
+	    menu	{
+		"off"	"Off"
+		"on"	"Skin Unclosed"
+		"auto"	"Skin with Auto Closure"
+		"onpreserve"	"Skin Unclosed with Preserve Shape"
+		"autopreserve"	"Skin with Preserve Shape and Auto Closure"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"fast"
+	    label	"Fast Sweep"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"polyout"
+	    label	"Output Polygons"
+	    type	toggle
+	    default	{ "on" }
+	    disablewhen	"{ skin == off }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}
