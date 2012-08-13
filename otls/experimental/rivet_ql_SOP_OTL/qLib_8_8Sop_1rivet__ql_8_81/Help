@@ -1,0 +1,22 @@
+#icon: OBJ/rivet
+#context: sop
+#type: node
+
+= Rivet qL =
+
+*version 1*
+
+"""A SOP implementation of the Rivet object node."""
+
+...
+
+@related
+    - [Node:obj/rivet]
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-05-31:
+        First version.

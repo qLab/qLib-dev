@@ -4,7 +4,7 @@
 
 = Attr Lookup Multi qL =
 
-*Version 0.0.1*
+*version 1*
 
 """Value-remapping of per-point geometry attributes using lookup curves."""
 
@@ -14,7 +14,9 @@ WARNING:
 
 
 
-@release_notes Release Notes
+@relnotes Release Notes
+
+    _version 1_ ---
 
     Version 0.0.1:
         First prototype. (Important known issue: time-dependency)

@@ -1,0 +1,42 @@
+#icon: SOP/object_merge
+#context: pop
+#type: node
+
+= Fetch SOP qL =
+
+*version 1*
+
+"""A POP node to fetch points of a SOP geometry as particles."""
+
+This node fetches the specified SOP geometry into the POP network so the geometry points will become
+particles. It also fetches/updates all relevant geometry attributes for each frame (evaluation),
+so the up-to-date values of these attributes will always be present on the resulting particles.
+
+@parameters
+    Birth:
+        SOP:
+            Path to the SOP geometry to fetch.
+
+        Settings:
+            ...
+
+        Attributes:
+            ...
+
+    Update:
+        The list of attributes to keep up-to-date. If the attribute's _Update_ field is non-zero,
+        its current value will be retrieved from the SOP network on each POP evaluation.
+
+        In other words, the same color/normal/etc. attributes will always be present in the POP
+        network as well, with the same values as in the SOP network.
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2011-11-23:
+        New implementation, using point clouds (much faster).
+
+    2011-10-07:
+        First version (slow).

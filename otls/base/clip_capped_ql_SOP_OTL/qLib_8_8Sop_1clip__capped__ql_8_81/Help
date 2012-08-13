@@ -1,0 +1,25 @@
+#icon: SOP/clip
+#type: node
+#context: sop
+
+= Clip Capped qL =
+
+*version 1*
+
+"""A version of [Clip SOP|Node:sop/clip] that provides capping that covers the clipped areas."""
+
+NOTE:
+    The cap surfaces are generated using a boolean ([Node:sop/cookie]) operation (expecting
+    geometry with sane topology.)
+
+
+@related
+    - [Node:sop/clip]
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-01-06:
+        First version.
+

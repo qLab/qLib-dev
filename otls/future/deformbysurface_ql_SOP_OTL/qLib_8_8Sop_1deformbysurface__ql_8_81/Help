@@ -1,1 +1,32 @@
-(deform-by-surface)
+#icon: SOP/deform
+#context: sop
+#type: node
+
+= Deform-by-Surface qL =
+
+*version 1*
+
+"""Deforms input geometry using a NURBS surface."""
+
+An alternative to the [Creep SOP|Node:sop/creep], with a slightly different behaviour
+and parameter set.
+
+@parameters
+    ...
+
+
+@related
+    - [Node:sop/creep]
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-04-24:
+        Enhancements: viewport handles; 'fit' buttons.
+
+    2011-10-01:
+        First version.
+
+
