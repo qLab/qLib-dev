@@ -1,0 +1,25 @@
+#icon: POP/force
+#type: node
+#context: pop
+
+= Force qL =
+
+*version 1*
+
+"""A VOP POP implementation of the regular [Force POP|Node:pop/force]."""
+
+This node is the same as the regular [Node:pop/force], except that it is implemented as a VOP POP,
+so it should scale to multiple processors.
+
+NOTE:
+    Noise implementation _does_ differ from the original [Force POP|Node:pop/force] -- do not expect
+    identical results for identical noise parameters.
+
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-04-26:
+        Initial prototype.

@@ -4,14 +4,16 @@
 
 = Occlusion qL =
 
-*Version 0.0.1*
+*version 1*
 
 """Simple per-point occlusion SOP (initial prototype)."""
 
 ...
 
 
-@release_notes Release Notes
+@relnotes Release Notes
+
+    _version 1_ ---
 
     Version 0.0.1:
         Initial version. (Slow -- an alternative, pointcloud-based method would be much faster.)

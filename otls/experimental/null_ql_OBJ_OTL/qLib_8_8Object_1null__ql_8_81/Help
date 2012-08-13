@@ -1,2 +1,26 @@
 #icon: NODEFLAGS/origin
+#context: obj
+#type: node
+
+= Null qL =
+
+*version 1*
+
+"""An alternative Null object node."""
+
+An alternative to the regular Null object node, with convenience features, such as pivot point
+display, shortcut buttons for resetting transform components, etc.
+
+
+
+
+@related
+    - [Node:obj/null]
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-04-20:
+        First version (prototype).
 

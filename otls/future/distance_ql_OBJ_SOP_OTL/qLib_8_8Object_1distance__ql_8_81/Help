@@ -1,0 +1,22 @@
+#icon: VOP/length
+#context: obj
+#type: node
+
+= Distance qL =
+
+*version 1*
+
+"""Measures the distance between two objects."""
+
+The distance is measured between the local-space origins of the corresponding objects.
+
+The distance value is displayed in the viewport, and also available as a numeric field
+on the object (to reuse in other expressions, etc).
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-04-15:
+        First version.

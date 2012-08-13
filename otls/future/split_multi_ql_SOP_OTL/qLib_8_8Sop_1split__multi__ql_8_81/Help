@@ -1,6 +1,26 @@
-Recursively splits a NURBS-type (NURBS, mesh, bezier) geometry (alternating in U and V directions).
+#icon: VOP/divide
+#context: SOP
+#type: node
 
-The resulting geometry looks similar to floor plans or city block plans.
+= Split Multi qL =
+
+*version 1*
+
+"""Recursively splits a NURBS-type (NURBS, mesh, bezier) geometry (alternating in U and V directions)."""
+
+
+Useful for pattern generation -- the resulting geometry looks similar to floor plans or city block plans.
+
+
 
 
 (pattern generation; spec?)
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2011-10-01:
+        First version.
+

@@ -1,1 +1,9 @@
-This is only a helper node for Distribute qL. Whithout the infrastructure it is not very useful. It shouldn't be visible.
+
+= Distributor Helper qL =
+
+"""Internal helper node for Distribute qL."""
+
+NOTE:
+    This is only a helper node for Distribute qL.
+    Whithout the infrastructure it is not very useful.
+    It shouldn't be visible.
