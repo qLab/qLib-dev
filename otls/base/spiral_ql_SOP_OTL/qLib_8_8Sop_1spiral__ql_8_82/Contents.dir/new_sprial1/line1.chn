@@ -1,0 +1,46 @@
+{
+    channel points {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../points\") }
+    }
+    channel dirx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = if(strcmp(chs(\"../axis\"),\"x\"),0,1) }
+    }
+    channel diry {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = if(strcmp(chs(\"../axis\"),\"y\"),0,1) }
+    }
+    channel dirz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = if(strcmp(chs(\"../axis\"),\"z\"),0,1) }
+    }
+    channel originx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../originx\") }
+    }
+    channel originy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../originy\") }
+    }
+    channel originz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../originz\") }
+    }
+  }

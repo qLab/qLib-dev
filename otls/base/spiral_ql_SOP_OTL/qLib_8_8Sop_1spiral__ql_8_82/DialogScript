@@ -1,0 +1,252 @@
+# Dialog script for qLib::spiral_ql::2 automatically generated 08/14/12 08:31:09
+
+{
+    name	qLib::spiral_ql::2
+    script	qLib::spiral_ql::2
+    label	"New Sprial"
+
+    help {
+	""
+    }
+    bindhandle originx translate "Translate" tx ""
+    bindhandle originy translate "Translate" ty ""
+    bindhandle originz translate "Translate" tz ""
+    bindhandle dist ladder "Ladder" parm0 ""
+
+    inputlabel	1	Backbone
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"axis"
+	label	"Axis"
+	type	string
+	default	{ "y" }
+	disablewhen	"{ input == 1 }"
+	menu	{
+	    "x"	"X"
+	    "y"	"Y"
+	    "z"	"Z"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"origin"
+	label	"Origin"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ input == 1 }"
+	range	{ -1 1 }
+	export	all
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"dist"
+	label	"Distance"
+	type	float
+	default	{ "0" }
+	disablewhen	"{ input == 1 }"
+	range	{ 0 10 }
+	export	all
+    }
+    parm {
+	name	"points"
+	label	"Points"
+	type	intlog
+	joinnext
+	default	{ "100" }
+	range	{ 10 1000 }
+	export	none
+    }
+    parm {
+	name	"sample_mode"
+	label	"Even"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Angle"
+	    "1"	"Length"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"mode"
+	label	"Mode"
+	type	integer
+	default	{ "1" }
+	menu	{
+	    "0"	"Turns"
+	    "1"	"Start-End"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"turns"
+	label	"Turns"
+	type	float
+	default	{ "3" }
+	disablewhen	"{ mode == 1 spiral_type != 2 }"
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"start_rad"
+	label	"Start Radius"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"end_rad"
+	label	"End Radius"
+	type	float
+	default	{ "5" }
+	disablewhen	"{ mode == 0 spiral_type1 != 2 }"
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"roll"
+	label	"Roll"
+	type	float
+	default	{ "0" }
+	range	{ -360 360 }
+	export	none
+    }
+    groupradio {
+	name	"spiral_type"
+	label	"Archimedean"
+
+	parm {
+	    name	"arch_lin_factor"
+	    label	"Linear Factor"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"exponent"
+	    label	"Exponent"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"spiral_type_1"
+	label	"Logarythmic"
+
+	parm {
+	    name	"log_lin_factor"
+	    label	"Linear Factor"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"exp_factor"
+	    label	"Exponent Factor"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    groupradio {
+	name	"spiral_type_2"
+	label	"Attribute"
+
+	parm {
+	    name	"use_twist_attrib"
+	    label	"Label"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "1" }
+	    disablewhen	"{ input == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"twist_attrib"
+	    label	"Twist Attribute"
+	    type	string
+	    joinnext
+	    default	{ "twist" }
+	    disablewhen	"{ input == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"twist_mode"
+	    label	"Mode"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    disablewhen	"{ input == 0 }"
+	    menu	{
+		"0"	"Relative"
+		"1"	"Absolute"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"use_rad_attrib"
+	    label	"Label"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "1" }
+	    disablewhen	"{ input == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"rad_attrib"
+	    label	"Radius Attribute"
+	    type	string
+	    joinnext
+	    default	{ "radius" }
+	    disablewhen	"{ input == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"rad_mode"
+	    label	"Mode"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    disablewhen	"{ input == 0 }"
+	    menu	{
+		"0"	"Relative"
+		"1"	"Absolute"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+    }
+
+    parm {
+	name	"input"
+	label	"Select Input"
+	type	integer
+	invisible
+	default	{ [ "strcmp(opinput(\".\",0),\"\")" hscript-expr ] }
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

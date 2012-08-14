@@ -1,0 +1,198 @@
+    group {
+	name	"stdswitcher3"
+	label	"Sweep"
+
+	parm {
+	    name	"xgrp"
+	    baseparm
+	    export	none
+	    bindselector prims "Cross Sections"
+	        "Select the cross-sections and press Enter to complete. Hold down Alt to select from other objects."
+	        0 1 0xffffffff 0 "" 0
+	}
+	parm {
+	    name	"pathgrp"
+	    baseparm
+	    export	none
+	    bindselector prims Backbones
+	        "Now select the backbones and press Enter to complete. Hold down Alt to select from other objects."
+	        1 1 0x0000000f 0 "" 0
+	}
+	parm {
+	    name	"refgrp"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"cycle"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"angle"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"noflip"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"skipcoin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"aimatref"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"usevtx"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vertex"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"scale"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"twist"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"roll"
+	    baseparm
+	    export	all
+	}
+    }
+
+    group {
+	name	"stdswitcher3_1"
+	label	"Output"
+
+	parm {
+	    name	"newg"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"sweepgrp"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"skin"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"fast"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"polyout"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"turns"
+	label	"Turns"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"segments"
+	label	"Segments"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"archimedean_scale"
+	label	"Archimedean Scale"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"logarythmic_scale"
+	label	"Logarythmic Scale"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"attribute_scale"
+	label	"Attribute Scale"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"archimedean_turns"
+	label	"Archimedean Turns"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"logarythmic_turns"
+	label	"Logarythmic Turns"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"attribute_turns"
+	label	"Attribute Turns"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"spiral_type"
+	label	"Spiral Type"
+	type	string
+	default	{ "default.pic" }
+	range	{ 0 1 }
+	export	none
+    }

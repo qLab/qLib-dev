@@ -1,0 +1,73 @@
+#icon: SOP/Spring
+#context: sop
+#type: node
+
+= Spiral qL =
+
+*Version 2*
+
+"""Generates an archimedean, logarythmic or arbitrary attribute driven spiral around an input curve or linear segment."""
+
+@Parameters
+    Axis:
+        Axis of the linear line segment when no backbone connected.
+    Origin:
+        Origin of the generated backbone.
+    Distance:
+        Length of the generated backbone.
+    Points:
+        Number of points along the generated spiral.
+    Even:
+        Type of segment creation:
+        * *Angle*: the angle along the spiral between generated points is evenly distributed.
+        * *Length*: length of segments along the curve is evenly distibuted.
+    Mode:
+        Type of generation:
+        * *Turns*: the start radius and the number of turns is specified. 
+        * *Start-End*: the start and the end radius is specified.
+        NOTE:
+            These parameters act as multipliers if the spiral generation is driven by attributes.
+    Turns:
+        Number of turns.
+    Start Radius:
+        The starting radius of the generated spiral.
+    End Radius:
+        The ending radius of the generated spiral.
+    Roll:
+        Roll around backbone.
+
+    Archimedean:
+        Linear Factor:
+            Linear factor of the calculation.
+        Exponent:
+            Exponent of the angle.
+
+    Logarythmic:
+        Linear Factor:
+            Linear factor of the calculation.
+        Exponent Factor:
+            Exponent factor of the calculation.
+
+    Attribute:
+        Use Twist Attribute (toggle):
+            If turned off a simple linear progression controls the twist.
+        Twist Attribute:
+            Name of the point attribute driving the twist around the backbone.
+        Twist Mode:
+            Controls how the twist attribute gets interpreted:
+            * *Relative*: attribute values are interpreted as the relative twist from the previous point.
+            * *Absolute*: attribute values are interpreted as the number of turns at the given point.
+            NOTE:
+                In both mode the *Turn* parameter act as a multiplier in the twist calculation.
+        Use Radius Attribute (toggle):
+            If turned off a simple linear progression between *Start Radius* and *End Radius* controls the radius.
+        Radius Attribute:
+            Name of the point attribute controlling the radius of the spiral at the given point.
+        Radius Mode:
+            Controls how the radius attribute gets interpreted:
+            * *Relative*: attribute values gets fitted between *Start Radius* and *End Radius*.
+            * *Absolute*: attribute values are only multiplied by *End Radius*.
+ 
+@relnotes Release Notes
+    2012-09-14:
+        Initial release of Version 2.

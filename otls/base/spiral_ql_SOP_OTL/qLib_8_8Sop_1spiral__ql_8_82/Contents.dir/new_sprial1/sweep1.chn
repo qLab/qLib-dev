@@ -1,0 +1,89 @@
+{
+    channel segments {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = npoints(opinputpath(\".\",1))-1 }
+    }
+    channel twist {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = "if(ch(\"../spiral_type1\")!=2,
+    ch(\"turns\")*360/ch(\"segments\"),
+    if(ch(\"../use_twist_attrib\"),
+        if(ch(\"../twist_mode\")==0,
+            point(\"../resample1\",$PT,chs(\"../twist_attrib\"),0)*ch(\"../turns\"),
+            0
+        ),
+        ch(\"turns\")*360/ch(\"segments\")
+    )
+)" }
+    }
+    channel archimedean_scale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../start_rad\")+pow($PT*ch(\"twist\")/360,ch(\"../exponent\"))*ch(\"../arch_lin_factor\") }
+    }
+    channel logarythmic_scale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../start_rad\")-ch(\"../log_lin_factor\")+ch(\"../log_lin_factor\") * pow($E, ch(\"../exp_factor\")*$PT*ch(\"twist\")/360)" }
+    }
+    channel archimedean_turns {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = pow((ch(\"../end_rad\")-ch(\"../start_rad\"))/ch(\"../arch_lin_factor\"),1/ch(\"../exponent\")) }
+    }
+    channel logarythmic_turns {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = log((ch(\"../end_rad\")-ch(\"../start_rad\")+ch(\"../log_lin_factor\"))/ch(\"../log_lin_factor\"))/ch(\"../exp_factor\") }
+    }
+    channel roll {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "if(ch(\"../spiral_type1\") && ch(\"../twist_mode\"),
+    point(\"../resample1\",$PT,chs(\"../twist_attrib\"),0)*ch(\"../turns\")*360+ch(\"../roll\"),
+    ch(\"../roll\")
+    )" }
+    }
+    channel turns {
+      lefttype = extend
+      righttype = extend
+      default = 2.3025851249694824
+      flags = 0
+      segment { length = 0 value = 2.3025851249694824 2.3025851249694824 expr = if(ch(\"../mode\"),ch(chs(\"spiral_type\")+\"_turns\"),ch(\"../turns\")) }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(chs(\"spiral_type\")+\"_scale\") }
+    }
+    channel attribute_scale {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000149011612
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = "if(ch(\"../use_rad_attrib\"),
+    if(ch(\"../rad_mode\"),
+        point(\"../resample1\", $PT, chs(\"../rad_attrib\"), 0) * ch(\"../end_rad\"),
+        fit(point(\"../resample1\", $PT, chs(\"../rad_attrib\"), 0),
+            detail(\"../MINMAX\", \"min_rad\", 0),
+            detail(\"../MINMAX\", \"max_rad\", 0),
+            ch(\"../start_rad\"),
+            ch(\"../end_rad\")
+        )
+    ),
+    fit01($PCT, ch(\"../start_rad\"), ch(\"../end_rad\"))
+)" }
+    }
+  }
