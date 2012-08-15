@@ -1,0 +1,10 @@
+{
+version 0.8
+inname	[ 0	locks=0 ]	(	valid_polys	)
+inclass	[ 0	locks=0 ]	(	"primitive"	)
+outclass	[ 0	locks=0 ]	(	"detail"	)
+method	[ 0	locks=0 ]	(	"min"	)
+useoutname	[ 0	locks=0 ]	(	"off"	)
+outname	[ 0	locks=0 ]	(	valid_pts	)
+deletein	[ 0	locks=0 ]	(	"on"	)
+}

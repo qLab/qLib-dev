@@ -1,0 +1,31 @@
+#icon: TOOLS/select_points
+#context: sop
+#type: node
+
+= Topologist qL =
+
+*version 1*
+
+"""A semi-interactive node for finding incorrect geometry source(s) in a SOP graph."""
+
+NOTE:
+    Currently only polygon validity checks are implemented.
+
+
+This node allows finding upstream SOP node(s) that generate invalid or undesirable geometry.
+
+The upstream SOP graph can be traversed using the _Up_/_Dn_ buttons. The name and status
+of the currently diagnosed node are displayed. Based on the status feedback the node can
+be marked (_valid_ or _invalid_).
+
+
+TODO:
+    It should detect temporal changes in upstream geometry topology.
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2012-08-15:
+        First prototype.

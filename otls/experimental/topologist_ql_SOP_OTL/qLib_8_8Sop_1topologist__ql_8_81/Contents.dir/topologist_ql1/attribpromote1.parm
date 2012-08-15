@@ -1,0 +1,10 @@
+{
+version 0.8
+inname	[ 0	locks=0 ]	(	valid_poly_geo	)
+inclass	[ 0	locks=0 ]	(	"detail"	)
+outclass	[ 0	locks=0 ]	(	"point"	)
+method	[ 0	locks=0 ]	(	"first"	)
+useoutname	[ 0	locks=0 ]	(	"off"	)
+outname	[ 0	locks=0 ]	(	""	)
+deletein	[ 0	locks=0 ]	(	"on"	)
+}

@@ -1,0 +1,8 @@
+{
+    channel value1v1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "$VALID_PTS && $VALID_POLYS" }
+    }
+  }

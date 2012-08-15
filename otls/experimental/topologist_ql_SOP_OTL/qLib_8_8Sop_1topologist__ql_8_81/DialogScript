@@ -1,0 +1,232 @@
+# Dialog script for qLib::topologist_ql::1 automatically generated 08/15/12 02:13:10
+
+{
+    name	qLib::topologist_ql::1
+    script	qLib::topologist_ql::1
+    label	"Topologist qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Primary Geometry Input"
+    inputlabel	2	"Secondary (Diagnostics) Input"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"valid_poly_geo"
+	label	"Valid Poly Geo"
+	type	integer
+	invisible
+	default	{ "point(\"GEO_valid_poly_geo\", 0, \"valid_poly_geo\", 0)" }
+	range	{ 0 10 }
+	export	none
+    }
+    import {
+	label	Results
+	enable	0
+
+	parm {
+	    name	"input"
+	    label	"Input"
+	    type	integer
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    menu	{
+		"0"	"Primary Input"
+		"1"	"Secondary (Diag.)"
+	    }
+	    range	{ 0! 10 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "`ifs(ch(\"valid_poly_geo\"), \"Valid\", \"INVALID POLYGONAL GEOMETRY\")`" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"separator_1"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"label_primary"
+	    label	"Primary Input:"
+	    type	label
+	    size	4
+	    default	{ "`opinputpath(\".\", 0)`" "" "" "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"label_secondary"
+	    label	"Diagnosing:"
+	    type	label
+	    size	4
+	    default	{ "`opinputpath(\".\", 1)`" "" "" "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"label_upstreams"
+	    label	"Inputs:"
+	    type	label
+	    size	4
+	    default	{ "[1] `opinput(opinputpath(\".\", 1), 0)`" "[2] `opinput(opinputpath(\".\", 1), 1)`" "[3] `opinput(opinputpath(\".\", 1), 2)`" "[4] `opinput(opinputpath(\".\", 1), 3)`" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Diagnose"
+
+	parm {
+	    name	"reset"
+	    label	"Reset"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `oppwf()` input ( 0 ); opunwire `oppwf()` 1" }
+	}
+	parm {
+	    name	"start_from_primary"
+	    label	"Start from Primary Input"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opinputpath(\".\",0)` -1 `oppwf()`; opparm `oppwf()` input ( 1 )" }
+	}
+	parm {
+	    name	"separator_2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"mark_valid"
+	    label	"Mark as Valid"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opcolor -c 1 1 .5 `opinputpath(\".\",1)`" }
+	}
+	parm {
+	    name	"mark_invalid"
+	    label	"Mark as Invalid"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opcolor -c 1 0 0 `opinputpath(\".\",1)`" }
+	}
+	parm {
+	    name	"unmark"
+	    label	"Unmark"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opcolor -c .8 .8 .8 `opinputpath(\".\",1)`" }
+	}
+	parm {
+	    name	"upstream_input_1"
+	    label	"Up 1"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opinputpath(opinputpath(\".\",1),0)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_2"
+	    label	"Up 2"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opinputpath(opinputpath(\".\",1),1)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_3"
+	    label	"Up 3"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opinputpath(opinputpath(\".\",1),2)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_4"
+	    label	"Up 4"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opinputpath(opinputpath(\".\",1),3)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_6"
+	    label	"Dn 1"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opoutputpath(opinputpath(\".\",1),0)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_7"
+	    label	"Dn 2"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opoutputpath(opinputpath(\".\",1),1)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_8"
+	    label	"Dn 3"
+	    type	button
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opoutputpath(opinputpath(\".\",1),2)` -1 `oppwf()`" }
+	}
+	parm {
+	    name	"upstream_input_9"
+	    label	"Dn 4"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opwire -n `opoutputpath(opinputpath(\".\",1),3)` -1 `oppwf()`" }
+	}
+    }
+
+}

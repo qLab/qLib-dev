@@ -1,0 +1,13 @@
+Operator:     qLib::topologist_ql::1
+Label:        Topologist qL
+Path:         oplib:/qLib::Sop/topologist_ql::1?qLib::Sop/topologist_ql::1
+Icon:         TOOLS_select_points
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Aug 15 02:13:13 2012
+
