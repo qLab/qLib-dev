@@ -1,0 +1,10 @@
+{
+    channel exp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 28.299999237060547
+      segment { length = 0 value = 1 1 expr = ch('../exp/floatdef') }
+    }
+  }

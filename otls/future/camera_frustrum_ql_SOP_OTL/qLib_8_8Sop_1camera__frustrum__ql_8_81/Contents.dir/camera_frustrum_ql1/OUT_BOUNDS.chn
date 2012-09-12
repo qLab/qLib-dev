@@ -1,0 +1,38 @@
+{
+    channel getbboxx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "bbox(\".\", D_XSIZE)" }
+    }
+    channel getcenterx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\".\", D_X)" }
+    }
+    channel getcentery {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\".\", D_Y)" }
+    }
+    channel getcenterz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\".\", D_Z)" }
+    }
+    channel getbboxy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "bbox(\".\", D_YSIZE)" }
+    }
+    channel getbboxz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "bbox(\".\", D_ZSIZE)" }
+    }
+  }

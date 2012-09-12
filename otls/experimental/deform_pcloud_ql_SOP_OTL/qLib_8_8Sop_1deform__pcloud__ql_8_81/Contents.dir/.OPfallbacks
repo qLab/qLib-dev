@@ -1,4 +1,10 @@
-Vop/pcopen /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/inttofloat /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/inttofloat otls/OPlibVop.otl
+Vop/pcnumfound /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pcnumfound otls/OPlibVop.otl
+Vop/pcopen /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/pcopen otls/OPlibVop.otl
-Vop/pcfilter /opt/hfs11.1.165/houdini/otls/OPlibVop.otl
+Vop/pow /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pow otls/OPlibVop.otl
+Vop/pcfilter /opt/hfs/houdini/otls/OPlibVop.otl
 Vop/pcfilter otls/OPlibVop.otl

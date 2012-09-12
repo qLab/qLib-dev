@@ -1,4 +1,4 @@
-# Dialog script for qLib::deform_pcloud_ql::1 automatically generated 03/27/12 02:34:51
+# Dialog script for qLib::deform_pcloud_ql::1 automatically generated 09/12/12 18:12:58
 
 {
     name	qLib::deform_pcloud_ql::1
@@ -19,7 +19,7 @@
 	label	"Search radius"
 	type	float
 	default	{ "0.1" }
-	range	{ 0 1 }
+	range	{ 0 10 }
 	export	none
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
@@ -29,8 +29,19 @@
 	label	"Number of points"
 	type	integer
 	default	{ "10" }
-	range	{ 0 10 }
+	range	{ 1! 100 }
 	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"exp"
+	label	"Falloff Exponent"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }

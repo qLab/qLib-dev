@@ -2,7 +2,6 @@
     channel camera {
       lefttype = extend
       righttype = extend
-      defaultString = \"/obj/cam1\"
       flags = 0
       segment { length = 0 expr = chsop(\"../camera\") }
     }
@@ -15,7 +14,6 @@
     channel plane_distance {
       lefttype = extend
       righttype = extend
-      default = 10
       flags = 0
       segment { length = 0 value = 10 10 expr = "if( ch(\"../set_near\"), ch(\"../near\"), ch(chs(\"camera\")+\"/near\") )" }
     }

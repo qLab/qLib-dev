@@ -1,9 +1,9 @@
 sopflags sopflags = 
 comment ""
-position 4.02235 -2.41255
+position 2.90145 -0.370573
 cachesize 1
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
 0 "output1"
@@ -16,12 +16,12 @@ inputs
 }
 stat
 {
-  create 1339102666
-  modify 1339110250
-  author tusi@demeisen
+  create 1345546673
+  modify 1345549983
+  author buki@sid.digicpictures.local
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 1 1 0.4 
 delscript ""
 exprlanguage hscript
 end
