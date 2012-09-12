@@ -1,14 +1,22 @@
 comment ""
 position -2.26013 4.44116
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "file"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }
 stat
 {
   create 1332767784
-  modify 1332808302
+  modify 1347466327
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

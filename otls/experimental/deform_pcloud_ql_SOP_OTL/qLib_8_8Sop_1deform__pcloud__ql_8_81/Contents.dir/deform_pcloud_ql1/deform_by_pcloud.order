@@ -1,4 +1,4 @@
-10
+18
 global1
 output1
 pcopen1
@@ -9,3 +9,11 @@ subtract1
 add1
 radius
 maxpoints
+pcnumfound1
+inttofloat1
+file1
+inttofloat2
+divide1
+multiply1
+pow1
+exp
