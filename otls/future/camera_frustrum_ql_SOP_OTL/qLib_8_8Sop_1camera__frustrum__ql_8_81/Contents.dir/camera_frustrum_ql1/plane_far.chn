@@ -1,110 +1,9 @@
 {
-    channel texture {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"Mandril.pic\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../plane_near/texture\") }
-    }
-    channel material {
+    channel camera {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../plane_near/material\") }
-    }
-    channel export_uv {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../plane_near/export_uv\") }
-    }
-    channel orderv {
-      lefttype = extend
-      righttype = extend
-      default = 4
-      flags = 0
-      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/orderv\") }
-    }
-    channel orderu {
-      lefttype = extend
-      righttype = extend
-      default = 4
-      flags = 0
-      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/orderu\") }
-    }
-    channel cols {
-      lefttype = extend
-      righttype = extend
-      default = 2
-      flags = 0
-      segment { length = 0 value = 2 2 expr = ch(\"../plane_near/cols\") }
-    }
-    channel rows {
-      lefttype = extend
-      righttype = extend
-      default = 2
-      flags = 0
-      segment { length = 0 value = 2 2 expr = ch(\"../plane_near/rows\") }
-    }
-    channel surftype {
-      lefttype = extend
-      righttype = extend
-      default = 4
-      flags = 0
-      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/surftype\") }
-    }
-    channel type {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../plane_near/type\") }
-    }
-    channel cropt {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cropt\") }
-    }
-    channel cropb {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../plane_near/cropb\") }
-    }
-    channel cropr {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cropr\") }
-    }
-    channel cropl {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../plane_near/cropl\") }
-    }
-    channel cam_crop {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cam_crop\") }
-    }
-    channel overscany {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/overscany\") }
-    }
-    channel overscanx {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/overscanx\") }
+      segment { length = 0 expr = chsop(\"../plane_near/camera\") }
     }
     channel space {
       lefttype = extend
@@ -112,18 +11,106 @@
       flags = 0
       segment { length = 0 expr = ch(\"../plane_near/space\") }
     }
-    channel camera {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"/obj/cam1\"
-      flags = 0
-      segment { length = 0 expr = chsop(\"../plane_near/camera\") }
-    }
     channel plane_distance {
       lefttype = extend
       righttype = extend
-      default = 8
       flags = 0
       segment { length = 0 value = 8 8 expr = "if( ch(\"../set_far\"), ch(\"../far\"), ch(chs(\"camera\")+\"/far\") )" }
+    }
+    channel overscanx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/overscanx\") }
+    }
+    channel overscany {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/overscany\") }
+    }
+    channel cam_crop {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cam_crop\") }
+    }
+    channel cropl {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../plane_near/cropl\") }
+    }
+    channel cropr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cropr\") }
+    }
+    channel cropb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../plane_near/cropb\") }
+    }
+    channel cropt {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../plane_near/cropt\") }
+    }
+    channel type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../plane_near/type\") }
+    }
+    channel surftype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/surftype\") }
+    }
+    channel rows {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../plane_near/rows\") }
+    }
+    channel cols {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../plane_near/cols\") }
+    }
+    channel orderu {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/orderu\") }
+    }
+    channel orderv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 4 4 expr = ch(\"../plane_near/orderv\") }
+    }
+    channel export_uv {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../plane_near/export_uv\") }
+    }
+    channel material {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../plane_near/material\") }
+    }
+    channel texture {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chs(\"../plane_near/texture\") }
     }
   }

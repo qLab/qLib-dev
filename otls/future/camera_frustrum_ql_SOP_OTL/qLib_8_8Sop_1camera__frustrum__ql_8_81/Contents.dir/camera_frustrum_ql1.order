@@ -1,4 +1,4 @@
-24
+29
 plane_near
 plane_far
 merge1
@@ -23,3 +23,8 @@ inset
 switch_wire_guide
 this_is_the_nothing
 merge_wire
+skin3
+fuse2
+reverse1
+OUT_BOUNDS
+merge4

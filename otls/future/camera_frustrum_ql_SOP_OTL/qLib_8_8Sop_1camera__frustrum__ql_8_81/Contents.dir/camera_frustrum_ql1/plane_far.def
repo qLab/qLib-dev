@@ -16,9 +16,9 @@ inputs
 }
 stat
 {
-  create 1339096838
-  modify 1339109198
-  author tusi@demeisen
+  create 1345549105
+  modify 1345549248
+  author buki@sid.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

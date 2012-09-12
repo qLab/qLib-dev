@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 4.57438 1.8532
+position 8.0533 0.141331
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -10,20 +10,20 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	skin2 2 1 "input1"
+0 	reverse1 1 1 "input1"
 }
 inputs
 {
-0 	skin2 0 1
+0 	reverse1 0 1
 }
 stat
 {
-  create 1339104400
-  modify 1345549323
-  author tusi@demeisen
+  create 1345549410
+  modify 1345549984
+  author buki@sid.digicpictures.local
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0 0 0 
 delscript ""
 exprlanguage hscript
 end

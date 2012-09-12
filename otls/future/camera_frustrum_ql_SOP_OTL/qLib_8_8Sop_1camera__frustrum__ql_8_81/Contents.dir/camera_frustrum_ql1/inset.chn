@@ -2,8 +2,8 @@
     channel inset {
       lefttype = extend
       righttype = extend
-      default = -0.20000000000000001
+      default = -0.20000000298023224
       flags = 0
-      segment { length = 0 value = -0.20000000000000001 -0.20000000000000001 expr = ch(\"../inset\") }
+      segment { length = 0 value = -0.20000000298023224 -0.20000000298023224 expr = ch(\"../inset\") }
     }
   }

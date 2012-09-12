@@ -1,0 +1,258 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    group {
+	name	"folder2"
+	label	"Name Presets"
+
+	parm {
+	    name	"set_name_0"
+	    label	"Default ('null')"
+	    type	button
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"null1\", True)" }
+	}
+	group {
+	    name	"folder0"
+	    label	"Outputs"
+	    tabbreak
+
+	    parm {
+		name	"set_name_1"
+		label	"DISPLAY"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setName(\"DISPLAY\"); hou.pwd().setColor(hou.Color((0,.4,1))); hou.pwd().setDisplayFlag(True)" }
+	    }
+	    parm {
+		name	"set_name_2"
+		label	"RENDER"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setName(\"RENDER\"); hou.pwd().setColor(hou.Color((.4,.2,.6))); hou.pwd().setRenderFlag(True)" }
+	    }
+	    parm {
+		name	"set_name_3"
+		label	"OUT"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT\")" }
+	    }
+	    parm {
+		name	"set_name_14"
+		label	"O"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"O\")" }
+	    }
+	    parm {
+		name	"sepparm2"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"set_name_11"
+		label	"OUT_BOUNDS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_BOUNDS\")" }
+	    }
+	    parm {
+		name	"set_name_18"
+		label	"OUT_SOURCE"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_SOURCE\")" }
+	    }
+	    parm {
+		name	"set_name_17"
+		label	"OUT_SIMRESULT"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_SIMRESULT\")" }
+	    }
+	    parm {
+		name	"set_name_12"
+		label	"OUT_STATIC"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_STATIC\")" }
+	    }
+	    parm {
+		name	"set_name_13"
+		label	"OUT_ACTIVE"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_ACTIVE\")" }
+	    }
+	    parm {
+		name	"set_name_15"
+		label	"OUT_GEO"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_GEO\")" }
+	    }
+	    parm {
+		name	"set_name_16"
+		label	"OUT_POINTS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"OUT_POINTS\")" }
+	    }
+	    parm {
+		name	"sepparm"
+		label	"Separator"
+		type	separator
+		default	{ }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"set_name_7"
+		label	"TO_DOPS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"TO_DOPS\")" }
+	    }
+	    parm {
+		name	"set_name_8"
+		label	"TO_POPS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"TO_POPS\")" }
+	    }
+	    parm {
+		name	"set_name_9"
+		label	"TO_CHOPS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"TO_CHOPS\")" }
+	    }
+	    parm {
+		name	"set_name_10"
+		label	"TO_VOPS"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"TO_VOPS\")" }
+	    }
+	    parm {
+		name	"set_name_19"
+		label	"TO_FRACTURE"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((0,0,0))); hou.pwd().setName(\"TO_FRACTURE\")" }
+	    }
+	}
+
+	group {
+	    name	"folder1"
+	    label	"Waypoints"
+
+	    parm {
+		name	"set_name_4"
+		label	":: GEO_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"GEO_\"+hou.pwd().name(), True)" }
+	    }
+	    parm {
+		name	"set_name_5"
+		label	":: GEO_PRESIM_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.5,0,0))); hou.pwd().setName(\"GEO_PRESIM_\"+hou.pwd().name(), True)" }
+	    }
+	    parm {
+		name	"set_name_6"
+		label	":: GEO_POSTSIM_<name>"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().setColor(hou.Color((.8,.8,.8))); hou.pwd().setName(\"GEO_POSTSIM_\"+hou.pwd().name(), True)" }
+	    }
+	}
+
+    }
+
+    parm {
+	name	"getbbox"
+	label	"Bounds"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"getcenter"
+	label	"Center"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ -1 1 }
+	export	none
+    }
