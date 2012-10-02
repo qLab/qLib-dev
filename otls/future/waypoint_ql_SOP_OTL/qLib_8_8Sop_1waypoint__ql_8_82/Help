@@ -229,6 +229,9 @@ WARNING:
 
     _interface version 2_ ---
 
+    2012-10-02:
+        - Bug fix: Points Only for Consecutive Frames now uses the first frame of the render range (instead of frame #1).
+
     2012-08-05:
         - Full output file (sequence) path is now constructed from three components (path, name, extension) -- all represented with a separate parameter. This results in shorter filename expressions.
         - Got rid of multiple inputs, added _variants_ instead (so there's still built-in support for writing multiple variants of the same input). Variants can be numeric or textual.

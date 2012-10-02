@@ -1,4 +1,12 @@
 {
+    channel frame {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 44.333301544189453
+      segment { length = 0 value = 1 1 expr = ch(\"../f1\") }
+    }
     channel time {
       lefttype = extend
       righttype = extend
