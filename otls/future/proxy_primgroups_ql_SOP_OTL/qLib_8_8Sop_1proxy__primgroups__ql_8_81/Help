@@ -4,14 +4,14 @@
 
 = Proxy PrimGroups qL =
 
-*Version 0.0.2*
+*interface version 1*
 
 """Creates a proxy version of each primitive group by wrapping a low resolution proxy around them (PrimGroup family SOP)."""
 
 @related
-    - [PrimGroup Centroids qL|Node:sop/primgroup_centroids_ql]
-    - [Xform by Points qL|Node:sop/xform_by_points_ql]
-    - [PrimGroup SDF qL|Node:sop/primgroup_sdf_ql]
+    - [PrimGroup Centroids qL|Node:sop/qLib::primgroup_centroids_ql::1]
+    - [Xform by Points qL|Node:sop/qLib::xform_by_points_ql::1]
+    - [PrimGroup SDF qL|Node:sop/qLib::primgroup_sdf_ql::1]
 
 Useful for (and designed to) replace higher-resolution geometry fractures in RBD simulations,
 if the results doesn't have to be too accurate (e.g. lots of fast-moving debris).
@@ -79,10 +79,19 @@ in other words, do a test round.)
 
 @Dependencies
     Uses the following operator(s):
-        - [Xform to BBox qL SOP|Node:sop/xform_to_bbox_ql]
+    - [Xform to BBox qL SOP|Node:sop/xform_to_bbox_ql]
 
 
 @Release_Notes Release Notes
+
+    _interface version 1_ --
+
+    2012-10-03:
+        - Fix: now uses the namespaced version of Xform-to-BBox, internally
+        - Fix: Primitive groups were re-created even in 'by name attribute' mode -- this is now fixed.
+
+    _old (non-namespaced) versions_ --
+
     Version 0.0.2:
         - Support for fracture grouping with a name attribute (H12+).
         - 'Custom' proxy type now works (it uses the [Xform to BBox qL|Node:sop/xform_to_bbox_ql] SOP).

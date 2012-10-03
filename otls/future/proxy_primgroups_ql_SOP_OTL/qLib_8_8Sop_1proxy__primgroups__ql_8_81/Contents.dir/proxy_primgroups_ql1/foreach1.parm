@@ -1,10 +1,10 @@
 {
 version 0.8
-fortype	[ 0	locks=0 ]	(	[ fortype	0 ] 	)
+fortype	[ 0	locks=0 ]	(	[ fortype	1 ] 	)
 forstamp	[ 0	locks=0 ]	(	FORVALUE	)
 foridxstamp	[ 0	locks=0 ]	(	FORIDXVALUE	)
 groupmask	[ 0	locks=0 ]	(	[ groupmask	piece* ] 	)
-attrib	[ 0	locks=0 ]	(	[ attrib	name ] 	)
+attrib	[ 0	locks=0 ]	(	[ attrib	abcPath ] 	)
 attribtol	[ 0	locks=0 ]	(	[ attribtol	0.001 ] 	)
 numrange	[ 0	locks=0 ]	(	1	10	1	)
 usemaxiter	[ 0	locks=0 ]	(	"off"	)

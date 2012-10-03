@@ -1,0 +1,9 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 44.333300000000001
+      segment { length = 0 expr = "ch(\"../fortype\") == 0" }
+    }
+  }

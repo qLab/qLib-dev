@@ -86,6 +86,11 @@ proxy_primgroups_ql1/foreach1/remove_point_normals.init
 proxy_primgroups_ql1/foreach1/remove_point_normals.def
 proxy_primgroups_ql1/foreach1/remove_point_normals.parm
 proxy_primgroups_ql1/foreach1/remove_point_normals.userdata
+proxy_primgroups_ql1/foreach1/switch_if_group_mode.init
+proxy_primgroups_ql1/foreach1/switch_if_group_mode.def
+proxy_primgroups_ql1/foreach1/switch_if_group_mode.chn
+proxy_primgroups_ql1/foreach1/switch_if_group_mode.parm
+proxy_primgroups_ql1/foreach1/switch_if_group_mode.userdata
 proxy_primgroups_ql1/foreach1.order
 proxy_primgroups_ql1/foreach1.net
 proxy_primgroups_ql1.net
