@@ -4,7 +4,7 @@
 
 = Attr Visualize qL =
 
-*Version 0.0.6*
+*interface version 1*
 
 """Various visualization types for geometry attributes."""
 
@@ -24,7 +24,7 @@ TIP:
 
 NOTE:
     By default the primitive-count limit is enabled (to avoid hanging Houdini when connecting this node
-    to heavy geometry). This setting also deletes all "unused" points, so you might see some unexpected
+    to heavy geometry). This setting may also delete all "unused" points, so you might see some unexpected
     results if applied to point clouds.
 
     Use the _Preprocessing/Decimation -> Presets_ menu to quickly switch between the most frequently
@@ -140,6 +140,14 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+_interface version 1_ ---
+
+    2012-10-24:
+        - Enhancement: default primitive safeguard settings now don't delete all points from points-only geometry.
+
+
+_older versions_ ---
 
     0.0.6:
         Support for multiple inputs with an input selector (allows connecting and switching between 'before'/'after' states).
