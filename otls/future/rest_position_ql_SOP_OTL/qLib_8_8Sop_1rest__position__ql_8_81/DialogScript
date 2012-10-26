@@ -1,4 +1,4 @@
-# Dialog script for qLib::rest_position_ql::1 automatically generated 03/27/12 00:01:35
+# Dialog script for qLib::rest_position_ql::1 automatically generated 10/26/12 14:40:42
 
 {
     name	qLib::rest_position_ql::1
@@ -16,7 +16,7 @@
 
     groupradio {
 	name	"select_mode_"
-	label	"Save Rest Position"
+	label	"Save"
 
 	parm {
 	    name	"file"
@@ -60,7 +60,7 @@
 
     groupradio {
 	name	"select_mode__1"
-	label	"Restore Rest Position"
+	label	"Restore"
 
 	parm {
 	    name	"rest_vex_group"
@@ -115,6 +115,30 @@
 	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    groupradio {
+	name	"select_mode__2"
+	label	"Swap"
+
+	parm {
+	    name	"swap_rest"
+	    label	"Swap Positions"
+	    type	toggle
+	    default	{ "1" }
+	    disablewhen	"{ swap_rest != 2 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"swap_rnml"
+	    label	"Swap Normals"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ swap_rest != 2 }"
+	    range	{ 0 1 }
+	    export	none
 	}
     }
 

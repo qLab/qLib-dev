@@ -1,7 +1,20 @@
 comment ""
 position 1.78824 3.53527
 cachesize 1
+connectornextid 11
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+10 "clr"
+}
+inputsNamed3
+{
+5 	global1 0 1 "primary"
+6 	restpos1 4 1 "secondary"
+7 	bias 0 1 "bias"
+8 	"" "" 1 "adjust"
+9 	"" "" 1 "space"
+}
 inputs
 {
 0 	global1 0 1

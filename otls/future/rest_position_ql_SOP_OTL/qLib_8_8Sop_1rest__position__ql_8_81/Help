@@ -4,28 +4,65 @@
 
 = Rest Position qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Convenience SOP node for saving and restoring rest position attributes."""
 
 @related
     - [Node:sop/rest]
 
-
 This node has the same function as the original [Node:sop/rest] SOP, as well as
-restoring rest positions and normals (`rest`, `nrml`).
+restoring (and swapping) rest positions and normals (`rest`, `nrml` per-point attributes).
 
 
 @parameters
     Mode:
-        Save Rest Position
+        Save:
+            Save rest position attribute for geometry.
+            See the [Node:sop/rest] SOP for parameter details.
 
-        Restore Rest Position
+        Restore:
+            Restore per-point rest positions.
+
+            Point Group:
+                Rest positions are only restored for the given points, if specified.
+
+            Blend:
+                A position/rest blend percentage value, where `0.0` keeps the original point
+                positions and `1.0` fully restores rest positions.
+
+            Restore Mode:
+                Specify what to restore: rest positions, rest normals, or both.
+
+            Delete Rest Position Attribute:
+                If enabled, the `rest` attribute will be deleted after restoring it to point positions.
+
+            Delete Rest Normal Attribute:
+                If enabled, the `rnml` attribute will be deleted after restoring it to point normals.
+
+        Swap:
+            Swaps per-point rest and current position attribute values.
+
+            Swap Positions:
+                Swap `P` and `rest` attribute values (switch not implemented; enabled by default).
+
+            Swap Normals:
+                Swap `N` and `rnml` attribute values (switch not implemented; _disabled_ by default).
 
 
 
 
-@Release_Notes
-    Version 0.0.1:
+@Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-10-26:
+        Added 'Swap' rest mode (swap point/rest positions).
+        Limitation: related toggles are shown but not implemented (should be done on demand).
+
+    2012-07-26:
+        Added namespace to asset.
+
+    2011-09-16:
         Initial release.
 

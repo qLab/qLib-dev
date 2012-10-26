@@ -1,4 +1,4 @@
-13
+16
 rest_P
 rest_N
 rest_P_N
@@ -12,3 +12,6 @@ del_rnml
 del_rest
 switch_delete_rest
 switch_delete_rnml
+swap
+swap_P_rest
+swap_out
