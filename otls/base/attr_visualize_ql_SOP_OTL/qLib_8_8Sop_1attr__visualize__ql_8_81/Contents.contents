@@ -489,5 +489,9 @@ attr_visualize_ql1/switch_input_geometry.def
 attr_visualize_ql1/switch_input_geometry.chn
 attr_visualize_ql1/switch_input_geometry.parm
 attr_visualize_ql1/switch_input_geometry.userdata
+attr_visualize_ql1/del_prev_pscale.init
+attr_visualize_ql1/del_prev_pscale.def
+attr_visualize_ql1/del_prev_pscale.parm
+attr_visualize_ql1/del_prev_pscale.userdata
 attr_visualize_ql1.order
 attr_visualize_ql1.net

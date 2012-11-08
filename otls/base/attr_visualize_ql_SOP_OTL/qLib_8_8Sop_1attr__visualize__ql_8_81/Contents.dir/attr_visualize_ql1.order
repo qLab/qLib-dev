@@ -1,4 +1,4 @@
-39
+40
 attr_vis_vopsop
 add_particles_to_points
 OUT
@@ -38,3 +38,4 @@ switch_keep_first_n
 keep_every_n_prims
 switch_keep_every_n
 switch_input_geometry
+del_prev_pscale

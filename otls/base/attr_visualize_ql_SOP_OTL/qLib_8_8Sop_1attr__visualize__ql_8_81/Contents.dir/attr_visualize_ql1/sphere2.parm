@@ -2,7 +2,7 @@
 version 0.8
 type	[ 0	locks=0 ]	(	"poly"	)
 surftype	[ 0	locks=0 ]	(	"quads"	)
-rad	[ 8	locks=0 ]	(	[ radx	1 ] 	[ rady	1 ] 	[ radz	1 ] 	)
+rad	[ 8	locks=0 ]	(	[ radx	0.5 ] 	[ rady	0.5 ] 	[ radz	0.5 ] 	)
 t	[ 0	locks=0 ]	(	0	0	0	)
 orient	[ 0	locks=0 ]	(	"y"	)
 freq	[ 0	locks=0 ]	(	2	)

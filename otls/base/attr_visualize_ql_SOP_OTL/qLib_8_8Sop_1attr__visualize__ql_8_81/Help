@@ -143,38 +143,42 @@ NOTE:
 
 _interface version 1_ ---
 
-    2012-10-24:
-        - Enhancement: default primitive safeguard settings now don't delete all points from points-only geometry.
+2012-11-08:
+    - Bug fix: Orient & Scale preview didn't work if `pscale` attribute was already present.
+    - Fixed help release notes section.
+
+2012-10-24:
+    - Enhancement: default primitive safeguard settings now don't delete all points from points-only geometry.
 
 
 _older versions_ ---
 
-    0.0.6:
-        Support for multiple inputs with an input selector (allows connecting and switching between 'before'/'after' states).
+0.0.6:
+    Support for multiple inputs with an input selector (allows connecting and switching between 'before'/'after' states).
 
-    0.0.5:
-        _Floats & Colors_ section improvements:
-        - Added exponent (gamma) to value mapper
-        - Added `Repeat` toggle
-        - Added intensity multipliers for within and outside the value range
-        - The _length_ component is now the default for vector attributes
+0.0.5:
+    _Floats & Colors_ section improvements:
+    - Added exponent (gamma) to value mapper
+    - Added `Repeat` toggle
+    - Added intensity multipliers for within and outside the value range
+    - The _length_ component is now the default for vector attributes
 
-    0.0.4:
-        - Added geometry reduction/limit safeguard
-        - More consolidation on both UI and internal workings
-        - Minor bug fixes
+0.0.4:
+    - Added geometry reduction/limit safeguard
+    - More consolidation on both UI and internal workings
+    - Minor bug fixes
 
-    0.0.3:
-        - A rough help page
-        - Minor UI cleanups
-        - Added 'Visualization Geometry Only' toggle
-        - Vector mode now supports multiple vectors
+0.0.3:
+    - A rough help page
+    - Minor UI cleanups
+    - Added 'Visualization Geometry Only' toggle
+    - Vector mode now supports multiple vectors
 
-    0.0.2:
-        Functionality additions:
-        - Geometry preprocessing (allows visualizing non-point attr types)
-        - Vector visualizations
-        - pscale/Copy SOP-style visualization
+0.0.2:
+    Functionality additions:
+    - Geometry preprocessing (allows visualizing non-point attr types)
+    - Vector visualizations
+    - pscale/Copy SOP-style visualization
 
-    0.0.1:
-        First version.
+0.0.1:
+    First version.
