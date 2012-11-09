@@ -229,6 +229,9 @@ WARNING:
 
     _interface version 2_ ---
 
+    2012-11-09:
+        - Minor UI changes (more accessible render/reload buttons, label changes, etc.)
+
     2012-10-02:
         - Bug fix: Points Only for Consecutive Frames now uses the first frame of the render range (instead of frame #1).
 

@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 10/02/12 14:29:08
+# Dialog script for qLib::waypoint_ql::2 automatically generated 11/09/12 12:48:54
 
 {
     name	qLib::waypoint_ql::2
@@ -50,6 +50,38 @@
 	    disablewhen	"{ pts_only == 0 }"
 	    range	{ 0 1 }
 	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"separator_1"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"execute"
+	    label	"Writer: Render"
+	    type	button
+	    joinnext
+	    default	{ [ "ch(\"../execute\")" hscript-expr ] }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "execute" }
+	    parmtag	{ "import_source" "op:RENDER" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"reload"
+	    label	"Reader: Reload Geometry"
+	    type	button
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "reload" }
+	    parmtag	{ "import_source" "op:geom_reader" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	group {
@@ -175,18 +207,6 @@
 	    label	"Writer"
 
 	    parm {
-		name	"execute"
-		label	"Render"
-		type	button
-		joinnext
-		default	{ [ "ch(\"../execute\")" hscript-expr ] }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "import_token" "execute" }
-		parmtag	{ "import_source" "op:RENDER" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
 		name	"renderdialog"
 		label	"Render Control..."
 		type	button
@@ -218,7 +238,7 @@
 		label	"Start/End/Inc"
 		type	float
 		size	3
-		default	{ "1" "240" "1" }
+		default	{ "$RFSTART" "$RFEND" "1" }
 		disablewhen	"{ trange == off }"
 		range	{ 0 10 }
 		export	none
@@ -371,17 +391,6 @@
 	    label	"Reader"
 
 	    parm {
-		name	"reload"
-		label	"Reload Geometry"
-		type	button
-		default	{ "0" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "import_token" "reload" }
-		parmtag	{ "import_source" "op:geom_reader" }
-		parmtag	{ "autoscope" "0000000000000000" }
-	    }
-	    parm {
 		name	"objpattern"
 		label	"Object Mask"
 		type	string
@@ -516,7 +525,7 @@
 
 	    group {
 		name	"folder4"
-		label	"File System"
+		label	"File System (Linux only)"
 		tabbreak
 
 		parm {
