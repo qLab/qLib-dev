@@ -35,6 +35,7 @@
 	default	{ "defgeo.bgeo" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -44,6 +45,7 @@
 	default	{ "on" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -54,6 +56,7 @@
 	disablewhen	"{ use_origin_attr == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -63,6 +66,7 @@
 	default	{ "0" }
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -72,6 +76,7 @@
 	default	{ "Alpha" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -81,5 +86,16 @@
 	default	{ "Alpha" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"localvar_out"
+	label	"Local Variable Name"
+	type	string
+	default	{ "`toupper(chs(\"attr_out\"))`" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
 	parmtag	{ "parmvop" "1" }
     }

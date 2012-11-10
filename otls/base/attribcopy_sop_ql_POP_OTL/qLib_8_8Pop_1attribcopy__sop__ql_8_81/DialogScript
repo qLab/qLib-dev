@@ -1,4 +1,4 @@
-# Dialog script for qLib::attribcopy_sop_ql::1 automatically generated 11/23/11 02:51:45
+# Dialog script for qLib::attribcopy_sop_ql::1 automatically generated 11/10/12 04:44:22
 
 {
     name	qLib::attribcopy_sop_ql::1
@@ -145,6 +145,14 @@
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"localvar_out"
+	    label	"Out Local Variable"
+	    type	string
+	    default	{ "`toupper(chs(\"attr_out\"))`" }
+	    range	{ 0 1 }
+	    export	none
 	}
     }
 

@@ -1,4 +1,4 @@
-14
+18
 global1
 pcopen1
 inttovec1
@@ -13,3 +13,7 @@ switcher
 attrib
 subtract1
 origin_index
+file1
+switcher1
+attrib1
+localvar_out

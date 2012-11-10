@@ -1,4 +1,4 @@
-# Automatically generated script: Wednesday November 23, 02:51 2011
+# Automatically generated script: Saturday November 10, 04:44 2012
 \set noalias = 1
 #
 #  Creation script for qLib::attribcopy_sop_ql::1 operator
@@ -9,5 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Pop/qLib::attribcopy_sop_ql::1)
+# Node $arg1 (qLib::Pop/attribcopy_sop_ql::1)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

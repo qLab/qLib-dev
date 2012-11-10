@@ -1,7 +1,18 @@
 comment ""
 position 1.13608 0.866931
 cachesize 1
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+3 "output1"
+}
+inputsNamed3
+{
+0 	copy_attr_float 1 1 "input1"
+1 	copy_attr_vec 1 1 "input2"
+2 	copy_attr_vec4 1 1 "input3"
+}
 inputs
 {
 0 	copy_attr_float 0 1

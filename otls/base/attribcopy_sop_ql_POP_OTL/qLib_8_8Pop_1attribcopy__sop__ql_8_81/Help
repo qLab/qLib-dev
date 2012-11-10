@@ -4,18 +4,65 @@
 
 = AttribCopy SOP qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Copy the specified attribute from a SOP geometry to the corresponding particles."""
 
 @Parameters
+    Activation:
+        ...
+
+    Source Group:
+        ...
+
     SOP:
         Path/name of the SOP node to copy attribute values from.
+
+    Point Indexing:
+        These parameters provide help for mapping the SOP geometry point order to the point order
+        of the POP particles.
+
+        Use Origin Attribute:
+            The `origin` attribute is a per-point index: for each particle it stores the point index
+            for its corresponding (source) SOP geometry point.
+
+            The origin attribute will be used for SOP-to-POP mapping if this toggle is enabled.
+
+        Origin Attr Name:
+            Name of the aforementioned origin attribute (called `origin` by default).
+
+        Origin Index:
+            ...
+
+    Attributes:
+
+        Attribute Type:
+            Type of the source attribute on the SOP geometry (`float`, `vector` or `vector4` type).
+
+        Input Attribute:
+            Name of the input attribute to copy from the SOP geometry.
+
+        Output/POP Attribute:
+            Name of the attribute to copy to in the POP network.
+
+        Out Local Variable:
+            Name of the local variable associated with the output (POP) attribute.
 
 @todo
     Finish this help.
 
 
-@Release_Notes
+
+@Release_Notes Release Notes
+
+    interface version 1 ---
+
+    2012-11-10:
+        - Added parameter field for output local variable.
+        - Improved the help card a bit.
+
+
+    older versions ---
+
     Version 0.0.1:
         Initial release.

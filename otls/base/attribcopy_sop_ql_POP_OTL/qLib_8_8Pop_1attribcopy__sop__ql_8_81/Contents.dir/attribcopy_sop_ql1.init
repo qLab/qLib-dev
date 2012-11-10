@@ -1,2 +1,2 @@
-type = attribcopy_sop_ql
+type = qLib::attribcopy_sop_ql::1
 matchesdef = 0
