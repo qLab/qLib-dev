@@ -1,0 +1,376 @@
+    parm {
+	name	"group"
+	baseparm
+	export	none
+	bindselector points "Modify Points"
+	    "Select the points to affect and press Enter to complete. Hold down Alt to select from other objects."
+	    0 1 0xffffffff 0 "" 0
+    }
+    group {
+	name	"stdswitcher7"
+	label	"Transform"
+
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher7_1"
+	label	"Attributes"
+
+	parm {
+	    name	"doclr"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"diff"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doalpha"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"alpha"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher7_2"
+	label	"Face/Hull"
+
+    }
+
+    group {
+	name	"stdswitcher7_3"
+	label	"Meta"
+
+	parm {
+	    name	"doweight"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher7_4"
+	label	"Particles"
+
+    }
+
+    group {
+	name	"stdswitcher7_5"
+	label	"Volumes"
+
+    }
+
+    parm {
+	name	"ngroups"
+	label	"ngroups"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"r_offs"
+	label	"r_offs"
+	type	float
+	default	{ "0" }
+	range	{ 0 2 }
+	export	none
+    }
+    parm {
+	name	"r_mult"
+	label	"r_mult"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"r_int"
+	label	"regular int."
+	type	float
+	default	{ "0.25" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"matchbyattribute"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attributetomatch"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"weight"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"donml"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"n"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"douvw"
+	baseparm
+	export	all
+    }
+    parm {
+	name	"map"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"domass"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"mass"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"drag"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dotension"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"tension"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dospringk"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"springk"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dovel"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"v"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doup"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"up"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dopscale"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"pscale"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doinstance"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"instancepath"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doradius"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"radiusf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doscale"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"scalef"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doradialf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"radialf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"donormalf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"normalf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"doedgef"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"edgef"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dodirf"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"dirf"
+	baseparm
+	export	none
+    }
+    multiparm {
+	name	"numcustom"
+	label	"Number of Attributes"
+	baseparm
+	default	1
+
+	parm {
+	    name	"apply#"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"name#"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"val#i"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"sval#"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"px"
+	label	"px"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"py"
+	label	"py"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"pz"
+	label	"pz"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"upvectorx"
+	label	"upvectorx"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"upvectory"
+	label	"upvectory"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"upvectorz"
+	label	"upvectorz"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"crease"
+	label	"crease"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"metaweight"
+	label	"metaweight"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"prblur"
+	label	"prblur"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

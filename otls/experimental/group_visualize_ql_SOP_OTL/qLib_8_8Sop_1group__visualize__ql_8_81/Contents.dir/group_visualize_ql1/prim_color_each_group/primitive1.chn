@@ -1,0 +1,116 @@
+{
+    channel px {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEX }
+    }
+    channel py {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEY }
+    }
+    channel pz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEZ }
+    }
+    channel upvectorx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NX }
+    }
+    channel upvectory {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NY }
+    }
+    channel upvectorz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NZ }
+    }
+    channel diffr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"r_int\")*chramp(\"../../gramp\", stamp(\"..\", \"FORIDXVALUE\", 0)*ch(\"r_mult\")/ch(\"ngroups\")+ch(\"r_offs\"), 0)" }
+    }
+    channel diffg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"r_int\")*chramp(\"../../gramp\", stamp(\"..\", \"FORIDXVALUE\", 0)*ch(\"r_mult\")/ch(\"ngroups\")+ch(\"r_offs\"), 1)" }
+    }
+    channel diffb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "ch(\"r_int\")*chramp(\"../../gramp\", stamp(\"..\", \"FORIDXVALUE\", 0)*ch(\"r_mult\")/ch(\"ngroups\")+ch(\"r_offs\"), 2)" }
+    }
+    channel alpha {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $CA }
+    }
+    channel crease {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CREASE }
+    }
+    channel metaweight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $WEIGHT }
+    }
+    channel prblur {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 0.033333301544189453 0.033333301544189453 expr = 1/$FPS }
+    }
+    channel ngroups {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "argc(primgroupmask(opinputpath(\".\", 0), chs(\"../groupmask\")))-1" }
+    }
+    channel r_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.25
+      flags = 0
+      segment { length = 0 value = 0.25 0.25 expr = ch(\"../../prim_apply_hilite/r_int\") }
+    }
+    channel r_offs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../r_offset\") }
+    }
+    channel r_mult {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../r_freq\") }
+    }
+  }

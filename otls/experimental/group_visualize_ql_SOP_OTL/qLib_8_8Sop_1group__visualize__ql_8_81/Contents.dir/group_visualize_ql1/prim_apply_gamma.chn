@@ -1,0 +1,100 @@
+{
+    channel px {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEX }
+    }
+    channel py {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEY }
+    }
+    channel pz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CEZ }
+    }
+    channel upvectorx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NX }
+    }
+    channel upvectory {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NY }
+    }
+    channel upvectorz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $NZ }
+    }
+    channel diffr {
+      lefttype = extend
+      righttype = extend
+      default = 3.0030031204223633
+      flags = 0
+      segment { length = 0 value = 3.0030031204223633 3.0030031204223633 expr = "pow($CR, ch(\"gamma\"))" }
+    }
+    channel diffg {
+      lefttype = extend
+      righttype = extend
+      default = 3.0030031204223633
+      flags = 0
+      segment { length = 0 value = 3.0030031204223633 3.0030031204223633 expr = "pow($CG, ch(\"gamma\"))" }
+    }
+    channel diffb {
+      lefttype = extend
+      righttype = extend
+      default = 3.0030031204223633
+      flags = 0
+      segment { length = 0 value = 3.0030031204223633 3.0030031204223633 expr = "pow($CB, ch(\"gamma\"))" }
+    }
+    channel alpha {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $CA }
+    }
+    channel crease {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 expr = $CREASE }
+    }
+    channel metaweight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 1 1 expr = $WEIGHT }
+    }
+    channel prblur {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 1.2083300352096558
+      segment { length = 0 value = 0.033333301544189453 0.033333301544189453 expr = 1/$FPS }
+    }
+    channel gamma {
+      lefttype = extend
+      righttype = extend
+      default = 2.2000000476837158
+      flags = 0
+      segment { length = 0 value = 2.2000000476837158 2.2000000476837158 expr = ch(\"../gamma\") }
+    }
+  }

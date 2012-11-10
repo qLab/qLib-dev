@@ -1,0 +1,15 @@
+{
+    channel ngroups {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "argc(primgroupmask(opinputpath(\".\", 0), chs(\"groupmask\")))" }
+    }
+    channel groupmask {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"obj_*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../pr_groupmask\") }
+    }
+  }

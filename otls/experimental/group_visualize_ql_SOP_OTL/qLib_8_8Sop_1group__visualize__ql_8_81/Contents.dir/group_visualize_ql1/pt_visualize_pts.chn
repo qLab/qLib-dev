@@ -1,0 +1,14 @@
+{
+    channel addparticlesystem {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pt_show_pts\") }
+    }
+    channel keep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pt_keep_pts_only\") }
+    }
+  }

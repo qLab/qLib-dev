@@ -1,0 +1,13 @@
+Operator:     qLib::group_visualize_ql::1
+Label:        Group Visualize qL
+Path:         oplib:/qLib::Sop/group_visualize_ql::1?qLib::Sop/group_visualize_ql::1
+Icon:         BUTTONS_colors
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sat Nov 10 23:42:38 2012
+

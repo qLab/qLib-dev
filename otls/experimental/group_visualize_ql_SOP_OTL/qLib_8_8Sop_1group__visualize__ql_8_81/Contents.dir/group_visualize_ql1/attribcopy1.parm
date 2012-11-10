@@ -1,0 +1,12 @@
+{
+version 0.8
+srcgroup	[ 0	locks=0	autoscope=0 ]	(	""	)
+srcgrouptype	[ 0	locks=0	autoscope=0 ]	(	"points"	)
+destgroup	[ 0	locks=0	autoscope=0 ]	(	""	)
+destgrouptype	[ 0	locks=0	autoscope=0 ]	(	"points"	)
+attrib	[ 0	locks=0	autoscope=0 ]	(	"colorattrib"	)
+attribname	[ 0	locks=0	autoscope=0 ]	(	""	)
+copyp	[ 0	locks=0	autoscope=0 ]	(	"off"	)
+class	[ 0	locks=0	autoscope=0 ]	(	"guess"	)
+copyvariable	[ 0	locks=0	autoscope=0 ]	(	"on"	)
+}

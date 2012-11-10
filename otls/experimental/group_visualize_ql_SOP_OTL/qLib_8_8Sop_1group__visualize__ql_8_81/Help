@@ -1,0 +1,102 @@
+#icon: BUTTONS/colors
+#context: sop
+#type: node
+
+= Group Visualize qL =
+
+*interface version 1*
+
+"""Visualization of geometry groups (points or primitives)."""
+
+This operator applies color to geometry components, based on their group memberships.
+
+TIP:
+    This node is very useful as "visual checkpoint" when constructing complex effects involving
+    more geometry groups. It's good practice to keep (maintain) visualizer node(s) at important points of
+    the node tree.
+
+For visualizing memberships, a _group mask_ is to be specified. Each group will be assigned an
+own color from a color ramp, and group members will be colored accordingly.
+
+Additionally, a _"hilite" mask_ can also be specified -- geometry that are members of a "hilited"
+group will be applied a color with a different brightness (hilite intensity -- as opposed by
+regular group color intensity). This functionality allows highlighting one (or few) particular
+group(s).
+
+
+@Parameters
+
+    Input:
+        Select which geometry input to visualize. Two (2) input slots are available.
+
+        Workflow-wise this allows to connect a "before" and an "after" state, and quickly switch between
+        them for comparison.
+
+    Points / Primitives:
+
+        This radio button group specifies the type of groups to be visualized (point or primitive).
+
+        Group Mask:
+            A list (or pattern) of groups to be visualized.
+
+        Hilite Mask:
+            An optional list of individual group(s) that should be visualized with a highlighted
+            color intensity. (Usually a single group, but multiple elements can be used as well.)
+
+        Display Points:
+            Visualize points by turning them into particles (point groups only).
+
+        Keep Points Only:
+            Delete all geometry component types except points (point groups only).
+
+
+    Group Colors:
+        ...
+
+        Intensity (Regular, Hilite):
+            Color intensity (brightness) for both the regular and the highlighted geometry
+            pieces.
+
+            If no _hilite_ group(s) given, the _hilite_ brightness is used for all geometry.
+
+        Group Colors (Ramp):
+            A ramp to pick colors from for each individual group.
+
+        Lookup Offset, Frequency:
+            These parameters affect which color from the ramp will be mapped to each
+            geometry group.
+
+            TIP:
+                If a frequency of `0` is given, all groups will get the same color from the ramp
+                (which can be changed using the _offset_ parameter). This can be useful if you
+                want to use _hilite_-ing but without visual flamboyance.
+
+        Display Gamma:
+            Setting of the gamma-correction applied to all group colors.
+
+        Default Color:
+            Color of geometry components with no or irrelevant membership.
+
+
+@related
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Point Attr qL|Node:sop/qLib::pointattr_ql::1]
+    - [Node:sop/color]
+
+
+@todo
+- Implement coloring by name attribute (both points/primitives).
+
+
+@Release_Notes Release Notes
+
+_interface version 1_ ---
+
+2012-11-09:
+    First version.
+
+    NOTE:
+        The implementation could be slow on large amounts of geometry.
+        (Once the exact functionality details are agreed upon, some internals
+        could be replaced with python code -- especially the primitive processing parts.)
+

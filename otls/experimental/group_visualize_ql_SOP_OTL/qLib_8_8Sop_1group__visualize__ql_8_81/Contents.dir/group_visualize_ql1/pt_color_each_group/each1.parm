@@ -1,0 +1,10 @@
+{
+version 0.8
+feedback	[ 0	locks=0	autoscope=0 ]	(	[ feedback	0 ] 	)
+forpath	[ 0	locks=0	autoscope=0 ]	(	..	)
+group	[ 0	locks=0	autoscope=0 ]	(	[ group	point_obj_11 ] 	)
+attrib	[ 0	locks=0	autoscope=0 ]	(	[ attrib	"" ] 	)
+attribval	[ 0	locks=0	autoscope=0 ]	(	[ attribval1	0 ] 	[ attribval2	0 ] 	[ attribval3	0 ] 	)
+attribtol	[ 0	locks=0	autoscope=0 ]	(	[ attribtol	0.0010000000474974513 ] 	)
+eachpoint	[ 0	locks=0	autoscope=0 ]	(	[ eachpoint	1 ] 	)
+}

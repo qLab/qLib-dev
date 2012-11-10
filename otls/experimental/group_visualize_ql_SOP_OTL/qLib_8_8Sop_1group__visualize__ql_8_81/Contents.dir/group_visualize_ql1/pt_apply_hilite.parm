@@ -1,0 +1,10 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	*_[45] ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+r_int	[ 0	locks=0 ]	(	[ r_int	0.33300000000000002 ] 	)
+h_int	[ 0	locks=0 ]	(	[ h_int	1 ] 	)
+a_int	[ 0	locks=0 ]	(	[ a_int	3.0030030030030028 ] 	)
+}

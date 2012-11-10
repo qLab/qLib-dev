@@ -1,0 +1,190 @@
+# Dialog script for qLib::group_visualize_ql::1 automatically generated 11/10/12 23:42:33
+
+{
+    name	qLib::group_visualize_ql::1
+    script	qLib::group_visualize_ql::1
+    label	"Group Visualize qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry to Visualize #1"
+    inputlabel	2	"Geometry to Visualize #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"input"
+	label	"Input"
+	type	integer
+	default	{ "1" }
+	range	{ 1! 2! }
+	export	none
+    }
+    parm {
+	name	"display_info"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "(*) showing: `opinput(\".\", ch(\"input\")-1)`" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"mode"
+	label	"Mode (index)"
+	type	integer
+	invisible
+	default	{ "ch(\"grpmode1\")" }
+	range	{ 0 10 }
+	export	none
+    }
+    groupradio {
+	name	"grpmode"
+	label	"Points"
+
+	parm {
+	    name	"pt_groupmask"
+	    label	"Group Mask"
+	    type	string
+	    default	{ "piece_pts*" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pt_hilitemask"
+	    label	"Hilite Mask"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l pt_apply_hilite vex_group" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pt_show_pts"
+	    label	"Display Points"
+	    type	toggle
+	    default	{ "off" }
+	    help	"Turn points into particles to visualize them."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pt_keep_pts_only"
+	    label	"Keep Points Only"
+	    type	toggle
+	    default	{ "off" }
+	    help	"Delete all geometry components except points."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    groupradio {
+	name	"grpmode_1"
+	label	"Primitives"
+	tabbreak
+
+	parm {
+	    name	"pr_groupmask"
+	    label	"Group Mask"
+	    type	string
+	    default	{ "piece*" }
+	    menureplace	{
+		"piece_*"	"piece_*"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pr_hilitemask"
+	    label	"Hilite Mask"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l prim_apply_hilite group" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    group {
+	name	"folder0"
+	label	"Group Colors"
+
+	parm {
+	    name	"i_regular"
+	    label	"Intensity: Regular"
+	    type	float
+	    joinnext
+	    default	{ "0.333" }
+	    range	{ 0.001! 1 }
+	    export	none
+	}
+	parm {
+	    name	"i_hilite"
+	    label	"Hilite"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 2 }
+	    export	none
+	}
+	parm {
+	    name	"gramp"
+	    label	"Group Colors"
+	    type	ramp_rgb
+	    default	{ "3" }
+	    range	{ 1! 10 }
+	    export	none
+	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 1 0 0 ) 1interp ( linear ) 2pos ( 0.5 ) 2c ( 1 1 0 ) 2interp ( linear ) 3pos ( 1 ) 3c ( 0 0 1 ) 3interp ( linear )" }
+	    parmtag	{ "rampcolortype" "rgb" }
+	    parmtag	{ "rampshowcontrolsdefault" "0" }
+	}
+	parm {
+	    name	"r_offset"
+	    label	"Lookup Offset"
+	    type	float
+	    default	{ "0" }
+	    range	{ 0 4 }
+	    export	none
+	}
+	parm {
+	    name	"r_freq"
+	    label	"Lookup Frequency"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 4 }
+	    export	none
+	}
+	parm {
+	    name	"gamma"
+	    label	"Display Gamma"
+	    type	float
+	    default	{ "2.2" }
+	    range	{ 0.01 4 }
+	    export	none
+	}
+	parm {
+	    name	"default_color"
+	    label	"Default Color"
+	    type	color
+	    size	3
+	    default	{ "0" "0" "0" }
+	    help	"Color of geometry components with no or irrelevant membership."
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

@@ -1,0 +1,69 @@
+    parm {
+	name	"fortype"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"forstamp"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"foridxstamp"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"groupmask"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attrib"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"attribtol"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"numrange"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"usemaxiter"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"maxiter"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"mergeresults"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"eachpoint"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"stopcondition"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"ngroups"
+	label	"ngroups"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
