@@ -19,7 +19,7 @@ according to their length, etc.
 
 TIP:
     This node is very useful as "visual checkpoint" when constructing complex effects involving
-    more attributes. It's good practice to keep visualizer node(s) at important points of
+    more attributes. It's good practice to keep (maintain) visualizer node(s) at important points of
     the node tree.
 
 NOTE:
@@ -133,10 +133,11 @@ NOTE:
 
 
 @related
+    - [Group Visualize qL|Node:sop/qLib::group_visualize_ql::1]
+    - [Point Attr qL|Node:sop/qLib::pointattr_ql::1]
+    - [Vector qL|Node:sop/qLib::vector_ql::1]
     - [Node:sop/color]
     - [Node:sop/copy]
-    - [Point Attr qL|Node:qLib::sop/pointattr_ql::1]
-    - [Vector qL|Node:qLib::sop/vector_ql::1]
 
 
 @Release_Notes Release Notes
