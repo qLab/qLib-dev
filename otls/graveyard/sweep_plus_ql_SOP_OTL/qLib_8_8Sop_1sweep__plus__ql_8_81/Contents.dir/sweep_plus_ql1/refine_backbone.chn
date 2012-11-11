@@ -1,9 +1,0 @@
-{
-    channel divsu {
-      lefttype = extend
-      righttype = extend
-      default = 8
-      flags = 0
-      segment { length = 0 value = 8 8 expr = ch(\"../refine_divsu\") }
-    }
-  }
