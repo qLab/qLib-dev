@@ -4,12 +4,12 @@
 
 = Vector Jitter qL =
 
-*Version 0.2.0*
+*interface version 1*
 
-"""Jitters a vector attribute's angle and length."""
+"""Jitters angle and length of a vector attribute."""
 
 @Description
-    Rotates a vector with a random value inside a solid angle, and jitters it's length between the given limits.
+    Rotates a vector with a random value inside a solid angle, and jitters its length between the given limits.
 
     TIP:
         Since _Vector Jitter_ is implemented in VOP most of it's parameters can be mapped with attributes matching the
@@ -18,7 +18,7 @@
 @Parameters
     Point Group:
         The group of points the operator affects.
-    Vector Attribute:
+    Attribute Input:
         Name of the jittered vector attribute.
     Output Attribute:
         Attribute name that stores the result.
@@ -64,6 +64,14 @@
 
 
 @Release_Notes Release Notes
+
+    interface version 1 ---
+
+    2012-11-11:
+        Seed parameters are now of `float` type.
+
+
+    older versions ---
 
     Version 0.2.0:
         - Length jittering

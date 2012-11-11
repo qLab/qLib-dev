@@ -1,25 +1,25 @@
 comment ""
-position -8.4533 -2.93234
+position -16.0982 1.52648
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-1 "scaled"
+1 "fval"
 }
 inputsNamed3
 {
-0 	floattovec2 3 1 "val"
+0 	switch1 0 1 "ival"
 }
 inputs
 {
-0 	floattovec2 0 1
+0 	switch1 0 1
 }
 stat
 {
-  create 1338286970
-  modify 1352594808
-  author tusi@johnnyquestlin.digicpictures.local
+  create 1352594644
+  modify 1352594647
+  author tusi@demeisen
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 

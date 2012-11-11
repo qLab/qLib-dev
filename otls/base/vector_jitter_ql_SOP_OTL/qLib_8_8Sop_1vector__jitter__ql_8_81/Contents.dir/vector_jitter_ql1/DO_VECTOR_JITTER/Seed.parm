@@ -3,7 +3,7 @@ version 0.8
 parmname	[ 0	locks=0 ]	(	seed	)
 parmlabel	[ 0	locks=0 ]	(	Seed	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
-parmtype	[ 0	locks=0 ]	(	"int"	)
+parmtype	[ 0	locks=0 ]	(	"float"	)
 floatdef	[ 0	locks=0 ]	(	0	)
 intdef	[ 0	locks=0 ]	(	0	)
 toggledef	[ 0	locks=0 ]	(	"off"	)

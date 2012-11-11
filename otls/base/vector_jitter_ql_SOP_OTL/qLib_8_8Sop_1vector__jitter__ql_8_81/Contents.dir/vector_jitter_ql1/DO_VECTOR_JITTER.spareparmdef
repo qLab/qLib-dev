@@ -41,9 +41,9 @@
     parm {
 	name	"seed"
 	label	"Seed"
-	type	integer
+	type	float
 	default	{ "0" }
-	range	{ 0 10 }
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
@@ -151,9 +151,9 @@
     parm {
 	name	"len_seed_offset"
 	label	"Length Seed Offset"
-	type	integer
+	type	float
 	default	{ "0" }
-	range	{ 0 10 }
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }

@@ -9,16 +9,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	inttovec1 3 1 "val"
+0 	floattovec1 3 1 "val"
 }
 inputs
 {
-0 	inttovec1 0 1
+0 	floattovec1 0 1
 }
 stat
 {
   create 1338286970
-  modify 1338427503
+  modify 1352594703
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

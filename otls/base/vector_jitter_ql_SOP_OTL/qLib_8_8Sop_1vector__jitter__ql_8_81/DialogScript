@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_jitter_ql::1 automatically generated 05/31/12 02:43:13
+# Dialog script for qLib::vector_jitter_ql::1 automatically generated 11/11/12 02:00:54
 
 {
     name	qLib::vector_jitter_ql::1
@@ -116,7 +116,7 @@
     parm {
 	name	"seed"
 	label	"Seed"
-	type	integer
+	type	float
 	default	{ "0" }
 	range	{ 0 100 }
 	export	none
@@ -235,7 +235,7 @@
 	parm {
 	    name	"length_seed_offset"
 	    label	"Seed Offset"
-	    type	integer
+	    type	float
 	    default	{ "0" }
 	    disablewhen	"{ do_length == 0 }"
 	    range	{ 0 100 }
