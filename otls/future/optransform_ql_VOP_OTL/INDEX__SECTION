@@ -1,0 +1,13 @@
+Operator:     qLib::optransform_ql::1
+Label:        Optransform qL
+Path:         oplib:/qLib::Vop/optransform_ql::1?qLib::Vop/optransform_ql::1
+Icon:         OBJ_fetch
+Table:        Vop
+License:      
+Extra:        *
+Inputs:       0 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Nov 07 23:26:09 2012
+

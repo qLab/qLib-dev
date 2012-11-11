@@ -1,0 +1,31 @@
+# Dialog script for qLib::optransform_ql::1 automatically generated 11/07/12 23:26:09
+
+{
+    name	qLib::optransform_ql::1
+    script	qLib::optransform_ql::1
+    label	"Optransform qL"
+
+    input	string	object_name	"Object Name"
+    output	matrix	xform	"Transform Matrix"
+    inputflags	object_name	0
+    signature	"Default Inputs"	default	{ string matrix }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"object_name"
+	label	"Object Name"
+	type	string
+	default	{ "/obj/null1" }
+	range	{ 0 1 }
+	export	none
+    }
+}
