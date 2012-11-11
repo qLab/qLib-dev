@@ -1,0 +1,12 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	[ type	1 ] 	)
+orient	[ 0	locks=0 ]	(	"xy"	)
+rad	[ 0	locks=0 ]	(	1	1	)
+t	[ 0	locks=7 ]	(	0	0	0	)
+order	[ 0	locks=0 ]	(	[ order	4 ] 	)
+divs	[ 0	locks=0 ]	(	[ divs	24 ] 	)
+arc	[ 0	locks=0 ]	(	[ arc	0 ] 	)
+angle	[ 0	locks=0 ]	(	[ beginangle	0 ] 	[ endangle	360 ] 	)
+imperfect	[ 0	locks=0 ]	(	"on"	)
+}
