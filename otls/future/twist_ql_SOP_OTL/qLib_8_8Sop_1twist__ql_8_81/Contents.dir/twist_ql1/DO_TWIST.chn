@@ -1,0 +1,180 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel trs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trs\") }
+    }
+    channel xyz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xyz\") }
+    }
+    channel trans1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans1\") }
+    }
+    channel trans2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans2\") }
+    }
+    channel trans3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans3\") }
+    }
+    channel rot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot1\") }
+    }
+    channel rot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot2\") }
+    }
+    channel rot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot3\") }
+    }
+    channel scale1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale1\") }
+    }
+    channel scale2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale2\") }
+    }
+    channel scale3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale3\") }
+    }
+    channel pivot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot1\") }
+    }
+    channel pivot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot2\") }
+    }
+    channel pivot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot3\") }
+    }
+    channel object_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"/obj/null1\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../xform_object\") }
+    }
+    channel use_weight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../use_weight\") }
+    }
+    channel weight_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"weight\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../weight_name\") }
+    }
+    channel invert_weight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert_weight\") }
+    }
+    channel y_bias {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../y_bias\") }
+    }
+    channel y_gain {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../y_gain\") }
+    }
+    channel start_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = rad(ch(\"../start_anglex\")) }
+    }
+    channel end_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = rad(ch(\"../end_anglex\")) }
+    }
+    channel start_inner_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = rad(ch(\"../start_angley\")) }
+    }
+    channel end_inner_angle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = rad(ch(\"../end_angley\")) }
+    }
+    channel l_bias {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../l_bias\") }
+    }
+    channel l_gain {
+      lefttype = extend
+      righttype = extend
+      default = 0.5
+      flags = 0
+      segment { length = 0 value = 0.5 0.5 expr = ch(\"../l_gain\") }
+    }
+    channel use_obj {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../use_obj\") }
+    }
+  }

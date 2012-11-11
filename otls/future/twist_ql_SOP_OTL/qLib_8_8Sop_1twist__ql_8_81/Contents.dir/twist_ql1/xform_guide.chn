@@ -1,0 +1,95 @@
+{
+    channel trs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/trs\") }
+    }
+    channel xyz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/xyz\") }
+    }
+    channel trans1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/trans1\") }
+    }
+    channel trans2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/trans2\") }
+    }
+    channel trans3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/trans3\") }
+    }
+    channel rot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/rot1\") }
+    }
+    channel rot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/rot2\") }
+    }
+    channel rot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/rot3\") }
+    }
+    channel scale1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../DO_TWIST/scale1\") }
+    }
+    channel scale2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../DO_TWIST/scale2\") }
+    }
+    channel scale3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../DO_TWIST/scale3\") }
+    }
+    channel pivot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/pivot1\") }
+    }
+    channel pivot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/pivot2\") }
+    }
+    channel pivot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/pivot3\") }
+    }
+    channel xform_obj {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../DO_TWIST/use_obj\") }
+    }
+  }

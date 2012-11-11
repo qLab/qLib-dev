@@ -1,0 +1,9 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+mat	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+mat_m3	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+mat_um	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+angle	[ 0	locks=0 ]	(	0	)
+axis	[ 0	locks=0 ]	(	0	1	0	)
+}

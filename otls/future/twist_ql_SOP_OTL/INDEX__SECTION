@@ -1,0 +1,13 @@
+Operator:     qLib::twist_ql::1
+Label:        Twist qL
+Path:         oplib:/qLib::Sop/twist_ql::1?qLib::Sop/twist_ql::1
+Icon:         SOP_twist
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Nov 11 11:59:15 2012
+

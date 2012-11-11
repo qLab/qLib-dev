@@ -1,0 +1,272 @@
+# Dialog script for qLib::twist_ql::1 automatically generated 11/08/12 23:25:50
+
+{
+    name	qLib::twist_ql::1
+    script	qLib::twist_ql::1
+    label	"Twist qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_DEFORM vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"use_weight"
+	label	"Use Weight"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"weight_name"
+	label	"Weight Attrib"
+	type	string
+	joinnext
+	default	{ "weight" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"invert_weight"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"labelparm3"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"start_angle"
+	label	"Start Angle"
+	type	vector2
+	size	2
+	default	{ "0" "ch(\"start_anglex\")" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"end_angle"
+	label	"End Angle"
+	type	vector2
+	size	2
+	default	{ "0" "ch(\"end_anglex\")" }
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"y_bias"
+	label	"Bias / Gain"
+	type	float
+	joinnext
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"y_gain"
+	label	"Gain"
+	type	float
+	nolabel
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"l_bias"
+	label	"Inner Bias / Gain"
+	type	float
+	joinnext
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"l_gain"
+	label	"Gain"
+	type	float
+	nolabel
+	default	{ "0.5" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "parmvop" "1" }
+    }
+    group {
+	name	"folder0"
+	label	"Transform"
+
+	parm {
+	    name	"use_obj"
+	    label	"Use Obejct"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"xform_object"
+	    label	"Transform Object"
+	    type	string
+	    default	{ "/obj/null1" }
+	    disablewhen	"{ use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"trs"
+	    label	"Transform Order"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"srt"	"Scale Rotate Translate"
+		"str"	"Scale Translate Rotate"
+		"rst"	"Rotate Scale Translate"
+		"rts"	"Rotate Translate Scale"
+		"tsr"	"Translate Scale Rotate"
+		"trs"	"Translate Rotate Scale"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"xyz"
+	    label	"Rotation Order"
+	    type	integer
+	    default	{ "0" }
+	    menu	{
+		"xyz"	"Rx Ry Rz"
+		"xzy"	"Rx Rz Ry"
+		"yxz"	"Ry Rx Rz"
+		"yzx"	"Ry Rz Rx"
+		"zxy"	"Rz Rx Ry"
+		"zyx"	"Rz Ry Rx"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"trans"
+	    label	"Translate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"rot"
+	    label	"Rotate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"scale"
+	    label	"Scale"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"pivot"
+	    label	"Pivot"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}
