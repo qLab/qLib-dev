@@ -1,0 +1,364 @@
+import re
+import glob
+from os.path import *
+
+def rescanOnLoaded(kwargs):
+    n = kwargs["node"]
+    if n.parm("rescan_on_loaded").eval():
+        rescan(kwargs)
+
+
+def rescan(kwargs):
+    scan_env(kwargs)
+    update_parms(kwargs)
+
+
+def scan_env(kwargs):
+    node = kwargs["node"]
+    site_env_file = node.parm("site_env_file").eval()
+
+    # Constants
+    job_env_file_name = node.parm("job_file_name").eval() 
+    local_env_file_name =  node.parm("local_file_name").eval()
+    
+    hip_path = hou.hipFile.path()
+    hip_dir, hip_name = split(hip_path)
+    
+    search_path = hip_dir
+
+    # Find environment files
+    script_list = []
+    while True:
+        local_candidate = join(search_path, local_env_file_name)
+        if isfile(local_candidate):
+            script_list.append(local_candidate)
+
+        job_candidate = join(search_path, job_env_file_name)
+        if isfile(job_candidate):
+            script_list.append(job_candidate)
+            job_dir = search_path
+            break
+    
+        prev_search_path = search_path
+        search_path = dirname(search_path)
+        if prev_search_path == search_path:
+            job_env_file = ""
+            job_dir = ""
+            break
+    
+    env = {}
+    env["JOB"] = job_dir
+    env["HIP"], env["HIPNAME"] = hip_dir, hip_name
+
+    # Add site enviroment to script_list
+    if site_env_file and isfile(site_env_file):
+        with open(site_env_file) as f:
+            exec f in globals(), env
+
+    # Run environment scripts
+    script_list.reverse()
+    for env_file in script_list:
+        with open(env_file) as f:
+            exec f in globals(), env
+
+    # Delete nonexported variables
+    del env["HIP"]
+    del env["HIPNAME"]
+    for k in env.keys():
+        env[k] = str(env[k])
+        if not k.isupper():
+            del env[k]
+
+    hou.session.env_ql = env
+    
+
+def setEnvVar(n, vi):
+    name = n.parm("name" + vi).eval()
+    value = n.parm("value" + vi).eval()
+    old_name = n.parm("old_name" + vi).eval()
+    hou.hscript("set -u " + old_name)
+    n.parm("old_name" + vi).set(name)
+    hou.hscript("set -g " + name + " = " + value)
+
+
+def name_changed(kwargs):
+    vi = kwargs["parm_name"].replace("name", "")
+    n = kwargs["node"]
+    n.parm("override" + vi).set(1)
+    setEnvVar(n, vi)
+
+
+def value_changed(kwargs):
+    vi = kwargs["parm_name"].replace("value", "")
+    n = kwargs["node"]
+    n.parm("override" + vi).set(1)
+    setEnvVar(n, vi)
+
+
+def override_changed(kwargs):
+    vi = kwargs["parm_name"].replace("override", "")
+    n = kwargs["node"]
+    if kwargs["script_value"] == "off":
+        name_parm = n.parm("name" + vi)
+        name_parm.set(name_parm.parmTemplate().defaultValue()[0])
+        value_parm = n.parm("value" + vi)
+        value_parm.set(value_parm.parmTemplate().defaultValue()[0])
+        setEnvVar(n, vi)
+
+
+def deleteVar(kwargs):
+    vi = kwargs["parm_name"].replace("delete", "")
+    n = kwargs["node"]
+    nv = n.parm("num_vars").eval()
+
+    ptg = n.parmTemplateGroup()
+    ptg.remove("name" + vi)
+    ptg.remove("override" + vi)
+    ptg.remove("value" + vi)
+    ptg.remove("separator" + vi)
+    ptg.remove("old_name" + vi)
+    ptg.remove("delete" + vi)
+
+    hou.hscript("set -u " + n.parm("name" + vi).eval())
+    
+    if nv > int(vi) - 1:
+        for i in xrange(int(vi)+1, nv):
+            ni = str(i-1)
+            i = str(i)
+            pt = ptg.find("name" + i)
+            ptg.remove("name" + i)
+            pt.setName("name" + ni)
+            ptg.appendToFolder("Variables", pt)
+            pt = ptg.find("override" + i)
+            ptg.remove("override" + i)
+            pt.setName("override" + ni)
+            ptg.appendToFolder("Variables", pt)
+            pt = ptg.find("delete" + i)
+            ptg.remove("delete" + i)
+            pt.setName("delete" + ni)
+            ptg.appendToFolder("Variables", pt)
+            pt = ptg.find("value" + i)
+            ptg.remove("value" + i)
+            pt.setName("value" + ni)
+            ptg.appendToFolder("Variables", pt)
+            pt = ptg.find("old_name" + i)
+            ptg.remove("old_name" + i)
+            pt.setName("old_name" + ni)
+            ptg.appendToFolder("Variables", pt)
+            pt = ptg.find("separator" + i)
+            ptg.remove("separator" + i)
+            pt.setName("separator" + ni)
+            ptg.appendToFolder("Variables", pt)
+
+    n.setParmTemplateGroup(ptg)
+    n.parm("num_vars").set(nv - 1)
+
+
+def update_parms(kwargs):
+    node = kwargs["node"]
+    env = hou.session.env_ql
+    
+    old_num_vars = node.evalParm("num_vars")
+
+    # Convert separator
+    if node.evalParm("convert_separator"):
+        for vk in env.keys():
+            env[vk] = env[vk].replace("\\","/")
+
+    # Apply mappings
+    if "MAPPINGS" in env and node.evalParm("apply_mappings"):
+        map_dict = eval(env["MAPPINGS"])
+        maps = {}
+        for n, v in map_dict.items():
+            maps[re.compile("^" + n, flags=re.IGNORECASE)] = v
+        for vk in env.keys():
+            for mk in maps.keys():
+                env[vk] = mk.sub(maps[mk], env[vk])
+    if "MAPPINGS" in env and node.parm("discard_mappings").eval():
+        del env["MAPPINGS"]
+
+    # Import assets
+    if "OTL_PATTERN" in env and node.parm("import_otls").eval():
+        scanned_otls = glob.glob(env["OTL_PATTERN"])
+        if node.parm("convert_separator").eval():
+            scanned_otls = [o.replace('\\','/') for o in scanned_otls]
+        loaded_otls = hou.hda.loadedFiles()
+        for o in scanned_otls:
+            if o not in loaded_otls:
+                hou.hda.installFile(o)
+        if node.parm("discard_otl_pattern").eval():
+            del env["OTL_PATTERN"]
+
+    # Set FPS
+    if "FPS" in env:
+        node.parm("fps").set(env["FPS"])
+        hou.setFps(float(env["FPS"]))
+        del env["FPS"]
+    else:
+        node.parm("fps").set("N/A")
+
+    # Generate var list
+    var_list = []
+
+    ptg = node.parmTemplateGroup()
+
+    # Must delete ENV_VAR_ORDER from env before parameter evaluations
+    if "ENV_VAR_ORDER" in env:
+        env_var_order = env["ENV_VAR_ORDER"]
+        if node.parm("discard_sort_order").eval():
+            del env["ENV_VAR_ORDER"]
+    else:
+        env_var_order = False
+
+    # Manage existing variables.
+    for vi in xrange(old_num_vars):
+        vi = str(vi)
+        # Read existing variable from interface
+        override = node.parm("override" + vi).eval()
+        name = node.parm("name" + vi).eval()
+        value = node.parm("value" + vi).eval()
+        default_name = node.parm("name" + vi).parmTemplate().defaultValue()[0]
+        default_value = node.parm("value" + vi).parmTemplate().defaultValue()[0]
+        default_override = node.parm("override" + vi).parmTemplate().defaultValue()
+        if override:
+            var_list.append({
+                    "override": override,
+                    "name": name,
+                    "value": value,
+                    "default_name": default_name,
+                    "default_value": default_value,
+                    "default_override": default_override,
+                    })
+            if name in env:
+                del env[name]
+        elif name in env:
+            var_list.append({
+                    "override": 0,
+                    "name": name,
+                    "value": env[name],
+                    "default_name": name,
+                    "default_value": env[name],
+                    "default_override": 0,
+                    })
+            node.parm("value" + vi).set(env[name])
+            hou.hscript("set -g " + name + " = " + env[name])
+            del env[name]
+        elif default_name in env:
+            var_list.append({
+                    "override": 0,
+                    "name": default_name,
+                    "value": env[default_name],
+                    "default_name": default_name,
+                    "default_value": env[default_name],
+                    "default_override": 0,
+                    })
+            node.parm("name" + vi).set(default_name)
+            node.parm("value" + vi).set(env[default_name])
+            hou.hscript("set -u " + name)
+            hou.hscript("set -g " + default_name + " = " + env[default_name])
+            del env[default_name]
+        else:
+            hou.hscript("set -u " + name)
+        ptg.remove("name" + vi)
+        ptg.remove("override" + vi)
+        ptg.remove("value" + vi)
+        ptg.remove("separator" + vi)
+        ptg.remove("old_name" + vi)
+        ptg.remove("delete" + vi)
+
+    # Sort variables
+    sorted_env = []
+    if env_var_order and node.parm("sort_variables").eval():
+        env_var_order = eval(env_var_order)
+        for v in env_var_order:
+            if v in env:
+                sorted_env.append((v, env[v],))
+                del env[v]
+
+    for v in env:
+        sorted_env.append((v, env[v],))
+
+    for v in sorted_env:
+        var_list.append({
+                "override": 0,
+                "name": v[0],
+                "value": v[1],
+                "default_name": v[0],
+                "default_value": v[1],
+                "default_override": 0,
+                })
+        hou.hscript("set -g " + v[0] + " = " + v[1])
+
+    # Create interface
+    num_vars = len(var_list)
+    node.parm("num_vars").set(num_vars)
+
+    #hou.ui.displayMessage(repr(var_list))
+
+    for i, v in enumerate(var_list):
+        i = str(i)
+
+        pt = hou.StringParmTemplate("name" + i, "Name", 1, default_value=(v["default_name"],), join_with_next=True, disable_when="{override"+i+" == 0}")
+        pt.setScriptCallback("kwargs['node'].hdaModule().name_changed(kwargs)")
+        pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+        ptg.appendToFolder("Variables", pt)
+
+        pt = hou.ToggleParmTemplate("override" + i, "Override", default_value=v["default_override"], join_with_next=True)
+        pt.setScriptCallback("kwargs['node'].hdaModule().override_changed(kwargs)")
+        pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+        ptg.appendToFolder("Variables", pt)
+
+        pt = hou.ButtonParmTemplate("delete" + i, "Delete")
+        pt.setScriptCallback("kwargs['node'].hdaModule().deleteVar(kwargs)")
+        pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+        ptg.appendToFolder("Variables", pt)
+
+        pt = hou.StringParmTemplate("value" + i, "Value", 1, default_value=(v["default_value"],))
+        pt.setScriptCallback("kwargs['node'].hdaModule().value_changed(kwargs)")
+        pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+        ptg.appendToFolder("Variables", pt)
+
+        pt = hou.StringParmTemplate("old_name" + i, "Old Name", 1, default_value=(v["default_name"],), is_hidden=True)
+        ptg.appendToFolder("Variables", pt)
+
+        pt = hou.LabelParmTemplate("separator" + i, "Separator", is_label_hidden=True)
+        ptg.appendToFolder("Variables", pt)
+
+    node.setParmTemplateGroup(ptg)        
+
+
+def addNewVar(kwargs):
+    n = kwargs["node"]
+    i = str(n.parm("num_vars").eval())
+    ptg = n.parmTemplateGroup()
+
+    pt = hou.StringParmTemplate("name" + i, "Name", 1, default_value=("N/A",), join_with_next=True, disable_when="{override"+i+" == 0}")
+    pt.setScriptCallback("kwargs['node'].hdaModule().name_changed(kwargs)")
+    pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+    ptg.appendToFolder("Variables", pt)
+
+    pt = hou.ToggleParmTemplate("override" + i, "Override", default_value=True, join_with_next=True)
+    pt.setScriptCallback("kwargs['node'].hdaModule().override_changed(kwargs)")
+    pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+    ptg.appendToFolder("Variables", pt)
+
+    pt = hou.ButtonParmTemplate("delete" + i, "Delete")
+    pt.setScriptCallback("kwargs['node'].hdaModule().deleteVar(kwargs)")
+    pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+    ptg.appendToFolder("Variables", pt)
+
+    pt = hou.StringParmTemplate("value" + i, "Value", 1, default_value=("default value",))
+    pt.setScriptCallback("kwargs['node'].hdaModule().value_changed(kwargs)")
+    pt.setScriptCallbackLanguage(hou.scriptLanguage.Python)
+    ptg.appendToFolder("Variables", pt)
+
+    pt = hou.StringParmTemplate("old_name" + i, "Old Name", 1, default_value=("N/A",), is_hidden=True)
+    ptg.appendToFolder("Variables", pt)
+
+    pt = hou.LabelParmTemplate("separator" + i, "Separator", is_label_hidden=True)
+    ptg.appendToFolder("Variables", pt)
+
+    n.setParmTemplateGroup(ptg)        
+    n.parm("num_vars").set(int(i) + 1)
+
+pass

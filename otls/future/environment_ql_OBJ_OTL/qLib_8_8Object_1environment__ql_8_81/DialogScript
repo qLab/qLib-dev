@@ -1,0 +1,348 @@
+# Dialog script for qLib::environment_ql::1 automatically generated 11/11/12 12:17:58
+
+{
+    name	qLib::environment_ql::1
+    script	qLib::environment_ql::1
+    label	"Environment qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+	name	"folder1"
+	label	"Variables"
+
+	parm {
+	    name	"num_vars"
+	    label	"Number of Variables"
+	    type	integer
+	    invisible
+	    default	{ "0" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"rescan"
+	    label	"Refresh"
+	    type	button
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "kwargs[\"node\"].hdaModule().rescan(kwargs)" }
+	}
+	parm {
+	    name	"new_var"
+	    label	"Add New Variable"
+	    type	button
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "kwargs[\"node\"].hdaModule().addNewVar(kwargs)" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_1"
+	label	"Constants"
+
+	parm {
+	    name	"fps"
+	    label	"FPS"
+	    type	string
+	    default	{ "" }
+	    disablewhen	"{ picking == 1 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_2"
+	label	"Settings"
+
+	parm {
+	    name	"site_env_file"
+	    label	"Site Env File"
+	    type	string
+	    default	{ "$HSITE/site_environment.py" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"job_file_name"
+	    label	"Job Env File Name"
+	    type	string
+	    default	{ "job_environment.py" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"local_file_name"
+	    label	"Local Env File Name"
+	    type	string
+	    default	{ "local_environment.py" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"rescan_on_loaded"
+	    label	"Refresh After Open"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"convert_separator"
+	    label	"Convert Backslash"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"apply_mappings"
+	    label	"Apply Mappings"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"discard_mappings"
+	    label	"Discard Mappings Variable"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"sort_variables"
+	    label	"Sort Variables"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"discard_sort_order"
+	    label	"Discard Sort Order"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"import_otls"
+	    label	"Import OTLs"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"discard_otl_pattern"
+	    label	"Discard OTL Pattern"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_3"
+	label	"Transform"
+	invisibletab
+
+	parm {
+	    name	"keeppos"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"pre_xform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"xOrd"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"rOrd"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"t"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"r"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"s"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"p"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"scale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lookatpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lookup"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathobjpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"roll"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pos"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"uparmtype"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pathorient"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"up"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"bank"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1_4"
+	label	"Subnet"
+	invisibletab
+
+	parm {
+	    name	"label1"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label2"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label3"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"label4"
+	    baseparm
+	    invisible
+	    export	dialog
+	}
+	parm {
+	    name	"tdisplay"
+	    baseparm
+	    joinnext
+	    export	all
+	}
+	parm {
+	    name	"display"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"outputobj"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"visibleobjects"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"picking"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pickscript"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"caching"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"use_dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+	parm {
+	    name	"dcolor"
+	    baseparm
+	    invisible
+	    export	none
+	}
+    }
+
+}

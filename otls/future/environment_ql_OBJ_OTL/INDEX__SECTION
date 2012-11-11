@@ -1,0 +1,13 @@
+Operator:     qLib::environment_ql::1
+Label:        Environment qL
+Path:         oplib:/qLib::Object/environment_ql::1?qLib::Object/environment_ql::1
+Icon:         NETWORKS_root
+Table:        Object
+License:      
+Extra:        
+Inputs:       0 to 0
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Nov 11 12:17:58 2012
+

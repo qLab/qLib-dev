@@ -1,0 +1,1 @@
+kwargs["node"].parm("num_vars").set(0)

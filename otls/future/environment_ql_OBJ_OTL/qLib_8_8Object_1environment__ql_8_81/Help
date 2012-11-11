@@ -1,0 +1,15 @@
+#icon: NETWORKS/root
+#context: obj
+#type: node
+
+= Environment qL =
+
+*Version 0.0.1*
+
+"""Sets environment variables defined in environment scripts."""
+
+@Parameters
+
+@Limitations
+
+@Release_Notes
