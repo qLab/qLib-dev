@@ -1,0 +1,14 @@
+{
+    channel rangex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $RFSTART }
+    }
+    channel rangey {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $RFEND }
+    }
+  }

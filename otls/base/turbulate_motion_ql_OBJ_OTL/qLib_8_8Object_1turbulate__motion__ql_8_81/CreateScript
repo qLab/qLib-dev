@@ -1,4 +1,4 @@
-# Automatically generated script: Friday October 01, 18:20 2010
+# Automatically generated script: Sunday November 11, 18:17 2012
 \set noalias = 1
 #
 #  Creation script for qLib::turbulate_motion_ql::1 operator
@@ -9,5 +9,5 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Object/qLib::turbulate_motion_ql::1)
+# Node $arg1 (qLib::Object/turbulate_motion_ql::1)
 opexprlanguage -s hscript $arg1
