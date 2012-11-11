@@ -1,4 +1,10 @@
-The default geometry with some additional options.
+#icon: OBJ/geo
+#context: sop
+#type: node
+
+= Default Geo qL =
+
+"""The default geometry with some additional options."""
 
 It can be useful for more reasons:
 

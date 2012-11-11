@@ -1,4 +1,7 @@
-Group geometry (points or primitives) by partitioning space along the main axes into specified number of segments.
+#icon: CHOP/cycle
+#context: sop
+#type: node
 
-Known bugs: For planar objects, the no. of segments for the according main plane should be 1.
+= Space Loop qL =
 
+"""Loops space in a box."""

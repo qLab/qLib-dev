@@ -1,3 +1,11 @@
+#icon: ROP/prepost
+#context: rop
+#type: node
+
+= Pre/Post qL =
+
+"""Fixed version of the original pre-post node."""
+
 A (hopefully temporary) replacement for the regular Pre/Post ROP (with more restricted functionality).
 
 NOTE:

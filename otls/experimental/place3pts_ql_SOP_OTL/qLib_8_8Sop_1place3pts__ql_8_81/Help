@@ -1,0 +1,7 @@
+#icon: VOP/lookat
+#context: sop
+#type: node
+
+= Place 3 Points qL =
+
+"""Transforms geometry by the transformation defined by 3 points."""

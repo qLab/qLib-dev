@@ -1,6 +1,10 @@
-Empty Fractured Object qL
+#icon: DOP/emptyobject
+#context: dop
+#type: node
 
-Creates empty DOP objects based on primitive groups of a SOP Geometry.
+= Empty Fractured Object qL =
+
+"""Creates empty DOP objects based on primitive groups of a SOP Geometry."""
 
 Empty DOP objects are useful as placeholders (to glue together other groups of objects,
 for example).

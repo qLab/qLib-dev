@@ -1,8 +1,13 @@
-(deform-by-surface)
+#icon: POP/attractor
+#context: obj
+#type: node
+
+= Deform by Point Cloud qL =
+
+"""Deforms geometry by arbitrary point cloud."""
 
 TODO:
     Visualization.
-
 
 2012-09-12:
     Implemented falloff.

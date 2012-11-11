@@ -1,0 +1,8 @@
+#icon: OBJ/fetch
+#context: vop
+#type: node
+
+= Optransform qL =
+
+"""Imports an object's transformation matrix."""
+
