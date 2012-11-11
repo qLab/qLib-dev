@@ -15,7 +15,8 @@
     <toolMenuContext name="network">
       <contextOpType>$HDA_TABLE/$HDA_NAME</contextOpType>
     </toolMenuContext>
-    <toolSubmenu>Digital Assets</toolSubmenu>
+    <toolSubmenu>qLib</toolSubmenu>
+    <toolSubmenu>Shading</toolSubmenu>
     <script scriptType="python"><![CDATA[import voptoolutils
 
 voptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>
