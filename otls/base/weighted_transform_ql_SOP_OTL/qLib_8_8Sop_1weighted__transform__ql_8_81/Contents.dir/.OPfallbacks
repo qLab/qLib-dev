@@ -1,10 +1,10 @@
-Vop/makexform /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
-Vop/makexform otls/OPlibVop.otl
-Vop/importattrib /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/complement /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
-Vop/complement otls/OPlibVop.otl
-Vop/mix /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
-Vop/mix otls/OPlibVop.otl
-Vop/invert /opt/hfs11.1.188/houdini/otls/OPlibVop.otl
+Vop/invert //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
 Vop/invert otls/OPlibVop.otl
+Vop/complement //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/makexform //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/makexform otls/OPlibVop.otl
+Vop/importattrib //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
+Vop/mix //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl

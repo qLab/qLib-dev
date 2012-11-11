@@ -1,0 +1,130 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"trs"
+	label	"Transform Order"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "srt"	"Scale Rotate Translate"
+	    "str"	"Scale Translate Rotate"
+	    "rst"	"Rotate Scale Translate"
+	    "rts"	"Rotate Translate Scale"
+	    "tsr"	"Translate Scale Rotate"
+	    "trs"	"Translate Rotate Scale"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"xyz"
+	label	"Rotation Order"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "xyz"	"Rx Ry Rz"
+	    "xzy"	"Rx Rz Ry"
+	    "yxz"	"Ry Rx Rz"
+	    "yzx"	"Ry Rz Rx"
+	    "zxy"	"Rz Rx Ry"
+	    "zyx"	"Rz Ry Rx"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"trans"
+	label	"Translate"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"rot"
+	label	"Rotate"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"scale"
+	label	"Scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"pivot"
+	label	"Pivot"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attrib"
+	label	"Attribute Name"
+	type	string
+	default	{ "amount" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"invert"
+	label	"Invert Transform"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"invert_weight"
+	label	"invert_weight"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+    }

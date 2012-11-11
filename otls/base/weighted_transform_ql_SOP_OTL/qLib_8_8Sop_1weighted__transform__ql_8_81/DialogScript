@@ -1,4 +1,4 @@
-# Dialog script for qLib::weighted_transform_ql::1 automatically generated 04/17/12 15:20:39
+# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/11/12 14:58:48
 
 {
     name	qLib::weighted_transform_ql::1
@@ -49,7 +49,7 @@
 	    name	"attrib"
 	    label	"Weight Attribute"
 	    type	string
-	    default	{ "amount" }
+	    default	{ "weight" }
 	    menureplace	{
 		[ "r = []" ]
 		[ "" ]
