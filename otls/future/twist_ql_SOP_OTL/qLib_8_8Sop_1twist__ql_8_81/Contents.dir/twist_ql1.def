@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	torus1 0 1 "input1"
+0 	scatter1 1 1 "input1"
 }
 inputs
 {
-0 	torus1 0 1
+0 	scatter1 0 1
 }
 stat
 {
   create 1352402979
-  modify 1352631594
+  modify 1352673266
   author mate@Mate.local.melon.hu
   access 0777
 }

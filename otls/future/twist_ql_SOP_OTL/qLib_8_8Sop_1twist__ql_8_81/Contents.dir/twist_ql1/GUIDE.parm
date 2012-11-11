@@ -1,7 +1,7 @@
 {
 version 0.8
 group	[ 0	locks=0 ]	(	__guide_ql__	)
-grouptype	[ 0	locks=0 ]	(	"guess"	)
+grouptype	[ 0	locks=0 ]	(	"points"	)
 computenorms	[ 0	locks=0 ]	(	"off"	)
 negate	[ 0	locks=0 ]	(	"on"	)
 fillhole	[ 0	locks=0 ]	(	"off"	)
