@@ -32,6 +32,11 @@ next two lines adds all sections to the path:
     QLIB = /Users/mate/qLab/qLib/otls
     HOUDINI_OTLSCAN_PATH = @/otls:$QLIB/base:$QLIB/spec:$QLIB/future
 
+On Windows you should use semicolon instead of colon for path separator:
+
+    QLIB = /Users/mate/qLab/qLib/otls
+    HOUDINI_OTLSCAN_PATH = @/otls;$QLIB/base;$QLIB/spec;$QLIB/future
+
 (Dumping the OTL files into a folder which contains other OTLs is not a recommended
 practice: it'll needlessly make maintenance of your assets more difficult.)
 
