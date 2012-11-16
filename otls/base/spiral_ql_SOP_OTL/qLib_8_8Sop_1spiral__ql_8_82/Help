@@ -4,35 +4,53 @@
 
 = Spiral qL =
 
-*Version 2*
+*interface version 2*
 
-"""Generates an archimedean, logarythmic or arbitrary attribute driven spiral around an input curve or linear segment."""
+"""Generates a spiral (with support for different variants and a backbone)."""
+
+This SOP can generate an archimedean, logarythmic or arbitrary attribute-driven spiral.
+The spiral is built either on a (world-axis aligned) linear segment or around an input ("backbone") curve.
 
 @Parameters
+    Primitive Type:
+        Type of the generated geometry (polygon, NURBS, bezier, or points only).
+
     Axis:
         Axis of the linear line segment when no backbone connected.
+
     Origin:
         Origin of the generated backbone.
+
     Distance:
         Length of the generated backbone.
+
     Points:
-        Number of points along the generated spiral.
-    Even:
-        Type of segment creation:
-        * *Angle*: the angle along the spiral between generated points is evenly distributed.
-        * *Length*: length of segments along the curve is evenly distibuted.
+        Number of points along the generated spiral. The following point distribution modes are available:
+
+        at Even Angles:
+            the angle along the spiral between generated points is evenly distributed.
+        at Even Lengths:
+            length of segments along the curve is evenly distibuted.
+
     Mode:
-        Type of generation:
-        * *Turns*: the start radius and the number of turns is specified. 
-        * *Start-End*: the start and the end radius is specified.
+        Settings on how the spiral shape is generated.
+
+        Number of Turns:
+            The start radius and the number of turns is specified. 
+        Start-End Radii:
+            The start and the end radius is specified.
         NOTE:
             These parameters act as multipliers if the spiral generation is driven by attributes.
+
     Turns:
         Number of turns.
+
     Start Radius:
         The starting radius of the generated spiral.
+
     End Radius:
         The ending radius of the generated spiral.
+
     Roll:
         Roll around backbone.
 
@@ -42,32 +60,51 @@
         Exponent:
             Exponent of the angle.
 
-    Logarythmic:
+    Logarithmic:
         Linear Factor:
             Linear factor of the calculation.
+
         Exponent Factor:
             Exponent factor of the calculation.
 
     Attribute:
         Use Twist Attribute (toggle):
             If turned off a simple linear progression controls the twist.
+
         Twist Attribute:
             Name of the point attribute driving the twist around the backbone.
+
         Twist Mode:
             Controls how the twist attribute gets interpreted:
             * *Relative*: attribute values are interpreted as the relative twist from the previous point.
             * *Absolute*: attribute values are interpreted as the number of turns at the given point.
             NOTE:
                 In both mode the *Turn* parameter act as a multiplier in the twist calculation.
+
         Use Radius Attribute (toggle):
             If turned off a simple linear progression between *Start Radius* and *End Radius* controls the radius.
+
         Radius Attribute:
             Name of the point attribute controlling the radius of the spiral at the given point.
+
         Radius Mode:
             Controls how the radius attribute gets interpreted:
             * *Relative*: attribute values gets fitted between *Start Radius* and *End Radius*.
             * *Absolute*: attribute values are only multiplied by *End Radius*.
- 
+
+
+@related
+    - [Superellipse qL|Node:sop/qLib::superellipse_ql::1]
+    - [Hexa Grid qL|Node:sop/qLib::hexagrid_ql::1]
+    - [Box qL|Node:sop/qLib::box_ql::1]
+
+
 @relnotes Release Notes
+
+    _interface version 2_ ---
+
+    2012-11-16:
+        Added support for other primitive types than polygonal (NURBS, bezier, points-only).
+
     2012-09-14:
-        Initial release of Version 2.
+        Initial release of version 2.

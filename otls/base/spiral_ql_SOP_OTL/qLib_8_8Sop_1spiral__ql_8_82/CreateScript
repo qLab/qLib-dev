@@ -1,4 +1,4 @@
-# Automatically generated script: Tuesday August 14, 08:31 2012
+# Automatically generated script: Friday November 16, 20:55 2012
 \set noalias = 1
 #
 #  Creation script for qLib::spiral_ql::2 operator
@@ -9,7 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Sop/qLib::spiral_ql::2)
-opspareds "" $arg1
+# Node $arg1 (qLib::Sop/spiral_ql::2)
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

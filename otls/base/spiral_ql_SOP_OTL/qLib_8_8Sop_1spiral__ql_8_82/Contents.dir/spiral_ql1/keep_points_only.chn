@@ -1,0 +1,8 @@
+{
+    channel keep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "strcmp(chs(\"../type\"), \"points\")==0" }
+    }
+  }
