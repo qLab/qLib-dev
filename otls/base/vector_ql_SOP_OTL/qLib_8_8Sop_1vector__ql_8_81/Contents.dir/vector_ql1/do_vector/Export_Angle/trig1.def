@@ -1,7 +1,18 @@
 comment ""
 position 4.46471 0.28366
 cachesize 1
+connectornextid 7
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+6 "trig"
+}
+inputsNamed3
+{
+3 	dot1 4 1 "rad"
+4 	"" "" 1 "freq"
+5 	"" "" 1 "offset"
+}
 inputs
 {
 0 	dot1 0 1

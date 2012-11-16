@@ -25,6 +25,7 @@
 	default	{ "Cd" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -34,6 +35,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -44,6 +46,7 @@
 	default	{ "0" "0" "0" }
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -53,6 +56,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -62,6 +66,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -72,6 +77,7 @@
 	disablewhen	"{ mult_const_a == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -81,6 +87,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -91,6 +98,7 @@
 	disablewhen	"{ mult_a == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -105,6 +113,7 @@
 	}
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -114,6 +123,7 @@
 	default	{ "N" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -123,6 +133,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -133,6 +144,7 @@
 	default	{ "0" "0" "0" }
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -142,6 +154,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -151,6 +164,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -161,6 +175,7 @@
 	disablewhen	"{ mult_const_b == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -170,6 +185,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -180,6 +196,7 @@
 	disablewhen	"{ mult_b == 0 }"
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -194,6 +211,7 @@
 	}
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -203,6 +221,7 @@
 	default	{ "0" }
 	range	{ 0 10 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -212,6 +231,7 @@
 	default	{ "0.5" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -221,6 +241,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -230,6 +251,7 @@
 	default	{ "blend" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -239,6 +261,7 @@
 	default	{ "N" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -248,6 +271,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -257,6 +281,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -266,6 +291,7 @@
 	default	{ "1" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -275,6 +301,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -284,6 +311,7 @@
 	default	{ "Cd" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -293,6 +321,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -302,6 +331,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -311,6 +341,7 @@
 	default	{ "dot" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -320,6 +351,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -329,6 +361,7 @@
 	default	{ "off" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
@@ -338,5 +371,16 @@
 	default	{ "angle" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mult"
+	label	"Mult"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

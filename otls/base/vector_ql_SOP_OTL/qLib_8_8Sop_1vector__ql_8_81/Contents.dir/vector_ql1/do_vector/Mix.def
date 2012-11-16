@@ -1,7 +1,18 @@
 comment ""
 position 2.01161 -2.23782
 cachesize 1
+connectornextid 7
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+6 "blend"
+}
+inputsNamed3
+{
+3 	null1 1 1 "input1"
+4 	null2 1 1 "input2"
+5 	blend_attr_type_switch 3 1 "bias"
+}
 inputs
 {
 0 	null1 0 1

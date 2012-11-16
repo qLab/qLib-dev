@@ -1,7 +1,18 @@
 comment ""
 position -23.6731 -2.80041
 cachesize 1
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+3 "result"
+}
+inputsNamed3
+{
+0 	switcher4 0 1 "switcher"
+1 	Vector_B_Switch 3 1 "input1"
+2 	normalize2 2 1 "input2"
+}
 inputs
 {
 0 	switcher4 0 1
