@@ -9,7 +9,7 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Aug  6 01:44:27 2012
+Modified:     Mon Aug  6 02:44:27 2012
 
 Operator:     qLib::spiral_ql::2
 Label:        Spiral qL
@@ -22,5 +22,5 @@ Inputs:       0 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Aug 14 09:03:19 2012
+Modified:     Fri Nov 16 20:55:01 2012
 

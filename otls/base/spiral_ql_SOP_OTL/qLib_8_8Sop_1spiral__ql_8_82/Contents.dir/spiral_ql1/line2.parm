@@ -1,0 +1,9 @@
+{
+version 0.8
+type	[ 0	locks=0 ]	(	"nurbs"	)
+origin	[ 0	locks=0 ]	(	1	0	0	)
+dir	[ 0	locks=0 ]	(	0	0	1	)
+dist	[ 0	locks=0 ]	(	0.10000000000000001	)
+points	[ 0	locks=0 ]	(	[ points	4 ] 	)
+order	[ 0	locks=0 ]	(	[ order	4 ] 	)
+}

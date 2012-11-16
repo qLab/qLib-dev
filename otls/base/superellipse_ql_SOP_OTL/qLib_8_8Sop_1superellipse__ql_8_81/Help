@@ -4,7 +4,7 @@
 
 = Superellipse qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Generates a superellipse."""
 
@@ -25,3 +25,16 @@
         Type of the arc. See the documentation of the [Node:sop/circle] for details.
     Exponent:
         Exponent of the curve.
+
+@related
+    - [Spiral qL|Node:sop/qLib::spiral_ql::1]
+    - [Hexa Grid qL|Node:sop/qLib::hexagrid_ql::1]
+    - [Box qL|Node:sop/qLib::box_ql::1]
+
+
+@relnotes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-16:
+        Minor help card changes.

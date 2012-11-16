@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_ql::1 automatically generated 04/26/12 20:08:15
+# Dialog script for qLib::vector_ql::1 automatically generated 11/16/12 17:55:01
 
 {
     name	qLib::vector_ql::1
@@ -42,6 +42,7 @@
 	    "7"	"Pass 2nd Input (B)"
 	    "8"	"Min"
 	    "9"	"Max"
+	    "10"	"Multiply (per-component)"
 	}
 	range	{ 0 10 }
 	export	none
@@ -475,6 +476,31 @@
 	    export	none
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"mult"
+	    label	"Multiply"
+	    type	float
+	    joinnext
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"mult_presets"
+	    label	"Label"
+	    type	ordinal
+	    nolabel
+	    default	{ "1" }
+	    menumini	{
+		"1.0"	"default (1.0)"
+		"$FPS"	"to velocity"
+		"1.0/$FPS"	"from velocity"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "hscript" }
+	    parmtag	{ "script_callback" "opparm `opname(\".\")` scale ( 2 )" }
 	}
 	parm {
 	    name	"scale"

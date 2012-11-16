@@ -1,0 +1,8 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../sample_mode\") && ( strcmp(chs(\"../type\"), \"poly\")==0 || strcmp(chs(\"../type\"), \"points\")==0 )" }
+    }
+  }

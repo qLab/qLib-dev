@@ -2,7 +2,6 @@
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
 func	[ 0	locks=0 ]	(	vop_acos	)
-gv	[ 0	locks=0 ]	(	0	0	)
 rad	[ 0	locks=0 ]	(	0	)
 rad_v	[ 0	locks=0 ]	(	0	0	0	)
 rad_p	[ 0	locks=0 ]	(	0	0	0	)

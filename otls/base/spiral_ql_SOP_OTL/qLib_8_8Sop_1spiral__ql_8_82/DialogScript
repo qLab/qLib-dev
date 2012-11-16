@@ -1,9 +1,9 @@
-# Dialog script for qLib::spiral_ql::2 automatically generated 08/14/12 08:31:09
+# Dialog script for qLib::spiral_ql::2 automatically generated 11/16/12 20:54:58
 
 {
     name	qLib::spiral_ql::2
     script	qLib::spiral_ql::2
-    label	"New Sprial"
+    label	"Spiral qL"
 
     help {
 	""
@@ -18,6 +18,31 @@
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
 
+    parm {
+	name	"type"
+	label	"Primitive Type"
+	type	ordinal
+	default	{ "poly" }
+	menu	{
+	    "poly"	"Polygon"
+	    "nurbs"	"NURBS"
+	    "bezier"	"Bezier"
+	    "points"	"Points"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"order"
+	label	"Order"
+	type	integer
+	default	{ "4" }
+	disablewhen	"{ type == poly } { type == points }"
+	range	{ 2! 11! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
     parm {
 	name	"axis"
 	label	"Axis"
@@ -65,10 +90,12 @@
 	name	"sample_mode"
 	label	"Even"
 	type	integer
+	nolabel
 	default	{ "0" }
+	disablewhen	"{ type != poly type != points }"
 	menu	{
-	    "0"	"Angle"
-	    "1"	"Length"
+	    "0"	"at Even Angles"
+	    "1"	"at Even Lengths"
 	}
 	range	{ 0 10 }
 	export	none
@@ -79,8 +106,8 @@
 	type	integer
 	default	{ "1" }
 	menu	{
-	    "0"	"Turns"
-	    "1"	"Start-End"
+	    "0"	"Number of Turns"
+	    "1"	"Start/End Radii"
 	}
 	range	{ 0 1 }
 	export	none
@@ -143,7 +170,7 @@
 
     groupradio {
 	name	"spiral_type_1"
-	label	"Logarythmic"
+	label	"Logarithmic"
 
 	parm {
 	    name	"log_lin_factor"

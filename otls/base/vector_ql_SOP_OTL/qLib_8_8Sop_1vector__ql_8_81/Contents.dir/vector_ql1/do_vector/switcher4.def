@@ -1,7 +1,15 @@
 comment ""
 position -25.9731 -2.20041
 cachesize 1
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "normalize_b"
+}
+inputsNamed3
+{
+}
 inputs
 {
 }

@@ -4,7 +4,7 @@
 
 = Vector qL =
 
-*Version 0.1.2*
+*interface version 1*
 
 """Performs common operations between per-point vector attributes on the input geometry."""
 
@@ -29,6 +29,7 @@ NOTE:
         * Mix
         * Cross Product (AxB)
         * Cross Product (BxA)
+        * Multiply (per-component)
         * Pass 1st Input (A)
         * Pass 2nd Input (B)
 
@@ -73,11 +74,21 @@ NOTE:
         Normalize Output:
             Normalize the output vector.
 
-        Scale:
-            Scale factor for the output vector.
+        Multiply:
+            A post-multiplier value for the output vector.
 
-            TIP:
-                When generating velocity vectors, use `$FPS` as scale factor.
+            This field can be useful for converting between per-frame and per-second vector lengths.
+            Velocity (`v`) for instance is measured as per-second -- this means a regular unit-length vector
+            should be multiplied with `$FPS` in order to apply this conversion.
+
+            There is a small preset menu provided for `Multiply` for converting between unit-length
+            and second-based vector lengths.
+
+        Scale:
+            An additional scale factor for the output vector.
+
+            NOTE:
+                When generating velocity vectors, you should use `$FPS` as scale factor.
                 (Velocity vectors work on a per-second basis.)
 
         Invert Result:
@@ -112,6 +123,17 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-16:
+        * Added Multiply (per-component) mode.
+        * (WIP) Added a post-multiply parameter for more convenient conversion between regular and per-second based (velocity) vectors.
+
+
+
+    _older versions_ ---
+
     Version 0.1.1:
         * Added options for scaling both input vectors with a scalar (float) attribute before main operation.
         * Some UI fixes, consolidations, cosmetics.
