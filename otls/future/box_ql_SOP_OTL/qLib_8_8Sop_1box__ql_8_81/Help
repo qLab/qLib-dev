@@ -4,7 +4,7 @@
 
 = Box qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """An alternative version of the Box SOP, with differently-fashioned parameters."""
 
@@ -22,9 +22,19 @@ NOTE:
 
 @related
     - [Node:sop/box]
+    - [Superellipse qL|Node:sop/qLib::superellipse_ql::1]
+    - [Hexa Grid qL|Node:sop/qLib::hexagrid_ql::1]
+    - [Spiral qL|Node:sop/qLib::spiral_ql::1]
 
 
 @Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-16:
+        Minor help card changes.
+
+    _older versions_ ---
 
     Version 0.0.1:
         Initial release.
