@@ -12,7 +12,7 @@ The most common vector-related operations encapsulated in one node. One of the m
 
 
 NOTE:
-    Although this node might seem a bit monolithic in nature, it encapsulates the most frequently
+    Although this node _is_ a wee bit monolithic, it encapsulates the most frequently
     required vector-related operations (and it does that within a single VOP SOP, so it is _fast_).
 
 
@@ -72,24 +72,22 @@ NOTE:
 
     Output:
         Normalize Output:
-            Normalize the output vector.
+            Applies length normalization right after the main operation.
 
-        Multiply:
+        Length Multiplier:
             A post-multiplier value for the output vector.
 
-            This field can be useful for converting between per-frame and per-second vector lengths.
-            Velocity (`v`) for instance is measured as per-second -- this means a regular unit-length vector
+            NOTE:
+                *Use this value to convert* between _regular_ (per-frame) and _velocity_ (per-second) vectors.
+
+            Velocity (`v`) for instance is measured as distance per second -- this means a regular unit-length vector
             should be multiplied with `$FPS` in order to apply this conversion.
 
             There is a small preset menu provided for `Multiply` for converting between unit-length
             and second-based vector lengths.
 
         Scale:
-            An additional scale factor for the output vector.
-
-            NOTE:
-                When generating velocity vectors, you should use `$FPS` as scale factor.
-                (Velocity vectors work on a per-second basis.)
+            An additional length scale factor for the output vector.
 
         Invert Result:
             Negate the output vector (so it will point to the opposite direction).
@@ -105,20 +103,26 @@ NOTE:
                 The length of the result vector.
                 (This vector is _not_ normalized--the Scale factor applies, though.)
     
-            Dot Product:
+            \* Dot Product:
                 Dot product of the two input vectors.
     
-            Angle:
+            \* Angle:
                 Angle between the two input vectors.
     
-            Angle In Degrees:
-                Output angle in degrees instead of radians.
+                Angle In Degrees:
+                    Output angle in degrees instead of radians.
+
+            NOTE:
+                \* These are calculated between the vectors for _all_ main operations,
+                including `Pass 1st` and `2nd Input`.
 
 
 @related
     - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
     - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
     - [Vector Store qL|Node:sop/qLib::vector_store_ql::1]
+    - [Node:sop/point]
+    - [Node:sop/facet]
 
 
 
@@ -128,7 +132,8 @@ NOTE:
 
     2012-11-16:
         * Added Multiply (per-component) mode.
-        * (WIP) Added a post-multiply parameter for more convenient conversion between regular and per-second based (velocity) vectors.
+        * Added a post-multiply parameter for more convenient conversion between regular and per-second based (velocity) vectors.
+        * Some UI + help card improvements.
 
 
 

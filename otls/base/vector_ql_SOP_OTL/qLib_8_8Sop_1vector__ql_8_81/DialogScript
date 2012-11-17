@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_ql::1 automatically generated 11/16/12 17:55:01
+# Dialog script for qLib::vector_ql::1 automatically generated 11/17/12 03:16:20
 
 {
     name	qLib::vector_ql::1
@@ -72,7 +72,6 @@
 		label	"Vector A"
 		type	integer
 		default	{ "0" }
-		disablewhen	"{ operation == 7 }"
 		menu	{
 		    "0"	"Attribute from 1st Input"
 		    "1"	"Constant"
@@ -87,7 +86,7 @@
 		label	"Attribute Name A"
 		type	string
 		default	{ "N" }
-		disablewhen	"{ vector_type_a == 1 } { operation == 7 }"
+		disablewhen	"{ vector_type_a == 1 }"
 		menureplace	{
 		    "P"	"position (P)"
 		    "N"	"normal (N)"
@@ -109,7 +108,7 @@
 		joinnext
 		size	3
 		default	{ "0" "1" "0" }
-		disablewhen	"{ vector_type_a == 0 } { operation == 7 }"
+		disablewhen	"{ vector_type_a == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -121,7 +120,7 @@
 		type	ordinal
 		nolabel
 		default	{ "0" }
-		disablewhen	"{ vector_type_a == 0 } { operation == 7 }"
+		disablewhen	"{ vector_type_a == 0 }"
 		menumini	{
 		    "1 0 0"	"X+"
 		    "0 1 0"	"Y+"
@@ -141,7 +140,6 @@
 		label	"Normalize"
 		type	toggle
 		default	{ "off" }
-		disablewhen	"{ operation == 7 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -247,7 +245,6 @@
 		label	"Vector B"
 		type	integer
 		default	{ "0" }
-		disablewhen	"{ operation == 6 }"
 		menu	{
 		    "0"	"Attribute from 2nd Input"
 		    "1"	"Constant"
@@ -262,7 +259,8 @@
 		label	"Attribute Name B"
 		type	string
 		default	{ "N" }
-		disablewhen	"{ vector_type_b == 1 } { operation == 6 }"
+		disablewhen	"{ vector_type_b == 1 }"
+		hidewhen	"{ vector_type_b == 1 }"
 		menureplace	{
 		    "P"	"position (P)"
 		    "N"	"normal (N)"
@@ -284,7 +282,7 @@
 		joinnext
 		size	3
 		default	{ "1" "0" "0" }
-		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
+		disablewhen	"{ vector_type_b == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -296,7 +294,7 @@
 		type	ordinal
 		nolabel
 		default	{ "0" }
-		disablewhen	"{ vector_type_b == 0 } { operation == 6 }"
+		disablewhen	"{ vector_type_b == 0 }"
 		menumini	{
 		    "1 0 0"	"X+"
 		    "0 1 0"	"Y+"
@@ -316,7 +314,6 @@
 		label	"Normalize"
 		type	toggle
 		default	{ "off" }
-		disablewhen	"{ operation == 6 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "parmvop" "1" }
@@ -479,11 +476,11 @@
 	}
 	parm {
 	    name	"mult"
-	    label	"Multiply"
+	    label	"Length Multiplier"
 	    type	float
 	    joinnext
 	    default	{ "1" }
-	    range	{ 0 10 }
+	    range	{ 1 24 }
 	    export	none
 	}
 	parm {
@@ -494,13 +491,13 @@
 	    default	{ "1" }
 	    menumini	{
 		"1.0"	"default (1.0)"
-		"$FPS"	"to velocity"
-		"1.0/$FPS"	"from velocity"
+		"$FPS"	"to velocity (FPS)"
+		"1.0/$FPS"	"from velocity (1/FPS)"
 	    }
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "script_callback_language" "hscript" }
-	    parmtag	{ "script_callback" "opparm `opname(\".\")` scale ( 2 )" }
+	    parmtag	{ "script_callback" "opparm `oppwf()` mult ( $script_value0 )" }
 	}
 	parm {
 	    name	"scale"
@@ -540,7 +537,7 @@
 	    }
 	    parm {
 		name	"out_attr"
-		label	"Vector / Type"
+		label	"Out Vector / Type"
 		type	string
 		joinnext
 		default	{ "N" }
@@ -617,7 +614,7 @@
 	    }
 	    parm {
 		name	"dot_attr"
-		label	"Dot Product"
+		label	"Dot Product (*)"
 		type	string
 		default	{ "dot" }
 		disablewhen	"{ export_dot == 0 }"
@@ -643,7 +640,7 @@
 	    }
 	    parm {
 		name	"angle_attr"
-		label	"Angle"
+		label	"Angle (*)"
 		type	string
 		default	{ "angle" }
 		disablewhen	"{ angle_export == 0 }"
@@ -665,6 +662,35 @@
 		export	none
 		parmtag	{ "parmvop" "1" }
 		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dot_angle_note"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "(*) Valid even in 'Pass 1st/2nd Input' modes." }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"v_length_note"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "Length Multiplier preset \"to velocity\" is recommended." }
+		hidewhen	"{ out_attr != \"v\" }"
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"v_length_note_off"
+		label	"Label"
+		type	label
+		nolabel
+		default	{ "" }
+		hidewhen	"{ out_attr == \"v\" }"
+		range	{ 0 1 }
+		export	none
 	    }
 	}
 
