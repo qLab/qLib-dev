@@ -1,7 +1,6 @@
-17
+19
 foreach__build_vec_pointgroups
 foreach__restore_vector_attrs
-keep_points_only
 IN
 del_src_attrs
 switch_del_attr
@@ -9,10 +8,13 @@ null1
 merge1
 switch_mode
 OUT
-del_src_attrs1
-orig_geom
-vec_pts
 show_points
 GUIDE
 nope
 switch1
+protect_save_vopsop_params
+keep_points_only
+del_src_attrs_2
+orig_geom
+vec_pts
+protect_restore_vopsop_params

@@ -1,0 +1,22 @@
+{
+    channel __length {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000000000001
+      flags = 0
+      segment { length = 0 value = 0.10000000000000001 0.10000000000000001 expr = ch(\"../../length\") }
+    }
+    channel __outlen_mult {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../outlen\") }
+    }
+    channel __normalize {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../norm\") }
+    }
+  }

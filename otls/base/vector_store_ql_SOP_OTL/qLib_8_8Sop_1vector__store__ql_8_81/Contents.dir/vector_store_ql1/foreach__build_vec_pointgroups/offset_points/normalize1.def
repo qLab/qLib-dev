@@ -1,0 +1,28 @@
+comment ""
+position -0.229411 -3.01764
+cachesize 1
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+1 "nvec"
+}
+inputsNamed3
+{
+0 	importattrib1 7 1 "vec"
+}
+inputs
+{
+0 	importattrib1 1 1
+}
+stat
+{
+  create 1353194121
+  modify 1353195556
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

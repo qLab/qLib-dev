@@ -1,0 +1,60 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"__length"
+	label	"__length"
+	type	float
+	default	{ "0.1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"__normalize"
+	label	"__normalize"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"__outlen_mult"
+	label	"__outlen_mult"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"__outattr"
+	label	"__outattr"
+	type	string
+	default	{ "N" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

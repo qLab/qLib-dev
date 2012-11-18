@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_store_ql::1 automatically generated 07/30/12 22:21:59
+# Dialog script for qLib::vector_store_ql::1 automatically generated 11/18/12 00:49:40
 
 {
     name	qLib::vector_store_ql::1
@@ -77,6 +77,17 @@
 	name	"op_mode"
 	label	"Save"
 
+	parm {
+	    name	"pre_norm"
+	    label	"Pre-Normalize"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
 	parm {
 	    name	"delattr"
 	    label	"Delete Source Attributes"
