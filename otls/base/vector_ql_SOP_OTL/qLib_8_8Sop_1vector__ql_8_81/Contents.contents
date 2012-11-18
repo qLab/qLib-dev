@@ -1,4 +1,3 @@
-.OPfallbacks
 .OPdummydefs
 node_type
 vector_ql1.init
@@ -434,6 +433,10 @@ vector_ql1/do_vector/mult.init
 vector_ql1/do_vector/mult.def
 vector_ql1/do_vector/mult.parm
 vector_ql1/do_vector/mult.userdata
+vector_ql1/do_vector/cross_perp.init
+vector_ql1/do_vector/cross_perp.def
+vector_ql1/do_vector/cross_perp.parm
+vector_ql1/do_vector/cross_perp.userdata
 vector_ql1/do_vector/Export_Length.order
 vector_ql1/do_vector/Export_Length.net
 vector_ql1/do_vector/Export_Result.order
