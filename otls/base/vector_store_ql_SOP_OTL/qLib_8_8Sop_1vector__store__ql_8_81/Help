@@ -4,7 +4,7 @@
 
 = Vector Store qL =
 
-*Version 0.0.3*
+*interface version 1*
 
 """Converts vector attributes to points (and vice versa), allowing any deforming SOP to work on vector attributes."""
 
@@ -45,6 +45,8 @@ Common:
             To visualize this, enable 'points' display in the viewport, and adjust this parameter while watching the output
             of a Vector Store SOP in Save mode.
 Save:
+    Pre-Normalize:
+        Normalize vector lengths before conversion.
     Delete Source Attributes:
         Once the vector attributes are represented as points, the attributes themselved will be deleted.
         (This is for memory efficiency -- also, the generated points would have the same attributes as well,
@@ -69,6 +71,16 @@ NOTE:
 
 
 @Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-18:
+        Fixes and improvements:
+        - Various, specific per-point attribute names could confuse internal VOP SOP nodes; this is now fixed.
+        - Attributes are now deleted using Clean SOPs, point deletions use Blast SOPs (these should be cleaner and faster).
+
+
+    _older versions_ ---
 
     Version 0.0.3:
         UI change: mode is now selected using radio buttons.

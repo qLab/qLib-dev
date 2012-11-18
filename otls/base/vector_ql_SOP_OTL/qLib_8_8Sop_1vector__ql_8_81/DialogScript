@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_ql::1 automatically generated 11/17/12 03:16:20
+# Dialog script for qLib::vector_ql::1 automatically generated 11/18/12 01:28:35
 
 {
     name	qLib::vector_ql::1
@@ -43,6 +43,7 @@
 	    "8"	"Min"
 	    "9"	"Max"
 	    "10"	"Multiply (per-component)"
+	    "11"	"Make Perpendicular"
 	}
 	range	{ 0 10 }
 	export	none
@@ -678,7 +679,7 @@
 		type	label
 		nolabel
 		default	{ "Length Multiplier preset \"to velocity\" is recommended." }
-		hidewhen	"{ out_attr != \"v\" }"
+		hidewhen	"{ out_attr != v }"
 		range	{ 0 1 }
 		export	none
 	    }
@@ -688,7 +689,7 @@
 		type	label
 		nolabel
 		default	{ "" }
-		hidewhen	"{ out_attr == \"v\" }"
+		hidewhen	"{ out_attr == v }"
 		range	{ 0 1 }
 		export	none
 	    }

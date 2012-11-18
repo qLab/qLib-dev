@@ -1,4 +1,4 @@
-7
+10
 global1
 output1
 importattrib1
@@ -6,3 +6,6 @@ add1
 multiply1
 length
 attrib
+switch_pre_normalize
+normalize1
+__pre_norm

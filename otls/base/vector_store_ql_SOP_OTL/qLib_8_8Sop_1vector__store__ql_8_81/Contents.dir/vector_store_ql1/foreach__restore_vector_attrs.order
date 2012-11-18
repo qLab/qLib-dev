@@ -1,5 +1,5 @@
 4
 each1
-delete1
-vopsop1
+restore_from_offset_points
 OUT
+keep_offset_points_only

@@ -1,6 +1,0 @@
-Vop/normalize /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/normalize otls/OPlibVop.otl
-Vop/importattrib /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/addattrib /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl

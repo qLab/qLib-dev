@@ -19,20 +19,32 @@
 	export	none
     }
     parm {
-	name	"length"
-	label	"length"
+	name	"__length"
+	label	"__length"
 	type	float
 	default	{ "0.1" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"attrib"
-	label	"Attribute Name"
+	name	"__attrib"
+	label	"__attrib"
 	type	string
-	default	{ "Cd" }
+	default	{ "N" }
 	range	{ 0 1 }
 	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"__pre_norm"
+	label	"__pre_norm"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }

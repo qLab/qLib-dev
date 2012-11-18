@@ -22,16 +22,35 @@ NOTE:
 
     Operation:
         The main vector operation to be performed.
-        The following operations are available:
-        * Add
-        * Substract (A-B)
-        * Substract (B-A)
-        * Mix
-        * Cross Product (AxB)
-        * Cross Product (BxA)
-        * Multiply (per-component)
-        * Pass 1st Input (A)
-        * Pass 2nd Input (B)
+        The following operations are available.
+
+        Add:
+            Vector addition. (Output components will be the sum of respective A/B input components.)
+
+        Substract (A-B), (B-A):
+            Substraction. Output components will be set the difference between respective A/B input components.
+
+        Mix:
+            The A and B vector individual component values will be mixed
+            using a blend value (or per-point attribute).
+
+        Cross Product (AxB), (BxA):
+            The output vector will be perpendicular to the plane defined by the two input vectors.
+
+        Multiply (per-component):
+            Output components will be the respective A/B input components, multiplied.
+
+        Pass 1st/2nd Input (A/B):
+            Output the first (or the second) vector input.
+
+            All pre- and post-processing operations still apply (including the optional
+            dot product and angle calculations.)
+
+        Make Perpendicular:
+            The first vector direction will be adjusted to be perpendicular with the
+            second vector (while remaining in the same plane, defined by the two vectors).
+
+            (Equivalent of performing an AxB then a BxA cross products.)
 
     Input:
 
@@ -129,6 +148,9 @@ NOTE:
 @Release_Notes Release Notes
 
     _interface version 1_ ---
+
+    2012-11-18:
+        * Added 'Make Perpendicular' mode.
 
     2012-11-16:
         * Added Multiply (per-component) mode.
