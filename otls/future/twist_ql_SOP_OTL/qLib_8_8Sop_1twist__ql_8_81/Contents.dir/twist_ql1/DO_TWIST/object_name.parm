@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	object_name	)
+parmname	[ 0	locks=0 ]	(	_vex_object_name	)
 parmlabel	[ 0	locks=0 ]	(	"Object Name"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"string"	)

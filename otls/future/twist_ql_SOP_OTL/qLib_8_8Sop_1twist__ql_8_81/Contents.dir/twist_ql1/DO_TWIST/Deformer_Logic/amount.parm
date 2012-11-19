@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	y_bias	)
+parmname	[ 0	locks=0 ]	(	_vex_y_bias	)
 parmlabel	[ 0	locks=0 ]	(	Bias	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float"	)

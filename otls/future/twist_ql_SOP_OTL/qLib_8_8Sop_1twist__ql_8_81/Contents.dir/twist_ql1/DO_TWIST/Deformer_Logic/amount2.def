@@ -5,8 +5,8 @@ connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-0 "l_bias"
-1 "bound_l_bias"
+0 "_vex_l_bias"
+1 "bound__vex_l_bias"
 }
 inputsNamed3
 {
@@ -17,7 +17,7 @@ inputs
 stat
 {
   create 1352408416
-  modify 1352411425
+  modify 1353345431
   author mate@Mate.local.melon.hu
   access 0777
 }

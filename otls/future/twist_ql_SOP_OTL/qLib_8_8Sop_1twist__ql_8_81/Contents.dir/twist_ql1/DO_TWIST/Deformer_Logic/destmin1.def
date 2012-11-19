@@ -5,8 +5,8 @@ connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed off lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
-0 "end_inner_angle"
-1 "bound_end_inner_angle"
+0 "_vex_end_inner_angle"
+1 "bound__vex_end_inner_angle"
 }
 inputsNamed3
 {
@@ -17,7 +17,7 @@ inputs
 stat
 {
   create 1352409899
-  modify 1352410410
+  modify 1353345356
   author mate@Mate.local.melon.hu
   access 0777
 }

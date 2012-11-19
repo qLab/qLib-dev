@@ -4,4 +4,38 @@
 
 = Twist qL =
 
-"""Twists geometry along axis."""
+*Interface Version 1*
+
+"""Twists and/or twirls geometry along axis."""
+
+This is a replacement operator for the "twist" mode of the [Twist SOPNode:/twist].
+
+The deformer rotates the points of the incoming geometry around the deformer's axis, which
+can be trasformed with the transform parameters or an OBJ node's trasformation matrix. The amount of
+rotation is interpolated between the start (top end) and the end (lower end) of the axis as well as between
+the axis and the outer perimeter of the deformer.
+
+@Parameters
+    Point Group:
+        The group of points the deformer affects.
+    Use Weight (Toggle):
+        Use a weight attribute to mask the deformers operation.
+    Weight Attrib:
+        Name of the weight attribute.
+    Invert Weight:
+        Complements the weight attribute's effect.
+    Start Angle (Outer/Inner):
+        Outer and inner rotation amount in degrees on the start (top) end of the axis.
+    End Angle (Outer/Inner):
+        Outer and inner rotation amount in degrees on the end (lower) end of the axis.
+    Bias/Gain:
+        Bias and gain modifiers of the interpolation along the axis.
+    Inner Bias/Gain:
+        Bias and gain modifiers of the interpolation between the axis and outer perimeter of the
+        deformer.
+    Use Object Transform (Toggle):
+        Use OBJ's transform matrix.
+    Transform Object:
+        OBJ operator to get the transformation matrix from.
+    Transform Parameters:
+        Standard transform parameters.

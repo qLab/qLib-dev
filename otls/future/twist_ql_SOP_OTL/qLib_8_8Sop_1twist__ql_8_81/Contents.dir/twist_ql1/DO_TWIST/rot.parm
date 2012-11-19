@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	rot	)
+parmname	[ 0	locks=0 ]	(	_vex_rot	)
 parmlabel	[ 0	locks=0 ]	(	Rotate	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float3"	)

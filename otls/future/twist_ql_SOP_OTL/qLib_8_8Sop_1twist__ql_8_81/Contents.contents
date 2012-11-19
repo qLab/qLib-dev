@@ -239,6 +239,14 @@ twist_ql1/DO_TWIST/switcher.init
 twist_ql1/DO_TWIST/switcher.def
 twist_ql1/DO_TWIST/switcher.parm
 twist_ql1/DO_TWIST/switcher.userdata
+twist_ql1/DO_TWIST/multiply1.init
+twist_ql1/DO_TWIST/multiply1.def
+twist_ql1/DO_TWIST/multiply1.parm
+twist_ql1/DO_TWIST/multiply1.userdata
+twist_ql1/DO_TWIST/uscale.init
+twist_ql1/DO_TWIST/uscale.def
+twist_ql1/DO_TWIST/uscale.parm
+twist_ql1/DO_TWIST/uscale.userdata
 twist_ql1/xform_guide.init
 twist_ql1/xform_guide.def
 twist_ql1/xform_guide.spareparmdef

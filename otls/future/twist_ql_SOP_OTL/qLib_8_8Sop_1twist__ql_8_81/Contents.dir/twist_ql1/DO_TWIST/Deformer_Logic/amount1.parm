@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	y_gain	)
+parmname	[ 0	locks=0 ]	(	_vex_y_gain	)
 parmlabel	[ 0	locks=0 ]	(	Gain	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float"	)

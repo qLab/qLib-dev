@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	use_obj	)
+parmname	[ 0	locks=0 ]	(	_vex_use_obj	)
 parmlabel	[ 0	locks=0 ]	(	"Use Object Transform"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"toggle"	)

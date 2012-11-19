@@ -1,4 +1,4 @@
-# Dialog script for qLib::twist_ql::1 automatically generated 11/08/12 23:25:50
+# Dialog script for qLib::twist_ql::1 automatically generated 11/19/12 18:35:18
 
 {
     name	qLib::twist_ql::1
@@ -100,15 +100,15 @@
     }
     parm {
 	name	"y_bias"
-	label	"Bias / Gain"
+	label	"Start-End Bias/Gain"
 	type	float
 	joinnext
 	default	{ "0.5" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "autoscope" "0000000000000000" }
 	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"y_gain"
@@ -119,20 +119,20 @@
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "autoscope" "0000000000000000" }
 	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"l_bias"
-	label	"Inner Bias / Gain"
+	label	"In-Out Bias/Gain"
 	type	float
 	joinnext
 	default	{ "0.5" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "autoscope" "0000000000000000" }
 	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"l_gain"
@@ -143,8 +143,8 @@
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "autoscope" "0000000000000000" }
 	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     group {
 	name	"folder0"
@@ -186,6 +186,7 @@
 	    label	"Transform Order"
 	    type	integer
 	    default	{ "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    menu	{
 		"srt"	"Scale Rotate Translate"
 		"str"	"Scale Translate Rotate"
@@ -205,6 +206,7 @@
 	    label	"Rotation Order"
 	    type	integer
 	    default	{ "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    menu	{
 		"xyz"	"Rx Ry Rz"
 		"xzy"	"Rx Rz Ry"
@@ -225,6 +227,7 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -237,6 +240,7 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -249,6 +253,7 @@
 	    type	float
 	    size	3
 	    default	{ "1" "1" "1" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -261,7 +266,19 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_uscale"
+	    label	"Uniform Scale"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }

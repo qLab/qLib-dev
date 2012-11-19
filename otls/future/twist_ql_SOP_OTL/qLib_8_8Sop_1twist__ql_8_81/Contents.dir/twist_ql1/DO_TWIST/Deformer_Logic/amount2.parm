@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	l_bias	)
+parmname	[ 0	locks=0 ]	(	_vex_l_bias	)
 parmlabel	[ 0	locks=0 ]	(	"Inner Bias"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float"	)

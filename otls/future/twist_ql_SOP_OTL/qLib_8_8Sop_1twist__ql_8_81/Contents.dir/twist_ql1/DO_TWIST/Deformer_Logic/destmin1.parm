@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	end_inner_angle	)
+parmname	[ 0	locks=0 ]	(	_vex_end_inner_angle	)
 parmlabel	[ 0	locks=0 ]	(	"End Inner Angle"	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float"	)

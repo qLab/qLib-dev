@@ -1,6 +1,6 @@
 {
 version 0.8
-parmname	[ 0	locks=0 ]	(	pivot	)
+parmname	[ 0	locks=0 ]	(	_vex_pivot	)
 parmlabel	[ 0	locks=0 ]	(	Pivot	)
 showlabel	[ 0	locks=0 ]	(	"on"	)
 parmtype	[ 0	locks=0 ]	(	"float3"	)
