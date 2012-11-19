@@ -1,12 +1,12 @@
-Vop/abs //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
-Vop/abs otls/OPlibVop.otl
-Vop/mulconst //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/mulconst //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/mulconst otls/OPlibVop.otl
-Vop/pow //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/pow //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/pow otls/OPlibVop.otl
-Vop/sign //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
-Vop/sign otls/OPlibVop.otl
-Vop/vectofloat //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/abs //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
+Vop/abs otls/OPlibVop.otl
+Vop/vectofloat //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/vectofloat otls/OPlibVop.otl
-Vop/floattovec //mlnfs/Sidefx/Houdini 12.1.113/houdini/otls/OPlibVop.otl
+Vop/sign //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
+Vop/sign otls/OPlibVop.otl
+Vop/floattovec //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/floattovec otls/OPlibVop.otl
