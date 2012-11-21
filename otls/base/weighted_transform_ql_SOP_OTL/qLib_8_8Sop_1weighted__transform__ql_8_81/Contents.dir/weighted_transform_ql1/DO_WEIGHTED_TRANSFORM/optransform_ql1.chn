@@ -4,6 +4,6 @@
       righttype = extend
       defaultString = \"/obj/null1\"
       flags = 0
-      segment { length = 0 expr = chs('../object_name/stringdef') }
+      segment { length = 0 expr = chs('../object_name1/stringdef') }
     }
   }

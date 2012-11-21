@@ -11,18 +11,18 @@ inputsNamed3
 {
 1 	switcher1 0 1 "switcher"
 2 	makexform1 12 1 "input1"
-3 	optransform_ql1 1 1 "input2"
+3 	multiply3 0 1 "input2"
 }
 inputs
 {
 0 	switcher1 0 1
 1 	makexform1 0 1
-2 	optransform_ql1 0 1
+2 	multiply3 0 1
 }
 stat
 {
   create 1353453545
-  modify 1353491801
+  modify 1353525643
   author mate@matild.local
   access 0777
 }

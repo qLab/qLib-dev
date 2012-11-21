@@ -1,4 +1,4 @@
-# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/21/12 11:22:57
+# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/21/12 20:50:18
 
 {
     name	qLib::weighted_transform_ql::1
@@ -93,10 +93,8 @@
 
 	parm {
 	    name	"use_obj"
-	    label	"Use Object"
+	    label	"Use Object Transform"
 	    type	toggle
-	    nolabel
-	    joinnext
 	    default	{ "off" }
 	    range	{ 0 1 }
 	    export	none
@@ -105,10 +103,38 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"object_name"
-	    label	"Object Name"
-	    type	string
+	    name	"base_object"
+	    label	"Base Object"
+	    type	oppath
 	    default	{ "/obj/null1" }
+	    disablewhen	"{ use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
+	}
+	parm {
+	    name	"object_name"
+	    label	"Deformer Object"
+	    type	oppath
+	    default	{ "/obj/null2" }
+	    disablewhen	"{ use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
+	}
+	parm {
+	    name	"container_corr"
+	    label	"Mind Container Transform"
+	    type	toggle
+	    default	{ "on" }
 	    disablewhen	"{ use_obj == 0 }"
 	    range	{ 0 1 }
 	    export	none

@@ -1,4 +1,4 @@
-27
+39
 global1
 output1
 makexform1
@@ -22,7 +22,19 @@ switch2
 invert_weight
 multiply2
 uscale
-optransform_ql1
+deformer_obj_xform
 object_name
 switch3
 switcher1
+optransform_ql1
+object_name1
+invert2
+multiply3
+container_xform
+multiply4
+invert3
+multiply5
+switch4
+mind_container
+switch5
+object_name2

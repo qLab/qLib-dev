@@ -17,12 +17,21 @@
         Inverts the effect of the weight attribute.
     Envelope:
         Global effect envelope.
-    Use Object (Toggle):
+    Use Object Transform(Toggle):
         Fetch transformation matrix from an object node.
-    Object Name:
-        Name of the object to fetch the transformation matrix from.
+    Base Object:
+        The deformer transformation will be the _difference_ of this object's transformation and the
+        *Deformer Object*'s.
+    Deformer Object:
+        The deformer transformation will be the _difference_ of the *Base Object*'s transformation and
+        this object's.
+    Mind Container Transform:
+        Take the geometry container's transformation into account when calculating the _difference_ of
+        the base and deformer objects' transformations.
     Transform Parameters:
-        Standard transform parameters.        
+        Standard transform parameters.
+    Invert Transform:
+        Inverts the deformation transformation.
 
 @Limitations
     Currently the operator does a simple linear interpolation between the original and the transformed points. This is fast
@@ -31,5 +40,6 @@
 @Release_Notes Release Notes
     2012-11-21:
         Uniform scale added. Vex atributes gets the standard "_vex_" prefix. Minor interfacelift.
+        Support for fetching object level transforms added.
     2011-10-03:
         Initial release.
