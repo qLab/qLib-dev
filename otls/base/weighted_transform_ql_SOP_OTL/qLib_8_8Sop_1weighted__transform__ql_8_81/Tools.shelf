@@ -17,6 +17,7 @@
       <contextNetType>SOP</contextNetType>
     </toolMenuContext>
     <toolSubmenu>qLib</toolSubmenu>
+    <toolSubmenu>Manipulate</toolSubmenu>
     <script scriptType="python"><![CDATA[import soptoolutils
 
 soptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>

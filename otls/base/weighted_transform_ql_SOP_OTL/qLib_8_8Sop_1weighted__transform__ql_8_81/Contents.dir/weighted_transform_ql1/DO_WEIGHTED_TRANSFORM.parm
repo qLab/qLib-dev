@@ -1,0 +1,20 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+_vex_trs	[ 0	locks=0 ]	(	[ _vex_trs	0 ] 	)
+_vex_xyz	[ 0	locks=0 ]	(	[ _vex_xyz	0 ] 	)
+_vex_trans	[ 0	locks=0 ]	(	[ _vex_trans1	0 ] 	[ _vex_trans2	0 ] 	[ _vex_trans3	-1 ] 	)
+_vex_rot	[ 0	locks=0 ]	(	[ _vex_rot1	120 ] 	[ _vex_rot2	0 ] 	[ _vex_rot3	0 ] 	)
+_vex_scale	[ 0	locks=0 ]	(	[ _vex_scale1	1.5 ] 	[ _vex_scale2	1.5 ] 	[ _vex_scale3	1.5 ] 	)
+_vex_pivot	[ 0	locks=0 ]	(	[ _vex_pivot1	0 ] 	[ _vex_pivot2	0 ] 	[ _vex_pivot3	0 ] 	)
+_vex_attrib	[ 0	locks=0 ]	(	`chs(\"../attrib\")`	)
+_vex_invert	[ 0	locks=0 ]	(	[ _vex_invert	0 ] 	)
+_vex_envelope	[ 0	locks=0 ]	(	[ _vex_envelope	1 ] 	)
+_vex_invert_weight	[ 0	locks=0 ]	(	[ _vex_invert_weight	0 ] 	)
+_vex_uscale	[ 0	locks=0 ]	(	[ _vex_uscale	1 ] 	)
+_vex_object_name	[ 0	locks=0 ]	(	[ _vex_object_name	/obj/null1 ] 	)
+_vex_use_obj	[ 0	locks=0 ]	(	[ _vex_use_obj	0 ] 	)
+}

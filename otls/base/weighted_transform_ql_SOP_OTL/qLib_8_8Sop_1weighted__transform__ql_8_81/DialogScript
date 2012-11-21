@@ -1,4 +1,4 @@
-# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/11/12 14:58:48
+# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/21/12 11:22:57
 
 {
     name	qLib::weighted_transform_ql::1
@@ -23,7 +23,7 @@
     bindhandle trans3 xform "Transformer" tz ""
     bindhandle xyz xform "Transformer" xyz_order ""
 
-    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	1	"Input Geometry"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -40,69 +40,98 @@
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }
-    group {
-	name	"folder1"
-	label	"Weight"
-	tabbreak
-
-	parm {
-	    name	"attrib"
-	    label	"Weight Attribute"
-	    type	string
-	    default	{ "weight" }
-	    menureplace	{
-		[ "r = []" ]
-		[ "" ]
-		[ "try:" ]
-		[ "    attrs = hou.pwd().geometry().pointAttribs()" ]
-		[ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
-		[ "    " ]
-		[ "    for a in attrs:" ]
-		[ "        r.append(a)" ]
-		[ "        r.append(a)" ]
-		[ "except:" ]
-		[ "    pass" ]
-		[ "" ]
-		[ "return r" ]
-		language	python
-	    }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
+    parm {
+	name	"attrib"
+	label	"Weight Attribute"
+	type	string
+	joinnext
+	default	{ "weight" }
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
 	}
-	parm {
-	    name	"invert_weight"
-	    label	"Invert"
-	    type	toggle
-	    default	{ "off" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"envelope"
-	    label	"Envelope"
-	    type	float
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
-
+    parm {
+	name	"invert_weight"
+	label	"Invert"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
     group {
 	name	"folder0"
 	label	"Transform"
 
+	parm {
+	    name	"use_obj"
+	    label	"Use Object"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"object_name"
+	    label	"Object Name"
+	    type	string
+	    default	{ "/obj/null1" }
+	    disablewhen	"{ use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
 	parm {
 	    name	"trs"
 	    label	"Transform Order"
 	    type	integer
 	    joinnext
 	    default	{ "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    menu	{
 		"srt"	"Scale Rotate Translate"
 		"str"	"Scale Translate Rotate"
@@ -122,6 +151,7 @@
 	    type	integer
 	    nolabel
 	    default	{ "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    menu	{
 		"xyz"	"Rx Ry Rz"
 		"xzy"	"Rx Rz Ry"
@@ -141,6 +171,7 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -152,6 +183,7 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -163,6 +195,7 @@
 	    type	float
 	    size	3
 	    default	{ "1" "1" "1" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -174,8 +207,21 @@
 	    type	float
 	    size	3
 	    default	{ "0" "0" "0" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 10 }
 	    export	none
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"uscale"
+	    label	"Unifrom Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ use_obj == 1 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}

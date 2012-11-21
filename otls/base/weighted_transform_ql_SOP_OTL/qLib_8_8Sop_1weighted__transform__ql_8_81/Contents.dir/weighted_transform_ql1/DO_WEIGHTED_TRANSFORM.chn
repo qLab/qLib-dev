@@ -1,0 +1,134 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel _vex_use_obj {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../use_obj\") }
+    }
+    channel _vex_object_name {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"/obj/null1\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../object_name\") }
+    }
+    channel _vex_uscale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../uscale\") }
+    }
+    channel _vex_trs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trs\") }
+    }
+    channel _vex_xyz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../xyz\") }
+    }
+    channel _vex_trans1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans1\") }
+    }
+    channel _vex_trans2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans2\") }
+    }
+    channel _vex_trans3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../trans3\") }
+    }
+    channel _vex_rot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot1\") }
+    }
+    channel _vex_rot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot2\") }
+    }
+    channel _vex_rot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../rot3\") }
+    }
+    channel _vex_scale1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale1\") }
+    }
+    channel _vex_scale2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale2\") }
+    }
+    channel _vex_scale3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale3\") }
+    }
+    channel _vex_pivot1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot1\") }
+    }
+    channel _vex_pivot2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot2\") }
+    }
+    channel _vex_pivot3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pivot3\") }
+    }
+    channel _vex_invert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert\") }
+    }
+    channel _vex_envelope {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../envelope\") }
+    }
+    channel _vex_invert_weight {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert_weight\") }
+    }
+  }

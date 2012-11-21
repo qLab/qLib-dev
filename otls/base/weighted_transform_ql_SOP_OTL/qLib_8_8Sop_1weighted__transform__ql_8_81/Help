@@ -4,7 +4,7 @@
 
 = Weighted Transform qL =
 
-*Version 0.1.0*
+*Interface Version 1*
 
 """Transforms points weighted by an attribute on the geometry."""
 
@@ -13,15 +13,23 @@
         Points that get affected.
     Weight Attribute:
         Name of the point attribute that masks the transforms.
+    Invert:
+        Inverts the effect of the weight attribute.
     Envelope:
-        Global envelope.
+        Global effect envelope.
+    Use Object (Toggle):
+        Fetch transformation matrix from an object node.
+    Object Name:
+        Name of the object to fetch the transformation matrix from.
     Transform Parameters:
-        Usual stuff.        
+        Standard transform parameters.        
 
 @Limitations
     Currently the operator does a simple linear interpolation between the original and the transformed points. This is fast
     but the results are poor when heavy rotations needed.
 
-@Release_Notes
-    Version 0.1.0:
+@Release_Notes Release Notes
+    2012-11-21:
+        Uniform scale added. Vex atributes gets the standard "_vex_" prefix. Minor interfacelift.
+    2011-10-03:
         Initial release.
