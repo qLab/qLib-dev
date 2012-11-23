@@ -1,4 +1,4 @@
-# Dialog script for qLib::limit_ql::1 automatically generated 07/26/12 22:10:38
+# Dialog script for qLib::limit_ql::1 automatically generated 11/23/12 15:12:06
 
 {
     name	qLib::limit_ql::1
@@ -38,7 +38,6 @@
     group {
 	name	"folder0"
 	label	"Bounding Object"
-	tabbreak
 
 	parm {
 	    name	"objpath"
@@ -53,7 +52,7 @@
 	}
 	parm {
 	    name	"objgroup"
-	    label	"Group"
+	    label	"Primitive Group"
 	    type	string
 	    default	{ "" }
 	    menutoggle	{
@@ -115,20 +114,137 @@
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	group {
-	    name	"folder1"
-	    label	"Regular Limit"
-	    hidewhentab	"{ limittype != 0 }"
+	import {
+	    label	"Bound Settings"
+	    enable	0
 
 	    group {
-		name	"folder5"
-		label	"Behavior"
+		name	"folder2"
+		label	"Bounding Box"
+		hidewhentab	"{ boundtype != box }"
 
-		import {
-		    label	limit_p1
-		    source	"op:limit"
-		    mask	"behavior event group preservegroup hitindex bounce gaintan gainnml"
-		    enable	1
+		parm {
+		    name	"box_minsize"
+		    label	"Minimum Size"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    range	{ 0! 1 }
+		    export	none
+		    parmtag	{ "import_token" "minsize" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_box" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"box_minpad"
+		    label	"Lower Padding"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "import_token" "minpad" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_box" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"box_maxpad"
+		    label	"Upper Padding"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "import_token" "maxpad" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_box" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
+	    group {
+		name	"folder2_1"
+		label	"Bounding Sphere"
+		tabbreak
+		hidewhentab	"{ boundtype != sphere }"
+
+		parm {
+		    name	"sph_orient"
+		    label	"Orientation"
+		    type	ordinal
+		    default	{ "y" }
+		    menu	{
+			"x"	"X axis"
+			"y"	"Y axis"
+			"z"	"Z axis"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "orient" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_sphere" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"sph_accurate"
+		    label	"Accurate Bounds"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "import_token" "accurate" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_sphere" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"sph_minradius"
+		    label	"Minimum radius"
+		    type	float
+		    default	{ "0" }
+		    range	{ 0! 1 }
+		    export	none
+		    parmtag	{ "import_token" "minradius" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_sphere" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"sph_minpad"
+		    label	"Lower Padding"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "import_token" "minpad" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_sphere" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"sph_maxpad"
+		    label	"Upper Padding"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "import_token" "maxpad" }
+		    parmtag	{ "import_source" "op:objnet1/limit/bounds_sphere" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
+	}
+
+	import {
+	    label	"Limit Settings"
+	    enable	0
+
+	    group {
+		name	"folder1"
+		label	"Regular Limit"
+		hidewhentab	"{ limittype != 0 }"
+
+		group {
+		    name	"folder5"
+		    label	"Behavior"
 
 		    parm {
 			name	"behavior"
@@ -229,17 +345,9 @@
 		    }
 		}
 
-	    }
-
-	    group {
-		name	"folder5_1"
-		label	"Attributes"
-
-		import {
-		    label	limit_p2
-		    source	"op:limit"
-		    mask	"do*"
-		    enable	1
+		group {
+		    name	"folder5_1"
+		    label	"Attributes"
 
 		    parm {
 			name	"donumhit"
@@ -311,18 +419,10 @@
 
 	    }
 
-	}
-
-	group {
-	    name	"folder1_1"
-	    label	"Soft Limit"
-	    hidewhentab	"{ limittype != 1 }"
-
-	    import {
-		label	soft_limit_parameters
-		source	"op:softlimit"
-		mask	"behavior force vscale ignoremass overridemass mass stabledrag"
-		enable	1
+	    group {
+		name	"folder1_1"
+		label	"Soft Limit"
+		hidewhentab	"{ limittype != 1 }"
 
 		parm {
 		    name	"behavior2"

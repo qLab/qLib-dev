@@ -2,9 +2,9 @@
 version 0.8
 activate	[ 8	locks=0 ]	(	[ activate	1 ] 	)
 source	[ 0	locks=0 ]	(	`chs(\"../limit/source\")`	)
-type	[ 8	locks=0 ]	(	[ type	1 ] 	)
-limitpos	[ 8	locks=0 ]	(	[ limitposx	3.2433097362518311 ] 	[ limitposy	3.9034161567687988 ] 	[ limitposz	-5.0845322608947754 ] 	)
-limitneg	[ 8	locks=0 ]	(	[ limitnegx	-3.2433097362518311 ] 	[ limitnegy	-3.9034161567687988 ] 	[ limitnegz	-12.182332992553711 ] 	)
+type	[ 8	locks=0 ]	(	[ type	0 ] 	)
+limitpos	[ 8	locks=0 ]	(	[ limitposx	24.347955703735352 ] 	[ limitposy	5.6134705543518066 ] 	[ limitposz	9.2259140014648438 ] 	)
+limitneg	[ 8	locks=0 ]	(	[ limitnegx	-20.438539505004883 ] 	[ limitnegy	-4.7038564682006836 ] 	[ limitnegz	-27.417280197143555 ] 	)
 behavior	[ 0	locks=0 ]	(	[ behavior	0 ] 	)
 force	[ 0	locks=0 ]	(	[ force	1 ] 	)
 vscale	[ 0	locks=0 ]	(	[ vscale	0 ] 	)
