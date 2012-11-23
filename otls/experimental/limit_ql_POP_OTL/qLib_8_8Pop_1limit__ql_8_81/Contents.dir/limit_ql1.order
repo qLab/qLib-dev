@@ -1,7 +1,10 @@
-6
+9
 limit
 objnet1
 IN
 switch_softlimit
 softlimit
 OUT
+grp_to_kill
+kill_1
+switch_quick_kill

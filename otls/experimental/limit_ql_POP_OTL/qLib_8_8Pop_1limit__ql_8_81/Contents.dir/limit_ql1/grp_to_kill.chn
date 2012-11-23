@@ -1,0 +1,47 @@
+{
+    channel multiindex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $ID }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\"../objnet1/limit\", D_X)" }
+    }
+    channel sizex {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "bbox(\"../objnet1/limit\", D_XSIZE)" }
+    }
+    channel sizey {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "bbox(\"../objnet1/limit\", D_YSIZE)" }
+    }
+    channel sizez {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "bbox(\"../objnet1/limit\", D_ZSIZE)" }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\"../objnet1/limit\", D_Y)" }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "centroid(\"../objnet1/limit\", D_Z)" }
+    }
+  }

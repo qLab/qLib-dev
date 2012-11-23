@@ -1,4 +1,4 @@
-# Dialog script for qLib::limit_ql::1 automatically generated 11/23/12 15:12:06
+# Dialog script for qLib::limit_ql::1 automatically generated 11/23/12 16:24:41
 
 {
     name	qLib::limit_ql::1
@@ -158,6 +158,14 @@
 		    parmtag	{ "import_token" "maxpad" }
 		    parmtag	{ "import_source" "op:objnet1/limit/bounds_box" }
 		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"quick_kill"
+		    label	"Quick Kill"
+		    type	toggle
+		    default	{ "0" }
+		    range	{ 0 1 }
+		    export	none
 		}
 	    }
 

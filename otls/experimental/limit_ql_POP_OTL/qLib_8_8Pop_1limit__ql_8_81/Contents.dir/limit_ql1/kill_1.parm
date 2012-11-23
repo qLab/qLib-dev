@@ -1,0 +1,10 @@
+{
+version 0.8
+activate	[ 8	locks=0 ]	(	1	)
+source	[ 0	locks=0 ]	(	__to_kill	)
+init	[ 0	locks=0 ]	(	0	)
+rule	[ 0	locks=0 ]	(	1	)
+event	[ 0	locks=0 ]	(	""	)
+group	[ 0	locks=0 ]	(	""	)
+preservegroup	[ 0	locks=0 ]	(	"off"	)
+}
