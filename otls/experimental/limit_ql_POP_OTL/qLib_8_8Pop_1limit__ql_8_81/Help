@@ -4,7 +4,7 @@
 
 = Limit qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Applies spatial boundaries to particles using the bounds of a geometric object."""
 
@@ -36,6 +36,12 @@ Instead of numeric bounds, it uses the bounding box (or sphere) of a specified g
             - ... the shape of the boundary (box or sphere);
             - ... the type of the limit operation (regular or soft, see below).
 
+        Bounding Box:
+            Parameters of [Node:sop/bound] SOP (Box tab).
+
+        Bounding Sphere:
+            Parameters of [Node:sop/bound] SOP (Sphere tab).
+
     Regular Limit:
         Parameters of the regular limit mode -- see the [Limit POP documentation|Node:pop/limit] for details.
 
@@ -51,6 +57,14 @@ Instead of numeric bounds, it uses the bounding box (or sphere) of a specified g
 
 
 @Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-23:
+        Added extra parameters for controls over placement and padding of the bounding geometry.
+        Added new feature 'Quick Kill' (box mode only -- TEST feature).
+
+    _older releases_ ---
 
     Version 0.0.1:
         Initial release.

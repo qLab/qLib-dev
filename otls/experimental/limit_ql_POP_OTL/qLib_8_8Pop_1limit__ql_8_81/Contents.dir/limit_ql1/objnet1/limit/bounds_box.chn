@@ -1,0 +1,56 @@
+{
+    channel minsizex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minsizex\") }
+    }
+    channel minsizey {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minsizey\") }
+    }
+    channel minsizez {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minsizez\") }
+    }
+    channel minpadx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minpadx\") }
+    }
+    channel minpady {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minpady\") }
+    }
+    channel minpadz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_minpadz\") }
+    }
+    channel maxpadx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_maxpadx\") }
+    }
+    channel maxpady {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_maxpady\") }
+    }
+    channel maxpadz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../box_maxpadz\") }
+    }
+  }

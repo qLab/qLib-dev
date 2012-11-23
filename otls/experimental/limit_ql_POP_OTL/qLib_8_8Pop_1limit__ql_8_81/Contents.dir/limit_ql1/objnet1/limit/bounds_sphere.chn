@@ -1,0 +1,57 @@
+{
+    channel orient {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../../sph_orient\") }
+    }
+    channel accurate {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_accurate\") }
+    }
+    channel minradius {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_minradius\") }
+    }
+    channel minpadx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_minpadx\") }
+    }
+    channel minpady {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_minpady\") }
+    }
+    channel minpadz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_minpadz\") }
+    }
+    channel maxpadx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_maxpadx\") }
+    }
+    channel maxpady {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_maxpady\") }
+    }
+    channel maxpadz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../sph_maxpadz\") }
+    }
+  }
