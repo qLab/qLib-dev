@@ -1,11 +1,11 @@
 Vop/makexform //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/makexform otls/OPlibVop.otl
+Vop/complement //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/mix //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
 qLib::Vop/optransform_ql::1 //mate/n/qLab/qLib/otls/future/optransform_ql_VOP.otl
 Vop/importattrib //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl
-Vop/mix //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
-Vop/mix otls/OPlibVop.otl
 Vop/invert //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
 Vop/invert otls/OPlibVop.otl
-Vop/complement //mlnfs/Sidefx/Houdini 12.1.136/houdini/otls/OPlibVop.otl
-Vop/complement otls/OPlibVop.otl

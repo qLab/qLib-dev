@@ -17,7 +17,7 @@
       righttype = extend
       defaultString = \"/obj/null1\"
       flags = 0
-      segment { length = 0 expr = chs(\"../object_name\") }
+      segment { length = 0 expr = chsop(\"../object_name\") }
     }
     channel _vex_uscale {
       lefttype = extend
@@ -136,6 +136,6 @@
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../container_corr\") }
+      segment { length = 0 value = 1 1 expr = "if(ch(\"../transform_mode\") >= 1, 1, 0)" }
     }
   }

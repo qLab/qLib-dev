@@ -1,4 +1,4 @@
-# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/21/12 20:50:18
+# Dialog script for qLib::weighted_transform_ql::1 automatically generated 11/23/12 17:12:15
 
 {
     name	qLib::weighted_transform_ql::1
@@ -131,16 +131,32 @@
 	    parmtag	{ "oprelative" "." }
 	}
 	parm {
-	    name	"container_corr"
-	    label	"Mind Container Transform"
-	    type	toggle
-	    default	{ "on" }
+	    name	"transform_mode"
+	    label	"Transform"
+	    type	integer
+	    default	{ "1" }
 	    disablewhen	"{ use_obj == 0 }"
+	    menu	{
+		"0"	"None"
+		"1"	"Into This Object"
+		"2"	"Into Specified Object"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"transform_object"
+	    label	"Transform Object"
+	    type	oppath
+	    default	{ "/obj/geo1" }
+	    disablewhen	"{ use_obj == 0 } { transform_mode != 2 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
 	}
 	parm {
 	    name	"labelparm"
@@ -250,6 +266,15 @@
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
 	}
 	parm {
 	    name	"invert"
