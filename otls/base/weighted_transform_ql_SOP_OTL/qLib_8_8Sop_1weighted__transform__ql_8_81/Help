@@ -25,9 +25,11 @@
     Deformer Object:
         The deformer transformation will be the _difference_ of the *Base Object*'s transformation and
         this object's.
-    Mind Container Transform:
-        Take the geometry container's transformation into account when calculating the _difference_ of
-        the base and deformer objects' transformations.
+    Transform:
+        Interpretation mode of the deformation transforms relative to a geocontainer's.
+    Transform Object:
+        In _Into Specified Object_ mode the object whose transformation has to taken into
+        consideration.
     Transform Parameters:
         Standard transform parameters.
     Invert Transform:
