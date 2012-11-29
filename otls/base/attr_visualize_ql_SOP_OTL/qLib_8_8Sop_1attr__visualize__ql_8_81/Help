@@ -39,7 +39,7 @@ NOTE:
         Workflow-wise this allows to connect a "before" and an "after" state, and quickly switch between
         them for comparison.
 
-    Preprocessing:
+    Preprocess:
 
         Decimation & Safeguards:
 
@@ -75,7 +75,7 @@ NOTE:
                 per-primitive, etc.) can safely be converted to per-point type for
                 visualization. A list of multiple attribute names is supported.
 
-    Floats:
+    Scalars:
         Visualization of floating-point values by mapping the values to a color ramp
         and apply the colors to the geometry accordingly.
 
@@ -127,6 +127,39 @@ NOTE:
         - Orientation will be affected by existing orientation (`orient`), velocity (`v`),
             normal (`N`) and up vector (`up`) attributes.
 
+    Markers:
+        Here the specified attributes can be automatically set up as markers for viewport display
+        (*Display Options->Markers* -- press `D` in the viewport).
+
+        point, primitive, vertex:
+            Viewport display markers will be generated for all the attributes listed in these fields.
+
+            (An enabled and empty field results in using all attributes).
+
+        As Numeric:
+            The attributes listed here will always be displayed in numeric (textual) format, regardless
+            of their type (useful for numeric display of vector attributes).
+
+        As Velocity:
+            The attributes listed here will be considered as velocity-type attributes (they use a different
+            scale setting).
+
+        Vector Scale:
+            The `scale` display setting for regular vector attributes.
+
+        Velocity Scale:
+            The `scale` display setting for velocity-type vector attributes (see above.)
+
+        Create/Update Markers:
+            Press this button to build or update the marker list in the viewports' Display Options.
+
+        Clear Markers:
+            Pressing this button will delete all automatically created markers.
+            User-defined "regular" markers will not be affected.
+
+        Clear All Markers...:
+            This button will delete _all_ markers from the viewports' Display Options.
+
     Output:
         Settings on how to output visualization results.
 
@@ -143,6 +176,9 @@ NOTE:
 @Release_Notes Release Notes
 
 _interface version 1_ ---
+
+2012-11-29:
+    New functionality: automatic attribute marker generation for viewport display options.
 
 2012-11-08:
     - Bug fix: Orient & Scale preview didn't work if `pscale` attribute was already present.

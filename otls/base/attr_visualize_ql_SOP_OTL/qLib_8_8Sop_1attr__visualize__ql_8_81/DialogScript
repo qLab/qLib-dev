@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 11/08/12 03:11:20
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 11/29/12 03:43:47
 
 {
     name	qLib::attr_visualize_ql::1
@@ -44,7 +44,7 @@
     }
     group {
 	name	"folder1"
-	label	"Preprocessing"
+	label	"Preprocess"
 
 	group {
 	    name	"folder3"
@@ -230,7 +230,7 @@
 
     group {
 	name	"folder1_1"
-	label	"Floats & Colors"
+	label	"Scalars"
 
 	parm {
 	    name	"color_vis"
@@ -591,6 +591,231 @@
 
     group {
 	name	"folder1_4"
+	label	"Markers"
+
+	group {
+	    name	"folder5"
+	    label	"Display Options -> Markers"
+
+	    parm {
+		name	"do_markers_pt"
+		label	"do_markers_pt"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_pt"
+		label	"point"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_markers_pt == 0 }"
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_markers_pr"
+		label	"do_markers_pr"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_pr"
+		label	"primitive"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_markers_pr == 0 }"
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().primAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_markers_vtx"
+		label	"do_markers_vtx"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_vtx"
+		label	"vertex"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_markers_vtx == 0 }"
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    attrs = hou.pwd().geometry().vertexAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "    " ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"force_text"
+		label	"As Numeric"
+		type	string
+		default	{ "Cd uv" }
+		help	"These attributes will always be displayed in numeric (text) mode."
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    g = hou.pwd().geometry()" ]
+		    [ "    attrs = g.pointAttribs() + g.primAttribs() + g.vertexAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "" ]
+		    [ "    attrs = sorted( list(set(attrs)) )" ]
+		    [ "" ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"vel_attribs"
+		label	"As Velocity"
+		type	string
+		default	{ "v accel" }
+		help	"These attributes will have text (numeric) markers, regardless of their type."
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    g = hou.pwd().geometry()" ]
+		    [ "    attrs = g.pointAttribs() + g.primAttribs() + g.vertexAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "" ]
+		    [ "    attrs = sorted( list(set(attrs)) )" ]
+		    [ "" ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_vec_scale"
+		label	"Vector Scale"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_vel_scale"
+		label	"Velocity Scale"
+		type	float
+		default	{ "ch(\"markers_vec_scale\") / $FPS" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"build_markers"
+		label	"Create/Update Markers"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().create_markers(kwargs)" }
+	    }
+	    parm {
+		name	"clear_markers"
+		label	"Clear Markers"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().clear_built_markers(kwargs)" }
+	    }
+	}
+
+	group {
+	    name	"folder5_1"
+	    label	"Misc"
+
+	    parm {
+		name	"clear_all_markers"
+		label	"Clear All Markers..."
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().clear_all_markers(kwargs)" }
+	    }
+	}
+
+    }
+
+    group {
+	name	"folder1_5"
 	label	"Output"
 
 	parm {

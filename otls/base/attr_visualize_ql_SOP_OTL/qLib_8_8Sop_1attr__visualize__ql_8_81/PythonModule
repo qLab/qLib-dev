@@ -1,3 +1,10 @@
+
+
+def ynreq(msg):
+    return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
+
+
+
 def decpreset(kwargs):
 
     m = kwargs['script_value']
@@ -21,4 +28,129 @@ def decpreset(kwargs):
     if m=="off":
         p("keep_every_n_comps").set(False)
         p("prim_num_limit").set(False)
+
+
+
+def clear_built_markers(kwargs):
+    if True: #ynreq("Clear generated display markers?"):
+        for m in hou.hscript("viewoptls")[0].split():
+            if '_vis_' in m:
+                print "viewoptrm %s" % m
+                hou.hscript("viewoptrm %s" % m)
+
+
+def clear_all_markers(kwargs):
+    if ynreq("Clear ALL existing display markers?"):
+        for m in hou.hscript("viewoptls")[0].split():
+            print "viewoptrm %s" % m
+            hou.hscript("viewoptrm %s" % m)
+
+
+
+def create_markers(kwargs):
+    """."""
+
+    type_names = {
+        hou.attribType.Point: "point",
+        hou.attribType.Prim: "prim",
+        hou.attribType.Vertex: "vertex"
+    }
+
+    type_labels = {
+        hou.attribType.Point: "p: ",
+        hou.attribType.Prim: "pr: ",
+        hou.attribType.Vertex: "vtx: "
+    }
+
+    type_name  = lambda t: type_names[t]  if t in type_names  else ""
+    type_label = lambda t: type_labels[t] if t in type_labels else ""
+    p  = lambda n: hou.pwd().parm(n).eval()
+    ps = lambda n: hou.pwd().parm(n).eval().strip()
+
+    g = hou.pwd().geometry()
+
+    def to_as(attrs):
+        return " ".join( [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ] )
+
+    attrs_pt  = ps('markers_pt')
+    attrs_pr  = ps('markers_pr')
+    attrs_vtx = ps('markers_vtx')
+    force_tx  = ps('force_text').split()
+    vel_attrs = ps('vel_attribs').split()
+
+    scale_v   = p('markers_vec_scale')
+    scale_vel = p('markers_vel_scale')
+
+    if attrs_pt==""  and p('do_markers_pt'):  attrs_pt = to_as(g.pointAttribs())
+    if attrs_pr==""  and p('do_markers_pr'):  attrs_pr = to_as(g.primAttribs())
+    if attrs_vtx=="" and p('do_markers_vtx'): attrs_vtx = to_as(g.vertexAttribs())
+
+    CS = [
+            (attrs_pt, g.findPointAttrib),
+            (attrs_pr, g.findPrimAttrib),
+            (attrs_vtx, g.findVertexAttrib)
+        ]
+
+    for C in CS:
+
+        attrs = C[0].split()
+        find_attr_func = C[1] #g.findPointAttrib
+    
+        for name in attrs:
+            a = find_attr_func(name)
+            if a and a.dataType() is not hou.attribData.String:
+                opt_name = "_vis_%s" % name
+                size = a.size()
+                is_xn = a.isTransformedAsNormal()
+                is_xv = a.isTransformedAsVector()
+                is_vect = size==3 and name not in force_tx
+                as_vel = name in vel_attrs
+                scale = scale_vel if as_vel else scale_v
+    
+                label = "%s%s" % ( type_label(a.type()), name )
+    
+                if is_vect:
+                    label += " (vector"
+                    if as_vel: label += "/velocity"
+                    if is_xn: label += "; xformed as normal"
+                    if is_xv: label += "; xformed as vector"
+                    label += ")"
+    
+                print "--- %s: '%s'" % (name, label)
+    
+                # create/update marker
+    
+                hou.hscript('viewoptrm %s' % opt_name)
+                hou.hscript('viewoptadd %s %s' % ('vector' if is_vect else 'text', opt_name))
+    
+                def vos(parm, val):
+                    print ' --- viewoptset %s %s ( %s )' % (opt_name, parm, val)
+                    hou.hscript('viewoptset %s %s ( %s )' % (opt_name, parm, val))
+
+                if True:    
+                    vos('attrib', a.name())
+                    vos('class', type_name(a.type()))
+                    vos('label', '"%s"' % label)
+                if is_vect:
+                    vos('scale', scale)
+    
+            else:
+                print "couldn't find attribute %s" % name
+
+    print "done. ------------"
+
+'''
+viewoptset
+    vector_dunno
+        arrow ( 0 )
+        attrib ( N )
+        class ( point )
+        color ( 0 0 1 )
+        icon ( SI_pointNormal )
+        label ( "pr: primN (vector)" )
+        overridecolor ( 0 )
+        scale ( 1 )
+        selcolor ( 0 0.45 1 )
+        visibility ( 1 )
+'''
 
