@@ -1,4 +1,4 @@
-# Automatically generated script: Friday November 09, 12:48 2012
+# Automatically generated script: Friday November 30, 14:24 2012
 \set noalias = 1
 #
 #  Creation script for qLib::waypoint_ql::2 operator
@@ -10,6 +10,5 @@ if ( "$arg1" == "" ) then
 endif
 
 # Node $arg1 (qLib::Sop/waypoint_ql::2)
-opspareds "" $arg1
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

@@ -4,6 +4,7 @@ import os
 import platform
 import shutil
 import getpass
+import random
 
 
 def dispmsg(msg):
@@ -122,14 +123,17 @@ def post_render(path):
 
 
 
-def create_file_loader():
+def create_file_loader(soptype="file"):
     """Create related file SOP (loader)."""
     n = hou.pwd()
     p = n.parent()
 
-    if ynreq("Create loader File SOP for %s?" % n.name()):
+    if True: #ynreq("Create loader %s SOP for %s?" % (soptype.capitalize(), n.name())):
 
-        f = p.createNode("file", "%s_loader" % n.name())
+        f = p.createNode(soptype, "%s_loader" % n.name())
+
+        pos = n.position()
+        f.setPosition([ pos[0]+random.random()-0.5, pos[1]-0.5 ])
 
         # hackety-hack    
         cmd = 'parm { name "filemode" baseparm export none } parm { name "file" baseparm export all } parm { name "reload" baseparm export none } parm { name "objpattern" baseparm export none } parm { name "geodatapath" baseparm export none } parm { name "missingframe" baseparm export none } parm { name "loadtype" baseparm export none } parm { name "OS" label "Waypoint Name" type string default { "waypoint_ql1" } export none } parm { name "outdir" label "Output Directory" type string default { "$HIP/tmp--sim/`chs(\\"OS\\")`" } export none } parm { name "outname" label "Name" type string default { "`chs(\\"OS\\")`_`ch(\\"variant\\")`" } export none } parm { name "outext" label "Extension" type string default { "$F4.bgeo.gz" } export none } parm { name "variant" label "Variant" type integer default { "0" } export none } parm { name "variantnames" label "Variant Names" type string default { "default hires proxy" } export none } parm { name "variantname" label "Variant Name" type string default { "" } export none }'
@@ -147,7 +151,7 @@ def create_file_loader():
     
         f.parm("variant").set( n.parm("variant").eval() )
     
-        dispmsg("Created node: %s" % f.path())
+        #dispmsg("Created node: %s" % f.path())
 
 
 

@@ -63,10 +63,14 @@ WARNING:
     with a [Wedge output driver (ROP)|Node:out/wedge].
 
     TIP:
-        You can invoke the "Writer" mode of a Waypoint from an output network using a [Fetch ROP|Node:out/fetch]
-        (for this purpose, the internal writer node in a Waypoint is called `RENDER` -- e.g. `/obj/geo1/waypoint_ql1/RENDER`).
-        This way it's easy to build [Node:out/fetch]/[Node:out/wedge] networks that generate variants quicksville.
+        *To quickly build ROP networks of Waypoints*, create a ROP network, then use one of the following buttons in the Tools tab:
+        - _Tools->Create linked Fetch ROP_
+        - _Tools->Create Fetch + Wedge ROP_
 
+        (Make sure you set the _Target ROP Network_ parameter on all your Waypoints.)
+
+        Then you can build the ROP network by connecting the generated nodes in the proper order. By
+        rendering this ROP network, all your Waypoints will be updated properly.
 
 @parameters
 
@@ -119,7 +123,9 @@ WARNING:
 
         Extension:
             Output file extension (with file numbering for sequences). See the pop-down menu for
-            the most regular values. The `.gz` suffix indicates file compression; `.bhclassic`
+            the most regular values.
+
+            The `.gz` suffix indicates file compression; `.bhclassic`
             is the "old" H11 bgeo format, compatible with other applications such as PartIO.
 
         Output Variant:
@@ -133,6 +139,8 @@ WARNING:
         Variant Names:
             A list of names associated with variant indices (space-separated -- first is variant #0, second
             is variant #1, and so on).
+
+            *To use named variants, select the appropriate naming preset from the _Name_ pop-down menu.*
 
         Variant Name (feedback):
             This is a read-only parameter that returns the variant name specified by the variant number.
@@ -167,7 +175,8 @@ WARNING:
         Initialize Simulation OPs:
             Force all simulation OPs to be reset. This includes DOP Networks, POP SOPs, and other OPs that cache their results.
 
-            This is the safest way to render out a simulation, because it starts the simulation from scratch and discards any partial simulations you might have done with different parameters. However, throwing away an already-cooked simulation can be expensive.
+            This is the safest way to render out a simulation, because it starts the simulation from scratch
+            and discards any partial simulations you might have done with different parameters.
 
         PerfMon Output:
             If enabled, the Performance Monitor will be recording during the rendering process,
@@ -208,12 +217,21 @@ WARNING:
             Creates a [File SOP|Node:sop/file] that is set up to read the file(s) written by
             the current waypoint node (including variants).
 
+        Build FileMerge SOP:
+            Creates a [File Merge SOP|Node:sop/filemerge] that is set up to read the file(s) written by
+            the current waypoint node (including variants).
+
+            TIP:
+                This node is ideal for loading geometry consisting of multiple files for a frame
+                (such as particles generated with a "wedged-seeded" workflow).
+
         Create Fetch, Fetch+Wedge ROP:
             Creates a [Fetch ROP|Node:out/fetch] or a [Node:out/fetch]/[Node:out/wedge]
             combination to render this waypoint (in the specified ROP network).
 
             NOTE:
-                For Wedge ROP(s), make sure the variant range is set up properly.
+                For Wedge ROP(s), make sure the variant range is set up properly. (If you want to
+                wedge some other parameter than `variant`, you need to set it up as well.)
 
 
 
@@ -224,10 +242,13 @@ WARNING:
     - [Node:out/wedge]
 
 
-
 @Release_Notes Release Notes
 
     _interface version 2_ ---
+
+    2012-11-30:
+        - Added support for File Merge SOP creation (for loading wedged-seeded geometry).
+        - Created File/FileMerge SOPs are now placed right under the Waypoint node in the network.
 
     2012-11-09:
         - Minor UI changes (more accessible render/reload buttons, label changes, etc.)

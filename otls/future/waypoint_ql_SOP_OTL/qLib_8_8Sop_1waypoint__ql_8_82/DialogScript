@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 11/09/12 12:48:54
+# Dialog script for qLib::waypoint_ql::2 automatically generated 11/30/12 14:24:35
 
 {
     name	qLib::waypoint_ql::2
@@ -525,7 +525,7 @@
 
 	    group {
 		name	"folder4"
-		label	"File System (Linux only)"
+		label	"File System"
 		tabbreak
 
 		parm {
@@ -540,7 +540,7 @@
 		}
 		parm {
 		    name	"outdir_open2"
-		    label	"Open in File Manager..."
+		    label	"Open in File Manager... (Linux only)"
 		    type	button
 		    default	{ "1" }
 		    help	"Open this directory in the OS file manager."
@@ -580,10 +580,22 @@
 		    label	"Build File SOP (loader) for this node"
 		    type	button
 		    default	{ "1" }
+		    help	"Creates a File (loader) SOP with the same parameters as the Waypoint node."
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "script_callback_language" "python" }
 		    parmtag	{ "script_callback" "hou.pwd().hdaModule().create_file_loader()" }
+		}
+		parm {
+		    name	"create_filemerge_loader"
+		    label	"Build FileMerge SOP for this node"
+		    type	button
+		    default	{ "1" }
+		    help	"Creates a File (loader) SOP with the same parameters as the Waypoint node.\\nUseful for loading geometry composed from multiple files\\n(such as wedged/seeded particles.)"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().create_file_loader(soptype=\"filemerge\")" }
 		}
 		parm {
 		    name	"empty_label_4"
