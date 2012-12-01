@@ -229,15 +229,29 @@ WARNING:
             Creates a [Fetch ROP|Node:out/fetch] or a [Node:out/fetch]/[Node:out/wedge]
             combination to render this waypoint (in the specified ROP network).
 
-            NOTE:
-                For Wedge ROP(s), make sure the variant range is set up properly. (If you want to
-                wedge some other parameter than `variant`, you need to set it up as well.)
+        Create Fetch + Multiple Wedges:
+            Same as the second above, but instead of a single Wedge ROP, it creates copies of the
+            same Wedge ROP for each value in the Wedge Range (see below).
+
+            This results in a Wedge node for each variant, so every single variant can be rendered
+            by calling the corresponding Wedge. This might be convenient for running multiple wedges
+            simultaneously on the same machine in batch mode, for example.
+
+
+        Wedge Variant Parm:
+            Name of the Waypoint SOP parameter that should be "wedged" (changed for each wedge).
+            The default setting is to work with the Waypoint's `variant` parameter.
+
+        Wedge Range:
+            The range to set up on wedge node(s). The wedge(s) will go through this numeric range
+            and render the Waypoint for each value.
 
 
 
 @related
     - [Node:sop/cache]
     - [Node:sop/file]
+    - [Node:sop/filemerge]
     - [Node:out/fetch]
     - [Node:out/wedge]
 
@@ -245,6 +259,14 @@ WARNING:
 @Release_Notes Release Notes
 
     _interface version 2_ ---
+
+    2012-12-01:
+        Various workflow enhancements (mostly Wedge-related):
+        - More convenient default parameter settings on created Wedge ROPs
+        - Wedge range can now be explicitly specified
+        - Multiple Wedge nodes can now be created (where each is set to "Single Wedge" mode)
+        - Target ROP network is created if it doesn't exist
+        - UI: minor layout changes; some pop-up messages turned into status-line feedbacks
 
     2012-11-30:
         - Added support for File Merge SOP creation (for loading wedged-seeded geometry).

@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 11/30/12 14:24:35
+# Dialog script for qLib::waypoint_ql::2 automatically generated 12/01/12 04:07:12
 
 {
     name	qLib::waypoint_ql::2
@@ -151,7 +151,7 @@
 	    }
 	    parm {
 		name	"variant"
-		label	"Output Variant"
+		label	"Variant"
 		type	integer
 		default	{ "0" }
 		range	{ 0! 9 }
@@ -200,6 +200,53 @@
 		range	{ 0 1 }
 		export	none
 	    }
+	    group {
+		name	"folder4"
+		label	"File System"
+
+		parm {
+		    name	"make_dir"
+		    label	"Create Output Directory"
+		    type	button
+		    default	{ "1" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().mk_dir(param='outdir')" }
+		}
+		parm {
+		    name	"outdir_open2"
+		    label	"Open in File Manager... (Linux only)"
+		    type	button
+		    default	{ "1" }
+		    help	"Open this directory in the OS file manager."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
+		}
+		parm {
+		    name	"outdir_delete"
+		    label	"Delete Directory..."
+		    type	button
+		    default	{ "1" }
+		    help	"Open this directory in the OS file manager."
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().rm_dir(param='outdir')" }
+		}
+		parm {
+		    name	"labelparm3"
+		    label	"Label"
+		    type	label
+		    nolabel
+		    default	{ "" }
+		    range	{ 0 1 }
+		    export	none
+		}
+	    }
+
 	}
 
 	group {
@@ -262,7 +309,7 @@
 	    }
 	    parm {
 		name	"sopoutput"
-		label	"Output File"
+		label	"* Output File"
 		type	file
 		default	{ "`chs(\"outfile\")`" }
 		menureplace	{
@@ -524,60 +571,12 @@
 	    label	"Tools"
 
 	    group {
-		name	"folder4"
-		label	"File System"
-		tabbreak
-
-		parm {
-		    name	"make_dir"
-		    label	"Create Output Directory"
-		    type	button
-		    default	{ "1" }
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "script_callback_language" "python" }
-		    parmtag	{ "script_callback" "hou.pwd().hdaModule().mk_dir(param='outdir')" }
-		}
-		parm {
-		    name	"outdir_open2"
-		    label	"Open in File Manager... (Linux only)"
-		    type	button
-		    default	{ "1" }
-		    help	"Open this directory in the OS file manager."
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "script_callback_language" "python" }
-		    parmtag	{ "script_callback" "hou.pwd().hdaModule().open_dir(param='outdir')" }
-		}
-		parm {
-		    name	"outdir_delete"
-		    label	"Delete Directory..."
-		    type	button
-		    default	{ "1" }
-		    help	"Open this directory in the OS file manager."
-		    range	{ 0 1 }
-		    export	none
-		    parmtag	{ "script_callback_language" "python" }
-		    parmtag	{ "script_callback" "hou.pwd().hdaModule().rm_dir(param='outdir')" }
-		}
-		parm {
-		    name	"labelparm3"
-		    label	"Label"
-		    type	label
-		    nolabel
-		    default	{ "" }
-		    range	{ 0 1 }
-		    export	none
-		}
-	    }
-
-	    group {
 		name	"folder1"
-		label	"Create Related"
+		label	"Create Related Nodes"
 
 		parm {
 		    name	"create_file_loader"
-		    label	"Build File SOP (loader) for this node"
+		    label	"Build File (loader) SOP for this node"
 		    type	button
 		    default	{ "1" }
 		    help	"Creates a File (loader) SOP with the same parameters as the Waypoint node."
@@ -612,6 +611,20 @@
 		    label	"ROP Node(s)"
 
 		    parm {
+			name	"out_ropnet"
+			label	"Target ROP Network"
+			type	oppath
+			default	{ "/out" }
+			menureplace	{
+			    "/out"	"/out"
+			    "../ROP_$OS"	"New ROP Network Here"
+			}
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "oprelative" "." }
+			parmtag	{ "opfilter" "!!ROP!!" }
+		    }
+		    parm {
 			name	"create_fetch"
 			label	"Create linked Fetch ROP"
 			type	button
@@ -632,14 +645,35 @@
 			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch(wedge=True)" }
 		    }
 		    parm {
-			name	"out_ropnet"
-			label	"Target ROP Network"
-			type	oppath
-			default	{ "/out" }
+			name	"create_fetch_wedges"
+			label	"Create Fetch + Multiple Wedges"
+			type	button
+			default	{ "1" }
 			range	{ 0 1 }
 			export	none
-			parmtag	{ "oprelative" "." }
-			parmtag	{ "opfilter" "!!ROP!!" }
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch(wedge=True, multiWedges=True)" }
+		    }
+		    parm {
+			name	"out_variant_parm"
+			label	"Wedge Variant Parm"
+			type	string
+			default	{ "variant" }
+			menureplace	{
+			    "variant"	"variant"
+			    "seed"	"seed"
+			}
+			range	{ 0 1 }
+			export	none
+		    }
+		    parm {
+			name	"out_wedge_range"
+			label	"Wedge Range"
+			type	intvector2
+			size	2
+			default	{ "0" "3" }
+			range	{ -1 1 }
+			export	none
 		    }
 		}
 
