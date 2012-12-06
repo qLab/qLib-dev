@@ -1,0 +1,42 @@
+#icon: POP/property
+#context: sop
+#type: node
+
+= Point qL =
+
+*interface version 1*
+
+"""Convenience/shortcut operator to quickly add or set point attributes."""
+
+The purpose of this node is to quickly set up some of the most frequently used
+point attributes to constant initial values (e.g. to add initial normal/up pair aligned
+with the world axes).
+
+This node is similar to the [Node:sop/point] SOP, but with several key differences:
+- Less attributes are available for setting
+- The initial values can only be constants
+- Initialization is much faster.
+
+
+@Parameters
+    For details see the [help card of the Point SOP|Node:sop/point].
+
+
+@related
+    - [Point Attr qL|Node:sop/qLib::pointattr_ql::1]
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Node:sop/point]
+    - [Node:sop/primitive]
+
+@todo TODO
+    - (done) Proper handling of point normals (usual vopsop/N troubles)
+    - ...
+
+
+@Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2012-11-22:
+        First prototype.
+

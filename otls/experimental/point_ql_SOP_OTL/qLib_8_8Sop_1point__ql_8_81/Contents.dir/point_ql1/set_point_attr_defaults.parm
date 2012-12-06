@@ -1,0 +1,15 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+_vex_set_position	[ 0	locks=0 ]	(	[ _vex_set_position	0 ] 	)
+_vex_position	[ 0	locks=0 ]	(	[ _vex_positionx	0 ] 	[ _vex_positiony	0 ] 	[ _vex_positionz	0 ] 	)
+_vex_set_normal	[ 8	locks=0 ]	(	[ _vex_set_normal	1 ] 	)
+_vex_normal	[ 0	locks=0 ]	(	0	0	1	)
+_vex_set_up	[ 0	locks=0 ]	(	[ _vex_set_up	1 ] 	)
+_vex_up	[ 0	locks=0 ]	(	[ _vex_upx	0 ] 	[ _vex_upy	1 ] 	[ _vex_upz	0 ] 	)
+_vex_set_velocity	[ 0	locks=0 ]	(	[ _vex_set_velocity	1 ] 	)
+_vex_velocity	[ 0	locks=0 ]	(	[ _vex_velocityx	1 ] 	[ _vex_velocityy	0 ] 	[ _vex_velocityz	0 ] 	)
+}

@@ -1,0 +1,20 @@
+text "Attributes:
+- velocity (with fps setting)
+- orient
+- rotation (rot)
+- pscale
+
+(...anything else that is frequently needed and is reasonable to have a const initializer)
+"
+position 5.77243 -16.5133
+size 2.6231 2.3722
+flags =  minimize off
+stat
+{
+  create 1353539596
+  modify 1353540132
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.36 0.36 0.36 
+end

@@ -1,0 +1,13 @@
+Operator:     qLib::point_ql::1
+Label:        Point qL
+Path:         oplib:/qLib::Sop/point_ql::1?qLib::Sop/point_ql::1
+Icon:         POP_property
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Dec  6 23:16:24 2012
+

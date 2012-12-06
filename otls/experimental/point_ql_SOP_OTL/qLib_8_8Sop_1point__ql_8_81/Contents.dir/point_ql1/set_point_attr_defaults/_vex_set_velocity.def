@@ -1,0 +1,29 @@
+comment ""
+position -0.0588927 -2.73765
+cachesize 1
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "_vex_set_velocity"
+1 "bound__vex_set_velocity"
+}
+inputsNamed3
+{
+2 	"" "" 1 "input"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create 1353538091
+  modify 1354831287
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0 0.4 1 
+delscript ""
+exprlanguage hscript
+end

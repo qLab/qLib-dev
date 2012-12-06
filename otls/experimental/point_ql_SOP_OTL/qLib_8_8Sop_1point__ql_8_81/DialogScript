@@ -1,0 +1,154 @@
+# Dialog script for qLib::point_ql::1 automatically generated 12/06/12 23:15:30
+
+{
+    name	qLib::point_ql::1
+    script	qLib::point_ql::1
+    label	"Point qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"dodelattribs"
+	label	"Remove Attributes"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"delattribs"
+	label	"Remove Attribs"
+	type	string
+	default	{ "* ^varmap" }
+	disablewhen	"{ dodelattribs == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"group"
+	label	"Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l set_point_attr_defaults vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_position"
+	label	"set_position"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"position"
+	label	"position: P"
+	type	direction
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ set_position == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_normal"
+	label	"set_normal"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"normal"
+	label	"normal: N"
+	type	direction
+	size	3
+	default	{ "0" "0" "1" }
+	disablewhen	"{ set_normal == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_up"
+	label	"set_up"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"up"
+	label	"up vector: up"
+	type	direction
+	size	3
+	default	{ "0" "1" "0" }
+	disablewhen	"{ set_up == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_velocity"
+	label	"set_velocity"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velocity"
+	label	"velocity: v"
+	type	direction
+	size	3
+	default	{ "1" "0" "0" }
+	disablewhen	"{ set_velocity == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

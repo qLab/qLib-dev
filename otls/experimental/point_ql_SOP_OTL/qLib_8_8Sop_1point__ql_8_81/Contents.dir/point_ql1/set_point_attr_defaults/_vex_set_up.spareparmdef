@@ -1,0 +1,256 @@
+    parm {
+	name	"parmname"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"parmlabel"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"showlabel"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"parmtype"
+	baseparm
+	export	none
+    }
+    group {
+	name	"stdswitcher6"
+	label	"Numeric Defaults"
+
+	parm {
+	    name	"floatdef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"rangeflt"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"intdef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"rangeint"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"toggledef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"angledef"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_1"
+	label	"Vector"
+
+	parm {
+	    name	"float3def"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vectordef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"normaldef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"pointdef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"directiondef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"float4def"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_2"
+	label	"Matrix"
+
+	parm {
+	    name	"float9def"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"float16def"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_3"
+	label	"String"
+
+	parm {
+	    name	"stringdef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"stringtype"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"opfilter"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"filedef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"imagedef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"geometrydef"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher6_4"
+	label	"Color"
+
+	parm {
+	    name	"colordef"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"color4def"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"separator1"
+	baseparm
+	invisible
+	export	none
+    }
+    group {
+	name	"folder0"
+	label	"Settings"
+	tabbreak
+
+	parm {
+	    name	"useasparmdefiner"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"parmuniform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"usebound"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"exportparm"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"exportcontext"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"providemenu"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"menuchoices"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"User Interface"
+
+	parm {
+	    name	"invisible"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"joinnext"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"disablewhen"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"callback"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"help"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"separator2"
+	baseparm
+	invisible
+	export	none
+    }
+    parm {
+	name	"logfloatdef"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"hidewhen"
+	baseparm
+	export	none
+    }

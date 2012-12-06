@@ -1,0 +1,15 @@
+{
+version 0.8
+fusepts	[ 0	locks=0 ]	(	"off"	)
+deldegengeo	[ 0	locks=0 ]	(	"off"	)
+orientpoly	[ 0	locks=0 ]	(	"off"	)
+reversewinding	[ 0	locks=0 ]	(	"off"	)
+fixoverlap	[ 0	locks=0 ]	(	"off"	)
+deleteoverlap	[ 0	locks=0 ]	(	"on"	)
+delunusedpts	[ 0	locks=0 ]	(	"off"	)
+dodelattribs	[ 0	locks=0 ]	(	[ dodelattribs	0 ] 	)
+delattribs	[ 0	locks=0 ]	(	[ delattribs	"* ^varmap" ] 	)
+dodelgroups	[ 0	locks=0 ]	(	"off"	)
+delgroups	[ 0	locks=0 ]	(	*	)
+delnans	[ 0	locks=0 ]	(	"off"	)
+}

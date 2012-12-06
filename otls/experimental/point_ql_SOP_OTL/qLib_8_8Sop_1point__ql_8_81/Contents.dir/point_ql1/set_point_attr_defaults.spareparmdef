@@ -1,0 +1,116 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"_vex_set_position"
+	label	"_vex_set_position"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_position"
+	label	"position"
+	type	direction
+	size	3
+	default	{ "1" "0" "0" }
+	disablewhen	"{ _vex_set_position == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_set_normal"
+	label	"_vex_set_normal"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_normal"
+	label	"normal"
+	type	direction
+	size	3
+	default	{ "0" "0" "1" }
+	disablewhen	"{ _vex_set_normal == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_set_up"
+	label	"_vex_set_up"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_up"
+	label	"up"
+	type	direction
+	size	3
+	default	{ "0" "1" "0" }
+	disablewhen	"{ _vex_set_up == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_set_velocity"
+	label	"_vex_set_velocity"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_velocity"
+	label	"velocity"
+	type	direction
+	size	3
+	default	{ "1" "0" "0" }
+	disablewhen	"{ _vex_set_velocity == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

@@ -1,0 +1,13 @@
+12
+_vex_set_position
+_vex_position
+if_set_position
+_vex_set_normal
+_vex_normal
+if_set_normal
+_vex_set_up
+_vex_up
+if_set_up
+_vex_set_velocity
+_vex_velocity
+if_set_velocity
