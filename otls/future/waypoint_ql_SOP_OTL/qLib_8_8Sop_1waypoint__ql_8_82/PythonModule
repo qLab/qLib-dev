@@ -168,7 +168,7 @@ def create_file_loader(soptype="file"):
 
 
 
-def create_rop_fetch(wedge=False, multiWedges=False):
+def create_rop_fetch(fetch=True, wedge=False, multiWedges=False):
     """Create related ROP nodes (fetch/wedge)."""
     n = hou.pwd()
 
@@ -184,12 +184,17 @@ def create_rop_fetch(wedge=False, multiWedges=False):
 
             if not vp or vp=="":
                 vp = "variant"
-    
-            f = r.createNode("fetch", "%s_fetch" % n.name())
-            f.parm("source").set("%s/RENDER" % n.path())
-            f.setPosition([0,0])
-    
-            msg = "Created node(s): %s" % f.path()
+
+            f = None
+            R = "%s/RENDER" % n.path()
+            if fetch:
+                f = r.createNode("fetch", "%s_fetch" % n.name())
+                f.parm("source").set(R)
+                f.setPosition([0,0])
+                msg = "Created node(s): %s" % f.path()
+            else:
+                f = hou.node(R)
+                msg = "Using node: %s" % f.path()
     
             if wedge:
 

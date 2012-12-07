@@ -1,4 +1,4 @@
-# Dialog script for qLib::waypoint_ql::2 automatically generated 12/01/12 04:07:12
+# Dialog script for qLib::waypoint_ql::2 automatically generated 12/07/12 05:06:11
 
 {
     name	qLib::waypoint_ql::2
@@ -24,6 +24,7 @@
 	    label	"Waypoint State"
 	    type	integer
 	    default	{ "1" }
+	    help	"The active/inactive state of the Waypoint."
 	    menu	{
 		"0"	"ACTIVE: Read from Disk"
 		"1"	"Pass Through (disabled)"
@@ -39,6 +40,7 @@
 	    label	"Points Only for Consecutive Frames"
 	    type	toggle
 	    default	{ "0" }
+	    help	"Full geometry is stored on the first frame,\\npoint-data only for the rest of the sequence."
 	    range	{ 0 1 }
 	    export	none
 	}
@@ -47,6 +49,7 @@
 	    label	"Remove Attribs"
 	    type	string
 	    default	{ "* ^v" }
+	    help	"Attributes to be removed for points-only frames\\n(except the first, of course)."
 	    disablewhen	"{ pts_only == 0 }"
 	    range	{ 0 1 }
 	    export	none
@@ -170,6 +173,7 @@
 		label	"* Variant Name"
 		type	string
 		default	{ "`arg(chs(\"variantnames\"), ch(\"variant\"))`" }
+		help	"Press MMB to toggle display of current variant name."
 		disablewhen	"{ variant >= 0 }"
 		range	{ 0 1 }
 		export	none
@@ -188,6 +192,7 @@
 		label	"* Full Path/Name"
 		type	string
 		default	{ "`chs(\"outdir\")`/`chs(\"outname\")`.`chs(\"outext\")`" }
+		help	"Press MMB to toggle display of full file path/name."
 		range	{ 0 1 }
 		export	none
 	    }
@@ -209,6 +214,7 @@
 		    label	"Create Output Directory"
 		    type	button
 		    default	{ "1" }
+		    help	"Create the geometry output folder."
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "script_callback_language" "python" }
@@ -230,7 +236,7 @@
 		    label	"Delete Directory..."
 		    type	button
 		    default	{ "1" }
-		    help	"Open this directory in the OS file manager."
+		    help	"Delete geometry output folder and its contents."
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "script_callback_language" "python" }
@@ -576,7 +582,7 @@
 
 		parm {
 		    name	"create_file_loader"
-		    label	"Build File (loader) SOP for this node"
+		    label	"Build File SOP"
 		    type	button
 		    default	{ "1" }
 		    help	"Creates a File (loader) SOP with the same parameters as the Waypoint node."
@@ -587,10 +593,10 @@
 		}
 		parm {
 		    name	"create_filemerge_loader"
-		    label	"Build FileMerge SOP for this node"
+		    label	"Build FileMerge SOP"
 		    type	button
 		    default	{ "1" }
-		    help	"Creates a File (loader) SOP with the same parameters as the Waypoint node.\\nUseful for loading geometry composed from multiple files\\n(such as wedged/seeded particles.)"
+		    help	"Creates a FileMerge SOP with the same parameters as the Waypoint node.\\nUseful for loading geometry composed from multiple files (such as\\nwedged/seeded particles.)"
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "script_callback_language" "python" }
@@ -615,6 +621,7 @@
 			label	"Target ROP Network"
 			type	oppath
 			default	{ "/out" }
+			help	"Path and name of the output driver network to add ROP nodes to.\\nIf it doesn't exist, it will be created."
 			menureplace	{
 			    "/out"	"/out"
 			    "../ROP_$OS"	"New ROP Network Here"
@@ -626,18 +633,31 @@
 		    }
 		    parm {
 			name	"create_fetch"
-			label	"Create linked Fetch ROP"
+			label	"Create Fetch ROP"
 			type	button
 			default	{ "1" }
+			help	"Adds a new Fetch ROP that renders this Waypoint."
 			range	{ 0 1 }
 			export	none
 			parmtag	{ "script_callback_language" "python" }
 			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch()" }
 		    }
 		    parm {
+			name	"create_wedge"
+			label	"Create Wedge ROP"
+			type	button
+			default	{ "1" }
+			help	"Adds a new Wedge ROP that renders iterations of this Waypoint."
+			range	{ 0 1 }
+			export	none
+			parmtag	{ "script_callback_language" "python" }
+			parmtag	{ "script_callback" "hou.pwd().hdaModule().create_rop_fetch(fetch=False, wedge=True)" }
+		    }
+		    parm {
 			name	"create_fetch_wedge"
 			label	"Create Fetch + Wedge ROP"
 			type	button
+			invisible
 			default	{ "1" }
 			range	{ 0 1 }
 			export	none
@@ -659,6 +679,7 @@
 			label	"Wedge Variant Parm"
 			type	string
 			default	{ "variant" }
+			help	"Name of parameter to apply wedging to (on this Waypoint)."
 			menureplace	{
 			    "variant"	"variant"
 			    "seed"	"seed"
@@ -672,6 +693,7 @@
 			type	intvector2
 			size	2
 			default	{ "0" "3" }
+			help	"Iteration min/max values for created wedge(s)."
 			range	{ -1 1 }
 			export	none
 		    }

@@ -158,6 +158,21 @@ WARNING:
             This parameter is intended to be used mostly as feedback. Press *MMB* on the parameter label to toggle
             its display to show the current path string.
 
+        File System (sub-tab):
+            Create Output Directory:
+                Pressing this button will create the directory set up in the _File Name_ section.
+                Note that this also happens automatically before each geometry write, so there's
+                usually no need to do this manually.
+    
+            Open in File Manager:
+                Open the output directory in the operating system's native file manager
+                (right now it's linux-only and launches the Gnome _nautilus_ application).
+    
+            Delete Directory:
+                Pressing this button will delete the entire output folder _with all contents_.
+                Useful for getting rid of large amounts of cached geometry (but make sure the
+                folder doesn't contain anything else important).
+
 
     Writer (tab):
         Geometry writing settings (see also [Geometry ROP|Node:out/geometry]).
@@ -197,22 +212,6 @@ WARNING:
 
 
     Tools (tab):
-        Miscellaneous functions.
-
-        Create Output Directory:
-            Pressing this button will create the directory set up in the _File Name_ section.
-            Note that this also happens automatically before each geometry write, so there's
-            usually no need to do this manually.
-
-        Open in File Manager:
-            Open the output directory in the operating system's native file manager
-            (right now it's linux-only and launches the Gnome _nautilus_ application).
-
-        Delete Directory:
-            Pressing this button will delete the entire output folder _with all contents_.
-            Useful for getting rid of large amounts of cached geometry (but make sure the
-            folder doesn't contain anything else important).
-
         Build File SOP (Loader):
             Creates a [File SOP|Node:sop/file] that is set up to read the file(s) written by
             the current waypoint node (including variants).
@@ -225,26 +224,36 @@ WARNING:
                 This node is ideal for loading geometry consisting of multiple files for a frame
                 (such as particles generated with a "wedged-seeded" workflow).
 
-        Create Fetch, Fetch+Wedge ROP:
-            Creates a [Fetch ROP|Node:out/fetch] or a [Node:out/fetch]/[Node:out/wedge]
-            combination to render this waypoint (in the specified ROP network).
+        ROP Node(s):
+            Functions for building output (ROP) networks for rendering of...
+            - several Waypoints in specified, fixed order
+            - multiple iterations of a single Waypoint node (wedging)
+            ...or combinations of the above.
 
-        Create Fetch + Multiple Wedges:
-            Same as the second above, but instead of a single Wedge ROP, it creates copies of the
-            same Wedge ROP for each value in the Wedge Range (see below).
+            Target ROP Network:
+                Path to the output network container to create nodes to.
+                *If it doesn't exist, it will be created.*
 
-            This results in a Wedge node for each variant, so every single variant can be rendered
-            by calling the corresponding Wedge. This might be convenient for running multiple wedges
-            simultaneously on the same machine in batch mode, for example.
-
-
-        Wedge Variant Parm:
-            Name of the Waypoint SOP parameter that should be "wedged" (changed for each wedge).
-            The default setting is to work with the Waypoint's `variant` parameter.
-
-        Wedge Range:
-            The range to set up on wedge node(s). The wedge(s) will go through this numeric range
-            and render the Waypoint for each value.
+            Create Fetch / Wedge / Fetch+Wedge ROP:
+                Creates a [Fetch|Node:out/fetch], a [Node:out/wedge], or both
+                to render this waypoint (in the specified ROP network).
+    
+            Create Fetch + Multiple Wedges:
+                Same as the third combo above, but instead of a single Wedge ROP, it creates copies of the
+                same Wedge ROP for each value in the Wedge Range (see below).
+    
+                This results in a Wedge node for each variant, so every single variant can be rendered
+                by calling the corresponding Wedge. This might be convenient for running multiple wedges
+                simultaneously on the same machine in batch mode, for example.
+    
+    
+            Wedge Variant Parm:
+                Name of the Waypoint SOP parameter that should be "wedged" (changed for each wedge).
+                The default setting is to work with the Waypoint's `variant` parameter.
+    
+            Wedge Range:
+                The range to set up on wedge node(s). The wedge(s) will go through this numeric range
+                and render the Waypoint for each value.
 
 
 
@@ -259,6 +268,9 @@ WARNING:
 @Release_Notes Release Notes
 
     _interface version 2_ ---
+
+    2012-12-06:
+        - Santa brought a 'Create Wedge ROP' button. :)
 
     2012-12-01:
         Various workflow enhancements (mostly Wedge-related):
