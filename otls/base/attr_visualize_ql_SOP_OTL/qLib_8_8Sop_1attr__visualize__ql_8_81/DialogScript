@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 11/29/12 03:43:47
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 12/08/12 02:48:55
 
 {
     name	qLib::attr_visualize_ql::1
@@ -16,15 +16,6 @@
     inputlabel	5	"Object to Copy"
 
     parm {
-	name	"input"
-	label	"Input"
-	type	integer
-	default	{ "1" }
-	range	{ 1 2 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
 	name	"display_info"
 	label	"display_info"
 	type	label
@@ -32,6 +23,45 @@
 	default	{ "(*) showing: `opinput(\".\", ch(\"input\")-1)`" }
 	range	{ 0 1 }
 	export	none
+    }
+    parm {
+	name	"switch_input_1"
+	label	"Input #1"
+	type	button
+	joinnext
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` input ( 1 )" }
+    }
+    parm {
+	name	"input"
+	label	"Input"
+	type	integer
+	joinnext
+	default	{ "1" }
+	range	{ 1 2 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"switch_input_2"
+	label	"Input #2"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` input ( 2 )" }
+    }
+    parm {
+	name	"switch_input_toggle"
+	label	"Switch between Inputs"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "p=hou.pwd().parm('input'); p.set( 2-p.eval()+1 )" }
     }
     parm {
 	name	"labelparm"
@@ -706,7 +736,7 @@
 		name	"force_text"
 		label	"As Numeric"
 		type	string
-		default	{ "Cd uv" }
+		default	{ "P Cd uv" }
 		help	"These attributes will always be displayed in numeric (text) mode."
 		menutoggle	{
 		    [ "r = []" ]
