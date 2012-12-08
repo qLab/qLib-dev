@@ -11,12 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	prim_color_each_group 1 1 "input1"
-4 	"" "" 1 "input2"
 }
 inputs
 {
 0 	prim_color_each_group 0 1
-1 	"" 0 1
 }
 stat
 {

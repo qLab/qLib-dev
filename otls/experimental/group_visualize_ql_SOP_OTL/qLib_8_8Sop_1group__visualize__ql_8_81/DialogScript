@@ -1,4 +1,4 @@
-# Dialog script for qLib::group_visualize_ql::1 automatically generated 11/10/12 23:42:33
+# Dialog script for qLib::group_visualize_ql::1 automatically generated 12/08/12 01:25:34
 
 {
     name	qLib::group_visualize_ql::1
@@ -15,14 +15,6 @@
     inputlabel	4	"Sub-Network Input #4"
 
     parm {
-	name	"input"
-	label	"Input"
-	type	integer
-	default	{ "1" }
-	range	{ 1! 2! }
-	export	none
-    }
-    parm {
 	name	"display_info"
 	label	"Label"
 	type	label
@@ -30,6 +22,44 @@
 	default	{ "(*) showing: `opinput(\".\", ch(\"input\")-1)`" }
 	range	{ 0 1 }
 	export	none
+    }
+    parm {
+	name	"switch_input_1"
+	label	"Input #1"
+	type	button
+	joinnext
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` input ( 1 )" }
+    }
+    parm {
+	name	"input"
+	label	"Input"
+	type	integer
+	joinnext
+	default	{ "1" }
+	range	{ 1! 2! }
+	export	none
+    }
+    parm {
+	name	"switch_input_2"
+	label	"Input #2"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` input ( 2 )" }
+    }
+    parm {
+	name	"switch_input_toggle"
+	label	"Switch between Inputs"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "python" }
+	parmtag	{ "script_callback" "p=hou.pwd().parm('input'); p.set( 2-p.eval()+1 )" }
     }
     parm {
 	name	"mode"

@@ -11,12 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 7 	pr_sort_by_ptid 1 1 "input1"
-9 	"" "" 1 "input2"
 }
 inputs
 {
 0 	pr_sort_by_ptid 0 1
-1 	"" 0 1
 }
 stat
 {
