@@ -1,4 +1,4 @@
-# Dialog script for qLib::force_ql::1 automatically generated 04/26/12 00:58:42
+# Dialog script for qLib::force_ql::1 automatically generated 12/06/12 23:48:54
 
 {
     name	qLib::force_ql::1
@@ -30,18 +30,6 @@
 	default	{ "" }
 	menutoggle	{
 	    [ "opmenu -l voppop_force vex_source" ]
-	}
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"vex_numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1perproc" }
-	menu	{
-	    [ "opmenu -l voppop_force vex_numthreads" ]
 	}
 	range	{ 0 1 }
 	export	none

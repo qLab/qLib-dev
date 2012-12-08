@@ -2,8 +2,7 @@
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
 condtype	[ 0	locks=0 ]	(	1	)
-g0	[ 0	locks=0 ]	(	0	0	0	)
-input2	[ 0	locks=0 ]	(	0.00999999978	)
+input2	[ 0	locks=0 ]	(	0.0099999997799999994	)
 input2_i	[ 0	locks=0 ]	(	0	)
 input2_s	[ 0	locks=0 ]	(	""	)
 input2_v	[ 0	locks=0 ]	(	0	0	0	)
