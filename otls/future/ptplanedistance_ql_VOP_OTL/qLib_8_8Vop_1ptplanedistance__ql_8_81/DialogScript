@@ -1,0 +1,54 @@
+# Dialog script for qLib::ptplanedistance_ql::1 automatically generated 12/18/12 03:20:32
+
+{
+    name	qLib::ptplanedistance_ql::1
+    script	qLib::ptplanedistance_ql::1
+    label	"Distance Point to Plane qL"
+
+    input	vector	P	"Point Position"
+    input	vector	plane_origin	plane_origin
+    input	vector	plane_normal	plane_normal
+    output	float	distance	"Output 1"
+    inputflags	P	0
+    inputflags	plane_origin	0
+    inputflags	plane_normal	0
+    signature	"Default Inputs"	default	{ vector vector vector float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"P"
+	label	"Point Position"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"plane_origin"
+	label	"plane_origin"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"plane_normal"
+	label	"plane_normal"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+}
