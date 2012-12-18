@@ -47,7 +47,7 @@
 	label	"plane_normal"
 	type	float
 	size	3
-	default	{ "0" "0" "0" }
+	default	{ "0" "1" "0" }
 	range	{ 0 10 }
 	export	none
     }
