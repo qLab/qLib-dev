@@ -1,0 +1,32 @@
+comment ""
+position 4.64171 2.15113
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+3 "distance"
+}
+inputsNamed3
+{
+0 	global1 0 1 "P"
+1 	in_plane_origin 0 1 "plane_origin"
+2 	in_plane_normal 0 1 "plane_normal"
+}
+inputs
+{
+0 	global1 0 1
+1 	in_plane_origin 0 1
+2 	in_plane_normal 0 1
+}
+stat
+{
+  create 1355796587
+  modify 1355797235
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
