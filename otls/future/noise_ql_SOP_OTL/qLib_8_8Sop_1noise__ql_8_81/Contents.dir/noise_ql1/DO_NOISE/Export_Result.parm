@@ -2,7 +2,7 @@
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
 attrib	[ 0	locks=0 ]	(	Cd	)
-localvar	[ 0	locks=0 ]	(	""	)
+localvar	[ 0	locks=0 ]	(	[ localvar	"" ] 	)
 adata_f	[ 0	locks=0 ]	(	0	)
 adata_i	[ 0	locks=0 ]	(	0	)
 adata	[ 0	locks=0 ]	(	0	0	0	)

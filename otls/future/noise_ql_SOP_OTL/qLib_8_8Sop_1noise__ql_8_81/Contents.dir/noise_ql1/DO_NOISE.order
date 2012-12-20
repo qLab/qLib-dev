@@ -1,4 +1,4 @@
-57
+54
 Noise_Generator
 freq
 offset
@@ -32,7 +32,6 @@ vectohvec2
 Driver_Vec4
 Driver_Float
 floattohvec1
-Driver_Signature_Switch
 Weight_Switch
 import_weight
 weight_attr
@@ -43,16 +42,14 @@ Target_Attrib1
 Target_Attrib_Name1
 Amount_Mult
 Amount_
-Exponent_Switch
-Sign_Safe_Power
 Mode_Switch
 multiply1
 mix1
 Export_Result
-condition
 switcher
 switcher1
 switcher2
 switcher3
 Driver_Attrib_Name
 Driver_Sign_Switch
+localvar

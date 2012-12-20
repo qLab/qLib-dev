@@ -41,11 +41,11 @@ TIP:
 
         TIP:
             Use the fourth component of the *offset* parameter to animate the noise through time.
-    Exponent:
-        Sign-safe exponent applied after noise generation. It doesn't offset the result.
 
 @relnotes Release Notes
 
+    2012-12-21:
+        Creation of local variable added. Exponent output modifier removed. End of the world.
     2012-08-06:
         Fixed copy stamp performance degradation. Enhanced the example scene.
     2012-07-21:

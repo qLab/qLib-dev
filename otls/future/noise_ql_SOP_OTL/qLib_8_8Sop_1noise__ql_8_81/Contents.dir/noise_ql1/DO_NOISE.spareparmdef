@@ -480,10 +480,30 @@
     }
 
     parm {
+	name	"driver_attrib"
+	label	"Driver attrib"
+	type	string
+	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
 	name	"target_attrib"
 	label	"Target Attribute"
 	type	string
 	default	{ "P" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"localvar"
+	label	"Local Variable Name"
+	type	string
+	default	{ "" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -505,27 +525,6 @@
 	type	float
 	default	{ "1" }
 	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"out_exp"
-	label	"Output Exponent"
-	type	float
-	size	3
-	default	{ "1" "1" "1" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"do_exp"
-	label	"Do Exponent"
-	type	integer
-	default	{ "0" }
-	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
@@ -566,16 +565,6 @@
 	type	integer
 	default	{ "1" }
 	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "sop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"driver_attrib"
-	label	"Parameter"
-	type	string
-	default	{ "P" }
-	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }

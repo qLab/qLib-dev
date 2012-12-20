@@ -9,18 +9,18 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	Exponent_Switch 3 1 "input1"
+1 	Noise_Generator 33 1 "input1"
 2 	Amount_ 0 1 "input2"
 }
 inputs
 {
-0 	Exponent_Switch 0 1
+0 	Noise_Generator 0 1
 1 	Amount_ 0 1
 }
 stat
 {
   create 1340147063
-  modify 1344204972
+  modify 1356026643
   author mate@matild.local
   access 0777
 }

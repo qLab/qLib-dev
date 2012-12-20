@@ -382,33 +382,6 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../amount\") }
     }
-    channel out_exp1 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../out_exp1\") }
-    }
-    channel out_exp2 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../out_exp2\") }
-    }
-    channel out_exp3 {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../out_exp3\") }
-    }
-    channel do_exp {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../do_exp\") }
-    }
     channel invert_weight {
       lefttype = extend
       righttype = extend

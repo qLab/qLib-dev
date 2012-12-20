@@ -1,5 +1,5 @@
 comment ""
-position -0.00424671 -0.527169
+position 0.0381062 -1.24717
 cachesize 1
 connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -9,14 +9,14 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	"" "" 1 "switcher"
+1 	switcher3 0 1 "switcher"
 2 	floattohvec1 4 1 "input1"
 3 	vectohvec2 2 1 "input2"
 4 	Driver_Vec4 4 1 "input3"
 }
 inputs
 {
-0 	"" 0 1
+0 	switcher3 0 1
 1 	floattohvec1 0 1
 2 	vectohvec2 0 1
 3 	Driver_Vec4 1 1
@@ -24,7 +24,7 @@ inputs
 stat
 {
   create 1340625606
-  modify 1344202398
+  modify 1355063097
   author mate@matild.local
   access 0777
 }

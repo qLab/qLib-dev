@@ -1,4 +1,4 @@
-# Dialog script for qLib::noise_ql::1 automatically generated 08/06/12 00:16:40
+# Dialog script for qLib::noise_ql::1 automatically generated 12/20/12 20:34:30
 
 {
     name	qLib::noise_ql::1
@@ -95,6 +95,28 @@
 	export	none
 	parmtag	{ "script_callback_language" "python" }
 	parmtag	{ "script_callback" "kwargs[\"node\"].parm(\"DO_NOISE/Noise_Generator/signature\").set(kwargs[\"script_value\"])" }
+    }
+    parm {
+	name	"use_localvar"
+	label	"Label"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"localvar"
+	label	"Local Variable"
+	type	string
+	default	{ "" }
+	disablewhen	"{ use_localvar == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
 	name	"use_weight"
@@ -490,29 +512,6 @@
 	    size	3
 	    default	{ "0.5" "0.5" "0.5" }
 	    disablewhen	"{ cc_dogain == 0 }"
-	    range	{ 0 10 }
-	    export	none
-	    parmtag	{ "shaderparmcontexts" "sop" }
-	    parmtag	{ "parmvop" "1" }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"do_exp"
-	    label	"Do Exponent"
-	    type	toggle
-	    nolabel
-	    joinnext
-	    default	{ "0" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"out_exp"
-	    label	"Exponent"
-	    type	float
-	    size	3
-	    default	{ "1" "1" "1" }
-	    disablewhen	"{ do_exp == 0 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
