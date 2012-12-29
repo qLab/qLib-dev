@@ -10,12 +10,12 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	nope_2 1 1 "input1"
+1 	NIL 1 1 "input1"
 2 	apply_vis 4 1 "input2"
 }
 inputs
 {
-0 	nope_2 0 1
+0 	NIL 0 1
 1 	apply_vis 0 1
 }
 stat

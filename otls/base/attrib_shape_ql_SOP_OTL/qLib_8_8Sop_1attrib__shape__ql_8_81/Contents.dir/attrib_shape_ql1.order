@@ -1,8 +1,6 @@
-23
+21
 DO_ATTRIB_SHAPE
 OUT
-Create_Local_Var
-Local_Var_Switch
 sphere1
 box1
 tube1
@@ -20,5 +18,5 @@ isosurface_display_mode
 apply_vis
 IN
 switch_pts_vis
-nope_2
+NIL
 switch_geo_guide

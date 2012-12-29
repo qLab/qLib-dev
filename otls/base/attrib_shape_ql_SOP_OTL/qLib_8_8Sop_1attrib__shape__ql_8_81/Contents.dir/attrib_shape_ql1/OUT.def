@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	Local_Var_Switch 2 1 "input1"
+0 	DO_ATTRIB_SHAPE 2 1 "input1"
 }
 inputs
 {
-0 	Local_Var_Switch 0 1
+0 	DO_ATTRIB_SHAPE 0 1
 }
 stat
 {
   create 1285084584
-  modify 1343688043
+  modify 1356626221
   author Mate@Mate.local.melon.hu
   access 0777
 }

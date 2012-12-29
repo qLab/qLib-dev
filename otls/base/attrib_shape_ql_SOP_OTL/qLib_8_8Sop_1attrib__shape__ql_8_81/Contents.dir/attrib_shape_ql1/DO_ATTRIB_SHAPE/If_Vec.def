@@ -1,7 +1,7 @@
 comment ""
-position 27.3159 -3.52275
+position 27.33 -3.60067
 cachesize 1
-connectornextid 3
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
@@ -11,17 +11,19 @@ inputsNamed3
 0 	Compare_One 2 1 "condition"
 1 	Attrib_Name 0 1 "out_attrib_name"
 2 	hvectovec1 2 1 "vec"
+3 	locvarname 0 1 "locvarname"
 }
 inputs
 {
 0 	Compare_One 0 1
 1 	Attrib_Name 0 1
 2 	hvectovec1 0 1
+3 	locvarname 0 1
 }
 stat
 {
   create 1285081062
-  modify 1291319679
+  modify 1356627086
   author Mate@Mate.local.melon.hu
   access 0777
 }

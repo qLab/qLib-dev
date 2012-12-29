@@ -1,26 +1,26 @@
-Vop/complement /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/complement otls/OPlibVop.otl
-Vop/vectohvec /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/vectohvec otls/OPlibVop.otl
-Vop/importattrib /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/importattrib otls/OPlibVop.otl
-Vop/fit /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/fit otls/OPlibVop.otl
-Vop/volumesample /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/volumesample //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/volumesample otls/OPlibVop.otl
-Vop/addattrib /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/hvectovec /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/hvectovec otls/OPlibVop.otl
-Vop/pow /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/pow //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/pow otls/OPlibVop.otl
-Vop/mix /opt/hfs/houdini/otls/OPlibVop.otl
-Vop/mix otls/OPlibVop.otl
-Vop/negate /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/negate //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/negate otls/OPlibVop.otl
-Vop/hvectofloat /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addattrib //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/hvectofloat //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/hvectofloat otls/OPlibVop.otl
-Vop/floattohvec /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/fit //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
+Vop/vectohvec //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/vectohvec otls/OPlibVop.otl
+Vop/complement //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/complement otls/OPlibVop.otl
+Vop/floattohvec //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/floattohvec otls/OPlibVop.otl
-Vop/inttofloat /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/mix //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/mix otls/OPlibVop.otl
+Vop/hvectovec //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/hvectovec otls/OPlibVop.otl
+Vop/inttofloat //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
 Vop/inttofloat otls/OPlibVop.otl
+Vop/importattrib //mlnfs/Sidefx/Houdini 12.1.154/houdini/otls/OPlibVop.otl
+Vop/importattrib otls/OPlibVop.otl
