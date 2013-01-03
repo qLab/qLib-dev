@@ -4,6 +4,6 @@ type	[ 0	locks=0 ]	(	"poly"	)
 origin	[ 0	locks=0 ]	(	1	-1	0	)
 dir	[ 0	locks=0 ]	(	0	1	0	)
 dist	[ 0	locks=0 ]	(	2	)
-points	[ 0	locks=0 ]	(	10	)
+points	[ 0	locks=0 ]	(	12	)
 order	[ 0	locks=0 ]	(	4	)
 }

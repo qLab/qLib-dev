@@ -1,0 +1,17 @@
+{
+version 0.8
+group	[ 0	locks=0 ]	(	""	)
+grouptype	[ 0	locks=0 ]	(	"guess"	)
+keepOriginal	[ 0	locks=0 ]	(	"off"	)
+boundtype	[ 0	locks=0 ]	(	"off"	"off"	)
+dodivs	[ 0	locks=0 ]	(	"off"	)
+divs	[ 0	locks=0 ]	(	3	3	3	)
+rebar	[ 0	locks=0 ]	(	"off"	)
+minsize	[ 0	locks=0 ]	(	0	0	0	)
+orientedbbox	[ 0	locks=0 ]	(	"off"	)
+orient	[ 0	locks=0 ]	(	"y"	)
+accurate	[ 0	locks=0 ]	(	"off"	)
+minradius	[ 0	locks=0 ]	(	0	)
+minpad	[ 0	locks=0 ]	(	0	0	0	)
+maxpad	[ 0	locks=0 ]	(	0	0	0	)
+}

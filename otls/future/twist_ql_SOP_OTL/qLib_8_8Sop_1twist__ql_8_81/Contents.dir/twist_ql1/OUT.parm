@@ -1,9 +1,15 @@
 {
 version 0.8
-group	[ 0	locks=0 ]	(	__guide_ql__	)
-grouptype	[ 0	locks=0 ]	(	"points"	)
-computenorms	[ 0	locks=0 ]	(	"off"	)
-negate	[ 0	locks=0 ]	(	"off"	)
-fillhole	[ 0	locks=0 ]	(	"off"	)
-removegrp	[ 0	locks=0 ]	(	"off"	)
+cacheinput	[ 0	locks=0 ]	(	"off"	)
+folder2	[ 0	locks=0 ]	(	0	)
+set_name_0	[ 0	locks=0 ]	(	0	)
+folder0	[ 0	locks=0 ]	(	0	)
+set_name_1	[ 0	locks=0 ]	(	0	)
+set_name_2	[ 0	locks=0 ]	(	0	)
+set_name_3	[ 0	locks=0 ]	(	0	)
+folder1	[ 0	locks=0 ]	(	0	)
+set_name_4	[ 0	locks=0 ]	(	0	)
+set_name_5	[ 0	locks=0 ]	(	0	)
+set_name_6	[ 0	locks=0 ]	(	0	)
+set_name_7	[ 0	locks=0 ]	(	0	)
 }

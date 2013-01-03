@@ -8,7 +8,7 @@
 
 """Twists and/or twirls geometry along axis."""
 
-This is a replacement operator for the "twist" mode of the [Twist SOPNode:/twist].
+This is a replacement operator for the "twist" mode of the [Twist SOP|Node:sop/twist].
 
 The deformer rotates the points of the incoming geometry around the deformer's axis, which
 can be trasformed with the transform parameters or an OBJ node's trasformation matrix. The amount of
@@ -22,20 +22,46 @@ the axis and the outer perimeter of the deformer.
         Use a weight attribute to mask the deformers operation.
     Weight Attrib:
         Name of the weight attribute.
-    Invert Weight:
+    Invert:
         Complements the weight attribute's effect.
+    Envelope:
+        An overall blend value between original and deformed geometry.
+
     Start Angle (Outer/Inner):
         Outer and inner rotation amount in degrees on the start (top) end of the axis.
     End Angle (Outer/Inner):
         Outer and inner rotation amount in degrees on the end (lower) end of the axis.
+
     Bias/Gain:
         Bias and gain modifiers of the interpolation along the axis.
+
     Inner Bias/Gain:
         Bias and gain modifiers of the interpolation between the axis and outer perimeter of the
         deformer.
+
     Use Object Transform (Toggle):
-        Use OBJ's transform matrix.
+        Use the transformations of an `OBJ` node for the deformer's effect placement.
+
     Transform Object:
-        OBJ operator to get the transformation matrix from.
-    Transform Parameters:
+        Name of the object to get the transformations from.
+
+    (transform parameters):
         Standard transform parameters.
+
+    Guide Display:
+        Sets which guides should be displayed when the node is selected.
+
+@related
+    - [Node:sop/twist]
+
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-03:
+    Internal cleanups & cosmetics. Now uses the new deformer building block nodes.
+
+
+...:
+    Previous versions.

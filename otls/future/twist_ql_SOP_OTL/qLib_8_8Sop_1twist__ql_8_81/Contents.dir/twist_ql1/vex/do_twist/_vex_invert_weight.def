@@ -1,0 +1,29 @@
+comment ""
+position 2.31875 -1.26847
+cachesize 1
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "_vex_invert_weight"
+1 "bound__vex_invert_weight"
+}
+inputsNamed3
+{
+2 	"" "" 1 "input"
+}
+inputs
+{
+0 	"" 0 1
+}
+stat
+{
+  create 1352401109
+  modify 1357177057
+  author mate@Mate.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0 0.2 1 
+delscript ""
+exprlanguage hscript
+end

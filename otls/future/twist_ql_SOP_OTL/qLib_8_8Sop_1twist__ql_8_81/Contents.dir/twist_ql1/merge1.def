@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 5.87466 6.09043
+position 6.16403 5.26615
 cachesize 1
 connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -10,24 +10,22 @@ outputsNamed3
 }
 inputsNamed3
 {
-1 	circle1 0 1 "input1"
-2 	circle2 0 1 "input2"
-3 	duplicate1 1 1 "input3"
+1 	duplicate2 1 1 "input1"
+3 	duplicate1 1 1 "input2"
 }
 inputs
 {
-0 	circle1 0 1
-1 	circle2 0 1
-2 	duplicate1 0 1
+0 	duplicate2 0 1
+1 	duplicate1 0 1
 }
 stat
 {
   create 1352403678
-  modify 1352411768
+  modify 1357177596
   author mate@Mate.local.melon.hu
   access 0777
 }
-color UT_Color RGB 0.8 0.8 0.8 
+color UT_Color RGB 0.4 1 1 
 delscript ""
 exprlanguage hscript
 end

@@ -1,0 +1,20 @@
+{
+version 0.8
+active	[ 0	locks=0 ]	(	"on"	)
+use_obj	[ 0	locks=0 ]	(	"on"	)
+xform_obj	[ 0	locks=0 ]	(	""	)
+use_rest	[ 0	locks=0 ]	(	"off"	)
+rest_obj	[ 0	locks=0 ]	(	""	)
+xformtype	[ 0	locks=0 ]	(	0	)
+xformpath	[ 0	locks=0 ]	(	""	)
+trs	[ 0	locks=0 ]	(	0	)
+xyz	[ 0	locks=0 ]	(	0	)
+t	[ 0	locks=0 ]	(	0	0	0	)
+r	[ 0	locks=0 ]	(	0	0	0	)
+s	[ 0	locks=0 ]	(	1	1	1	)
+p	[ 0	locks=0 ]	(	0	0	0	)
+scale	[ 0	locks=0 ]	(	1	)
+invert	[ 0	locks=0 ]	(	"on"	)
+out_xform	[ 0	locks=0 ]	(	"on"	)
+out_invxform	[ 0	locks=0 ]	(	"on"	)
+}
