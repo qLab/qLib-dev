@@ -1,15 +1,15 @@
-# Dialog script for qLib::twist_ql::1 automatically generated 11/19/12 18:35:18
+# Dialog script for qLib::twist_ql::1 automatically generated 01/03/13 03:15:06
 
 {
     name	qLib::twist_ql::1
-    script	qLib::twist_ql::1
+    script	qLib::twist_ql::2
     label	"Twist qL"
 
     help {
 	""
     }
 
-    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	1	"Input Geometry"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -45,6 +45,7 @@
 	type	string
 	joinnext
 	default	{ "weight" }
+	disablewhen	"{ use_weight == 0 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -56,6 +57,7 @@
 	label	"Invert"
 	type	toggle
 	default	{ "0" }
+	disablewhen	"{ use_weight == 0 }"
 	range	{ 0 10 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
@@ -63,8 +65,16 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
-	name	"labelparm3"
-	label	"Label"
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"separator_1"
+	label	"----"
 	type	label
 	nolabel
 	default	{ "" }
@@ -90,8 +100,8 @@
 	export	none
     }
     parm {
-	name	"labelparm2"
-	label	"Label"
+	name	"separator_2"
+	label	"----"
 	type	label
 	nolabel
 	default	{ "" }
@@ -100,7 +110,7 @@
     }
     parm {
 	name	"y_bias"
-	label	"Start-End Bias/Gain"
+	label	"Start-End Bias"
 	type	float
 	joinnext
 	default	{ "0.5" }
@@ -114,7 +124,6 @@
 	name	"y_gain"
 	label	"Gain"
 	type	float
-	nolabel
 	default	{ "0.5" }
 	range	{ 0 1 }
 	export	none
@@ -124,7 +133,7 @@
     }
     parm {
 	name	"l_bias"
-	label	"In-Out Bias/Gain"
+	label	"In-Out Bias"
 	type	float
 	joinnext
 	default	{ "0.5" }
@@ -138,7 +147,6 @@
 	name	"l_gain"
 	label	"Gain"
 	type	float
-	nolabel
 	default	{ "0.5" }
 	range	{ 0 1 }
 	export	none
@@ -171,15 +179,6 @@
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"labelparm"
-	    label	"Label"
-	    type	label
-	    nolabel
-	    default	{ "" }
-	    range	{ 0 1 }
-	    export	none
 	}
 	parm {
 	    name	"trs"
@@ -283,6 +282,29 @@
 	    parmtag	{ "shaderparmcontexts" "sop" }
 	    parmtag	{ "parmvop" "1" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"separator_3"
+	    label	"----"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"guide"
+	    label	"Guide Display"
+	    type	integer
+	    default	{ "1" }
+	    menu	{
+		"0"	"None"
+		"1"	"Deformer Placement"
+		"2"	"Geometry Bounds"
+		"3"	"Both"
+	    }
+	    range	{ 0 3 }
+	    export	none
 	}
     }
 

@@ -1,0 +1,13 @@
+Operator:     xformbuilder_ql
+Label:        Xform Builder qL
+Path:         oplib:/Vop/xformbuilder_ql?Vop/xformbuilder_ql
+Icon:         SHELF_motion_capture
+Table:        Vop
+License:      
+Extra:        
+Inputs:       0 to 17
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Thu Jan  3 02:35:40 2013
+

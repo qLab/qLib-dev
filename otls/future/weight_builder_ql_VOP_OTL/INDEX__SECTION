@@ -1,0 +1,13 @@
+Operator:     weight_builder_ql
+Label:        Weight Builder qL
+Path:         oplib:/Vop/weight_builder_ql?Vop/weight_builder_ql
+Icon:         VIEW_display_point_numbers
+Table:        Vop
+License:      
+Extra:        
+Inputs:       0 to 4
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Thu Jan  3 00:36:51 2013
+

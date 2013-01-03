@@ -1,0 +1,24 @@
+#icon: VIEW/display_point_numbers
+#context: vop
+#type: node
+
+= Weight Builder qL =
+
+*interface version 1*
+
+"""A standardized way of generating weight values for deformers."""
+
+
+This node is a helper component for building higer level operators.
+It provides an standard, unified way of calculating deformer weight values based on
+various settings.
+
+...
+
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-02:
+    First version.

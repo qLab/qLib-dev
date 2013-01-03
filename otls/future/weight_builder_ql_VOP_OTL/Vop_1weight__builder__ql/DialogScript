@@ -1,0 +1,97 @@
+# Dialog script for weight_builder_ql automatically generated 01/03/13 00:36:51
+
+{
+    name	weight_builder_ql
+    script	weight_builder_ql
+    label	"Weight Builder qL"
+
+    outercode {
+	"#include <voplib.h>"
+    }
+
+    code {
+	"$weight = 1.0;"
+	""
+	"if ( $use ) {"
+	"    import($attrib, $weight, 0);"
+	"    if ($invert) $weight = 1.0-$weight;"
+	"}"
+	""
+	"$weight *= $envelope;"
+    }
+
+    input	int	use	"Use Weight"
+    input	string	attrib	"Weight Attrib"
+    input	int	invert	Invert
+    input	float	envelope	Envelope
+    output	float	weight	Weight
+    inputflags	use	0
+    inputflags	attrib	0
+    inputflags	invert	0
+    inputflags	envelope	0
+    signature	"Default Inputs"	default	{ int string int float float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(1)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"use"
+	label	"Use Weight"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"attrib"
+	label	"Weight Attrib"
+	type	string
+	joinnext
+	default	{ "weight" }
+	disablewhen	"{ use == 0 }"
+	menureplace	{
+	    [ "r = []" ]
+	    [ "" ]
+	    [ "try:" ]
+	    [ "    attrs = hou.pwd().geometry().pointAttribs()" ]
+	    [ "    attrs = [ a.name() for a in attrs if a.size()==1 and a.dataType() is not hou.attribData.String ]" ]
+	    [ "    " ]
+	    [ "    for a in attrs:" ]
+	    [ "        r.append(a)" ]
+	    [ "        r.append(a)" ]
+	    [ "except:" ]
+	    [ "    pass" ]
+	    [ "" ]
+	    [ "return r" ]
+	    language	python
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	disablewhen	"{ use == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"envelope"
+	label	"Envelope"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+}
