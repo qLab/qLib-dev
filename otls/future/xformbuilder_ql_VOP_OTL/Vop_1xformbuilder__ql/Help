@@ -1,0 +1,23 @@
+#icon: SHELF/motion_capture
+#context: vop
+#type: node
+
+= Xform Builder qL =
+
+*interface version 1*
+
+"""Constructs a transformation matrix using either regular transform parameters or scene object locations."""
+
+
+This node is a helper or "component" for building higer level operators. (For example, it is used in all
+qLib deformer nodes to provide an unified interface for deformation placement.)
+
+...
+
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-02:
+    First version.

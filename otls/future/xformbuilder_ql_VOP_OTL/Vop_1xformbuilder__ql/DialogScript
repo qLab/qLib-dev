@@ -1,0 +1,277 @@
+# Dialog script for xformbuilder_ql automatically generated 01/03/13 02:35:40
+
+{
+    name	xformbuilder_ql
+    script	xformbuilder_ql
+    label	"Xform Builder qL"
+
+    outercode {
+	"#include <voplib.h>"
+    }
+
+    code {
+	"{"
+	"    matrix M0 =  { {1.0, 0.0, 0.0, 0.0 },  {0.0, 1.0, 0.0, 0.0 },  {0.0, 0.0, 1.0, 0.0 },  {0.0, 0.0, 0.0, 1.0 } };"
+	""
+	"    $xform = M0;"
+	"    $invxform = $xform;"
+	"    "
+	"    if ($active)"
+	"    {"
+	"        if ($use_obj)"
+	"        {"
+	"            matrix tx = M0;"
+	"            if ($xformtype>0) tx = invert(optransform($xformpath));"
+	"    "
+	"            $xform = optransform($xform_obj)*tx;"
+	""
+	"            if ($use_rest) $xform =  invert(optransform($rest_obj)*tx) * $xform;"
+	"        }"
+	"        else // construct matrix from parameters"
+	"        {"
+	"            $xform = maketransform($trs, $xyz, $t, $r, $s*$scale, $p);"
+	"        }"
+	"        "
+	"        if ($invert) $xform = invert($xform);"
+	"    }"
+	""
+	"    if ($out_invxform) $invxform = invert($xform);"
+	"    if (!$out_xform) $xform = M0;"
+	"}"
+    }
+
+    input	int	active	Active
+    input	int	use_obj	"Use Object Transform"
+    input	string	xform_obj	Object
+    input	int	use_rest	"Use Rest Object"
+    input	string	rest_obj	"Rest/Parent Obj."
+    input	int	xformtype	Transform
+    input	string	xformpath	"Transform Object"
+    input	int	trs	"Transform Order"
+    input	int	xyz	"Rotation Order"
+    input	vector	t	trans
+    input	vector	r	rot
+    input	vector	s	scale
+    input	vector	p	pivot
+    input	float	scale	"scale (uniform)"
+    input	int	invert	"Invert Transform"
+    input	int	out_xform	"Output Xform"
+    input	int	out_invxform	"Output Inverse Xform"
+    output	matrix	xform	Xform
+    output	matrix	invxform	"Inverted Xform"
+    inputflags	active	0
+    inputflags	use_obj	0
+    inputflags	xform_obj	0
+    inputflags	use_rest	0
+    inputflags	rest_obj	0
+    inputflags	xformtype	0
+    inputflags	xformpath	0
+    inputflags	trs	0
+    inputflags	xyz	0
+    inputflags	t	0
+    inputflags	r	0
+    inputflags	s	0
+    inputflags	p	0
+    inputflags	scale	0
+    inputflags	invert	0
+    inputflags	out_xform	0
+    inputflags	out_invxform	0
+    signature	"Default Inputs"	default	{ int int string int string int string int int vector vector vector vector float int int int matrix matrix }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)
+	___begin	auto
+			(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"active"
+	label	"Active"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"use_obj"
+	label	"Use Object Transform"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"xform_obj"
+	label	"Object"
+	type	oppath
+	default	{ "/obj/null1" }
+	disablewhen	"{ use_obj != 1 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!OBJ!!" }
+    }
+    parm {
+	name	"use_rest"
+	label	"Use Rest Object"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	disablewhen	"{ use_obj != 1 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"rest_obj"
+	label	"Rest/Parent Obj."
+	type	oppath
+	default	{ "/obj/null2" }
+	disablewhen	"{ use_obj != 1 } { use_rest == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!OBJ!!" }
+    }
+    parm {
+	name	"xformtype"
+	label	"Transform"
+	type	integer
+	default	{ "0" }
+	disablewhen	"{ use_obj != 1 }"
+	menu	{
+	    "none"	"None"
+	    "local"	"Into This Object"
+	    "object"	"Into Specified Object"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"xformpath"
+	label	"Transform Object"
+	type	oppath
+	default	{ "/obj/geo1" }
+	help	"(container object)"
+	disablewhen	"{ use_obj != 1 } { xformtype == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!OBJ!!" }
+    }
+    parm {
+	name	"trs"
+	label	"Transform Order"
+	type	integer
+	joinnext
+	default	{ "0" }
+	disablewhen	"{ use_obj != 0 }"
+	menu	{
+	    "srt"	"Scale Rotate Translate"
+	    "str"	"Scale Translate Rotate"
+	    "rst"	"Rotate Scale Translate"
+	    "rts"	"Rotate Translate Scale"
+	    "tsr"	"Translate Scale Rotate"
+	    "trs"	"Translate Rotate Scale"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"xyz"
+	label	"Rotation Order"
+	type	integer
+	nolabel
+	default	{ "0" }
+	disablewhen	"{ use_obj != 0 }"
+	menu	{
+	    "xyz"	"Rx Ry Rz"
+	    "xzy"	"Rx Rz Ry"
+	    "yxz"	"Ry Rx Rz"
+	    "yzx"	"Ry Rz Rx"
+	    "zxy"	"Rz Rx Ry"
+	    "zyx"	"Rz Ry Rx"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"t"
+	label	"trans"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ use_obj != 0 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"r"
+	label	"rot"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ use_obj != 0 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"s"
+	label	"scale"
+	type	vector
+	size	3
+	default	{ "1" "1" "1" }
+	disablewhen	"{ use_obj != 0 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"p"
+	label	"pivot"
+	type	vector
+	size	3
+	default	{ "0" "0" "0" }
+	disablewhen	"{ use_obj != 0 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"scale"
+	label	"scale (uniform)"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ use_obj != 0 }"
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert Transform"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"out_xform"
+	label	"Output Xform"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"out_invxform"
+	label	"Output Inverse Xform"
+	type	toggle
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+}
