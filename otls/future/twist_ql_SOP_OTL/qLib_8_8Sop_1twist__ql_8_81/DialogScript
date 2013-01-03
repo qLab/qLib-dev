@@ -277,6 +277,7 @@
 	    label	"Uniform Scale"
 	    type	float
 	    default	{ "1" }
+	    disablewhen	"{ use_obj == 1 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
