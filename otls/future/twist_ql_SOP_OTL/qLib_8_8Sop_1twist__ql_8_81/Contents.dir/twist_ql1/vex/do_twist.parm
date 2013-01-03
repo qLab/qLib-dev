@@ -1,7 +1,7 @@
 {
 version 0.8
 englishname	[ 0	locks=0 ]	(	do_twist	)
-tabmenuflag	[ 0	locks=0 ]	(	"on"	)
+tabmenuflag	[ 0	locks=0 ]	(	"off"	)
 mininputs	[ 0	locks=0 ]	(	1	)
 maxinputs	[ 0	locks=0 ]	(	1	)
 folder0	[ 0	locks=0 ]	(	0	)
