@@ -1,0 +1,29 @@
+{
+    channel input_orient {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"0\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../input_orient\") }
+    }
+    channel orient {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"0\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../orient\") }
+    }
+    channel invert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../invert\") }
+    }
+    channel active {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../active\") }
+    }
+  }

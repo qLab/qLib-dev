@@ -1,0 +1,16 @@
+{
+    channel rows {
+      lefttype = extend
+      righttype = extend
+      default = 11
+      flags = 0
+      segment { length = 0 value = 11 11 expr = ch(\"sizey\")*ch(\"mult\")+1 }
+    }
+    channel cols {
+      lefttype = extend
+      righttype = extend
+      default = 11
+      flags = 0
+      segment { length = 0 value = 11 11 expr = ch(\"sizex\")*ch(\"mult\")+1 }
+    }
+  }

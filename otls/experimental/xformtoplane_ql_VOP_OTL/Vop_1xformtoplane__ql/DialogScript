@@ -1,0 +1,99 @@
+# Dialog script for xformtoplane_ql automatically generated 01/05/13 23:43:19
+
+{
+    name	xformtoplane_ql
+    script	xformtoplane_ql
+    label	"Xform-to-Plane qL"
+
+    outercode {
+	"#include <voplib.h>"
+    }
+
+    code {
+	"/*"
+	"    1. rotate input orientation to XY plane"
+	"    2. rotate XY plane to output orientation"
+	"*/"
+	""
+	"#if !strcmp($signature, \"m3\")"
+	"$xform = { {1.0, 0.0, 0.0 },  {0.0, 1.0, 0.0 },  {0.0, 0.0, 1.0 } };"
+	"#else"
+	"$xform = { {1.0, 0.0, 0.0, 0.0 },  {0.0, 1.0, 0.0, 0.0 },  {0.0, 0.0, 1.0, 0.0 },  {0.0, 0.0, 0.0, 1.0 } };"
+	"#endif"
+	""
+	"if ($input_orient==\"yz\") rotate($xform, radians(90), { 0, 1, 0});"
+	"if ($input_orient==\"zx\") rotate($xform,-radians(90), { 1, 0, 0});"
+	""
+	"$xform = invert($xform);"
+	""
+	"if ($orient==\"yz\") rotate($xform, radians(90), { 0, 1, 0});"
+	"if ($orient==\"zx\") rotate($xform,-radians(90), { 1, 0, 0});"
+	""
+	"if ($invert) $xform = invert($xform);"
+    }
+
+    input	string	input_orient	"Input Orient."
+    input	string	orient	Orientation
+    input	int	invert	Invert
+    output	matrix	xform	Xform
+    output	vector	outP	outP
+    inputflags	input_orient	0
+    inputflags	orient	0
+    inputflags	invert	0
+    signature	"4x4 Matrix"	default	{ string string int matrix vector }
+    signature	"3x3 Matrix"	m3	{ string string int matrix3 vector }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)
+	___begin	auto
+			(0,0,0)
+    }
+    outputoverrides	m3
+    {
+	___begin	auto
+			(1,0,0,0,1,0,0,0,1)
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"input_orient"
+	label	"Input Orient."
+	type	ordinal
+	default	{ "xy" }
+	menu	{
+	    "xy"	"XY plane"
+	    "yz"	"YZ plane"
+	    "zx"	"ZX plane"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"orient"
+	label	"Orientation"
+	type	ordinal
+	default	{ "xy" }
+	menu	{
+	    "xy"	"XY plane"
+	    "yz"	"YZ plane"
+	    "zx"	"ZX plane"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+}

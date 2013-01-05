@@ -1,0 +1,13 @@
+Operator:     xformtoplane_ql
+Label:        Xform to Plane qL
+Path:         oplib:/Sop/xformtoplane_ql?Sop/xformtoplane_ql
+Icon:         VIEW_display_construction_plane
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jan  6 00:13:02 2013
+

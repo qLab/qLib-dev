@@ -1,0 +1,79 @@
+# Dialog script for xformtoplane_ql automatically generated 01/06/13 00:12:29
+
+{
+    name	xformtoplane_ql
+    script	xformtoplane_ql
+    label	"Xform-to-Plane qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    import {
+	label	Parameters
+	source	"op:do_xformtoplane_main"
+	mask	"active *orient invert"
+	enable	1
+
+	parm {
+	    name	"active"
+	    label	"Active"
+	    type	toggle
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "active" }
+	    parmtag	{ "import_source" "op:do_xformtoplane_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"input_orient"
+	    label	"Input Orient"
+	    type	string
+	    default	{ "xy" }
+	    menu	{
+		"xy"	"XY plane"
+		"yz"	"YZ plane"
+		"zx"	"ZX plane"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "input_orient" }
+	    parmtag	{ "import_source" "op:do_xformtoplane_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"orient"
+	    label	"Orientation"
+	    type	string
+	    default	{ "xy" }
+	    menu	{
+		"xy"	"XY plane"
+		"yz"	"YZ plane"
+		"zx"	"ZX plane"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "orient" }
+	    parmtag	{ "import_source" "op:do_xformtoplane_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"invert"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "invert" }
+	    parmtag	{ "import_source" "op:do_xformtoplane_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}

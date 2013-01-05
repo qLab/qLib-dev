@@ -1,0 +1,104 @@
+# Dialog script for mountain_deformer_ql automatically generated 01/05/13 20:44:10
+
+{
+    name	mountain_deformer_ql
+    script	mountain_deformer_ql
+    label	"Mountain Deformer qL"
+
+    outercode {
+	"#include <voplib.h>"
+    }
+
+    code {
+	"{"
+	"    int     i;"
+	"    float   scale = $height;"
+	"    float   nval = 0;"
+	""
+	"    vector  PP = $P;"
+	""
+	"    for(i=$frac_depth;  i>0;  i--)"
+	"    {"
+	"        if ($ntype==\"alligator\")   nval += scale*anoise(PP);"
+	"        else if ($ntype==\"sparse\") nval += scale*snoise(PP);"
+	"        else /* perlin */          nval += scale*( 2.0*noise(PP)-1.0 );"
+	""
+	"        scale *= $rough;"
+	"        PP *= 2;"
+	"    }"
+	""
+	"    $amount = $nval;"
+	"    $dispN = normalize($N)*nval;"
+	"    $dispP = $P + $dispN;"
+	"}"
+    }
+
+    input	point	P	Point
+    input	normal	N	Normal
+    input	int	frac_depth	"Fractal Depth"
+    input	float	rough	Roughness
+    input	float	height	Height
+    input	string	ntype	"Noise Type"
+    output	float	amount	"Disp Amount"
+    output	normal	dispN	"Disp Direction"
+    output	point	dispP	"Disp Point"
+    inputflags	P	0
+    inputflags	N	0
+    inputflags	frac_depth	0
+    inputflags	rough	0
+    inputflags	height	0
+    inputflags	ntype	0
+    signature	"Default Inputs"	default	{ point normal int float float string float normal point }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0,0,0)
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"frac_depth"
+	label	"Fractal Depth"
+	type	integer
+	default	{ "3" }
+	range	{ 1 10 }
+	export	none
+    }
+    parm {
+	name	"rough"
+	label	"Roughness"
+	type	float
+	default	{ "0.6" }
+	range	{ 0.05 0.95 }
+	export	none
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"ntype"
+	label	"Noise Type"
+	type	ordinal
+	default	{ "perlin" }
+	menu	{
+	    "perlin"	"Perlin Noise"
+	    "sparse"	"Sparse Convolution"
+	    "alligator"	"Alligator Noise"
+	}
+	range	{ 0 1 }
+	export	none
+    }
+}

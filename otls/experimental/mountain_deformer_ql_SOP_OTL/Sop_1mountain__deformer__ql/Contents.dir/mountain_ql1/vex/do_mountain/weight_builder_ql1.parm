@@ -1,0 +1,7 @@
+{
+version 0.8
+use	[ 0	locks=0 ]	(	"on"	)
+attrib	[ 0	locks=0 ]	(	weight	)
+invert	[ 0	locks=0 ]	(	"off"	)
+envelope	[ 0	locks=0 ]	(	1	)
+}

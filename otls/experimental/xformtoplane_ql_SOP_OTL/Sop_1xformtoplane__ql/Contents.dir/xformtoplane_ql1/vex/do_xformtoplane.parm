@@ -1,0 +1,11 @@
+{
+version 0.8
+englishname	[ 0	locks=0 ]	(	do_xformtoplane	)
+tabmenuflag	[ 0	locks=0 ]	(	"on"	)
+mininputs	[ 0	locks=0 ]	(	1	)
+maxinputs	[ 0	locks=0 ]	(	1	)
+active	[ 0	locks=0 ]	(	"on"	)
+input_orient	[ 0	locks=0 ]	(	xy	)
+orient	[ 0	locks=0 ]	(	xy	)
+invert	[ 0	locks=0 ]	(	"off"	)
+}
