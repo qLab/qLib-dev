@@ -1,0 +1,29 @@
+{
+    channel frac_depth {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      segment { length = 0 value = 3 3 expr = ch('../frac_depth/intdef') }
+    }
+    channel rough {
+      lefttype = extend
+      righttype = extend
+      default = 0.60000002384185791
+      flags = 0
+      segment { length = 0 value = 0.60000002384185791 0.60000002384185791 expr = ch('../rough/floatdef') }
+    }
+    channel height {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch('../height/floatdef') }
+    }
+    channel ntype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../ntype/stringdef') }
+    }
+  }

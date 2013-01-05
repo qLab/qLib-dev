@@ -1,0 +1,28 @@
+{
+    channel use_rest {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../_vex_use_rest/toggledef') }
+    }
+    channel rest_obj {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs('../_vex_rest_obj/stringdef') }
+    }
+    channel xformtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch('../_vex_xformtype/intdef') }
+    }
+    channel xformpath {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs('../_vex_xformpath/stringdef') }
+    }
+  }
