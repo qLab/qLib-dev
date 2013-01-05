@@ -1,0 +1,70 @@
+    parm {
+	name	"englishname"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"tabmenuflag"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"mininputs"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"maxinputs"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"active"
+	label	"Active"
+	type	toggle
+	default	{ "on" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"input_orient"
+	label	"Input Orient"
+	type	string
+	default	{ "xy" }
+	menu	{
+	    "xy"	"XY plane"
+	    "yz"	"YZ plane"
+	    "zx"	"ZX plane"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"orient"
+	label	"Orientation"
+	type	string
+	default	{ "xy" }
+	menu	{
+	    "xy"	"XY plane"
+	    "yz"	"YZ plane"
+	    "zx"	"ZX plane"
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"invert"
+	label	"Invert"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

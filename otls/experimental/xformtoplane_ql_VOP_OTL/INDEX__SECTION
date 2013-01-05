@@ -1,0 +1,13 @@
+Operator:     xformtoplane_ql
+Label:        Xform-to-Plane qL
+Path:         oplib:/Vop/xformtoplane_ql?Vop/xformtoplane_ql
+Icon:         VIEW_display_construction_plane
+Table:        Vop
+License:      
+Extra:        
+Inputs:       0 to 1
+Subnet:       false
+Python:       false
+Empty:        false
+Modified:     Sat Jan  5 23:43:19 2013
+

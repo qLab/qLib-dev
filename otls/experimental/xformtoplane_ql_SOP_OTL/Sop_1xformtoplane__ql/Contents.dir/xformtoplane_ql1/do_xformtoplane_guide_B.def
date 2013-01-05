@@ -1,0 +1,29 @@
+sopflags sopflags = 
+comment "Referenced from do_xformtoplane_main"
+position 10.1758 4.57338
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+3 	merge3 0 1 "input1"
+}
+inputs
+{
+0 	merge3 0 1
+}
+stat
+{
+  create 1357426083
+  modify 1357427551
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 1 1 0.8 
+delscript ""
+exprlanguage hscript
+end

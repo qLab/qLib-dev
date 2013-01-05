@@ -1,0 +1,27 @@
+{
+    channel invert {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_xformtoplane_main/invert\") }
+    }
+    channel orient {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"zx\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../do_xformtoplane_main/orient\") }
+    }
+    channel vex_reload {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_xformtoplane_main/vex_reload\") }
+    }
+    channel vex_edit {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_xformtoplane_main/vex_edit\") }
+    }
+  }

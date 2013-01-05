@@ -1,0 +1,7 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	default	)
+input_orient	[ 0	locks=0 ]	(	"xy"	)
+orient	[ 0	locks=0 ]	(	"xy"	)
+invert	[ 0	locks=0 ]	(	"off"	)
+}

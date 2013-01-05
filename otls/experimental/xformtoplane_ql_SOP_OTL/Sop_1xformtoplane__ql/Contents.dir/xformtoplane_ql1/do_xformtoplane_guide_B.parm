@@ -1,0 +1,11 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vex_edit	[ 0	locks=0 ]	(	[ vex_edit	0 ] 	)
+vex_reload	[ 0	locks=0 ]	(	[ vex_reload	0 ] 	)
+active	[ 0	locks=0 ]	(	"on"	)
+input_orient	[ 0	locks=0 ]	(	xy	)
+orient	[ 0	locks=0 ]	(	[ orient	xy ] 	)
+invert	[ 0	locks=0 ]	(	[ invert	0 ] 	)
+}

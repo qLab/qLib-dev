@@ -1,0 +1,42 @@
+#icon: VIEW/display_construction_plane
+#context: sop
+#type: node
+
+= Xform-to-Plane qL =
+
+*interface version 1*
+
+"""Rotates geometry from one main plane to another."""
+
+The rotation is built using two inputs: _input orientation_ specifies which main plane the rotation
+starts from (e.g. XY, YZ, ZX), and the rotation will be so that this plane will assume its new
+orientation specified by the _orientation_ parameter.
+
+NOTE:
+    This node is a helper or "component" for building higer level operators. (For example, it is used in all
+    qLib deformer nodes to provide an unified interface for deformation placement.)
+
+@parameters
+
+    Input Orientation:
+        The original main plane orientation of the model.
+
+        XY, YZ, ZX:
+            Consider this main plane as the starting point of the rotation.
+
+    Orientation:
+        The desired orientation of the model.
+
+        XY, YZ, ZX:
+            The plane specified in *Input Orientation* will be rotated to match this plane.
+
+    Invert:
+        Perform invert (opposite) transformation.
+
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-05:
+    First version.
