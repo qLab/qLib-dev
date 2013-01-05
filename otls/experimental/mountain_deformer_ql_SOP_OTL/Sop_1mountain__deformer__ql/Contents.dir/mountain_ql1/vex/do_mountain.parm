@@ -1,7 +1,7 @@
 {
 version 0.8
 englishname	[ 0	locks=0 ]	(	"do mountain"	)
-tabmenuflag	[ 0	locks=0 ]	(	"on"	)
+tabmenuflag	[ 0	locks=0 ]	(	"off"	)
 mininputs	[ 0	locks=0 ]	(	1	)
 maxinputs	[ 0	locks=0 ]	(	1	)
 internal_settings	[ 0	locks=0 ]	(	0	)

@@ -182,13 +182,17 @@
 	parm {
 	    name	"_vex_object_name"
 	    label	"Object Name"
-	    type	string
+	    type	oplist
 	    default	{ "/obj/null1" }
 	    disablewhen	"{ _vex_use_obj == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "opexpand" "1" }
 	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfullpath" "1" }
+	    parmtag	{ "opfilter" "!!OBJ/LIGHT!!" }
+	    parmtag	{ "oprelative" "/" }
 	}
 	parm {
 	    name	"_vex_use_rest"
@@ -206,13 +210,17 @@
 	parm {
 	    name	"_vex_rest_obj"
 	    label	"Rest/Parent Obj."
-	    type	string
+	    type	oplist
 	    default	{ "" }
 	    disablewhen	"{ _vex_use_obj == 0 } { _vex_use_rest == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "opexpand" "1" }
 	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfullpath" "1" }
+	    parmtag	{ "opfilter" "!!OBJ/LIGHT!!" }
+	    parmtag	{ "oprelative" "/" }
 	}
 	parm {
 	    name	"_vex_xformtype"
@@ -233,13 +241,17 @@
 	parm {
 	    name	"_vex_xformpath"
 	    label	"Transform Object"
-	    type	string
+	    type	oplist
 	    default	{ "" }
 	    disablewhen	"{ _vex_use_obj == 0 } { _vex_xformtype == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
+	    parmtag	{ "opexpand" "1" }
 	    parmtag	{ "parmvop" "1" }
+	    parmtag	{ "opfullpath" "1" }
+	    parmtag	{ "opfilter" "!!OBJ/LIGHT!!" }
+	    parmtag	{ "oprelative" "/" }
 	}
 	parm {
 	    name	"_vex_trs"

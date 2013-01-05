@@ -1,4 +1,4 @@
-# Dialog script for mountain_deformer_ql automatically generated 01/05/13 21:28:59
+# Dialog script for mountain_deformer_ql automatically generated 01/06/13 00:41:32
 
 {
     name	mountain_deformer_ql
@@ -170,14 +170,16 @@
 	parm {
 	    name	"_vex_object_name"
 	    label	"Object Name"
-	    type	string
+	    type	oppath
 	    default	{ "/obj/null1" }
 	    disablewhen	"{ _vex_use_obj == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "import_token" "_vex_object_name" }
-	    parmtag	{ "import_source" "op:do_mountain_main" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
 	}
 	parm {
 	    name	"_vex_use_rest"
@@ -196,14 +198,16 @@
 	parm {
 	    name	"_vex_rest_obj"
 	    label	"Rest/Parent Obj."
-	    type	string
+	    type	oppath
 	    default	{ "" }
 	    disablewhen	"{ _vex_use_obj == 0 } { _vex_use_rest == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "import_token" "_vex_rest_obj" }
-	    parmtag	{ "import_source" "op:do_mountain_main" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
 	}
 	parm {
 	    name	"_vex_xformtype"
@@ -225,14 +229,16 @@
 	parm {
 	    name	"_vex_xformpath"
 	    label	"Transform Object"
-	    type	string
+	    type	oppath
 	    default	{ "" }
 	    disablewhen	"{ _vex_use_obj == 0 } { _vex_xformtype == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "import_token" "_vex_xformpath" }
-	    parmtag	{ "import_source" "op:do_mountain_main" }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
 	}
 	parm {
 	    name	"_vex_trs"
@@ -259,6 +265,7 @@
 	    name	"_vex_xyz"
 	    label	"Rotation Order"
 	    type	integer
+	    nolabel
 	    default	{ "0" }
 	    disablewhen	"{ _vex_use_obj == 1 }"
 	    menu	{
