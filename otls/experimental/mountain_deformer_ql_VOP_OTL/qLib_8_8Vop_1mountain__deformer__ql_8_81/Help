@@ -1,0 +1,24 @@
+#icon: SOP/mountain
+#context: vop
+#type: node
+
+= Mountain Deformer qL =
+
+*interface version 1*
+
+"""Mountain deformer VOP."""
+
+The original SESI [Node:sop/mountain] deformer code wrapped in a VOP node.
+
+...
+
+@related
+    - [Node:sop/mountain]
+    - [Node:sop/qLib::mountain_deformer_ql]
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-03:
+    First version.

@@ -1,0 +1,61 @@
+comment ""
+position -1.80796 2.09948
+cachesize 1
+connectornextid 19
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+15 "xform"
+16 "invxform"
+}
+inputsNamed3
+{
+0 	"" "" 1 "active"
+1 	_vex_use_obj 0 1 "use_obj"
+2 	_vex_object_name 0 1 "xform_obj"
+3 	_vex_use_rest 0 1 "use_rest"
+4 	_vex_rest_obj 0 1 "rest_obj"
+5 	_vex_xformtype 0 1 "xformtype"
+6 	_vex_xformpath 0 1 "xformpath"
+7 	trs 0 1 "trs"
+8 	xyz 0 1 "xyz"
+9 	trans 0 1 "t"
+10 	rot 0 1 "r"
+11 	_vex_scale 0 1 "s"
+12 	pivot 0 1 "p"
+13 	_vex_uscale 0 1 "scale"
+14 	"" "" 1 "invert"
+17 	apply_pre_xform 0 1 "out_xform"
+18 	apply_post_xform 0 1 "out_invxform"
+}
+inputs
+{
+0 	"" 0 1
+1 	_vex_use_obj 0 1
+2 	_vex_object_name 0 1
+3 	_vex_use_rest 0 1
+4 	_vex_rest_obj 0 1
+5 	_vex_xformtype 0 1
+6 	_vex_xformpath 0 1
+7 	trs 0 1
+8 	xyz 0 1
+9 	trans 0 1
+10 	rot 0 1
+11 	_vex_scale 0 1
+12 	pivot 0 1
+13 	_vex_uscale 0 1
+14 	"" 0 1
+15 	apply_pre_xform 0 1
+16 	apply_post_xform 0 1
+}
+stat
+{
+  create 1357174426
+  modify 1357595759
+  author tusi@demeisen
+  access 0777
+}
+color UT_Color RGB 0.6 0.4 0.2 
+delscript ""
+exprlanguage hscript
+end

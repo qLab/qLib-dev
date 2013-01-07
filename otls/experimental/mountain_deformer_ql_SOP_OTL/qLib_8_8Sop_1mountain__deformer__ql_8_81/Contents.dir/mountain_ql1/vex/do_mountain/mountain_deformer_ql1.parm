@@ -1,0 +1,7 @@
+{
+version 0.8
+frac_depth	[ 0	locks=0	autoscope=0 ]	(	[ frac_depth	3 ] 	)
+rough	[ 0	locks=0	autoscope=0 ]	(	[ rough	0.59999999999999998 ] 	)
+height	[ 0	locks=0	autoscope=0 ]	(	[ height	1 ] 	)
+ntype	[ 0	locks=0	autoscope=0 ]	(	[ ntype	0 ] 	)
+}

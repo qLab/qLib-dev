@@ -1,0 +1,351 @@
+# Dialog script for qLib::mountain_deformer_ql::1 automatically generated 01/07/13 23:14:28
+
+{
+    name	qLib::mountain_deformer_ql::1
+    script	qLib::mountain_deformer_ql::1
+    label	"Mountain Deformer qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    import {
+	label	"imported parameters"
+	source	"op:do_mountain_main"
+	mask	"vex_group _vex_* separator_*"
+	enable	1
+
+	parm {
+	    name	"vex_group"
+	    label	"Point Group"
+	    type	string
+	    default	{ "" }
+	    menutoggle	{
+		[ "opmenu -l do_mountain_main vex_group" ]
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "vex_group" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_envelope"
+	    label	"Envelope"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_envelope" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_use_weight"
+	    label	"Use Weight"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_use_weight" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_weight_name"
+	    label	"Weight Name"
+	    type	string
+	    joinnext
+	    default	{ "weight" }
+	    disablewhen	"{ _vex_use_weight == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_weight_name" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_invert_weight"
+	    label	"Invert"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ _vex_use_weight == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_invert_weight" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm"
+	    label	"----"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "separator_1" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_frac_depth"
+	    label	"Fractal Depth"
+	    type	integer
+	    default	{ "3" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_frac_depth" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_rough"
+	    label	"Roughness"
+	    type	float
+	    default	{ "0.6" }
+	    range	{ 0.05 0.95 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_rough" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_height"
+	    label	"Height"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_height" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_ntype"
+	    label	"Noise Type"
+	    type	string
+	    default	{ "perlin" }
+	    menu	{
+		"perlin"	"Perlin Noise"
+		"sparse"	"Sparse Convolution"
+		"alligator"	"Alligator Noise"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_ntype" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"labelparm2"
+	    label	"----"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "separator_2" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_use_obj"
+	    label	"Use Object Transform"
+	    type	toggle
+	    default	{ "off" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_use_obj" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_object_name"
+	    label	"Object Name"
+	    type	oppath
+	    default	{ "/obj/null1" }
+	    disablewhen	"{ _vex_use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_object_name" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
+	}
+	parm {
+	    name	"_vex_use_rest"
+	    label	"Use Rest Object"
+	    type	toggle
+	    nolabel
+	    joinnext
+	    default	{ "off" }
+	    disablewhen	"{ _vex_use_obj == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_use_rest" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_rest_obj"
+	    label	"Rest/Parent Obj."
+	    type	oppath
+	    default	{ "" }
+	    disablewhen	"{ _vex_use_obj == 0 } { _vex_use_rest == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_rest_obj" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
+	}
+	parm {
+	    name	"_vex_xformtype"
+	    label	"Transform"
+	    type	integer
+	    default	{ "0" }
+	    disablewhen	"{ _vex_use_obj == 0 }"
+	    menu	{
+		"none"	"None"
+		"local"	"Into This Object"
+		"object"	"Into Specified Object"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_xformtype" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_xformpath"
+	    label	"Transform Object"
+	    type	oppath
+	    default	{ "" }
+	    disablewhen	"{ _vex_use_obj == 0 } { _vex_xformtype != 2 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_xformpath" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "opfilter" "!!OBJ!!" }
+	    parmtag	{ "oprelative" "." }
+	}
+	parm {
+	    name	"_vex_trs"
+	    label	"Transform Order"
+	    type	integer
+	    joinnext
+	    default	{ "0" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    menu	{
+		"srt"	"Scale Rotate Translate"
+		"str"	"Scale Translate Rotate"
+		"rst"	"Rotate Scale Translate"
+		"rts"	"Rotate Translate Scale"
+		"tsr"	"Translate Scale Rotate"
+		"trs"	"Translate Rotate Scale"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_trs" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_xyz"
+	    label	"Rotation Order"
+	    type	integer
+	    nolabel
+	    default	{ "0" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    menu	{
+		"xyz"	"Rx Ry Rz"
+		"xzy"	"Rx Rz Ry"
+		"yxz"	"Ry Rx Rz"
+		"yzx"	"Ry Rz Rx"
+		"zxy"	"Rz Rx Ry"
+		"zyx"	"Rz Ry Rx"
+	    }
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_xyz" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_trans"
+	    label	"Translate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_trans" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_rot"
+	    label	"Rotate"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_rot" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_scale"
+	    label	"Scale"
+	    type	float
+	    size	3
+	    default	{ "1" "1" "1" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_scale" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_uscale"
+	    label	"Uniform Scale"
+	    type	float
+	    default	{ "1" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_uscale" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"_vex_pivot"
+	    label	"Pivot"
+	    type	float
+	    size	3
+	    default	{ "0" "0" "0" }
+	    disablewhen	"{ _vex_use_obj == 1 }"
+	    range	{ 0 10 }
+	    export	none
+	    parmtag	{ "import_token" "_vex_pivot" }
+	    parmtag	{ "import_source" "op:do_mountain_main" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+}
