@@ -1,8 +1,8 @@
 sopflags sopflags = 
-comment "Referenced from do_mountain_main"
-position 2.16959 5.48516
+comment ""
+position -0.59741 5.48516
 cachesize 1
-connectornextid 3
+connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-2 	merge1 0 1 "input1"
+0 	(0) "" 1 "input1"
 }
 inputs
 {
-0 	merge1 0 1
+0 	(0) 0 1
 }
 stat
 {
   create 1357324269
-  modify 1357596776
+  modify 1357598407
   author tusi@demeisen
   access 0777
 }
