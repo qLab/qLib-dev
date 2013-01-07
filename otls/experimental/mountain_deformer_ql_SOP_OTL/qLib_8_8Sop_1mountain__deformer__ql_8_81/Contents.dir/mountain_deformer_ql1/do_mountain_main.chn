@@ -73,13 +73,6 @@
       flags = 0
       segment { length = 0 expr = ch(\"../_vex_use_obj\") }
     }
-    channel _vex_object_name {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"/obj/null1\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../_vex_object_name\") }
-    }
     channel _vex_trs {
       lefttype = extend
       righttype = extend
@@ -186,13 +179,6 @@
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../_vex_use_rest\") }
-    }
-    channel _vex_rest_obj {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../_vex_rest_obj\") }
     }
     channel _vex_xformtype {
       lefttype = extend
