@@ -1,0 +1,11 @@
+10
+vex
+OUT
+do_bias_main
+GUIDE
+do_bias_guideA
+box1
+add1
+box2
+merge2
+pointjitter1

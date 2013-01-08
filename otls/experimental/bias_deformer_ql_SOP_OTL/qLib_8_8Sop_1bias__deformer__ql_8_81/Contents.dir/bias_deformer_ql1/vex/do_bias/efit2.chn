@@ -1,0 +1,16 @@
+{
+    channel ui_foldername {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = node('.').creator().relativePathTo(node('.')).replace('/','_') language = python }
+    }
+    channel pfx {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = evalParm('signature').replace('default','f') language = python }
+    }
+  }

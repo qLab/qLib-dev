@@ -1,6 +1,6 @@
-Operator:     mountain_deformer_ql
+Operator:     qLib::mountain_deformer_ql::1
 Label:        Mountain Deformer qL
-Path:         oplib:/Sop/mountain_deformer_ql?Sop/mountain_deformer_ql
+Path:         oplib:/qLib::Sop/mountain_deformer_ql::1?qLib::Sop/mountain_deformer_ql::1
 Icon:         SOP_mountain
 Table:        Sop
 License:      
@@ -9,5 +9,5 @@ Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Sun Jan  6 00:41:34 2013
+Modified:     Tue Jan  8 01:22:08 2013
 

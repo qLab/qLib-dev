@@ -1,0 +1,64 @@
+#icon: SOP/mountain
+#context: sop
+#type: node
+
+= Mountain Deformer qL =
+
+*interface version 1*
+
+"""Mountain deformer SOP."""
+
+The original SESI [Node:sop/mountain] deformer code wrapped in the qLib deformer template.
+
+
+@parameters
+    Deformer parameters:
+        See [Node:sop/mountain].
+
+    Deformer template parameters:
+        All parameters common to deformer-type nodes.
+
+        Point Group:
+            The points the deformer will be applied to.
+            Empty means the entire geometry.
+
+        Envelope:
+            Deformer envelope.
+
+        Weight:
+            Deformer weight attribute (should be a per-point float attribute).
+
+            Name:
+                Name of the weight attribute.
+            Invert:
+                Use the inverse of weight attribute values.
+
+        Transform:
+            These parameters specify the location of the deformer's effect in 3d space.
+
+            Use Object Transform:
+                Bind the deformer's placement to the location of an `OBJ` object.
+            Object Name:
+                Path of the `OBJ` object to be used for placement.
+            Rest/Parent Object:
+                If enabled, the placement object's relative transformation to this object will be used
+                (instead of plain world space).
+            Transform:
+                (To do) (None/Into this Object/Into Specified Object)
+            Transform Object:
+                (to do)
+            (regular transformation parameters):
+                Use these parameters to set deformer placement if _Use Object Transform_ is off.
+
+
+@related
+    - [Node:sop/mountain]
+    - [Mountain Deformer qL VOP|Node:vop/qLib::mountain_deformer_ql::1]
+
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-05:
+    First version.

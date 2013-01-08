@@ -1,0 +1,13 @@
+Operator:     qLib::bias_deformer_ql::1
+Label:        Bias Deformer qL
+Path:         oplib:/qLib::Sop/bias_deformer_ql::1?qLib::Sop/bias_deformer_ql::1
+Icon:         SHELF_twist_shear
+Table:        Sop
+License:      
+Extra:        guide=./GUIDE 
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jan  8 01:22:19 2013
+
