@@ -148,13 +148,6 @@
       flags = 0
       segment { length = 0 expr = chs(\"../do_mountain_main/separator_1\") }
     }
-    channel _vex_envelope {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../do_mountain_main/_vex_envelope\") }
-    }
     channel vex_reload {
       lefttype = extend
       righttype = extend
@@ -166,20 +159,6 @@
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../do_mountain_main/vex_edit\") }
-    }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../do_mountain_main/vex_numthreads\") }
-    }
-    channel vex_group {
-      lefttype = extend
-      righttype = extend
-      defaultString = \"\"
-      flags = 0
-      segment { length = 0 expr = chs(\"../do_mountain_main/vex_group\") }
     }
     channel _vex_use_rest {
       lefttype = extend

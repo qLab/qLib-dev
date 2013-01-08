@@ -1,4 +1,4 @@
-# Dialog script for qLib::mountain_deformer_ql::1 automatically generated 01/07/13 23:42:00
+# Dialog script for qLib::mountain_deformer_ql::1 automatically generated 01/08/13 00:52:39
 
 {
     name	qLib::mountain_deformer_ql::1
@@ -8,6 +8,21 @@
     help {
 	""
     }
+    bindhandle _vex_pivot1 xform "Transformer" px ""
+    bindhandle _vex_pivot2 xform "Transformer" py ""
+    bindhandle _vex_pivot3 xform "Transformer" pz ""
+    bindhandle _vex_rot1 xform "Transformer" rx ""
+    bindhandle _vex_rot2 xform "Transformer" ry ""
+    bindhandle _vex_rot3 xform "Transformer" rz ""
+    bindhandle _vex_scale1 xform "Transformer" sx ""
+    bindhandle _vex_scale2 xform "Transformer" sy ""
+    bindhandle _vex_scale3 xform "Transformer" sz ""
+    bindhandle _vex_trs xform "Transformer" trs_order ""
+    bindhandle _vex_trans1 xform "Transformer" tx ""
+    bindhandle _vex_trans2 xform "Transformer" ty ""
+    bindhandle _vex_trans3 xform "Transformer" tz ""
+    bindhandle _vex_uscale xform "Transformer" uniform_scale ""
+    bindhandle _vex_xyz xform "Transformer" xyz_order ""
 
     inputlabel	1	"Input Geometry"
     inputlabel	2	"Sub-Network Input #2"
