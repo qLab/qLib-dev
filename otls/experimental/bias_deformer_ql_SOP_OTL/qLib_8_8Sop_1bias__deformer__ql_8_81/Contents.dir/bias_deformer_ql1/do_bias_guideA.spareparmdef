@@ -1,0 +1,202 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_edit"
+	baseparm
+	joinnext
+	export	none
+    }
+    parm {
+	name	"vex_reload"
+	baseparm
+	export	none
+    }
+    group {
+	name	"internal_settings2"
+	label	"(internal settings)"
+	tabbreak
+
+	parm {
+	    name	"apply_pre_xform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"apply_post_xform"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"deformer_weights2"
+	label	"Weights"
+
+	parm {
+	    name	"_vex_envelope"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_use_weight"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"_vex_weight_name"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"_vex_invert_weight"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"separator_1"
+	baseparm
+	export	none
+    }
+    group {
+	name	"deformer_settings2"
+	label	"Deformation"
+
+	parm {
+	    name	"_vex_order"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_bias"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_gain"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"separator_2"
+	baseparm
+	export	none
+    }
+    group {
+	name	"deformer_xform2"
+	label	"Transformation"
+
+	parm {
+	    name	"_vex_use_obj"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_object_name"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_use_rest"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"_vex_rest_obj"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_xformtype"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_xformpath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_trs"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"_vex_xyz"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_trans"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_rot"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_scale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_uscale"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"_vex_pivot"
+	    baseparm
+	    export	none
+	}
+    }
+
+    parm {
+	name	"_vex_ntype"
+	label	"_vex_ntype"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"_vex_height"
+	label	"_vex_height"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"_vex_rough"
+	label	"_vex_rough"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"_vex_frac_depth"
+	label	"_vex_frac_depth"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
