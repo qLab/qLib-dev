@@ -1,0 +1,139 @@
+# Dialog script for qLib::wave_deformer_ql::1 automatically generated 01/09/13 23:16:45
+
+{
+    name	qLib::wave_deformer_ql::1
+    script	qLib::wave_deformer_ql::1
+    label	"Wave Deformer qL"
+
+    input	vector	P	"Point Position"
+    input	int	wavedir	"Wave Direction"
+    input	float	wavetype	"Type (Sine/Tri)"
+    input	float	freq	Frequency
+    input	float	height	Height
+    input	float	decay	Decay
+    input	float	offset	Offset
+    input	float	phase	Phase
+    input	vector	vector	"Up Direction"
+    input	int	use_vector_attrib	"Use Direction Attrib"
+    input	string	vector_attrib_name	"Up Dir Attribute"
+    output	float	amount	"Combined Value"
+    output	vector	dispN	outN
+    output	vector	dispP	outP
+    inputflags	P	0
+    inputflags	wavedir	0
+    inputflags	wavetype	0
+    inputflags	freq	0
+    inputflags	height	0
+    inputflags	decay	0
+    inputflags	offset	0
+    inputflags	phase	0
+    inputflags	vector	0
+    inputflags	use_vector_attrib	0
+    inputflags	vector_attrib_name	0
+    signature	"Default Inputs"	default	{ vector int float float float float float float vector int string float vector vector }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+	___begin	auto
+			(0,0,0)
+	___begin	auto
+			(0,0,0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"P"
+	label	"Point Position"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"wavedir"
+	label	"Wave Direction"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"wavetype"
+	label	"Type (Sine/Tri)"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"freq"
+	label	"Frequency"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"height"
+	label	"Height"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"decay"
+	label	"Decay"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"offset"
+	label	"Offset"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"phase"
+	label	"Phase"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"vector"
+	label	"Up Direction"
+	type	float
+	size	3
+	default	{ "0" "0" "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"use_vector_attrib"
+	label	"Use Direction Attrib"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"vector_attrib_name"
+	label	"Up Dir Attribute"
+	type	string
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+}

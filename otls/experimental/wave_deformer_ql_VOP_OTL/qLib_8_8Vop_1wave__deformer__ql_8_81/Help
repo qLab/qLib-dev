@@ -1,0 +1,22 @@
+#icon: SOP/ripple
+#context: vop
+#type: node
+
+= Wave Deformer qL =
+
+*interface version 1*
+
+"""Deformer for creating wave and ripple patterns (VOP implementation)."""
+
+...
+
+@related
+    - [Node:sop/mountain]
+    - [Mountain Deformer qL SOP|Node:sop/qLib::mountain_deformer_ql::1]
+
+@relnotes Release Notes
+
+_interface version 1_ ---
+
+2013-01-09:
+    First version.
