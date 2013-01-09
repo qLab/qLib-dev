@@ -1,14 +1,12 @@
-#icon: SOP/mountain
+#icon: SOP/ripple
 #context: vop
 #type: node
 
-= Mountain Deformer qL =
+= Wave Deformer qL =
 
 *interface version 1*
 
-"""Mountain deformer VOP."""
-
-The original SESI [Node:sop/mountain] deformer code wrapped in a VOP node.
+"""Deformer for creating wave and ripple patterns (VOP implementation)."""
 
 ...
 
@@ -20,5 +18,5 @@ The original SESI [Node:sop/mountain] deformer code wrapped in a VOP node.
 
 _interface version 1_ ---
 
-2013-01-05:
+2013-01-09:
     First version.

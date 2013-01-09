@@ -1,0 +1,13 @@
+Operator:     qLib::wave_deformer_ql::1
+Label:        Wave Deformer qL
+Path:         oplib:/qLib::Vop/wave_deformer_ql::1?qLib::Vop/wave_deformer_ql::1
+Icon:         SOP_ripple
+Table:        Vop
+License:      
+Extra:        pop sop
+Inputs:       0 to 11
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jan  9 23:16:45 2013
+
