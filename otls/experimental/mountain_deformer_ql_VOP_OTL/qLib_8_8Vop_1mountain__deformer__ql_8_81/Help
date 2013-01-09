@@ -14,11 +14,11 @@ The original SESI [Node:sop/mountain] deformer code wrapped in a VOP node.
 
 @related
     - [Node:sop/mountain]
-    - [Node:sop/qLib::mountain_deformer_ql]
+    - [Mountain Deformer qL SOP|Node:sop/qLib::mountain_deformer_ql::1]
 
 @relnotes Release Notes
 
 _interface version 1_ ---
 
-2013-01-03:
+2013-01-05:
     First version.
