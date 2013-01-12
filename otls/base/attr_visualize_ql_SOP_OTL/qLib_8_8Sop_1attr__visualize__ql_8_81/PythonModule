@@ -154,3 +154,17 @@ viewoptset
         visibility ( 1 )
 '''
 
+
+
+def set_view_pt_size(kwargs, ptsize=None, nsize=None):
+    """."""
+    views = hou.hscript("viewls -n")[0].split()
+    for v in views:
+        if ptsize:
+            hou.hscript("viewdisplay -P points -p %d %s" % (float(ptsize), v))
+        if nsize:
+            if nsize<0:
+                hou.hscript("viewdisplay -N all l off %s" % (v, ))
+            else:
+                hou.hscript("viewdisplay -N all l on -n %f %s" % (float(nsize), v))
+

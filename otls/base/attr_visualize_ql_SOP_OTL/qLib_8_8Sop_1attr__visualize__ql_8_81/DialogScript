@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 12/08/12 02:48:55
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 01/13/13 00:43:43
 
 {
     name	qLib::attr_visualize_ql::1
@@ -824,6 +824,36 @@
 		parmtag	{ "script_callback_language" "python" }
 		parmtag	{ "script_callback" "hou.pwd().hdaModule().clear_built_markers(kwargs)" }
 	    }
+	    parm {
+		name	"sep_1"
+		label	"----"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"view_nsize"
+		label	"Normal Length"
+		type	float
+		joinnext
+		default	{ "0.1" }
+		range	{ 0.01! 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_view_pt_size(kwargs, nsize=kwargs['script_value'])" }
+	    }
+	    parm {
+		name	"view_nsize_off"
+		label	"off"
+		type	button
+		default	{ "-1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_view_pt_size(kwargs, nsize=-1)" }
+	    }
 	}
 
 	group {
@@ -872,6 +902,25 @@
 	    range	{ 0! 10 }
 	    export	none
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sep_2"
+	    label	"----"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"view_ptsize"
+	    label	"Point (Particle) Size"
+	    type	float
+	    default	{ "3" }
+	    range	{ 1! 6 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().set_view_pt_size(kwargs, ptsize=kwargs['script_value'])" }
 	}
     }
 

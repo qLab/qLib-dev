@@ -163,6 +163,25 @@ NOTE:
     Output:
         Settings on how to output visualization results.
 
+        Display Mode:
+            The way the geometry will be output (displayed).
+            Its main purpose is to allow displaying geometry points as particles, so
+            the points can be visualized without resorting manually toggling viewport
+            point displays.
+
+        Use Constant Material:
+            The geometry will have a constant-shaded viewport material assigned.
+            (so it will ignore scene lighing).
+            This allows easier inspection of any colors or texture on the geometry.
+
+        Point (Particle) Size:
+            A shortcut to the viewport _Display Options->Geometry->Point Size_ slider.
+
+            NOTE:
+                Limitation: this slider is not in sync with any other Houdini UI elements
+                for point size. (Also, it has a "write only" kind of behaviour -- you
+                might need to "nudge" the slider a bit to update.)
+
 
 
 @related
@@ -176,6 +195,9 @@ NOTE:
 @Release_Notes Release Notes
 
 _interface version 1_ ---
+
+2013-01-13:
+    Added experimental _Output->Point Size_ slider to quickly adjust viewport point sizes.
 
 2012-11-29:
     New functionality: automatic attribute marker generation for viewport display options.
