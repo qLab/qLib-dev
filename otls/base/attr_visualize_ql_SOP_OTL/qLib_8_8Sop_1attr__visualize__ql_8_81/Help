@@ -150,6 +150,10 @@ NOTE:
         Velocity Scale:
             The `scale` display setting for velocity-type vector attributes (see above.)
 
+        Display in views:
+            All attributes listed here will have their display flag enabled for their markers
+            (all viewports).
+
         Create/Update Markers:
             Press this button to build or update the marker list in the viewports' Display Options.
 
@@ -195,6 +199,9 @@ NOTE:
 @Release_Notes Release Notes
 
 _interface version 1_ ---
+
+2013-01-15:
+    Added attribute list that has their display enabled when building markers for them (first prototype).
 
 2013-01-13:
     Added experimental _Output->Point Size_ slider to quickly adjust viewport point sizes.

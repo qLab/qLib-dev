@@ -6,5 +6,5 @@ vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $
 vop_forcecompile	[ 0	locks=0 ]	(	0	)
 attrib	[ 0	locks=0 ]	(	"`arg(chs(\"../../vector_attr_name\"), stamp(\"..\", \"FORIDXVALUE\", 0))`"	)
 unit_length	[ 0	locks=0 ]	(	[ unit_length	24 ] 	)
-scale	[ 0	locks=0 ]	(	[ scale	10 ] 	)
+scale	[ 0	locks=0 ]	(	[ scale	1 ] 	)
 }

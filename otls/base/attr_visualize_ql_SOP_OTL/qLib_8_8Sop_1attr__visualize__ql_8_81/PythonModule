@@ -67,6 +67,7 @@ def create_markers(kwargs):
     p  = lambda n: hou.pwd().parm(n).eval()
     ps = lambda n: hou.pwd().parm(n).eval().strip()
 
+    views = hou.hscript("viewls -n")[0].split()
     g = hou.pwd().geometry()
 
     def to_as(attrs):
@@ -85,11 +86,17 @@ def create_markers(kwargs):
     if attrs_pr==""  and p('do_markers_pr'):  attrs_pr = to_as(g.primAttribs())
     if attrs_vtx=="" and p('do_markers_vtx'): attrs_vtx = to_as(g.vertexAttribs())
 
+    attrs_display = ps('markers_display').split()
+    if p('do_markers_display')==0: attrs_display = []
+
     CS = [
             (attrs_pt, g.findPointAttrib),
             (attrs_pr, g.findPrimAttrib),
             (attrs_vtx, g.findVertexAttrib)
         ]
+
+    hue = 0
+    color = hou.Color()
 
     for C in CS:
 
@@ -131,9 +138,18 @@ def create_markers(kwargs):
                     vos('attrib', a.name())
                     vos('class', type_name(a.type()))
                     vos('label', '"%s"' % label)
+                    vos('overridecolor', '1')
+                    color.setHSV((hue, 1.0, 0.2)); vos('color', '%f %f %f' % color.rgb())
+                    color.setHSV((hue, 0.7, 0.9)); vos('selcolor', '%f %f %f' % color.rgb())
+
                 if is_vect:
                     vos('scale', scale)
-    
+
+                if name in attrs_display:
+                    for view in views:
+                        hou.hscript('viewoptenable %s all +%s' % (view, opt_name))
+                    hue += 137.5/2.0
+
             else:
                 print "couldn't find attribute %s" % name
 
@@ -166,5 +182,5 @@ def set_view_pt_size(kwargs, ptsize=None, nsize=None):
             if nsize<0:
                 hou.hscript("viewdisplay -N all l off %s" % (v, ))
             else:
-                hou.hscript("viewdisplay -N all l on -n %f %s" % (float(nsize), v))
+                hou.hscript("viewdisplay -n %f %s" % (float(nsize), v))
 

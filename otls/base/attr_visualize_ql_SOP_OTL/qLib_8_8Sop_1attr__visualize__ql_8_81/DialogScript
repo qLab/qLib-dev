@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 01/13/13 00:43:43
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 01/15/13 23:16:04
 
 {
     name	qLib::attr_visualize_ql::1
@@ -805,6 +805,52 @@
 		export	none
 	    }
 	    parm {
+		name	"sep_1"
+		label	"----"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"do_markers_display"
+		label	"do_markers_pt"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"markers_display"
+		label	"Display in views"
+		type	string
+		default	{ "pscale v" }
+		disablewhen	"{ do_markers_display == 0 }"
+		menutoggle	{
+		    [ "r = []" ]
+		    [ "" ]
+		    [ "try:" ]
+		    [ "    g = hou.pwd().geometry()" ]
+		    [ "    attrs = g.pointAttribs() + g.primAttribs() + g.vertexAttribs()" ]
+		    [ "    attrs = [ a.name() for a in attrs if a.dataType() is not hou.attribData.String ]" ]
+		    [ "    attrs = sorted(attrs)" ]
+		    [ "" ]
+		    [ "    for a in attrs:" ]
+		    [ "        r.append(a)" ]
+		    [ "        r.append(a)" ]
+		    [ "except:" ]
+		    [ "    pass" ]
+		    [ "" ]
+		    [ "return r" ]
+		    language	python
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
 		name	"build_markers"
 		label	"Create/Update Markers"
 		type	button
@@ -825,7 +871,7 @@
 		parmtag	{ "script_callback" "hou.pwd().hdaModule().clear_built_markers(kwargs)" }
 	    }
 	    parm {
-		name	"sep_1"
+		name	"sep_3"
 		label	"----"
 		type	label
 		nolabel
@@ -837,22 +883,11 @@
 		name	"view_nsize"
 		label	"Normal Length"
 		type	float
-		joinnext
 		default	{ "0.1" }
 		range	{ 0.01! 1 }
 		export	none
 		parmtag	{ "script_callback_language" "python" }
 		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_view_pt_size(kwargs, nsize=kwargs['script_value'])" }
-	    }
-	    parm {
-		name	"view_nsize_off"
-		label	"off"
-		type	button
-		default	{ "-1" }
-		range	{ 0 1 }
-		export	none
-		parmtag	{ "script_callback_language" "python" }
-		parmtag	{ "script_callback" "hou.pwd().hdaModule().set_view_pt_size(kwargs, nsize=-1)" }
 	    }
 	}
 
