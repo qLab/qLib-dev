@@ -24,7 +24,7 @@
 	    type	string
 	    default	{ "pscale" }
 	    menureplace	{
-		[ "echo Alpha Alpha pscale pscale width width" ]
+		[ "echo Alpha Alpha pscale pscale weight weight width width" ]
 	    }
 	    range	{ 0 1 }
 	    export	none
