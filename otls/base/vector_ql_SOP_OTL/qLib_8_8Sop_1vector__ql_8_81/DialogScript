@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_ql::1 automatically generated 11/18/12 01:28:35
+# Dialog script for qLib::vector_ql::1 automatically generated 01/22/13 00:26:50
 
 {
     name	qLib::vector_ql::1
@@ -261,7 +261,6 @@
 		type	string
 		default	{ "N" }
 		disablewhen	"{ vector_type_b == 1 }"
-		hidewhen	"{ vector_type_b == 1 }"
 		menureplace	{
 		    "P"	"position (P)"
 		    "N"	"normal (N)"
@@ -489,7 +488,7 @@
 	    label	"Label"
 	    type	ordinal
 	    nolabel
-	    default	{ "1" }
+	    default	{ "0" }
 	    menumini	{
 		"1.0"	"default (1.0)"
 		"$FPS"	"to velocity (FPS)"
