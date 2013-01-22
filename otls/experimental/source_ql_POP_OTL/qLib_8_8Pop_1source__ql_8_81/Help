@@ -14,19 +14,95 @@ This operator is a wrapper around the original Source POP, providing the followi
 - A global birth rate multiplier is also provided (to reduce overall particle count, for faster previews, etc.)
 - Useful presets for activations and birth rates
 - Lifespan variance is specified using min/max values
+- Restrictive default settings for attribute inheritance (not inheriting all attributes by default, just velocity and up vector)
 
 @Parameters
-    See the [Source POP|Node:pop/source] documentation for details.
+    (Only the additional parameters are described here.
+    See the [Source POP|Node:pop/source] documentation for the regular node parameters.)
 
-TIP:
-    The _Global Rate Multiplier_ can be used to reduce emission amounts for all sources in a POP network (to provide
-    faster interaction, for example). To achieve this, create the same parameter on the popnet container, then link
-    all `Source qL` global multipliers to this parameter.
+    POP Network:
+        Name of the POP network that contains this node. The path "`..`" is usually fine -- this parameter needs to be set
+        only if the Source node is within a subnet in the POP network.
+
+        The container POP network path is needed for certain operations (e.g. creating a global rate multiplier) or
+        expressions (e.g. preset for first frame-only emission).
+
+    Create & Link to Popnet Global Rate:
+        This button will create a "`Global Rate Mult %`" parameter on the parent POP network container and links this parameter
+        to the same parameter on the Source SOP.
+
+        TIP:
+            By linking all Sources to the container this way, the total amount of processed particles can be easily controlled.
+            (The fastest way is to link one Source, then copy the `ch()` expression from that node to all the other Sources.)
+
+    Source (tab):
+        No additional features.
+
+    Birth (tab):
+        Global Rate Mult %:
+            An overall emission rate multiplier, affecting all emission types.
+            All emission rates get multiplied with this value.
+
+            TIP:
+                (todo: tip about wedged particles workflow)
+
+        Impulse Activation:
+            Same as the original Source POP parameter.
+
+            There is a menu preset that provides emission on the first frame
+            of the particle simulation (also takes preroll into account).
+
+        Impulse Birth Rate:
+            Same as the original Source POP parameter. Note that this is
+            a _per-frame_ emission amount.
+
+        Impulse Mult %:
+            A multiplier on the impulse birth rate. Useful to add gradual changes
+            to emission rates (e.g. animation) without animating the rate
+            parameter itself.
+
+        Constant Activation:
+            See _Impulse Activation_ above (same presets provided).
+
+        Constant Birth Rate:
+            Same as the original Source POP parameter. Note that this is
+            a _per-second_ emission amount (i.e. per-frame values should be
+            multiplied by `$FPS` to get the expected result).
+
+        Constant Mult %:
+            See _Impulse Mult %_ above.
+
+        Life Min, Max:
+            Lifespan range of the emitted particles (_per-second_).
+
+            These are min/max settings, meaning that all particles will live
+            at least as long as _Life Min_, but no particle will live longer
+            than _Life Max_.
+
+    Attributes (tab):
+        No additional features.
+
+    Add Attributes (tab):
+        No additional features.
+
+
+WARNING:
+    LIMITATION: Most of the local variables specific to the original Source POP
+    are not available in the node parameter fields (most notably `$NPT`
+    which refers to the point count of the emission source geometry).
+
+    The exceptions are the __emission rate__ parameter fields, where _all local variables are
+    available_.
+
+    (It's possible to fix this behaviour for all params, but it would turn node
+    internals ugly. As usual, user feedback will decide this question: btw, that means
+    _you_ too.)
 
 
 @related
     - [Node:pop/source]
-    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [PointAttr qL SOP|Node:sop/qLib::pointattr_ql::1]
+    - [Attr Visualize qL SOP|Node:sop/qLib::attr_visualize_ql::1]
 
 
 
@@ -35,4 +111,9 @@ TIP:
     _interface version 1_ ---
 
     2013-01-22:
+        - Minor UI fixes
+        - More restrictive default settings for attribute inheritance
+        - Original Source POP variables (e.g. `$NPT`) now work (but only in the Birth Rate fields right now)
+
+    2013-01-21:
         First version.

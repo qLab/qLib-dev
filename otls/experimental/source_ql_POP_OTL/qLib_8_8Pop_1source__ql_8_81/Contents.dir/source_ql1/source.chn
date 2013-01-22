@@ -103,7 +103,7 @@
       righttype = extend
       default = 100
       flags = 0
-      segment { length = 0 value = 100 100 expr = ch(\"../constantrate_n\") }
+      segment { length = 0 value = 100 100 expr = eval(chsraw(\"../constantrate_n\")) }
     }
     channel constantrate_presets {
       lefttype = extend
@@ -259,7 +259,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../impulserate_n\") }
+      segment { length = 0 expr = eval(chsraw(\"../impulserate_n\")) }
     }
     channel lifevar {
       lefttype = extend

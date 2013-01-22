@@ -1,4 +1,4 @@
-# Dialog script for qLib::source_ql::1 automatically generated 01/22/13 02:38:11
+# Dialog script for qLib::source_ql::1 automatically generated 01/22/13 22:23:04
 
 {
     name	qLib::source_ql::1
@@ -445,7 +445,7 @@
 		name	"attrib"
 		label	"Inherit Attributes"
 		type	string
-		default	{ "*" }
+		default	{ "v up" }
 		menutoggle	{
 		    "accel"	"Acceleration"
 		    "Alpha"	"Alpha"
@@ -459,6 +459,7 @@
 		    "uv"	"Texture uv"
 		    "up"	"Up Vector"
 		    "v"	"Velocity"
+		    "*"	"*: All Attributes"
 		}
 		range	{ 0 1 }
 		export	none
@@ -498,6 +499,7 @@
 		label	"Inherit Velocity"
 		type	float
 		default	{ "1" }
+		disablewhen	"{ initvel == set }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "import_token" "inheritvel" }
@@ -510,6 +512,7 @@
 		type	vector
 		size	3
 		default	{ "0" "0" "0" }
+		disablewhen	"{ initvel == use }"
 		range	{ -1 1 }
 		export	none
 		parmtag	{ "import_token" "vel" }
@@ -522,6 +525,7 @@
 		type	vector
 		size	3
 		default	{ "0" "0" "0" }
+		disablewhen	"{ initvel == use }"
 		range	{ -1 1 }
 		export	none
 		parmtag	{ "import_token" "var" }
@@ -585,6 +589,7 @@
 		label	"Use as Origin"
 		type	ordinal
 		default	{ "indexgeo" }
+		disablewhen	"{ doorigin == 0 }"
 		menu	{
 		    "index"	"index"
 		    "indexgeo"	"index + geo num"
@@ -600,6 +605,7 @@
 		label	"Origin Index"
 		type	integer
 		default	{ "0" }
+		disablewhen	"{ doorigin == 0 }"
 		range	{ 0 10 }
 		export	none
 		parmtag	{ "import_token" "originindex" }
