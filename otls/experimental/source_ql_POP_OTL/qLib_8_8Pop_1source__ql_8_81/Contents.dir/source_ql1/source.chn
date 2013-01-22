@@ -247,7 +247,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../originindex\") }
+      segment { length = 0 expr = eval(chsraw(\"../originindex\")) }
     }
     channel dospeed {
       lefttype = extend
@@ -265,14 +265,22 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = (abs(ch(\"life_max\")-ch(\"life_min\")))/2 }
+      segment { length = 0 expr = "if(
+    strcmp(chs(\"../life_type\"), \"minmax\")==0,
+    (abs(ch(\"life_max\")-ch(\"life_min\")))/2 ,
+    ch(\"../lifevar\")
+    )" }
     }
     channel life {
       lefttype = extend
       righttype = extend
       default = 100
       flags = 0
-      segment { length = 0 value = 100 100 expr = (ch(\"life_max\")+ch(\"life_min\"))/2.0 }
+      segment { length = 0 value = 100 100 expr = "if(
+    strcmp(chs(\"../life_type\"), \"minmax\")==0,
+    (ch(\"life_max\")+ch(\"life_min\"))/2.0 ,
+    ch(\"../life\")
+    )" }
     }
     channel life_min {
       lefttype = extend

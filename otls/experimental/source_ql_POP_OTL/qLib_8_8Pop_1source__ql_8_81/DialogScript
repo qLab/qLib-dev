@@ -1,4 +1,4 @@
-# Dialog script for qLib::source_ql::1 automatically generated 01/22/13 22:23:04
+# Dialog script for qLib::source_ql::1 automatically generated 01/22/13 23:00:40
 
 {
     name	qLib::source_ql::1
@@ -38,7 +38,7 @@
 	source	"op:source"
 	token	""
 	mask	"* ^impulserate ^constantrate ^life ^lifevar"
-	enable	1
+	enable	0
 
 	group {
 	    name	"folder1"
@@ -401,10 +401,24 @@
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	    parm {
+		name	"life_type"
+		label	"Life Expectancy Type"
+		type	ordinal
+		default	{ "minmax" }
+		menu	{
+		    "minmax"	"Min / max"
+		    "variance"	"Life -/+ variance"
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
 		name	"life_min"
-		label	"Life Min"
+		label	"Life Exp. Min"
 		type	float
 		default	{ "10" }
+		disablewhen	"{ life_type != minmax }"
+		hidewhen	"{ life_type != minmax }"
 		range	{ 0! 200 }
 		export	none
 		parmtag	{ "import_token" "life_min" }
@@ -413,10 +427,38 @@
 	    }
 	    parm {
 		name	"life_max"
-		label	"Life Max"
+		label	"Life Exp. Max"
 		type	float
 		default	{ "20" }
+		disablewhen	"{ life_type != minmax }"
+		hidewhen	"{ life_type != minmax }"
 		range	{ 0! 200 }
+		export	none
+		parmtag	{ "import_token" "life_max" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"life"
+		label	"Life Expectancy"
+		type	float
+		default	{ "100" }
+		disablewhen	"{ life_type != variance }"
+		hidewhen	"{ life_type != variance }"
+		range	{ 0! 100 }
+		export	none
+		parmtag	{ "import_token" "life_max" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lifevar"
+		label	"Life Variance"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ life_type != variance }"
+		hidewhen	"{ life_type != variance }"
+		range	{ 0! 5 }
 		export	none
 		parmtag	{ "import_token" "life_max" }
 		parmtag	{ "import_source" "op:source" }
@@ -543,14 +585,18 @@
 		parmtag	{ "import_source" "op:source" }
 		parmtag	{ "autoscope" "0000000000000000" }
 	    }
-	}
-
-	group {
-	    name	"folder1_3"
-	    label	"Add Attributes"
-	    grouptag	{ "import_token" "stdswitcher5:Add Attributes" }
-	    grouptag	{ "import_source" "op:source" }
-
+	    parm {
+		name	"sep_2"
+		label	"----"
+		type	label
+		nolabel
+		default	{ [ "" hscript-expr ] }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "sep_1" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	    parm {
 		name	"doid"
 		label	"Add ID Attributes"

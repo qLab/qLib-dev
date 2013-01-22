@@ -1,4 +1,4 @@
-# Automatically generated script: Tuesday January 22, 22:23 2013
+# Automatically generated script: Tuesday January 22, 23:00 2013
 \set noalias = 1
 #
 #  Creation script for qLib::source_ql::1 operator
@@ -10,5 +10,6 @@ if ( "$arg1" == "" ) then
 endif
 
 # Node $arg1 (qLib::Pop/source_ql::1)
+opspareds "" $arg1
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1
