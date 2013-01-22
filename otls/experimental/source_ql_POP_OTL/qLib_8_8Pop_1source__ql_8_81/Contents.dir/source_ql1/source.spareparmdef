@@ -1,0 +1,318 @@
+    group {
+	name	"stdswitcher5"
+	label	"Source"
+
+	parm {
+	    name	"emittype"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"usecontextgeo"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"soppath"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"source"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"ignorexform"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"samplethreshold"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"distributionattrib"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"threshold"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"densitymin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"usedensity"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_1"
+	label	"Birth"
+
+	parm {
+	    name	"rate_m"
+	    label	"Global Rate Mult %%"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"impulseactivate"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"impulseactivate_presets"
+	    label	"Presets"
+	    type	ordinal
+	    nolabel
+	    default	{ "0" }
+	    menumini	{
+		"0"	"off (0)"
+		"1"	"on (1)"
+		"$T-ch(chsop(\"popnet\")+\"/timestart\")+ch(chsop(\"popnet\")+\"/timepreroll\")<0.99999/$FPS"	"first frame (+preroll)"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `opfullpath(\"..\")` impulseactivate ( $script_value0 )" }
+	}
+	parm {
+	    name	"impulserate"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"impulserate_n"
+	    label	"Impulse Birth Rate"
+	    type	float
+	    joinnext
+	    default	{ "0" }
+	    range	{ 0! 100 }
+	    export	none
+	}
+	parm {
+	    name	"impulserate_presets"
+	    label	"Presets"
+	    type	ordinal
+	    nolabel
+	    default	{ "0" }
+	    menumini	{
+		"0"	"0"
+		"100"	"100"
+		"$NPT"	"no. of points"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `opfullpath(\"..\")` impulserate_n ( $script_value0 )" }
+	}
+	parm {
+	    name	"impulserate_m"
+	    label	"Impulse Mult %%"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0! 1 }
+	    export	none
+	}
+	parm {
+	    name	"constantactivate"
+	    baseparm
+	    joinnext
+	    export	none
+	}
+	parm {
+	    name	"constantactivate_presets"
+	    label	"Presets"
+	    type	ordinal
+	    nolabel
+	    default	{ "0" }
+	    menumini	{
+		"0"	"off (0)"
+		"1"	"on (1)"
+		"$T-ch(chsop(\"popnet\")+\"/timestart\")+ch(chsop(\"popnet\")+\"/timepreroll\")<0.99999/$FPS"	"first frame (+preroll)"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `opfullpath(\"..\")` constantactivate ( $script_value0 )" }
+	}
+	parm {
+	    name	"constantrate"
+	    baseparm
+	    export	all
+	}
+	parm {
+	    name	"constantrate_n"
+	    label	"Const. Birth Rate"
+	    type	float
+	    joinnext
+	    default	{ "100" }
+	    range	{ 0! 100 }
+	    export	all
+	}
+	parm {
+	    name	"constantrate_presets"
+	    label	"Presets"
+	    type	ordinal
+	    nolabel
+	    default	{ "0" }
+	    menumini	{
+		"0"	"0"
+		"100"	"100"
+		"$NPT*$FPS"	"no. of points"
+	    }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback" "opparm `opfullpath(\"..\")` constantrate_n ( $script_value0 )" }
+	}
+	parm {
+	    name	"constantrate_m"
+	    label	"Const. Mult %%"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0! 1 }
+	    export	all
+	}
+	parm {
+	    name	"sep_1"
+	    label	"----"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"prob"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"group"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"preservegroup"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"life"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"lifevar"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"life_min"
+	    label	"Life Min"
+	    type	float
+	    default	{ "10" }
+	    range	{ 0! 200 }
+	    export	none
+	}
+	parm {
+	    name	"life_max"
+	    label	"Life Max"
+	    type	float
+	    default	{ "20" }
+	    range	{ 0! 200 }
+	    export	none
+	}
+	parm {
+	    name	"accuratebirths"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_2"
+	label	"Attributes"
+
+	parm {
+	    name	"attrib"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"createlocalvar"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"initvel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"inheritvel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"vel"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"var"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doellipse"
+	    baseparm
+	    export	none
+	}
+    }
+
+    group {
+	name	"stdswitcher5_3"
+	label	"Add Attributes"
+
+	parm {
+	    name	"doid"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"dogen"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"doorigin"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"originuse"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"originindex"
+	    baseparm
+	    export	none
+	}
+	parm {
+	    name	"dospeed"
+	    baseparm
+	    export	none
+	}
+    }
+

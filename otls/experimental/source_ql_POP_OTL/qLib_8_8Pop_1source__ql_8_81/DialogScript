@@ -1,0 +1,624 @@
+# Dialog script for qLib::source_ql::1 automatically generated 01/22/13 02:38:11
+
+{
+    name	qLib::source_ql::1
+    script	qLib::source_ql::1
+    label	"Source qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"popnet"
+	label	"POP Network"
+	type	oppath
+	default	{ ".." }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+    }
+    parm {
+	name	"parm"
+	label	"Create & Link to Popnet Global Rate %"
+	type	button
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback_language" "hscript" }
+	parmtag	{ "script_callback" "opspare -a -l \"Global Rate %%\" -r 0 1 -v 1 rate_m `chsop(\"popnet\")`; opparm `oppwf()` rate_m ( \"ch(chsop(\\\"popnet\\\")+\\\"/rate_m\\\")\" )" }
+    }
+    import {
+	label	"Source Parameters"
+	source	"op:source"
+	token	""
+	mask	"* ^impulserate ^constantrate ^life ^lifevar"
+	enable	1
+
+	group {
+	    name	"folder1"
+	    label	"Source"
+	    grouptag	{ "import_token" "stdswitcher5:Source" }
+	    grouptag	{ "import_source" "op:source" }
+
+	    parm {
+		name	"emittype"
+		label	"Emission Type"
+		type	ordinal
+		default	{ "point" }
+		menu	{
+		    "point"	"Points (ordered)"
+		    "pointrandom"	"Points (random)"
+		    "center"	"Prim center (ordered)"
+		    "centerrandom"	"Prim center (random)"
+		    "centerattrib"	"Prim center (attribute)"
+		    "edge"	"Edges (ordered)"
+		    "edgerandom"	"Edges (random)"
+		    "edgeattrib"	"Edges (attribute)"
+		    "surface"	"Surfaces (ordered)"
+		    "surfacerandom"	"Surfaces (random)"
+		    "surfaceattrib"	"Surfaces (attribute)"
+		    "volume"	"Volume"
+		    "metaball"	"Metaballs"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "emittype" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"usecontextgeo"
+		label	"Geometry Source"
+		type	ordinal
+		default	{ "first" }
+		menu	{
+		    "none"	"Use Parameter Values"
+		    "first"	"Use First Context Geometry"
+		    "second"	"Use Second Context Geometry"
+		    "third"	"Use Third Context Geometry"
+		    "fourth"	"Use Fourth Context Geometry"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usecontextgeo" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"soppath"
+		label	"SOP"
+		type	oppath
+		default	{ "" }
+		disablewhen	"{ usecontextgeo != none }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "soppath" }
+		parmtag	{ "autoscope" "0000000000000000" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "opfilter" "!!SOP!!" }
+		parmtag	{ "oprelative" "." }
+	    }
+	    parm {
+		name	"source"
+		label	"Source Group"
+		type	string
+		default	{ "" }
+		disablewhen	"{ emittype == volume }"
+		menutoggle	{
+		    [ "opmenu -l source source" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "source" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"ignorexform"
+		label	"Ignore Transform Object"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "ignorexform" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"samplethreshold"
+		label	"Sample Threshold"
+		type	integer
+		default	{ "100" }
+		range	{ 100! 100000 }
+		export	none
+		parmtag	{ "import_token" "samplethreshold" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"distributionattrib"
+		label	"Distribution Attribute"
+		type	string
+		default	{ "area" }
+		disablewhen	"{ emittype != centerattrib emittype != edgeattrib emittype != surfaceattrib }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "distributionattrib" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"threshold"
+		label	"Density Threshold"
+		type	float
+		default	{ "1" }
+		disablewhen	"{ emittype != metaball }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "threshold" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"densitymin"
+		label	"Density Minimum"
+		type	float
+		default	{ "0" }
+		disablewhen	"{ emittype != metaball }"
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "densitymin" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"usedensity"
+		label	"Use Metaball Density"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ emittype != metaball }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "usedensity" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder1_1"
+	    label	"Birth"
+	    grouptag	{ "import_token" "stdswitcher5:Birth" }
+	    grouptag	{ "import_source" "op:source" }
+
+	    parm {
+		name	"rate_m"
+		label	"Global Rate Mult %%"
+		type	float
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "rate_m" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"sep_0"
+		label	"----"
+		type	label
+		nolabel
+		default	{ [ "" hscript-expr ] }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "sep_1" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"impulseactivate"
+		label	"Impulse Activation"
+		type	float
+		joinnext
+		default	{ "1" }
+		range	{ 0! 1! }
+		export	none
+		parmtag	{ "import_token" "impulseactivate" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"impulseactivate_presets"
+		label	"Presets"
+		type	ordinal
+		default	{ "0" }
+		menumini	{
+		    "0"	"off (0)"
+		    "1"	"on (1)"
+		    "$T-ch(chs(\"popnet\")+\"/timestart\")+ch(chs(\"popnet\")+\"/timepreroll\")<0.99999/$FPS"	"first frame (+preroll)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "impulseactivate_presets" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"impulserate_n"
+		label	"Impulse Birth Rate"
+		type	float
+		joinnext
+		default	{ "0" }
+		range	{ 0! 100 }
+		export	none
+		parmtag	{ "import_token" "impulserate_n" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"impulserate_presets"
+		label	"Presets"
+		type	ordinal
+		default	{ "0" }
+		menumini	{
+		    "0"	"0"
+		    "100"	"100"
+		    "$NPT"	"no. of points"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "impulserate_presets" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"impulserate_m"
+		label	"Impulse Mult %%"
+		type	float
+		default	{ "1" }
+		range	{ 0! 1 }
+		export	none
+		parmtag	{ "import_token" "impulserate_m" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"constantactivate"
+		label	"Const. Activation"
+		type	float
+		joinnext
+		default	{ "1" }
+		range	{ 0! 1! }
+		export	none
+		parmtag	{ "import_token" "constantactivate" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"constantactivate_presets"
+		label	"Presets"
+		type	ordinal
+		default	{ "0" }
+		menumini	{
+		    "0"	"off (0)"
+		    "1"	"on (1)"
+		    "$T-ch(chs(\"popnet\")+\"/timestart\")+ch(chs(\"popnet\")+\"/timepreroll\")<0.99999/$FPS"	"first frame (+preroll)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "constantactivate_presets" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"constantrate_n"
+		label	"Const. Birth Rate"
+		type	float
+		joinnext
+		default	{ "100" }
+		range	{ 0! 100 }
+		export	none
+		parmtag	{ "import_token" "constantrate_n" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"constantrate_presets"
+		label	"Presets"
+		type	ordinal
+		default	{ "100" }
+		menumini	{
+		    "0"	"0"
+		    "100"	"100"
+		    "$NPT*$FPS"	"no. of points"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "constantrate_presets" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"constantrate_m"
+		label	"Const. Mult %%"
+		type	float
+		default	{ "1" }
+		range	{ 0! 1 }
+		export	none
+		parmtag	{ "import_token" "constantrate_m" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"sep_1"
+		label	"----"
+		type	label
+		nolabel
+		default	{ [ "" hscript-expr ] }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "sep_1" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"prob"
+		label	"Birth Probability"
+		type	float
+		size	2
+		default	{ "1" "1" }
+		range	{ 0! 5 }
+		export	none
+		parmtag	{ "import_token" "prob" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"group"
+		label	"Birth Group"
+		type	string
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "group" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"preservegroup"
+		label	"Preserve Group"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "preservegroup" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"life_min"
+		label	"Life Min"
+		type	float
+		default	{ "10" }
+		range	{ 0! 200 }
+		export	none
+		parmtag	{ "import_token" "life_min" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"life_max"
+		label	"Life Max"
+		type	float
+		default	{ "20" }
+		range	{ 0! 200 }
+		export	none
+		parmtag	{ "import_token" "life_max" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"accuratebirths"
+		label	"Accurate Births"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "accuratebirths" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder1_2"
+	    label	"Attributes"
+	    grouptag	{ "import_token" "stdswitcher5:Attributes" }
+	    grouptag	{ "import_source" "op:source" }
+
+	    parm {
+		name	"attrib"
+		label	"Inherit Attributes"
+		type	string
+		default	{ "*" }
+		menutoggle	{
+		    "accel"	"Acceleration"
+		    "Alpha"	"Alpha"
+		    "charge"	"Charge"
+		    "Cd"	"Diffuse Color"
+		    "drag"	"Drag"
+		    "mass"	"Mass"
+		    "N"	"Normal"
+		    "rest"	"Rest Position"
+		    "pscale"	"Scale"
+		    "uv"	"Texture uv"
+		    "up"	"Up Vector"
+		    "v"	"Velocity"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "attrib" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"createlocalvar"
+		label	"Create Local Variables"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "createlocalvar" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"initvel"
+		label	"Initial Velocity"
+		type	ordinal
+		default	{ "use" }
+		menu	{
+		    "use"	"Use inherited velocity"
+		    "add"	"Add to inherited velocity"
+		    "set"	"Set initial velocity"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "initvel" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"inheritvel"
+		label	"Inherit Velocity"
+		type	float
+		default	{ "1" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "inheritvel" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"vel"
+		label	"Velocity"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "import_token" "vel" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"var"
+		label	"Variance"
+		type	vector
+		size	3
+		default	{ "0" "0" "0" }
+		range	{ -1 1 }
+		export	none
+		parmtag	{ "import_token" "var" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"doellipse"
+		label	"Ellipsoid Distribution"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "doellipse" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder1_3"
+	    label	"Add Attributes"
+	    grouptag	{ "import_token" "stdswitcher5:Add Attributes" }
+	    grouptag	{ "import_source" "op:source" }
+
+	    parm {
+		name	"doid"
+		label	"Add ID Attributes"
+		type	toggle
+		default	{ "on" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "doid" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dogen"
+		label	"Add Generation Attribute"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "dogen" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"doorigin"
+		label	"Add Origin Attribute"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "doorigin" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"originuse"
+		label	"Use as Origin"
+		type	ordinal
+		default	{ "indexgeo" }
+		menu	{
+		    "index"	"index"
+		    "indexgeo"	"index + geo num"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "originuse" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"originindex"
+		label	"Origin Index"
+		type	integer
+		default	{ "0" }
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "import_token" "originindex" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"dospeed"
+		label	"Add Speed Attribute"
+		type	toggle
+		default	{ "off" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "import_token" "dospeed" }
+		parmtag	{ "import_source" "op:source" }
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+    }
+
+}

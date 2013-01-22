@@ -1,0 +1,331 @@
+{
+    channel impulserate {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"impulserate_n\")*ch(\"impulserate_m\")*ch(\"rate_m\") }
+    }
+    channel constantrate {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = ch(\"constantrate_n\")*ch(\"constantrate_m\")*ch(\"rate_m\") }
+    }
+    channel emittype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../emittype\") }
+    }
+    channel usecontextgeo {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../usecontextgeo\") }
+    }
+    channel soppath {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chsop(\"../soppath\") }
+    }
+    channel source {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../source\") }
+    }
+    channel ignorexform {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../ignorexform\") }
+    }
+    channel samplethreshold {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = ch(\"../samplethreshold\") }
+    }
+    channel distributionattrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"area\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../distributionattrib\") }
+    }
+    channel threshold {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../threshold\") }
+    }
+    channel densitymin {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../densitymin\") }
+    }
+    channel usedensity {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../usedensity\") }
+    }
+    channel impulseactivate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../impulseactivate\") }
+    }
+    channel impulserate_presets {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../impulserate_presets\") }
+    }
+    channel constantactivate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../constantactivate\") }
+    }
+    channel constantrate_n {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = ch(\"../constantrate_n\") }
+    }
+    channel constantrate_presets {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../constantrate_presets\") }
+    }
+    channel probmin {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../prob1\") }
+    }
+    channel probmax {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../prob2\") }
+    }
+    channel group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../group\") }
+    }
+    channel preservegroup {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../preservegroup\") }
+    }
+    channel accuratebirths {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../accuratebirths\") }
+    }
+    channel attrib {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"*\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../attrib\") }
+    }
+    channel createlocalvar {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../createlocalvar\") }
+    }
+    channel initvel {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../initvel\") }
+    }
+    channel inheritvel {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../inheritvel\") }
+    }
+    channel velx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../velx\") }
+    }
+    channel vely {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../vely\") }
+    }
+    channel velz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../velz\") }
+    }
+    channel varx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../varx\") }
+    }
+    channel vary {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../vary\") }
+    }
+    channel varz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../varz\") }
+    }
+    channel doellipse {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../doellipse\") }
+    }
+    channel doid {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../doid\") }
+    }
+    channel dogen {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dogen\") }
+    }
+    channel doorigin {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../doorigin\") }
+    }
+    channel originuse {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../originuse\") }
+    }
+    channel originindex {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../originindex\") }
+    }
+    channel dospeed {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../dospeed\") }
+    }
+    channel impulserate_n {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../impulserate_n\") }
+    }
+    channel lifevar {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = (abs(ch(\"life_max\")-ch(\"life_min\")))/2 }
+    }
+    channel life {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = (ch(\"life_max\")+ch(\"life_min\"))/2.0 }
+    }
+    channel life_min {
+      lefttype = extend
+      righttype = extend
+      default = 100
+      flags = 0
+      segment { length = 0 value = 100 100 expr = ch(\"../life_min\") }
+    }
+    channel life_max {
+      lefttype = extend
+      righttype = extend
+      default = 120
+      flags = 0
+      segment { length = 0 value = 120 120 expr = ch(\"../life_max\") }
+    }
+    channel impulserate_m {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../impulserate_m\") }
+    }
+    channel constantrate_m {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../constantrate_m\") }
+    }
+    channel impulseactivate_presets {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../impulseactivate_presets\") }
+    }
+    channel constantactivate_presets {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../constantactivate_presets\") }
+    }
+    channel sep_1 {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../labelparm\") }
+    }
+    channel rate_m {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../rate_m\") }
+    }
+  }

@@ -1,0 +1,38 @@
+#icon: POP/source
+#context: pop
+#type: node
+
+= Source qL =
+
+*interface version 1*
+
+"""A more convenient alternative for the original Source POP."""
+
+This operator is a wrapper around the original Source POP, providing the following additional/alternative features:
+
+- Birth rates have multiplier values (for easier gradual emission adjustment)
+- A global birth rate multiplier is also provided (to reduce overall particle count, for faster previews, etc.)
+- Useful presets for activations and birth rates
+- Lifespan variance is specified using min/max values
+
+@Parameters
+    See the [Source POP|Node:pop/source] documentation for details.
+
+TIP:
+    The _Global Rate Multiplier_ can be used to reduce emission amounts for all sources in a POP network (to provide
+    faster interaction, for example). To achieve this, create the same parameter on the popnet container, then link
+    all `Source qL` global multipliers to this parameter.
+
+
+@related
+    - [Node:pop/source]
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+
+
+
+@Release_Notes Release Notes
+
+    _interface version 1_ ---
+
+    2013-01-22:
+        First version.
