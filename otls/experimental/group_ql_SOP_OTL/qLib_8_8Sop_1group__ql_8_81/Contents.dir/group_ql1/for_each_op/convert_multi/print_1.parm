@@ -1,0 +1,8 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+message	[ 0	locks=0 ]	(	"subloop: `stamp(\"..\",\"FORIDXVALUE\",0)` `stamp(\"../../../foreach_op\",\"FORVALUE\",0)` -- `ch(\"../../../cnvfromtype\"+stamp(\"../..\",\"FORVALUE\",0))`->`ch(\"../../../cnvtotype\"+stamp(\"../..\",\"FORVALUE\",0))`"	)
+}

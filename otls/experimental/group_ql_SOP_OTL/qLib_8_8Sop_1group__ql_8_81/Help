@@ -1,0 +1,64 @@
+#icon: SOP/group
+#context: sop
+#type: node
+
+= Group qL =
+
+*version 1*
+
+"""Group creation and editing using a series of operations."""
+
+This operator provides an alternative to the original [Group SOP|Node:sop/group]. It provides the exact same
+(sometimes a bit enhanced) functionality, but instead of having a fixed order, operations can be freely
+arranged.
+
+
+@Parameters
+    Operations:
+        A series of group-related operations. Make sure to read the [Group SOP documentation|Node:sop/group].
+
+        Create:
+            Create a new group based on various criteria.
+
+        Combine:
+            Combine existing groups using boolean (set) operations.
+
+        Rename:
+            Rename group(s).
+
+            Note that renaming multiple groups are supported (as per the regular Group SOP):
+            to do this, use an asterisk (*) in both old and new name fields.
+
+        Convert:
+            Convert group(s) to one type to another. There are the following differences
+            to the original Group SOP function:
+            - Conversion of multiple groups _is_ supported (alas, group patterns not yet allowed)
+            - Renaming (hence Preserve Original) is _not_ supported
+
+        Delete:
+            Delete the specified group(s). A pattern specifying multiple groups is accepted.
+
+
+@related
+    - [Node:sop/group]
+    - [PointAttr qL|Node:sop/qLib::pointattr_ql::1]
+
+
+
+TODO:
+    - convert should really convert multiple groups with wildcards and everything
+    - bounding object primitive group support (ie. use not the entire object but a specified sub-group)
+    - correct disable behaviour of convert/omit
+
+
+@relnotes Release Notes
+
+    _version 1_ ---
+
+    2013-01-23:
+        Started working on first prototype.
+
+
+
+
+

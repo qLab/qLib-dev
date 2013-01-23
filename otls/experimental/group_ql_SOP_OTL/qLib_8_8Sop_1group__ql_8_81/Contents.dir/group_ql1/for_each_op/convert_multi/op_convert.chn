@@ -1,0 +1,21 @@
+{
+    channel rangeend {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = $N }
+    }
+    channel cnvfromtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../../cnvfromtype\"+stamp(\"../../../foreach_op\",\"FORVALUE\",0)) }
+    }
+    channel cnvtotype {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../../cnvtotype\"+stamp(\"../../../foreach_op\",\"FORVALUE\",0)) }
+    }
+  }

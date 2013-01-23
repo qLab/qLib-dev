@@ -1,0 +1,206 @@
+# Dialog script for qLib::group_ql::1 automatically generated 01/23/13 20:46:27
+
+{
+    name	qLib::group_ql::1
+    script	qLib::group_ql::1
+    label	"Group qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Input Geometry"
+    inputlabel	2	"Bounding Object #1"
+    inputlabel	3	"Bounding Object #2"
+    inputlabel	4	"Sub-Network Input #4"
+
+    multiparm {
+	name	"oplist"
+	label	"no.# Operations"
+
+	groupradio {
+	    name	"op_#_"
+	    label	"new"
+
+	    parm {
+		name	"enabled_#_0"
+		label	"Enabled"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"todo_1#"
+		label	"(...yet to come...)"
+		type	label
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	groupradio {
+	    name	"op_#__1"
+	    label	"combine"
+
+	    parm {
+		name	"enabled_#_1"
+		label	"Enabled"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"_todo_2#"
+		label	"(...yet to come...)"
+		type	label
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	groupradio {
+	    name	"op_#__2"
+	    label	"rename"
+
+	    parm {
+		name	"enabled_#_2"
+		label	"Enabled"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"oldname#"
+		label	"Group(s)"
+		type	string
+		default	{ "" }
+		disablewhen	"{ enabled_#_2 == 0 }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_delete oldname" ]
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"newname#"
+		label	"New Name(s)"
+		type	string
+		default	{ "" }
+		disablewhen	"{ enabled_#_2 == 0 }"
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+	groupradio {
+	    name	"op_#__3"
+	    label	"convert"
+
+	    parm {
+		name	"enabled_#_3"
+		label	"Enabled"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"cnvfromtype#"
+		label	"From"
+		type	ordinal
+		joinnext
+		default	{ "primgroup" }
+		disablewhen	"{ enabled_#_3 == 0 }"
+		menu	{
+		    "primgroup"	"Primitives"
+		    "ptgroup"	"Points"
+		    "edgegroup"	"Edges"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"cnvtotype#"
+		label	"To"
+		type	ordinal
+		default	{ "ptgroup" }
+		disablewhen	"{ enabled_#_3 == 0 }"
+		menu	{
+		    "primgroup"	"Primitives"
+		    "ptgroup"	"Points"
+		    "edgegroup"	"Edges"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"convertg#"
+		label	"Group(s)"
+		type	string
+		default	{ "" }
+		disablewhen	"{ enabled_#_3 == 0 }"
+		menureplace	{
+		    [ "opmenu -l for_each_op/op_delete convertg" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"primswithallpts#"
+		label	"Omit in New not wholly contained in Old"
+		type	toggle
+		default	{ "off" }
+		disablewhen	"{ enabled_#_3 == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	groupradio {
+	    name	"op_#__4"
+	    label	"delete"
+
+	    parm {
+		name	"enabled_#_4"
+		label	"Enabled"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"destroyname#"
+		label	"Group(s)"
+		type	string
+		default	{ "" }
+		disablewhen	"{ enabled_#_4 == 0 }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_delete destroyname" ]
+		}
+		range	{ 0 1 }
+		export	none
+	    }
+	}
+
+    }
+
+}

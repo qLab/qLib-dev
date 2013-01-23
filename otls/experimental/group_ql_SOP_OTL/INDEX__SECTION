@@ -1,0 +1,13 @@
+Operator:     qLib::group_ql::1
+Label:        Group qL
+Path:         oplib:/qLib::Sop/group_ql::1?qLib::Sop/group_ql::1
+Icon:         SOP_group
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jan 23 20:46:27 2013
+
