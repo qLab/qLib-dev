@@ -1,4 +1,4 @@
-20
+24
 each_op
 switch_op
 create
@@ -19,3 +19,7 @@ op_rename
 op_convert
 convert_multi
 print_1
+op_combine
+print_2
+op_create
+keep_bbox_group

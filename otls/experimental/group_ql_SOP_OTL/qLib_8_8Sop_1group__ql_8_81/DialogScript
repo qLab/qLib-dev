@@ -1,4 +1,4 @@
-# Dialog script for qLib::group_ql::1 automatically generated 01/24/13 01:32:56
+# Dialog script for qLib::group_ql::1 automatically generated 01/24/13 23:30:12
 
 {
     name	qLib::group_ql::1
@@ -17,6 +17,7 @@
     multiparm {
 	name	"oplist"
 	label	"no.# Operations"
+	default	1
 
 	groupradio {
 	    name	"op_#_"
@@ -36,7 +37,7 @@
 		name	"crname#"
 		label	"Group Name"
 		type	string
-		default	{ "" }
+		default	{ "group1" }
 		disablewhen	"{ enabled_#_0 == 0 }"
 		hidewhen	"{ op_#_1 != 0 }"
 		range	{ 0 1 }
@@ -99,8 +100,9 @@
 		    name	"groupnumber#"
 		    label	"Enable"
 		    type	toggle
+		    nolabel
+		    joinnext
 		    default	{ "on" }
-		    disablewhen	"{ enabled_#_0 == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
@@ -110,7 +112,7 @@
 		    label	"Create Ordered"
 		    type	toggle
 		    default	{ "off" }
-		    disablewhen	"{ enabled_#_0 == 0 }"
+		    disablewhen	"{ groupnumber# == 0 }"
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
@@ -120,7 +122,7 @@
 		    label	"Operation"
 		    type	ordinal
 		    default	{ "grppattern" }
-		    disablewhen	"{ enabled_#_0 == 0 }"
+		    disablewhen	"{ groupnumber# == 0 }"
 		    menu	{
 			"grppattern"	"Group by Pattern"
 			"grprange"	"Group by Range"
@@ -135,7 +137,8 @@
 		    label	"Filter Expression"
 		    type	integer
 		    default	{ "1" }
-		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grpexpression }"
+		    disablewhen	"{ groupnumber# == 0 }"
+		    hidewhen	"{ groupop# != grpexpression }"
 		    range	{ 0 10 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
@@ -145,29 +148,32 @@
 		    label	"Pattern"
 		    type	string
 		    default	{ "" }
-		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grppattern }"
+		    disablewhen	"{ groupnumber# == 0 }"
+		    hidewhen	"{ groupop# != grppattern }"
 		    range	{ 0 1 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
 		}
 		parm {
-		    name	"range#"
+		    name	"range#_"
 		    label	"Start / End"
 		    type	integer
 		    size	2
 		    default	{ "0" [ "$N" hscript-expr ] }
-		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grprange }"
+		    disablewhen	"{ groupnumber# == 0 }"
+		    hidewhen	"{ groupop# != grprange }"
 		    range	{ 0! 100 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
 		}
 		parm {
-		    name	"select#"
+		    name	"select#_"
 		    label	"Select _ of _"
 		    type	integer
 		    size	2
 		    default	{ "1" "2" }
-		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grprange }"
+		    disablewhen	"{ groupnumber# == 0 }"
+		    hidewhen	"{ groupop# != grprange }"
 		    range	{ 0! 100 }
 		    export	none
 		    parmtag	{ "autoscope" "0000000000000000" }
@@ -178,18 +184,356 @@
 		name	"folder0#_1"
 		label	"Bounding"
 
+		parm {
+		    name	"groupbounding#"
+		    label	"Enable"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"boundtype#"
+		    label	"Bounding Type"
+		    type	ordinal
+		    default	{ "usebbox" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    menu	{
+			"usebbox"	"Bounding Box"
+			"usebsphere"	"Bounding Sphere"
+			"usebobject"	"Bounding Object (points only)"
+			"usebvolume"	"Bounding Volume (points only)"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"size#"
+		    label	"Size"
+		    type	vector
+		    size	3
+		    default	{ "1" "1" "1" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebbox boundtype# != usebsphere }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"t#"
+		    label	"Center"
+		    type	vector
+		    size	3
+		    default	{ "0" "0" "0" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebbox boundtype# != usebsphere }"
+		    range	{ -1 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"boundprimgroup#"
+		    label	"Group"
+		    type	string
+		    default	{ "" }
+		    help	"Primitive group within object to use as bounds."
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebobject boundtype# != usebvolume }"
+		    menutoggle	{
+			[ "opmenu -l for_each_op/keep_bbox_group group" ]
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"iso#"
+		    label	"Iso Surface"
+		    type	float
+		    default	{ "0" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebvolume }"
+		    range	{ 0 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"invertvolume#"
+		    label	"Invert"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebvolume }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"includenotwhollycontained#"
+		    label	"Include Entities Not Wholly Contained"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ groupbounding# == 0 }"
+		    hidewhen	"{ boundtype# != usebbox boundtype# != usebsphere }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
 
 	    group {
 		name	"folder0#_2"
 		label	"Normal"
 
+		parm {
+		    name	"groupnormal#"
+		    label	"Enable"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"camerapath#"
+		    label	"Backface from"
+		    type	oppath
+		    default	{ "" }
+		    disablewhen	"{ groupnormal# == 0 } { nonplanar# != 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "oprelative" "." }
+		    parmtag	{ "opfilter" "!!OBJ!!" }
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dir#"
+		    label	"Direction"
+		    type	direction
+		    size	3
+		    default	{ "0" "0" "1" }
+		    disablewhen	"{ groupnormal# == 0 } { nonplanar# != 0 }"
+		    hidewhen	"{ camerapath# != \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"angle#"
+		    label	"Spread Angle"
+		    type	angle
+		    default	{ "180" }
+		    disablewhen	"{ groupnormal# == 0 } { nonplanar# != 0 }"
+		    hidewhen	"{ camerapath# != \"\" }"
+		    range	{ 0! 180! }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"nonplanar#"
+		    label	"Non-Planar Polygons"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    disablewhen	"{ groupnormal# == 0 }"
+		    hidewhen	"{ camerapath# != \"\" }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"nonplanartol#"
+		    label	"Non-Planar Polygons Tolerance"
+		    type	float
+		    default	{ "0.001" }
+		    disablewhen	"{ groupnormal# == 0 } { nonplanar# == 0 }"
+		    hidewhen	"{ camerapath# != \"\" }"
+		    range	{ 0! 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
 
 	    group {
 		name	"folder0#_3"
 		label	"Edges"
 
+		parm {
+		    name	"groupedges#"
+		    label	"Enable"
+		    type	toggle
+		    default	{ "off" }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dominedgeangle#"
+		    label	"Min Edge Angle"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    hidewhen	"{ entity# != primitive entity# != edge }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"minedgeangle#"
+		    label	"Min Edge Angle"
+		    type	angle
+		    default	{ "20" }
+		    disablewhen	"{ groupedges# == 0 } { dominedgeangle# == 0 }"
+		    hidewhen	"{ entity# != primitive entity# != edge }"
+		    range	{ 0 360 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"domaxedgeangle#"
+		    label	"Max Edge Angle"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    hidewhen	"{ entity# != primitive entity# != edge }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"maxedgeangle#"
+		    label	"Max Edge Angle"
+		    type	angle
+		    default	{ "20" }
+		    disablewhen	"{ groupedges# == 0 } { domaxedgeangle# == 0 }"
+		    hidewhen	"{ entity# != primitive entity# != edge }"
+		    range	{ 0 360 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"edgeanglebetweenedges#"
+		    label	"Edge Angle Uses Angle Between Edges"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ groupedges# == 0 } { dominedgeangle# == 0 domaxedgeangle# == 0 }"
+		    hidewhen	"{ entity# != edge }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dominedgelen#"
+		    label	"Min Edge Length"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    hidewhen	"{ entity# != edge }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"minedgelen#"
+		    label	"Min Edge Length"
+		    type	float
+		    default	{ "0" }
+		    disablewhen	"{ groupedges# == 0 } { dominedgelen# == 0 }"
+		    hidewhen	"{ entity# != edge }"
+		    range	{ 0! 100 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"domaxedgelen#"
+		    label	"Max Edge Length"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    hidewhen	"{ entity# != edge }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"maxedgelen#"
+		    label	"Max Edge Length"
+		    type	float
+		    default	{ "0" }
+		    disablewhen	"{ groupedges# == 0 } { domaxedgelen# == 0 }"
+		    hidewhen	"{ entity# != edge }"
+		    range	{ 0! 100 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"dodepth#"
+		    label	"Edge Depth"
+		    type	toggle
+		    nolabel
+		    joinnext
+		    default	{ "off" }
+		    hidewhen	"{ entity# != point }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"edgestep#"
+		    label	"Edge Depth"
+		    type	integer
+		    default	{ "0" }
+		    disablewhen	"{ groupedges# == 0 } { dodepth# == 0 }"
+		    hidewhen	"{ entity# != point }"
+		    range	{ 0! 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"edgeptgrp#"
+		    label	"Point Group"
+		    type	string
+		    default	{ "0" }
+		    disablewhen	"{ groupedges# == 0 } { dodepth# == 0 }"
+		    menutoggle	{
+			[ "opmenu -l for_each_op/op_create edgeptgrp" ]
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"unshared#"
+		    label	"Unshared Edges"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ groupedges# == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"boundarygroups#"
+		    label	"Create Boundary Groups"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ groupedges# == 0 }"
+		    hidewhen	"{ entity# != point } { unshared# == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
 	    }
 
 	}

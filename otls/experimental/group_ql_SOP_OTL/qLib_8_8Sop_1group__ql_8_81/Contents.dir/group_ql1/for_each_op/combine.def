@@ -10,16 +10,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-2 	each_op 1 1 "input1"
+2 	op_combine 2 1 "input1"
 }
 inputs
 {
-0 	each_op 0 1
+0 	op_combine 0 1
 }
 stat
 {
   create 1358964023
-  modify 1358964114
+  modify 1358984087
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

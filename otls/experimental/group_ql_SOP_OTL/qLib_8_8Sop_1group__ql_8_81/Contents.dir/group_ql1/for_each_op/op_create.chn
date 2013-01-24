@@ -1,27 +1,28 @@
 {
-    channel entity {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../../entity\"+stamp(\"..\",\"FORVALUE\",0)) }
-    }
-    channel geotype {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../../geotype\"+stamp(\"..\",\"FORVALUE\",0)) }
-    }
     channel rangeend {
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = eval(chsraw(\"../../range\"+stamp(\"..\",\"FORVALUE\",0)+\"2\")) }
+      segment { length = 0 expr = eval(chsraw(\"../../range\"+stamp(\"..\",\"FORVALUE\",0)+\"_2\")) }
+    }
+    channel groupnumber {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../../groupnumber\"+stamp(\"..\",\"FORVALUE\",0)) }
     }
     channel ordered {
       lefttype = extend
       righttype = extend
       flags = 0
       segment { length = 0 expr = ch(\"../../ordered\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel groupop {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../groupop\"+stamp(\"..\",\"FORVALUE\",0)) }
     }
     channel filter {
       lefttype = extend
@@ -34,34 +35,232 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = eval(chsraw(\"../../range\"+stamp(\"..\",\"FORVALUE\",0)+\"1\")) }
+      segment { length = 0 expr = eval(chsraw(\"../../range\"+stamp(\"..\",\"FORVALUE\",0)+\"_1\")) }
     }
     channel select1 {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../select\"+stamp(\"..\",\"FORVALUE\",0)+\"1\")) }
+      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../select\"+stamp(\"..\",\"FORVALUE\",0)+\"_1\")) }
     }
     channel select2 {
       lefttype = extend
       righttype = extend
       default = 2
       flags = 0
-      segment { length = 0 value = 2 2 expr = eval(chsraw(\"../../select\"+stamp(\"..\",\"FORVALUE\",0)+\"2\")) }
+      segment { length = 0 value = 2 2 expr = eval(chsraw(\"../../select\"+stamp(\"..\",\"FORVALUE\",0)+\"_2\")) }
     }
-    channel groupop {
+    channel groupbounding {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../groupbounding\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel groupnormal {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../groupnormal\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel groupedges {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../groupedges\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel boundtype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../boundtype\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel entity {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../entity\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel geotype {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../geotype\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel sizex {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../../groupop\"+stamp(\"..\",\"FORVALUE\",0)) }
+      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../size\"+stamp(\"..\",\"FORVALUE\",0)+\"x\")) }
     }
-    channel groupnumber {
+    channel sizey {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../../groupnumber\"+stamp(\"..\",\"FORVALUE\",0)) }
+      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../size\"+stamp(\"..\",\"FORVALUE\",0)+\"y\")) }
+    }
+    channel sizez {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../size\"+stamp(\"..\",\"FORVALUE\",0)+\"z\")) }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../t\"+stamp(\"..\",\"FORVALUE\",0)+\"x\")) }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../t\"+stamp(\"..\",\"FORVALUE\",0)+\"y\")) }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../t\"+stamp(\"..\",\"FORVALUE\",0)+\"z\")) }
+    }
+    channel iso {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../iso\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel invertvolume {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../invertvolume\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel includenotwhollycontained {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../includenotwhollycontained\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel dirx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../dir\"+stamp(\"..\",\"FORVALUE\",0)+\"x\")) }
+    }
+    channel diry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../dir\"+stamp(\"..\",\"FORVALUE\",0)+\"y\")) }
+    }
+    channel dirz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = eval(chsraw(\"../../dir\"+stamp(\"..\",\"FORVALUE\",0)+\"z\")) }
+    }
+    channel angle {
+      lefttype = extend
+      righttype = extend
+      default = 180
+      flags = 0
+      segment { length = 0 value = 180 180 expr = eval(chsraw(\"../../angle\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel nonplanartol {
+      lefttype = extend
+      righttype = extend
+      default = 0.00100000005
+      flags = 0
+      segment { length = 0 value = 0.00100000005 0.00100000005 expr = eval(chsraw(\"../../nonplanartol\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel nonplanar {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../nonplanar\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel minedgeangle {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = eval(chsraw(\"../../minedgeangle\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel maxedgeangle {
+      lefttype = extend
+      righttype = extend
+      default = 20
+      flags = 0
+      segment { length = 0 value = 20 20 expr = eval(chsraw(\"../../maxedgeangle\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel minedgelen {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../minedgelen\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel maxedgelen {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../maxedgelen\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel edgestep {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = eval(chsraw(\"../../edgestep\"+stamp(\"..\",\"FORVALUE\",0))) }
+    }
+    channel edgeanglebetweenedges {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../edgeanglebetweenedges\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel dominedgeangle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../dominedgeangle\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel domaxedgeangle {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../domaxedgeangle\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel dominedgelen {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../dominedgelen\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel domaxedgelen {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../domaxedgelen\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel dodepth {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../dodepth\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel unshared {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../unshared\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel boundarygroups {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../boundarygroups\"+stamp(\"..\",\"FORVALUE\",0)) }
     }
   }
