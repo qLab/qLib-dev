@@ -11,16 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 32 	each_op 1 1 "input1"
-33 	"" "" 1 "input2"
-34 	"" "" 1 "input3"
-35 	"" "" 1 "input4"
 }
 inputs
 {
 0 	each_op 0 1
-1 	"" 0 1
-2 	"" 0 1
-3 	"" 0 1
 }
 stat
 {

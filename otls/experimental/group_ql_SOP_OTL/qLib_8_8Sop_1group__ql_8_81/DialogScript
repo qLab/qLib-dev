@@ -1,4 +1,4 @@
-# Dialog script for qLib::group_ql::1 automatically generated 01/24/13 23:30:12
+# Dialog script for qLib::group_ql::1 automatically generated 01/25/13 00:04:08
 
 {
     name	qLib::group_ql::1
@@ -37,7 +37,7 @@
 		name	"crname#"
 		label	"Group Name"
 		type	string
-		default	{ "group1" }
+		default	{ "grp_#" }
 		disablewhen	"{ enabled_#_0 == 0 }"
 		hidewhen	"{ op_#_1 != 0 }"
 		range	{ 0 1 }
@@ -548,18 +548,224 @@
 		type	toggle
 		nolabel
 		joinnext
-		default	{ "0" }
+		default	{ "1" }
 		range	{ 0 1 }
 		export	none
 	    }
 	    parm {
-		name	"_todo_2#"
-		label	"(...yet to come...)"
-		type	label
-		default	{ "" }
-		hidewhen	"{ enabled_#_1 == 0 }"
+		name	"combineentity#"
+		label	"Combine Entity"
+		type	ordinal
+		default	{ "guess" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		menu	{
+		    "guess"	"Guess from Group"
+		    "points"	"Points"
+		    "prims"	"Primitives"
+		    "edges"	"Edges"
+		}
 		range	{ 0 1 }
 		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"grpequal#"
+		label	"Group"
+		type	string
+		joinnext
+		default	{ "" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_combine grpequal" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"not1_#"
+		label	"Not"
+		type	integer
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		menu	{
+		    "off"	"=="
+		    "on"	"=/="
+		}
+		range	{ 0 10 }
+		export	none
+	    }
+	    parm {
+		name	"grp1_#"
+		label	"Group 1"
+		type	string
+		nolabel
+		default	{ "" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_combine grp1" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"op1_#"
+		label	"Operation"
+		type	ordinal
+		nolabel
+		joinnext
+		default	{ "none" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		hidewhen	"{ grp1_# == \"\" }"
+		menu	{
+		    "none"	"None"
+		    "or"	"Union (Or)"
+		    "and"	"Intersect (And)"
+		    "xor"	"Exclusive Or"
+		    "sub"	"Subtraction"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"not2_#"
+		label	"Not"
+		type	integer
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enabled_#_1 == 0 } { op1_# == none }"
+		hidewhen	"{ grp1_# == \"\" }"
+		menu	{
+		    "off"	"=="
+		    "on"	"=/="
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"grp2_#"
+		label	"Group 2"
+		type	string
+		nolabel
+		default	{ "" }
+		disablewhen	"{ enabled_#_1 == 0 } { op1_# == none }"
+		hidewhen	"{ grp1_# == \"\" }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_combine grp2" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"op2_#"
+		label	"Operation"
+		type	ordinal
+		nolabel
+		joinnext
+		default	{ "none" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		hidewhen	"{ grp2_# == \"\" }"
+		menu	{
+		    "none"	"None"
+		    "or"	"Union (Or)"
+		    "and"	"Intersect (And)"
+		    "xor"	"Exclusive Or"
+		    "sub"	"Subtraction"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"not3_#"
+		label	"Not"
+		type	integer
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enabled_#_1 == 0 } { op2_# == none }"
+		hidewhen	"{ grp2_# == \"\" }"
+		menu	{
+		    "off"	"=="
+		    "on"	"=/="
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"grp3_#"
+		label	"Group 3"
+		type	string
+		nolabel
+		default	{ "" }
+		disablewhen	"{ enabled_#_1 == 0 } { op2_# == none }"
+		hidewhen	"{ grp2_# == \"\" }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_combine grp3" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"op3_#"
+		label	"Operation"
+		type	ordinal
+		nolabel
+		joinnext
+		default	{ "none" }
+		disablewhen	"{ enabled_#_1 == 0 }"
+		hidewhen	"{ grp3_# == \"\" }"
+		menu	{
+		    "none"	"None"
+		    "or"	"Union (Or)"
+		    "and"	"Intersect (And)"
+		    "xor"	"Exclusive Or"
+		    "sub"	"Subtraction"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"not4_#"
+		label	"Not"
+		type	integer
+		nolabel
+		joinnext
+		default	{ "0" }
+		disablewhen	"{ enabled_#_1 == 0 } { op3_# == none }"
+		hidewhen	"{ grp3_# == \"\" }"
+		menu	{
+		    "off"	"=="
+		    "on"	"=/="
+		}
+		range	{ 0 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"grp4_#"
+		label	"Group 4"
+		type	string
+		nolabel
+		default	{ "" }
+		disablewhen	"{ enabled_#_1 == 0 } { op3_# == none }"
+		hidewhen	"{ grp3_# == \"\" }"
+		menutoggle	{
+		    [ "opmenu -l for_each_op/op_combine grp4" ]
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
 	}
 

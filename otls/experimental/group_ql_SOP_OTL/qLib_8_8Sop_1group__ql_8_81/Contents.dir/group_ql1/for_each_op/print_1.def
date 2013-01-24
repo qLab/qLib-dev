@@ -11,16 +11,10 @@ outputsNamed3
 inputsNamed3
 {
 0 	switch_op_disabled 0 1 "input1"
-26 	"" "" 1 "input2"
-27 	"" "" 1 "input3"
-28 	"" "" 1 "input4"
 }
 inputs
 {
 0 	switch_op_disabled 0 1
-1 	"" 0 1
-2 	"" 0 1
-3 	"" 0 1
 }
 stat
 {

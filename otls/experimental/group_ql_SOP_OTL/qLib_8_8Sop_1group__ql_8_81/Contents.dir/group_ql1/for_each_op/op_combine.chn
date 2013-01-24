@@ -5,4 +5,52 @@
       flags = 0
       segment { length = 0 expr = $N }
     }
+    channel combineentity {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../combineentity\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel not1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../not1_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel op1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../op1_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel op2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../op2_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel op3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../op3_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel not2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../not2_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel not3 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../not3_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
+    channel not4 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../../not4_\"+stamp(\"..\",\"FORVALUE\",0)) }
+    }
   }

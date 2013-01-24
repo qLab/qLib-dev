@@ -173,9 +173,9 @@
     channel nonplanartol {
       lefttype = extend
       righttype = extend
-      default = 0.00100000005
+      default = 0.0010000000474974513
       flags = 0
-      segment { length = 0 value = 0.00100000005 0.00100000005 expr = eval(chsraw(\"../../nonplanartol\"+stamp(\"..\",\"FORVALUE\",0))) }
+      segment { length = 0 value = 0.0010000000474974513 0.0010000000474974513 expr = eval(chsraw(\"../../nonplanartol\"+stamp(\"..\",\"FORVALUE\",0))) }
     }
     channel nonplanar {
       lefttype = extend
