@@ -49,6 +49,7 @@ TODO:
     - convert should really convert multiple groups with wildcards and everything
     - bounding object primitive group support (ie. use not the entire object but a specified sub-group)
     - correct disable behaviour of convert/omit
+    - variable `$N` must be supported in creation parameters (Number, Edges tabs)
 
 
 @relnotes Release Notes

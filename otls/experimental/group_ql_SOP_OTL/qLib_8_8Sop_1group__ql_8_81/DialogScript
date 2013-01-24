@@ -1,4 +1,4 @@
-# Dialog script for qLib::group_ql::1 automatically generated 01/23/13 20:46:27
+# Dialog script for qLib::group_ql::1 automatically generated 01/24/13 01:32:56
 
 {
     name	qLib::group_ql::1
@@ -33,13 +33,165 @@
 		export	none
 	    }
 	    parm {
-		name	"todo_1#"
-		label	"(...yet to come...)"
-		type	label
+		name	"crname#"
+		label	"Group Name"
+		type	string
 		default	{ "" }
+		disablewhen	"{ enabled_#_0 == 0 }"
+		hidewhen	"{ op_#_1 != 0 }"
 		range	{ 0 1 }
 		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
 	    }
+	    parm {
+		name	"entity#"
+		label	"Entity"
+		type	ordinal
+		joinnext
+		default	{ "primitive" }
+		disablewhen	"{ enabled_#_0 == 0 }"
+		hidewhen	"{ op_#_1 != 0 }"
+		menu	{
+		    "primitive"	"Primitives"
+		    "point"	"Points"
+		    "edge"	"Edges"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"geotype#"
+		label	"Geometry Type"
+		type	ordinal
+		nolabel
+		default	{ "all" }
+		disablewhen	"{ enabled_#_0 == 0 }"
+		hidewhen	"{ op_#_1 != 0 }"
+		menu	{
+		    "all"	"All Types"
+		    "bezierc"	"Bezier Curve"
+		    "bezier"	"Bezier Surface"
+		    "circle"	"Circle"
+		    "mesh"	"Mesh"
+		    "meta"	"Metaball"
+		    "nurbc"	"NURBS Curve"
+		    "nurb"	"NURBS Surface"
+		    "part"	"Particles"
+		    "poly"	"Polygon"
+		    "sphere"	"Sphere"
+		    "tube"	"Tube"
+		    "tristrip"	"Triangle Strip"
+		    "trifan"	"Triangle Fan"
+		    "tribez"	"Triangular Bezier"
+		    "volume"	"Volume"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    group {
+		name	"folder0#"
+		label	"Number"
+		hidewhen	"{ op_#_1 != 0 } { enabled_#_0 == 0 }"
+
+		parm {
+		    name	"groupnumber#"
+		    label	"Enable"
+		    type	toggle
+		    default	{ "on" }
+		    disablewhen	"{ enabled_#_0 == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"ordered#"
+		    label	"Create Ordered"
+		    type	toggle
+		    default	{ "off" }
+		    disablewhen	"{ enabled_#_0 == 0 }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"groupop#"
+		    label	"Operation"
+		    type	ordinal
+		    default	{ "grppattern" }
+		    disablewhen	"{ enabled_#_0 == 0 }"
+		    menu	{
+			"grppattern"	"Group by Pattern"
+			"grprange"	"Group by Range"
+			"grpexpression"	"Group by Expression"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"filter#"
+		    label	"Filter Expression"
+		    type	integer
+		    default	{ "1" }
+		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grpexpression }"
+		    range	{ 0 10 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"pattern#"
+		    label	"Pattern"
+		    type	string
+		    default	{ "" }
+		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grppattern }"
+		    range	{ 0 1 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"range#"
+		    label	"Start / End"
+		    type	integer
+		    size	2
+		    default	{ "0" [ "$N" hscript-expr ] }
+		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grprange }"
+		    range	{ 0! 100 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+		parm {
+		    name	"select#"
+		    label	"Select _ of _"
+		    type	integer
+		    size	2
+		    default	{ "1" "2" }
+		    disablewhen	"{ enabled_#_0 == 0 } { groupop# != grprange }"
+		    range	{ 0! 100 }
+		    export	none
+		    parmtag	{ "autoscope" "0000000000000000" }
+		}
+	    }
+
+	    group {
+		name	"folder0#_1"
+		label	"Bounding"
+
+	    }
+
+	    group {
+		name	"folder0#_2"
+		label	"Normal"
+
+	    }
+
+	    group {
+		name	"folder0#_3"
+		label	"Edges"
+
+	    }
+
 	}
 
 	groupradio {
@@ -61,6 +213,7 @@
 		label	"(...yet to come...)"
 		type	label
 		default	{ "" }
+		hidewhen	"{ enabled_#_1 == 0 }"
 		range	{ 0 1 }
 		export	none
 	    }
@@ -86,8 +239,9 @@
 		type	string
 		default	{ "" }
 		disablewhen	"{ enabled_#_2 == 0 }"
+		hidewhen	"{ op_#_1 != 2 }"
 		menutoggle	{
-		    [ "opmenu -l for_each_op/op_delete oldname" ]
+		    [ "opmenu -l for_each_op/op_rename oldname" ]
 		}
 		range	{ 0 1 }
 		export	none
@@ -98,6 +252,7 @@
 		type	string
 		default	{ "" }
 		disablewhen	"{ enabled_#_2 == 0 }"
+		hidewhen	"{ op_#_1 != 2 }"
 		range	{ 0 1 }
 		export	none
 	    }
@@ -124,6 +279,7 @@
 		joinnext
 		default	{ "primgroup" }
 		disablewhen	"{ enabled_#_3 == 0 }"
+		hidewhen	"{ op_#_1 != 3 }"
 		menu	{
 		    "primgroup"	"Primitives"
 		    "ptgroup"	"Points"
@@ -139,6 +295,7 @@
 		type	ordinal
 		default	{ "ptgroup" }
 		disablewhen	"{ enabled_#_3 == 0 }"
+		hidewhen	"{ op_#_1 != 3 }"
 		menu	{
 		    "primgroup"	"Primitives"
 		    "ptgroup"	"Points"
@@ -154,8 +311,9 @@
 		type	string
 		default	{ "" }
 		disablewhen	"{ enabled_#_3 == 0 }"
+		hidewhen	"{ op_#_1 != 3 }"
 		menureplace	{
-		    [ "opmenu -l for_each_op/op_delete convertg" ]
+		    [ "opmenu -l for_each_op/op_convert convertg" ]
 		}
 		range	{ 0 1 }
 		export	none
@@ -167,6 +325,7 @@
 		type	toggle
 		default	{ "off" }
 		disablewhen	"{ enabled_#_3 == 0 }"
+		hidewhen	"{ op_#_1 != 3 }"
 		range	{ 0 1 }
 		export	none
 		parmtag	{ "autoscope" "0000000000000000" }
