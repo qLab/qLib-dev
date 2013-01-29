@@ -1,0 +1,15 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	[ vex_group	"" ] 	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+_vex_vector_to_rotate	[ 0	locks=0 ]	(	`chs(\"../vector_to_rotate\")`	)
+_vex_axis_mode	[ 8	locks=0 ]	(	[ _vex_axis_mode	0 ] 	)
+_vex_axis	[ 8	locks=0 ]	(	[ _vex_axis1	0 ] 	[ _vex_axis2	1 ] 	[ _vex_axis3	0 ] 	)
+_vex_axis_attrib	[ 0	locks=0 ]	(	`chs(\"../axis_attrib\")`	)
+_vex_angle_mode	[ 8	locks=0 ]	(	[ _vex_angle_mode	0 ] 	)
+_vex_angle	[ 8	locks=0 ]	(	[ _vex_angle	25 ] 	)
+_vex_angle_attrib	[ 0	locks=0 ]	(	`chs(\"../angle_attrib\")`	)
+_vex_angle_unit	[ 8	locks=0 ]	(	[ _vex_angle_unit	0 ] 	)
+}

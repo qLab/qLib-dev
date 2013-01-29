@@ -1,0 +1,13 @@
+Operator:     qLib::rotate_vector_ql::1
+Label:        Rotate Vector ql
+Path:         oplib:/qLib::Sop/rotate_vector_ql::1?qLib::Sop/rotate_vector_ql::1
+Icon:         VOP_align
+Table:        Sop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Tue Jan 29 19:25:23 2013
+

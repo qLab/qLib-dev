@@ -1,0 +1,47 @@
+#icon: SOP/matchaxis
+#context: sop
+#type: node
+
+= Rotate Vector qL =
+
+*Interface Version 1*
+
+"""Rotates a vector attribute around another vector."""
+
+@Description
+    Rotates a vector around another vector. The axis vector and the angle can come from an attribute
+    or a parameter.
+
+@Parameters
+    Point Group:
+        The group of points the operator affects.
+    Vector To Rotate:
+        Name of the vector attribute that gets rotated.
+    Axis Mode:
+        Wether the axis vector is specified by a parameter or an attribute.
+    Axis:
+        The vector around the rotation occures. This is only active if *Axis Mode* is set to _Constant_.
+    Axis Attribute:
+        Name of the vector attribute that specifies the axis of rotation. This is only active if *Axis Mode*
+        is set to _Attribute_.
+    Angle Mode:
+        Wether the angle is specified by a parameter or an attribute.
+    Angle Unit:
+        Wether the angle value is in degrees or radians.
+    Angle:
+        The amount of rotation. This is only active if *Angle Mode* is set to _Constant_.
+    Anlge Attribute:
+        The float attribute that specifies the amount of rotation. This is only active if *Angle Mode* is
+        set to _Attribute_.
+
+@related
+    - [Vector qL|Node:sop/qLib::vector_ql::1]
+    - [Vector Store qL|Node:sop/qLib::vector_store_ql::1]
+    - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
+
+@Release_Notes Release Notes
+
+    Interface Version 1
+
+    2013-01-29:
+        Initial release.

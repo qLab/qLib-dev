@@ -1,0 +1,32 @@
+comment ""
+position 3.42993 0.182994
+cachesize 1
+connectornextid 6
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "result"
+}
+inputsNamed3
+{
+1 	switcher2 0 1 "switcher"
+4 	degtorad1 1 1 "input1"
+5 	angle_mode_switch 0 1 "input2"
+}
+inputs
+{
+0 	switcher2 0 1
+1 	degtorad1 0 1
+2 	angle_mode_switch 0 1
+}
+stat
+{
+  create 1359473956
+  modify 1359482284
+  author Mate@Mate.local.melon.hu
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

@@ -1,0 +1,121 @@
+# Dialog script for qLib::rotate_vector_ql::1 automatically generated 01/29/13 19:25:23
+
+{
+    name	qLib::rotate_vector_ql::1
+    script	qLib::rotate_vector_ql::1
+    label	"Rotate Vector ql"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vex_group"
+	label	"Point Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l DO_ROTATE vex_group" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"vector_to_rotate"
+	label	"Vector To Rotate"
+	type	string
+	default	{ "N" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"axis_mode"
+	label	"Axis Mode"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Constant"
+	    "1"	"Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"axis"
+	label	"Axis"
+	type	vector
+	size	3
+	default	{ "1" "0" "0" }
+	disablewhen	"{ axis_mode == 1 }"
+	range	{ -1 1 }
+	export	none
+    }
+    parm {
+	name	"axis_attrib"
+	label	"Axis Attribute"
+	type	string
+	default	{ "up" }
+	disablewhen	"{ axis_mode == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"angle_mode"
+	label	"Angle Mode"
+	type	integer
+	joinnext
+	default	{ "0" }
+	menu	{
+	    "0"	"Constant"
+	    "1"	"Attribute"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"angle_unit"
+	label	"Angle Unit"
+	type	integer
+	nolabel
+	default	{ "0" }
+	menu	{
+	    "0"	"Degrees"
+	    "1"	"Radians"
+	}
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"angle"
+	label	"Angle"
+	type	float
+	default	{ "0" }
+	disablewhen	"{ angle_mode == 1 }"
+	range	{ -180 180 }
+	export	none
+    }
+    parm {
+	name	"angle_attrib"
+	label	"Angle Attribute"
+	type	string
+	default	{ "angle" }
+	disablewhen	"{ angle_mode == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}
