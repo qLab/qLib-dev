@@ -25,14 +25,22 @@
         Name of the vector attribute that specifies the axis of rotation. This is only active if *Axis Mode*
         is set to _Attribute_.
     Angle Mode:
-        Wether the angle is specified by a parameter or an attribute.
+        Wether the angle is specified by a parameter, an attribute or an expression.
     Angle Unit:
         Wether the angle value is in degrees or radians.
     Angle:
         The amount of rotation. This is only active if *Angle Mode* is set to _Constant_.
     Anlge Attribute:
-        The float attribute that specifies the amount of rotation. This is only active if *Angle Mode* is
-        set to _Attribute_.
+        The name of the float attribute that specifies the amount of rotation. This is only active if
+        *Angle Mode* is set to _Attribute_.
+    Angle Expression:
+        Evaluates the given string as an expression.
+        
+        WARNING:
+            The given expression is evaluated by an AttribCreate node inside the asset. Because of this
+            you should add an extra "../" to your relative operator paths. For the same reasons the
+            the expression highlighting won't recognise all usable local variables. See the helpcard of
+            [Attrib Create|Node:sop/attribcreate#locals] to find usable local variables.
 
 @related
     - [Vector qL|Node:sop/qLib::vector_ql::1]

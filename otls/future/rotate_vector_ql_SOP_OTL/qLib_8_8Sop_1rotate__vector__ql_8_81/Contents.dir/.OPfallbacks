@@ -1,8 +1,8 @@
-Vop/addattrib //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
-Vop/addattrib otls/OPlibVop.otl
-Vop/rotate //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
-Vop/rotate otls/OPlibVop.otl
-Vop/degtorad //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
-Vop/degtorad otls/OPlibVop.otl
 Vop/importattrib //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
 Vop/importattrib otls/OPlibVop.otl
+Vop/rotate //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
+Vop/rotate otls/OPlibVop.otl
+Vop/addattrib //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
+Vop/addattrib otls/OPlibVop.otl
+Vop/degtorad //mlnfs/Sidefx/Houdini 12.1.185/houdini/otls/OPlibVop.otl
+Vop/degtorad otls/OPlibVop.otl

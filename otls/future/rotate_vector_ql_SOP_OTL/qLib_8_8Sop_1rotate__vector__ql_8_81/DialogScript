@@ -1,4 +1,4 @@
-# Dialog script for qLib::rotate_vector_ql::1 automatically generated 01/29/13 19:25:23
+# Dialog script for qLib::rotate_vector_ql::1 automatically generated 01/30/13 18:42:06
 
 {
     name	qLib::rotate_vector_ql::1
@@ -80,6 +80,7 @@
 	menu	{
 	    "0"	"Constant"
 	    "1"	"Attribute"
+	    "2"	"Expression"
 	}
 	range	{ 0 10 }
 	export	none
@@ -102,7 +103,7 @@
 	label	"Angle"
 	type	float
 	default	{ "0" }
-	disablewhen	"{ angle_mode == 1 }"
+	disablewhen	"{ angle_mode != 0 }"
 	range	{ -180 180 }
 	export	none
     }
@@ -111,11 +112,45 @@
 	label	"Angle Attribute"
 	type	string
 	default	{ "angle" }
-	disablewhen	"{ angle_mode == 0 }"
+	disablewhen	"{ angle_mode != 1 }"
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"angle_expr"
+	label	"Angle Expression"
+	type	string
+	default	{ "0" }
+	disablewhen	"{ angle_mode != 2 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "script_callback_language" "hscript" }
+	parmtag	{ "autoscope" "0000000000000000" }
+	parmtag	{ "script_callback" "" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"labelparm"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "WARNING: The expression is evaluated inside the asset." }
+	hidewhen	"{ angle_mode != 2 }"
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"labelparm2"
+	label	"Label"
+	type	label
+	nolabel
+	default	{ "Don't forget to add an extra \"../\" to your relative paths." }
+	hidewhen	"{ angle_mode != 2 }"
+	range	{ 0 1 }
+	export	none
     }
 }

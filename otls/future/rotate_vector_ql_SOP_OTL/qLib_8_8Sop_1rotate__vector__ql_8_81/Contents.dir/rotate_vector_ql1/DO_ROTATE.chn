@@ -35,7 +35,7 @@
       lefttype = extend
       righttype = extend
       flags = 0
-      segment { length = 0 expr = ch(\"../angle_mode\") }
+      segment { length = 0 expr = "ch(\"../angle_mode\") == 1" }
     }
     channel _vex_angle_unit {
       lefttype = extend
