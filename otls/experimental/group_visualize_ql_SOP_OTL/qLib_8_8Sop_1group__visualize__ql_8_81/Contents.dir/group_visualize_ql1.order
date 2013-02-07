@@ -1,14 +1,11 @@
-25
+28
 prim_default_color
 u
-pt_apply_hilite
 pt_apply_gamma
-prim_color_each_group
 prim_apply_hilite
 prim_keep_non_grouped
 merge1
 prim_vis
-pt_color_each_group
 attr___ptid
 pt_keep_non_grouped
 merge2
@@ -24,3 +21,9 @@ prim_apply_gamma
 switch_pr_apply_gamma
 switch_pt_apply_gamma
 pt_visualize_pts
+prim_index_each_group
+prim_apply_color
+prim_remove_gidx
+pt_index_each_group
+pt_apply_colors_n_hilite
+pt_remove_gidx

@@ -92,6 +92,10 @@ group(s).
 
 _interface version 1_ ---
 
+2013-02-07:
+    - Performance improvements (way faster for primitives, _much_ faster for point groups. More improvements come as soon as Houdini supports vex processing of primitives.)
+    - Default ramp colors are less more aesthetic, responds better to hilite brightness adjustments.
+
 2012-11-09:
     First version.
 

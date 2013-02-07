@@ -1,6 +1,6 @@
 {
 version 0.8
-group	[ 0	locks=0	autoscope=0 ]	(	`chs(\"../pt_color_each_group/groupmask\")`	)
+group	[ 0	locks=0	autoscope=0 ]	(	`chs(\"../pt_index_each_group/groupmask\")`	)
 grouptype	[ 0	locks=0	autoscope=0 ]	(	"points"	)
 computenorms	[ 0	locks=0	autoscope=0 ]	(	"off"	)
 negate	[ 0	locks=0	autoscope=0 ]	(	"off"	)

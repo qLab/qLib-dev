@@ -1,0 +1,6 @@
+5
+ramp#pos ../gramp#pos
+ramp#cr ../gramp#cr
+ramp#cg ../gramp#cg
+ramp#cb ../gramp#cb
+ramp#interp ../gramp#interp

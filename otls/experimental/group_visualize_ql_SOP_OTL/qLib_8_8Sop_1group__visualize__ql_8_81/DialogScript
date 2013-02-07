@@ -1,4 +1,4 @@
-# Dialog script for qLib::group_visualize_ql::1 automatically generated 12/08/12 01:25:34
+# Dialog script for qLib::group_visualize_ql::1 automatically generated 02/07/13 22:39:31
 
 {
     name	qLib::group_visualize_ql::1
@@ -176,9 +176,12 @@
 	    default	{ "3" }
 	    range	{ 1! 10 }
 	    export	none
-	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 1 0 0 ) 1interp ( linear ) 2pos ( 0.5 ) 2c ( 1 1 0 ) 2interp ( linear ) 3pos ( 1 ) 3c ( 0 0 1 ) 3interp ( linear )" }
-	    parmtag	{ "rampcolortype" "rgb" }
+	    parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	    parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	    parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	    parmtag	{ "rampcolordefault" "1pos ( 0 ) 1c ( 0.5 0.16650000214576721 0.16650000214576721 ) 1interp ( linear ) 2pos ( 0.5 ) 2c ( 0.75 0.75 0.24975000321865082 ) 2interp ( linear ) 3pos ( 1 ) 3c ( 0.28878334164619446 0.5 0.16650000214576721 ) 3interp ( linear )" }
 	    parmtag	{ "rampshowcontrolsdefault" "0" }
+	    parmtag	{ "rampcolortype" "rgb" }
 	}
 	parm {
 	    name	"r_offset"

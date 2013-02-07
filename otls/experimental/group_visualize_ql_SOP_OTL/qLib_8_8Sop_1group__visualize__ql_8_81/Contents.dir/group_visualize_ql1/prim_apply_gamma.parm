@@ -17,7 +17,7 @@ upvector	[ 8	locks=0	autoscope=0 ]	(	[ upvectorx	0 ] 	[ upvectory	0 ] 	[ upvecto
 attribslabel	[ 0	locks=0 ]	(	)
 xformattribs	[ 0	locks=0	autoscope=0 ]	(	N	)
 doclr	[ 0	locks=0	autoscope=0 ]	(	"on"	)
-diff	[ 8	locks=0	autoscope=0 ]	(	[ diffr	0 ] 	[ diffg	0 ] 	[ diffb	0 ] 	)
+diff	[ 8	locks=0	autoscope=0 ]	(	[ diffr	0.065051707794829619 ] 	[ diffg	0.217637640824031 ] 	[ diffb	0.019369184479735766 ] 	)
 doalpha	[ 0	locks=0	autoscope=0 ]	(	"off"	)
 alpha	[ 8	locks=0	autoscope=0 ]	(	[ alpha	1 ] 	)
 docrease	[ 0	locks=0	autoscope=0 ]	(	"off"	)

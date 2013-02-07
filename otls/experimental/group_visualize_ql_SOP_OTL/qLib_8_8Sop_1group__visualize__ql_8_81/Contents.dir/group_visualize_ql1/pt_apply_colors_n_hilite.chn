@@ -1,0 +1,152 @@
+{
+    channel r_int {
+      lefttype = extend
+      righttype = extend
+      default = 0.33300000429153442
+      flags = 0
+      segment { length = 0 value = 0.33300000429153442 0.33300000429153442 expr = ch(\"../i_regular\") }
+    }
+    channel h_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../i_hilite\") }
+    }
+    channel regular_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../i_regular\") }
+    }
+    channel hilite_int {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../i_hilite\") }
+    }
+    channel ramp {
+      lefttype = extend
+      righttype = extend
+      default = 2
+      flags = 0
+      segment { length = 0 value = 2 2 expr = ch(\"../gramp\") }
+    }
+    channel ramp1pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp1pos\") }
+    }
+    channel ramp1cr {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp1cr\") }
+    }
+    channel ramp1cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp1cg\") }
+    }
+    channel ramp1cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp1cb\") }
+    }
+    channel ramp1interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp1interp\") }
+    }
+    channel ramp2pos {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp2pos\") }
+    }
+    channel ramp2cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp2cr\") }
+    }
+    channel ramp2cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp2cg\") }
+    }
+    channel ramp2cb {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp2cb\") }
+    }
+    channel ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp2interp\") }
+    }
+    channel ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp3pos\") }
+    }
+    channel ramp3cr {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp3cr\") }
+    }
+    channel ramp3cg {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp3cg\") }
+    }
+    channel ramp3cb {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../gramp3cb\") }
+    }
+    channel ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../gramp3interp\") }
+    }
+    channel r_offs {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../r_offset\") }
+    }
+    channel r_freq {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../r_freq\") }
+    }
+    channel has_no_hilite {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "0 == argc(pointgroupmask(opinputpath(\".\", 0), chs(\"../pt_hilitemask\")))" }
+    }
+  }

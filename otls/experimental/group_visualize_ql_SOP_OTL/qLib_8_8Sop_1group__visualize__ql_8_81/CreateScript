@@ -1,4 +1,4 @@
-# Automatically generated script: Saturday December 08, 01:25 2012
+# Automatically generated script: Thursday February 07, 22:40 2013
 \set noalias = 1
 #
 #  Creation script for qLib::group_visualize_ql::1 operator
@@ -10,6 +10,5 @@ if ( "$arg1" == "" ) then
 endif
 
 # Node $arg1 (qLib::Sop/group_visualize_ql::1)
-opspareds "" $arg1
 opexprlanguage -s hscript $arg1
 opuserdata -n '___Version___' -v '' $arg1

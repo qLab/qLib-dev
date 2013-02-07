@@ -11,6 +11,6 @@ precision	[ 0	locks=0	autoscope=0 ]	(	"32"	)
 size	[ 0	locks=0	autoscope=0 ]	(	1	)
 default	[ 0	locks=0	autoscope=0 ]	(	0	0	0	0	)
 writevalues	[ 0	locks=0	autoscope=0 ]	(	"on"	)
-value	[ 8	locks=0	autoscope=0 ]	(	[ value1	95 ] 	0	0	0	)
+value	[ 8	locks=0	autoscope=0 ]	(	[ value1	2583 ] 	0	0	0	)
 string	[ 0	locks=0	autoscope=0 ]	(	""	)
 }

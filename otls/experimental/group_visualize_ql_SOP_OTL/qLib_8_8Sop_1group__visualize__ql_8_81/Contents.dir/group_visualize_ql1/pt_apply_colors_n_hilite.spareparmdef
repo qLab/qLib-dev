@@ -1,0 +1,112 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"r_int"
+	label	"regular int."
+	type	float
+	default	{ "0.333" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"h_int"
+	label	"hilite int."
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"hilite_grp_name"
+	label	"hilite_grp_name"
+	type	geometry
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"regular_int"
+	label	"regular_int"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"hilite_int"
+	label	"hilite_int"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ramp"
+	label	"ramp"
+	type	ramp_rgb
+	default	{ "2" }
+	range	{ 1! 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "rampvalues_var" "ramp_the_key_values" }
+	parmtag	{ "rampkeys_var" "ramp_the_key_positions" }
+	parmtag	{ "rampbasis_var" "ramp_the_basis_strings" }
+	parmtag	{ "rampshowcontrolsdefault" "1" }
+	parmtag	{ "rampcolortype" "hsv" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "rampbasisdefault" "linear" }
+    }
+    parm {
+	name	"r_freq"
+	label	"r_freq"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"r_offs"
+	label	"r_offs"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"has_no_hilite"
+	label	"has_no_hilite"
+	type	integer
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
