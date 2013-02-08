@@ -1,4 +1,4 @@
-# Dialog script for qLib::shot_ql::1 automatically generated 08/12/12 04:14:47
+# Dialog script for qLib::shot_ql::1 automatically generated 02/08/13 18:36:06
 
 {
     name	qLib::shot_ql::1
@@ -243,6 +243,176 @@
 
 	group {
 	    name	"folder3_1"
+	    label	"Unit Settings"
+
+	    parm {
+		name	"units_update_on_load"
+		label	"Apply Unit Settings on File Load"
+		type	toggle
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"units_use_fps"
+		label	"Use FPS"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"units_fps"
+		label	"FPS"
+		type	float
+		joinnext
+		default	{ "24" }
+		disablewhen	"{ units_use_fps == 0 }"
+		range	{ 1 60 }
+		export	none
+	    }
+	    parm {
+		name	"units_fps_menu"
+		label	"Label"
+		type	ordinal
+		nolabel
+		default	{ "-1" }
+		disablewhen	"{ units_use_fps == 0 }"
+		menumini	{
+		    "24"	"Film (24 fps)"
+		    "25"	"PAL (25 fps)"
+		    "30"	"NTSC (30 fps)"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` units_fps ( $script_value0 )" }
+	    }
+	    parm {
+		name	"units_use_unitlength"
+		label	"Use Unit Length"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"units_unitlength"
+		label	"Unit Length (m)"
+		type	float
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ units_use_unitlength == 0 }"
+		range	{ 0.0001 1000 }
+		export	none
+	    }
+	    parm {
+		name	"units_unitlength_menu"
+		label	"Label"
+		type	ordinal
+		nolabel
+		default	{ "-1" }
+		disablewhen	"{ units_use_unitlength == 0 }"
+		menumini	{
+		    "0.001"	"Millimeters"
+		    "0.01"	"Centimeters"
+		    "0.1"	"Decimeters"
+		    "1"	"Meters"
+		    "10"	"10 Meters"
+		    "100"	"100 Meters"
+		    "1000"	"Kilometers"
+		    "0.0254"	"Inches"
+		    "0.3048"	"Feet"
+		    "0.9144"	"Yards"
+		    "3.048"	"10 Feet"
+		    "30.48"	"100 Feet"
+		    "1609.34"	"Miles"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` units_unitlength ( $script_value0 )" }
+	    }
+	    parm {
+		name	"units_use_unitmass"
+		label	"Use Unit Mass"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"units_unitmass"
+		label	"Unit Mass (kg)"
+		type	float
+		joinnext
+		default	{ "1" }
+		disablewhen	"{ units_use_unitmass == 0 }"
+		range	{ 0.0001 1000 }
+		export	none
+	    }
+	    parm {
+		name	"units_unitmass_menu"
+		label	"Label"
+		type	ordinal
+		nolabel
+		default	{ "-1" }
+		disablewhen	"{ units_use_unitmass == 0 }"
+		menumini	{
+		    "0.001"	"Grams"
+		    "0.01"	"10 Grams"
+		    "0.1"	"100 Grams"
+		    "1"	"Kilograms"
+		    "10"	"10 Kilograms"
+		    "100"	"100 Kilograms"
+		    "1000"	"Metric Tons"
+		    "0.0283495"	"Ounces"
+		    "0.453592"	"Pounds"
+		    "4.53592"	"10 Pounds"
+		    "45.3592"	"100 Pounds"
+		    "907.185"	"Imperial Tons"
+		}
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback" "opparm `oppwf()` units_unitmass ( $script_value0 )" }
+	    }
+	    parm {
+		name	"sep_1"
+		label	"----"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
+	    parm {
+		name	"units_update_now"
+		label	"Apply to Scene Now..."
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().update_unit_settings(ask=True)" }
+	    }
+	    parm {
+		name	"units_get_from_scene"
+		label	"Get Settings from Scene..."
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().get_units_from_scene(ask=True)" }
+	    }
+	}
+
+	group {
+	    name	"folder3_2"
 	    label	"Information"
 	    tabbreak
 

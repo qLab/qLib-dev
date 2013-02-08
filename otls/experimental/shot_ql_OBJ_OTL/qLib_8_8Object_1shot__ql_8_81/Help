@@ -4,7 +4,7 @@
 
 = Shot qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Node for storing information about the shot the hip file belongs to."""
 
@@ -64,6 +64,28 @@ NOTE:
             Extra Ranges:
                 Any number of extra frame ranges can be stored here, along with a note.
                 (Useful for storing simulation ranges, etc.)
+
+
+        Unit Settings:
+            This section can store various unit settings of the shot.
+
+            Apply Unit Settings on File Load:
+                If enabled, all the active (enabled) unit setting values will be set up (applied) on scene load.
+
+            FPS:
+                Frames per second setting of the current shot.
+
+            Unit Length, Unit Mass:
+                Length and mass settings for the current shot. These are the same settings as in
+                "_Edit->Preferences->Hip File Options..._".
+
+            Apply to Scene Now...:
+                By pressing this button will apply all active (enabled) unit setting values to the currently open
+                scene (hip file).
+
+            Get Settings from Scene...:
+                Pressing this button will read all active (enabled) unit setting values from the currently open
+                scene, and store the values in the appropriate parameter fields.
 
 
         Description & Notes:
@@ -153,11 +175,21 @@ NOTE:
 
 
 @related
-    - [Node:obj/shot_ql]
+    - [Shot qL|Node:obj/qLib::shot_ql::1]
+    - [Note qL|Node:obj/qLib::note_ql::1]
     - ...
 
 
 @Release_Notes Release Notes
 
-    Version 0.0.1:
-        Initial release.
+_interface version 1_ ---
+
+2013-02-08:
+    Added support for storing and applying scene unit settings: FPS, Unit Length, Unit Mass.
+    (They can automatically applied on scene load as well.)
+
+
+_older versions_ ---
+
+Version 0.0.1:
+    Initial release.

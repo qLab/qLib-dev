@@ -12,9 +12,13 @@ import imp
 global QDIR, QFILE
 
 
-def dispmsg(msg):
-    sys.__stderr__.write("[shot_ql]: %s\n" % msg)
-    hou.ui.displayMessage(msg, ["Ok"])
+def msg(m):
+    print("[shot_ql]: %s" % m)
+    sys.__stderr__.write("[shot_ql]: %s\n" % m)
+
+def dispmsg(m):
+    msg(m)
+    hou.ui.displayMessage(m, ["Ok"])
 
 def ynreq(msg):
     return hou.ui.displayMessage(msg, ["Ok", "Cancel"]) == 0
@@ -30,9 +34,9 @@ def open_file(file=""):
     subprocess.call(["nautilus", file])
 
 
-def npt():
+def npt(kwargs=None):
     """node/parm/tuple functions creator."""
-    n = hou.pwd()
+    n = kwargs['node'] if kwargs else hou.pwd()
     p = lambda pn: n.parm(pn).eval()
     t = lambda pn: n.parmTuple(pn).eval()
     return n, p, t
@@ -94,6 +98,51 @@ def find_env_file():
     env = import_q()
     process_q()
     dispmsg("env file found: %s" % str(env))
+
+
+
+def update_unit_settings(force=False, ask=False, kwargs=None):
+    """."""
+    n, p, t = npt(kwargs=kwargs)
+
+    update_on_load = p('units_update_on_load')
+
+    u_fps,  v_fps  = p('units_use_fps'), p('units_fps')
+    u_len,  v_len  = p('units_use_unitlength'), p('units_unitlength')
+    u_mass, v_mass = p('units_use_unitmass'), p('units_unitmass')
+
+    if ask:
+        update_on_load=0
+        force = ynreq("Apply unit settings to current scene?\n(Only enabled settings will be applied.)")
+
+    if force==True or update_on_load!=0:
+        msg("Updating unit settings...")
+
+        if u_fps:
+            msg(" - updating FPS: %f frames/sec" % v_fps)
+            hou.hscript("fps %f" % v_fps)
+
+        if u_len:
+            msg(" - updating unit length: %f meter(s)" % v_len)
+            hou.hscript("unitlength %f" % v_len)
+
+        if u_mass:
+            msg(" - updating unit mass: %f kg(s)" % v_mass)
+            hou.hscript("unitmass %f" % v_mass)
+
+    else:
+        msg("No unit settings were updated.")
+
+
+def get_units_from_scene(ask=False):
+    """."""
+    n, p, t = npt()
+
+    if ask is False or ynreq("Get unit settings from scene?\n(Only enabled settings will be updated.)"):
+
+        for a in ['fps', 'unitlength', 'unitmass']:
+            if p('units_use_%s' % a)!=0:
+                n.parm('units_%s' % a).set( hou.expandString('$%s' % a.upper()) )
 
 
 

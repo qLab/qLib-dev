@@ -2,3 +2,7 @@ import sys
 
 sys.__stderr__.write("OnLoaded: %s\n" % hou.pwd().path() )
 
+
+# if 'units_update_on_load' enabled, update units
+#
+kwargs['node'].hdaModule().update_unit_settings(kwargs=kwargs)

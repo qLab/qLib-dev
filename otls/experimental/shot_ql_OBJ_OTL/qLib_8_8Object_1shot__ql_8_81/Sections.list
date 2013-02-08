@@ -5,6 +5,7 @@ TypePropertiesOptions	TypePropertiesOptions
 Help	Help
 Tools.shelf	Tools.shelf
 Contents.gz	Contents.gz
+InternalFileOptions	InternalFileOptions
 PythonModule	PythonModule
 OnCreated	OnCreated
 PreFirstCreate	PreFirstCreate
