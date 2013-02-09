@@ -6,16 +6,27 @@
 
 *interface version 1*
 
-"""Node for storing information about the shot the hip file belongs to."""
+"""Stores and manages information and settings relevant to a shot."""
 
-This operator allows to store all shot-specific information on one single node.
+This operator allows to store all shot-specific information on one single node
+(indepentently of any hip file).
 Once such a shot-information node is set up, it can be easily dropped into any
 new .hip file so it can be set up to match shot settings with a few mouse clicks.
+
+The following informations are stored:
+- Project name: full and abbreviated version, shot label
+- Frame ranges: several ranges are available by default (for runups and retimes), plus user-defined extra ranges
+- Scene unit settings: FPS, length and mass units (can be automatically set up on hip file load)
+- Misc info: "Notes" and "Related Files" fields (to pass on info to other users)
+- Shot camera(s), with nodes and look-through function
+- Scene locations, storing a list of 3d view and construction plane (grid) locations
+- Sub-directories, with support for auto-creating subfolders on hip file load
 
 See the _Parameters_ section below for details.
 
 NOTE:
     _(wip)_ means the functionality is work-in-progress and subject to change.
+    (Undocumented parameters are also strictly w.i.p.)
 
 @parameters
 
@@ -87,14 +98,34 @@ NOTE:
                 Pressing this button will read all active (enabled) unit setting values from the currently open
                 scene, and store the values in the appropriate parameter fields.
 
+        Information:
 
-        Description & Notes:
-            A multi-line text field for storing shot description, notes, and the like.
+            Miscellaneous scene info, to pass written information and related file references
+            between users.
 
-        Related Files:
-            This section stores a list of files (and an optional note for each).
-            Useful for quickly accessing any file related to the shot, such as concept
-            drawings, reference images or movies, etc.
+            Echo Notes on File Load:
+                If this is enabled, all Description/Note field contents will be written to the
+                standard error.
+
+                TIP:
+                    This can be useful for sending feedback when doing batch render operations
+                    (note that variables are expanded).
+
+            Description & Notes:
+                A multi-line text field for storing shot description, notes, and the like.
+
+                NOTE:
+                    These notes are automatically copied to the node's Node Comment field
+                    whenever edited (so they can be read by pressing MMB on the node
+                    in a network view).
+
+            Get from Node Comment, Copy to Node Comment:
+                Buttons for transfer notes between the parameter fields and the node comment.
+
+            Related Files:
+                This section stores a list of files (and an optional note for each).
+                Useful for quickly accessing any file related to the shot, such as concept
+                drawings, reference images or movies, etc.
 
 
     Views:
@@ -157,8 +188,12 @@ NOTE:
         _(wip)_
         This section deals with filesystem paths related to the shot.
 
+        Create sub-folders on File Load:
+            If enabled, all specified sub-folders will be created during the loading of the scene hip file.
+            This can be useful for situations where file output node(s) expect a subfolder that might not exist.
+
         Root Directory:
-            Path to the root of 
+            Path to the working root folder. (The path to the current hip file by default.)
 
         Folders:
             A space-separated list of subdirectories that should exist under the root directory.
@@ -184,9 +219,16 @@ NOTE:
 
 _interface version 1_ ---
 
+2013-02-09:
+    Description & Notes are now copied to the node's comment field (hence can be read when pressing MMB on node, etc).
+
 2013-02-08:
-    Added support for storing and applying scene unit settings: FPS, Unit Length, Unit Mass.
-    (They can automatically applied on scene load as well.)
+    Added support for storing and applying scene unit settings: FPS, Unit Length, Unit Mass
+    (can also be set up automatically on scene load.)
+
+    Option for automatically creating sub-folders on scene load.
+
+    Option for printing notes on the standard error on scene load (for batch render logs, etc).
 
 
 _older versions_ ---

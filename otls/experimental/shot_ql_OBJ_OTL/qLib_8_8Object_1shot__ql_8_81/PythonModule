@@ -8,12 +8,13 @@ import sys
 import re
 import subprocess
 import imp
+import datetime
 
 global QDIR, QFILE
 
 
 def msg(m):
-    print("[shot_ql]: %s" % m)
+    #print("[shot_ql]: %s" % m)
     sys.__stderr__.write("[shot_ql]: %s\n" % m)
 
 def dispmsg(m):
@@ -107,10 +108,6 @@ def update_unit_settings(force=False, ask=False, kwargs=None):
 
     update_on_load = p('units_update_on_load')
 
-    u_fps,  v_fps  = p('units_use_fps'), p('units_fps')
-    u_len,  v_len  = p('units_use_unitlength'), p('units_unitlength')
-    u_mass, v_mass = p('units_use_unitmass'), p('units_unitmass')
-
     if ask:
         update_on_load=0
         force = ynreq("Apply unit settings to current scene?\n(Only enabled settings will be applied.)")
@@ -118,20 +115,13 @@ def update_unit_settings(force=False, ask=False, kwargs=None):
     if force==True or update_on_load!=0:
         msg("Updating unit settings...")
 
-        if u_fps:
-            msg(" - updating FPS: %f frames/sec" % v_fps)
-            hou.hscript("fps %f" % v_fps)
+        for a in ['fps', 'unitlength', 'unitmass']:
+            if p('units_use_%s' % a)!=0:
+                v = p('units_%s' % a)
+                msg('- setting %s: %s' % (a, v))
+                hou.hscript('%s %s' % (a, v))
+        msg("...done.")
 
-        if u_len:
-            msg(" - updating unit length: %f meter(s)" % v_len)
-            hou.hscript("unitlength %f" % v_len)
-
-        if u_mass:
-            msg(" - updating unit mass: %f kg(s)" % v_mass)
-            hou.hscript("unitmass %f" % v_mass)
-
-    else:
-        msg("No unit settings were updated.")
 
 
 def get_units_from_scene(ask=False):
@@ -146,22 +136,79 @@ def get_units_from_scene(ask=False):
 
 
 
-def set_range(param_name='frange'):
+def echo_notes_on_load(kwargs):
+    """."""
+    n, p, t = npt(kwargs=kwargs)
+    desc_lines = p('desc_lines')
+    w=64
+
+    def M(m):
+        sys.__stderr__.write(" | %s\n" % str(m))
+
+    if p('show_desc_on_load'):
+        M('')
+        M('PROJECT: %s [%s] / SHOT: %s' % (p('proj'), p('projs'), p('shot')))
+        M('%s' % ('-'*w))
+        for i in xrange(1, desc_lines+1):
+            M('| %s' % p('desc%d' % i) )
+        M('%s' % ('-'*w))
+        M('(from %s | %s)' % ( n.path(), datetime.datetime.now().strftime("%Y.%m.%d. %H:%M.%S") ) )
+        M('')
+
+
+
+def update_comment(kwargs=None):
+    """Update contents of node-comments."""
+    n, p, t = npt(kwargs=kwargs)
+    s = p('desc_lines')
+    c = []
+    for i in xrange(s):
+        c.append( '  : %s' % p('desc%d' % (i+1)) )
+    c='\n'.join(c)
+    n.setComment(c)
+
+
+def get_notes_from_comment():
+    """Convert node comments to Description & Notes (param array)."""
+    n, p, t = npt()
+    lines = re.sub("  : ", "", n.comment())
+    lines = re.sub("\n*$", "", lines)
+    lines = lines.split('\n')
+
+    if len(lines)==1 and lines[0].strip()=='':
+        lines = None
+
+    if lines:
+        s = len(lines)
+        n.parm('desc_lines').set(s)
+        for i in xrange(s):
+            n.parm('desc%d' % (i+1)).set(lines[i])
+
+    update_comment()
+
+
+
+def set_range(param_name='frange', jumpkins=True):
     """."""
     n, p, t = npt()
     range = t(param_name)
-    print "range:", range
 
     if len(range)==2:
+        msg('setting range: %s-%s (%s on %s)' % (range[0], range[1], param_name, n.path()))
         hou.hscript("tset `(%s-1)/$FPS` `%s/$FPS`" % (range[0], range[1]))
         hou.hscript("frange %s %s" % (range[0], range[1]))
+
+        if jumpkins and p('range_go_to_beginning'):
+            msg(' - jumping to first frame (%s)' % range[0])
+            hou.hscript('fcur %s' % range[0])
+    else:
+        msg("not a valid range on %s: %s" % (n.path(), str(range)) )
 
 
 
 def get_viewport(args):
     n, p, t = npt()
     viewer = p("viewer")
-    #print "viewer=", viewer
 
     if viewer=="":
         ap = toolutils.activePane(args)
@@ -254,27 +301,32 @@ def select_subdirs():
 
 
 
-def make_subdirs():
+def make_subdirs(kwargs=None):
     """."""
-    n, p, t = npt()
+    n, p, t = npt(kwargs=kwargs)
 
     rootdir = p('root_dir')
     subdirs = p('subdirs')
     subdirs = re.sub("\([^)]*\)", " ", subdirs)
     subdirs = subdirs.split()
+    do_it = False
 
-    print "subdirs:", subdirs
+    if kwargs:
+        do_it = p('create_subdirs_on_load')!=0
+    else:
+        do_it = ynreq( "Create the following subfolders?\n\n%s\n\nat:\n\n%s" % (str(subdirs), rootdir) )
 
-    if ynreq( "Create the following subfolders?\n\n%s\n\nat:\n\n%s" % (str(subdirs), rootdir) ):
+    if do_it:
+        msg("subdirs to make: %s" % str(subdirs))
+
+        msg("Creating %d subdirectories..." % len(subdirs))
         for d in subdirs:
             D = os.path.join(rootdir, d)
-            print " -- creating dir %s" % D
+            msg(" - creating dir %s" % D)
             try:
                 os.makedirs(D)
-            except:
-                pass # print "ERROR: failed to create %s" % D
-
-
+            except Exception as e:
+                msg(" - %s" % sys.exc_info()[1])
 
 
 

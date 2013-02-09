@@ -1,4 +1,4 @@
-# Dialog script for qLib::shot_ql::1 automatically generated 02/08/13 18:36:06
+# Dialog script for qLib::shot_ql::1 automatically generated 02/09/13 20:15:02
 
 {
     name	qLib::shot_ql::1
@@ -110,6 +110,14 @@
 	    name	"folder3"
 	    label	"Frame Ranges"
 
+	    parm {
+		name	"range_go_to_beginning"
+		label	"Go to first frame when setting range"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
 	    parm {
 		name	"frange"
 		label	"Shot Frame Range"
@@ -249,7 +257,7 @@
 		name	"units_update_on_load"
 		label	"Apply Unit Settings on File Load"
 		type	toggle
-		default	{ "1" }
+		default	{ "0" }
 		range	{ 0 1 }
 		export	none
 	    }
@@ -416,6 +424,14 @@
 	    label	"Information"
 	    tabbreak
 
+	    parm {
+		name	"show_desc_on_load"
+		label	"Echo Notes on File Load (to console)"
+		type	toggle
+		default	{ "0" }
+		range	{ 0 1 }
+		export	none
+	    }
 	    multiparm {
 		name	"desc_lines"
 		label	"Description & Notes:"
@@ -429,9 +445,40 @@
 		    default	{ "" }
 		    range	{ 0 1 }
 		    export	none
+		    parmtag	{ "script_callback_language" "python" }
+		    parmtag	{ "script_callback" "hou.pwd().hdaModule().update_comment()" }
 		}
 	    }
 
+	    parm {
+		name	"desc_set_as_comment"
+		label	"Copy to Node Comment"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().update_comment()" }
+	    }
+	    parm {
+		name	"desc_get_from_comment"
+		label	"Get from Node Comment"
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().get_notes_from_comment()" }
+	    }
+	    parm {
+		name	"sep_2"
+		label	"----"
+		type	label
+		nolabel
+		default	{ "" }
+		range	{ 0 1 }
+		export	none
+	    }
 	    multiparm {
 		name	"related_files"
 		label	"Related Files:"
@@ -927,6 +974,14 @@
 	label	"Paths"
 
 	parm {
+	    name	"create_subdirs_on_load"
+	    label	"Create Sub-Folders on File Load"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
 	    name	"root_dir"
 	    label	"Root Directory"
 	    type	file
@@ -951,7 +1006,7 @@
 	    label	"Folders"
 	    type	string
 	    joinnext
-	    default	{ "clips images in--geo out--geo tmp--sim" }
+	    default	{ "clips images in out tmp--sim" }
 	    range	{ 0 1 }
 	    export	none
 	}

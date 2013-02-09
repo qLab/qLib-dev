@@ -1,4 +1,3 @@
-import sys
-
-sys.__stderr__.write("OnUpdated: %s\n" % hou.pwd().path() )
-
+#N = kwargs['node']
+#M = N.hdaModule()
+#M.msg('OnUpdated: %s' % N.path())

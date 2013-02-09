@@ -2,10 +2,11 @@
 # it is only run on scene load, and _once_ (not on interactive node creation)
 #
 
-import sys
+if False:
+    N = kwargs['node']
+    M = N.hdaModule()
+    M.msg('PreFirstCreate: %s' % N.path())
 
-sys.__stderr__.write("PreFirstCreate: %s\n" % hou.pwd().path() )
-
-print "PreFirstCreate: %s" % hou.pwd().path()
-print " - $HIP: %s" % hou.expandString("$HIP")
+#print "kwargs:", kwargs
+#print " - $HIP: %s" % hou.expandString("$HIP")
 

@@ -1,8 +1,12 @@
-import sys
+N = kwargs['node']
+M = N.hdaModule()
+M.msg('(loading shot node %s)' % N.path())
 
-sys.__stderr__.write("OnLoaded: %s\n" % hou.pwd().path() )
+# update scene units, if requested
+M.update_unit_settings(kwargs=kwargs)
 
+# create user subfolders, if requested
+M.make_subdirs(kwargs=kwargs)
 
-# if 'units_update_on_load' enabled, update units
-#
-kwargs['node'].hdaModule().update_unit_settings(kwargs=kwargs)
+# echo shot notes, if requested
+M.echo_notes_on_load(kwargs=kwargs)
