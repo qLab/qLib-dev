@@ -4,10 +4,10 @@ Path:         oplib:/qLib::Sop/bend_ql::1?qLib::Sop/bend_ql::1
 Icon:         SHELF_twist_bend
 Table:        Sop
 License:      
-Extra:        guide=./GUIDE_OUT 
+Extra:        guide=./GUIDE 
 Inputs:       1 to 1
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Tue Aug  7 22:26:57 2012
+Modified:     Sun Feb 10 22:53:53 2013
 

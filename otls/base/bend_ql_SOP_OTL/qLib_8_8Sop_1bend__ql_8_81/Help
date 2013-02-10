@@ -4,11 +4,11 @@
 
 = Bend qL =
 
-*Version 0.1.1*
+*interface version 1*
 
 """Bends geometry along a circular arc."""
 
-A replacement operator for the "bend" mode of the [Twist SOPNode:sop/twist].
+A replacement operator for the "bend" mode of the [Twist SOP|Node:sop/twist].
 
 @Parameters
     Point Group:
@@ -18,10 +18,11 @@ A replacement operator for the "bend" mode of the [Twist SOPNode:sop/twist].
         Amount of deformation in degrees.
         
         NOTE:
-            Due to floating point precision problems amounts less than 0.01 degrees results in no deformation.
+            Due to floating point precision issues, less than 0.01 degrees results in no deformation.
+            (This is intentional, in order to avoid deformation artifacts.)
 
     Low Bound:
-        Limits the deformation in the lower end of the deformer. This allows one to create assimetric deformations.
+        Limits the deformation in the lower end of the deformer. This allows one to create asymmetric deformations.
 
     High Bound:
         Limits the deformation in the higher end of the deformer.
@@ -31,16 +32,26 @@ A replacement operator for the "bend" mode of the [Twist SOPNode:sop/twist].
 
 
 @related
+    - [Twist qL SOP|Node:sop/qLib::twist_ql::1]
+    - [Mountain Deformer qL SOP|Node:sop/qLib::mountain_deformer_ql::1]
+    - [Bias Deformer qL SOP|Node:sop/qLib::bias_deformer_ql::1]
     - [Node:sop/twist]
 
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
 
-    Version 0.1.1:
-        Fixed a bug which caused wrong quide geometry, when the deformer was rotated.
+_interface version 1_ ---
 
-    Version 0.1.0:
-        - Initial release. (This replaces end *enhances* the old qBend deformer.)
-        - Eliminated a bug which resulted in erroneous behavior when extremely low amounts of deformation was made.
-        - Guide geometry is now properly handled and it's never included in the output of the operator.
+...
+
+
+_older versions_ ---
+
+Version 0.1.1:
+    Fixed a bug which caused wrong quide geometry, when the deformer was rotated.
+
+Version 0.1.0:
+    - Initial release. (This replaces end *enhances* the old qBend deformer.)
+    - Eliminated a bug which resulted in erroneous behavior when extremely low amounts of deformation was made.
+    - Guide geometry is now properly handled and it's never included in the output of the operator.

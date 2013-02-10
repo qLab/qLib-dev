@@ -1,9 +1,10 @@
-8
+9
 Bend_Deformer
 Base_Line
 xform1
 Direction_Line
 merge2
 OUT
-GUIDE_OUT
+GUIDE
 Guide_Deformer
+color_blue
