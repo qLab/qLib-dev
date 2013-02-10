@@ -1,2 +1,2 @@
-type = bend_ql
+type = qLib::bend_ql::1
 matchesdef = 0

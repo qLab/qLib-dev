@@ -1,7 +1,6 @@
 {
 version 0.8
 signature	[ 0	locks=0 ]	(	default	)
-gs	[ 0	locks=0 ]	(	0	0	0	)
 min	[ 0	locks=0 ]	(	-1	)
 max	[ 0	locks=0 ]	(	1	)
 min_i	[ 0	locks=0 ]	(	0	)
