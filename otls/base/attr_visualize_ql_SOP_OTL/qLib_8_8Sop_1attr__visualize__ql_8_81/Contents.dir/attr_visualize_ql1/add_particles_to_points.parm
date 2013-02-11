@@ -1,6 +1,6 @@
 {
 version 0.8
-stdswitcher	[ 0	locks=0 ]	(	0	0	0	)
+stdswitcher	[ 0	locks=0 ]	(	2	2	2	)
 keep	[ 8	locks=0 ]	(	[ keep	0 ] 	)
 points	[ 0	locks=0 ]	(	1	)
 remove	[ 0	locks=0 ]	(	"off"	)

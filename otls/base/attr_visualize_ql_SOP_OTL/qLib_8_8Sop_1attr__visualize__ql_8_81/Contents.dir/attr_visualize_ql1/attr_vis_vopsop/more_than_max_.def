@@ -9,18 +9,18 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	switch2 4 1 "input1"
+0 	null1 1 1 "input1"
 1 	srcmax 0 1 "input2"
 }
 inputs
 {
-0 	switch2 0 1
+0 	null1 0 1
 1 	srcmax 0 1
 }
 stat
 {
   create 1343429923
-  modify 1343431771
+  modify 1360617641
   author tusi@demeisen
   access 0777
 }

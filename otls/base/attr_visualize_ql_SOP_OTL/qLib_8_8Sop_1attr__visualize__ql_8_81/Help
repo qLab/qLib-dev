@@ -89,6 +89,10 @@ NOTE:
         Value Min, Max, Exponent:
             The value range the color ramp will be mapped to.
 
+        Automatic Range:
+            If enabled, the range min/max values will be determined automatically.
+            (The Exponent setting still applies.)
+
         Repeat:
             The ramp will be "repeated" for values outside the specified range
             (so values outside the visualization range can still be distinguished).
@@ -199,6 +203,11 @@ NOTE:
 @Release_Notes Release Notes
 
 _interface version 1_ ---
+
+2013-02-11:
+    - Added automatic range detection to scalar-to-color visualizer.
+    - Vector attribute popup menu now works in "replace" mode (although it supports multiple attributes,
+      users most often want to visualize a single one.)
 
 2013-01-15:
     Added attribute list that has their display enabled when building markers for them (first prototype).

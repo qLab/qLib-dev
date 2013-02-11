@@ -85,7 +85,7 @@
       righttype = extend
       flags = 0
       start = 60.416667938232422
-      segment { length = 0 expr = ch(\"../srcmin\") }
+      segment { length = 0 expr = "if(  ch(\"../srcautofit\")==0,  ch(\"../srcmin\"),  detail(\"../minmax\", \"__vis_attr_min\", 0)-0.001  )" }
     }
     channel srcmax {
       lefttype = extend
@@ -93,7 +93,7 @@
       default = 1
       flags = 0
       start = 60.416667938232422
-      segment { length = 0 value = 1 1 expr = ch(\"../srcmax\") }
+      segment { length = 0 value = 1 1 expr = "if(  ch(\"../srcautofit\")==0,  ch(\"../srcmax\"),  detail(\"../minmax\", \"__vis_attr_max\", 0)+0.001  )" }
     }
     channel attr_ramp {
       lefttype = extend

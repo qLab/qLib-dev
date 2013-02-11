@@ -1,0 +1,8 @@
+{
+    channel npts {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "npoints(opinputpath(\".\", 1))" }
+    }
+  }

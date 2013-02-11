@@ -1,4 +1,4 @@
-40
+52
 attr_vis_vopsop
 add_particles_to_points
 OUT
@@ -39,3 +39,15 @@ keep_every_n_prims
 switch_keep_every_n
 switch_input_geometry
 del_prev_pscale
+build_vis_attr
+vis_attr_min
+vis_attr_max
+delete_vis_attrs
+null1
+null3
+switch_add_particles
+add1
+find_vis_attr_minmax
+minmax
+attribpromote1
+attribpromote2

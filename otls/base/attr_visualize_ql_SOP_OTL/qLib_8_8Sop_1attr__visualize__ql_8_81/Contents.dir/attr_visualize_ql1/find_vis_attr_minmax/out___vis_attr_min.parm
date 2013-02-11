@@ -1,0 +1,13 @@
+{
+version 0.8
+signature	[ 0	locks=0 ]	(	f	)
+attrib	[ 0	locks=0 ]	(	__vis_attr_min	)
+localvar	[ 0	locks=0 ]	(	`toupper(chs(\"attrib\"))`	)
+adata_f	[ 0	locks=0 ]	(	0	)
+adata_i	[ 0	locks=0 ]	(	0	)
+adata	[ 0	locks=0 ]	(	0	0	0	)
+adata_v4	[ 0	locks=0 ]	(	0	0	0	0	)
+adata_m3	[ 0	locks=0 ]	(	1	0	0	0	1	0	0	0	1	)
+adata_m	[ 0	locks=0 ]	(	1	0	0	0	0	1	0	0	0	0	1	0	0	0	0	1	)
+typemodifier	[ 0	locks=0 ]	(	""	)
+}

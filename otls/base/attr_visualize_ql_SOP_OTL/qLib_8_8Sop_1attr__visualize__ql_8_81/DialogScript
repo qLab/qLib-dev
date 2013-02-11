@@ -1,4 +1,4 @@
-# Dialog script for qLib::attr_visualize_ql::1 automatically generated 01/15/13 23:16:04
+# Dialog script for qLib::attr_visualize_ql::1 automatically generated 02/11/13 23:23:52
 
 {
     name	qLib::attr_visualize_ql::1
@@ -338,11 +338,20 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
+	    name	"srcautofit"
+	    label	"Automatic Range"
+	    type	toggle
+	    default	{ "0" }
+	    disablewhen	"{ color_vis == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
 	    name	"srcmin"
 	    label	"Value Min"
 	    type	float
 	    default	{ "0" }
-	    disablewhen	"{ color_vis == 0 }"
+	    disablewhen	"{ color_vis == 0 } { srcautofit != 0 }"
 	    range	{ 0 10 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -353,7 +362,7 @@
 	    label	"Value Max"
 	    type	float
 	    default	{ "1" }
-	    disablewhen	"{ color_vis == 0 }"
+	    disablewhen	"{ color_vis == 0 } { srcautofit != 0 }"
 	    range	{ 0 4 }
 	    export	none
 	    parmtag	{ "parmvop" "1" }
@@ -364,6 +373,7 @@
 	    label	"Exponent"
 	    type	float
 	    default	{ "1" }
+	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0.1 8 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -375,6 +385,7 @@
 	    label	"Repeat"
 	    type	toggle
 	    default	{ "off" }
+	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -405,6 +416,7 @@
 	    type	float
 	    joinnext
 	    default	{ "1" }
+	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -417,6 +429,7 @@
 	    type	float
 	    nolabel
 	    default	{ "0.5" }
+	    disablewhen	"{ color_vis == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "shaderparmcontexts" "sop" }
@@ -472,7 +485,7 @@
 	    type	string
 	    default	{ "N" }
 	    disablewhen	"{ vector_vis == 0 }"
-	    menutoggle	{
+	    menureplace	{
 		[ "r = []" ]
 		[ "" ]
 		[ "try:" ]

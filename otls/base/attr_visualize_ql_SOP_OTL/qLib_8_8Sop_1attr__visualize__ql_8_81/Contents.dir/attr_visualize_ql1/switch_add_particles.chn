@@ -1,0 +1,8 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../add_particles_to_points/keep\")!=0 || ch(\"../add_particles_to_points/addparticlesystem\")!=0" }
+    }
+  }
