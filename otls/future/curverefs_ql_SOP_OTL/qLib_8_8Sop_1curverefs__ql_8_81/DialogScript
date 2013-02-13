@@ -1,4 +1,4 @@
-# Dialog script for qLib::curverefs_ql::1 automatically generated 04/26/12 00:36:29
+# Dialog script for qLib::curverefs_ql::1 automatically generated 02/13/13 23:25:43
 
 {
     name	qLib::curverefs_ql::1
@@ -8,6 +8,8 @@
     help {
 	""
     }
+
+    inputlabel	1	"Input Curve"
 
     group {
 	name	"folder2"

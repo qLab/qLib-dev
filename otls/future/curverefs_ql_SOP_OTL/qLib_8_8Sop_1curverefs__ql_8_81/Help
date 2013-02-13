@@ -4,13 +4,13 @@
 
 = Curve Refs qL =
 
-*Version 0.0.1*
+*interface version 1*
 
-"""Generate *non-flipping* tangent/normal/up vectors for all points on curves."""
+"""Generate *non-flipping* tangent/normal/up vectors for all points on (polygonal) curves."""
 
 @related
     - [Node:sop/texture]
-    - [Deform by Surface qL|Node:sop/deformbysurface_ql]
+    - [Deform by Surface qL|Node:sop/qLib::deformbysurface_ql::1]
 
 
 This SOP generates reference frames (a set of three vectors that defines a local coordinate system)
@@ -23,6 +23,25 @@ This can be very useful where curves with 'on-curve orientation' information is 
 The method is based on the paper "Calculation of Reference Frames along a Space Curve" by Jules Bloomenthal
 (Graphics Gems, vol. 1).
 
+NOTE:
+    This node *requires UV mapping* to be present on the curve.
+
+    The operator gives much better results for polygonal curves (although it accepts other curve types).
+    A properly [resampled poly curve|Node:sop/resample] with enough points is preferred.
+
+
+TIP:
+    Although there won't be sudden "flips" in vector directions along the curve,
+    the algorithm can be sensitive about the initial up vector direction, especially
+    if the curve is arbitrarily deformed.
+
+    To avoid possible flipping of vectors on the _entire curve_, generate an up vector
+    on the first curve point that has no sudden changes during animation, and use the
+    "*Up Vector from First Curve Point*" option for _Up Vector Mode_.
+
+    (This only applies for animated/deformed curves. It also doesn't matter in case
+    only the tangent vectors are used.)
+
 @Parameters
     Input:
         UV Attribute:
@@ -32,7 +51,9 @@ The method is based on the paper "Calculation of Reference Frames along a Space 
         Up Vector Mode:
             The mode for determining the first up vector on each curve. It can either be a constant,
             or the up vector value of the first vertex can be used (if present).
-    
+
+            Make sure you read the TIP above.
+
         Up Vector:
             Vector value for the 'Constant' up vector mode.
 
@@ -48,6 +69,16 @@ TODO:
     Support selection ('group' parameter).
 
 
-@Release_Notes
-    Version 0.0.1:
-        Initial release.
+@relnotes Release Notes
+
+
+_interface version 1_ ---
+
+2013-02-13:
+    Minor changes (help card, etc.)
+
+
+_older versions_ ---
+
+Version 0.0.1:
+    Initial release.
