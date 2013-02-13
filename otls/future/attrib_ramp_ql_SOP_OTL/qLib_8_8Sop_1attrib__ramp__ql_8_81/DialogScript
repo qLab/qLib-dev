@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 08/09/12 00:17:38
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 02/12/13 23:01:37
 
 {
     name	qLib::attrib_ramp_ql::1
@@ -64,6 +64,7 @@
 	menu	{
 	    "0"	"Float"
 	    "1"	"Vector"
+	    "2"	"Integer"
 	}
 	range	{ 0 10 }
 	export	none
@@ -91,24 +92,72 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
+	name	"srcmin_manual"
+	label	"Set Manually"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	help	"If disabled, the value will be determined automatically."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"srcmin"
 	label	"Input Min"
 	type	float
+	joinnext
 	default	{ "0" }
+	disablewhen	"{ srcmin_manual == 0 }"
 	range	{ 0 4 }
 	export	none
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
+	name	"get_srcmin"
+	label	"get"
+	type	button
+	default	{ "1" }
+	help	"Calculate the value based on the current attribute values."
+	disablewhen	"{ srcmin_manual == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` srcmin ( `detail(\"v_min\",\"__min\",0)` )" }
+    }
+    parm {
+	name	"srcmax_manual"
+	label	"Set Manually"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "1" }
+	help	"If disabled, the value will be determined automatically."
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
 	name	"srcmax"
 	label	"Input Max"
 	type	float
+	joinnext
 	default	{ "1" }
+	disablewhen	"{ srcmax_manual == 0 }"
 	range	{ 0 4 }
 	export	none
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"get_srcmax"
+	label	"get"
+	type	button
+	default	{ "1" }
+	help	"Calculate the value based on the current attribute values."
+	disablewhen	"{ srcmax_manual == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opparm `oppwf()` srcmax ( `detail(\"v_max\",\"__max\",0)` )" }
     }
     parm {
 	name	"srcexp"
@@ -120,6 +169,15 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
 	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"sep_1"
+	label	"----"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
     }
     parm {
 	name	"attrib_out"

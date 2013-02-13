@@ -1,0 +1,24 @@
+{
+    channel vex_group {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../vex_group\") }
+    }
+    channel attrib_type {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 15.5
+      segment { length = 0 expr = ch(\"../attrib_type\") }
+    }
+    channel attrib_comp {
+      lefttype = extend
+      righttype = extend
+      default = 3
+      flags = 0
+      start = 15.5
+      segment { length = 0 value = 3 3 expr = ch(\"../attrib_comp\") }
+    }
+  }

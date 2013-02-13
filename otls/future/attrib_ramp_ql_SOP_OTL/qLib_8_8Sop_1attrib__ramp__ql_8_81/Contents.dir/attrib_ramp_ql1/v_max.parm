@@ -1,0 +1,10 @@
+{
+version 0.8
+inname	[ 0	locks=0 ]	(	__rampattr	)
+inclass	[ 0	locks=0 ]	(	"point"	)
+outclass	[ 0	locks=0 ]	(	"detail"	)
+method	[ 0	locks=0 ]	(	"max"	)
+useoutname	[ 0	locks=0 ]	(	"on"	)
+outname	[ 0	locks=0 ]	(	__max	)
+deletein	[ 0	locks=0 ]	(	"on"	)
+}

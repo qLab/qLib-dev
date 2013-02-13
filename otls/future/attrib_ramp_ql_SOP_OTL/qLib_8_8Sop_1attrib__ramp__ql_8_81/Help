@@ -4,24 +4,38 @@
 
 = Attrib Ramp qL =
 
-*Version 1*
+*interface version 1*
 
 """Creates a new attribute by mapping a point attribute to a ramp."""
 
 @Parameters
     Point Group:
         The group of points the operator affects.
+
     Input Attribute:
         Name of the attribute that drives the mapping.
+
+    Signature, Component:
+        Signature of the output attribute (float, vector, integer), and
+        component for vector attributes (X, Y, Z, length).
+
+    Input Min, Max:
+        Minimum and maximum values of the input that fit to the start end end of the ramp.
+
+        By pressing the `Get` button the corresponding (min/max) value will be determined
+        from the actual attribute values, and it will be written into the parameter field.
+
+        If a value field is disabled, its value will be determined automatically from the
+        attribute values. (These min/max calculations are redone whenever the input attributes
+        change.)
+
     Output:
         Name of the attribute that stores the result of the mapping.
-    Signature:
-        Signature of the output attribute.
+
     Operation:
         Type of operation. The original value of the output attribute can be *added*, *multiplied* or be *replaced*
         with the result.
-    Input Min/Max:
-        Minimum and maximum values of the input that fit to the start end end of the ramp.
+
     Color Mode:
         Color mode of the ramp.
     Ramp:
@@ -29,7 +43,21 @@
     Exponent:
         Exponent of a power operation that allows you to make a gamma correction of the output.
 
+
+@todo Todo
+    - Out-of-range mapping (keep, repeat, output-black (?)).
+
+
+@related
+    - [Attr Visualize qL SOP|Node:sop/qLib::attr_visualize_ql::1]
+    - [Node:sop/color]
+
+
 @relnotes Release Notes
 
-    Version 1:
-        Initial release.
+2013-02-12:
+    - Support for integer input attributes
+    - Supports both automatic and manual range detection
+
+2012-08-02:
+    Initial release.

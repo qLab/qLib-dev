@@ -1,0 +1,62 @@
+    parm {
+	name	"vex_group"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"driver_attr"
+	label	"Driver Attr"
+	type	string
+	default	{ "weight" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attrib_type"
+	label	"attrib_type"
+	type	integer
+	default	{ "0" }
+	menu	{
+	    "0"	"Float"
+	    "1"	"Vector"
+	    "2"	"Int"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"attrib_comp"
+	label	"attrib_comp"
+	type	integer
+	default	{ "3" }
+	disablewhen	"{ attrib_type != 1 }"
+	menu	{
+	    "0"	"X"
+	    "1"	"Y"
+	    "2"	"Z"
+	    "3"	"Length"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }

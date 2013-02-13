@@ -1,11 +1,11 @@
-36
+38
 rgb_ramp
 fit1
 srcmin
 srcmax
 pow1
 exp
-importattrib1
+importattrib1_float
 rampparm1
 If_Float
 Signature
@@ -31,7 +31,9 @@ length1
 switch_input_comp
 attrib_type
 attrib_comp
-multiply3
-add3
 pow3
 srcexp
+importattrib1_int
+switcher2
+switch_vec_component
+inttofloat1

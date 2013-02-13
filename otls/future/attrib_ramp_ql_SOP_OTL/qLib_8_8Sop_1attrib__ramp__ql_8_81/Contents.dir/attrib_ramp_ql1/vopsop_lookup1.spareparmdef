@@ -153,6 +153,7 @@
 	menu	{
 	    "0"	"Float"
 	    "1"	"Vector"
+	    "2"	"Int"
 	}
 	range	{ 0 10 }
 	export	none

@@ -1,5 +1,5 @@
 comment ""
-position -12.1887 7.3343
+position -13.6797 4.58818
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
@@ -17,7 +17,7 @@ inputs
 stat
 {
   create 1344384666
-  modify 1344385945
+  modify 1360702236
   author tusi@demeisen
   access 0777
 }

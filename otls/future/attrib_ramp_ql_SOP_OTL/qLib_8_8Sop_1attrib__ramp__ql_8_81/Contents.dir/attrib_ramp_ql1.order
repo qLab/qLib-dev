@@ -1,4 +1,8 @@
-3
+7
 vopsop_lookup1
 switch_del_input_attrib
 del_input_attrib
+IN
+vopsop_prenorm
+v_min
+v_max
