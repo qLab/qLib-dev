@@ -1,4 +1,4 @@
-# Dialog script for qLib::point_ql::1 automatically generated 12/06/12 23:15:30
+# Dialog script for qLib::point_ql::1 automatically generated 02/13/13 22:23:26
 
 {
     name	qLib::point_ql::1
@@ -146,6 +146,57 @@
 	default	{ "1" "0" "0" }
 	disablewhen	"{ set_velocity == 0 }"
 	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_pscale"
+	label	"set_pscale"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"pscale"
+	label	"uniform: pscale"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ set_pscale == 0 }"
+	range	{ 0 4 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"set_scale"
+	label	"set_scale"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"scale"
+	label	"by-axis: scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	disablewhen	"{ set_scale == 0 }"
+	range	{ 0 4 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }

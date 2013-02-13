@@ -56,36 +56,102 @@
       flags = 0
       segment { length = 0 expr = chs(\"../group\") }
     }
-    channel _vex_set_velocity {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../set_velocity\") }
-    }
-    channel _vex_velocityx {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../velocityx\") }
-    }
-    channel _vex_velocityy {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../velocityy\") }
-    }
-    channel _vex_velocityz {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../velocityz\") }
-    }
     channel _vex_set_normal {
       lefttype = extend
       righttype = extend
       default = 1
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../set_normal\") }
+    }
+    channel _vex_set_velocity {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 value = 1 1 expr = ch(\"../set_velocity\") }
+    }
+    channel _vex_velocityx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 value = 1 1 expr = ch(\"../velocityx\") }
+    }
+    channel _vex_velocityy {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 expr = ch(\"../velocityy\") }
+    }
+    channel _vex_velocityz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 expr = ch(\"../velocityz\") }
+    }
+    channel _vex_normalx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 expr = ch(\"../normalx\") }
+    }
+    channel _vex_normaly {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 expr = ch(\"../normaly\") }
+    }
+    channel _vex_normalz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 86.833297729492188
+      segment { length = 0 value = 1 1 expr = ch(\"../normalz\") }
+    }
+    channel _vex_set_pscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../set_pscale\") }
+    }
+    channel _vex_pscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../pscale\") }
+    }
+    channel _vex_set_scale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../set_scale\") }
+    }
+    channel _vex_scale1 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale1\") }
+    }
+    channel _vex_scale2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale2\") }
+    }
+    channel _vex_scale3 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../scale3\") }
     }
   }

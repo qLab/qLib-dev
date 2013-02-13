@@ -114,3 +114,50 @@
 	parmtag	{ "shaderparmcontexts" "sop" }
 	parmtag	{ "parmvop" "1" }
     }
+    parm {
+	name	"_vex_set_pscale"
+	label	"_vex_set_pscale"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_pscale"
+	label	"pscale"
+	type	float
+	default	{ "0" }
+	disablewhen	"{ _vex_set_pscale == 0 }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_set_scale"
+	label	"_vex_set_scale"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"_vex_scale"
+	label	"scale"
+	type	float
+	size	3
+	default	{ "1" "1" "1" }
+	disablewhen	"{ _vex_set_scale == 0 }"
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+    }
