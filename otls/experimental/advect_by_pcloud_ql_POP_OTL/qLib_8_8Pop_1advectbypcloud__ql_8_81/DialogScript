@@ -1,15 +1,15 @@
-# Dialog script for qLib::advectbypcloud_ql::1 automatically generated 02/14/13 18:32:52
+# Dialog script for qLib::advectbypcloud_ql::1 automatically generated 02/14/13 22:43:39
 
 {
     name	qLib::advectbypcloud_ql::1
     script	qLib::advectbypcloud_ql::1
-    label	"Advect By Point Cloud"
+    label	"Advect By Point Cloud qL"
 
     help {
 	""
     }
 
-    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	1	"Input 1"
     inputlabel	2	"Sub-Network Input #2"
     inputlabel	3	"Sub-Network Input #3"
     inputlabel	4	"Sub-Network Input #4"
@@ -80,6 +80,15 @@
 	type	float
 	default	{ "10" }
 	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"sep_1"
+	label	"----"
+	type	label
+	nolabel
+	default	{ "" }
+	range	{ 0 1 }
 	export	none
     }
     parm {
@@ -177,18 +186,6 @@
 	    "zero"	"Zero"
 	}
 	range	{ 0 10 }
-	export	none
-	parmtag	{ "autoscope" "0000000000000000" }
-    }
-    parm {
-	name	"numthreads"
-	label	"Number of Threads"
-	type	ordinal
-	default	{ "1" }
-	menu	{
-	    [ "opmenu -l advect_by_force vex_numthreads" ]
-	}
-	range	{ 0 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }

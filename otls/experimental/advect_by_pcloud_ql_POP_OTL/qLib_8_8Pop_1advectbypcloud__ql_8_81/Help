@@ -9,19 +9,30 @@
 """A an alternative for the Advect by Volumes POP that uses point clouds."""
 
 This is the same operator as the [Node:pop/advectbyvolumes] POP node, but instead of volumes,
-it uses a vector attribute from a SOP point cloud to advect particles.
+it uses a vector attribute from a SOP point cloud to advect particles. Otherwise it's
+exactly identical to the aforementioned POP.
 
-Otherwise it's exactly identical to the aforementioned POP.
+There are certain situations where a pointcloud-based approach is preferable over a volume-based one --
+especially when considering efficiency. A good example is advecting particles along curves: using
+a volume-based approach in such cases is an overkill in terms of both memory/storage and computation time.
+
+The point cloud-based approach is an useful complementing tool for the original volume-based advection
+node.
 
 
 @parameters
-    See the [Node:pop/advectbyvolumes] documentation for parameter descriptions not mentioned here.
+    (Only specific parameters are documented --
+    see the [Node:pop/advectbyvolumes] operator documentation for parameter descriptions
+    not mentioned here.)
 
     Velocity Geometry:
         Path to a SOP geometry with a per-point vector attribute to be used for advection.
 
     Velocity Attribute:
         Name of a vector attribute on the point cloud to use for advection.
+        TIP:
+            Although the `N` (normal) attribute is technically a valid choice, it is an attribute
+            that can be modified by lots of other operators (e.g. transforms, point jitters, etc.)
 
     Lookup radius:
         No points further than this distance will affect the particle.
@@ -29,7 +40,7 @@ Otherwise it's exactly identical to the aforementioned POP.
     Number of Points:
         The maximum number of points to consider from the point cloud when advecting the particle.
 
-    NOTE:
+    TIP:
         Pointcloud-based advection (and point cloud-lookup in general) works by considering neighbouring
         points in the pointcloud, and calculating their average.
 
@@ -41,10 +52,21 @@ Otherwise it's exactly identical to the aforementioned POP.
 @related
     - [Node:pop/advectbyvolumes]
 
+@todo Todo
+    - Update Position/Velocity Update:
+        - add option to use retrieved velocity values
+
 
 @relnotes Release Notes
 
     _interface version 1_ ---
+
+    2013-02-14:
+        - Bug fix: replaced leftover volume-advection (position branch, final velocity).
+        - Behaviour fix: previously, velocity and position modes stopped particles that
+          fell outside the point cloud's range. Now they are to continue on course.
+          (A side effect is that cloud points with zero-length vectors are ignored, so they
+          can't be used to stop particles. For that purpose, use near-zero vector lengths.)
 
     2013-02-14:
         First version. (Also, fixed a minor issue when normals were used to advect.)

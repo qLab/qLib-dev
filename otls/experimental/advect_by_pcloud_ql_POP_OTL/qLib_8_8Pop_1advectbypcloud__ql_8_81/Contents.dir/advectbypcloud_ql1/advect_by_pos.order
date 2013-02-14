@@ -1,4 +1,4 @@
-12
+13
 output1
 pos
 scale
@@ -8,6 +8,7 @@ add1
 vel
 switch1
 zero
-fetch_final_vel
 merge_choice
 fetch_pcloud_velocity
+fetch_pcloud_velocity_final
+length_gt_than_zero

@@ -1,8 +1,8 @@
 comment ""
-position 8.05995 4.88153
+position 3.56461 5.49409
 cachesize 1
 connectornextid 2
-flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
 outputsNamed3
 {
 1 "output1"
@@ -17,9 +17,9 @@ inputs
 }
 stat
 {
-  create 1360859194
-  modify 1360863180
-  author tusi@johnnyquestlin.digicpictures.local
+  create 1360872821
+  modify 1360878209
+  author tusi@demeisen
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
