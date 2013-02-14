@@ -14,5 +14,5 @@ movecentroid	[ 0	locks=0 ]	(	0	)
 updatenmls	[ 0	locks=0 ]	(	"off"	)
 vlength	[ 0	locks=0 ]	(	"on"	)
 invertxform	[ 0	locks=0 ]	(	"on"	)
-objectpath	[ 8	locks=0 ]	(	[ objectpath	/obj/compute_tree ] 	)
+objectpath	[ 8	locks=0 ]	(	[ objectpath	/obj/advect_by_pointcloud_example_A ] 	)
 }

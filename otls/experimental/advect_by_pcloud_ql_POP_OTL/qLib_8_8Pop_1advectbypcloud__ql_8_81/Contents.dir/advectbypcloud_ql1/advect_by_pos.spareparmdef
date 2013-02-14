@@ -9,27 +9,6 @@
 	parmtag	{ "parmvop" "1" }
     }
     parm {
-	name	"velfile"
-	label	"Velocity File"
-	type	geometry
-	default	{ "$HH/geo/defgeo.bgeo" }
-	range	{ 0 1 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "pop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
-	name	"velprims"
-	label	"Velocity Prims"
-	type	float
-	size	3
-	default	{ "0" "1" "2" }
-	range	{ 0 10 }
-	export	none
-	parmtag	{ "shaderparmcontexts" "pop" }
-	parmtag	{ "parmvop" "1" }
-    }
-    parm {
 	name	"mergechoice"
 	label	"Merge Choice"
 	type	integer

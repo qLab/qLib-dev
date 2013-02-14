@@ -25,12 +25,6 @@
       flags = 0
       segment { length = 0 value = 10 10 expr = ch(\"../velscale\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../numthreads\") }
-    }
     channel radius {
       lefttype = extend
       righttype = extend

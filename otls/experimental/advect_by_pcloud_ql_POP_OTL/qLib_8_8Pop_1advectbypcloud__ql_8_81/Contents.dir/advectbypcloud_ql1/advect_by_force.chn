@@ -49,12 +49,6 @@
       flags = 0
       segment { length = 0 expr = ch(\"../forcescale\") }
     }
-    channel vex_numthreads {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../numthreads\") }
-    }
     channel radius {
       lefttype = extend
       righttype = extend

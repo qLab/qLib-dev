@@ -12,7 +12,7 @@ createptstring	[ 0	locks=0 ]	(	"off"	)
 createprimstring	[ 0	locks=0 ]	(	"off"	)
 numobj	[ 0	locks=0 ]	(	1	)
 enable1	[ 0	locks=0 ]	(	"on"	)
-objpath1	[ 8	locks=0 ]	(	[ objpath1	/obj/compute_tree/GEO_dir_curves_advect ] 	)
+objpath1	[ 8	locks=0 ]	(	[ objpath1	/obj/advect_by_pointcloud_example_A/GEO_advector ] 	)
 group1	[ 8	locks=0 ]	(	[ group1	"" ] 	)
 expand1	[ 0	locks=0 ]	(	"off"	)
 }
