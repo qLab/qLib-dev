@@ -1,0 +1,195 @@
+# Dialog script for qLib::advectbypcloud_ql::1 automatically generated 02/14/13 18:32:52
+
+{
+    name	qLib::advectbypcloud_ql::1
+    script	qLib::advectbypcloud_ql::1
+    label	"Advect By Point Cloud"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"activate"
+	label	"Activation"
+	type	float
+	default	{ "1" }
+	range	{ 0! 1! }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"group"
+	label	"Source Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l advect_by_force vex_source" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velpath"
+	label	"Velocity Geometry"
+	type	oppath
+	default	{ "" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "oprelative" "." }
+	parmtag	{ "opfilter" "!!SOP!!" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velgroup"
+	label	"Velocity Group"
+	type	string
+	default	{ "" }
+	menutoggle	{
+	    [ "opmenu -l velocity_source/object_merge1/ group1" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"vel_attrib"
+	label	"Velocity Attribute"
+	type	string
+	default	{ "v" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"lookup_radius"
+	label	"Lookup Radius"
+	type	float
+	default	{ "1" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"lookup_points"
+	label	"Number of Points"
+	type	float
+	default	{ "10" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"velscale"
+	label	"Velocity Scale"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"advecttype"
+	label	"Advection Type"
+	type	ordinal
+	default	{ "0" }
+	menu	{
+	    "force"	"Update Force"
+	    "blendvel"	"Update Velocity"
+	    "pos"	"Update Position"
+	}
+	range	{ 0! 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"forcescale"
+	label	"Force Scale"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ advecttype != force }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"ignoremass"
+	label	"Ignore Mass"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ advecttype != force }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"overridemass"
+	label	"Override Mass"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ ignoremass == 1 } { advecttype != force }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"newmass"
+	label	"Mass"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ overridemass == 0 } { ignoremass == 1 } { advecttype != force }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"treataswind"
+	label	"Treat As Wind"
+	type	toggle
+	default	{ "off" }
+	disablewhen	"{ advecttype != force }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velblend"
+	label	"Velocity Blend"
+	type	float
+	default	{ "0.5" }
+	disablewhen	"{ advecttype != blendvel }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velupdate"
+	label	"Velocity Update"
+	type	ordinal
+	default	{ "0" }
+	disablewhen	"{ advecttype != pos }"
+	menu	{
+	    "none"	"No Change"
+	    "finalvel"	"Final Velocity"
+	    "zero"	"Zero"
+	}
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"numthreads"
+	label	"Number of Threads"
+	type	ordinal
+	default	{ "1" }
+	menu	{
+	    [ "opmenu -l advect_by_force vex_numthreads" ]
+	}
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+}

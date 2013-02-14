@@ -1,0 +1,48 @@
+{
+    channel vex_source {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chs(\"../group\") }
+    }
+    channel activate {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../activate\") }
+    }
+    channel mergechoice {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../velupdate\") }
+    }
+    channel scale {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../velscale\") }
+    }
+    channel vex_numthreads {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../numthreads\") }
+    }
+    channel radius {
+      lefttype = extend
+      righttype = extend
+      default = 0.10000000149011612
+      flags = 0
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../lookup_radius\") }
+    }
+    channel maxpoints {
+      lefttype = extend
+      righttype = extend
+      default = 10
+      flags = 0
+      segment { length = 0 value = 10 10 expr = ch(\"../lookup_points\") }
+    }
+  }

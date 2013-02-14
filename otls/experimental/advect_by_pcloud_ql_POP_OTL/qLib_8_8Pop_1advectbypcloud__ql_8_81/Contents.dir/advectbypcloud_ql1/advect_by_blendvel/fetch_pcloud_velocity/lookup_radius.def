@@ -1,0 +1,27 @@
+comment ""
+position -2.66347 -0.427581
+cachesize 1
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+0 "radius"
+1 "bound_radius"
+}
+inputsNamed3
+{
+}
+inputs
+{
+}
+stat
+{
+  create 1360859727
+  modify 1360859789
+  author tusi@johnnyquestlin.digicpictures.local
+  access 0777
+}
+color UT_Color RGB 0 0.4 1 
+delscript ""
+exprlanguage hscript
+end

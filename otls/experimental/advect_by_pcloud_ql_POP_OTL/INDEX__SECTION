@@ -1,0 +1,13 @@
+Operator:     qLib::advectbypcloud_ql::1
+Label:        Advect By Point Cloud qL
+Path:         oplib:/qLib::Pop/advectbypcloud_ql::1?qLib::Pop/advectbypcloud_ql::1
+Icon:         POP_advectbyvolumes
+Table:        Pop
+License:      
+Extra:        
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Feb 14 18:33:28 2013
+

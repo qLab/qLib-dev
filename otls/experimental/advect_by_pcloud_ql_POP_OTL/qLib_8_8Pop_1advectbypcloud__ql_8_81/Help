@@ -1,0 +1,51 @@
+#icon: POP/advectbyvolumes
+#context: pop
+#type: node
+
+= Advect by Point Cloud qL =
+
+*interface version 1*
+
+"""A an alternative for the Advect by Volumes POP that uses point clouds."""
+
+This is the same operator as the [Node:pop/advectbyvolumes] POP node, but instead of volumes,
+it uses a vector attribute from a SOP point cloud to advect particles.
+
+Otherwise it's exactly identical to the aforementioned POP.
+
+
+@parameters
+    See the [Node:pop/advectbyvolumes] documentation for parameter descriptions not mentioned here.
+
+    Velocity Geometry:
+        Path to a SOP geometry with a per-point vector attribute to be used for advection.
+
+    Velocity Attribute:
+        Name of a vector attribute on the point cloud to use for advection.
+
+    Lookup radius:
+        No points further than this distance will affect the particle.
+
+    Number of Points:
+        The maximum number of points to consider from the point cloud when advecting the particle.
+
+    NOTE:
+        Pointcloud-based advection (and point cloud-lookup in general) works by considering neighbouring
+        points in the pointcloud, and calculating their average.
+
+        The lookup starts from the 3d position of the point to be advected, and the pointcloud points are
+        considered, sorted by distance. The lookup is completed _either_ the lookup radius is reached _or_
+        the number of lookup points are reached. (e.g. for dense point clouds, if the max number of points
+        are low, the actual lookup radius will always be low, regardless of the radius setting.)
+
+@related
+    - [Node:pop/advectbyvolumes]
+
+
+@relnotes Release Notes
+
+    _interface version 1_ ---
+
+    2013-02-14:
+        First version. (Also, fixed a minor issue when normals were used to advect.)
+

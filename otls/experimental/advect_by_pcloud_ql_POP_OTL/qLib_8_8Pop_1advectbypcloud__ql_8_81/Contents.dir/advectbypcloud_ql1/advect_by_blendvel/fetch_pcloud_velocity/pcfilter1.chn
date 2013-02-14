@@ -1,0 +1,9 @@
+{
+    channel channel {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"v\"
+      flags = 0
+      segment { length = 0 expr = chs('../vel_attrib/stringdef') }
+    }
+  }

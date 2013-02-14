@@ -1,0 +1,28 @@
+comment ""
+position 1.22852 -1.35389
+cachesize 1
+connectornextid 3
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+2 "not"
+}
+inputsNamed3
+{
+1 	ignoremass 0 1 "input"
+}
+inputs
+{
+0 	ignoremass 0 1
+}
+stat
+{
+  create 1215097340
+  modify 1215097343
+  author jlait@thule
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

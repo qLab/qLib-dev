@@ -1,0 +1,14 @@
+{
+    channel objpath1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chsop(\"../../velpath\") }
+    }
+    channel group1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = chs(\"../../velgroup\") }
+    }
+  }

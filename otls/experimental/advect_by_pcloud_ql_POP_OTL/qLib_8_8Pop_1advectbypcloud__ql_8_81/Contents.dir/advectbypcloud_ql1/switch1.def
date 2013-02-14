@@ -1,0 +1,32 @@
+comment ""
+position 1.11765 1.93524
+cachesize 1
+connectornextid 4
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+3 "output1"
+}
+inputsNamed3
+{
+0 	advect_by_force 1 1 "input1"
+1 	advect_by_blendvel 1 1 "input2"
+2 	advect_by_pos 1 1 "input3"
+}
+inputs
+{
+0 	advect_by_force 0 1
+1 	advect_by_blendvel 0 1
+2 	advect_by_pos 0 1
+}
+stat
+{
+  create 1215032295
+  modify 1360860199
+  author jlait@thule
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

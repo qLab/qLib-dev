@@ -1,0 +1,77 @@
+{
+    channel objectpath {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = "node = hou.pwd()
+
+# We skip past our immediate parent as it is a NWN object node
+node = node.parent().parent()
+
+while node is not None:
+    if isinstance(node, hou.ObjNode):
+        break
+    node = node.parent()
+if node is not None:
+    return node.path()
+return \".\"" language = python }
+    }
+    channel tx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"TX\")" }
+    }
+    channel ty {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"TY\")" }
+    }
+    channel tz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"TZ\")" }
+    }
+    channel rx {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"RX\")" }
+    }
+    channel ry {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"RY\")" }
+    }
+    channel rz {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"RZ\")" }
+    }
+    channel sx {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"SX\")" }
+    }
+    channel sy {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"SY\")" }
+    }
+    channel sz {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = "explodematrix(optransform(chsop(\"objectpath\")), \"SRT\", \"XYZ\", \"SZ\")" }
+    }
+  }

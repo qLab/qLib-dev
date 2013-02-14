@@ -1,0 +1,32 @@
+comment ""
+position 2.30009 1.06474
+cachesize 1
+connectornextid 7
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
+outputsNamed3
+{
+6 "volumevalue"
+}
+inputsNamed3
+{
+3 	velfile 0 1 "filename"
+4 	floattoint2 2 1 "primnum"
+5 	subinput1 0 1 "samplepos"
+}
+inputs
+{
+0 	velfile 0 1
+1 	floattoint2 0 1
+2 	subinput1 0 1
+}
+stat
+{
+  create 1215031639
+  modify 1360859892
+  author jlait@thule
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

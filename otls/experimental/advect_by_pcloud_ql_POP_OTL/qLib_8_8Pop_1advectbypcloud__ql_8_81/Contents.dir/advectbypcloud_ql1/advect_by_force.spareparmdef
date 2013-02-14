@@ -1,0 +1,141 @@
+    parm {
+	name	"forcescale"
+	label	"Force Scale"
+	type	float
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"newmass"
+	label	"Mass"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"mass"
+	label	"Mass"
+	type	float
+	invisible
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"overridemass"
+	label	"Override Mass"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"ignoremass"
+	label	"Ignore Mass"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"treataswind"
+	label	"Treat As Wind"
+	type	toggle
+	default	{ "off" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"velscale"
+	label	"Velocity Scale"
+	type	float
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"activate"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"cacheincoming"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_source"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vex_numthreads"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_compiler"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vop_forcecompile"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"vel_file"
+	label	"vel_file"
+	type	geometry
+	default	{ "op:`opfullpath(\"../velocity_source/OUT\")`" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"radius"
+	label	"Search radius"
+	type	float
+	default	{ "0.1" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"maxpoints"
+	label	"Number of points"
+	type	integer
+	default	{ "10" }
+	range	{ 0 10 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"vel_attrib"
+	label	"vel_attrib"
+	type	string
+	default	{ "v" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
