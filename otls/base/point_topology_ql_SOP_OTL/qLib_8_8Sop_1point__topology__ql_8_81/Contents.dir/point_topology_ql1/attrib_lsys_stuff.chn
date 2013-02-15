@@ -1,0 +1,39 @@
+{
+    channel gen_v_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../minmax_gen/min\") }
+    }
+    channel gen_v_max {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../minmax_gen/max\") }
+    }
+    channel age_v_min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../minmax_lage/min\") }
+    }
+    channel age_v_max {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../minmax_lage/max\") }
+    }
+    channel do_lgen_n {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../do_lgenn\") }
+    }
+    channel do_lage_n {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../do_lagen\") }
+    }
+  }

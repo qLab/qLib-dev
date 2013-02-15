@@ -1,0 +1,14 @@
+{
+    channel min {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "detail(\"v_min\", \"v_min\", 0)" }
+    }
+    channel max {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "detail(\"v_max\", \"v_max\", 0)" }
+    }
+  }

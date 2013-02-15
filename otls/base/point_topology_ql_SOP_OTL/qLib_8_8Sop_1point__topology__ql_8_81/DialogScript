@@ -1,4 +1,4 @@
-# Dialog script for qLib::point_topology_ql::1 automatically generated 07/12/12 21:17:20
+# Dialog script for qLib::point_topology_ql::1 automatically generated 02/15/13 19:06:42
 
 {
     name	qLib::point_topology_ql::1
@@ -377,7 +377,7 @@
 
     group {
 	name	"folder1_2"
-	label	"Indices"
+	label	"Indices & Attributes"
 
 	group {
 	    name	"folder0"
@@ -585,8 +585,129 @@
 	    name	"folder0_1"
 	    label	"Particles"
 
+	    parm {
+		name	"do_lifep"
+		label	"L-System Generation [0..1]"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lifep_name"
+		label	"Age [0..1]"
+		type	string
+		joinnext
+		default	{ "life_p" }
+		disablewhen	"{ do_lifep == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lifep_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_lifep == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	}
+
+	group {
+	    name	"folder0_2"
+	    label	"L-Systems"
+
+	    parm {
+		name	"do_lgenn"
+		label	"L-System Generation [0..1]"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lgenn_name"
+		label	"Generation [0..1]"
+		type	string
+		joinnext
+		default	{ "gen_n" }
+		disablewhen	"{ do_lgenn == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lgenn_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_lgenn == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"do_lagen"
+		label	"L-System Generation [0..1]"
+		type	toggle
+		nolabel
+		joinnext
+		default	{ "0" }
+		range	{ 0! 10 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lagen_name"
+		label	"Age [0..1]"
+		type	string
+		joinnext
+		default	{ "lage_n" }
+		disablewhen	"{ do_lagen == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
+	    parm {
+		name	"lagen_varname"
+		label	"Variable"
+		type	string
+		default	{ "" }
+		disablewhen	"{ do_lagen == 0 }"
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "autoscope" "0000000000000000" }
+	    }
 	}
 
     }
 
+    parm {
+	name	"do_delattribs"
+	label	"Delete Attribs"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"delattribs"
+	label	"Remove Attribs"
+	type	string
+	default	{ "* ^count_ci ^count_nbr ^ptindex ^life_p ^lage_n" }
+	disablewhen	"{ do_delattribs == 0 }"
+	range	{ 0 1 }
+	export	none
+    }
 }

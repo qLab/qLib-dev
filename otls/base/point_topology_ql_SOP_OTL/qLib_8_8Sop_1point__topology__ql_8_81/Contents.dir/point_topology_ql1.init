@@ -1,2 +1,2 @@
-type = point_topology_ql
+type = qLib::point_topology_ql::1
 matchesdef = 0

@@ -1,0 +1,35 @@
+sopflags sopflags = 
+comment ""
+position 2.18399 -13.543
+cachesize 1
+connectornextid 8
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+4 "output1"
+}
+inputsNamed3
+{
+0 	lsys_stuff 0 1 "input1"
+5 	"" "" 1 "input2"
+6 	"" "" 1 "input3"
+7 	"" "" 1 "input4"
+}
+inputs
+{
+0 	lsys_stuff 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+}
+stat
+{
+  create 1360948109
+  modify 1360949936
+  author tusi@johnnyquestlin.digicpictures.local
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end

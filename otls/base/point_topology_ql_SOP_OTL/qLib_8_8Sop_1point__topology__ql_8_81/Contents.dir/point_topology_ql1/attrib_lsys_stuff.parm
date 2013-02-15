@@ -1,0 +1,17 @@
+{
+version 0.8
+vex_group	[ 0	locks=0 ]	(	""	)
+vex_numthreads	[ 0	locks=0 ]	(	"1perproc"	)
+vop_compiler	[ 0	locks=0 ]	(	"vcc -r -q $VOP_INCLUDEPATH -o $VOP_OBJECTFILE -e $VOP_ERRORFILE $VOP_SOURCEFILE"	)
+vop_forcecompile	[ 0	locks=0 ]	(	0	)
+do_lgen_n	[ 8	locks=0 ]	(	[ do_lgen_n	0 ] 	)
+lgenn_name	[ 0	locks=0 ]	(	`chs(\"../lgenn_name\")`	)
+lgenn_varname	[ 0	locks=0 ]	(	`chs(\"../lgenn_varname\")`	)
+gen_v_min	[ 0	locks=0 ]	(	[ gen_v_min	0 ] 	)
+gen_v_max	[ 0	locks=0 ]	(	[ gen_v_max	33 ] 	)
+do_lage_n	[ 8	locks=0 ]	(	[ do_lage_n	1 ] 	)
+lagen_name	[ 0	locks=0 ]	(	`chs(\"../lagen_name\")`	)
+lagen_varname	[ 0	locks=0 ]	(	`chs(\"../lagen_varname\")`	)
+age_v_min	[ 8	locks=0 ]	(	[ age_v_min	0 ] 	)
+age_v_max	[ 8	locks=0 ]	(	[ age_v_max	9.1999988555908203 ] 	)
+}

@@ -1,0 +1,10 @@
+{
+version 0.8
+label1	[ 0	locks=0 ]	(	"Input geom"	)
+label2	[ 0	locks=0 ]	(	"Sub-Network Input #2"	)
+label3	[ 0	locks=0 ]	(	"Sub-Network Input #3"	)
+label4	[ 0	locks=0 ]	(	"Sub-Network Input #4"	)
+attrib	[ 0	locks=0 ]	(	lage	)
+min	[ 0	locks=0 ]	(	[ min	0 ] 	)
+max	[ 0	locks=0 ]	(	[ max	9.1999988555908203 ] 	)
+}

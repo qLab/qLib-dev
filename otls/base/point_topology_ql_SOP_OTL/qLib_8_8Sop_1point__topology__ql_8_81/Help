@@ -4,9 +4,9 @@
 
 = Point Topology qL =
 
-*Version 0.0.3*
+*interface version 1*
 
-"""Performs various topology-related queries and stores the results in point attributes."""
+"""Performs various topology-related (or other specific) queries and stores the results in point attributes."""
 
 @description
     
@@ -112,11 +112,11 @@
         For description of parameters see the `Coincident Points` section above.
 
     
-    Indices:
+    Indices & Attributes:
 
-        Storing of various index counts as per-point attributes. (Note that most
-        vertex-related indices are make best sense for curves or row/column based
-        surfaces).
+        Storing of various index counts (or other convenience values) as per-point attributes.
+        (Note that most vertex-related indices are make best sense for curves or row/column based surfaces --
+        e.g. curves, etc.)
 
         Geometry:
             Extract various geomety-related indices.
@@ -143,27 +143,60 @@
                 Store the index of the primitive the given points belongs to.
 
         Particles:
+            Extract various particle-related convenience values.
 
-            Extract various particle-related indices.
-            (...yet to come...)
+            Age \[0..1\]:
+                Store per-particle normalized age as a new attribute.
+                (Same as the `$LIFE` local variable.)
 
+        L-Systems:
+            Various L-system-related convenience attributes.
+
+            Generation \[0..1\]:
+                Store the normalized value of the L-system `gen` attribute as a new attribute.
+                (Requires the `gen` per-point attribute to be present.)
+
+                (The `gen` attribute stores the L-system generation depth, but it has the same
+                value for each point in the same L-system primitive.)
+
+            Age \[0..1\]:
+                Store the normalized value of the L-system `lage` attribute as a new attribute.
+                (Requires the `lage` per-point attribute to be present.)
+
+                (The `lage` attribute is similar to `gen`, but it increases within the same
+                L-system primitive as well -- it act as a parametrization of some sort.)
+
+    Remove Attribs:
+        After generating the new attribute(s), this convenience field allows old attributes
+        to be deleted (if they're not needed any further).
 
 
 @related
     - [Node:sop/fuse]
     - [Node:sop/facet]
-    - [PointAttr qL|Node:sop/pointattr_ql]
-    - [Attr Visualize qL|Node:sop/attr_visualize_ql]
+    - [PointAttr qL|Node:sop/qLib::pointattr_ql::1]
+    - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
+    - [Attrib Ramp qL|Node:sop/qLib::attrib_ramp_ql::1]
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
 
-    Version 0.0.3:
-        - Added visualization modes for coincidents and neighbours.
-        - Help card enhancements.
+_interface version 1_ ---
 
-    Version 0.0.2:
-        Interfacelift; better Help card.
+2013-02-15:
+    Added support for attributes:
+    - Particle normalized age
+    - L-system normalized generation and age
+    Added post operation: remove a list of specified attributes.
 
-    Version 0.0.1:
-        Initial release.
+_older versions_ ---
+
+Version 0.0.3:
+    - Added visualization modes for coincidents and neighbours.
+    - Help card enhancements.
+
+Version 0.0.2:
+    Interfacelift; better Help card.
+
+Version 0.0.1:
+    Initial release.

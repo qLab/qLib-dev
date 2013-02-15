@@ -1,4 +1,4 @@
-20
+30
 count_coincidents
 count_neighbours
 attrib_pt_index
@@ -19,3 +19,13 @@ pt_index
 init_color
 vismode
 vis_points
+minmax_gen
+null1
+minmax_lage
+lsys_stuff
+attrib_lsys_stuff
+remove_attribs
+clean
+null2
+attrib_particle_stuff
+particle_stuff

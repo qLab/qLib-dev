@@ -1,0 +1,44 @@
+    parm {
+	name	"label1"
+	baseparm
+	export	dialog
+    }
+    parm {
+	name	"label2"
+	baseparm
+	export	dialog
+    }
+    parm {
+	name	"label3"
+	baseparm
+	export	dialog
+    }
+    parm {
+	name	"label4"
+	baseparm
+	export	dialog
+    }
+    parm {
+	name	"attrib"
+	label	"attrib"
+	type	string
+	default	{ "default.pic" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"min"
+	label	"min"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"max"
+	label	"max"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

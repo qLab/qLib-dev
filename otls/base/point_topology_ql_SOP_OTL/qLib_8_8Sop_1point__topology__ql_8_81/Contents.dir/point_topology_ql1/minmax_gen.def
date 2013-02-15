@@ -1,0 +1,36 @@
+sopflags sopflags = 
+comment "This is a \"shortcut\" to calculate min/max values of
+a point attribute."
+position 5.19691 -10.8541
+cachesize 1
+connectornextid 5
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+4 "output1"
+}
+inputsNamed3
+{
+0 	null1 0 1 "input1"
+1 	"" "" 1 "input2"
+2 	"" "" 1 "input3"
+3 	"" "" 1 "input4"
+}
+inputs
+{
+0 	null1 0 1
+1 	"" 0 1
+2 	"" 0 1
+3 	"" 0 1
+}
+stat
+{
+  create 1360947789
+  modify 1360948835
+  author tusi@johnnyquestlin.digicpictures.local
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
