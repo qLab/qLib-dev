@@ -1,6 +1,6 @@
 sopflags sopflags = 
 comment ""
-position 0.3487 -16.1976
+position 0.3487 -18.3367
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on
@@ -19,7 +19,7 @@ inputs
 stat
 {
   create 1360949628
-  modify 1360949764
+  modify 1360959942
   author tusi@johnnyquestlin.digicpictures.local
   access 0777
 }

@@ -1,22 +1,22 @@
     parm {
 	name	"label1"
 	baseparm
-	export	dialog
+	export	all
     }
     parm {
 	name	"label2"
 	baseparm
-	export	dialog
+	export	all
     }
     parm {
 	name	"label3"
 	baseparm
-	export	dialog
+	export	all
     }
     parm {
 	name	"label4"
 	baseparm
-	export	dialog
+	export	all
     }
     parm {
 	name	"attrib"

@@ -856,5 +856,15 @@ point_topology_ql1/particle_stuff.def
 point_topology_ql1/particle_stuff.chn
 point_topology_ql1/particle_stuff.parm
 point_topology_ql1/particle_stuff.userdata
+point_topology_ql1/null3.init
+point_topology_ql1/null3.def
+point_topology_ql1/null3.spareparmdef
+point_topology_ql1/null3.parm
+point_topology_ql1/null3.userdata
+point_topology_ql1/apply_point_vtxi_vtxs.init
+point_topology_ql1/apply_point_vtxi_vtxs.def
+point_topology_ql1/apply_point_vtxi_vtxs.chn
+point_topology_ql1/apply_point_vtxi_vtxs.parm
+point_topology_ql1/apply_point_vtxi_vtxs.userdata
 point_topology_ql1.order
 point_topology_ql1.net

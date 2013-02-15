@@ -178,16 +178,20 @@
     - [Attr Visualize qL|Node:sop/qLib::attr_visualize_ql::1]
     - [Attrib Ramp qL|Node:sop/qLib::attrib_ramp_ql::1]
 
+@todo Todo
+    - option for outputting integers or floats where ints are applicable by default
+    - ...
 
 @relnotes Release Notes
 
 _interface version 1_ ---
 
 2013-02-15:
-    Added support for attributes:
-    - Particle normalized age
-    - L-system normalized generation and age
-    Added post operation: remove a list of specified attributes.
+    - Added support for the following attributes ---
+        - Particle normalized age
+        - L-system normalized generation and age
+    - Added post operation: remove a list of specified attributes
+    - Improved performance when vertex-related indices are not queried.
 
 _older versions_ ---
 

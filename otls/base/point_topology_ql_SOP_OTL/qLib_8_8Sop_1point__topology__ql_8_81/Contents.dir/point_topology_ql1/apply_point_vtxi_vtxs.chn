@@ -1,0 +1,11 @@
+{
+    channel input {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"../point_vtxi_vtxs/apply1\")!=0
+|| ch(\"../point_vtxi_vtxs/apply2\")!=0
+|| ch(\"../point_vtxi_vtxs/apply3\")!=0
+|| ch(\"../point_vtxi_vtxs/apply4\")!=0" }
+    }
+  }
