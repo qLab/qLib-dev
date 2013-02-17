@@ -25,7 +25,7 @@ def build_cmd():
                 section = os.path.basename(os.path.dirname(f))
                 otl_name = src_name[:-len(args.extension)] + '.otl'
                 otl = os.path.join(args.binary_dir, section, otl_name)
-                print 'Building:', otl
+                print "Building '{0}' to '{1}'".format(f, otl)
                 try:
                     output = subprocess.check_output(['hotl', '-C', f, otl],
                             stderr=subprocess.STDOUT)
@@ -48,12 +48,12 @@ def extract_cmd():
             if f[-4:] == '.otl':
                 otl_name = os.path.basename(f)
                 section = os.path.basename(os.path.dirname(f))
-                src_name = f[:-4] + args.extension
+                src_name = otl_name[:-4] + args.extension
                 src = os.path.join(args.source_dir, section, src_name)
-                print 'Extracting:', f
+                print "Extracting '{0}' to '{1}'.".format(f, src)
                 try:
-                    if not args.keep and os.path.exists(dir):
-                        shutil.rmtree(dir)
+                    if not args.keep and os.path.exists(src):
+                        shutil.rmtree(src)
                     output = subprocess.check_output(['hotl', '-X', src, f],
                             stderr=subprocess.STDOUT)
                 except subprocess.CalledProcessError as e:
