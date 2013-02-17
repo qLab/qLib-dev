@@ -21,8 +21,11 @@ def build_cmd():
         if os.path.isdir(f):
             debug('Processing: ' + f)
             if f[-len(args.extension):] == args.extension:
-                otl = f[:-len(args.extension)] + '.otl'
-                print 'Building:', otl
+                src_name = os.path.basename(f)
+                section = os.path.basename(os.path.dirname(f))
+                otl_name = src_name[:-len(args.extension)] + '.otl'
+                otl = os.path.join(args.binary_dir, section, otl_name)
+                print "Building '{0}' to '{1}'".format(f, otl)
                 try:
                     output = subprocess.check_output(['hotl', '-C', f, otl],
                             stderr=subprocess.STDOUT)
@@ -43,12 +46,15 @@ def extract_cmd():
         if os.path.isfile(f):
             debug('Processing: ' + f)
             if f[-4:] == '.otl':
-                dir = f[:-4] + args.extension
-                print 'Extracting:', f
+                otl_name = os.path.basename(f)
+                section = os.path.basename(os.path.dirname(f))
+                src_name = otl_name[:-4] + args.extension
+                src = os.path.join(args.source_dir, section, src_name)
+                print "Extracting '{0}' to '{1}'.".format(f, src)
                 try:
-                    if not args.keep and os.path.exists(dir):
-                        shutil.rmtree(dir)
-                    output = subprocess.check_output(['hotl', '-X', dir, f],
+                    if not args.keep and os.path.exists(src):
+                        shutil.rmtree(src)
+                    output = subprocess.check_output(['hotl', '-X', src, f],
                             stderr=subprocess.STDOUT)
                 except subprocess.CalledProcessError as e:
                     print 'ERROR: The extraction process of {0} failed.'.format(f)
@@ -255,6 +261,10 @@ def parse_args():
     Parse command line arguments.
     """
 
+    script_path = os.path.dirname(os.path.abspath(__file__))
+    default_bin_path = os.path.join(script_path,"qLib","otls")
+    default_src_path = os.path.join(script_path,"src")
+
     common_args = argparse.ArgumentParser(add_help=False)
     common_args.add_argument('-D', '--debug', action='store_true',
             help='Print debug messages')
@@ -266,6 +276,10 @@ def parse_args():
             help='File extension of extracted OTL directories ["%(default)s"]')
     otl_args.add_argument('-R', '--recursive', action='store_true',
             help='Descend into sub-directories')
+    otl_args.add_argument("-s", "--source-dir", type=str, default=default_src_path,
+            help="Source directory path ['%(default)s']")
+    otl_args.add_argument("-b", "--binary-dir", type=str, default=default_bin_path,
+            help="Binary otl directory path ['%(default)s']")
 
     main_parser = argparse.ArgumentParser(parents=[common_args],
             description='Command line tool to manage qLib.')
@@ -289,10 +303,10 @@ def parse_args():
     extract_parser.add_argument("-k", "--keep", action="store_true",
             help="Keeps the source folder and extracts otl over it.")
 
-    clean_parser.add_argument('-s', '--source', action='store_true',
+    clean_parser.add_argument('-S', '--source', action='store_true',
             help='Deletes sources instead of built OTLs')
 
-    pack_parser.add_argument('-b', '--backup', action='store_true',
+    pack_parser.add_argument('-B', '--backup', action='store_true',
             help='Creates a backup archive instead of distribution archive.')
     pack_parser.add_argument('-f', '--force', action='store_true',
             help='Force pack creation ignoring errors.')
