@@ -1,0 +1,52 @@
+# utility functions
+#
+
+import sys
+
+def npt(kwargs=None):
+    """node/parm/tuple functions creator."""
+    n = kwargs['node'] if kwargs else hou.pwd()
+    p = lambda pn: n.parm(pn).eval()
+    t = lambda pn: n.parmTuple(pn).eval()
+    return n, p, t
+
+
+
+def params_to_check():
+    return ['numpoints', 'numprims']
+
+def reset_params():
+    n, p, t = npt()
+    parms = params_to_check()
+
+    for pn in parms:
+        #print "param:", pn
+        n.parm('%s2' % pn).set( p(pn) )
+        n.parm('c_%s' % pn).set(0)
+
+
+def check_toggle():
+    n, p, t = npt()
+    if p('do_check'): reset_params()
+
+
+def check_params():
+    n, p, t = npt()
+    parms = params_to_check()
+
+    if p('do_check')!=0:
+        for pn in parms:
+            #print "param:", pn
+            pn2 = '%s2' % pn
+    
+            v =  p(pn) # current value
+            v2 = p(pn2) # previous value
+    
+            if v!=v2:
+                #msg = "%s: %s changed (%s -> %s)" % (n.path(), pn, v2, v)
+                #sys.__stderr__.write('%s\n' % msg)
+    
+                n.parm('c_%s' % pn).set(1)
+    
+            n.parm(pn2).set(v)
+

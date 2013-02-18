@@ -11,21 +11,15 @@ outputsNamed3
 inputsNamed3
 {
 0 	each1 1 1 "input1"
-5 	"" "" 1 "input2"
-6 	"" "" 1 "input3"
-7 	"" "" 1 "input4"
 }
 inputs
 {
 0 	each1 0 1
-1 	"" 0 1
-2 	"" 0 1
-3 	"" 0 1
 }
 stat
 {
   create 1323543153
-  modify 1353196711
+  modify 1361142427
   author tusi@demeisen
   access 0777
 }

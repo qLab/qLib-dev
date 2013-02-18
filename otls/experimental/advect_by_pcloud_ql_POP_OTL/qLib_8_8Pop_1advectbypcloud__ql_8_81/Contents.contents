@@ -463,6 +463,10 @@ advectbypcloud_ql1/advect_by_pos/length_gt_than_zero/out_v.init
 advectbypcloud_ql1/advect_by_pos/length_gt_than_zero/out_v.def
 advectbypcloud_ql1/advect_by_pos/length_gt_than_zero/out_v.parm
 advectbypcloud_ql1/advect_by_pos/length_gt_than_zero/out_v.userdata
+advectbypcloud_ql1/advect_by_pos/multiply1.init
+advectbypcloud_ql1/advect_by_pos/multiply1.def
+advectbypcloud_ql1/advect_by_pos/multiply1.parm
+advectbypcloud_ql1/advect_by_pos/multiply1.userdata
 advectbypcloud_ql1/advect_by_force/fetch_pcloud_velocity.order
 advectbypcloud_ql1/advect_by_force/fetch_pcloud_velocity.net
 advectbypcloud_ql1/advect_by_force/length_gt_than_zero.order

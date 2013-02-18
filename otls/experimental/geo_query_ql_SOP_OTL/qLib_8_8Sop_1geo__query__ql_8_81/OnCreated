@@ -1,0 +1,4 @@
+opcolor -c 0.2 0 0 $arg1
+
+chadd -t 0 0 $arg1 run_check
+chkey -t 0 -v 0 -m 0 -a 0 -A 0 -T a -F 'hou.pwd().hdaModule().check_params()\nreturn 42\n' -l p $arg1/run_check
