@@ -1,0 +1,26 @@
+{
+    channel npoints {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = npoints(\"../GEO\") }
+    }
+    channel nprims {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = nprims(\"../GEO\") }
+    }
+    channel nptgroups {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "argc(pointgroupmask(\"../GEO\", \"*\"))" }
+    }
+    channel nprgroups {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "argc(primgroupmask(\"../GEO\", \"*\"))" }
+    }
+  }

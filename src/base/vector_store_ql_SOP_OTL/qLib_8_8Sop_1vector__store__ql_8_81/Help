@@ -44,6 +44,15 @@ Common:
         TIP:
             To visualize this, enable 'points' display in the viewport, and adjust this parameter while watching the output
             of a Vector Store SOP in Save mode.
+
+    Guide, Point Skip:
+        If enabled, this parameter will display points (both original and generated) and vectors (saved or restored).
+        Vectors are shown for every n-th point, specified by Point Skip.
+
+    Set Node Name:
+        This convenience button will give the node a name that contains the operation type
+        (save/restore) and the list of the vector attributes.
+
 Save:
     Pre-Normalize:
         Normalize vector lengths before conversion.
@@ -70,9 +79,14 @@ NOTE:
     - [Vector Jitter qL|Node:sop/qLib::vector_jitter_ql::1]
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
 
     _interface version 1_ ---
+
+    2013-02-17:
+        Added
+        - vector visualization to guide display
+        - "Set Node Name" button for auto-naming the node, containing the attribute list
 
     2012-11-18:
         Fixes and improvements:

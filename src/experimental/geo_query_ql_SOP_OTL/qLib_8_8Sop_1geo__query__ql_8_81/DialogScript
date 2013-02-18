@@ -1,0 +1,143 @@
+# Dialog script for qLib::geo_query_ql::1 automatically generated 02/15/13 23:37:20
+
+{
+    name	qLib::geo_query_ql::1
+    script	qLib::geo_query_ql::1
+    label	"Geo Query qL"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Geometry to Query"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"editable"
+	label	"Editable Fields"
+	type	toggle
+	invisible
+	default	{ "1" }
+	range	{ 0 1 }
+	export	none
+    }
+    import {
+	label	"Geometry Information"
+	enable	0
+
+	parm {
+	    name	"numpoints"
+	    label	"Num Points"
+	    type	integer
+	    joinnext
+	    default	{ "ch(\"info/npoints\")" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"c_numpoints"
+	    label	"Changed"
+	    type	toggle
+	    default	{ "0" }
+	    hidewhen	"{ do_check == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"numprims"
+	    label	"Num Primitives"
+	    type	integer
+	    joinnext
+	    default	{ "ch(\"info/nprims\")" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"c_numprims"
+	    label	"Changed"
+	    type	toggle
+	    default	{ "0" }
+	    hidewhen	"{ do_check == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"numptgroups"
+	    label	"Point Groups #"
+	    type	integer
+	    default	{ "ch(\"info/nptgroups\")" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"numprgroups"
+	    label	"Prim. Groups #"
+	    type	integer
+	    default	{ "ch(\"info/nprgroups\")" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"run_check"
+	    label	"Run Check"
+	    type	float
+	    invisible
+	    default	{ "0" }
+	    range	{ 0 10 }
+	    export	none
+	}
+	parm {
+	    name	"do_check"
+	    label	"Perform Checks for Consistent Topology"
+	    type	toggle
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().check_toggle()" }
+	}
+	parm {
+	    name	"reset"
+	    label	"Check :: Reset"
+	    type	button
+	    default	{ "1" }
+	    disablewhen	"{ do_check == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	    parmtag	{ "script_callback_language" "python" }
+	    parmtag	{ "script_callback" "hou.pwd().hdaModule().reset_params()" }
+	}
+    }
+
+    group {
+	name	"folder1"
+	label	"Last values"
+	invisibletab
+
+	parm {
+	    name	"numpoints2"
+	    label	"Points #"
+	    type	integer
+	    default	{ "-1" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"numprims2"
+	    label	"Primitives #"
+	    type	integer
+	    default	{ "-1" }
+	    disablewhen	"{ editable == 0 }"
+	    range	{ 0 1 }
+	    export	none
+	}
+    }
+
+}

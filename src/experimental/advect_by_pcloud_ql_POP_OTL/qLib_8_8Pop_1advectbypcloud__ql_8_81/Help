@@ -61,6 +61,9 @@ node.
 
     _interface version 1_ ---
 
+    2013-02-17:
+        - Fix: Final Velocity in Position mode wasn't using the Velocity Scale parameter: fixed.
+
     2013-02-14:
         - Bug fix: replaced leftover volume-advection (position branch, final velocity).
         - Behaviour fix: previously, velocity and position modes stopped particles that

@@ -11,17 +11,15 @@ outputsNamed3
 inputsNamed3
 {
 0 	offset_points 1 1 "input1"
-3 	"" "" 1 "input2"
 }
 inputs
 {
 0 	offset_points 0 1
-1 	"" 0 1
 }
 stat
 {
   create 1323544741
-  modify 1353196711
+  modify 1361142427
   author tusi@demeisen
   access 0777
 }
