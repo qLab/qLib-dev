@@ -205,17 +205,17 @@ NOTE:
 @todo
     - The 'open folder' function should work cross-platform (currently it's linux-only, calling nautilus on the folder)
     - The 'open file' button should work on _any_ platform :(
-    - Have some way to quickly display images (concepts/references), preferably using mplay (like [Note qL|Node:obj/note_ql])
+    - Have some way to quickly display images (concepts/references), preferably using mplay (like [Note qL|Node:obj/qLib::note_ql::1])
     - Utilize node's Comment field to store logs of shot-related events
 
 
 @related
+    - [Environment qL|Node:obj/qLib::environment_ql::1]
     - [Shot qL|Node:obj/qLib::shot_ql::1]
     - [Note qL|Node:obj/qLib::note_ql::1]
-    - ...
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
 
 _interface version 1_ ---
 
