@@ -1,4 +1,4 @@
-# Dialog script for qLib::vector_store_ql::1 automatically generated 11/18/12 00:49:40
+# Dialog script for qLib::vector_store_ql::1 automatically generated 02/18/13 01:03:52
 
 {
     name	qLib::vector_store_ql::1
@@ -72,6 +72,35 @@
 	default	{ "0.1" }
 	range	{ 0 1 }
 	export	none
+    }
+    parm {
+	name	"guide_on"
+	label	"Guide"
+	type	toggle
+	nolabel
+	joinnext
+	default	{ "0" }
+	range	{ 0 1 }
+	export	none
+    }
+    parm {
+	name	"guide_npt"
+	label	"Guide: Point Skip"
+	type	integer
+	default	{ "4" }
+	disablewhen	"{ guide_on == 0 }"
+	range	{ 1! 20 }
+	export	none
+    }
+    parm {
+	name	"set_op_name"
+	label	"Set Node Name (from Attribs)"
+	type	button
+	default	{ "1" }
+	disablewhen	"{ attrs == \"\" }"
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "script_callback" "opname -u `oppwf()` vec__`strreplace(chs(\"attrs\"),\" \",\"_\")`__`ifs(ch(\"mode\"), \"restore\", \"save\")`" }
     }
     groupradio {
 	name	"op_mode"

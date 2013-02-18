@@ -1,4 +1,4 @@
-19
+29
 foreach__build_vec_pointgroups
 foreach__restore_vector_attrs
 IN
@@ -11,10 +11,20 @@ OUT
 show_points
 GUIDE
 nope
-switch1
 protect_save_vopsop_params
 keep_points_only
 del_src_attrs_2
 orig_geom
 vec_pts
 protect_restore_vopsop_params
+visualize_store
+null2
+attribute1
+vects_after_restore
+vects_before_save
+switch_mode_vis
+color_save
+color_restore
+switch_mode_vis_color
+switch_show_guide
+merge2

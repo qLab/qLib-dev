@@ -1,0 +1,22 @@
+{
+    channel markers_vel_scale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = "ch(\"markers_vec_scale\") / $FPS" }
+    }
+    channel vector_scale {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../length\") }
+    }
+    channel keep_every_n {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../guide_npt\") }
+    }
+  }
