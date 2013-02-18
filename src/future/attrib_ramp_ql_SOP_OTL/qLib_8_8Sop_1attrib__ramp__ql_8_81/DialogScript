@@ -1,4 +1,4 @@
-# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 02/12/13 23:01:37
+# Dialog script for qLib::attrib_ramp_ql::1 automatically generated 02/18/13 14:30:22
 
 {
     name	qLib::attrib_ramp_ql::1
@@ -183,7 +183,6 @@
 	name	"attrib_out"
 	label	"Output"
 	type	string
-	joinnext
 	default	{ "Cd" }
 	menureplace	{
 	    "Cd"	"color (Cd)"
@@ -196,10 +195,20 @@
 	parmtag	{ "autoscope" "0000000000000000" }
     }
     parm {
+	name	"varname_out"
+	label	"Local Variable"
+	type	string
+	default	{ "`toupper(chs(\"attrib_out\"))`" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "sop" }
+	parmtag	{ "parmvop" "1" }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
 	name	"signature"
 	label	"Signature"
 	type	integer
-	nolabel
 	joinnext
 	default	{ "1" }
 	menu	{
@@ -216,7 +225,6 @@
 	name	"operation"
 	label	"Operation"
 	type	integer
-	nolabel
 	default	{ "0" }
 	menu	{
 	    "0"	"Add"

@@ -204,6 +204,10 @@ attrib_ramp_ql1/vopsop_lookup1/inttofloat1.init
 attrib_ramp_ql1/vopsop_lookup1/inttofloat1.def
 attrib_ramp_ql1/vopsop_lookup1/inttofloat1.parm
 attrib_ramp_ql1/vopsop_lookup1/inttofloat1.userdata
+attrib_ramp_ql1/vopsop_lookup1/out_localvar.init
+attrib_ramp_ql1/vopsop_lookup1/out_localvar.def
+attrib_ramp_ql1/vopsop_lookup1/out_localvar.parm
+attrib_ramp_ql1/vopsop_lookup1/out_localvar.userdata
 attrib_ramp_ql1/vopsop_prenorm.init
 attrib_ramp_ql1/vopsop_prenorm.def
 attrib_ramp_ql1/vopsop_prenorm.multiparm

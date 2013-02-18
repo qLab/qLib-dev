@@ -1,4 +1,4 @@
-38
+39
 rgb_ramp
 fit1
 srcmin
@@ -37,3 +37,4 @@ importattrib1_int
 switcher2
 switch_vec_component
 inttofloat1
+out_localvar

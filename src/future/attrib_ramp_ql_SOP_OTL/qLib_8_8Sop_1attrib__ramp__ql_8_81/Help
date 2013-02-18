@@ -55,6 +55,9 @@
 
 @relnotes Release Notes
 
+2013-02-18:
+    - Added 'local variable' field for output attribute
+
 2013-02-12:
     - Support for integer input attributes
     - Supports both automatic and manual range detection

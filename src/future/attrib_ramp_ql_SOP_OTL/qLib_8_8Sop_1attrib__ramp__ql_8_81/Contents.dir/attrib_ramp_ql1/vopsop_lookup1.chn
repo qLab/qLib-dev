@@ -111,25 +111,6 @@
       flags = 0
       segment { length = 0 value = 1 1 expr = ch(\"../hsv_ramp2interp\") }
     }
-    channel ramp2pos {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../float_ramp2pos\") }
-    }
-    channel ramp2value {
-      lefttype = extend
-      righttype = extend
-      flags = 0
-      segment { length = 0 expr = ch(\"../float_ramp2value\") }
-    }
-    channel ramp2interp {
-      lefttype = extend
-      righttype = extend
-      default = 1
-      flags = 0
-      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp2interp\") }
-    }
     channel rgb_ramp2pos {
       lefttype = extend
       righttype = extend
@@ -249,5 +230,88 @@
       flags = 0
       start = 15.5
       segment { length = 0 value = 1 1 expr = ch(\"../srcexp\") }
+    }
+    channel ramp2pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp2pos\") }
+    }
+    channel ramp2value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp2value\") }
+    }
+    channel ramp2interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp2interp\") }
+    }
+    channel ramp3pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp3pos\") }
+    }
+    channel ramp3value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp3value\") }
+    }
+    channel ramp3interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp3interp\") }
+    }
+    channel ramp4pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp4pos\") }
+    }
+    channel ramp4value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp4value\") }
+    }
+    channel ramp4interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp4interp\") }
+    }
+    channel ramp5pos {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp5pos\") }
+    }
+    channel ramp5value {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../float_ramp5value\") }
+    }
+    channel ramp5interp {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../float_ramp5interp\") }
+    }
+    channel out_localvar {
+      lefttype = extend
+      righttype = extend
+      defaultString = \"\"
+      flags = 0
+      segment { length = 0 expr = chs(\"../varname_out\") }
     }
   }

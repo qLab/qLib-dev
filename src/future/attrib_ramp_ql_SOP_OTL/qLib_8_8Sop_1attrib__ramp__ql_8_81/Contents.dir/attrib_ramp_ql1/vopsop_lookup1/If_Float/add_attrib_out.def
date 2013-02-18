@@ -11,18 +11,18 @@ inputsNamed3
 {
 3 	subinput1 1 1 "attrib"
 4 	subinput1 2 1 "adata"
-5 	"" "" 1 "localvar"
+5 	subinput1 3 1 "localvar"
 }
 inputs
 {
 0 	subinput1 1 1
 1 	subinput1 2 1
-2 	"" 0 1
+2 	subinput1 3 1
 }
 stat
 {
   create 1324849183
-  modify 1360702252
+  modify 1361194015
   author tusi@demeisen
   access 0777
 }
