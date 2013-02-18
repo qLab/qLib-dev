@@ -4,12 +4,194 @@
 
 = Environment qL =
 
-*Version 0.0.1*
+*Interface Version 1*
 
-"""Sets environment variables defined in environment scripts."""
+"""Sets environment variables defined in environment scripts and loads OTLs accordingly."""
 
+@Intorduction
+
+The *Environment qL* operator provides a simple but powerful method to set up
+environment variables for your scenes. It also provides a flexible way to load
+the assets needed by your scene.
+
+The operator runs python scripts in the directory where your HIP is in and its
+parent directories, so your scene file's location can have an effect on the
+environment produced by the operator.
+
+The whole point of the *Environment qL* operator is to provide an easy way to define
+your environment in a hierarchical and/or programmatic way. For example you can
+define site defaults in the _site envrionment_ script, which can be overridden at
+the job level, which can be overriden again at the scene and/or at the shot level.
+The operator even provides you the oportunity to override parameters on the asset
+interface temporarily or permanently.
+
+More to that, since the environment scripts are pure Python scripts you can do
+whatever you can do with Python: process file paths, run other scrips, create files
+or directories or even connect to a database etc.
+
+== The Basics ==
+
+1.:
+    Fitst the operator builds a list of environment scripts by looking for files
+    matching the pattern specified in the _Env File Pattern_ parameter. It starts
+    in your $HIP directory and then it moves up to its parent directories up to the
+    root of the filesystem.
+
+    TIP:
+        You can have directory names in the _Env File Pattern_ parameter like
+        '.env/*.py' if you prefer to put the environment scripts in a subdirectory.
+
+2.:
+    Next the scripts in the list gets executed in reverse order, so scripts found
+    higher in the filesystem hierarchy get executed first while the scripts in the
+    HIP directory get executed last. If a _site environment script_ is specified in
+    the _Site Env File_ parameter, it gets executed before all of the collected
+    scripts.
+
+    All the scripts are executed in the same local namespace, so variables and
+    other objects like functions and classes defined at 'higher' level scripts can
+    be referenced and reassigned in 'lower' level ones. While this is not exactly
+    the case, you can think of the result as if it were one large concatenated script.
+
+3.:
+    Finally variables defined in the scripts those names are *all upper case* gets
+    exported to the houdini environment and are also listed in the _Variables_ tab
+    of the operators interface.
+
+== Environment Scripts ==
+
+The operator inserts some valuable information into the namespace of the environment
+scripts in the form of the following variables:
+
+HIP:
+    The value of the $HIP environment variable.
+
+HIPNAME:
+    The name of the houdini scene.
+
+ENV_SCRIPT_PATH:
+    Path of the currently running env script.
+
+ENV_SCRIPT_NAME:
+    The name of the currently running env script.
+
+ENV_SCRIPTS:
+    A dictionary of the scanned environment scripts in which the _key_ is the name of
+    the script while the _value_ is the path to that script. While *ENV_SCRIPT_PATH* and
+    *ENV_SCRIPT_NAME* is only available at the moment when the given script is running,
+    this dictionary is available in the first env script that gets executed. So for
+    example you can put the line
+    
+    {{{JOB=ENV_SCRIPTS["job_env.py"]}}}
+
+    into your site environment script to indicate the you want the $JOB
+    environment variable point to the directory where the 'job_env.py' file have been
+    found.
+
+    WARNING:
+        Since _keys_ are unique in a dictionary, and we didn't want to overcomplicate
+        things, there could be only one instance of a given filename in ENV_SCRIPTS.
+        The rule is that the file higher in the filesystem hierarchy is the one that
+        can be found in the dictionary.
+
+The operator exports the global variables of the asset's python module so it
+provides access to the *hou* module and the scene itself. While this might be
+convenient it's a good idea to use these with *caution* since this whole scheme
+is designed to be application independent, so you can use the same environment
+scripts from other applications that have a Python API.
+
+== Special Variables ==
+
+There are some special variables that can change the behavior of the operator:
+
+MAPPINGS:
+    You can define a dictionary called MAPPINGS that let the operator translate
+    drive letters to UNC paths. For example
+
+    {{{
+MAPPINGS={
+        'x:':'//server/x',
+        'l:':'//library/l',
+        } }}}
+
+    will translate 'x:' to '//server/x' and 'l:' to '//library/l'.
+
+ENV_VAR_ORDER:
+    With this variable you can determine the display order of the variables coming
+    from the scripts. For example
+
+    {{{
+ENV_VAR_ORDER = [
+        'JOB',
+        'SCENE',
+        'SCENE_NAME',
+        ] }}}
+
+    will cause JOB to be displayed first in the variable list if defined, followed
+    by 'SCENE' and 'SCENE_NAME'. Any other variables that defined by the scripts will
+    follow these in an arbitrary order.
+
+OTL_PATTERN:
+    A comma separated list of file patterns. The files mathcing the patterns will be
+    imported as asset libraries. For example
+
+    {{{
+OTL_PATTERN = JOB + '/Asset/*/Otl/*.otl" }}}
+
+    will import all otl files in the 'Otl' directories in the directories in the
+    'Asset' directory in your JOB directory.
+
+    TIP:
+        You can add new patterns to OTL_PATTERN in different scripts to import scene
+        or shot specific assets with simple string concatenation.
+
+        {{{
+OTL_PATTER = OTL_PATTERN + ':' + SCENE + '/Otl/scene_specific.otl' }}}
+        
 @Parameters
-
+    Refresh:
+        Refresh all the variables and imports otls defined in OTL_PATTERN.
+    Add New Variable:
+        Creates a new variable on the interface. You should leave the override flag
+        on for variables created with this method if you want to keep them during
+        refresh.
+    Name:
+        Name of the variable.
+    Value:
+        Value of the variable.
+    Override:
+        If this toggle is checked the value doesn't get updated by the value defined
+        in the scripts.
+    Delete:
+        Delete variable from the interface and unset the the belonging variable.
+    FPS:
+        You can define the FPS of your scenes but you can't override or delete it
+        from the interface of Environment qL. Use standard methods if you want to
+        change it temporarily.
+    Site Env File:
+        Script file that sets site level defaults and policies. This file doesn't
+        need to be on the path of the hip file.
+    Env File Pattern:
+        File name pattern with standard wildcards supported by Python's _glob_
+        module. Files matching this pattern will be treated as env scripts.
+    Refresh After Open:
+        Refresh the envrionment after scene file open.
+    Convert Backslash:
+        Convert backslashes to simple slashes.
+    Apply Mappings:
+        Apply mappings defined in the MAPPINGS variable.
+    Sort Variables:
+        Sort variables according to the list in ENV_VAR_ORDER.
+    Import OTLs:
+        Import otl files matching the patterns defined in OTL_PATTERN.
+    Discard Special Variables:
+        Discard special variables that changes the behavior of Envitonment qL
+        itself. Use this toggle if you want to check their values on the interface.
+    
 @Limitations
 
-@Release_Notes
+@Release_Notes Releas Notes
+    2012-12-05:
+        Matured the scheme based on user feedback.
+    2012-11-01:
+        Initial release.

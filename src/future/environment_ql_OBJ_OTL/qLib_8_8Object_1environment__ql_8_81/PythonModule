@@ -9,8 +9,8 @@ def rescanOnLoaded(kwargs):
 
 
 def rescan(kwargs):
-    scan_env(kwargs)
-    update_parms(kwargs)
+    env = scan_env(kwargs)
+    update_parms(kwargs, env)
 
 
 def scan_env(kwargs):
@@ -18,58 +18,61 @@ def scan_env(kwargs):
     site_env_file = node.parm("site_env_file").eval()
 
     # Constants
-    job_env_file_name = node.parm("job_file_name").eval() 
-    local_env_file_name =  node.parm("local_file_name").eval()
-    
+    #job_env_file_name = node.parm("job_file_name").eval() 
+    #local_env_file_name =  node.parm("local_file_name").eval()
+    env_file_pattern = node.parm("env_file_pattern").eval()
+
     hip_path = hou.hipFile.path()
     hip_dir, hip_name = split(hip_path)
     
     search_path = hip_dir
 
     # Find environment files
+    env_scripts = {}
     script_list = []
     while True:
-        local_candidate = join(search_path, local_env_file_name)
-        if isfile(local_candidate):
-            script_list.append(local_candidate)
+        scripts = glob.glob(search_path + '/' + env_file_pattern)
+        scripts.reverse()
 
-        job_candidate = join(search_path, job_env_file_name)
-        if isfile(job_candidate):
-            script_list.append(job_candidate)
-            job_dir = search_path
-            break
-    
+        for s in scripts:
+            env_scripts[basename(s)] = dirname(s)
+        script_list.extend(scripts)
+
         prev_search_path = search_path
         search_path = dirname(search_path)
         if prev_search_path == search_path:
-            job_env_file = ""
-            job_dir = ""
             break
     
     env = {}
-    env["JOB"] = job_dir
     env["HIP"], env["HIPNAME"] = hip_dir, hip_name
+    env["ENV_SCRIPTS"] = env_scripts
 
     # Add site enviroment to script_list
-    if site_env_file and isfile(site_env_file):
-        with open(site_env_file) as f:
-            exec f in globals(), env
+    if site_env_file:
+        script_list.append(site_env_file)
 
     # Run environment scripts
     script_list.reverse()
     for env_file in script_list:
+        env["ENV_SCRIPT_PATH"] = dirname(env_file)
+        env["ENV_SCRIPT_NAME"] = basename(env_file)
         with open(env_file) as f:
             exec f in globals(), env
 
     # Delete nonexported variables
-    del env["HIP"]
-    del env["HIPNAME"]
+    if node.parm("discard_specials").eval():
+        del env["HIP"]
+        del env["HIPNAME"]
+        del env["ENV_SCRIPTS"]
+        del env["ENV_SCRIPT_NAME"]
+        del env["ENV_SCRIPT_PATH"]
+
     for k in env.keys():
         env[k] = str(env[k])
         if not k.isupper():
             del env[k]
 
-    hou.session.env_ql = env
+    return env
     
 
 def setEnvVar(n, vi):
@@ -154,9 +157,8 @@ def deleteVar(kwargs):
     n.parm("num_vars").set(nv - 1)
 
 
-def update_parms(kwargs):
+def update_parms(kwargs, env):
     node = kwargs["node"]
-    env = hou.session.env_ql
     
     old_num_vars = node.evalParm("num_vars")
 
@@ -174,19 +176,20 @@ def update_parms(kwargs):
         for vk in env.keys():
             for mk in maps.keys():
                 env[vk] = mk.sub(maps[mk], env[vk])
-    if "MAPPINGS" in env and node.parm("discard_mappings").eval():
+    if "MAPPINGS" in env and node.parm("discard_specials").eval():
         del env["MAPPINGS"]
 
     # Import assets
     if "OTL_PATTERN" in env and node.parm("import_otls").eval():
-        scanned_otls = glob.glob(env["OTL_PATTERN"])
-        if node.parm("convert_separator").eval():
-            scanned_otls = [o.replace('\\','/') for o in scanned_otls]
         loaded_otls = hou.hda.loadedFiles()
-        for o in scanned_otls:
-            if o not in loaded_otls:
-                hou.hda.installFile(o)
-        if node.parm("discard_otl_pattern").eval():
+        for pattern in env["OTL_PATTERN"].split(':'):
+            scanned_otls = glob.glob(pattern)
+            if node.parm("convert_separator").eval():
+                scanned_otls = [o.replace('\\','/') for o in scanned_otls]
+            for o in scanned_otls:
+                if o not in loaded_otls:
+                    hou.hda.installFile(o)
+        if node.parm("discard_specials").eval():
             del env["OTL_PATTERN"]
 
     # Set FPS
@@ -205,7 +208,7 @@ def update_parms(kwargs):
     # Must delete ENV_VAR_ORDER from env before parameter evaluations
     if "ENV_VAR_ORDER" in env:
         env_var_order = env["ENV_VAR_ORDER"]
-        if node.parm("discard_sort_order").eval():
+        if node.parm("discard_specials").eval():
             del env["ENV_VAR_ORDER"]
     else:
         env_var_order = False

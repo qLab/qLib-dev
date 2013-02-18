@@ -1,4 +1,4 @@
-# Dialog script for qLib::environment_ql::1 automatically generated 11/11/12 12:17:58
+# Dialog script for qLib::environment_ql::1 automatically generated 12/20/12 20:17:48
 
 {
     name	qLib::environment_ql::1
@@ -60,7 +60,7 @@
 
     group {
 	name	"folder1_1"
-	label	"Constants"
+	label	"Time"
 
 	parm {
 	    name	"fps"
@@ -86,18 +86,10 @@
 	    export	none
 	}
 	parm {
-	    name	"job_file_name"
-	    label	"Job Env File Name"
+	    name	"env_file_pattern"
+	    label	"Env File Pattern"
 	    type	string
-	    default	{ "job_environment.py" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"local_file_name"
-	    label	"Local Env File Name"
-	    type	string
-	    default	{ "local_environment.py" }
+	    default	{ "*_env.py" }
 	    range	{ 0 1 }
 	    export	none
 	}
@@ -126,24 +118,8 @@
 	    export	none
 	}
 	parm {
-	    name	"discard_mappings"
-	    label	"Discard Mappings Variable"
-	    type	toggle
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
 	    name	"sort_variables"
 	    label	"Sort Variables"
-	    type	toggle
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	}
-	parm {
-	    name	"discard_sort_order"
-	    label	"Discard Sort Order"
 	    type	toggle
 	    default	{ "1" }
 	    range	{ 0 1 }
@@ -158,8 +134,17 @@
 	    export	none
 	}
 	parm {
-	    name	"discard_otl_pattern"
-	    label	"Discard OTL Pattern"
+	    name	"labelparm2"
+	    label	"Label"
+	    type	label
+	    nolabel
+	    default	{ "" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"discard_specials"
+	    label	"Discard Special Variables"
 	    type	toggle
 	    default	{ "1" }
 	    range	{ 0 1 }
