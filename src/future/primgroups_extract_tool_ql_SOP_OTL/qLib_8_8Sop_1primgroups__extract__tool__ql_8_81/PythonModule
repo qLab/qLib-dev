@@ -21,6 +21,7 @@ def doIt(mode):
     prefix  = p("prefix")
     relpath = p("relpath")
     xformtype = p("xformtype")
+    use_sop = p("use_soppath")
 
     root = hou.node(outpath)
     sop  = hou.node(soppath)
@@ -104,7 +105,11 @@ def doIt(mode):
                 Cs += 1
 
             # update Object Merge node
-            path = n.relativePathTo(sop) if relpath else sop.path()
+            path = ''
+            if use_sop:
+                path = n.relativePathTo(sop) if relpath else sop.path()
+            else:
+                path = '`opinputpath("%s", 0)`' % ( n.relativePathTo(pwd) if relpath else pwd.path() )
             n.parm("objpath1").set(path)
             n.parm("group1").set(objmap[obj])
             n.parm("xformtype").set(xformtype)

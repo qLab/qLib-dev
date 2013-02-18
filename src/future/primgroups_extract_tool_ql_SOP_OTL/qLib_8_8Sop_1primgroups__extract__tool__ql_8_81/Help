@@ -4,11 +4,9 @@
 
 = PrimGroups Extract Tool qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """Build separate objects for specified primitive groups of a SOP node."""
-
-
 
 Given an input geometry with
 primitive groups in it, this operator can extract these groups by either creating a new Geometry
@@ -17,14 +15,28 @@ or a new Object Merge SOP for each group.
 Creation, update and deletion of these nodes are *not automatic*: they are performed _as the
 user presses the appropriate button_.
 
-In other words, this operator is more of a scene-management tool than a regular SOP.
-
-@Note
+NOTE:
     This operator behaves slightly differently than other SOPs (hence the "Tool" naming).
+    It is more of a scene-management tool than a regular SOP.
+
+    It is intended mostly for the purpose of helping geometry import/export between other
+    packages. Examples:
+
+    - A rigid body fracture simulation has to be exported, but the application at the other
+      end requires a separate object for each fracture, and the only way it can be handled
+      if these groups are present as OBJ nodes in Houdini.
+
+    - Geometry received in an esoteric CAD format, which imports as one large polymesh with
+      individual objects represented as primitive groups. For various purposes it is much
+      more desirable to have these groups as separate OBJ nodes in Houdini.
+
+
+WARNING:
+    It is _not recommended_ to use this tool for any procedural (e.g. regular Houdini) work
+    as the way it works oppose Houdini's procedural nature.
 
 
 @Parameters
-
     Group Pattern:
         The groups the new objects should be built for.
 
@@ -44,8 +56,12 @@ In other words, this operator is more of a scene-management tool than a regular 
     Transform Type:
         The 'Transform' parameter settings for Object Merge nodes.
 
-    Source SOP Path:
-        SOP Path to be set on Object Merge nodes. By default it's the input SOP of our PrimGroups Extract Tool SOP.
+    Explicit SOP Path:
+        SOP Path to be set on Object Merge nodes.
+        (By default it's set to an expression that returns the input SOP of our PrimGroups Extract Tool SOP.)
+
+        If disabled, an `opinputpath()` expression will be used, referring to this node
+        (i.e. it will automatically use the input of this node).
 
     Relative Path:
         This flag indicates if a relative path should be set on the Object Merge nodes.
@@ -59,7 +75,14 @@ In other words, this operator is more of a scene-management tool than a regular 
 
 
 
-@Release_Notes Release Notes
+@relnotes Release Notes
+
+    _interface version 1_ ---
+
+    2013-02-18:
+        Now uses an `opinputpath()` expression in created Object Merge SOP nodes.
+
+    _older versions_ ---
 
     Version 0.1.0:
         Initial release.

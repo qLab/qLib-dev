@@ -1,4 +1,4 @@
-# Dialog script for qLib::primgroups_extract_tool_ql::1 automatically generated 04/15/12 03:36:37
+# Dialog script for qLib::primgroups_extract_tool_ql::1 automatically generated 02/18/13 03:26:04
 
 {
     name	qLib::primgroups_extract_tool_ql::1
@@ -94,12 +94,22 @@
 	    export	none
 	}
 	parm {
-	    name	"soppath"
-	    label	"Source SOP Path"
-	    type	oppath
+	    name	"use_soppath"
+	    label	"Specify SOP Path"
+	    type	toggle
+	    nolabel
 	    joinnext
+	    default	{ "0" }
+	    range	{ 0 1 }
+	    export	none
+	}
+	parm {
+	    name	"soppath"
+	    label	"Explicit SOP Path"
+	    type	oppath
 	    default	{ "`opinputpath(\".\", 0)`" }
 	    help	"SOP Path to use for created Object Merge nodes."
+	    disablewhen	"{ use_soppath == 0 }"
 	    range	{ 0 1 }
 	    export	none
 	    parmtag	{ "oprelative" "." }

@@ -1,17 +1,26 @@
 sopflags sopflags = 
 comment ""
-position -0.191878 -1.1422
+position 2.48598 -5.08846
 cachesize 1
-flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off exposed on
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress off exposed on
+outputsNamed3
+{
+1 "output1"
+}
+inputsNamed3
+{
+0 	geom_to_separate 1 1 "input1"
+}
 inputs
 {
-0 	voronoifracture1 0 1
+0 	geom_to_separate 0 1
 }
 stat
 {
-  create 1334452905
-  modify 1334453801
-  author tusi@demeisen
+  create 1345552714
+  modify 1361154182
+  author buki@sid.digicpictures.local
   access 0777
 }
 color UT_Color RGB 0 0 0 
