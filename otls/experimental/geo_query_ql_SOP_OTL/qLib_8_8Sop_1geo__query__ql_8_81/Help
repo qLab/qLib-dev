@@ -1,0 +1,26 @@
+#icon: TOOLS/select_points
+#context: sop
+#type: node
+
+= Geo Query qL =
+
+*version 1*
+
+"""Query information about SOP geometry."""
+
+
+Detailed description comes here.
+
+
+@parameters
+    The following parameters are available.
+
+
+
+
+@relnotes Release Notes
+
+_version 1_ ---
+
+2013-02-15:
+    First prototype.

@@ -1,0 +1,8 @@
+{
+version 0.8
+cacheinput	[ 0	locks=0 ]	(	"off"	)
+npoints	[ 8	locks=0 ]	(	[ npoints	40818 ] 	)
+nprims	[ 8	locks=0 ]	(	[ nprims	1 ] 	)
+nptgroups	[ 8	locks=0 ]	(	[ nptgroups	1 ] 	)
+nprgroups	[ 8	locks=0 ]	(	[ nprgroups	1 ] 	)
+}
