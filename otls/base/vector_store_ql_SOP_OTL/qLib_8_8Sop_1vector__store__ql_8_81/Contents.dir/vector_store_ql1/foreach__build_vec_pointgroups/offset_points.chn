@@ -2,9 +2,9 @@
     channel __length {
       lefttype = extend
       righttype = extend
-      default = 0.10000000000000001
+      default = 0.10000000149011612
       flags = 0
-      segment { length = 0 value = 0.10000000000000001 0.10000000000000001 expr = ch(\"../../length\") }
+      segment { length = 0 value = 0.10000000149011612 0.10000000149011612 expr = ch(\"../../length\") }
     }
     channel __pre_norm {
       lefttype = extend
