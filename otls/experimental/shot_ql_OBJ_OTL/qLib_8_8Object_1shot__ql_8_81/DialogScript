@@ -1,4 +1,4 @@
-# Dialog script for qLib::shot_ql::1 automatically generated 02/09/13 20:15:02
+# Dialog script for qLib::shot_ql::1 automatically generated 02/18/13 00:42:07
 
 {
     name	qLib::shot_ql::1
@@ -862,11 +862,28 @@
 		    export	none
 		}
 		parm {
+		    name	"loc_name_#"
+		    label	"#."
+		    type	string
+		    nolabel
+		    joinnext
+		    default	{ "" }
+		    help	"Name of location."
+		    disablewhen	"{ loc_enable_# == 0 }"
+		    menureplace	{
+			""	"(clear field)"
+			"main location"	"Main Location"
+		    }
+		    range	{ 0 1 }
+		    export	none
+		}
+		parm {
 		    name	"loc_C_#"
 		    label	"c"
 		    type	button
 		    joinnext
 		    default	{ "1" }
+		    help	"Construction Plane setting is saved for this location."
 		    disablewhen	"{ loc_cplane_cmd_# == \"\" }"
 		    range	{ 0 1 }
 		    export	none
@@ -877,22 +894,19 @@
 		    type	button
 		    joinnext
 		    default	{ "1" }
+		    help	"3D View is saved for this location."
 		    disablewhen	"{ loc_view_cmd_# == \"\" }"
 		    range	{ 0 1 }
 		    export	none
 		}
 		parm {
-		    name	"loc_name_#"
-		    label	"#."
-		    type	string
+		    name	"loc_CV_#"
+		    label	"loc_CV_#"
+		    type	label
+		    invisible
 		    nolabel
-		    default	{ "" }
-		    help	"Name of location."
-		    disablewhen	"{ loc_enable_# == 0 }"
-		    menureplace	{
-			""	"(clear field)"
-			"main location"	"Main Location"
-		    }
+		    size	2
+		    default	{ "`ifs(strlen(chs(\"loc_cplane_cmd_#\"))>0, \"cp \", \"\")`" "`ifs(strlen(chs(\"loc_view_cmd_#\"))>0, \"view\", \"\")`" }
 		    range	{ 0 1 }
 		    export	none
 		}
@@ -916,7 +930,7 @@
 		}
 		parm {
 		    name	"loc_enable_#"
-		    label	"::"
+		    label	":."
 		    type	toggle
 		    joinnext
 		    default	{ "1" }
@@ -944,7 +958,7 @@
 		    type	button
 		    joinnext
 		    default	{ "1" }
-		    disablewhen	"{ loc_enable_# == 0 } { loc_cplane_cmd_# == \"\" loc_view_cmd_# == \"\" }"
+		    disablewhen	"{ loc_cplane_cmd_# == \"\" loc_view_cmd_# == \"\" }"
 		    hidewhen	"{ loc_name_# == \"\" }"
 		    range	{ 0 1 }
 		    export	none
@@ -1213,22 +1227,22 @@
 
 	}
 
-    }
+	group {
+	    name	"folder0_6_1"
+	    label	"Env"
 
-    group {
-	name	"folder0_6"
-	label	"Env"
-
-	parm {
-	    name	"find_env"
-	    label	"Find env file..."
-	    type	button
-	    default	{ "1" }
-	    range	{ 0 1 }
-	    export	none
-	    parmtag	{ "script_callback_language" "python" }
-	    parmtag	{ "script_callback" "hou.pwd().hdaModule().find_env_file()" }
+	    parm {
+		name	"find_env"
+		label	"Find env file..."
+		type	button
+		default	{ "1" }
+		range	{ 0 1 }
+		export	none
+		parmtag	{ "script_callback_language" "python" }
+		parmtag	{ "script_callback" "hou.pwd().hdaModule().find_env_file()" }
+	    }
 	}
+
     }
 
 }

@@ -1,0 +1,37 @@
+    parm {
+	name	"cacheinput"
+	baseparm
+	export	none
+    }
+    parm {
+	name	"npoints"
+	label	"npoints"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"nprims"
+	label	"nprims"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"nptgroups"
+	label	"nptgroups"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"nprgroups"
+	label	"nprgroups"
+	type	integer
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }

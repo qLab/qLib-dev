@@ -1,9 +1,7 @@
 objflags objflags =  origin off
 pretransform UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
-comment "  : gangam style
-  : hopp hopp
-  : hopp gamgamstyle"
-position 2.20623 10.8553
+comment ""
+position 1.46231 14.6427
 cachesize 1
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off exposed on selectable off
@@ -21,8 +19,8 @@ inputs
 }
 stat
 {
-  create 1360434464
-  modify 1360437342
+  create 1361144406
+  modify 1361144535
   author tusi@demeisen
   access 0777
 }

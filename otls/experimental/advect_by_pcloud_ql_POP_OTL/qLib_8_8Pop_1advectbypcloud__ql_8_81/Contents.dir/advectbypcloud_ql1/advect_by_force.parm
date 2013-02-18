@@ -15,6 +15,6 @@ treataswind	[ 0	locks=0 ]	(	[ treataswind	0 ] 	)
 velscale	[ 0	locks=0 ]	(	[ velscale	1 ] 	)
 vel_file	[ 0	locks=0 ]	(	op:`opfullpath(\"../velocity_source/OUT\")`	)
 radius	[ 0	locks=0 ]	(	[ radius	1 ] 	)
-maxpoints	[ 0	locks=0 ]	(	[ maxpoints	2 ] 	)
+maxpoints	[ 0	locks=0 ]	(	[ maxpoints	10 ] 	)
 vel_attrib	[ 0	locks=0 ]	(	`chs(\"../vel_attrib\")`	)
 }
