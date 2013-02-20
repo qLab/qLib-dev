@@ -18,13 +18,6 @@
       flags = 0
       segment { length = 0 expr = ch(\"../velupdate\") }
     }
-    channel scale {
-      lefttype = extend
-      righttype = extend
-      default = 10
-      flags = 0
-      segment { length = 0 value = 10 10 expr = ch(\"../velscale\") }
-    }
     channel radius {
       lefttype = extend
       righttype = extend
@@ -38,5 +31,18 @@
       default = 10
       flags = 0
       segment { length = 0 value = 10 10 expr = ch(\"../lookup_points\") }
+    }
+    channel velscale {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = ch(\"../velscale\") }
+    }
+    channel velscale_final {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = ch(\"../velscale_final\") }
     }
   }

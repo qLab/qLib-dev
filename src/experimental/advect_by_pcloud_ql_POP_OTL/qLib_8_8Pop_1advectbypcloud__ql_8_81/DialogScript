@@ -1,4 +1,4 @@
-# Dialog script for qLib::advectbypcloud_ql::1 automatically generated 02/17/13 22:20:45
+# Dialog script for qLib::advectbypcloud_ql::1 automatically generated 02/20/13 14:54:31
 
 {
     name	qLib::advectbypcloud_ql::1
@@ -186,6 +186,16 @@
 	    "zero"	"Zero"
 	}
 	range	{ 0 10 }
+	export	none
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    parm {
+	name	"velscale_final"
+	label	"Final Velocity Scale"
+	type	float
+	default	{ "1" }
+	disablewhen	"{ advecttype != pos }"
+	range	{ 0 1 }
 	export	none
 	parmtag	{ "autoscope" "0000000000000000" }
     }

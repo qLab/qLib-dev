@@ -1,7 +1,7 @@
 comment ""
 position 4.6357 -1.3979
 cachesize 1
-connectornextid 3
+connectornextid 4
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off exposed on lowdetail off mediumdetail off highdetail on
 outputsNamed3
 {
@@ -10,17 +10,19 @@ outputsNamed3
 inputsNamed3
 {
 1 	fetch_pcloud_velocity_final 1 1 "input1"
-2 	scale 0 1 "input2"
+2 	velscale 0 1 "input2"
+3 	velscale_final 0 1 "input3"
 }
 inputs
 {
 0 	fetch_pcloud_velocity_final 0 1
-1 	scale 0 1
+1 	velscale 0 1
+2 	velscale_final 0 1
 }
 stat
 {
   create 1361135928
-  modify 1361135939
+  modify 1361368233
   author tusi@demeisen
   access 0777
 }

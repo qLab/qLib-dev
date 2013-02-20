@@ -20,6 +20,16 @@ The point cloud-based approach is an useful complementing tool for the original 
 node.
 
 
+@attributes Supported per-point attributes
+    forcescale:
+        Overrides the Force Scale parameter (Update Force mode).
+    velscale:
+        Overrides the Velocity Scale parameter.
+    velscale_final:
+        Overrides the Final Velocity Scale parameter (Update Position mode).
+
+
+
 @parameters
     (Only specific parameters are documented --
     see the [Node:pop/advectbyvolumes] operator documentation for parameter descriptions
@@ -60,6 +70,10 @@ node.
 @relnotes Release Notes
 
     _interface version 1_ ---
+
+    2013-02-20:
+        - Added "Final Velocity Scale" parameter (position update mode)
+        - Added list of supported per-point attributes
 
     2013-02-17:
         - Fix: Final Velocity in Position mode wasn't using the Velocity Scale parameter: fixed.
