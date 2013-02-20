@@ -51,8 +51,7 @@ a__up = add_vect_attr(do_up, G, a_up)
 
 
 for prim in G.iterPrims():
-
-    dbg(" - %s. %s" % (prim.number(), prim.type()) )
+    #dbg(" - %s. %s" % (prim.number(), prim.type()) )
 
     t  = prim.type()
     pt = hou.primType
@@ -60,7 +59,7 @@ for prim in G.iterPrims():
     if t==pt.NURBSCurve or t==pt.BezierCurve or t==pt.Polygon:
 
         # calculate vectors for curve
-        dbg(" -- curve")
+        #dbg(" -- curve")
     
         verts = prim.vertices()
     
@@ -83,7 +82,7 @@ for prim in G.iterPrims():
     
             first = False
     
-            dbg(" -- %s. %s" % (uv, not_last) )
+            #dbg(" -- %s. %s" % (uv, not_last) )
     
             P = hou.Vector3( prim.attribValueAt("P", u) )
             V = hou.Vector3( prim.attribValueAt("P", u1) )
