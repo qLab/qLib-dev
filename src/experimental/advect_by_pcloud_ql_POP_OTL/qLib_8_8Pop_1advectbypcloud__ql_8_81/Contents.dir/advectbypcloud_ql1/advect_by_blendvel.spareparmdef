@@ -1,6 +1,6 @@
     parm {
-	name	"scale"
-	label	"Scale"
+	name	"velscale"
+	label	"velscale"
 	type	float
 	default	{ "0" }
 	range	{ 0 1 }

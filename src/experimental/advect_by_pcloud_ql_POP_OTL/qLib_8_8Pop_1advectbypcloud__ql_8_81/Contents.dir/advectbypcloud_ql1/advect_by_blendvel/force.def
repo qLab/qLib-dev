@@ -10,17 +10,17 @@ outputsNamed3
 inputsNamed3
 {
 0 	fetch_pcloud_velocity 1 1 "input1"
-1 	scale 0 1 "input2"
+1 	velscale 0 1 "input2"
 }
 inputs
 {
 0 	fetch_pcloud_velocity 0 1
-1 	scale 0 1
+1 	velscale 0 1
 }
 stat
 {
   create 1215032100
-  modify 1360859876
+  modify 1361368218
   author jlait@thule
   access 0777
 }

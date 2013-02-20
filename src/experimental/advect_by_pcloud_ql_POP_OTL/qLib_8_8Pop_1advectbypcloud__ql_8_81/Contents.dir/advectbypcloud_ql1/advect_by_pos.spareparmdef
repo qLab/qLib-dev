@@ -1,6 +1,6 @@
     parm {
-	name	"scale"
-	label	"Scale"
+	name	"velscale"
+	label	"velscale"
 	type	float
 	default	{ "0" }
 	range	{ 0 1 }
@@ -83,6 +83,16 @@
 	label	"vel_attrib"
 	type	string
 	default	{ "v" }
+	range	{ 0 1 }
+	export	none
+	parmtag	{ "shaderparmcontexts" "pop" }
+	parmtag	{ "parmvop" "1" }
+    }
+    parm {
+	name	"velscale_final"
+	label	"velscale_final"
+	type	float
+	default	{ "1" }
 	range	{ 0 1 }
 	export	none
 	parmtag	{ "shaderparmcontexts" "pop" }

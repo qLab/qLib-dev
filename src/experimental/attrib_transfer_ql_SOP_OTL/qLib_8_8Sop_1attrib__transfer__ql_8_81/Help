@@ -4,7 +4,7 @@
 
 = Attrib Transfer qL =
 
-*Version 0.0.1*
+*interface version 1*
 
 """An alternative version of the regular Attrib Transfer SOP."""
 
@@ -23,7 +23,16 @@ Alternative Attrib Transfer SOP prototype:
     - [Node:sop/attribtransfer]
 
 
-@release_notes Release Notes
+@relnotes Release Notes
 
-    Version 0.0.1:
-        Initial prototype.
+
+_interface version 1_ ---
+
+2013-02-20:
+    Bug fix: attributes where the transfer was unsuccessful will remain unchanged.
+
+
+_older versions_ ---
+
+Version 0.0.1:
+    Initial prototype.
