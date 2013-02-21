@@ -8,10 +8,6 @@
 
 """Generate *non-flipping* tangent/normal/up vectors for all points on (polygonal) curves."""
 
-@related
-    - [Node:sop/texture]
-    - [Deform by Surface qL|Node:sop/qLib::deformbysurface_ql::1]
-
 
 This SOP generates reference frames (a set of three vectors that defines a local coordinate system)
 for all curve points.
@@ -22,13 +18,6 @@ This can be very useful where curves with 'on-curve orientation' information is 
 
 The method is based on the paper "Calculation of Reference Frames along a Space Curve" by Jules Bloomenthal
 (Graphics Gems, vol. 1).
-
-NOTE:
-    This node *requires UV mapping* to be present on the curve.
-
-    The operator gives much better results for polygonal curves (although it accepts other curve types).
-    A properly [resampled poly curve|Node:sop/resample] with enough points is preferred.
-
 
 TIP:
     Although there won't be sudden "flips" in vector directions along the curve,
@@ -43,21 +32,33 @@ TIP:
     only the tangent vectors are used.)
 
 @Parameters
-    Input:
-        UV Attribute:
-            A per-point UV attribute to build the reference frames from (only the U parameter is used).
-            This attribute must be present (can be generated with an [Node:sop/texture] SOP).
-    
-        Up Vector Mode:
-            The mode for determining the first up vector on each curve. It can either be a constant,
-            or the up vector value of the first vertex can be used (if present).
+    Mode:
+        Method of generating the vectors for the input curve(s).
 
-            Make sure you read the TIP above.
+        Use UV coordinates:
+            The algorithm will derive on-curve 3d points based on curve parametrization (i.e. UV coordinates).
+            Valid UV texture mapping should be present on all curves to be processed.
 
-        Up Vector:
-            Vector value for the 'Constant' up vector mode.
+        Assume linear curves:
+            The algorithm will assume curve(s) with points that lie on the curve, and evenly distributed.
+            (Only linear curves can match both criteria.)
 
-    Output:
+            This mode tends to give better results. Its preferred inputs are [resampled curves|Node:sop/resample].
+
+    UV Attribute:
+        A per-point UV attribute to build the reference frames from (only the U parameter is used).
+        This attribute can be generated with an [Node:sop/texture] SOP.
+
+    Up Vector Mode:
+        The mode for determining the first up vector on each curve. It can either be a constant,
+        or the up vector value of the first vertex can be used (if present).
+
+        Make sure you read the TIP above.
+
+    Up Vector:
+        Vector value for the 'Constant' up vector mode.
+
+    Outputs:
         Tangent:
             Name of the output tangent attribute (per-point vector).
         Normal:
@@ -65,14 +66,22 @@ TIP:
         Up:
             Name of the output up vector attribute (per-point vector).
 
-TODO:
-    Support selection ('group' parameter).
+@issues Known issues
+    - The `group` parameter does not work
+
+
+@related
+    - [Node:sop/texture]
+    - [Node:sop/resample]
+    - [Deform by Surface qL|Node:sop/qLib::deformbysurface_ql::1]
 
 
 @relnotes Release Notes
 
-
 _interface version 1_ ---
+
+2013-02-21:
+    Added "Assume linear curve(s)" mode (requires evenly Resampled curves, but no UVs)
 
 2013-02-13:
     Minor changes (help card, etc.)
