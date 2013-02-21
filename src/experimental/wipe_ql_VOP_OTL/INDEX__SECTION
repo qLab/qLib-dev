@@ -1,0 +1,13 @@
+Operator:     qLib::wipe_ql::1
+Label:        Wipe qL
+Path:         oplib:/qLib::Vop/wipe_ql::1?qLib::Vop/wipe_ql::1
+Icon:         COP2_wipe
+Table:        Vop
+License:      
+Extra:        *
+Inputs:       0 to 3
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Thu Feb 21 01:20:21 2013
+

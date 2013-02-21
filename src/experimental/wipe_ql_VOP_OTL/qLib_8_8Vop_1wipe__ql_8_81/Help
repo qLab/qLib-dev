@@ -1,0 +1,29 @@
+#icon: COP2/wipe
+#context: vop
+#type: node
+
+= Wipe qL VOP =
+
+*interface version 1*
+
+"""Generates an arbitrary-width wipe based on an incoming value between 0 and 1."""
+
+@Parameters
+    Value:
+        Incoming value.
+    Bias:
+        The progress of the wipe.
+    Width:
+        Width of the wipe.
+
+
+@related
+    - ...
+
+
+@relnotes Release Notes
+
+    _interface version 1_ ---
+    
+    2013-02-19:
+        Initial release.
