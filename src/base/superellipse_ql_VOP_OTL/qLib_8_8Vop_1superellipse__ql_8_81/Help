@@ -1,25 +1,39 @@
-#icon: SOP/circle
+#icon: COP2/expand
 #context: vop
 #type: node
 
 = Superellipse qL VOP =
 
-*Version 0.1.0*
+*interface version 1*
 
 """Generates a superellipse shape in UV space."""
 
+
 @Parameters
     UV:
-        UV coordinates.
+        Texture UV coordinates.
     Shape Exponent:
         Exponent of the superellipse.
     Black Point:
-        Where should be the black point in the superellipse field.
+        Value representing black point in the superellipse field.
     White Point:
-        Where should be the white point in the superellipse field.
+        Value representing white point in the superellipse field.
     Gradient Exponent:
         Exponent of the generated gradient between the black and white points.
 
-@Release_Notes
+
+@related
+    - [Superellipse qL SOP|Node:sop/qLib::superellipse_ql::1]
+
+
+@relnotes Release Notes
+
+    _interface version 1_ ---
+
+    2013-02-21:
+        Minor administrative cosmetics.
+
+    _older versions_ ---
+
     Version 0.1.0:
         Initial release.

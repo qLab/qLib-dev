@@ -1,12 +1,13 @@
-#icon: SOP/circle
+#icon: COP2/expand
 #context: sop
 #type: node
 
 = Superellipse qL =
 
-*Version 0.0.1*
+*interface version 1*
 
-"""Generates a superellipse."""
+"""Generates a superellipse shape."""
+
 
 @Parameters
     Orientation:
@@ -25,3 +26,15 @@
         Type of the arc. See the documentation of the [Node:sop/circle] for details.
     Exponent:
         Exponent of the curve.
+
+
+@related
+    - [Superellipse qL VOP|Node:vop/qLib::superellipse_ql::1]
+
+@relnotes Release Notes
+
+    _interface version 1_ ---
+
+    2013-02-21:
+        blablah
+

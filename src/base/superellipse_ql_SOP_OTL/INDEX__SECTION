@@ -1,7 +1,7 @@
 Operator:     qLib::superellipse_ql::1
 Label:        Superellipse qL
 Path:         oplib:/qLib::Sop/superellipse_ql::1?qLib::Sop/superellipse_ql::1
-Icon:         SOP_circle
+Icon:         COP2_expand
 Table:        Sop
 License:      
 Extra:        
@@ -9,5 +9,5 @@ Inputs:       0 to 0
 Subnet:       true
 Python:       false
 Empty:        false
-Modified:     Mon Nov 19 15:40:45 2012
+Modified:     Thu Feb 21 01:28:42 2013
 
