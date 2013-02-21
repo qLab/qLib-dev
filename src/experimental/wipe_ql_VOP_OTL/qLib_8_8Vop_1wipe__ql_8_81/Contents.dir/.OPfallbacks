@@ -1,0 +1,4 @@
+Vop/fit /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/fit otls/OPlibVop.otl
+Vop/addconst /opt/hfs/houdini/otls/OPlibVop.otl
+Vop/addconst otls/OPlibVop.otl

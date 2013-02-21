@@ -15,7 +15,7 @@
     <toolMenuContext name="network">
       <contextOpType>$HDA_TABLE/$HDA_NAME</contextOpType>
     </toolMenuContext>
-    <toolSubmenu>qLib/Future</toolSubmenu>
+    <toolSubmenu>qLib</toolSubmenu>
     <toolSubmenu>Patterns</toolSubmenu>
     <script scriptType="python"><![CDATA[import voptoolutils
 

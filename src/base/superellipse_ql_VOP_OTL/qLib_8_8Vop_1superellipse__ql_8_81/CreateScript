@@ -1,4 +1,4 @@
-# Automatically generated script: Friday May 11, 13:33 2012
+# Automatically generated script: Thursday February 21, 01:31 2013
 \set noalias = 1
 #
 #  Creation script for qLib::superellipse_ql::1 operator
@@ -9,6 +9,6 @@ if ( "$arg1" == "" ) then
     exit
 endif
 
-# Node $arg1 (Vop/qLib::superellipse_ql::1)
-opspareds "" $arg1
+# Node $arg1 (qLib::Vop/superellipse_ql::1)
 opexprlanguage -s hscript $arg1
+opuserdata -n '___Version___' -v '' $arg1

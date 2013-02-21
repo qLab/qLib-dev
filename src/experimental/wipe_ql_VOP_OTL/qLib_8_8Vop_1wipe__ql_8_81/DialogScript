@@ -1,0 +1,51 @@
+# Dialog script for qLib::wipe_ql::1 automatically generated 02/21/13 01:20:21
+
+{
+    name	qLib::wipe_ql::1
+    script	qLib::wipe_ql::1
+    label	"Wipe qL"
+
+    input	float	value	Value
+    input	float	bias	Bias
+    input	float	width	Width
+    output	float	wipe	wipe
+    inputflags	value	0
+    inputflags	bias	0
+    inputflags	width	0
+    signature	"Default Inputs"	default	{ float float float float }
+
+    outputoverrides	default
+    {
+	___begin	auto
+			(0)
+    }
+
+    help {
+	""
+    }
+
+    parm {
+	name	"value"
+	label	"Value"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"bias"
+	label	"Bias"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+    parm {
+	name	"width"
+	label	"Width"
+	type	float
+	default	{ "0" }
+	range	{ 0 10 }
+	export	none
+    }
+}
